@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const sl: Dictionary = {
+  home: {
+    title: "Vsa orodja, ki jih potrebujete za delo z",
+    titleAccent: "PDFs",
+    description: "Združite, razdelite, stisnite in pretvorite PDF datoteke. Brezplačno, hitro in enostavno.",
+    tabAll: "Vse",
+    categoryOrganize: "Organiziraj",
+    categoryConvert: "Pretvori",
+    categoryEdit: "Uredi",
+    categoryOptimize: "Optimiziraj",
+    categorySecurity: "Varnost",
+    searchPlaceholder: "Iskanje orodij...",
+    noResults: "Nobeno orodje ni bilo najdeno.",
+  },
+  trust: {
+    encryption: "Varno šifriranje",
+    encryptionDesc: "Vaše datoteke so zaščitene z 256-bitnim SSL šifriranjem.",
+    autoDelete: "Samodejno brisanje",
+    autoDeleteDesc: "Naložene datoteke se samodejno izbrišejo po 2 urah.",
+    free: "Popolnoma brezplačno",
+    freeDesc: "Uporabite vsa orodja brez omejitev, popolnoma brezplačno.",
+    cloud: "Obdelava v oblaku",
+    cloudDesc: "Obdelano na naših strežnikih, brez vpliva na vašo napravo.",
+  },
+  tools: {
+    // Organiziraj
+    merge: { title: "Združi PDF", description: "Združite več PDF datotek v en dokument." },
+    split: { title: "Razdeli PDF", description: "Razdelite PDF na posamezne strani ali odseke." },
+    "delete-pages": { title: "Izbriši strani", description: "Odstranite določene strani iz PDF dokumenta." },
+    "extract-pages": { title: "Izvleci strani", description: "Izvlecite izbrane strani v novo PDF datoteko." },
+    "organize-pages": { title: "Organiziraj strani", description: "Preuredite, dodajte ali odstranite strani vizualno." },
+    "scan-to-pdf": { title: "Skeniraj v PDF", description: "Zajemite skeniranje iz naprave in pretvorite v PDF." },
+
+    // Pretvori
+    "pdf-to-word": { title: "PDF v Word", description: "Pretvorite PDF dokumente v uredljive Word datoteke." },
+    "pdf-to-jpg": { title: "PDF v JPG", description: "Pretvorite PDF strani v visokokakovostne JPG slike." },
+    "pdf-to-excel": { title: "PDF v Excel", description: "Izvlecite tabele in podatke iz PDF v Excelove preglednice." },
+    "pdf-to-ppt": { title: "PDF v PPT", description: "Pretvorite PDF datoteke v uredljive PowerPoint diapozitive." },
+    "pdf-to-png": { title: "PDF v PNG", description: "Pretvorite PDF strani v visokokakovostne PNG slike." },
+    "pdf-to-text": { title: "PDF v besedilo", description: "Izvlecite vso besedilno vsebino iz PDF dokumentov." },
+    "pdf-to-pdfa": { title: "PDF v PDF/A", description: "Pretvorite v format PDF/A za dolgoročno arhiviranje." },
+    "word-to-pdf": { title: "Word v PDF", description: "Pretvorite Word dokumente v format PDF." },
+    "jpg-to-pdf": { title: "JPG v PDF", description: "Pretvorite JPG slike v PDF dokument." },
+    "excel-to-pdf": { title: "Excel v PDF", description: "Pretvorite Excelove preglednice v format PDF." },
+    "ppt-to-pdf": { title: "PPT v PDF", description: "Pretvorite PowerPoint predstavitve v format PDF." },
+    "html-to-pdf": { title: "HTML v PDF", description: "Pretvorite spletne strani in HTML datoteke v PDF." },
+    "png-to-pdf": { title: "PNG v PDF", description: "Pretvorite PNG slike v PDF dokument." },
+    "image-to-pdf": { title: "Slika v PDF", description: "Združite več slik kateregakoli formata v en PDF." },
+
+    // Uredi
+    "edit-pdf": { title: "Uredi PDF", description: "Dodajte besedilo, slike, oblike in opombe v PDF." },
+    rotate: { title: "Zavrti PDF", description: "Zavrtite PDF strani v pravilno usmerjenost." },
+    "page-numbers": { title: "Številke strani", description: "Dodajte številke strani v vaš PDF dokument." },
+    watermark: { title: "Vodni žig", description: "Dodajte besedilne ali slikovne vodne žige v PDF." },
+    crop: { title: "Obreži PDF", description: "Obrežite robove ali izberite določena območja PDF strani." },
+    sign: { title: "Podpiši PDF", description: "Dodajte elektronske podpise v PDF dokumente." },
+    annotate: { title: "Komentiraj PDF", description: "Označite, podčrtajte in dodajte komentarje v PDF." },
+    flatten: { title: "Splošči PDF", description: "Združite polja obrazcev in opombe v vsebino strani." },
+    resize: { title: "Spremeni velikost PDF", description: "Spremenite velikost strani PDF (A4, Letter, po meri)." },
+    "edit-metadata": { title: "Uredi metapodatke", description: "Spremenite naslov, avtorja, ključne besede in druge metapodatke PDF." },
+    grayscale: { title: "Sivine", description: "Pretvorite barve PDF v črnobele." },
+
+    // Optimiziraj
+    compress: { title: "Stisni PDF", description: "Zmanjšajte velikost PDF datoteke brez izgube kakovosti." },
+    repair: { title: "Popravi PDF", description: "Popravite poškodovane ali pokvarjene PDF datoteke." },
+    ocr: { title: "OCR PDF", description: "Omogočite iskanje po skeniranih PDF z razpoznavanjem besedila." },
+    "web-optimize": { title: "Optimizacija za splet", description: "Linearizirajte PDF za hitrejše nalaganje na spletu." },
+
+    // Varnost
+    protect: { title: "Zaščiti PDF", description: "Dodajte zaščito z geslom in šifrirajte svoj PDF." },
+    unlock: { title: "Odkleni PDF", description: "Odstranite zaščito z geslom iz PDF datotek." },
+    redact: { title: "Redaktiraj PDF", description: "Trajno odstranite občutljive podatke iz PDF." },
+    compare: { title: "Primerjaj PDF", description: "Primerjajte dva PDF drug ob drugem in odkrijte razlike." },
+    translate: { title: "Prevedi PDF", description: "Prevedite vsebino PDF v drug jezik z umetno inteligenco." },
+  },
+  nav: {
+    allTools: "Vsa orodja",
+    language: "Jezik",
+  },
+  footer: {
+    tools: "Orodja",
+    legal: "Pravne informacije",
+    privacy: "Pravilnik o zasebnosti",
+    terms: "Pogoji uporabe",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Nazaj na vsa orodja",
+    dropFiles: "Sem spustite datoteke",
+    acceptedFormats: "Sprejeti formati",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Brezplačna PDF orodja",
+    siteDescription: "Združite, razdelite, stisnite in pretvorite PDF datoteke na spletu brezplačno.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Za izboljšanje vaše izkušnje uporabljamo piškotke.",
+    accept: "Sprejmi",
+    decline: "Zavrni",
+  },
+  privacy: {
+    title: "Pravilnik o zasebnosti",
+    lastUpdated: "Nazadnje posodobljeno: 1. marca 2026",
+    intro: "Pri ToolBox PDF nam je vaša zasebnost pomembna. Ta pravilnik pojasnjuje, katere podatke zbiramo ob uporabi naše storitve in kako z njimi ravnamo.",
+    sections: [
+      {
+        heading: "1. Podatki, ki jih zbiramo",
+        content: "ToolBox PDF ne zahteva registracije. Ne zbiramo osebnih podatkov. Kljub temu lahko samodejno zbiramo neidentifikacijske podatke za izboljšanje storitve:\n\n• Vrsta in različica brskalnika\n• Operacijski sistem\n• Obiskane strani in porabljen čas\n• Piškotki in podobne tehnologije za analizo uporabe",
+      },
+      {
+        heading: "2. Ravnanje z datotekami",
+        content: "Datoteke, ki jih naložite, se obdelajo na naših strežnikih in samodejno izbrišejo v 2 urah. Vsebine vaših datotek ne beremo, ne shranjujemo in z nikomer ne delimo.",
+      },
+      {
+        heading: "3. Piškotki",
+        content: "Piškotke uporabljamo za shranjevanje vaših nastavitev, kot sta tema (temni/svetli način) in izbira jezika. Oglaševalska omrežja (npr. Google AdSense) lahko prav tako uporabljajo piškotke za prikazovanje prilagojenih oglasov.",
+      },
+      {
+        heading: "4. Storitve tretjih oseb",
+        content: "Lahko uporabljamo naslednje storitve tretjih oseb:\n\n• Google Analytics -- za analizo prometa\n• Google AdSense -- za prikazovanje oglasov\n\nZa podrobnosti o tem, kako ravnajo z vašimi podatki, si oglejte pravilnik o zasebnosti posamezne storitve.",
+      },
+      {
+        heading: "5. Vaše pravice",
+        content: "Piškotke lahko kadar koli onemogočite ali izbrišete v nastavitvah brskalnika. Upoštevajte, da nekatere funkcije brez piškotkov morda ne bodo delovale pravilno.",
+      },
+      {
+        heading: "6. Spremembe tega pravilnika",
+        content: "Ta pravilnik lahko posodobimo ob spremembah zakonodaje ali razvoju naše storitve. Vse spremembe bodo objavljene na tej strani.",
+      },
+      {
+        heading: "7. Kontakt",
+        content: "Za vprašanja v zvezi z zasebnostjo nas kontaktirajte na support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Pogoji uporabe",
+    lastUpdated: "Nazadnje posodobljeno: 1. marca 2026",
+    intro: "Hvala, da uporabljate ToolBox PDF. Z dostopom do naše storitve ali njeno uporabo se strinjate z naslednjimi pogoji.",
+    sections: [
+      {
+        heading: "1. O storitvi",
+        content: "ToolBox PDF je brezplačna spletna storitev, ki vam omogoča združevanje, razdeljevanje, pretvarjanje, urejanje in stiskanje PDF datotek neposredno v brskalniku.",
+      },
+      {
+        heading: "2. Sprejemljiva uporaba",
+        content: "• Storitev smete uporabljati izključno v zakonite namene.\n• Ne obdelujte datotek, ki kršijo avtorske pravice ali intelektualno lastnino.\n• Ne zlorabljajte storitve in ne prekomerno obremenjujte naših strežnikov.\n• Avtomatiziran dostop (boti, scraperji itd.) ni dovoljen.",
+      },
+      {
+        heading: "3. Ravnanje z datotekami",
+        content: "Naložene datoteke se uporabljajo izključno za izvedbo zahtevane operacije. Z naših strežnikov se samodejno izbrišejo v 2 urah. Vaših datotek ne analiziramo in ne hranimo.",
+      },
+      {
+        heading: "4. Omejitev odgovornosti",
+        content: "Storitev je zagotovljena 'takšna, kot je'. Ne jamčimo za natančnost pretvorbe, neprekinjeno razpoložljivost ali zaščito pred izgubo podatkov. Pred obdelavo vedno varnostno kopirajte pomembne datoteke.",
+      },
+      {
+        heading: "5. Intelektualna lastnina",
+        content: "Vsa vsebina na tem spletnem mestu -- vključno z oblikovanjem, logotipi in kodo -- pripada podjetju ToolBox. Vse pravice do datotek, ki jih naložite, obdržite vi. Na vašo vsebino ne uveljavljamo nikakršnih lastniških pravic.",
+      },
+      {
+        heading: "6. Spremembe storitve",
+        content: "Pridržujemo si pravico, da kadar koli brez predhodnega obvestila spremenimo ali ukinemo posamezne funkcionalnosti.",
+      },
+      {
+        heading: "7. Posodobitve teh pogojev",
+        content: "Ti pogoji se lahko po potrebi spremenijo. Spremembe bodo objavljene na tej strani. Nadaljnja uporaba storitve po spremembah pomeni, da sprejemate posodobljene pogoje.",
+      },
+      {
+        heading: "8. Kontakt",
+        content: "Za vprašanja o teh pogojih nas kontaktirajte na support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default sl;

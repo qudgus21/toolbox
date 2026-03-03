@@ -1,0 +1,168 @@
+import type { Dictionary } from "../config";
+
+const ro: Dictionary = {
+  home: {
+    title: "Toate instrumentele de care ai nevoie pentru a lucra cu",
+    titleAccent: "PDFs",
+    description: "Unește, împarte, comprimă și convertește fișiere PDF. Gratuit, rapid și ușor de utilizat.",
+    tabAll: "Toate",
+    categoryOrganize: "Organizare",
+    categoryConvert: "Conversie",
+    categoryEdit: "Editare",
+    categoryOptimize: "Optimizare",
+    categorySecurity: "Securitate",
+    searchPlaceholder: "Caută instrumente...",
+    noResults: "Niciun instrument găsit.",
+  },
+  trust: {
+    encryption: "Criptare securizată",
+    encryptionDesc: "Fișierele tale sunt protejate cu criptare SSL pe 256 de biți.",
+    autoDelete: "Ștergere automată",
+    autoDeleteDesc: "Fișierele încărcate sunt șterse automat după 2 ore.",
+    free: "Complet gratuit",
+    freeDesc: "Folosește toate instrumentele fără limite, complet gratuit.",
+    cloud: "Procesare în cloud",
+    cloudDesc: "Procesat pe serverele noastre, fără impact asupra dispozitivului tău.",
+  },
+  tools: {
+    merge: { title: "Unire PDF", description: "Combină mai multe fișiere PDF într-un singur document." },
+    split: { title: "Împărțire PDF", description: "Separă un PDF în pagini sau secțiuni individuale." },
+    "delete-pages": { title: "Ștergere pagini", description: "Elimină pagini specifice dintr-un document PDF." },
+    "extract-pages": { title: "Extragere pagini", description: "Extrage paginile selectate într-un fișier PDF nou." },
+    "organize-pages": { title: "Organizare pagini", description: "Reordonează, adaugă sau elimină pagini vizual." },
+    "scan-to-pdf": { title: "Scanare în PDF", description: "Capturează scanări de pe dispozitivul tău și convertește în PDF." },
+    "pdf-to-word": { title: "PDF în Word", description: "Convertește documentele PDF în fișiere Word editabile." },
+    "pdf-to-jpg": { title: "PDF în JPG", description: "Convertește paginile PDF în imagini JPG de înaltă calitate." },
+    "pdf-to-excel": { title: "PDF în Excel", description: "Extrage tabele și date din PDF-uri în foi de calcul Excel." },
+    "pdf-to-ppt": { title: "PDF în PPT", description: "Convertește fișiere PDF în slide-uri PowerPoint editabile." },
+    "pdf-to-png": { title: "PDF în PNG", description: "Convertește paginile PDF în imagini PNG de înaltă calitate." },
+    "pdf-to-text": { title: "PDF în Text", description: "Extrage tot conținutul text din documentele PDF." },
+    "pdf-to-pdfa": { title: "PDF în PDF/A", description: "Convertește în format PDF/A pentru arhivare pe termen lung." },
+    "word-to-pdf": { title: "Word în PDF", description: "Convertește documentele Word în format PDF." },
+    "jpg-to-pdf": { title: "JPG în PDF", description: "Convertește imaginile JPG într-un document PDF." },
+    "excel-to-pdf": { title: "Excel în PDF", description: "Convertește foile de calcul Excel în format PDF." },
+    "ppt-to-pdf": { title: "PPT în PDF", description: "Convertește prezentările PowerPoint în format PDF." },
+    "html-to-pdf": { title: "HTML în PDF", description: "Convertește pagini web și fișiere HTML în PDF." },
+    "png-to-pdf": { title: "PNG în PDF", description: "Convertește imaginile PNG într-un document PDF." },
+    "image-to-pdf": { title: "Imagine în PDF", description: "Combină mai multe imagini de orice format într-un singur PDF." },
+    "edit-pdf": { title: "Editare PDF", description: "Adaugă text, imagini, forme și adnotări la un PDF." },
+    rotate: { title: "Rotire PDF", description: "Rotește paginile PDF la orientarea corectă." },
+    "page-numbers": { title: "Numere de pagină", description: "Adaugă numere de pagină la documentul tău PDF." },
+    watermark: { title: "Filigran", description: "Adaugă filigrane text sau imagine la PDF-ul tău." },
+    crop: { title: "Decupare PDF", description: "Decupează marginile sau selectează zone specifice ale paginilor PDF." },
+    sign: { title: "Semnare PDF", description: "Adaugă semnături electronice la documentele tale PDF." },
+    annotate: { title: "Adnotare PDF", description: "Evidențiază, subliniază și adaugă comentarii la PDF-uri." },
+    flatten: { title: "Aplatizare PDF", description: "Unește câmpurile de formular și adnotările în conținutul paginii." },
+    resize: { title: "Redimensionare PDF", description: "Schimbă dimensiunea paginii PDF (A4, Letter, personalizat)." },
+    "edit-metadata": { title: "Editare metadate", description: "Schimbă titlul, autorul, cuvintele cheie și alte metadate PDF." },
+    grayscale: { title: "Tonuri de gri", description: "Convertește culorile PDF în alb-negru." },
+    compress: { title: "Comprimare PDF", description: "Reduce dimensiunea fișierului PDF fără pierderea calității." },
+    repair: { title: "Reparare PDF", description: "Repară fișierele PDF deteriorate sau corupte." },
+    ocr: { title: "OCR PDF", description: "Fă PDF-urile scanate căutabile cu recunoașterea textului." },
+    "web-optimize": { title: "Optimizare web", description: "Linearizează PDF-urile pentru încărcare mai rapidă pe web." },
+    protect: { title: "Protejare PDF", description: "Adaugă protecție cu parolă și criptează PDF-ul tău." },
+    unlock: { title: "Deblocare PDF", description: "Elimină protecția cu parolă din fișierele PDF." },
+    redact: { title: "Redactare PDF", description: "Elimină permanent informațiile sensibile din PDF-uri." },
+    compare: { title: "Comparare PDF", description: "Compară două PDF-uri una lângă alta și identifică diferențele." },
+    translate: { title: "Traducere PDF", description: "Traduce conținutul PDF într-o altă limbă cu AI." },
+  },
+  nav: { allTools: "Toate instrumentele", language: "Limbă" },
+  footer: {
+    tools: "Instrumente",
+    legal: "Legal",
+    privacy: "Politica de confidențialitate",
+    terms: "Termeni de utilizare",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Înapoi la toate instrumentele",
+    dropFiles: "Trage fișierele tale aici",
+    acceptedFormats: "Formate acceptate",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Instrumente PDF gratuite",
+    siteDescription: "Unește, împarte, comprimă și convertește fișiere PDF online gratuit.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Folosim cookie-uri pentru a îmbunătăți experiența dumneavoastră.",
+    accept: "Accept",
+    decline: "Refuz",
+  },
+  privacy: {
+    title: "Politica de confidențialitate",
+    lastUpdated: "Ultima actualizare: 1 martie 2026",
+    intro: "La ToolBox PDF, confidențialitatea ta contează. Această politică explică ce informații colectăm atunci când folosești serviciul nostru și cum le gestionăm.",
+    sections: [
+      {
+        heading: "1. Informațiile pe care le colectăm",
+        content: "ToolBox PDF nu necesită înregistrare. Nu colectăm date personale. Cu toate acestea, putem colecta automat date neidentificabile pentru a îmbunătăți serviciul:\n\n• Tipul și versiunea browserului\n• Sistemul de operare\n• Paginile vizitate și timpul petrecut\n• Cookie-uri și tehnologii similare pentru analiza utilizării",
+      },
+      {
+        heading: "2. Gestionarea fișierelor",
+        content: "Fișierele pe care le încarci sunt procesate pe serverele noastre și șterse automat în decurs de 2 ore. Nu citim, nu stocăm și nu partajăm conținutul fișierelor tale cu nimeni.",
+      },
+      {
+        heading: "3. Cookie-uri",
+        content: "Folosim cookie-uri pentru a reține preferințele tale, cum ar fi tema (modul întunecat/luminos) și limba selectată. Rețelele publicitare (de ex. Google AdSense) pot folosi, de asemenea, cookie-uri pentru a afișa reclame personalizate.",
+      },
+      {
+        heading: "4. Servicii terțe",
+        content: "Putem utiliza următoarele servicii terțe:\n\n• Google Analytics -- pentru analiza traficului\n• Google AdSense -- pentru afișarea reclamelor\n\nTe rugăm să consulți politica de confidențialitate a fiecărui serviciu pentru detalii despre modul în care îți gestionează datele.",
+      },
+      {
+        heading: "5. Drepturile tale",
+        content: "Poți dezactiva sau șterge cookie-urile din setările browserului tău în orice moment. Reține că unele funcționalități ar putea să nu funcționeze corect fără cookie-uri.",
+      },
+      {
+        heading: "6. Modificări ale acestei politici",
+        content: "Putem actualiza această politică pe măsură ce legislația se schimbă sau serviciul nostru evoluează. Orice modificare va fi publicată pe această pagină.",
+      },
+      {
+        heading: "7. Contact",
+        content: "Pentru întrebări legate de confidențialitate, ne poți contacta la support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Termeni de utilizare",
+    lastUpdated: "Ultima actualizare: 1 martie 2026",
+    intro: "Îți mulțumim că folosești ToolBox PDF. Prin accesarea sau utilizarea serviciului nostru, ești de acord cu următorii termeni.",
+    sections: [
+      {
+        heading: "1. Despre serviciu",
+        content: "ToolBox PDF este un serviciu online gratuit care îți permite să unești, împarți, convertești, editezi și comprimi fișiere PDF direct în browser.",
+      },
+      {
+        heading: "2. Utilizare acceptabilă",
+        content: "• Poți folosi serviciul doar în scopuri legale.\n• Nu procesa fișiere care încalcă drepturile de autor sau proprietatea intelectuală.\n• Nu abuza de serviciu și nu suprasolicita serverele noastre.\n• Accesul automatizat (boți, scrapere etc.) nu este permis.",
+      },
+      {
+        heading: "3. Gestionarea fișierelor",
+        content: "Fișierele încărcate sunt utilizate exclusiv pentru a efectua operațiunea solicitată. Ele sunt șterse automat de pe serverele noastre în decurs de 2 ore. Nu analizăm și nu păstrăm fișierele tale.",
+      },
+      {
+        heading: "4. Limitarea responsabilității",
+        content: "Serviciul este oferit 'ca atare'. Nu garantăm acuratețea conversiilor, disponibilitatea neîntreruptă sau protecția împotriva pierderii datelor. Păstrează întotdeauna o copie de rezervă a fișierelor importante înainte de procesare.",
+      },
+      {
+        heading: "5. Proprietate intelectuală",
+        content: "Tot conținutul de pe acest site -- inclusiv designul, logo-urile și codul -- aparține ToolBox. Tu deții toate drepturile asupra fișierelor pe care le încarci. Nu revendicăm niciun drept asupra conținutului tău.",
+      },
+      {
+        heading: "6. Modificări ale serviciului",
+        content: "Ne rezervăm dreptul de a modifica sau întrerupe funcționalități în orice moment, fără notificare prealabilă.",
+      },
+      {
+        heading: "7. Actualizări ale acestor termeni",
+        content: "Acești termeni pot fi revizuiți după necesitate. Modificările vor fi publicate pe această pagină. Continuarea utilizării serviciului după efectuarea modificărilor constituie acceptarea termenilor actualizați.",
+      },
+      {
+        heading: "8. Contact",
+        content: "Pentru întrebări despre acești termeni, ne poți contacta la support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default ro;

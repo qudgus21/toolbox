@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const mt: Dictionary = {
+  home: {
+    title: "Kull għodda li għandek bżonn biex taħdem ma'",
+    titleAccent: "PDFs",
+    description: "Għaqqad, aqsam, ikkompressja u ikkonverti fajls PDF. B'xejn, malajr u faċli.",
+    tabAll: "Kollha",
+    categoryOrganize: "Organizza",
+    categoryConvert: "Ikkonverti",
+    categoryEdit: "Editja",
+    categoryOptimize: "Ottimizza",
+    categorySecurity: "Sigurtà",
+    searchPlaceholder: "Fittex għodod...",
+    noResults: "L-ebda għodda ma nstabet.",
+  },
+  trust: {
+    encryption: "Kriptaġġ sigur",
+    encryptionDesc: "Il-fajls tiegħek huma protetti b'kriptaġġ SSL ta' 256-bit.",
+    autoDelete: "Tħassir awtomatiku",
+    autoDeleteDesc: "Il-fajls imtella' jitħassru awtomatikament wara sagħtejn.",
+    free: "Kompletament b'xejn",
+    freeDesc: "Uża l-għodod kollha mingħajr limiti, kompletament b'xejn.",
+    cloud: "Proċessar fil-cloud",
+    cloudDesc: "Ipproċessat fuq is-servers tagħna, l-ebda impatt fuq l-apparat tiegħek.",
+  },
+  tools: {
+    // Organizza
+    merge: { title: "Għaqqad PDF", description: "Ikkombina diversi fajls PDF f'dokument wieħed." },
+    split: { title: "Aqsam PDF", description: "Issepara PDF f'paġni jew sezzjonijiet individwali." },
+    "delete-pages": { title: "Ħassar paġni", description: "Neħħi paġni speċifiċi minn dokument PDF." },
+    "extract-pages": { title: "Estratta paġni", description: "Estratta paġni magħżula f'fajl PDF ġdid." },
+    "organize-pages": { title: "Organizza paġni", description: "Arranġa mill-ġdid, żid jew neħħi paġni viżwalment." },
+    "scan-to-pdf": { title: "Sken għal PDF", description: "Aqbad skens mill-apparat tiegħek u kkonverti għal PDF." },
+
+    // Ikkonverti
+    "pdf-to-word": { title: "PDF għal Word", description: "Ikkonverti dokumenti PDF f'fajls Word editjabbli." },
+    "pdf-to-jpg": { title: "PDF għal JPG", description: "Ikkonverti paġni PDF f'immaġni JPG ta' kwalità għolja." },
+    "pdf-to-excel": { title: "PDF għal Excel", description: "Estratta tabelli u data minn PDFs f'spreadsheets Excel." },
+    "pdf-to-ppt": { title: "PDF għal PPT", description: "Ikkonverti fajls PDF f'slides PowerPoint editjabbli." },
+    "pdf-to-png": { title: "PDF għal PNG", description: "Ikkonverti paġni PDF f'immaġni PNG ta' kwalità għolja." },
+    "pdf-to-text": { title: "PDF għal test", description: "Estratta l-kontenut kollu tat-test minn dokumenti PDF." },
+    "pdf-to-pdfa": { title: "PDF għal PDF/A", description: "Ikkonverti għal format PDF/A għall-arkivjar fit-tul." },
+    "word-to-pdf": { title: "Word għal PDF", description: "Ikkonverti dokumenti Word għal format PDF." },
+    "jpg-to-pdf": { title: "JPG għal PDF", description: "Ikkonverti immaġni JPG f'dokument PDF." },
+    "excel-to-pdf": { title: "Excel għal PDF", description: "Ikkonverti spreadsheets Excel għal format PDF." },
+    "ppt-to-pdf": { title: "PPT għal PDF", description: "Ikkonverti preżentazzjonijiet PowerPoint għal format PDF." },
+    "html-to-pdf": { title: "HTML għal PDF", description: "Ikkonverti paġni web u fajls HTML għal PDF." },
+    "png-to-pdf": { title: "PNG għal PDF", description: "Ikkonverti immaġni PNG f'dokument PDF." },
+    "image-to-pdf": { title: "Immaġni għal PDF", description: "Ikkombina diversi immaġni ta' kwalunkwe format f'PDF wieħed." },
+
+    // Editja
+    "edit-pdf": { title: "Editja PDF", description: "Żid test, immaġni, forom u annotazzjonijiet ma' PDF." },
+    rotate: { title: "Dawwar PDF", description: "Dawwar il-paġni PDF għall-orjentazzjoni korretta." },
+    "page-numbers": { title: "Numri tal-paġni", description: "Żid numri tal-paġni mad-dokument PDF tiegħek." },
+    watermark: { title: "Watermark", description: "Żid watermarks ta' test jew immaġni mal-PDF tiegħek." },
+    crop: { title: "Aqta' PDF", description: "Aqta' l-marġni jew agħżel żoni speċifiċi tal-paġni PDF." },
+    sign: { title: "Iffirma PDF", description: "Żid firem elettroniċi mad-dokumenti PDF tiegħek." },
+    annotate: { title: "Annota PDF", description: "Enfasizza, sottalinja u żid kummenti ma' PDFs." },
+    flatten: { title: "Ċċattja PDF", description: "Għaqqad il-kamps tal-formola u l-annotazzjonijiet fil-kontenut tal-paġna." },
+    resize: { title: "Irridimensjona PDF", description: "Ibdel id-daqs tal-paġna PDF (A4, Letter, personalizzat)." },
+    "edit-metadata": { title: "Editja metadata", description: "Ibdel it-titlu, l-awtur, il-kliem ewlenin u metadata oħra tal-PDF." },
+    grayscale: { title: "Skala tal-griż", description: "Ikkonverti l-kuluri tal-PDF għal iswed u abjad." },
+
+    // Ottimizza
+    compress: { title: "Ikkompressja PDF", description: "Naqqas id-daqs tal-fajl PDF mingħajr ma titlef il-kwalità." },
+    repair: { title: "Sewwi PDF", description: "Irranġa fajls PDF korrotti jew imħassra." },
+    ocr: { title: "OCR PDF", description: "Agħmel PDFs skennjati rikerkabbli b'rikonoxximent tat-test." },
+    "web-optimize": { title: "Ottimizzazzjoni għall-web", description: "Linearizza PDFs għal tagħbija aktar mgħaġġla fuq il-web." },
+
+    // Sigurtà
+    protect: { title: "Ipproteġi PDF", description: "Żid protezzjoni b'password u kkriptja l-PDF tiegħek." },
+    unlock: { title: "Iftaħ PDF", description: "Neħħi l-protezzjoni b'password minn fajls PDF." },
+    redact: { title: "Irredatta PDF", description: "Neħħi b'mod permanenti informazzjoni sensittiva minn PDFs." },
+    compare: { title: "Qabbel PDF", description: "Qabbel żewġ PDFs maġenb xulxin u sib id-differenzi." },
+    translate: { title: "Ittraduċi PDF", description: "Ittraduċi l-kontenut PDF għal lingwa oħra bl-AI." },
+  },
+  nav: {
+    allTools: "L-għodod kollha",
+    language: "Lingwa",
+  },
+  footer: {
+    tools: "Għodod",
+    legal: "Legali",
+    privacy: "Politika tal-privatezza",
+    terms: "Termini tas-servizz",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Lura għall-għodod kollha",
+    dropFiles: "Aqbez il-fajls tiegħek hawn",
+    acceptedFormats: "Formati aċċettati",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Għodod PDF b'xejn",
+    siteDescription: "Għaqqad, aqsam, ikkompressja u ikkonverti fajls PDF online b'xejn.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Nużaw il-cookies biex intejbu l-esperjenza tiegħek.",
+    accept: "Aċċetta",
+    decline: "Irrifjuta",
+  },
+  privacy: {
+    title: "Politika tal-Privatezza",
+    lastUpdated: "Aġġornata l-aħħar: 1 ta' Marzu, 2026",
+    intro: "F'ToolBox PDF, il-privatezza tiegħek hija importanti. Din il-politika tispjega liema informazzjoni niġbru meta tuża s-servizz tagħna u kif nittrattawha.",
+    sections: [
+      {
+        heading: "1. Informazzjoni li Niġbru",
+        content: "ToolBox PDF ma jirrikjedix reġistrazzjoni. Ma niġbrux informazzjoni personali. Madankollu, nistgħu niġbru awtomatikament data mhux identifikabbli biex intejbu s-servizz:\n\n• It-tip u l-verżjoni tal-browser\n• Is-sistema operattiva\n• Il-paġni viżitati u l-ħin mgħoddi\n• Cookies u teknoloġiji simili għal mudelli ta' użu",
+      },
+      {
+        heading: "2. Immaniġġjar tal-Fajls",
+        content: "Il-fajls li ttella' jiġu pproċessati fuq is-servers tagħna u jitħassru awtomatikament fi żmien sagħtejn. Ma naqrawx, ma naħżnux u ma naqsmux il-kontenut tal-fajls tiegħek ma' ħadd.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Nużaw cookies biex niftakru l-preferenzi tiegħek bħat-tema (modalita skura/ċara) u l-għażla tal-lingwa. Netwerks ta' reklami (eż. Google AdSense) jistgħu wkoll jużaw cookies biex jservu reklami personalizzati.",
+      },
+      {
+        heading: "4. Servizzi ta' Partijiet Terzi",
+        content: "Nistgħu nużaw is-servizzi ta' partijiet terzi li ġejjin:\n\n• Google Analytics -- għall-analiżi tat-traffiku\n• Google AdSense -- għas-servizzjar ta' reklami\n\nJekk jogħġbok irreferi għall-politika tal-privatezza ta' kull servizz għad-dettalji dwar kif jittrattaw id-data tiegħek.",
+      },
+      {
+        heading: "5. Id-Drittijiet Tiegħek",
+        content: "Tista' tiddiżattiva jew tħassar il-cookies permezz tas-settings tal-browser tiegħek fi kwalunkwe ħin. Innota li xi karatteristiċi jistgħu ma jaħdmux sew mingħajr cookies.",
+      },
+      {
+        heading: "6. Bidliet f'Din il-Politika",
+        content: "Nistgħu naġġornaw din il-politika hekk kif jinbidlu l-liġijiet jew jevolvi s-servizz tagħna. Kwalunkwe bidla tiġi ppubblikata fuq din il-paġna.",
+      },
+      {
+        heading: "7. Ikkuntattjana",
+        content: "Għal mistoqsijiet relatati mal-privatezza, ikkuntattjana fuq support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Termini tas-Servizz",
+    lastUpdated: "Aġġornati l-aħħar: 1 ta' Marzu, 2026",
+    intro: "Grazzi li tuża ToolBox PDF. Billi taċċessa jew tuża s-servizz tagħna, qed taqbel mat-termini li ġejjin.",
+    sections: [
+      {
+        heading: "1. Dwar is-Servizz",
+        content: "ToolBox PDF huwa servizz online b'xejn li jippermettilek tgħaqqad, taqsam, tikkonverti, teditja u tikkompressja fajls PDF direttament mill-browser tiegħek.",
+      },
+      {
+        heading: "2. Użu Aċċettabbli",
+        content: "• Tista' tuża s-servizz biss għal skopijiet legali.\n• Tipproċessax fajls li jiksru d-drittijiet tal-awtur jew il-proprjetà intellettwali.\n• Tabużax mis-servizz u tpoġġix tagħbija eċċessiva fuq is-servers tagħna.\n• Aċċess awtomatizzat (bots, scrapers, eċċ.) mhuwiex permess.",
+      },
+      {
+        heading: "3. Immaniġġjar tal-Fajls",
+        content: "Il-fajls imtella' jintużaw biss biex issir l-operazzjoni mitluba. Jitħassru awtomatikament mis-servers tagħna fi żmien sagħtejn. Ma nanalizzawx u ma nżommux il-fajls tiegħek.",
+      },
+      {
+        heading: "4. Rinunzja",
+        content: "Is-servizz huwa pprovdut \"kif inhu.\" Ma nagħtux garanziji dwar il-preċiżjoni tal-konverżjoni, id-disponibbiltà mingħajr interruzzjoni, jew il-protezzjoni kontra t-telf ta' data. Dejjem żomm kopja ta' riżerva tal-fajls importanti qabel l-ipproċessar.",
+      },
+      {
+        heading: "5. Proprjetà Intellettwali",
+        content: "Il-kontenut kollu fuq dan is-sit -- inkluż id-disinn, il-logos u l-kodiċi -- jappartjeni lil-ToolBox. Inti żżomm id-drittijiet kollha fuq il-fajls li ttella'. Ma nikklejmjawx sjieda fuq il-kontenut tiegħek.",
+      },
+      {
+        heading: "6. Bidliet fis-Servizz",
+        content: "Nirriżervaw id-dritt li nimmodifikaw jew inwaqqfu karatteristiċi fi kwalunkwe ħin mingħajr avviż minn qabel.",
+      },
+      {
+        heading: "7. Aġġornamenti għal Dawn it-Termini",
+        content: "Dawn it-termini jistgħu jiġu riveduti skont il-bżonn. Il-bidliet jiġu ppubblikati fuq din il-paġna. L-użu kontinwat tas-servizz wara l-bidliet jikkostitwixxi aċċettazzjoni tat-termini aġġornati.",
+      },
+      {
+        heading: "8. Ikkuntattjana",
+        content: "Għal mistoqsijiet dwar dawn it-termini, ikkuntattjana fuq support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default mt;

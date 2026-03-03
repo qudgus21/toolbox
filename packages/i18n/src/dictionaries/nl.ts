@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const nl: Dictionary = {
+  home: {
+    title: "Alle tools die je nodig hebt om te werken met",
+    titleAccent: "PDFs",
+    description: "Voeg samen, splits, comprimeer en converteer PDF-bestanden. Gratis, snel en gemakkelijk te gebruiken.",
+    tabAll: "Alles",
+    categoryOrganize: "Organiseren",
+    categoryConvert: "Converteren",
+    categoryEdit: "Bewerken",
+    categoryOptimize: "Optimaliseren",
+    categorySecurity: "Beveiliging",
+    searchPlaceholder: "Tools zoeken...",
+    noResults: "Geen tools gevonden.",
+  },
+  trust: {
+    encryption: "Veilige versleuteling",
+    encryptionDesc: "Je bestanden zijn beschermd met 256-bits SSL-versleuteling.",
+    autoDelete: "Automatisch verwijderen",
+    autoDeleteDesc: "Geüploade bestanden worden na 2 uur automatisch verwijderd.",
+    free: "Volledig gratis",
+    freeDesc: "Gebruik alle tools zonder beperkingen, volledig gratis.",
+    cloud: "Cloudverwerking",
+    cloudDesc: "Verwerkt op onze servers, geen impact op je apparaat.",
+  },
+  tools: {
+    // Organiseren
+    merge: { title: "PDF samenvoegen", description: "Combineer meerdere PDF-bestanden tot één document." },
+    split: { title: "PDF splitsen", description: "Splits een PDF in afzonderlijke pagina's of secties." },
+    "delete-pages": { title: "Pagina's verwijderen", description: "Verwijder specifieke pagina's uit een PDF-document." },
+    "extract-pages": { title: "Pagina's extraheren", description: "Extraheer geselecteerde pagina's naar een nieuw PDF-bestand." },
+    "organize-pages": { title: "Pagina's organiseren", description: "Herschik, voeg toe of verwijder pagina's visueel." },
+    "scan-to-pdf": { title: "Scannen naar PDF", description: "Maak scans vanaf je apparaat en converteer naar PDF." },
+
+    // Converteren
+    "pdf-to-word": { title: "PDF naar Word", description: "Converteer PDF-documenten naar bewerkbare Word-bestanden." },
+    "pdf-to-jpg": { title: "PDF naar JPG", description: "Converteer PDF-pagina's naar hoogwaardige JPG-afbeeldingen." },
+    "pdf-to-excel": { title: "PDF naar Excel", description: "Extraheer tabellen en gegevens uit PDF's naar Excel-spreadsheets." },
+    "pdf-to-ppt": { title: "PDF naar PPT", description: "Converteer PDF-bestanden naar bewerkbare PowerPoint-dia's." },
+    "pdf-to-png": { title: "PDF naar PNG", description: "Converteer PDF-pagina's naar hoogwaardige PNG-afbeeldingen." },
+    "pdf-to-text": { title: "PDF naar tekst", description: "Extraheer alle tekstinhoud uit PDF-documenten." },
+    "pdf-to-pdfa": { title: "PDF naar PDF/A", description: "Converteer naar PDF/A-formaat voor langdurige archivering." },
+    "word-to-pdf": { title: "Word naar PDF", description: "Converteer Word-documenten naar PDF-formaat." },
+    "jpg-to-pdf": { title: "JPG naar PDF", description: "Converteer JPG-afbeeldingen naar een PDF-document." },
+    "excel-to-pdf": { title: "Excel naar PDF", description: "Converteer Excel-spreadsheets naar PDF-formaat." },
+    "ppt-to-pdf": { title: "PPT naar PDF", description: "Converteer PowerPoint-presentaties naar PDF-formaat." },
+    "html-to-pdf": { title: "HTML naar PDF", description: "Converteer webpagina's en HTML-bestanden naar PDF." },
+    "png-to-pdf": { title: "PNG naar PDF", description: "Converteer PNG-afbeeldingen naar een PDF-document." },
+    "image-to-pdf": { title: "Afbeelding naar PDF", description: "Combineer meerdere afbeeldingen van elk formaat in één PDF." },
+
+    // Bewerken
+    "edit-pdf": { title: "PDF bewerken", description: "Voeg tekst, afbeeldingen, vormen en annotaties toe aan een PDF." },
+    rotate: { title: "PDF draaien", description: "Draai PDF-pagina's naar de juiste oriëntatie." },
+    "page-numbers": { title: "Paginanummers", description: "Voeg paginanummers toe aan je PDF-document." },
+    watermark: { title: "Watermerk", description: "Voeg tekst- of afbeeldingswatermerken toe aan je PDF." },
+    crop: { title: "PDF bijsnijden", description: "Snij marges bij of selecteer specifieke gebieden van PDF-pagina's." },
+    sign: { title: "PDF ondertekenen", description: "Voeg elektronische handtekeningen toe aan je PDF-documenten." },
+    annotate: { title: "PDF annoteren", description: "Markeer, onderstreep en voeg opmerkingen toe aan PDF's." },
+    flatten: { title: "PDF platmaken", description: "Voeg formuliervelden en annotaties samen in de pagina-inhoud." },
+    resize: { title: "PDF formaat wijzigen", description: "Wijzig het PDF-paginaformaat (A4, Letter, aangepast)." },
+    "edit-metadata": { title: "Metadata bewerken", description: "Wijzig PDF-titel, auteur, trefwoorden en andere metadata." },
+    grayscale: { title: "Grijstinten", description: "Converteer PDF-kleuren naar zwart-wit." },
+
+    // Optimaliseren
+    compress: { title: "PDF comprimeren", description: "Verklein de PDF-bestandsgrootte zonder kwaliteitsverlies." },
+    repair: { title: "PDF repareren", description: "Repareer beschadigde of corrupte PDF-bestanden." },
+    ocr: { title: "OCR PDF", description: "Maak gescande PDF's doorzoekbaar met tekstherkenning." },
+    "web-optimize": { title: "Weboptimalisatie", description: "Optimaliseer PDF's voor sneller laden op het web." },
+
+    // Beveiliging
+    protect: { title: "PDF beveiligen", description: "Voeg wachtwoordbeveiliging toe en versleutel je PDF." },
+    unlock: { title: "PDF ontgrendelen", description: "Verwijder wachtwoordbeveiliging van PDF-bestanden." },
+    redact: { title: "PDF redigeren", description: "Verwijder gevoelige informatie permanent uit PDF's." },
+    compare: { title: "PDF vergelijken", description: "Vergelijk twee PDF's naast elkaar en ontdek verschillen." },
+    translate: { title: "PDF vertalen", description: "Vertaal PDF-inhoud naar een andere taal met AI." },
+  },
+  nav: {
+    allTools: "Alle tools",
+    language: "Taal",
+  },
+  footer: {
+    tools: "Tools",
+    legal: "Juridisch",
+    privacy: "Privacybeleid",
+    terms: "Servicevoorwaarden",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Terug naar alle tools",
+    dropFiles: "Sleep je bestanden hierheen",
+    acceptedFormats: "Geaccepteerde formaten",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Gratis PDF-tools",
+    siteDescription: "Voeg samen, splits, comprimeer en converteer PDF-bestanden gratis online.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Wij gebruiken cookies om je ervaring te verbeteren.",
+    accept: "Accepteren",
+    decline: "Weigeren",
+  },
+  privacy: {
+    title: "Privacybeleid",
+    lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
+    intro: "Bij ToolBox PDF hechten we veel waarde aan je privacy. In dit beleid leggen we uit welke gegevens we verzamelen wanneer je onze dienst gebruikt en hoe we daarmee omgaan.",
+    sections: [
+      {
+        heading: "1. Gegevens die we verzamelen",
+        content: "Voor het gebruik van ToolBox PDF hoef je geen account aan te maken. We verzamelen geen persoonlijke gegevens. Wel kunnen we automatisch niet-identificeerbare informatie verzamelen om onze dienst te verbeteren:\n\n• Browsertype en -versie\n• Besturingssysteem\n• Bezochte pagina's en bestede tijd\n• Cookies en vergelijkbare technologieën voor gebruikspatronen",
+      },
+      {
+        heading: "2. Bestandsverwerking",
+        content: "Bestanden die je uploadt worden op onze servers verwerkt en binnen 2 uur automatisch verwijderd. We lezen, bewaren of delen de inhoud van je bestanden met niemand.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "We gebruiken cookies om je voorkeuren te onthouden, zoals thema (donkere/lichte modus) en taalkeuze. Advertentienetwerken (zoals Google AdSense) kunnen ook cookies plaatsen om gepersonaliseerde advertenties te tonen.",
+      },
+      {
+        heading: "4. Diensten van derden",
+        content: "We maken mogelijk gebruik van de volgende diensten van derden:\n\n• Google Analytics — voor verkeersanalyse\n• Google AdSense — voor het tonen van advertenties\n\nRaadpleeg het privacybeleid van de betreffende dienst voor meer informatie over hoe zij met je gegevens omgaan.",
+      },
+      {
+        heading: "5. Jouw rechten",
+        content: "Je kunt cookies op elk moment uitschakelen of verwijderen via je browserinstellingen. Houd er rekening mee dat sommige functies mogelijk niet goed werken zonder cookies.",
+      },
+      {
+        heading: "6. Wijzigingen in dit beleid",
+        content: "We kunnen dit beleid bijwerken wanneer wet- en regelgeving verandert of onze dienst zich ontwikkelt. Eventuele wijzigingen worden op deze pagina gepubliceerd.",
+      },
+      {
+        heading: "7. Contact",
+        content: "Heb je vragen over je privacy? Neem contact met ons op via support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Servicevoorwaarden",
+    lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
+    intro: "Bedankt dat je ToolBox PDF gebruikt. Door onze dienst te bezoeken of te gebruiken, ga je akkoord met de volgende voorwaarden.",
+    sections: [
+      {
+        heading: "1. Over de dienst",
+        content: "ToolBox PDF is een gratis online dienst waarmee je PDF-bestanden kunt samenvoegen, splitsen, converteren, bewerken en comprimeren, rechtstreeks in je browser.",
+      },
+      {
+        heading: "2. Aanvaardbaar gebruik",
+        content: "• Je mag de dienst alleen voor wettige doeleinden gebruiken.\n• Verwerk geen bestanden die inbreuk maken op auteursrechten of intellectueel eigendom.\n• Misbruik de dienst niet en belast onze servers niet bovenmatig.\n• Geautomatiseerde toegang (bots, scrapers, enz.) is niet toegestaan.",
+      },
+      {
+        heading: "3. Bestandsverwerking",
+        content: "Geüploade bestanden worden uitsluitend gebruikt om de gevraagde bewerking uit te voeren. Ze worden binnen 2 uur automatisch van onze servers verwijderd. We analyseren of bewaren je bestanden niet.",
+      },
+      {
+        heading: "4. Aansprakelijkheid",
+        content: "De dienst wordt aangeboden \"zoals deze is\". We geven geen garanties met betrekking tot de nauwkeurigheid van conversies, ononderbroken beschikbaarheid of bescherming tegen gegevensverlies. Maak altijd een back-up van belangrijke bestanden voordat je ze verwerkt.",
+      },
+      {
+        heading: "5. Intellectueel eigendom",
+        content: "Alle inhoud op deze site — inclusief ontwerp, logo's en code — is eigendom van ToolBox. Jij behoudt het volledige eigendomsrecht over de bestanden die je uploadt. We claimen geen enkel recht op jouw bestanden.",
+      },
+      {
+        heading: "6. Wijzigingen aan de dienst",
+        content: "We behouden ons het recht voor om functies op elk moment te wijzigen of stop te zetten zonder voorafgaande kennisgeving.",
+      },
+      {
+        heading: "7. Wijzigingen in deze voorwaarden",
+        content: "Deze voorwaarden kunnen indien nodig worden herzien. Wijzigingen worden op deze pagina gepubliceerd. Door de dienst na wijzigingen te blijven gebruiken, accepteer je de bijgewerkte voorwaarden.",
+      },
+      {
+        heading: "8. Contact",
+        content: "Heb je vragen over deze voorwaarden? Neem contact met ons op via support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default nl;

@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const lv: Dictionary = {
+  home: {
+    title: "Visi nepieciešamie rīki darbam ar",
+    titleAccent: "PDFs",
+    description: "Apvienojiet, sadaliet, saspiežiet un konvertējiet PDF failus. Bezmaksas, ātri un vienkārši lietojami.",
+    tabAll: "Visi",
+    categoryOrganize: "Sakārtot",
+    categoryConvert: "Konvertēt",
+    categoryEdit: "Rediģēt",
+    categoryOptimize: "Optimizēt",
+    categorySecurity: "Drošība",
+    searchPlaceholder: "Meklēt rīkus...",
+    noResults: "Rīki nav atrasti.",
+  },
+  trust: {
+    encryption: "Droša šifrēšana",
+    encryptionDesc: "Jūsu faili ir aizsargāti ar 256 bitu SSL šifrēšanu.",
+    autoDelete: "Automātiskā dzēšana",
+    autoDeleteDesc: "Augšupielādētie faili tiek automātiski dzēsti pēc 2 stundām.",
+    free: "Pilnīgi bezmaksas",
+    freeDesc: "Izmantojiet visus rīkus bez ierobežojumiem, pilnīgi bez maksas.",
+    cloud: "Mākoņapstrāde",
+    cloudDesc: "Apstrādāts mūsu serveros, neietekmē jūsu ierīci.",
+  },
+  tools: {
+    // Sakārtot
+    merge: { title: "Apvienot PDF", description: "Apvienojiet vairākus PDF failus vienā dokumentā." },
+    split: { title: "Sadalīt PDF", description: "Sadaliet PDF atsevišķās lapās vai sadaļās." },
+    "delete-pages": { title: "Dzēst lapas", description: "Noņemiet konkrētas lapas no PDF dokumenta." },
+    "extract-pages": { title: "Izvilkt lapas", description: "Izvelciet atlasītās lapas jaunā PDF failā." },
+    "organize-pages": { title: "Sakārtot lapas", description: "Pārkārtojiet, pievienojiet vai noņemiet lapas vizuāli." },
+    "scan-to-pdf": { title: "Skenēt uz PDF", description: "Veiciet skenēšanu no savas ierīces un konvertējiet uz PDF." },
+
+    // Konvertēt
+    "pdf-to-word": { title: "PDF uz Word", description: "Konvertējiet PDF dokumentus rediģējamos Word failos." },
+    "pdf-to-jpg": { title: "PDF uz JPG", description: "Konvertējiet PDF lapas augstas kvalitātes JPG attēlos." },
+    "pdf-to-excel": { title: "PDF uz Excel", description: "Izvelciet tabulas un datus no PDF failiem Excel izklājlapās." },
+    "pdf-to-ppt": { title: "PDF uz PPT", description: "Konvertējiet PDF failus rediģējamos PowerPoint slaidos." },
+    "pdf-to-png": { title: "PDF uz PNG", description: "Konvertējiet PDF lapas augstas kvalitātes PNG attēlos." },
+    "pdf-to-text": { title: "PDF uz tekstu", description: "Izvelciet visu teksta saturu no PDF dokumentiem." },
+    "pdf-to-pdfa": { title: "PDF uz PDF/A", description: "Konvertējiet uz PDF/A formātu ilgtermiņa arhivēšanai." },
+    "word-to-pdf": { title: "Word uz PDF", description: "Konvertējiet Word dokumentus PDF formātā." },
+    "jpg-to-pdf": { title: "JPG uz PDF", description: "Konvertējiet JPG attēlus PDF dokumentā." },
+    "excel-to-pdf": { title: "Excel uz PDF", description: "Konvertējiet Excel izklājlapas PDF formātā." },
+    "ppt-to-pdf": { title: "PPT uz PDF", description: "Konvertējiet PowerPoint prezentācijas PDF formātā." },
+    "html-to-pdf": { title: "HTML uz PDF", description: "Konvertējiet tīmekļa lapas un HTML failus uz PDF." },
+    "png-to-pdf": { title: "PNG uz PDF", description: "Konvertējiet PNG attēlus PDF dokumentā." },
+    "image-to-pdf": { title: "Attēls uz PDF", description: "Apvienojiet vairākus jebkura formāta attēlus vienā PDF failā." },
+
+    // Rediģēt
+    "edit-pdf": { title: "Rediģēt PDF", description: "Pievienojiet tekstu, attēlus, formas un anotācijas PDF failam." },
+    rotate: { title: "Pagriezt PDF", description: "Pagrieziet PDF lapas pareizā orientācijā." },
+    "page-numbers": { title: "Lapu numuri", description: "Pievienojiet lapu numurus savam PDF dokumentam." },
+    watermark: { title: "Ūdenszīme", description: "Pievienojiet teksta vai attēlu ūdenszīmes savam PDF." },
+    crop: { title: "Apgriezt PDF", description: "Apgrieziet malas vai atlasiet konkrētas PDF lapu zonas." },
+    sign: { title: "Parakstīt PDF", description: "Pievienojiet elektroniskos parakstus saviem PDF dokumentiem." },
+    annotate: { title: "Anotēt PDF", description: "Iezīmējiet, pasvītrojiet un pievienojiet komentārus PDF failiem." },
+    flatten: { title: "Saplacināt PDF", description: "Sapludiniet veidlapu laukus un anotācijas lapas saturā." },
+    resize: { title: "Mainīt PDF izmēru", description: "Mainiet PDF lapas izmēru (A4, Letter, pielāgots)." },
+    "edit-metadata": { title: "Rediģēt metadatus", description: "Mainiet PDF nosaukumu, autoru, atslēgvārdus un citus metadatus." },
+    grayscale: { title: "Pelēktoņi", description: "Konvertējiet PDF krāsas uz melnbaltu." },
+
+    // Optimizēt
+    compress: { title: "Saspiest PDF", description: "Samaziniet PDF faila izmēru, nezaudējot kvalitāti." },
+    repair: { title: "Labot PDF", description: "Salabojiet bojātus vai korumpētus PDF failus." },
+    ocr: { title: "OCR PDF", description: "Padariet skenētus PDF meklējamus ar teksta atpazīšanu." },
+    "web-optimize": { title: "Tīmekļa optimizācija", description: "Linearizējiet PDF failus ātrākai ielādei tīmeklī." },
+
+    // Drošība
+    protect: { title: "Aizsargāt PDF", description: "Pievienojiet paroles aizsardzību un šifrējiet savu PDF." },
+    unlock: { title: "Atbloķēt PDF", description: "Noņemiet paroles aizsardzību no PDF failiem." },
+    redact: { title: "Rediģēt PDF", description: "Neatgriezeniski noņemiet sensitīvu informāciju no PDF failiem." },
+    compare: { title: "Salīdzināt PDF", description: "Salīdziniet divus PDF failus blakus un atrodiet atšķirības." },
+    translate: { title: "Tulkot PDF", description: "Tulkojiet PDF saturu citā valodā ar MI palīdzību." },
+  },
+  nav: {
+    allTools: "Visi rīki",
+    language: "Valoda",
+  },
+  footer: {
+    tools: "Rīki",
+    legal: "Juridiskā informācija",
+    privacy: "Privātuma politika",
+    terms: "Lietošanas noteikumi",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Atpakaļ pie visiem rīkiem",
+    dropFiles: "Nometiet savus failus šeit",
+    acceptedFormats: "Pieņemtie formāti",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Bezmaksas PDF rīki",
+    siteDescription: "Apvienojiet, sadaliet, saspiežiet un konvertējiet PDF failus tiešsaistē bez maksas.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Mēs izmantojam sīkdatnes, lai uzlabotu jūsu pieredzi.",
+    accept: "Pieņemt",
+    decline: "Noraidīt",
+  },
+  privacy: {
+    title: "Privātuma politika",
+    lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
+    intro: "ToolBox PDF rūpējas par jūsu privātumu. Šī politika skaidro, kādu informāciju mēs apkopojam, kad izmantojat mūsu pakalpojumu, un kā mēs ar to rīkojamies.",
+    sections: [
+      {
+        heading: "1. Informācija, ko apkopojam",
+        content: "ToolBox PDF neprasa reģistrāciju. Mēs neapkopojam personisko informāciju. Tomēr mēs varam automātiski apkopot neidentificējošus datus, lai uzlabotu pakalpojumu:\n\n• Pārlūkprogrammas tips un versija\n• Operētājsistēma\n• Apmeklētās lapas un pavadītais laiks\n• Sīkdatnes un līdzīgas tehnoloģijas lietošanas paradumu analīzei",
+      },
+      {
+        heading: "2. Failu apstrāde",
+        content: "Jūsu augšupielādētie faili tiek apstrādāti mūsu serveros un automātiski dzēsti 2 stundu laikā. Mēs nelasām, neglabājam un nekopīgojam jūsu failu saturu ar nevienu.",
+      },
+      {
+        heading: "3. Sīkdatnes",
+        content: "Mēs izmantojam sīkdatnes, lai atcerētos jūsu iestatījumus, piemēram, motīvu (tumšais/gaišais režīms) un valodas izvēli. Reklāmas tīkli (piem., Google AdSense) var arī izmantot sīkdatnes, lai rādītu personalizētas reklāmas.",
+      },
+      {
+        heading: "4. Trešo pušu pakalpojumi",
+        content: "Mēs varam izmantot šādus trešo pušu pakalpojumus:\n\n• Google Analytics — datplūsmas analīzei\n• Google AdSense — reklāmu rādīšanai\n\nLūdzu, skatiet katra pakalpojuma privātuma politiku, lai uzzinātu, kā tie apstrādā jūsu datus.",
+      },
+      {
+        heading: "5. Jūsu tiesības",
+        content: "Jūs varat jebkurā laikā atspējot vai dzēst sīkdatnes savā pārlūkprogrammas iestatījumos. Ņemiet vērā, ka dažas funkcijas var nedarboties pareizi bez sīkdatnēm.",
+      },
+      {
+        heading: "6. Izmaiņas šajā politikā",
+        content: "Mēs varam atjaunināt šo politiku, mainoties likumiem vai attīstoties mūsu pakalpojumam. Visas izmaiņas tiks publicētas šajā lapā.",
+      },
+      {
+        heading: "7. Sazinieties ar mums",
+        content: "Ja jums ir jautājumi par privātumu, rakstiet mums uz support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Lietošanas noteikumi",
+    lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
+    intro: "Paldies, ka izmantojat ToolBox PDF. Piekļūstot mūsu pakalpojumam vai to izmantojot, jūs piekrītat šādiem noteikumiem.",
+    sections: [
+      {
+        heading: "1. Par pakalpojumu",
+        content: "ToolBox PDF ir bezmaksas tiešsaistes pakalpojums, kas ļauj apvienot, sadalīt, konvertēt, rediģēt un saspiest PDF failus tieši jūsu pārlūkprogrammā.",
+      },
+      {
+        heading: "2. Pieļaujamā lietošana",
+        content: "• Pakalpojumu drīkst izmantot tikai likumīgiem mērķiem.\n• Neapstrādājiet failus, kas pārkāpj autortiesības vai intelektuālo īpašumu.\n• Neļaunprātīgi neizmantojiet pakalpojumu un nepārslogojiet mūsu serverus.\n• Automatizēta piekļuve (boti, skrāperi u.c.) nav atļauta.",
+      },
+      {
+        heading: "3. Failu apstrāde",
+        content: "Augšupielādētie faili tiek izmantoti tikai pieprasītās darbības veikšanai. Tie automātiski tiek dzēsti no mūsu serveriem 2 stundu laikā. Mēs neanalizējam un neglabājam jūsu failus.",
+      },
+      {
+        heading: "4. Atbildības ierobežojums",
+        content: "Pakalpojums tiek sniegts \"tāds, kāds ir\". Mēs nesniedzam garantijas par konvertēšanas precizitāti, nepārtrauktu pieejamību vai aizsardzību pret datu zudumu. Pirms apstrādes vienmēr izveidojiet svarīgu failu dublējumkopijas.",
+      },
+      {
+        heading: "5. Intelektuālais īpašums",
+        content: "Viss šīs vietnes saturs — ieskaitot dizainu, logotipus un kodu — pieder ToolBox. Jūs saglabājat pilnas tiesības uz visiem augšupielādētajiem failiem. Mēs nepretendējam uz jūsu saturu.",
+      },
+      {
+        heading: "6. Pakalpojuma izmaiņas",
+        content: "Mēs paturam tiesības mainīt vai pārtraukt funkcijas jebkurā laikā bez iepriekšēja brīdinājuma.",
+      },
+      {
+        heading: "7. Šo noteikumu atjauninājumi",
+        content: "Šie noteikumi var tikt pārskatīti pēc nepieciešamības. Izmaiņas tiks publicētas šajā lapā. Turpinot lietot pakalpojumu pēc izmaiņām, jūs piekrītat atjauninātajiem noteikumiem.",
+      },
+      {
+        heading: "8. Sazinieties ar mums",
+        content: "Ja jums ir jautājumi par šiem noteikumiem, rakstiet mums uz support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default lv;

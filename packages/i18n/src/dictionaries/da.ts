@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const da: Dictionary = {
+  home: {
+    title: "Alle de værktøjer du har brug for til at arbejde med",
+    titleAccent: "PDFs",
+    description: "Flet, opdel, komprimer og konverter PDF-filer. Gratis, hurtigt og nemt at bruge.",
+    tabAll: "Alle",
+    categoryOrganize: "Organiser",
+    categoryConvert: "Konverter",
+    categoryEdit: "Rediger",
+    categoryOptimize: "Optimer",
+    categorySecurity: "Sikkerhed",
+    searchPlaceholder: "Søg værktøjer...",
+    noResults: "Ingen værktøjer fundet.",
+  },
+  trust: {
+    encryption: "Sikker kryptering",
+    encryptionDesc: "Dine filer er beskyttet med 256-bit SSL-kryptering.",
+    autoDelete: "Automatisk sletning",
+    autoDeleteDesc: "Uploadede filer slettes automatisk efter 2 timer.",
+    free: "Helt gratis",
+    freeDesc: "Brug alle værktøjer uden begrænsninger, helt gratis.",
+    cloud: "Cloud-behandling",
+    cloudDesc: "Behandlet på vores servere, ingen belastning af din enhed.",
+  },
+  tools: {
+    // Organiser
+    merge: { title: "Flet PDF", description: "Kombiner flere PDF-filer til ét dokument." },
+    split: { title: "Opdel PDF", description: "Opdel en PDF i individuelle sider eller sektioner." },
+    "delete-pages": { title: "Slet sider", description: "Fjern bestemte sider fra et PDF-dokument." },
+    "extract-pages": { title: "Udtræk sider", description: "Udtræk valgte sider til en ny PDF-fil." },
+    "organize-pages": { title: "Organiser sider", description: "Omarranger, tilføj eller fjern sider visuelt." },
+    "scan-to-pdf": { title: "Scan til PDF", description: "Tag scanninger fra din enhed og konverter til PDF." },
+
+    // Konverter
+    "pdf-to-word": { title: "PDF til Word", description: "Konverter PDF-dokumenter til redigerbare Word-filer." },
+    "pdf-to-jpg": { title: "PDF til JPG", description: "Konverter PDF-sider til JPG-billeder i høj kvalitet." },
+    "pdf-to-excel": { title: "PDF til Excel", description: "Udtræk tabeller og data fra PDF-filer til Excel-regneark." },
+    "pdf-to-ppt": { title: "PDF til PPT", description: "Konverter PDF-filer til redigerbare PowerPoint-slides." },
+    "pdf-to-png": { title: "PDF til PNG", description: "Konverter PDF-sider til PNG-billeder i høj kvalitet." },
+    "pdf-to-text": { title: "PDF til tekst", description: "Udtræk alt tekstindhold fra PDF-dokumenter." },
+    "pdf-to-pdfa": { title: "PDF til PDF/A", description: "Konverter til PDF/A-format til langtidsarkivering." },
+    "word-to-pdf": { title: "Word til PDF", description: "Konverter Word-dokumenter til PDF-format." },
+    "jpg-to-pdf": { title: "JPG til PDF", description: "Konverter JPG-billeder til et PDF-dokument." },
+    "excel-to-pdf": { title: "Excel til PDF", description: "Konverter Excel-regneark til PDF-format." },
+    "ppt-to-pdf": { title: "PPT til PDF", description: "Konverter PowerPoint-præsentationer til PDF-format." },
+    "html-to-pdf": { title: "HTML til PDF", description: "Konverter websider og HTML-filer til PDF." },
+    "png-to-pdf": { title: "PNG til PDF", description: "Konverter PNG-billeder til et PDF-dokument." },
+    "image-to-pdf": { title: "Billede til PDF", description: "Kombiner flere billeder i ethvert format til en enkelt PDF." },
+
+    // Rediger
+    "edit-pdf": { title: "Rediger PDF", description: "Tilføj tekst, billeder, figurer og noter til en PDF." },
+    rotate: { title: "Roter PDF", description: "Roter PDF-sider til den korrekte orientering." },
+    "page-numbers": { title: "Sidetal", description: "Tilføj sidetal til dit PDF-dokument." },
+    watermark: { title: "Vandmærke", description: "Tilføj tekst- eller billedvandmærker til din PDF." },
+    crop: { title: "Beskær PDF", description: "Beskær margener eller vælg bestemte områder af PDF-sider." },
+    sign: { title: "Underskriv PDF", description: "Tilføj elektroniske underskrifter til dine PDF-dokumenter." },
+    annotate: { title: "Annoter PDF", description: "Fremhæv, understreg og tilføj kommentarer til PDF-filer." },
+    flatten: { title: "Fladgør PDF", description: "Flet formularfelter og annoteringer ind i sideindholdet." },
+    resize: { title: "Tilpas PDF-størrelse", description: "Ændr PDF-sidestørrelse (A4, Letter, brugerdefineret)." },
+    "edit-metadata": { title: "Rediger metadata", description: "Ændr PDF-titel, forfatter, nøgleord og andre metadata." },
+    grayscale: { title: "Gråtoner", description: "Konverter PDF-farver til sort og hvid." },
+
+    // Optimer
+    compress: { title: "Komprimer PDF", description: "Reducer PDF-filstørrelsen uden at miste kvalitet." },
+    repair: { title: "Reparer PDF", description: "Ret beskadigede eller ødelagte PDF-filer." },
+    ocr: { title: "OCR PDF", description: "Gør scannede PDF-filer søgbare med tekstgenkendelse." },
+    "web-optimize": { title: "Weboptimering", description: "Lineariser PDF-filer til hurtigere webindlæsning." },
+
+    // Sikkerhed
+    protect: { title: "Beskyt PDF", description: "Tilføj adgangskodebeskyttelse og krypter din PDF." },
+    unlock: { title: "Lås PDF op", description: "Fjern adgangskodebeskyttelse fra PDF-filer." },
+    redact: { title: "Sløre PDF", description: "Fjern permanent følsomme oplysninger fra PDF-filer." },
+    compare: { title: "Sammenlign PDF", description: "Sammenlign to PDF-filer side om side og find forskelle." },
+    translate: { title: "Oversæt PDF", description: "Oversæt PDF-indhold til et andet sprog med AI." },
+  },
+  nav: {
+    allTools: "Alle værktøjer",
+    language: "Sprog",
+  },
+  footer: {
+    tools: "Værktøjer",
+    legal: "Juridisk",
+    privacy: "Privatlivspolitik",
+    terms: "Servicevilkår",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Tilbage til alle værktøjer",
+    dropFiles: "Slip dine filer her",
+    acceptedFormats: "Accepterede formater",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Gratis PDF-værktøjer",
+    siteDescription: "Flet, opdel, komprimer og konverter PDF-filer online gratis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Vi bruger cookies for at forbedre din oplevelse.",
+    accept: "Acceptér",
+    decline: "Afvis",
+  },
+  privacy: {
+    title: "Privatlivspolitik",
+    lastUpdated: "Sidst opdateret: 1. marts 2026",
+    intro: "Hos ToolBox PDF tager vi dit privatliv alvorligt. Denne politik forklarer, hvilke oplysninger vi indsamler, når du bruger vores tjeneste, og hvordan vi håndterer dem.",
+    sections: [
+      {
+        heading: "1. Oplysninger vi indsamler",
+        content: "ToolBox PDF kræver ingen oprettelse af konto. Vi indsamler ikke personlige oplysninger. Vi kan dog automatisk indsamle ikke-identificerbare data for at forbedre tjenesten:\n\n• Browsertype og -version\n• Styresystem\n• Besøgte sider og tidsforbrug\n• Cookies og lignende teknologier til brugsmønstre",
+      },
+      {
+        heading: "2. Filhåndtering",
+        content: "Filer du uploader behandles på vores servere og slettes automatisk inden for 2 timer. Vi læser, gemmer eller deler ikke indholdet af dine filer med nogen.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Vi bruger cookies til at huske dine præferencer, f.eks. tema (mørk/lys tilstand) og sprogvalg. Annoncenetværk (f.eks. Google AdSense) kan også bruge cookies til at vise personligt tilpassede annoncer.",
+      },
+      {
+        heading: "4. Tredjepartstjenester",
+        content: "Vi kan benytte følgende tredjepartstjenester:\n\n• Google Analytics — til trafikanalyse\n• Google AdSense — til visning af annoncer\n\nSe venligst den enkelte tjenestes egen privatlivspolitik for detaljer om, hvordan de håndterer dine data.",
+      },
+      {
+        heading: "5. Dine rettigheder",
+        content: "Du kan til enhver tid deaktivere eller slette cookies via din browsers indstillinger. Bemærk, at nogle funktioner muligvis ikke fungerer korrekt uden cookies.",
+      },
+      {
+        heading: "6. Ændringer i denne politik",
+        content: "Vi kan opdatere denne politik i takt med ændringer i lovgivningen eller udviklingen af vores tjeneste. Eventuelle ændringer vil blive offentliggjort på denne side.",
+      },
+      {
+        heading: "7. Kontakt os",
+        content: "Har du spørgsmål om dit privatliv, kan du kontakte os på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Servicevilkår",
+    lastUpdated: "Sidst opdateret: 1. marts 2026",
+    intro: "Tak fordi du bruger ToolBox PDF. Ved at tilgå eller bruge vores tjeneste accepterer du følgende vilkår.",
+    sections: [
+      {
+        heading: "1. Om tjenesten",
+        content: "ToolBox PDF er en gratis onlinetjeneste, der giver dig mulighed for at flette, opdele, konvertere, redigere og komprimere PDF-filer direkte i din browser.",
+      },
+      {
+        heading: "2. Acceptabel brug",
+        content: "• Du må kun bruge tjenesten til lovlige formål.\n• Behandl ikke filer, der krænker ophavsret eller intellektuel ejendomsret.\n• Misbrug ikke tjenesten, og belast ikke vores servere unødigt.\n• Automatiseret adgang (bots, scrapere osv.) er ikke tilladt.",
+      },
+      {
+        heading: "3. Filhåndtering",
+        content: "Uploadede filer bruges udelukkende til at udføre den ønskede handling. De slettes automatisk fra vores servere inden for 2 timer. Vi analyserer eller opbevarer ikke dine filer.",
+      },
+      {
+        heading: "4. Ansvarsfraskrivelse",
+        content: "Tjenesten leveres \"som den er\". Vi giver ingen garantier vedrørende konverteringsnøjagtighed, uafbrudt tilgængelighed eller beskyttelse mod datatab. Tag altid en sikkerhedskopi af vigtige filer, før du behandler dem.",
+      },
+      {
+        heading: "5. Immaterielle rettigheder",
+        content: "Alt indhold på denne side — herunder design, logoer og kode — tilhører ToolBox. Du bevarer det fulde ejerskab over de filer, du uploader. Vi gør intet krav på dit indhold.",
+      },
+      {
+        heading: "6. Ændringer af tjenesten",
+        content: "Vi forbeholder os retten til at ændre eller nedlægge funktioner til enhver tid uden forudgående varsel.",
+      },
+      {
+        heading: "7. Opdateringer af disse vilkår",
+        content: "Disse vilkår kan blive revideret efter behov. Ændringer vil blive offentliggjort på denne side. Fortsat brug af tjenesten efter ændringer udgør en accept af de opdaterede vilkår.",
+      },
+      {
+        heading: "8. Kontakt os",
+        content: "Har du spørgsmål om disse vilkår, kan du kontakte os på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default da;

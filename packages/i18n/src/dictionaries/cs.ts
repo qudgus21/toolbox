@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const cs: Dictionary = {
+  home: {
+    title: "Všechny nástroje, které potřebujete pro práci s",
+    titleAccent: "PDFs",
+    description: "Slučte, rozdělte, komprimujte a převeďte PDF soubory. Zdarma, rychle a snadno.",
+    tabAll: "Vše",
+    categoryOrganize: "Organizovat",
+    categoryConvert: "Převést",
+    categoryEdit: "Upravit",
+    categoryOptimize: "Optimalizovat",
+    categorySecurity: "Zabezpečení",
+    searchPlaceholder: "Hledat nástroje...",
+    noResults: "Žádné nástroje nebyly nalezeny.",
+  },
+  trust: {
+    encryption: "Bezpečné šifrování",
+    encryptionDesc: "Vaše soubory jsou chráněny 256bitovým SSL šifrováním.",
+    autoDelete: "Automatické smazání",
+    autoDeleteDesc: "Nahrané soubory se automaticky smažou po 2 hodinách.",
+    free: "Zcela zdarma",
+    freeDesc: "Používejte všechny nástroje bez omezení, zcela zdarma.",
+    cloud: "Cloudové zpracování",
+    cloudDesc: "Zpracováno na našich serverech, bez dopadu na vaše zařízení.",
+  },
+  tools: {
+    // Organizovat
+    merge: { title: "Sloučit PDF", description: "Spojte více PDF souborů do jednoho dokumentu." },
+    split: { title: "Rozdělit PDF", description: "Rozdělte PDF na jednotlivé stránky nebo sekce." },
+    "delete-pages": { title: "Smazat stránky", description: "Odstraňte konkrétní stránky z PDF dokumentu." },
+    "extract-pages": { title: "Extrahovat stránky", description: "Extrahujte vybrané stránky do nového PDF souboru." },
+    "organize-pages": { title: "Organizovat stránky", description: "Přeuspořádejte, přidejte nebo odstraňte stránky vizuálně." },
+    "scan-to-pdf": { title: "Skenovat do PDF", description: "Zachyťte skeny ze zařízení a převeďte do PDF." },
+
+    // Převést
+    "pdf-to-word": { title: "PDF do Word", description: "Převeďte PDF dokumenty na editovatelné Word soubory." },
+    "pdf-to-jpg": { title: "PDF do JPG", description: "Převeďte PDF stránky na vysoce kvalitní JPG obrázky." },
+    "pdf-to-excel": { title: "PDF do Excel", description: "Extrahujte tabulky a data z PDF do Excelových tabulek." },
+    "pdf-to-ppt": { title: "PDF do PPT", description: "Převeďte PDF soubory na editovatelné PowerPoint snímky." },
+    "pdf-to-png": { title: "PDF do PNG", description: "Převeďte PDF stránky na vysoce kvalitní PNG obrázky." },
+    "pdf-to-text": { title: "PDF do textu", description: "Extrahujte veškerý textový obsah z PDF dokumentů." },
+    "pdf-to-pdfa": { title: "PDF do PDF/A", description: "Převeďte do formátu PDF/A pro dlouhodobou archivaci." },
+    "word-to-pdf": { title: "Word do PDF", description: "Převeďte Word dokumenty do formátu PDF." },
+    "jpg-to-pdf": { title: "JPG do PDF", description: "Převeďte JPG obrázky do PDF dokumentu." },
+    "excel-to-pdf": { title: "Excel do PDF", description: "Převeďte Excelové tabulky do formátu PDF." },
+    "ppt-to-pdf": { title: "PPT do PDF", description: "Převeďte PowerPoint prezentace do formátu PDF." },
+    "html-to-pdf": { title: "HTML do PDF", description: "Převeďte webové stránky a HTML soubory do PDF." },
+    "png-to-pdf": { title: "PNG do PDF", description: "Převeďte PNG obrázky do PDF dokumentu." },
+    "image-to-pdf": { title: "Obrázek do PDF", description: "Spojte více obrázků jakéhokoli formátu do jednoho PDF." },
+
+    // Upravit
+    "edit-pdf": { title: "Upravit PDF", description: "Přidejte text, obrázky, tvary a anotace do PDF." },
+    rotate: { title: "Otočit PDF", description: "Otočte stránky PDF do správné orientace." },
+    "page-numbers": { title: "Čísla stránek", description: "Přidejte čísla stránek do svého PDF dokumentu." },
+    watermark: { title: "Vodoznak", description: "Přidejte textové nebo obrázkové vodoznaky do PDF." },
+    crop: { title: "Oříznout PDF", description: "Ořízněte okraje nebo vyberte konkrétní oblasti stránek PDF." },
+    sign: { title: "Podepsat PDF", description: "Přidejte elektronické podpisy do PDF dokumentů." },
+    annotate: { title: "Anotovat PDF", description: "Zvýrazňujte, podtrhávejte a přidávejte komentáře do PDF." },
+    flatten: { title: "Sloučit vrstvy PDF", description: "Sloučte formulářová pole a anotace do obsahu stránky." },
+    resize: { title: "Změnit velikost PDF", description: "Změňte velikost stránky PDF (A4, Letter, vlastní)." },
+    "edit-metadata": { title: "Upravit metadata", description: "Změňte název, autora, klíčová slova a další metadata PDF." },
+    grayscale: { title: "Stupně šedi", description: "Převeďte barvy PDF na černobílé." },
+
+    // Optimalizovat
+    compress: { title: "Komprimovat PDF", description: "Zmenšete velikost PDF souboru bez ztráty kvality." },
+    repair: { title: "Opravit PDF", description: "Opravte poškozené nebo chybné PDF soubory." },
+    ocr: { title: "OCR PDF", description: "Umožněte vyhledávání v naskenovaných PDF pomocí rozpoznávání textu." },
+    "web-optimize": { title: "Optimalizace pro web", description: "Linearizujte PDF pro rychlejší načítání na webu." },
+
+    // Zabezpečení
+    protect: { title: "Chránit PDF", description: "Přidejte ochranu heslem a zašifrujte svůj PDF." },
+    unlock: { title: "Odemknout PDF", description: "Odstraňte ochranu heslem z PDF souborů." },
+    redact: { title: "Redigovat PDF", description: "Trvale odstraňte citlivé informace z PDF." },
+    compare: { title: "Porovnat PDF", description: "Porovnejte dva PDF vedle sebe a najděte rozdíly." },
+    translate: { title: "Přeložit PDF", description: "Přeložte obsah PDF do jiného jazyka pomocí AI." },
+  },
+  nav: {
+    allTools: "Všechny nástroje",
+    language: "Jazyk",
+  },
+  footer: {
+    tools: "Nástroje",
+    legal: "Právní informace",
+    privacy: "Ochrana soukromí",
+    terms: "Podmínky služby",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Zpět na všechny nástroje",
+    dropFiles: "Sem přetáhněte soubory",
+    acceptedFormats: "Akceptované formáty",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Bezplatné PDF nástroje",
+    siteDescription: "Slučte, rozdělte, komprimujte a převeďte PDF soubory online zdarma.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Pro zlepšení vašeho zážitku používáme soubory cookie.",
+    accept: "Přijmout",
+    decline: "Odmítnout",
+  },
+  privacy: {
+    title: "Zásady ochrany osobních údajů",
+    lastUpdated: "Poslední aktualizace: 1. března 2026",
+    intro: "V ToolBox PDF si vážíme vašeho soukromí. Tyto zásady vysvětlují, jaké informace shromažďujeme při používání naší služby a jak s nimi nakládáme.",
+    sections: [
+      {
+        heading: "1. Informace, které shromažďujeme",
+        content: "ToolBox PDF nevyžaduje registraci. Neshromažďujeme žádné osobní údaje. Pro zlepšení služby však můžeme automaticky zaznamenávat anonymní údaje:\n\n• Typ a verze prohlížeče\n• Operační systém\n• Navštívené stránky a doba strávená na webu\n• Cookies a podobné technologie pro analýzu používání",
+      },
+      {
+        heading: "2. Nakládání se soubory",
+        content: "Soubory, které nahrajete, jsou zpracovány na našich serverech a automaticky smazány do 2 hodin. Obsah vašich souborů nečteme, neukládáme ani s nikým nesdílíme.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Cookies používáme k zapamatování vašich preferencí, jako je motiv (tmavý/světlý režim) a výběr jazyka. Reklamní sítě (např. Google AdSense) mohou rovněž používat cookies k zobrazování personalizované reklamy.",
+      },
+      {
+        heading: "4. Služby třetích stran",
+        content: "Můžeme využívat následující služby třetích stran:\n\n• Google Analytics – pro analýzu návštěvnosti\n• Google AdSense – pro zobrazování reklam\n\nPodrobnosti o zpracování vašich dat najdete v zásadách ochrany osobních údajů jednotlivých služeb.",
+      },
+      {
+        heading: "5. Vaše práva",
+        content: "Cookies můžete kdykoli zakázat nebo smazat v nastavení svého prohlížeče. Mějte na paměti, že některé funkce webu nemusí bez cookies správně fungovat.",
+      },
+      {
+        heading: "6. Změny těchto zásad",
+        content: "Tyto zásady můžeme aktualizovat v souvislosti se změnami legislativy nebo vývoje naší služby. Veškeré změny budou zveřejněny na této stránce.",
+      },
+      {
+        heading: "7. Kontaktujte nás",
+        content: "S dotazy ohledně ochrany osobních údajů se na nás můžete obrátit na adrese support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Podmínky služby",
+    lastUpdated: "Poslední aktualizace: 1. března 2026",
+    intro: "Děkujeme, že používáte ToolBox PDF. Přístupem k naší službě nebo jejím používáním souhlasíte s následujícími podmínkami.",
+    sections: [
+      {
+        heading: "1. O službě",
+        content: "ToolBox PDF je bezplatná online služba, která umožňuje slučovat, rozdělovat, převádět, upravovat a komprimovat PDF soubory přímo v prohlížeči.",
+      },
+      {
+        heading: "2. Přijatelné použití",
+        content: "• Službu smíte používat pouze k zákonným účelům.\n• Nezpracovávejte soubory, které porušují autorská práva nebo duševní vlastnictví.\n• Službu nezneužívejte ani nadměrně nezatěžujte naše servery.\n• Automatizovaný přístup (boti, scrapery apod.) není povolen.",
+      },
+      {
+        heading: "3. Nakládání se soubory",
+        content: "Nahrané soubory se používají výhradně k provedení požadované operace. Do 2 hodin jsou z našich serverů automaticky smazány. Vaše soubory neanalyzujeme ani neuchováváme.",
+      },
+      {
+        heading: "4. Vyloučení odpovědnosti",
+        content: "Služba je poskytována 'tak, jak je'. Neposkytujeme žádné záruky ohledně přesnosti konverze, nepřetržité dostupnosti ani ochrany před ztrátou dat. Před zpracováním si vždy zálohujte důležité soubory.",
+      },
+      {
+        heading: "5. Duševní vlastnictví",
+        content: "Veškerý obsah na tomto webu – včetně designu, log a kódu – je vlastnictvím ToolBox. Plná práva k nahraným souborům zůstávají vám. Na váš obsah si nenárokujeme žádná práva.",
+      },
+      {
+        heading: "6. Změny služby",
+        content: "Vyhrazujeme si právo kdykoli upravit nebo ukončit funkce služby bez předchozího upozornění.",
+      },
+      {
+        heading: "7. Aktualizace těchto podmínek",
+        content: "Tyto podmínky mohou být podle potřeby upraveny. Změny budou zveřejněny na této stránce. Dalším používáním služby po provedení změn vyjadřujete souhlas s aktualizovanými podmínkami.",
+      },
+      {
+        heading: "8. Kontaktujte nás",
+        content: "S dotazy k těmto podmínkám se na nás můžete obrátit na adrese support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default cs;

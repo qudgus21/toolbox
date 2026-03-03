@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const es: Dictionary = {
+  home: {
+    title: "Todas las herramientas que necesitas para trabajar con",
+    titleAccent: "PDFs",
+    description: "Combina, divide, comprime y convierte archivos PDF. Gratis, rápido y fácil de usar.",
+    tabAll: "Todos",
+    categoryOrganize: "Organizar",
+    categoryConvert: "Convertir",
+    categoryEdit: "Editar",
+    categoryOptimize: "Optimizar",
+    categorySecurity: "Seguridad",
+    searchPlaceholder: "Buscar herramientas...",
+    noResults: "No se encontraron herramientas.",
+  },
+  trust: {
+    encryption: "Cifrado seguro",
+    encryptionDesc: "Tus archivos están protegidos con cifrado SSL de 256 bits.",
+    autoDelete: "Eliminación automática",
+    autoDeleteDesc: "Los archivos subidos se eliminan automáticamente después de 2 horas.",
+    free: "Completamente gratis",
+    freeDesc: "Usa todas las herramientas sin límites, completamente gratis.",
+    cloud: "Procesamiento en la nube",
+    cloudDesc: "Procesado en nuestros servidores, sin impacto en tu dispositivo.",
+  },
+  tools: {
+    // Organizar
+    merge: { title: "Unir PDF", description: "Combina múltiples archivos PDF en un solo documento." },
+    split: { title: "Dividir PDF", description: "Separa un PDF en páginas o secciones individuales." },
+    "delete-pages": { title: "Eliminar páginas", description: "Elimina páginas específicas de un documento PDF." },
+    "extract-pages": { title: "Extraer páginas", description: "Extrae las páginas seleccionadas en un nuevo archivo PDF." },
+    "organize-pages": { title: "Organizar páginas", description: "Reordena, agrega o elimina páginas de forma visual." },
+    "scan-to-pdf": { title: "Escanear a PDF", description: "Captura escaneos desde tu dispositivo y conviértelos a PDF." },
+
+    // Convertir
+    "pdf-to-word": { title: "PDF a Word", description: "Convierte documentos PDF a archivos Word editables." },
+    "pdf-to-jpg": { title: "PDF a JPG", description: "Convierte páginas PDF a imágenes JPG de alta calidad." },
+    "pdf-to-excel": { title: "PDF a Excel", description: "Extrae tablas y datos de PDFs a hojas de cálculo Excel." },
+    "pdf-to-ppt": { title: "PDF a PPT", description: "Convierte archivos PDF a diapositivas PowerPoint editables." },
+    "pdf-to-png": { title: "PDF a PNG", description: "Convierte páginas PDF a imágenes PNG de alta calidad." },
+    "pdf-to-text": { title: "PDF a texto", description: "Extrae todo el contenido de texto de documentos PDF." },
+    "pdf-to-pdfa": { title: "PDF a PDF/A", description: "Convierte a formato PDF/A para archivado a largo plazo." },
+    "word-to-pdf": { title: "Word a PDF", description: "Convierte documentos Word a formato PDF." },
+    "jpg-to-pdf": { title: "JPG a PDF", description: "Convierte imágenes JPG en un documento PDF." },
+    "excel-to-pdf": { title: "Excel a PDF", description: "Convierte hojas de cálculo Excel a formato PDF." },
+    "ppt-to-pdf": { title: "PPT a PDF", description: "Convierte presentaciones PowerPoint a formato PDF." },
+    "html-to-pdf": { title: "HTML a PDF", description: "Convierte páginas web y archivos HTML a PDF." },
+    "png-to-pdf": { title: "PNG a PDF", description: "Convierte imágenes PNG en un documento PDF." },
+    "image-to-pdf": { title: "Imagen a PDF", description: "Combina múltiples imágenes de cualquier formato en un solo PDF." },
+
+    // Editar
+    "edit-pdf": { title: "Editar PDF", description: "Agrega texto, imágenes, formas y anotaciones a un PDF." },
+    rotate: { title: "Rotar PDF", description: "Rota las páginas del PDF a la orientación correcta." },
+    "page-numbers": { title: "Números de página", description: "Agrega números de página a tu documento PDF." },
+    watermark: { title: "Marca de agua", description: "Agrega marcas de agua de texto o imagen a tu PDF." },
+    crop: { title: "Recortar PDF", description: "Recorta márgenes o selecciona áreas específicas de páginas PDF." },
+    sign: { title: "Firmar PDF", description: "Agrega firmas electrónicas a tus documentos PDF." },
+    annotate: { title: "Anotar PDF", description: "Resalta, subraya y agrega comentarios a PDFs." },
+    flatten: { title: "Aplanar PDF", description: "Fusiona campos de formulario y anotaciones en el contenido de la página." },
+    resize: { title: "Redimensionar PDF", description: "Cambia el tamaño de página del PDF (A4, Carta, personalizado)." },
+    "edit-metadata": { title: "Editar metadatos", description: "Cambia el título, autor, palabras clave y otros metadatos del PDF." },
+    grayscale: { title: "Escala de grises", description: "Convierte los colores del PDF a blanco y negro." },
+
+    // Optimizar
+    compress: { title: "Comprimir PDF", description: "Reduce el tamaño del archivo PDF sin perder calidad." },
+    repair: { title: "Reparar PDF", description: "Repara archivos PDF dañados o corruptos." },
+    ocr: { title: "OCR PDF", description: "Haz que los PDFs escaneados sean buscables con reconocimiento de texto." },
+    "web-optimize": { title: "Optimizar para web", description: "Linealiza PDFs para una carga web más rápida." },
+
+    // Seguridad
+    protect: { title: "Proteger PDF", description: "Agrega protección con contraseña y cifra tu PDF." },
+    unlock: { title: "Desbloquear PDF", description: "Elimina la protección con contraseña de archivos PDF." },
+    redact: { title: "Censurar PDF", description: "Elimina permanentemente información confidencial de los PDFs." },
+    compare: { title: "Comparar PDF", description: "Compara dos PDFs lado a lado y detecta diferencias." },
+    translate: { title: "Traducir PDF", description: "Traduce el contenido del PDF a otro idioma con IA." },
+  },
+  nav: {
+    allTools: "Todas las herramientas",
+    language: "Idioma",
+  },
+  footer: {
+    tools: "Herramientas",
+    legal: "Legal",
+    privacy: "Política de privacidad",
+    terms: "Términos de servicio",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Volver a todas las herramientas",
+    dropFiles: "Suelta tus archivos aquí",
+    acceptedFormats: "Formatos aceptados",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Herramientas PDF gratuitas",
+    siteDescription: "Combina, divide, comprime y convierte archivos PDF en línea gratis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Usamos cookies para mejorar tu experiencia.",
+    accept: "Aceptar",
+    decline: "Rechazar",
+  },
+  privacy: {
+    title: "Política de Privacidad",
+    lastUpdated: "Última actualización: 1 de marzo de 2026",
+    intro: "En ToolBox PDF nos tomamos en serio tu privacidad. Esta política explica qué información recopilamos cuando usas nuestro servicio y cómo la manejamos.",
+    sections: [
+      {
+        heading: "1. Información que recopilamos",
+        content: "ToolBox PDF no requiere registro. No recopilamos datos personales. Sin embargo, podemos recoger automáticamente cierta información anónima para mejorar el servicio:\n\n• Tipo y versión del navegador\n• Sistema operativo\n• Páginas visitadas y tiempo de permanencia\n• Cookies para analizar patrones de uso",
+      },
+      {
+        heading: "2. Manejo de archivos",
+        content: "Los archivos que subes se procesan en nuestros servidores y se eliminan automáticamente en un plazo de 2 horas. No leemos, almacenamos ni compartimos el contenido de tus archivos con nadie.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Usamos cookies para guardar tus preferencias, como el tema (modo oscuro/claro) y el idioma. Las redes publicitarias (por ejemplo, Google AdSense) también pueden usar cookies para mostrarte anuncios personalizados.",
+      },
+      {
+        heading: "4. Servicios de terceros",
+        content: "Es posible que utilicemos los siguientes servicios de terceros:\n\n• Google Analytics — para análisis de tráfico\n• Google AdSense — para mostrar anuncios\n\nConsulta las políticas de privacidad de cada servicio para más detalles.",
+      },
+      {
+        heading: "5. Tus derechos",
+        content: "Puedes desactivar o eliminar las cookies desde la configuración de tu navegador en cualquier momento. Ten en cuenta que algunas funciones podrían no funcionar correctamente sin cookies.",
+      },
+      {
+        heading: "6. Cambios en esta política",
+        content: "Podemos actualizar esta política si cambia la legislación o nuestro servicio evoluciona. Los cambios se publicarán en esta página.",
+      },
+      {
+        heading: "7. Contacto",
+        content: "Si tienes dudas sobre privacidad, escríbenos a support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Términos de Servicio",
+    lastUpdated: "Última actualización: 1 de marzo de 2026",
+    intro: "Gracias por usar ToolBox PDF. Al acceder o utilizar nuestro servicio, aceptas los siguientes términos.",
+    sections: [
+      {
+        heading: "1. Sobre el servicio",
+        content: "ToolBox PDF es un servicio online gratuito que te permite unir, dividir, convertir, editar y comprimir archivos PDF directamente desde tu navegador.",
+      },
+      {
+        heading: "2. Uso aceptable",
+        content: "• Solo puedes usar el servicio con fines legales.\n• No proceses archivos que infrinjan derechos de autor o propiedad intelectual.\n• No abuses del servicio ni sobrecargues nuestros servidores.\n• No se permite el acceso automatizado (bots, scrapers, etc.).",
+      },
+      {
+        heading: "3. Manejo de archivos",
+        content: "Los archivos subidos se utilizan únicamente para realizar la operación solicitada. Se eliminan automáticamente de nuestros servidores en un plazo de 2 horas. No analizamos ni conservamos tus archivos.",
+      },
+      {
+        heading: "4. Exención de responsabilidad",
+        content: "El servicio se ofrece \"tal cual\". No garantizamos la precisión de las conversiones, la disponibilidad continua ni la prevención de pérdida de datos. Haz siempre una copia de seguridad de tus archivos importantes antes de procesarlos.",
+      },
+      {
+        heading: "5. Propiedad intelectual",
+        content: "Todo el contenido del sitio — diseño, logotipos y código — es propiedad de ToolBox. Los archivos que subas siguen siendo tuyos. No reclamamos ningún derecho sobre tu contenido.",
+      },
+      {
+        heading: "6. Cambios en el servicio",
+        content: "Nos reservamos el derecho de modificar o descontinuar funcionalidades en cualquier momento sin previo aviso.",
+      },
+      {
+        heading: "7. Actualización de estos términos",
+        content: "Estos términos pueden revisarse cuando sea necesario. Los cambios se publicarán en esta página. El uso continuado del servicio tras una modificación implica la aceptación de los nuevos términos.",
+      },
+      {
+        heading: "8. Contacto",
+        content: "Si tienes preguntas sobre estos términos, escríbenos a support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default es;

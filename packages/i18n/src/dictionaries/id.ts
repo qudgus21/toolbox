@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const id: Dictionary = {
+  home: {
+    title: "Semua alat yang Anda butuhkan untuk bekerja dengan",
+    titleAccent: "PDF",
+    description: "Gabungkan, pisahkan, kompres, dan konversi file PDF. Gratis, cepat, dan mudah digunakan.",
+    tabAll: "Semua",
+    categoryOrganize: "Atur",
+    categoryConvert: "Konversi",
+    categoryEdit: "Edit",
+    categoryOptimize: "Optimasi",
+    categorySecurity: "Keamanan",
+    searchPlaceholder: "Cari alat...",
+    noResults: "Tidak ada alat yang ditemukan.",
+  },
+  trust: {
+    encryption: "Enkripsi Aman",
+    encryptionDesc: "File Anda dilindungi dengan enkripsi SSL 256-bit.",
+    autoDelete: "Hapus Otomatis",
+    autoDeleteDesc: "File yang diunggah otomatis dihapus setelah 2 jam.",
+    free: "Sepenuhnya Gratis",
+    freeDesc: "Gunakan semua alat tanpa batasan, sepenuhnya gratis.",
+    cloud: "Pemrosesan Cloud",
+    cloudDesc: "Diproses di server kami, tidak berdampak pada perangkat Anda.",
+  },
+  tools: {
+    // Atur
+    merge: { title: "Gabung PDF", description: "Gabungkan beberapa file PDF menjadi satu dokumen." },
+    split: { title: "Pisah PDF", description: "Pisahkan PDF menjadi halaman atau bagian individual." },
+    "delete-pages": { title: "Hapus Halaman", description: "Hapus halaman tertentu dari dokumen PDF." },
+    "extract-pages": { title: "Ekstrak Halaman", description: "Ekstrak halaman yang dipilih ke file PDF baru." },
+    "organize-pages": { title: "Atur Halaman", description: "Susun ulang, tambah, atau hapus halaman secara visual." },
+    "scan-to-pdf": { title: "Pindai ke PDF", description: "Ambil hasil pindai dari perangkat Anda dan konversi ke PDF." },
+
+    // Konversi
+    "pdf-to-word": { title: "PDF ke Word", description: "Konversi dokumen PDF ke file Word yang dapat diedit." },
+    "pdf-to-jpg": { title: "PDF ke JPG", description: "Konversi halaman PDF ke gambar JPG berkualitas tinggi." },
+    "pdf-to-excel": { title: "PDF ke Excel", description: "Ekstrak tabel dan data dari PDF ke spreadsheet Excel." },
+    "pdf-to-ppt": { title: "PDF ke PPT", description: "Konversi file PDF ke slide PowerPoint yang dapat diedit." },
+    "pdf-to-png": { title: "PDF ke PNG", description: "Konversi halaman PDF ke gambar PNG berkualitas tinggi." },
+    "pdf-to-text": { title: "PDF ke Text", description: "Ekstrak semua konten teks dari dokumen PDF." },
+    "pdf-to-pdfa": { title: "PDF ke PDF/A", description: "Konversi ke format PDF/A untuk pengarsipan jangka panjang." },
+    "word-to-pdf": { title: "Word ke PDF", description: "Konversi dokumen Word ke format PDF." },
+    "jpg-to-pdf": { title: "JPG ke PDF", description: "Konversi gambar JPG menjadi dokumen PDF." },
+    "excel-to-pdf": { title: "Excel ke PDF", description: "Konversi spreadsheet Excel ke format PDF." },
+    "ppt-to-pdf": { title: "PPT ke PDF", description: "Konversi presentasi PowerPoint ke format PDF." },
+    "html-to-pdf": { title: "HTML ke PDF", description: "Konversi halaman web dan file HTML ke PDF." },
+    "png-to-pdf": { title: "PNG ke PDF", description: "Konversi gambar PNG menjadi dokumen PDF." },
+    "image-to-pdf": { title: "Gambar ke PDF", description: "Gabungkan beberapa gambar dalam format apa pun menjadi satu PDF." },
+
+    // Edit
+    "edit-pdf": { title: "Edit PDF", description: "Tambahkan teks, gambar, bentuk, dan anotasi ke PDF." },
+    rotate: { title: "Putar PDF", description: "Putar halaman PDF ke orientasi yang benar." },
+    "page-numbers": { title: "Nomor Halaman", description: "Tambahkan nomor halaman ke dokumen PDF Anda." },
+    watermark: { title: "Tanda Air", description: "Tambahkan tanda air teks atau gambar ke PDF Anda." },
+    crop: { title: "Potong PDF", description: "Potong margin atau pilih area tertentu dari halaman PDF." },
+    sign: { title: "Tanda Tangan PDF", description: "Tambahkan tanda tangan elektronik ke dokumen PDF Anda." },
+    annotate: { title: "Anotasi PDF", description: "Sorot, garis bawahi, dan tambahkan komentar ke PDF." },
+    flatten: { title: "Ratakan PDF", description: "Gabungkan bidang formulir dan anotasi ke dalam konten halaman." },
+    resize: { title: "Ubah Ukuran PDF", description: "Ubah ukuran halaman PDF (A4, Letter, kustom)." },
+    "edit-metadata": { title: "Edit Metadata", description: "Ubah judul, penulis, kata kunci, dan metadata lainnya pada PDF." },
+    grayscale: { title: "Skala Abu-abu", description: "Konversi warna PDF menjadi hitam putih." },
+
+    // Optimasi
+    compress: { title: "Kompres PDF", description: "Kurangi ukuran file PDF tanpa kehilangan kualitas." },
+    repair: { title: "Perbaiki PDF", description: "Perbaiki file PDF yang rusak atau korup." },
+    ocr: { title: "OCR PDF", description: "Buat PDF hasil pindai dapat dicari dengan pengenalan teks." },
+    "web-optimize": { title: "Optimasi Web", description: "Linearisasi PDF untuk pemuatan web yang lebih cepat." },
+
+    // Keamanan
+    protect: { title: "Lindungi PDF", description: "Tambahkan perlindungan kata sandi dan enkripsi PDF Anda." },
+    unlock: { title: "Buka Kunci PDF", description: "Hapus perlindungan kata sandi dari file PDF." },
+    redact: { title: "Redaksi PDF", description: "Hapus informasi sensitif dari PDF secara permanen." },
+    compare: { title: "Bandingkan PDF", description: "Bandingkan dua PDF secara berdampingan dan temukan perbedaannya." },
+    translate: { title: "Terjemahkan PDF", description: "Terjemahkan konten PDF ke bahasa lain dengan AI." },
+  },
+  nav: {
+    allTools: "Semua Alat",
+    language: "Bahasa",
+  },
+  footer: {
+    tools: "Alat",
+    legal: "Hukum",
+    privacy: "Kebijakan Privasi",
+    terms: "Ketentuan Layanan",
+    copyright: "ToolBox. Hak cipta dilindungi.",
+  },
+  common: {
+    backToAll: "Kembali ke semua alat",
+    dropFiles: "Letakkan file Anda di sini",
+    acceptedFormats: "Format yang diterima",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Alat PDF Gratis",
+    siteDescription: "Gabungkan, pisahkan, kompres, dan konversi file PDF secara online gratis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Kami menggunakan cookie untuk meningkatkan pengalaman Anda.",
+    accept: "Terima",
+    decline: "Tolak",
+  },
+  privacy: {
+    title: "Kebijakan Privasi",
+    lastUpdated: "Terakhir diperbarui: 1 Maret 2026",
+    intro: "Di ToolBox PDF, kami menghargai privasi Anda. Kebijakan ini menjelaskan informasi apa saja yang kami kumpulkan saat Anda menggunakan layanan kami dan bagaimana kami menanganinya.",
+    sections: [
+      {
+        heading: "1. Informasi yang Kami Kumpulkan",
+        content: "ToolBox PDF tidak memerlukan pendaftaran akun. Kami tidak mengumpulkan informasi pribadi. Namun, untuk meningkatkan layanan, kami mungkin mengumpulkan data anonim secara otomatis:\n\n• Jenis dan versi browser\n• Sistem operasi\n• Halaman yang dikunjungi dan durasi kunjungan\n• Cookie dan teknologi serupa untuk menganalisis pola penggunaan",
+      },
+      {
+        heading: "2. Penanganan File",
+        content: "File yang Anda unggah diproses di server kami dan otomatis dihapus dalam waktu 2 jam. Kami tidak membaca, menyimpan, atau membagikan isi file Anda kepada siapa pun.",
+      },
+      {
+        heading: "3. Cookie",
+        content: "Kami menggunakan cookie untuk menyimpan preferensi Anda seperti tema (mode gelap/terang) dan pilihan bahasa. Jaringan iklan (misalnya Google AdSense) juga dapat menggunakan cookie untuk menampilkan iklan yang relevan.",
+      },
+      {
+        heading: "4. Layanan Pihak Ketiga",
+        content: "Kami mungkin menggunakan layanan pihak ketiga berikut:\n\n• Google Analytics – untuk analisis lalu lintas\n• Google AdSense – untuk menayangkan iklan\n\nSilakan merujuk ke kebijakan privasi masing-masing layanan untuk mengetahui cara mereka menangani data Anda.",
+      },
+      {
+        heading: "5. Hak Anda",
+        content: "Anda dapat menonaktifkan atau menghapus cookie kapan saja melalui pengaturan browser. Perlu diketahui bahwa beberapa fitur mungkin tidak berfungsi dengan baik tanpa cookie.",
+      },
+      {
+        heading: "6. Perubahan Kebijakan",
+        content: "Kami dapat memperbarui kebijakan ini seiring perubahan hukum atau perkembangan layanan. Setiap perubahan akan dipublikasikan di halaman ini.",
+      },
+      {
+        heading: "7. Hubungi Kami",
+        content: "Untuk pertanyaan terkait privasi, hubungi kami di support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Ketentuan Layanan",
+    lastUpdated: "Terakhir diperbarui: 1 Maret 2026",
+    intro: "Terima kasih telah menggunakan ToolBox PDF. Dengan mengakses atau menggunakan layanan kami, Anda menyetujui ketentuan berikut.",
+    sections: [
+      {
+        heading: "1. Tentang Layanan",
+        content: "ToolBox PDF adalah layanan online gratis yang memungkinkan Anda menggabungkan, memisahkan, mengonversi, mengedit, dan mengompres file PDF langsung di browser.",
+      },
+      {
+        heading: "2. Penggunaan yang Diperbolehkan",
+        content: "• Gunakan layanan hanya untuk tujuan yang sah menurut hukum.\n• Dilarang memproses file yang melanggar hak cipta atau kekayaan intelektual.\n• Dilarang menyalahgunakan layanan atau membebani server secara berlebihan.\n• Akses otomatis (bot, scraper, dll.) tidak diizinkan.",
+      },
+      {
+        heading: "3. Penanganan File",
+        content: "File yang diunggah hanya digunakan untuk menjalankan operasi yang Anda minta. File akan otomatis dihapus dari server dalam waktu 2 jam. Kami tidak menganalisis atau menyimpan file Anda.",
+      },
+      {
+        heading: "4. Penyangkalan",
+        content: "Layanan ini disediakan \"apa adanya\". Kami tidak menjamin akurasi konversi, ketersediaan layanan tanpa gangguan, atau perlindungan dari kehilangan data. Selalu buat cadangan file penting sebelum diproses.",
+      },
+      {
+        heading: "5. Kekayaan Intelektual",
+        content: "Semua konten di situs ini — termasuk desain, logo, dan kode — adalah milik ToolBox. Anda tetap memiliki hak penuh atas file yang Anda unggah. Kami tidak mengklaim kepemilikan atas konten Anda.",
+      },
+      {
+        heading: "6. Perubahan Layanan",
+        content: "Kami berhak mengubah atau menghentikan fitur apa pun kapan saja tanpa pemberitahuan sebelumnya.",
+      },
+      {
+        heading: "7. Pembaruan Ketentuan",
+        content: "Ketentuan ini dapat direvisi sesuai kebutuhan. Perubahan akan dipublikasikan di halaman ini. Dengan terus menggunakan layanan setelah perubahan, berarti Anda menerima ketentuan yang diperbarui.",
+      },
+      {
+        heading: "8. Hubungi Kami",
+        content: "Untuk pertanyaan tentang ketentuan ini, hubungi kami di support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default id;

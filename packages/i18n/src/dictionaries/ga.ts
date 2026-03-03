@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const ga: Dictionary = {
+  home: {
+    title: "Gach uirlis atá uait chun oibriú le",
+    titleAccent: "PDFs",
+    description: "Cumaisc, roinn, comhbhrúigh agus tiontaigh comhaid PDF. Saor in aisce, tapa agus éasca le húsáid.",
+    tabAll: "Gach",
+    categoryOrganize: "Eagraigh",
+    categoryConvert: "Tiontaigh",
+    categoryEdit: "Cuir in eagar",
+    categoryOptimize: "Optamaigh",
+    categorySecurity: "Slándáil",
+    searchPlaceholder: "Cuardaigh uirlisí...",
+    noResults: "Níor aimsíodh uirlisí ar bith.",
+  },
+  trust: {
+    encryption: "Criptiú slán",
+    encryptionDesc: "Tá do chuid comhad cosanta le criptiú SSL 256-giotán.",
+    autoDelete: "Scriosadh uathoibríoch",
+    autoDeleteDesc: "Scriostar comhaid uaslódáilte go huathoibríoch tar éis 2 uair an chloig.",
+    free: "Saor in aisce go hiomlán",
+    freeDesc: "Úsáid gach uirlis gan teorainneacha, saor in aisce go hiomlán.",
+    cloud: "Próiseáil néalríomhaireachta",
+    cloudDesc: "Próiseáilte ar ár bhfreastalaithe, gan tionchar ar do ghléas.",
+  },
+  tools: {
+    // Eagraigh
+    merge: { title: "Cumaisc PDF", description: "Comhcheangail comhaid PDF iolracha in aon doiciméad amháin." },
+    split: { title: "Roinn PDF", description: "Deighil PDF ina leathanaigh nó codanna aonair." },
+    "delete-pages": { title: "Scrios leathanaigh", description: "Bain leathanaigh ar leith de dhoiciméad PDF." },
+    "extract-pages": { title: "Bain leathanaigh amach", description: "Bain leathanaigh roghnaithe amach i gcomhad PDF nua." },
+    "organize-pages": { title: "Eagraigh leathanaigh", description: "Athordaigh, cuir leis nó bain leathanaigh go hamhairc." },
+    "scan-to-pdf": { title: "Scan go PDF", description: "Gabh scanadh ó do ghléas agus tiontaigh go PDF." },
+
+    // Tiontaigh
+    "pdf-to-word": { title: "PDF go Word", description: "Tiontaigh doiciméid PDF go comhaid Word in-eagarthóireachta." },
+    "pdf-to-jpg": { title: "PDF go JPG", description: "Tiontaigh leathanaigh PDF go híomhánna JPG ardchaighdeáin." },
+    "pdf-to-excel": { title: "PDF go Excel", description: "Bain táblaí agus sonraí as comhaid PDF go scarbhileoga Excel." },
+    "pdf-to-ppt": { title: "PDF go PPT", description: "Tiontaigh comhaid PDF go sleamhnáin PowerPoint in-eagarthóireachta." },
+    "pdf-to-png": { title: "PDF go PNG", description: "Tiontaigh leathanaigh PDF go híomhánna PNG ardchaighdeáin." },
+    "pdf-to-text": { title: "PDF go téacs", description: "Bain an t-ábhar téacs ar fad as doiciméid PDF." },
+    "pdf-to-pdfa": { title: "PDF go PDF/A", description: "Tiontaigh go formáid PDF/A le haghaidh cartlannú fadtéarmach." },
+    "word-to-pdf": { title: "Word go PDF", description: "Tiontaigh doiciméid Word go formáid PDF." },
+    "jpg-to-pdf": { title: "JPG go PDF", description: "Tiontaigh íomhánna JPG ina ndoiciméad PDF." },
+    "excel-to-pdf": { title: "Excel go PDF", description: "Tiontaigh scarbhileoga Excel go formáid PDF." },
+    "ppt-to-pdf": { title: "PPT go PDF", description: "Tiontaigh cur i láthair PowerPoint go formáid PDF." },
+    "html-to-pdf": { title: "HTML go PDF", description: "Tiontaigh leathanaigh ghréasáin agus comhaid HTML go PDF." },
+    "png-to-pdf": { title: "PNG go PDF", description: "Tiontaigh íomhánna PNG ina ndoiciméad PDF." },
+    "image-to-pdf": { title: "Íomhá go PDF", description: "Comhcheangail íomhánna iolracha d'aon fhormáid in aon PDF amháin." },
+
+    // Cuir in eagar
+    "edit-pdf": { title: "Cuir PDF in eagar", description: "Cuir téacs, íomhánna, cruthanna agus nótaí le PDF." },
+    rotate: { title: "Rothlaigh PDF", description: "Rothlaigh leathanaigh PDF go dtí an treoshuíomh ceart." },
+    "page-numbers": { title: "Uimhreacha leathanach", description: "Cuir uimhreacha leathanach le do dhoiciméad PDF." },
+    watermark: { title: "Comhartha uisce", description: "Cuir comharthaí uisce téacs nó íomhá le do PDF." },
+    crop: { title: "Bearr PDF", description: "Bearr imeill nó roghnaigh réimsí ar leith de leathanaigh PDF." },
+    sign: { title: "Sínigh PDF", description: "Cuir sínithe leictreonacha le do dhoiciméid PDF." },
+    annotate: { title: "Anótáil PDF", description: "Aibhsigh, cuir líne faoi agus cuir nótaí le comhaid PDF." },
+    flatten: { title: "Cothromaigh PDF", description: "Cumaisc réimsí foirme agus nótaí isteach in ábhar an leathanaigh." },
+    resize: { title: "Athraigh méid PDF", description: "Athraigh méid leathanaigh PDF (A4, Letter, saincheaptha)." },
+    "edit-metadata": { title: "Cuir meiteashonraí in eagar", description: "Athraigh teideal, údar, eochairfhocail agus meiteashonraí eile PDF." },
+    grayscale: { title: "Liathscála", description: "Tiontaigh dathanna PDF go dubh agus bán." },
+
+    // Optamaigh
+    compress: { title: "Comhbhrúigh PDF", description: "Laghdaigh méid an chomhaid PDF gan cáilíocht a chailleadh." },
+    repair: { title: "Deisigh PDF", description: "Deisigh comhaid PDF damáistithe nó truaillithe." },
+    ocr: { title: "OCR PDF", description: "Déan comhaid PDF scanáilte inchuardaithe le haithint téacs." },
+    "web-optimize": { title: "Optamú gréasáin", description: "Líneáraigh comhaid PDF le haghaidh lódáil ghréasáin níos tapúla." },
+
+    // Slándáil
+    protect: { title: "Cosain PDF", description: "Cuir cosaint pasfhocail agus criptiú le do PDF." },
+    unlock: { title: "Díghlasáil PDF", description: "Bain cosaint pasfhocail de chomhaid PDF." },
+    redact: { title: "Cealaigh PDF", description: "Bain faisnéis íogair de chomhaid PDF go buan." },
+    compare: { title: "Cuir PDF i gcomparáid", description: "Cuir dhá PDF i gcomparáid taobh le taobh agus aimsigh difríochtaí." },
+    translate: { title: "Aistrigh PDF", description: "Aistrigh ábhar PDF go teanga eile le AI." },
+  },
+  nav: {
+    allTools: "Gach uirlis",
+    language: "Teanga",
+  },
+  footer: {
+    tools: "Uirlisí",
+    legal: "Dlí",
+    privacy: "Polasaí príobháideachais",
+    terms: "Téarmaí seirbhíse",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Ar ais go dtí gach uirlis",
+    dropFiles: "Scaoil do chuid comhad anseo",
+    acceptedFormats: "Formáidí a nglactar leo",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Uirlisí PDF saor in aisce",
+    siteDescription: "Cumaisc, roinn, comhbhrúigh agus tiontaigh comhaid PDF ar líne saor in aisce.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Úsáidimid fianáin chun do thaithí a fheabhsú.",
+    accept: "Glac leis",
+    decline: "Diúltaigh",
+  },
+  privacy: {
+    title: "Polasaí Príobháideachais",
+    lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
+    intro: "Ag ToolBox PDF, is mór linn do phríobháideachas. Míníonn an polasaí seo cén fhaisnéis a bhailímid nuair a úsáideann tú ár seirbhís agus conas a láimhseálaimid í.",
+    sections: [
+      {
+        heading: "1. Faisnéis a Bhailímid",
+        content: "Ní gá clárú le ToolBox PDF a úsáid. Ní bhailímid faisnéis phearsanta. Mar sin féin, is féidir linn sonraí neamh-aitheantais a bhailiú go huathoibríoch chun an tseirbhís a fheabhsú:\n\n• Cineál agus leagan brabhsálaí\n• Córas oibriúcháin\n• Leathanaigh a tugadh cuairt orthu agus an t-am a caitheadh\n• Fianáin agus teicneolaíochtaí comhchosúla le haghaidh patrúin úsáide",
+      },
+      {
+        heading: "2. Láimhseáil Comhad",
+        content: "Próiseáiltear comhaid a uaslódálann tú ar ár bhfreastalaithe agus scriostar go huathoibríoch iad laistigh de 2 uair an chloig. Ní léimid, ní stórálaimid agus ní roinneann muid inneachar do chuid comhad le haon duine.",
+      },
+      {
+        heading: "3. Fianáin",
+        content: "Úsáidimid fianáin chun do roghanna a mheabhrú, mar shampla téama (modh dorcha/geal) agus rogha teanga. D'fhéadfadh líonraí fógraíochta (m.sh. Google AdSense) fianáin a úsáid freisin chun fógraí pearsantaithe a thaispeáint.",
+      },
+      {
+        heading: "4. Seirbhísí Tríú Páirtí",
+        content: "D'fhéadfaimis na seirbhísí tríú páirtí seo a leanas a úsáid:\n\n• Google Analytics — le haghaidh anailís tráchta\n• Google AdSense — le haghaidh fógraí a thaispeáint\n\nFéach ar pholasaí príobháideachais gach seirbhíse féin le haghaidh sonraí faoin gcaoi a láimhseálann siad do chuid sonraí.",
+      },
+      {
+        heading: "5. Do Chearta",
+        content: "Is féidir leat fianáin a dhíchumasú nó a scriosadh trí shocruithe do bhrabhsálaí am ar bith. Tabhair faoi deara go bhféadfadh gnéithe áirithe gan feidhmiú i gceart gan fianáin.",
+      },
+      {
+        heading: "6. Athruithe ar an bPolasaí Seo",
+        content: "D'fhéadfaimis an polasaí seo a nuashonrú de réir mar a athraíonn dlíthe nó de réir mar a fhorbraíonn ár seirbhís. Foilseofar aon athruithe ar an leathanach seo.",
+      },
+      {
+        heading: "7. Déan Teagmháil Linn",
+        content: "Má tá ceisteanna agat faoi phríobháideachas, scríobh chugainn ag support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Téarmaí Seirbhíse",
+    lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
+    intro: "Go raibh maith agat as ToolBox PDF a úsáid. Trí rochtain a fháil ar ár seirbhís nó í a úsáid, aontaíonn tú leis na téarmaí seo a leanas.",
+    sections: [
+      {
+        heading: "1. Faoin tSeirbhís",
+        content: "Is seirbhís ar líne saor in aisce é ToolBox PDF a ligeann duit comhaid PDF a chumasc, a roinnt, a thiontú, a chur in eagar agus a chomhbhrú go díreach i do bhrabhsálaí.",
+      },
+      {
+        heading: "2. Úsáid Inghlactha",
+        content: "• Ní féidir an tseirbhís a úsáid ach chun críocha dlíthiúla.\n• Ná próiseáil comhaid a sháraíonn cóipcheart nó maoin intleachtúil.\n• Ná mí-úsáid an tseirbhís agus ná cuir ualach iomarcach ar ár bhfreastalaithe.\n• Ní cheadaítear rochtain uathoibrithe (róbait, scríobóirí gréasáin, srl.).",
+      },
+      {
+        heading: "3. Láimhseáil Comhad",
+        content: "Ní úsáidtear comhaid uaslódáilte ach amháin chun an oibríocht iarrtha a dhéanamh. Scriostar go huathoibríoch iad ónár bhfreastalaithe laistigh de 2 uair an chloig. Ní dhéanaimid anailís ar do chuid comhad agus ní choinníonn muid iad.",
+      },
+      {
+        heading: "4. Séanadh",
+        content: "Cuirtear an tseirbhís ar fáil \"mar atá\". Ní thugaimid aon ráthaíochtaí maidir le cruinneas tiontaithe, infhaighteacht gan bhriseadh, nó cosaint i gcoinne cailliúint sonraí. Déan cóip chúltaca de chomhaid thábhachtacha i gcónaí sula ndéanann tú próiseáil orthu.",
+      },
+      {
+        heading: "5. Maoin Intleachtúil",
+        content: "Is le ToolBox gach ábhar ar an suíomh seo — lena n-áirítear dearadh, lógónna agus cód. Coinníonn tú cearta iomlána ar aon chomhaid a uaslódálann tú. Ní éilímid aon úinéireacht ar do chuid ábhair.",
+      },
+      {
+        heading: "6. Athruithe Seirbhíse",
+        content: "Coimeádaimid an ceart gnéithe a mhodhnú nó a stopadh am ar bith gan réamhfhógra.",
+      },
+      {
+        heading: "7. Nuashonruithe ar na Téarmaí Seo",
+        content: "D'fhéadfaí na téarmaí seo a leasú de réir mar is gá. Foilseofar athruithe ar an leathanach seo. Ciallaíonn úsáid leanúnach na seirbhíse tar éis athruithe go nglacann tú leis na téarmaí nuashonraithe.",
+      },
+      {
+        heading: "8. Déan Teagmháil Linn",
+        content: "Má tá ceisteanna agat faoi na téarmaí seo, scríobh chugainn ag support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default ga;

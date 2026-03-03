@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const et: Dictionary = {
+  home: {
+    title: "Kõik tööriistad, mida vajate töötamiseks",
+    titleAccent: "PDFs",
+    description: "Ühendage, tükeldage, tihendage ja teisendage PDF-faile. Tasuta, kiire ja lihtne kasutada.",
+    tabAll: "Kõik",
+    categoryOrganize: "Korralda",
+    categoryConvert: "Teisenda",
+    categoryEdit: "Muuda",
+    categoryOptimize: "Optimeeri",
+    categorySecurity: "Turvalisus",
+    searchPlaceholder: "Otsi tööriistu...",
+    noResults: "Tööriistu ei leitud.",
+  },
+  trust: {
+    encryption: "Turvaline krüpteerimine",
+    encryptionDesc: "Teie failid on kaitstud 256-bitise SSL-krüpteeringuga.",
+    autoDelete: "Automaatne kustutamine",
+    autoDeleteDesc: "Üleslaaditud failid kustutatakse automaatselt 2 tunni pärast.",
+    free: "Täiesti tasuta",
+    freeDesc: "Kasutage kõiki tööriistu piiranguteta, täiesti tasuta.",
+    cloud: "Pilvetöötlus",
+    cloudDesc: "Töödeldud meie serverites, ei mõjuta teie seadet.",
+  },
+  tools: {
+    // Korralda
+    merge: { title: "Ühenda PDF", description: "Kombineerige mitu PDF-faili üheks dokumendiks." },
+    split: { title: "Tükelda PDF", description: "Eraldage PDF üksikuteks lehtedeks või osadeks." },
+    "delete-pages": { title: "Kustuta lehed", description: "Eemaldage PDF-dokumendist konkreetsed lehed." },
+    "extract-pages": { title: "Eralda lehed", description: "Eraldage valitud lehed uude PDF-faili." },
+    "organize-pages": { title: "Korralda lehed", description: "Järjestage, lisage või eemaldage lehti visuaalselt." },
+    "scan-to-pdf": { title: "Skaneeri PDF-iks", description: "Tehke oma seadmega skaneeringuid ja teisendage PDF-iks." },
+
+    // Teisenda
+    "pdf-to-word": { title: "PDF Wordiks", description: "Teisendage PDF-dokumendid redigeeritavateks Word-failideks." },
+    "pdf-to-jpg": { title: "PDF JPG-ks", description: "Teisendage PDF-lehed kõrgekvaliteedilisteks JPG-piltideks." },
+    "pdf-to-excel": { title: "PDF Exceliks", description: "Eraldage tabelid ja andmed PDF-idest Exceli tabelitesse." },
+    "pdf-to-ppt": { title: "PDF PPT-ks", description: "Teisendage PDF-failid redigeeritavateks PowerPointi slaidideks." },
+    "pdf-to-png": { title: "PDF PNG-ks", description: "Teisendage PDF-lehed kõrgekvaliteedilisteks PNG-piltideks." },
+    "pdf-to-text": { title: "PDF tekstiks", description: "Eraldage kogu tekstisisu PDF-dokumentidest." },
+    "pdf-to-pdfa": { title: "PDF PDF/A-ks", description: "Teisendage PDF/A formaati pikaajaliseks arhiveerimiseks." },
+    "word-to-pdf": { title: "Word PDF-iks", description: "Teisendage Word-dokumendid PDF-formaati." },
+    "jpg-to-pdf": { title: "JPG PDF-iks", description: "Teisendage JPG-pildid PDF-dokumendiks." },
+    "excel-to-pdf": { title: "Excel PDF-iks", description: "Teisendage Exceli tabelid PDF-formaati." },
+    "ppt-to-pdf": { title: "PPT PDF-iks", description: "Teisendage PowerPointi esitlused PDF-formaati." },
+    "html-to-pdf": { title: "HTML PDF-iks", description: "Teisendage veebilehed ja HTML-failid PDF-iks." },
+    "png-to-pdf": { title: "PNG PDF-iks", description: "Teisendage PNG-pildid PDF-dokumendiks." },
+    "image-to-pdf": { title: "Pilt PDF-iks", description: "Kombineerige mitu pilti mis tahes formaadis üheks PDF-iks." },
+
+    // Muuda
+    "edit-pdf": { title: "Muuda PDF-i", description: "Lisage PDF-ile teksti, pilte, kujundeid ja märkusi." },
+    rotate: { title: "Pööra PDF-i", description: "Pöörake PDF-lehti õigesse suunda." },
+    "page-numbers": { title: "Leheküljenumbrid", description: "Lisage oma PDF-dokumendile leheküljenumbrid." },
+    watermark: { title: "Vesimärk", description: "Lisage PDF-ile teksti- või pildivesimärke." },
+    crop: { title: "Lõika PDF-i", description: "Lõigake veeriseid või valige PDF-lehtede konkreetseid alasid." },
+    sign: { title: "Allkirjasta PDF", description: "Lisage oma PDF-dokumentidele elektroonilisi allkirju." },
+    annotate: { title: "Annoteeri PDF-i", description: "Tõstke esile, joondage alla ja lisage PDF-idele kommentaare." },
+    flatten: { title: "Lamenda PDF", description: "Ühendage vormiväljad ja märkused lehe sisusse." },
+    resize: { title: "Muuda PDF-i suurust", description: "Muutke PDF-lehe suurust (A4, Letter, kohandatud)." },
+    "edit-metadata": { title: "Muuda metaandmeid", description: "Muutke PDF-i pealkirja, autorit, märksõnu ja muid metaandmeid." },
+    grayscale: { title: "Halltoonid", description: "Teisendage PDF-i värvid mustvalgeks." },
+
+    // Optimeeri
+    compress: { title: "Tihenda PDF", description: "Vähendage PDF-faili suurust ilma kvaliteeti kaotamata." },
+    repair: { title: "Paranda PDF", description: "Parandage kahjustatud või rikutud PDF-faile." },
+    ocr: { title: "OCR PDF", description: "Muutke skaneeritud PDF-id otsitavaks tekstituvastuse abil." },
+    "web-optimize": { title: "Veebioptimeerimine", description: "Lineariseerige PDF-id kiiremaks veebis laadimiseks." },
+
+    // Turvalisus
+    protect: { title: "Kaitse PDF-i", description: "Lisage paroolikaitse ja krüpteerige oma PDF." },
+    unlock: { title: "Ava PDF lukust", description: "Eemaldage PDF-failidest paroolikaitse." },
+    redact: { title: "Redigeeri PDF-i", description: "Eemaldage PDF-idest jäädavalt tundlik teave." },
+    compare: { title: "Võrdle PDF-e", description: "Võrrelge kahte PDF-i kõrvuti ja leidke erinevused." },
+    translate: { title: "Tõlgi PDF", description: "Tõlkige PDF-i sisu teise keelde tehisintellekti abil." },
+  },
+  nav: {
+    allTools: "Kõik tööriistad",
+    language: "Keel",
+  },
+  footer: {
+    tools: "Tööriistad",
+    legal: "Õiguslik",
+    privacy: "Privaatsuspoliitika",
+    terms: "Kasutustingimused",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Tagasi kõigi tööriistade juurde",
+    dropFiles: "Lohistage oma failid siia",
+    acceptedFormats: "Lubatud formaadid",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Tasuta PDF-tööriistad",
+    siteDescription: "Ühendage, tükeldage, tihendage ja teisendage PDF-faile veebis tasuta.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Kasutame küpsiseid teie kasutuskogemuse parandamiseks.",
+    accept: "Nõustu",
+    decline: "Keeldu",
+  },
+  privacy: {
+    title: "Privaatsuspoliitika",
+    lastUpdated: "Viimati uuendatud: 1. märts 2026",
+    intro: "ToolBox PDF-is on sinu privaatsus meile oluline. See poliitika selgitab, millist teavet me kogume, kui kasutad meie teenust, ja kuidas me sellega ümber käime.",
+    sections: [
+      {
+        heading: "1. Teave, mida kogume",
+        content: "ToolBox PDF ei nõua registreerimist. Me ei kogu isikuandmeid. Siiski võime teenuse parandamiseks automaatselt koguda mittetuvastatavat teavet:\n\n• Brauseri tüüp ja versioon\n• Operatsioonisüsteem\n• Külastatud lehed ja veebilehel veedetud aeg\n• Küpsised ja sarnased tehnoloogiad kasutusharjumuste jälgimiseks",
+      },
+      {
+        heading: "2. Failide käsitlemine",
+        content: "Sinu üleslaaditud failid töödeldakse meie serverites ja kustutatakse automaatselt 2 tunni jooksul. Me ei loe, ei salvesta ega jaga sinu failide sisu kellegagi.",
+      },
+      {
+        heading: "3. Küpsised",
+        content: "Kasutame küpsiseid sinu eelistuste meeldejätmiseks, näiteks teema (tume/hele režiim) ja keelevalik. Reklaamivõrgud (nt Google AdSense) võivad samuti kasutada küpsiseid isikupärastatud reklaamide kuvamiseks.",
+      },
+      {
+        heading: "4. Kolmandate osapoolte teenused",
+        content: "Võime kasutada järgmisi kolmandate osapoolte teenuseid:\n\n• Google Analytics — liiklusanalüüsiks\n• Google AdSense — reklaamide kuvamiseks\n\nTäpsema teabe saamiseks selle kohta, kuidas need teenused sinu andmeid käsitlevad, tutvu vastava teenuse privaatsuspoliitikaga.",
+      },
+      {
+        heading: "5. Sinu õigused",
+        content: "Saad küpsised oma brauseri seadete kaudu igal ajal keelata või kustutada. Pane tähele, et mõned funktsioonid ei pruugi ilma küpsisteta korralikult töötada.",
+      },
+      {
+        heading: "6. Muudatused selles poliitikas",
+        content: "Võime seda poliitikat uuendada vastavalt seaduste muutumisele või teenuse arengule. Kõik muudatused avaldatakse sellel lehel.",
+      },
+      {
+        heading: "7. Võta meiega ühendust",
+        content: "Privaatsusega seotud küsimuste korral kirjuta meile aadressil support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Kasutustingimused",
+    lastUpdated: "Viimati uuendatud: 1. märts 2026",
+    intro: "Täname, et kasutad ToolBox PDF-i. Meie teenust kasutades nõustud järgmiste tingimustega.",
+    sections: [
+      {
+        heading: "1. Teenusest",
+        content: "ToolBox PDF on tasuta veebiteenus, mis võimaldab sul PDF-faile ühendada, tükeldada, teisendada, muuta ja tihendada otse oma brauseris.",
+      },
+      {
+        heading: "2. Lubatud kasutus",
+        content: "• Teenust tohid kasutada ainult seaduslikel eesmärkidel.\n• Ära töötle faile, mis rikuvad autoriõigusi või intellektuaalset omandit.\n• Ära kuritarvita teenust ega koorma liigselt meie servereid.\n• Automatiseeritud juurdepääs (robotid, veebikraapijad jms) ei ole lubatud.",
+      },
+      {
+        heading: "3. Failide käsitlemine",
+        content: "Üleslaaditud faile kasutatakse ainult soovitud toimingu tegemiseks. Need kustutatakse meie serveritest automaatselt 2 tunni jooksul. Me ei analüüsi ega säilita sinu faile.",
+      },
+      {
+        heading: "4. Vastutuse piirang",
+        content: "Teenust pakutakse põhimõttel \"nagu on\". Me ei anna garantiisid teisenduste täpsuse, katkematu kättesaadavuse ega andmekao eest kaitsmise kohta. Tee enne töötlemist alati olulistest failidest varukoopia.",
+      },
+      {
+        heading: "5. Intellektuaalomand",
+        content: "Kogu selle saidi sisu — sealhulgas kujundus, logod ja kood — kuulub ToolBox-ile. Sina säilitad täieliku omandiõiguse kõigi üleslaaditud failide üle. Me ei nõua mingit õigust sinu sisule.",
+      },
+      {
+        heading: "6. Teenuse muudatused",
+        content: "Jätame endale õiguse muuta või lõpetada funktsioone igal ajal ilma ette teatamata.",
+      },
+      {
+        heading: "7. Tingimuste uuendused",
+        content: "Neid tingimusi võidakse vajadusel muuta. Muudatused avaldatakse sellel lehel. Teenuse jätkuv kasutamine pärast muudatusi tähendab uuendatud tingimuste nõustumist.",
+      },
+      {
+        heading: "8. Võta meiega ühendust",
+        content: "Nende tingimustega seotud küsimuste korral kirjuta meile aadressil support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default et;

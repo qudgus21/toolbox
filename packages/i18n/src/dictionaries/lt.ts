@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const lt: Dictionary = {
+  home: {
+    title: "Visi įrankiai, kurių reikia darbui su",
+    titleAccent: "PDFs",
+    description: "Sujunkite, padalinkite, suspausite ir konvertuokite PDF failus. Nemokamai, greitai ir paprastai.",
+    tabAll: "Visi",
+    categoryOrganize: "Tvarkyti",
+    categoryConvert: "Konvertuoti",
+    categoryEdit: "Redaguoti",
+    categoryOptimize: "Optimizuoti",
+    categorySecurity: "Saugumas",
+    searchPlaceholder: "Ieškoti įrankių...",
+    noResults: "Įrankių nerasta.",
+  },
+  trust: {
+    encryption: "Saugus šifravimas",
+    encryptionDesc: "Jūsų failai apsaugoti 256 bitų SSL šifravimu.",
+    autoDelete: "Automatinis trynimas",
+    autoDeleteDesc: "Įkelti failai automatiškai ištrinami po 2 valandų.",
+    free: "Visiškai nemokamai",
+    freeDesc: "Naudokite visus įrankius be apribojimų, visiškai nemokamai.",
+    cloud: "Apdorojimas debesyje",
+    cloudDesc: "Apdorojama mūsų serveriuose, jokio poveikio jūsų įrenginiui.",
+  },
+  tools: {
+    // Tvarkyti
+    merge: { title: "Sujungti PDF", description: "Sujunkite kelis PDF failus į vieną dokumentą." },
+    split: { title: "Padalinti PDF", description: "Padalinkite PDF į atskirus puslapius ar skyrius." },
+    "delete-pages": { title: "Ištrinti puslapius", description: "Pašalinkite konkrečius puslapius iš PDF dokumento." },
+    "extract-pages": { title: "Išskleisti puslapius", description: "Išskleiskite pasirinktus puslapius į naują PDF failą." },
+    "organize-pages": { title: "Tvarkyti puslapius", description: "Pertvarkyti, pridėti ar pašalinti puslapius vizualiai." },
+    "scan-to-pdf": { title: "Nuskaityti į PDF", description: "Nuskaitykite dokumentus savo įrenginiu ir konvertuokite į PDF." },
+
+    // Konvertuoti
+    "pdf-to-word": { title: "PDF į Word", description: "Konvertuokite PDF dokumentus į redaguojamus Word failus." },
+    "pdf-to-jpg": { title: "PDF į JPG", description: "Konvertuokite PDF puslapius į aukštos kokybės JPG vaizdus." },
+    "pdf-to-excel": { title: "PDF į Excel", description: "Išskleiskite lenteles ir duomenis iš PDF į Excel skaičiuokles." },
+    "pdf-to-ppt": { title: "PDF į PPT", description: "Konvertuokite PDF failus į redaguojamas PowerPoint skaidres." },
+    "pdf-to-png": { title: "PDF į PNG", description: "Konvertuokite PDF puslapius į aukštos kokybės PNG vaizdus." },
+    "pdf-to-text": { title: "PDF į tekstą", description: "Išskleiskite visą tekstinį turinį iš PDF dokumentų." },
+    "pdf-to-pdfa": { title: "PDF į PDF/A", description: "Konvertuokite į PDF/A formatą ilgalaikiam archyvavimui." },
+    "word-to-pdf": { title: "Word į PDF", description: "Konvertuokite Word dokumentus į PDF formatą." },
+    "jpg-to-pdf": { title: "JPG į PDF", description: "Konvertuokite JPG vaizdus į PDF dokumentą." },
+    "excel-to-pdf": { title: "Excel į PDF", description: "Konvertuokite Excel skaičiuokles į PDF formatą." },
+    "ppt-to-pdf": { title: "PPT į PDF", description: "Konvertuokite PowerPoint prezentacijas į PDF formatą." },
+    "html-to-pdf": { title: "HTML į PDF", description: "Konvertuokite tinklalapius ir HTML failus į PDF." },
+    "png-to-pdf": { title: "PNG į PDF", description: "Konvertuokite PNG vaizdus į PDF dokumentą." },
+    "image-to-pdf": { title: "Vaizdas į PDF", description: "Sujunkite kelis bet kokio formato vaizdus į vieną PDF." },
+
+    // Redaguoti
+    "edit-pdf": { title: "Redaguoti PDF", description: "Pridėkite tekstą, vaizdus, figūras ir anotacijas prie PDF." },
+    rotate: { title: "Pasukti PDF", description: "Pasukite PDF puslapius į teisingą orientaciją." },
+    "page-numbers": { title: "Puslapių numeriai", description: "Pridėkite puslapių numerius prie PDF dokumento." },
+    watermark: { title: "Vandens ženklas", description: "Pridėkite teksto ar vaizdo vandens ženklus prie PDF." },
+    crop: { title: "Apkarpyti PDF", description: "Apkarpykite paraštes arba pasirinkite konkrečias PDF puslapių sritis." },
+    sign: { title: "Pasirašyti PDF", description: "Pridėkite elektroninius parašus prie PDF dokumentų." },
+    annotate: { title: "Anotuoti PDF", description: "Paryškinkite, pabraukite ir pridėkite komentarus prie PDF." },
+    flatten: { title: "Suplokštinti PDF", description: "Sujunkite formos laukus ir anotacijas į puslapio turinį." },
+    resize: { title: "Keisti PDF dydį", description: "Pakeiskite PDF puslapio dydį (A4, Letter, pasirinktinai)." },
+    "edit-metadata": { title: "Redaguoti metaduomenis", description: "Pakeiskite PDF pavadinimą, autorių, raktinius žodžius ir kitus metaduomenis." },
+    grayscale: { title: "Pilki tonai", description: "Konvertuokite PDF spalvas į juodą ir baltą." },
+
+    // Optimizuoti
+    compress: { title: "Suspausti PDF", description: "Sumažinkite PDF failo dydį neprarandant kokybės." },
+    repair: { title: "Taisyti PDF", description: "Pataisykite pažeistus arba sugadintus PDF failus." },
+    ocr: { title: "OCR PDF", description: "Padarykite nuskaitytus PDF ieškotinus naudojant teksto atpažinimą." },
+    "web-optimize": { title: "Žiniatinklio optimizavimas", description: "Optimizuokite PDF greitesniam įkėlimui internete." },
+
+    // Saugumas
+    protect: { title: "Apsaugoti PDF", description: "Pridėkite slaptažodžio apsaugą ir užšifruokite PDF." },
+    unlock: { title: "Atrakinti PDF", description: "Pašalinkite slaptažodžio apsaugą iš PDF failų." },
+    redact: { title: "Redaguoti PDF turinį", description: "Visam laikui pašalinkite slaptą informaciją iš PDF." },
+    compare: { title: "Palyginti PDF", description: "Palyginkite du PDF greta ir raskite skirtumus." },
+    translate: { title: "Versti PDF", description: "Išverskite PDF turinį į kitą kalbą naudojant AI." },
+  },
+  nav: {
+    allTools: "Visi įrankiai",
+    language: "Kalba",
+  },
+  footer: {
+    tools: "Įrankiai",
+    legal: "Teisinė informacija",
+    privacy: "Privatumo politika",
+    terms: "Naudojimo sąlygos",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Grįžti prie visų įrankių",
+    dropFiles: "Nutempkite failus čia",
+    acceptedFormats: "Priimami formatai",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Nemokami PDF įrankiai",
+    siteDescription: "Sujunkite, padalinkite, suspausite ir konvertuokite PDF failus internetu nemokamai.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Naudojame slapukus jūsų patirčiai gerinti.",
+    accept: "Sutinku",
+    decline: "Nesutinku",
+  },
+  privacy: {
+    title: "Privatumo politika",
+    lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
+    intro: "ToolBox PDF vertina jūsų privatumą. Ši politika paaiškina, kokią informaciją renkame, kai naudojatės mūsų paslauga, ir kaip su ja elgiamės.",
+    sections: [
+      {
+        heading: "1. Informacija, kurią renkame",
+        content: "ToolBox PDF nereikalauja registracijos. Nerenkame asmens duomenų. Tačiau galime automatiškai rinkti neasmeninius duomenis paslaugos tobulinimui:\n\n• Naršyklės tipas ir versija\n• Operacinė sistema\n• Aplankyti puslapiai ir praleistas laikas\n• Slapukai ir panašios technologijos naudojimo įpročiams stebėti",
+      },
+      {
+        heading: "2. Failų tvarkymas",
+        content: "Jūsų įkelti failai apdorojami mūsų serveriuose ir automatiškai ištrinami per 2 valandas. Mes neskaitome, nesaugome ir nesidalijame jūsų failų turiniu su niekuo.",
+      },
+      {
+        heading: "3. Slapukai",
+        content: "Naudojame slapukus jūsų nuostatoms įsiminti, pavyzdžiui, temai (tamsusis/šviesiojo režimas) ir kalbos pasirinkimui. Reklamos tinklai (pvz., Google AdSense) taip pat gali naudoti slapukus personalizuotoms reklamoms rodyti.",
+      },
+      {
+        heading: "4. Trečiųjų šalių paslaugos",
+        content: "Galime naudoti šias trečiųjų šalių paslaugas:\n\n• Google Analytics — srautų analizei\n• Google AdSense — reklamų rodymui\n\nDaugiau informacijos apie tai, kaip šios paslaugos tvarko jūsų duomenis, rasite atitinkamos paslaugos privatumo politikoje.",
+      },
+      {
+        heading: "5. Jūsų teisės",
+        content: "Galite bet kada išjungti arba ištrinti slapukus savo naršyklės nustatymuose. Atminkite, kad kai kurios funkcijos gali veikti netinkamai be slapukų.",
+      },
+      {
+        heading: "6. Šios politikos pakeitimai",
+        content: "Galime atnaujinti šią politiką keičiantis įstatymams arba tobulėjant mūsų paslaugai. Visi pakeitimai bus paskelbti šiame puslapyje.",
+      },
+      {
+        heading: "7. Susisiekite su mumis",
+        content: "Dėl klausimų, susijusių su privatumu, rašykite mums adresu support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Naudojimo sąlygos",
+    lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
+    intro: "Dėkojame, kad naudojatės ToolBox PDF. Naudodamiesi mūsų paslauga, sutinkate su šiomis sąlygomis.",
+    sections: [
+      {
+        heading: "1. Apie paslaugą",
+        content: "ToolBox PDF yra nemokama internetinė paslauga, leidžianti sujungti, padalinti, konvertuoti, redaguoti ir suspausti PDF failus tiesiai naršyklėje.",
+      },
+      {
+        heading: "2. Leistinas naudojimas",
+        content: "• Paslaugą galite naudoti tik teisėtais tikslais.\n• Neapdorokite failų, pažeidžiančių autorių teises ar intelektinę nuosavybę.\n• Nepiktnaudžiaukite paslauga ir neperkraukite mūsų serverių.\n• Automatizuota prieiga (robotai, grandikliai ir pan.) nėra leidžiama.",
+      },
+      {
+        heading: "3. Failų tvarkymas",
+        content: "Įkelti failai naudojami tik prašomai operacijai atlikti. Jie automatiškai ištrinami iš mūsų serverių per 2 valandas. Mes neanalizuojame ir nesaugome jūsų failų.",
+      },
+      {
+        heading: "4. Atsakomybės apribojimas",
+        content: "Paslauga teikiama principu 'tokia, kokia yra'. Nesuteikiame jokių garantijų dėl konvertavimo tikslumo, nepertraukiamo prieinamumo ar apsaugos nuo duomenų praradimo. Prieš apdorojimą visada pasidarykite svarbių failų atsarginę kopiją.",
+      },
+      {
+        heading: "5. Intelektinė nuosavybė",
+        content: "Visas šios svetainės turinys — įskaitant dizainą, logotipus ir kodą — priklauso ToolBox. Jūs išlaikote visas teises į visus savo įkeltus failus. Mes nepretenzijame į jūsų turinį.",
+      },
+      {
+        heading: "6. Paslaugos pakeitimai",
+        content: "Pasiliekame teisę bet kada keisti arba nutraukti funkcijas be išankstinio pranešimo.",
+      },
+      {
+        heading: "7. Šių sąlygų atnaujinimai",
+        content: "Šios sąlygos gali būti peržiūrėtos esant poreikiui. Pakeitimai bus paskelbti šiame puslapyje. Tolimesnis paslaugos naudojimas po pakeitimų reiškia sutikimą su atnaujintomis sąlygomis.",
+      },
+      {
+        heading: "8. Susisiekite su mumis",
+        content: "Dėl klausimų apie šias sąlygas rašykite mums adresu support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default lt;

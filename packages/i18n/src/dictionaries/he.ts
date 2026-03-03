@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const he: Dictionary = {
+  home: {
+    title: "כל הכלים שאתה צריך לעבודה עם",
+    titleAccent: "PDFs",
+    description: "מיזוג, פיצול, דחיסה והמרה של קובצי PDF. חינם, מהיר וקל לשימוש.",
+    tabAll: "הכל",
+    categoryOrganize: "ארגון",
+    categoryConvert: "המרה",
+    categoryEdit: "עריכה",
+    categoryOptimize: "אופטימיזציה",
+    categorySecurity: "אבטחה",
+    searchPlaceholder: "חיפוש כלים...",
+    noResults: "לא נמצאו כלים.",
+  },
+  trust: {
+    encryption: "הצפנה מאובטחת",
+    encryptionDesc: "הקבצים שלך מוגנים בהצפנת SSL של 256 סיביות.",
+    autoDelete: "מחיקה אוטומטית",
+    autoDeleteDesc: "קבצים שהועלו נמחקים אוטומטית לאחר שעתיים.",
+    free: "חינם לחלוטין",
+    freeDesc: "השתמש בכל הכלים ללא הגבלות, בחינם לחלוטין.",
+    cloud: "עיבוד בענן",
+    cloudDesc: "מעובד בשרתים שלנו, ללא השפעה על המכשיר שלך.",
+  },
+  tools: {
+    // ארגון
+    merge: { title: "מיזוג PDF", description: "שלב מספר קובצי PDF למסמך אחד." },
+    split: { title: "פיצול PDF", description: "הפרד PDF לעמודים בודדים או חלקים." },
+    "delete-pages": { title: "מחיקת עמודים", description: "הסר עמודים ספציפיים ממסמך PDF." },
+    "extract-pages": { title: "חילוץ עמודים", description: "חלץ עמודים נבחרים לקובץ PDF חדש." },
+    "organize-pages": { title: "ארגון עמודים", description: "סדר מחדש, הוסף או הסר עמודים באופן חזותי." },
+    "scan-to-pdf": { title: "סריקה ל-PDF", description: "צלם סריקות מהמכשיר שלך והמר ל-PDF." },
+
+    // המרה
+    "pdf-to-word": { title: "PDF ל-Word", description: "המר מסמכי PDF לקובצי Word הניתנים לעריכה." },
+    "pdf-to-jpg": { title: "PDF ל-JPG", description: "המר עמודי PDF לתמונות JPG באיכות גבוהה." },
+    "pdf-to-excel": { title: "PDF ל-Excel", description: "חלץ טבלאות ונתונים מ-PDF לגיליונות Excel." },
+    "pdf-to-ppt": { title: "PDF ל-PPT", description: "המר קובצי PDF לשקפי PowerPoint הניתנים לעריכה." },
+    "pdf-to-png": { title: "PDF ל-PNG", description: "המר עמודי PDF לתמונות PNG באיכות גבוהה." },
+    "pdf-to-text": { title: "PDF לטקסט", description: "חלץ את כל תוכן הטקסט ממסמכי PDF." },
+    "pdf-to-pdfa": { title: "PDF ל-PDF/A", description: "המרה לפורמט PDF/A לארכוב ארוך טווח." },
+    "word-to-pdf": { title: "Word ל-PDF", description: "המר מסמכי Word לפורמט PDF." },
+    "jpg-to-pdf": { title: "JPG ל-PDF", description: "המר תמונות JPG למסמך PDF." },
+    "excel-to-pdf": { title: "Excel ל-PDF", description: "המר גיליונות Excel לפורמט PDF." },
+    "ppt-to-pdf": { title: "PPT ל-PDF", description: "המר מצגות PowerPoint לפורמט PDF." },
+    "html-to-pdf": { title: "HTML ל-PDF", description: "המר דפי אינטרנט וקובצי HTML ל-PDF." },
+    "png-to-pdf": { title: "PNG ל-PDF", description: "המר תמונות PNG למסמך PDF." },
+    "image-to-pdf": { title: "תמונה ל-PDF", description: "שלב מספר תמונות מכל פורמט ל-PDF אחד." },
+
+    // עריכה
+    "edit-pdf": { title: "עריכת PDF", description: "הוסף טקסט, תמונות, צורות והערות ל-PDF." },
+    rotate: { title: "סיבוב PDF", description: "סובב עמודי PDF לכיוון הנכון." },
+    "page-numbers": { title: "מספרי עמודים", description: "הוסף מספרי עמודים למסמך ה-PDF שלך." },
+    watermark: { title: "סימן מים", description: "הוסף סימני מים של טקסט או תמונה ל-PDF שלך." },
+    crop: { title: "חיתוך PDF", description: "חתוך שוליים או בחר אזורים ספציפיים בעמודי PDF." },
+    sign: { title: "חתימה על PDF", description: "הוסף חתימות אלקטרוניות למסמכי ה-PDF שלך." },
+    annotate: { title: "הוספת הערות ל-PDF", description: "סמן, קו תחתון והוסף הערות ל-PDF." },
+    flatten: { title: "שיטוח PDF", description: "מזג שדות טפסים והערות לתוכן העמוד." },
+    resize: { title: "שינוי גודל PDF", description: "שנה את גודל עמוד ה-PDF (A4, Letter, מותאם אישית)." },
+    "edit-metadata": { title: "עריכת מטא-נתונים", description: "שנה כותרת, מחבר, מילות מפתח ומטא-נתונים אחרים של PDF." },
+    grayscale: { title: "גווני אפור", description: "המר צבעי PDF לשחור-לבן." },
+
+    // אופטימיזציה
+    compress: { title: "דחיסת PDF", description: "הקטן את גודל קובץ ה-PDF מבלי לאבד איכות." },
+    repair: { title: "תיקון PDF", description: "תקן קובצי PDF פגומים או מושחתים." },
+    ocr: { title: "OCR PDF", description: "הפוך קובצי PDF סרוקים לניתנים לחיפוש עם זיהוי טקסט." },
+    "web-optimize": { title: "אופטימיזציה לאינטרנט", description: "לינאריזציה של PDF לטעינה מהירה יותר באינטרנט." },
+
+    // אבטחה
+    protect: { title: "הגנה על PDF", description: "הוסף הגנת סיסמה והצפן את ה-PDF שלך." },
+    unlock: { title: "ביטול נעילת PDF", description: "הסר הגנת סיסמה מקובצי PDF." },
+    redact: { title: "השחרת מידע רגיש", description: "הסר לצמיתות מידע רגיש מקובצי PDF." },
+    compare: { title: "השוואת PDF", description: "השווה שני קובצי PDF זה לצד זה ומצא הבדלים." },
+    translate: { title: "תרגום PDF", description: "תרגם תוכן PDF לשפה אחרת באמצעות AI." },
+  },
+  nav: {
+    allTools: "כל הכלים",
+    language: "שפה",
+  },
+  footer: {
+    tools: "כלים",
+    legal: "משפטי",
+    privacy: "מדיניות פרטיות",
+    terms: "תנאי שימוש",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "חזרה לכל הכלים",
+    dropFiles: "גרור את הקבצים שלך לכאן",
+    acceptedFormats: "פורמטים מקובלים",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - כלי PDF חינמיים",
+    siteDescription: "מיזוג, פיצול, דחיסה והמרה של קובצי PDF באינטרנט בחינם.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "אנו משתמשים בעוגיות כדי לשפר את החוויה שלך.",
+    accept: "אישור",
+    decline: "דחייה",
+  },
+  privacy: {
+    title: "מדיניות פרטיות",
+    lastUpdated: "עדכון אחרון: 1 במרץ 2026",
+    intro: "ב-ToolBox PDF, הפרטיות שלך חשובה לנו. מדיניות זו מסבירה אילו מידע אנו אוספים כשאתה משתמש בשירות שלנו וכיצד אנו מטפלים בו.",
+    sections: [
+      {
+        heading: "1. מידע שאנו אוספים",
+        content: "ToolBox PDF אינו דורש הרשמה. איננו אוספים מידע אישי. עם זאת, ייתכן שנאסוף באופן אוטומטי נתונים אנונימיים לשיפור השירות:\n\n• סוג וגרסת הדפדפן\n• מערכת הפעלה\n• דפים שנצפו וזמן שהייה\n• עוגיות וטכנולוגיות דומות לניתוח דפוסי שימוש",
+      },
+      {
+        heading: "2. טיפול בקבצים",
+        content: "הקבצים שאתה מעלה מעובדים בשרתים שלנו ונמחקים אוטומטית תוך שעתיים. איננו קוראים, שומרים או משתפים את תוכן הקבצים שלך עם אף גורם.",
+      },
+      {
+        heading: "3. עוגיות",
+        content: "אנו משתמשים בעוגיות כדי לזכור את ההעדפות שלך, כגון ערכת נושא (מצב כהה/בהיר) ובחירת שפה. רשתות פרסום (כגון Google AdSense) עשויות אף הן להשתמש בעוגיות כדי להציג פרסומות מותאמות אישית.",
+      },
+      {
+        heading: "4. שירותי צד שלישי",
+        content: "אנו עשויים להשתמש בשירותי צד שלישי הבאים:\n\n• Google Analytics – לניתוח תנועה באתר\n• Google AdSense – להצגת פרסומות\n\nלפרטים נוספים על אופן הטיפול בנתונים שלך, עיין במדיניות הפרטיות של כל שירות.",
+      },
+      {
+        heading: "5. הזכויות שלך",
+        content: "באפשרותך להשבית או למחוק עוגיות דרך הגדרות הדפדפן בכל עת. שים לב שחלק מהתכונות עלולות שלא לפעול כראוי ללא עוגיות.",
+      },
+      {
+        heading: "6. שינויים במדיניות זו",
+        content: "אנו עשויים לעדכן מדיניות זו בעקבות שינויים בחקיקה או בהתפתחות השירות שלנו. כל שינוי יפורסם בדף זה.",
+      },
+      {
+        heading: "7. יצירת קשר",
+        content: "לשאלות בנושא פרטיות, ניתן לפנות אלינו בכתובת support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "תנאי שימוש",
+    lastUpdated: "עדכון אחרון: 1 במרץ 2026",
+    intro: "תודה שאתה משתמש ב-ToolBox PDF. בעצם הגישה לשירות שלנו או השימוש בו, אתה מסכים לתנאים הבאים.",
+    sections: [
+      {
+        heading: "1. אודות השירות",
+        content: "ToolBox PDF הוא שירות מקוון חינמי המאפשר לך למזג, לפצל, להמיר, לערוך ולדחוס קובצי PDF ישירות בדפדפן שלך.",
+      },
+      {
+        heading: "2. שימוש הולם",
+        content: "• מותר להשתמש בשירות למטרות חוקיות בלבד.\n• אין לעבד קבצים המפרים זכויות יוצרים או קניין רוחני.\n• אין לנצל את השירות לרעה או ליצור עומס מופרז על השרתים שלנו.\n• גישה אוטומטית (בוטים, סורקים וכו') אסורה.",
+      },
+      {
+        heading: "3. טיפול בקבצים",
+        content: "קבצים שהועלו משמשים אך ורק לביצוע הפעולה המבוקשת. הם נמחקים אוטומטית מהשרתים שלנו תוך שעתיים. איננו מנתחים או שומרים את הקבצים שלך.",
+      },
+      {
+        heading: "4. הגבלת אחריות",
+        content: "השירות מסופק \"כמות שהוא\". איננו מבטיחים דיוק בהמרה, זמינות רציפה או הגנה מפני אובדן נתונים. הקפד תמיד לגבות קבצים חשובים לפני עיבוד.",
+      },
+      {
+        heading: "5. קניין רוחני",
+        content: "כל התוכן באתר זה — כולל עיצוב, לוגואים וקוד — שייך ל-ToolBox. אתה שומר על מלוא הזכויות לקבצים שאתה מעלה. איננו טוענים לבעלות על התוכן שלך.",
+      },
+      {
+        heading: "6. שינויים בשירות",
+        content: "אנו שומרים לעצמנו את הזכות לשנות או להפסיק תכונות בכל עת ללא הודעה מוקדמת.",
+      },
+      {
+        heading: "7. עדכון תנאים אלה",
+        content: "תנאים אלה עשויים להתעדכן לפי הצורך. שינויים יפורסמו בדף זה. המשך השימוש בשירות לאחר שינויים מהווה הסכמה לתנאים המעודכנים.",
+      },
+      {
+        heading: "8. יצירת קשר",
+        content: "לשאלות בנושא תנאים אלה, ניתן לפנות אלינו בכתובת support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default he;

@@ -1,0 +1,105 @@
+import type { Dictionary } from "../config";
+
+const ms: Dictionary = {
+  home: {
+    title: "Setiap alat yang anda perlukan untuk bekerja dengan",
+    titleAccent: "PDFs",
+    description: "Gabung, pisah, mampat dan tukar fail PDF. Percuma, pantas dan mudah digunakan.",
+    tabAll: "Semua",
+    categoryOrganize: "Susun",
+    categoryConvert: "Tukar",
+    categoryEdit: "Sunting",
+    categoryOptimize: "Optimum",
+    categorySecurity: "Keselamatan",
+    searchPlaceholder: "Cari alat...",
+    noResults: "Tiada alat ditemui.",
+  },
+  trust: {
+    encryption: "Penyulitan Selamat",
+    encryptionDesc: "Fail anda dilindungi dengan penyulitan SSL 256-bit.",
+    autoDelete: "Padam Automatik",
+    autoDeleteDesc: "Fail yang dimuat naik dipadam secara automatik selepas 2 jam.",
+    free: "Percuma Sepenuhnya",
+    freeDesc: "Gunakan semua alat tanpa had, percuma sepenuhnya.",
+    cloud: "Pemprosesan Awan",
+    cloudDesc: "Diproses di pelayan kami, tiada kesan pada peranti anda.",
+  },
+  tools: {
+    // Susun
+    merge: { title: "Gabung PDF", description: "Gabungkan beberapa fail PDF menjadi satu dokumen." },
+    split: { title: "Pisah PDF", description: "Pisahkan PDF kepada halaman atau bahagian individu." },
+    "delete-pages": { title: "Padam Halaman", description: "Buang halaman tertentu daripada dokumen PDF." },
+    "extract-pages": { title: "Ekstrak Halaman", description: "Ekstrak halaman terpilih ke dalam fail PDF baharu." },
+    "organize-pages": { title: "Susun Halaman", description: "Susun semula, tambah atau buang halaman secara visual." },
+    "scan-to-pdf": { title: "Imbas ke PDF", description: "Tangkap imbasan dari peranti anda dan tukar kepada PDF." },
+
+    // Tukar
+    "pdf-to-word": { title: "PDF ke Word", description: "Tukar dokumen PDF kepada fail Word yang boleh disunting." },
+    "pdf-to-jpg": { title: "PDF ke JPG", description: "Tukar halaman PDF kepada imej JPG berkualiti tinggi." },
+    "pdf-to-excel": { title: "PDF ke Excel", description: "Ekstrak jadual dan data daripada PDF ke hamparan Excel." },
+    "pdf-to-ppt": { title: "PDF ke PPT", description: "Tukar fail PDF kepada slaid PowerPoint yang boleh disunting." },
+    "pdf-to-png": { title: "PDF ke PNG", description: "Tukar halaman PDF kepada imej PNG berkualiti tinggi." },
+    "pdf-to-text": { title: "PDF ke Teks", description: "Ekstrak semua kandungan teks daripada dokumen PDF." },
+    "pdf-to-pdfa": { title: "PDF ke PDF/A", description: "Tukar kepada format PDF/A untuk pengarkiban jangka panjang." },
+    "word-to-pdf": { title: "Word ke PDF", description: "Tukar dokumen Word kepada format PDF." },
+    "jpg-to-pdf": { title: "JPG ke PDF", description: "Tukar imej JPG menjadi dokumen PDF." },
+    "excel-to-pdf": { title: "Excel ke PDF", description: "Tukar hamparan Excel kepada format PDF." },
+    "ppt-to-pdf": { title: "PPT ke PDF", description: "Tukar persembahan PowerPoint kepada format PDF." },
+    "html-to-pdf": { title: "HTML ke PDF", description: "Tukar halaman web dan fail HTML kepada PDF." },
+    "png-to-pdf": { title: "PNG ke PDF", description: "Tukar imej PNG menjadi dokumen PDF." },
+    "image-to-pdf": { title: "Imej ke PDF", description: "Gabungkan pelbagai imej dalam sebarang format menjadi satu PDF." },
+
+    // Sunting
+    "edit-pdf": { title: "Sunting PDF", description: "Tambah teks, imej, bentuk dan anotasi pada PDF." },
+    rotate: { title: "Putar PDF", description: "Putar halaman PDF ke orientasi yang betul." },
+    "page-numbers": { title: "Nombor Halaman", description: "Tambah nombor halaman pada dokumen PDF anda." },
+    watermark: { title: "Tera Air", description: "Tambah tera air teks atau imej pada PDF anda." },
+    crop: { title: "Pangkas PDF", description: "Pangkas margin atau pilih kawasan tertentu halaman PDF." },
+    sign: { title: "Tandatangan PDF", description: "Tambah tandatangan elektronik pada dokumen PDF anda." },
+    annotate: { title: "Anotasi PDF", description: "Serlah, garis bawah dan tambah komen pada PDF." },
+    flatten: { title: "Ratakan PDF", description: "Gabungkan medan borang dan anotasi ke dalam kandungan halaman." },
+    resize: { title: "Ubah Saiz PDF", description: "Tukar saiz halaman PDF (A4, Letter, tersuai)." },
+    "edit-metadata": { title: "Sunting Metadata", description: "Tukar tajuk PDF, pengarang, kata kunci dan metadata lain." },
+    grayscale: { title: "Skala Kelabu", description: "Tukar warna PDF kepada hitam putih." },
+
+    // Optimum
+    compress: { title: "Mampat PDF", description: "Kurangkan saiz fail PDF tanpa kehilangan kualiti." },
+    repair: { title: "Baiki PDF", description: "Baiki fail PDF yang rosak atau korup." },
+    ocr: { title: "OCR PDF", description: "Jadikan PDF yang diimbas boleh dicari dengan pengecaman teks." },
+    "web-optimize": { title: "Optimum Web", description: "Optimumkan PDF untuk pemuatan web yang lebih pantas." },
+
+    // Keselamatan
+    protect: { title: "Lindung PDF", description: "Tambah perlindungan kata laluan dan sulitkan PDF anda." },
+    unlock: { title: "Buka Kunci PDF", description: "Buang perlindungan kata laluan daripada fail PDF." },
+    redact: { title: "Sunting Hitam PDF", description: "Buang maklumat sensitif secara kekal daripada PDF." },
+    compare: { title: "Banding PDF", description: "Bandingkan dua PDF secara bersebelahan dan kesan perbezaan." },
+    translate: { title: "Terjemah PDF", description: "Terjemah kandungan PDF ke bahasa lain dengan AI." },
+  },
+  nav: {
+    allTools: "Semua Alat",
+    language: "Bahasa",
+  },
+  footer: {
+    tools: "Alat",
+    company: "Syarikat",
+    legal: "Undang-undang",
+    about: "Tentang Kami",
+    contact: "Hubungi",
+    blog: "Blog",
+    privacy: "Dasar Privasi",
+    terms: "Terma Perkhidmatan",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Kembali ke semua alat",
+    dropFiles: "Lepaskan fail anda di sini",
+    acceptedFormats: "Format yang diterima",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Alat PDF Percuma",
+    siteDescription: "Gabung, pisah, mampat dan tukar fail PDF dalam talian secara percuma.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+};
+
+export default ms;

@@ -1,0 +1,168 @@
+import type { Dictionary } from "../config";
+
+const no: Dictionary = {
+  home: {
+    title: "Alle verktøyene du trenger for å jobbe med",
+    titleAccent: "PDFs",
+    description: "Slå sammen, del, komprimer og konverter PDF-filer. Gratis, raskt og enkelt å bruke.",
+    tabAll: "Alle",
+    categoryOrganize: "Organiser",
+    categoryConvert: "Konverter",
+    categoryEdit: "Rediger",
+    categoryOptimize: "Optimaliser",
+    categorySecurity: "Sikkerhet",
+    searchPlaceholder: "Søk etter verktøy...",
+    noResults: "Ingen verktøy funnet.",
+  },
+  trust: {
+    encryption: "Sikker kryptering",
+    encryptionDesc: "Filene dine er beskyttet med 256-bit SSL-kryptering.",
+    autoDelete: "Automatisk sletting",
+    autoDeleteDesc: "Opplastede filer slettes automatisk etter 2 timer.",
+    free: "Helt gratis",
+    freeDesc: "Bruk alle verktøy uten begrensninger, helt gratis.",
+    cloud: "Skybehandling",
+    cloudDesc: "Behandlet på våre servere, ingen påvirkning på enheten din.",
+  },
+  tools: {
+    merge: { title: "Slå sammen PDF", description: "Kombiner flere PDF-filer til ett dokument." },
+    split: { title: "Del PDF", description: "Separer en PDF i individuelle sider eller seksjoner." },
+    "delete-pages": { title: "Slett sider", description: "Fjern bestemte sider fra et PDF-dokument." },
+    "extract-pages": { title: "Trekk ut sider", description: "Trekk ut valgte sider til en ny PDF-fil." },
+    "organize-pages": { title: "Organiser sider", description: "Omorganiser, legg til eller fjern sider visuelt." },
+    "scan-to-pdf": { title: "Skann til PDF", description: "Ta skanninger fra enheten din og konverter til PDF." },
+    "pdf-to-word": { title: "PDF til Word", description: "Konverter PDF-dokumenter til redigerbare Word-filer." },
+    "pdf-to-jpg": { title: "PDF til JPG", description: "Konverter PDF-sider til JPG-bilder av høy kvalitet." },
+    "pdf-to-excel": { title: "PDF til Excel", description: "Trekk ut tabeller og data fra PDF-er til Excel-regneark." },
+    "pdf-to-ppt": { title: "PDF til PPT", description: "Konverter PDF-filer til redigerbare PowerPoint-lysbilder." },
+    "pdf-to-png": { title: "PDF til PNG", description: "Konverter PDF-sider til PNG-bilder av høy kvalitet." },
+    "pdf-to-text": { title: "PDF til tekst", description: "Trekk ut alt tekstinnhold fra PDF-dokumenter." },
+    "pdf-to-pdfa": { title: "PDF til PDF/A", description: "Konverter til PDF/A-format for langtidsarkivering." },
+    "word-to-pdf": { title: "Word til PDF", description: "Konverter Word-dokumenter til PDF-format." },
+    "jpg-to-pdf": { title: "JPG til PDF", description: "Konverter JPG-bilder til et PDF-dokument." },
+    "excel-to-pdf": { title: "Excel til PDF", description: "Konverter Excel-regneark til PDF-format." },
+    "ppt-to-pdf": { title: "PPT til PDF", description: "Konverter PowerPoint-presentasjoner til PDF-format." },
+    "html-to-pdf": { title: "HTML til PDF", description: "Konverter nettsider og HTML-filer til PDF." },
+    "png-to-pdf": { title: "PNG til PDF", description: "Konverter PNG-bilder til et PDF-dokument." },
+    "image-to-pdf": { title: "Bilde til PDF", description: "Kombiner flere bilder av alle formater til én PDF." },
+    "edit-pdf": { title: "Rediger PDF", description: "Legg til tekst, bilder, former og merknader i en PDF." },
+    rotate: { title: "Roter PDF", description: "Roter PDF-sider til riktig retning." },
+    "page-numbers": { title: "Sidetall", description: "Legg til sidetall i PDF-dokumentet ditt." },
+    watermark: { title: "Vannmerke", description: "Legg til tekst- eller bildevannmerker i PDF-en din." },
+    crop: { title: "Beskjær PDF", description: "Beskjær marger eller velg bestemte områder av PDF-sider." },
+    sign: { title: "Signer PDF", description: "Legg til elektroniske signaturer i PDF-dokumentene dine." },
+    annotate: { title: "Kommenter PDF", description: "Merk, understrek og legg til kommentarer i PDF-er." },
+    flatten: { title: "Flat ut PDF", description: "Slå sammen skjemafelt og merknader til sideinnhold." },
+    resize: { title: "Endre størrelse på PDF", description: "Endre PDF-sidestørrelse (A4, Letter, egendefinert)." },
+    "edit-metadata": { title: "Rediger metadata", description: "Endre PDF-tittel, forfatter, nøkkelord og andre metadata." },
+    grayscale: { title: "Gråtoner", description: "Konverter PDF-farger til svart-hvitt." },
+    compress: { title: "Komprimer PDF", description: "Reduser PDF-filstørrelse uten å miste kvalitet." },
+    repair: { title: "Reparer PDF", description: "Fiks skadede eller korrupte PDF-filer." },
+    ocr: { title: "OCR PDF", description: "Gjør skannede PDF-er søkbare med tekstgjenkjenning." },
+    "web-optimize": { title: "Weboptimalisering", description: "Lineariser PDF-er for raskere nettlasting." },
+    protect: { title: "Beskytt PDF", description: "Legg til passordbeskyttelse og krypter PDF-en din." },
+    unlock: { title: "Lås opp PDF", description: "Fjern passordbeskyttelse fra PDF-filer." },
+    redact: { title: "Sensurer PDF", description: "Fjern permanent sensitiv informasjon fra PDF-er." },
+    compare: { title: "Sammenlign PDF", description: "Sammenlign to PDF-er side ved side og finn forskjeller." },
+    translate: { title: "Oversett PDF", description: "Oversett PDF-innhold til et annet språk med AI." },
+  },
+  nav: { allTools: "Alle verktøy", language: "Språk" },
+  footer: {
+    tools: "Verktøy",
+    legal: "Juridisk",
+    privacy: "Personvern",
+    terms: "Vilkår for bruk",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Tilbake til alle verktøy",
+    dropFiles: "Slipp filene dine her",
+    acceptedFormats: "Aksepterte formater",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Gratis PDF-verktøy",
+    siteDescription: "Slå sammen, del, komprimer og konverter PDF-filer på nettet gratis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Vi bruker informasjonskapsler for å forbedre opplevelsen din.",
+    accept: "Godta",
+    decline: "Avslå",
+  },
+  privacy: {
+    title: "Personvernerklæring",
+    lastUpdated: "Sist oppdatert: 1. mars 2026",
+    intro: "Hos ToolBox PDF tar vi personvernet ditt på alvor. Denne erklæringen forklarer hvilken informasjon vi samler inn når du bruker tjenesten vår, og hvordan vi håndterer den.",
+    sections: [
+      {
+        heading: "1. Informasjon vi samler inn",
+        content: "ToolBox PDF krever ingen registrering. Vi samler ikke inn personopplysninger. Vi kan imidlertid automatisk samle inn ikke-identifiserende data for å forbedre tjenesten:\n\n• Nettlesertype og versjon\n• Operativsystem\n• Besøkte sider og tidsbruk\n• Informasjonskapsler og lignende teknologier for bruksmønstre",
+      },
+      {
+        heading: "2. Filhåndtering",
+        content: "Filer du laster opp blir behandlet på serverne våre og slettes automatisk innen 2 timer. Vi leser, lagrer eller deler ikke innholdet i filene dine med noen.",
+      },
+      {
+        heading: "3. Informasjonskapsler",
+        content: "Vi bruker informasjonskapsler for å huske innstillingene dine, som tema (mørk/lys modus) og språkvalg. Annonsenettverk (f.eks. Google AdSense) kan også bruke informasjonskapsler for å vise tilpassede annonser.",
+      },
+      {
+        heading: "4. Tredjepartstjenester",
+        content: "Vi kan benytte følgende tredjepartstjenester:\n\n• Google Analytics -- for trafikkanalyse\n• Google AdSense -- for annonsevisning\n\nSe den enkelte tjenestens egen personvernerklæring for detaljer om hvordan de håndterer dataene dine.",
+      },
+      {
+        heading: "5. Dine rettigheter",
+        content: "Du kan deaktivere eller slette informasjonskapsler via nettleserinnstillingene dine når som helst. Vær oppmerksom på at enkelte funksjoner kanskje ikke fungerer som de skal uten informasjonskapsler.",
+      },
+      {
+        heading: "6. Endringer i denne erklæringen",
+        content: "Vi kan oppdatere denne erklæringen etter hvert som lover endres eller tjenesten vår utvikler seg. Eventuelle endringer vil bli publisert på denne siden.",
+      },
+      {
+        heading: "7. Kontakt oss",
+        content: "Har du spørsmål om personvern, kan du nå oss på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Vilkår for bruk",
+    lastUpdated: "Sist oppdatert: 1. mars 2026",
+    intro: "Takk for at du bruker ToolBox PDF. Ved å bruke tjenesten vår godtar du følgende vilkår.",
+    sections: [
+      {
+        heading: "1. Om tjenesten",
+        content: "ToolBox PDF er en gratis nettbasert tjeneste som lar deg slå sammen, dele, konvertere, redigere og komprimere PDF-filer direkte i nettleseren din.",
+      },
+      {
+        heading: "2. Akseptabel bruk",
+        content: "• Du kan kun bruke tjenesten til lovlige formål.\n• Ikke behandle filer som krenker opphavsrett eller immaterielle rettigheter.\n• Ikke misbruk tjenesten eller legg unødvendig belastning på serverne våre.\n• Automatisk tilgang (roboter, skrapere o.l.) er ikke tillatt.",
+      },
+      {
+        heading: "3. Filhåndtering",
+        content: "Opplastede filer brukes utelukkende til å utføre den forespurte operasjonen. De slettes automatisk fra serverne våre innen 2 timer. Vi analyserer eller beholder ikke filene dine.",
+      },
+      {
+        heading: "4. Ansvarsfraskrivelse",
+        content: "Tjenesten leveres \"som den er.\" Vi gir ingen garantier for konverteringsnøyaktighet, uavbrutt tilgjengelighet eller beskyttelse mot datatap. Ta alltid sikkerhetskopi av viktige filer før behandling.",
+      },
+      {
+        heading: "5. Immaterielle rettigheter",
+        content: "Alt innhold på dette nettstedet -- inkludert design, logoer og kode -- tilhører ToolBox. Du beholder alle rettigheter til filene du laster opp. Vi gjør ikke krav på eierskap over innholdet ditt.",
+      },
+      {
+        heading: "6. Endringer i tjenesten",
+        content: "Vi forbeholder oss retten til å endre eller avvikle funksjoner når som helst uten forvarsel.",
+      },
+      {
+        heading: "7. Oppdateringer av disse vilkårene",
+        content: "Disse vilkårene kan bli revidert ved behov. Endringer vil bli publisert på denne siden. Fortsatt bruk av tjenesten etter endringer utgjør aksept av de oppdaterte vilkårene.",
+      },
+      {
+        heading: "8. Kontakt oss",
+        content: "Har du spørsmål om disse vilkårene, kan du nå oss på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default no;

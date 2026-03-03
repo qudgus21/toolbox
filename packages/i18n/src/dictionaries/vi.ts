@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const vi: Dictionary = {
+  home: {
+    title: "Mọi công cụ bạn cần để làm việc với",
+    titleAccent: "PDF",
+    description: "Gộp, tách, nén và chuyển đổi tệp PDF. Miễn phí, nhanh chóng và dễ sử dụng.",
+    tabAll: "Tất cả",
+    categoryOrganize: "Sắp xếp",
+    categoryConvert: "Chuyển đổi",
+    categoryEdit: "Chỉnh sửa",
+    categoryOptimize: "Tối ưu",
+    categorySecurity: "Bảo mật",
+    searchPlaceholder: "Tìm kiếm công cụ...",
+    noResults: "Không tìm thấy công cụ nào.",
+  },
+  trust: {
+    encryption: "Mã hóa an toàn",
+    encryptionDesc: "Tệp của bạn được bảo vệ bằng mã hóa SSL 256-bit.",
+    autoDelete: "Tự động xóa",
+    autoDeleteDesc: "Tệp tải lên sẽ tự động bị xóa sau 2 giờ.",
+    free: "Hoàn toàn miễn phí",
+    freeDesc: "Sử dụng tất cả công cụ không giới hạn, hoàn toàn miễn phí.",
+    cloud: "Xử lý trên đám mây",
+    cloudDesc: "Được xử lý trên máy chủ của chúng tôi, không ảnh hưởng đến thiết bị của bạn.",
+  },
+  tools: {
+    // Sắp xếp
+    merge: { title: "Gộp PDF", description: "Kết hợp nhiều tệp PDF thành một tài liệu." },
+    split: { title: "Tách PDF", description: "Tách một tệp PDF thành các trang hoặc phần riêng lẻ." },
+    "delete-pages": { title: "Xóa trang", description: "Xóa các trang cụ thể khỏi tài liệu PDF." },
+    "extract-pages": { title: "Trích xuất trang", description: "Trích xuất các trang đã chọn thành tệp PDF mới." },
+    "organize-pages": { title: "Sắp xếp trang", description: "Sắp xếp lại, thêm hoặc xóa trang một cách trực quan." },
+    "scan-to-pdf": { title: "Quét sang PDF", description: "Chụp bản quét từ thiết bị của bạn và chuyển đổi sang PDF." },
+
+    // Chuyển đổi
+    "pdf-to-word": { title: "PDF sang Word", description: "Chuyển đổi tài liệu PDF thành tệp Word có thể chỉnh sửa." },
+    "pdf-to-jpg": { title: "PDF sang JPG", description: "Chuyển đổi các trang PDF thành hình ảnh JPG chất lượng cao." },
+    "pdf-to-excel": { title: "PDF sang Excel", description: "Trích xuất bảng và dữ liệu từ PDF sang bảng tính Excel." },
+    "pdf-to-ppt": { title: "PDF sang PPT", description: "Chuyển đổi tệp PDF thành slide PowerPoint có thể chỉnh sửa." },
+    "pdf-to-png": { title: "PDF sang PNG", description: "Chuyển đổi các trang PDF thành hình ảnh PNG chất lượng cao." },
+    "pdf-to-text": { title: "PDF sang Text", description: "Trích xuất toàn bộ nội dung văn bản từ tài liệu PDF." },
+    "pdf-to-pdfa": { title: "PDF sang PDF/A", description: "Chuyển đổi sang định dạng PDF/A để lưu trữ lâu dài." },
+    "word-to-pdf": { title: "Word sang PDF", description: "Chuyển đổi tài liệu Word sang định dạng PDF." },
+    "jpg-to-pdf": { title: "JPG sang PDF", description: "Chuyển đổi hình ảnh JPG thành tài liệu PDF." },
+    "excel-to-pdf": { title: "Excel sang PDF", description: "Chuyển đổi bảng tính Excel sang định dạng PDF." },
+    "ppt-to-pdf": { title: "PPT sang PDF", description: "Chuyển đổi bản trình chiếu PowerPoint sang định dạng PDF." },
+    "html-to-pdf": { title: "HTML sang PDF", description: "Chuyển đổi trang web và tệp HTML sang PDF." },
+    "png-to-pdf": { title: "PNG sang PDF", description: "Chuyển đổi hình ảnh PNG thành tài liệu PDF." },
+    "image-to-pdf": { title: "Hình ảnh sang PDF", description: "Kết hợp nhiều hình ảnh ở bất kỳ định dạng nào thành một tệp PDF." },
+
+    // Chỉnh sửa
+    "edit-pdf": { title: "Chỉnh sửa PDF", description: "Thêm văn bản, hình ảnh, hình dạng và chú thích vào PDF." },
+    rotate: { title: "Xoay PDF", description: "Xoay các trang PDF theo đúng hướng." },
+    "page-numbers": { title: "Đánh số trang", description: "Thêm số trang vào tài liệu PDF của bạn." },
+    watermark: { title: "Hình mờ", description: "Thêm hình mờ văn bản hoặc hình ảnh vào PDF của bạn." },
+    crop: { title: "Cắt PDF", description: "Cắt lề hoặc chọn vùng cụ thể của trang PDF." },
+    sign: { title: "Ký PDF", description: "Thêm chữ ký điện tử vào tài liệu PDF của bạn." },
+    annotate: { title: "Chú thích PDF", description: "Tô sáng, gạch chân và thêm nhận xét vào PDF." },
+    flatten: { title: "Làm phẳng PDF", description: "Gộp các trường biểu mẫu và chú thích vào nội dung trang." },
+    resize: { title: "Thay đổi kích thước PDF", description: "Thay đổi kích thước trang PDF (A4, Letter, tùy chỉnh)." },
+    "edit-metadata": { title: "Sửa siêu dữ liệu", description: "Thay đổi tiêu đề, tác giả, từ khóa và siêu dữ liệu khác của PDF." },
+    grayscale: { title: "Chuyển xám", description: "Chuyển đổi màu sắc PDF sang đen trắng." },
+
+    // Tối ưu
+    compress: { title: "Nén PDF", description: "Giảm kích thước tệp PDF mà không mất chất lượng." },
+    repair: { title: "Sửa chữa PDF", description: "Sửa các tệp PDF bị hỏng hoặc lỗi." },
+    ocr: { title: "OCR PDF", description: "Làm cho PDF quét có thể tìm kiếm bằng nhận dạng văn bản." },
+    "web-optimize": { title: "Tối ưu web", description: "Tuyến tính hóa PDF để tải nhanh hơn trên web." },
+
+    // Bảo mật
+    protect: { title: "Bảo vệ PDF", description: "Thêm mật khẩu bảo vệ và mã hóa PDF của bạn." },
+    unlock: { title: "Mở khóa PDF", description: "Xóa bảo vệ bằng mật khẩu khỏi tệp PDF." },
+    redact: { title: "Biên tập PDF", description: "Xóa vĩnh viễn thông tin nhạy cảm khỏi PDF." },
+    compare: { title: "So sánh PDF", description: "So sánh hai PDF cạnh nhau và tìm sự khác biệt." },
+    translate: { title: "Dịch PDF", description: "Dịch nội dung PDF sang ngôn ngữ khác bằng AI." },
+  },
+  nav: {
+    allTools: "Tất cả công cụ",
+    language: "Ngôn ngữ",
+  },
+  footer: {
+    tools: "Công cụ",
+    legal: "Pháp lý",
+    privacy: "Chính sách bảo mật",
+    terms: "Điều khoản dịch vụ",
+    copyright: "ToolBox. Mọi quyền được bảo lưu.",
+  },
+  common: {
+    backToAll: "Quay lại tất cả công cụ",
+    dropFiles: "Thả tệp của bạn vào đây",
+    acceptedFormats: "Định dạng được chấp nhận",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Công cụ PDF miễn phí",
+    siteDescription: "Gộp, tách, nén và chuyển đổi tệp PDF trực tuyến miễn phí.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn.",
+    accept: "Đồng ý",
+    decline: "Từ chối",
+  },
+  privacy: {
+    title: "Chính sách bảo mật",
+    lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
+    intro: "Tại ToolBox PDF, chúng tôi coi trọng quyền riêng tư của bạn. Chính sách này giải thích những thông tin chúng tôi thu thập khi bạn sử dụng dịch vụ và cách chúng tôi xử lý chúng.",
+    sections: [
+      {
+        heading: "1. Thông tin chúng tôi thu thập",
+        content: "ToolBox PDF không yêu cầu đăng ký tài khoản. Chúng tôi không thu thập thông tin cá nhân. Tuy nhiên, để cải thiện dịch vụ, chúng tôi có thể tự động thu thập một số dữ liệu ẩn danh:\n\n• Loại và phiên bản trình duyệt\n• Hệ điều hành\n• Các trang đã truy cập và thời gian sử dụng\n• Cookie và các công nghệ tương tự để phân tích hành vi sử dụng",
+      },
+      {
+        heading: "2. Xử lý tệp",
+        content: "Tệp bạn tải lên được xử lý trên máy chủ của chúng tôi và tự động xóa trong vòng 2 giờ. Chúng tôi không đọc, lưu trữ hay chia sẻ nội dung tệp của bạn với bất kỳ ai.",
+      },
+      {
+        heading: "3. Cookie",
+        content: "Chúng tôi sử dụng cookie để lưu tùy chọn của bạn như giao diện (sáng/tối) và ngôn ngữ. Các mạng quảng cáo (ví dụ: Google AdSense) cũng có thể dùng cookie để hiển thị quảng cáo phù hợp.",
+      },
+      {
+        heading: "4. Dịch vụ bên thứ ba",
+        content: "Chúng tôi có thể sử dụng các dịch vụ bên thứ ba sau:\n\n• Google Analytics – phân tích lưu lượng truy cập\n• Google AdSense – hiển thị quảng cáo\n\nVui lòng tham khảo chính sách bảo mật riêng của từng dịch vụ để biết chi tiết về cách họ xử lý dữ liệu của bạn.",
+      },
+      {
+        heading: "5. Quyền của bạn",
+        content: "Bạn có thể tắt hoặc xóa cookie bất cứ lúc nào thông qua cài đặt trình duyệt. Lưu ý rằng một số tính năng có thể không hoạt động bình thường nếu không có cookie.",
+      },
+      {
+        heading: "6. Thay đổi chính sách",
+        content: "Chúng tôi có thể cập nhật chính sách này khi pháp luật thay đổi hoặc dịch vụ phát triển. Mọi thay đổi sẽ được đăng tại trang này.",
+      },
+      {
+        heading: "7. Liên hệ",
+        content: "Nếu có câu hỏi về quyền riêng tư, vui lòng liên hệ support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Điều khoản dịch vụ",
+    lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
+    intro: "Cảm ơn bạn đã sử dụng ToolBox PDF. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý với các điều khoản sau.",
+    sections: [
+      {
+        heading: "1. Về dịch vụ",
+        content: "ToolBox PDF là dịch vụ trực tuyến miễn phí cho phép bạn gộp, tách, chuyển đổi, chỉnh sửa và nén tệp PDF ngay trên trình duyệt.",
+      },
+      {
+        heading: "2. Sử dụng hợp lý",
+        content: "• Chỉ sử dụng dịch vụ cho mục đích hợp pháp.\n• Không xử lý tệp vi phạm bản quyền hoặc sở hữu trí tuệ.\n• Không lạm dụng dịch vụ hoặc tạo tải quá mức lên máy chủ.\n• Không sử dụng bot, trình thu thập dữ liệu hoặc truy cập tự động.",
+      },
+      {
+        heading: "3. Xử lý tệp",
+        content: "Tệp tải lên chỉ được sử dụng để thực hiện thao tác bạn yêu cầu. Chúng sẽ tự động bị xóa khỏi máy chủ trong vòng 2 giờ. Chúng tôi không phân tích hay lưu giữ tệp của bạn.",
+      },
+      {
+        heading: "4. Miễn trừ trách nhiệm",
+        content: "Dịch vụ được cung cấp \"nguyên trạng\". Chúng tôi không đảm bảo độ chính xác khi chuyển đổi, tính liên tục của dịch vụ hay bảo vệ khỏi mất dữ liệu. Hãy luôn sao lưu tệp quan trọng trước khi xử lý.",
+      },
+      {
+        heading: "5. Sở hữu trí tuệ",
+        content: "Toàn bộ nội dung trên trang web — bao gồm thiết kế, logo và mã nguồn — thuộc sở hữu của ToolBox. Bạn giữ toàn quyền đối với tệp bạn tải lên. Chúng tôi không tuyên bố quyền sở hữu nội dung của bạn.",
+      },
+      {
+        heading: "6. Thay đổi dịch vụ",
+        content: "Chúng tôi có quyền chỉnh sửa hoặc ngừng cung cấp các tính năng bất cứ lúc nào mà không cần thông báo trước.",
+      },
+      {
+        heading: "7. Cập nhật điều khoản",
+        content: "Các điều khoản này có thể được sửa đổi khi cần. Thay đổi sẽ được đăng tại trang này. Việc tiếp tục sử dụng dịch vụ sau khi thay đổi đồng nghĩa với việc bạn chấp nhận điều khoản mới.",
+      },
+      {
+        heading: "8. Liên hệ",
+        content: "Nếu có câu hỏi về điều khoản này, vui lòng liên hệ support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default vi;

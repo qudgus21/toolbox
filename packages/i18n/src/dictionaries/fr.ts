@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const fr: Dictionary = {
+  home: {
+    title: "Tous les outils dont vous avez besoin pour travailler avec les",
+    titleAccent: "PDFs",
+    description: "Fusionnez, divisez, compressez et convertissez des fichiers PDF. Gratuit, rapide et facile à utiliser.",
+    tabAll: "Tous",
+    categoryOrganize: "Organiser",
+    categoryConvert: "Convertir",
+    categoryEdit: "Modifier",
+    categoryOptimize: "Optimiser",
+    categorySecurity: "Sécurité",
+    searchPlaceholder: "Rechercher des outils...",
+    noResults: "Aucun outil trouvé.",
+  },
+  trust: {
+    encryption: "Chiffrement sécurisé",
+    encryptionDesc: "Vos fichiers sont protégés par un chiffrement SSL 256 bits.",
+    autoDelete: "Suppression automatique",
+    autoDeleteDesc: "Les fichiers téléchargés sont automatiquement supprimés après 2 heures.",
+    free: "Entièrement gratuit",
+    freeDesc: "Utilisez tous les outils sans limites, entièrement gratuitement.",
+    cloud: "Traitement cloud",
+    cloudDesc: "Traité sur nos serveurs, sans impact sur votre appareil.",
+  },
+  tools: {
+    // Organiser
+    merge: { title: "Fusionner PDF", description: "Combinez plusieurs fichiers PDF en un seul document." },
+    split: { title: "Diviser PDF", description: "Séparez un PDF en pages ou sections individuelles." },
+    "delete-pages": { title: "Supprimer des pages", description: "Supprimez des pages spécifiques d'un document PDF." },
+    "extract-pages": { title: "Extraire des pages", description: "Extrayez les pages sélectionnées dans un nouveau fichier PDF." },
+    "organize-pages": { title: "Organiser les pages", description: "Réorganisez, ajoutez ou supprimez des pages visuellement." },
+    "scan-to-pdf": { title: "Numériser en PDF", description: "Capturez des numérisations depuis votre appareil et convertissez-les en PDF." },
+
+    // Convertir
+    "pdf-to-word": { title: "PDF en Word", description: "Convertissez des documents PDF en fichiers Word modifiables." },
+    "pdf-to-jpg": { title: "PDF en JPG", description: "Convertissez des pages PDF en images JPG de haute qualité." },
+    "pdf-to-excel": { title: "PDF en Excel", description: "Extrayez des tableaux et données de PDFs vers des feuilles de calcul Excel." },
+    "pdf-to-ppt": { title: "PDF en PPT", description: "Convertissez des fichiers PDF en diapositives PowerPoint modifiables." },
+    "pdf-to-png": { title: "PDF en PNG", description: "Convertissez des pages PDF en images PNG de haute qualité." },
+    "pdf-to-text": { title: "PDF en texte", description: "Extrayez tout le contenu textuel des documents PDF." },
+    "pdf-to-pdfa": { title: "PDF en PDF/A", description: "Convertissez au format PDF/A pour l'archivage à long terme." },
+    "word-to-pdf": { title: "Word en PDF", description: "Convertissez des documents Word au format PDF." },
+    "jpg-to-pdf": { title: "JPG en PDF", description: "Convertissez des images JPG en document PDF." },
+    "excel-to-pdf": { title: "Excel en PDF", description: "Convertissez des feuilles de calcul Excel au format PDF." },
+    "ppt-to-pdf": { title: "PPT en PDF", description: "Convertissez des présentations PowerPoint au format PDF." },
+    "html-to-pdf": { title: "HTML en PDF", description: "Convertissez des pages web et fichiers HTML en PDF." },
+    "png-to-pdf": { title: "PNG en PDF", description: "Convertissez des images PNG en document PDF." },
+    "image-to-pdf": { title: "Image en PDF", description: "Combinez plusieurs images de tout format en un seul PDF." },
+
+    // Modifier
+    "edit-pdf": { title: "Modifier PDF", description: "Ajoutez du texte, des images, des formes et des annotations à un PDF." },
+    rotate: { title: "Pivoter PDF", description: "Faites pivoter les pages PDF dans la bonne orientation." },
+    "page-numbers": { title: "Numéros de page", description: "Ajoutez des numéros de page à votre document PDF." },
+    watermark: { title: "Filigrane", description: "Ajoutez des filigranes de texte ou d'image à votre PDF." },
+    crop: { title: "Rogner PDF", description: "Rognez les marges ou sélectionnez des zones spécifiques des pages PDF." },
+    sign: { title: "Signer PDF", description: "Ajoutez des signatures électroniques à vos documents PDF." },
+    annotate: { title: "Annoter PDF", description: "Surlignez, soulignez et ajoutez des commentaires aux PDFs." },
+    flatten: { title: "Aplatir PDF", description: "Fusionnez les champs de formulaire et annotations dans le contenu de la page." },
+    resize: { title: "Redimensionner PDF", description: "Modifiez la taille de page du PDF (A4, Letter, personnalisé)." },
+    "edit-metadata": { title: "Modifier les métadonnées", description: "Modifiez le titre, l'auteur, les mots-clés et autres métadonnées du PDF." },
+    grayscale: { title: "Niveaux de gris", description: "Convertissez les couleurs du PDF en noir et blanc." },
+
+    // Optimiser
+    compress: { title: "Compresser PDF", description: "Réduisez la taille du fichier PDF sans perte de qualité." },
+    repair: { title: "Réparer PDF", description: "Réparez les fichiers PDF endommagés ou corrompus." },
+    ocr: { title: "OCR PDF", description: "Rendez les PDFs numérisés consultables grâce à la reconnaissance de texte." },
+    "web-optimize": { title: "Optimiser pour le web", description: "Linéarisez les PDFs pour un chargement web plus rapide." },
+
+    // Sécurité
+    protect: { title: "Protéger PDF", description: "Ajoutez une protection par mot de passe et chiffrez votre PDF." },
+    unlock: { title: "Déverrouiller PDF", description: "Supprimez la protection par mot de passe des fichiers PDF." },
+    redact: { title: "Caviarder PDF", description: "Supprimez définitivement les informations sensibles des PDFs." },
+    compare: { title: "Comparer PDF", description: "Comparez deux PDFs côte à côte et repérez les différences." },
+    translate: { title: "Traduire PDF", description: "Traduisez le contenu du PDF dans une autre langue avec l'IA." },
+  },
+  nav: {
+    allTools: "Tous les outils",
+    language: "Langue",
+  },
+  footer: {
+    tools: "Outils",
+    legal: "Mentions légales",
+    privacy: "Politique de confidentialité",
+    terms: "Conditions d'utilisation",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Retour à tous les outils",
+    dropFiles: "Déposez vos fichiers ici",
+    acceptedFormats: "Formats acceptés",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Outils PDF gratuits",
+    siteDescription: "Fusionnez, divisez, compressez et convertissez des fichiers PDF en ligne gratuitement.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Ce site utilise des cookies pour améliorer votre expérience.",
+    accept: "Accepter",
+    decline: "Refuser",
+  },
+  privacy: {
+    title: "Politique de confidentialit\u00e9",
+    lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
+    intro: "Chez ToolBox PDF, la protection de vos donn\u00e9es nous tient \u00e0 c\u0153ur. Cette politique d\u00e9taille les informations que nous collectons lorsque vous utilisez notre service et la fa\u00e7on dont nous les traitons.",
+    sections: [
+      {
+        heading: "1. Informations collect\u00e9es",
+        content: "ToolBox PDF ne n\u00e9cessite aucune inscription. Nous ne collectons aucune donn\u00e9e personnelle. Toutefois, certaines donn\u00e9es anonymes peuvent \u00eatre collect\u00e9es automatiquement pour am\u00e9liorer le service :\n\n\u2022 Type et version du navigateur\n\u2022 Syst\u00e8me d\u2019exploitation\n\u2022 Pages visit\u00e9es et dur\u00e9e de consultation\n\u2022 Cookies pour analyser les habitudes d\u2019utilisation",
+      },
+      {
+        heading: "2. Traitement des fichiers",
+        content: "Les fichiers que vous envoyez sont trait\u00e9s sur nos serveurs, puis automatiquement supprim\u00e9s dans un d\u00e9lai de 2 heures. Nous ne consultons, ne stockons et ne partageons jamais le contenu de vos fichiers.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Nous utilisons des cookies pour m\u00e9moriser vos pr\u00e9f\u00e9rences (th\u00e8me clair/sombre, langue). Les r\u00e9gies publicitaires (notamment Google AdSense) peuvent \u00e9galement utiliser des cookies pour afficher des publicit\u00e9s personnalis\u00e9es.",
+      },
+      {
+        heading: "4. Services tiers",
+        content: "Nous sommes susceptibles d\u2019utiliser les services tiers suivants :\n\n\u2022 Google Analytics \u2013 analyse du trafic\n\u2022 Google AdSense \u2013 affichage de publicit\u00e9s\n\nNous vous invitons \u00e0 consulter les politiques de confidentialit\u00e9 de chacun de ces services.",
+      },
+      {
+        heading: "5. Vos droits",
+        content: "Vous pouvez d\u00e9sactiver ou supprimer les cookies \u00e0 tout moment depuis les param\u00e8tres de votre navigateur. Attention, certaines fonctionnalit\u00e9s peuvent ne pas fonctionner correctement sans cookies.",
+      },
+      {
+        heading: "6. Modifications de cette politique",
+        content: "Cette politique peut \u00eatre mise \u00e0 jour en cas d\u2019\u00e9volution l\u00e9gale ou de changement de notre service. Toute modification sera publi\u00e9e sur cette page.",
+      },
+      {
+        heading: "7. Nous contacter",
+        content: "Pour toute question relative \u00e0 la confidentialit\u00e9, \u00e9crivez-nous \u00e0 support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Conditions d\u2019utilisation",
+    lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
+    intro: "Merci d\u2019utiliser ToolBox PDF. En acc\u00e9dant \u00e0 notre service ou en l\u2019utilisant, vous acceptez les conditions suivantes.",
+    sections: [
+      {
+        heading: "1. \u00c0 propos du service",
+        content: "ToolBox PDF est un service en ligne gratuit qui vous permet de fusionner, diviser, convertir, \u00e9diter et compresser des fichiers PDF directement dans votre navigateur.",
+      },
+      {
+        heading: "2. Utilisation acceptable",
+        content: "\u2022 Le service est r\u00e9serv\u00e9 \u00e0 un usage l\u00e9gal.\n\u2022 Il est interdit de traiter des fichiers portant atteinte aux droits d\u2019auteur ou \u00e0 la propri\u00e9t\u00e9 intellectuelle.\n\u2022 Merci de ne pas surcharger nos serveurs.\n\u2022 L\u2019acc\u00e8s automatis\u00e9 (bots, scrapers, etc.) n\u2019est pas autoris\u00e9.",
+      },
+      {
+        heading: "3. Traitement des fichiers",
+        content: "Les fichiers envoy\u00e9s servent uniquement \u00e0 r\u00e9aliser l\u2019op\u00e9ration demand\u00e9e. Ils sont automatiquement supprim\u00e9s de nos serveurs dans un d\u00e9lai de 2 heures. Nous ne les analysons ni ne les conservons.",
+      },
+      {
+        heading: "4. Avertissement",
+        content: "Le service est fourni \u00ab tel quel \u00bb. Nous ne garantissons ni la pr\u00e9cision des conversions, ni la disponibilit\u00e9 continue, ni la protection contre la perte de donn\u00e9es. Pensez toujours \u00e0 sauvegarder vos fichiers importants avant de les traiter.",
+      },
+      {
+        heading: "5. Propri\u00e9t\u00e9 intellectuelle",
+        content: "L\u2019ensemble du contenu du site \u2014 design, logos et code \u2014 est la propri\u00e9t\u00e9 de ToolBox. Les fichiers que vous envoyez restent les v\u00f4tres. Nous ne revendiquons aucun droit sur votre contenu.",
+      },
+      {
+        heading: "6. \u00c9volution du service",
+        content: "Nous nous r\u00e9servons le droit de modifier ou de supprimer des fonctionnalit\u00e9s \u00e0 tout moment, sans pr\u00e9avis.",
+      },
+      {
+        heading: "7. Mise \u00e0 jour des conditions",
+        content: "Ces conditions peuvent \u00eatre r\u00e9vis\u00e9es \u00e0 tout moment. Les modifications seront publi\u00e9es sur cette page. En continuant \u00e0 utiliser le service apr\u00e8s une mise \u00e0 jour, vous acceptez les nouvelles conditions.",
+      },
+      {
+        heading: "8. Nous contacter",
+        content: "Pour toute question concernant ces conditions, \u00e9crivez-nous \u00e0 support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default fr;

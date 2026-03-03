@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const hu: Dictionary = {
+  home: {
+    title: "Minden eszköz, amire szükséged van a munkához a",
+    titleAccent: "PDFs",
+    description: "PDF fájlok egyesítése, felosztása, tömörítése és konvertálása. Ingyenes, gyors és egyszerű.",
+    tabAll: "Összes",
+    categoryOrganize: "Rendezés",
+    categoryConvert: "Konvertálás",
+    categoryEdit: "Szerkesztés",
+    categoryOptimize: "Optimalizálás",
+    categorySecurity: "Biztonság",
+    searchPlaceholder: "Eszközök keresése...",
+    noResults: "Nem található eszköz.",
+  },
+  trust: {
+    encryption: "Biztonságos titkosítás",
+    encryptionDesc: "Fájljaid 256 bites SSL titkosítással védettek.",
+    autoDelete: "Automatikus törlés",
+    autoDeleteDesc: "A feltöltött fájlok automatikusan törlődnek 2 óra után.",
+    free: "Teljesen ingyenes",
+    freeDesc: "Használd az összes eszközt korlátlanul, teljesen ingyen.",
+    cloud: "Felhőalapú feldolgozás",
+    cloudDesc: "A szervereinken dolgozzuk fel, nincs hatással az eszközödre.",
+  },
+  tools: {
+    // Rendezés
+    merge: { title: "PDF egyesítése", description: "Több PDF fájl egyesítése egyetlen dokumentumba." },
+    split: { title: "PDF felosztása", description: "PDF szétválasztása különálló oldalakra vagy szakaszokra." },
+    "delete-pages": { title: "Oldalak törlése", description: "Adott oldalak eltávolítása egy PDF dokumentumból." },
+    "extract-pages": { title: "Oldalak kinyerése", description: "Kiválasztott oldalak kinyerése új PDF fájlba." },
+    "organize-pages": { title: "Oldalak rendezése", description: "Oldalak átrendezése, hozzáadása vagy eltávolítása vizuálisan." },
+    "scan-to-pdf": { title: "Szkennelés PDF-be", description: "Dokumentumok szkennelése az eszközöddel és konvertálás PDF-be." },
+
+    // Konvertálás
+    "pdf-to-word": { title: "PDF-ből Word", description: "PDF dokumentumok konvertálása szerkeszthető Word fájlokká." },
+    "pdf-to-jpg": { title: "PDF-ből JPG", description: "PDF oldalak konvertálása kiváló minőségű JPG képekké." },
+    "pdf-to-excel": { title: "PDF-ből Excel", description: "Táblázatok és adatok kinyerése PDF-ből Excel táblázatokba." },
+    "pdf-to-ppt": { title: "PDF-ből PPT", description: "PDF fájlok konvertálása szerkeszthető PowerPoint diákká." },
+    "pdf-to-png": { title: "PDF-ből PNG", description: "PDF oldalak konvertálása kiváló minőségű PNG képekké." },
+    "pdf-to-text": { title: "PDF-ből szöveg", description: "Az összes szöveges tartalom kinyerése PDF dokumentumokból." },
+    "pdf-to-pdfa": { title: "PDF-ből PDF/A", description: "Konvertálás PDF/A formátumba hosszú távú archiváláshoz." },
+    "word-to-pdf": { title: "Word-ből PDF", description: "Word dokumentumok konvertálása PDF formátumba." },
+    "jpg-to-pdf": { title: "JPG-ből PDF", description: "JPG képek konvertálása PDF dokumentummá." },
+    "excel-to-pdf": { title: "Excel-ből PDF", description: "Excel táblázatok konvertálása PDF formátumba." },
+    "ppt-to-pdf": { title: "PPT-ből PDF", description: "PowerPoint prezentációk konvertálása PDF formátumba." },
+    "html-to-pdf": { title: "HTML-ből PDF", description: "Weboldalak és HTML fájlok konvertálása PDF-be." },
+    "png-to-pdf": { title: "PNG-ből PDF", description: "PNG képek konvertálása PDF dokumentummá." },
+    "image-to-pdf": { title: "Kép PDF-be", description: "Több különböző formátumú kép egyesítése egyetlen PDF-be." },
+
+    // Szerkesztés
+    "edit-pdf": { title: "PDF szerkesztése", description: "Szöveg, képek, alakzatok és megjegyzések hozzáadása PDF-hez." },
+    rotate: { title: "PDF forgatása", description: "PDF oldalak elforgatása a helyes tájolásba." },
+    "page-numbers": { title: "Oldalszámok", description: "Oldalszámok hozzáadása a PDF dokumentumhoz." },
+    watermark: { title: "Vízjel", description: "Szöveges vagy képi vízjelek hozzáadása a PDF-hez." },
+    crop: { title: "PDF vágása", description: "Margók vágása vagy adott területek kiválasztása a PDF oldalakon." },
+    sign: { title: "PDF aláírása", description: "Elektronikus aláírások hozzáadása a PDF dokumentumokhoz." },
+    annotate: { title: "PDF megjegyzések", description: "Kiemelés, aláhúzás és megjegyzések hozzáadása PDF-ekhez." },
+    flatten: { title: "PDF simítása", description: "Űrlapmezők és megjegyzések egyesítése az oldal tartalmába." },
+    resize: { title: "PDF átméretezése", description: "PDF oldalméret módosítása (A4, Letter, egyéni)." },
+    "edit-metadata": { title: "Metaadatok szerkesztése", description: "PDF cím, szerző, kulcsszavak és egyéb metaadatok módosítása." },
+    grayscale: { title: "Szürkeárnyalatos", description: "PDF színek konvertálása fekete-fehérre." },
+
+    // Optimalizálás
+    compress: { title: "PDF tömörítése", description: "PDF fájlméret csökkentése minőségveszteség nélkül." },
+    repair: { title: "PDF javítása", description: "Sérült vagy hibás PDF fájlok javítása." },
+    ocr: { title: "OCR PDF", description: "Szkennelt PDF-ek kereshetővé tétele szövegfelismeréssel." },
+    "web-optimize": { title: "Webes optimalizálás", description: "PDF-ek linearizálása a gyorsabb webes betöltéshez." },
+
+    // Biztonság
+    protect: { title: "PDF védelem", description: "Jelszavas védelem és titkosítás hozzáadása a PDF-hez." },
+    unlock: { title: "PDF feloldása", description: "Jelszavas védelem eltávolítása PDF fájlokból." },
+    redact: { title: "PDF kitakarása", description: "Bizalmas információk végleges eltávolítása PDF-ekből." },
+    compare: { title: "PDF összehasonlítása", description: "Két PDF összehasonlítása egymás mellett és a különbségek feltárása." },
+    translate: { title: "PDF fordítása", description: "PDF tartalom fordítása másik nyelvre mesterséges intelligenciával." },
+  },
+  nav: {
+    allTools: "Összes eszköz",
+    language: "Nyelv",
+  },
+  footer: {
+    tools: "Eszközök",
+    legal: "Jogi információk",
+    privacy: "Adatvédelmi irányelvek",
+    terms: "Felhasználási feltételek",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Vissza az összes eszközhöz",
+    dropFiles: "Húzd ide a fájlokat",
+    acceptedFormats: "Elfogadott formátumok",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Ingyenes PDF eszközök",
+    siteDescription: "PDF fájlok egyesítése, felosztása, tömörítése és konvertálása online, ingyenesen.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Sütiket használunk a jobb felhasználói élmény érdekében.",
+    accept: "Elfogadom",
+    decline: "Elutasítom",
+  },
+  privacy: {
+    title: "Adatvédelmi irányelvek",
+    lastUpdated: "Utolsó frissítés: 2026. március 1.",
+    intro: "A ToolBox PDF-nél fontosnak tartjuk az adataid védelmét. Ez az irányelv bemutatja, milyen információkat gyűjtünk a szolgáltatás használata során, és hogyan kezeljük azokat.",
+    sections: [
+      {
+        heading: "1. Milyen adatokat gyűjtünk",
+        content: "A ToolBox PDF használatához nem szükséges regisztráció. Nem gyűjtünk személyes adatokat. A szolgáltatás fejlesztése érdekében azonban automatikusan gyűjthetünk nem személyazonosításra alkalmas adatokat:\n\n• Böngésző típusa és verziója\n• Operációs rendszer\n• Meglátogatott oldalak és eltöltött idő\n• Sütik és hasonló technológiák a használati szokások elemzéséhez",
+      },
+      {
+        heading: "2. Fájlkezelés",
+        content: "A feltöltött fájlokat a szervereink dolgozzák fel, és 2 órán belül automatikusan törlődnek. Nem olvassuk, nem tároljuk és senkivel nem osztjuk meg a fájljaid tartalmát.",
+      },
+      {
+        heading: "3. Sütik",
+        content: "Sütiket használunk a beállításaid megjegyzéséhez, például a téma (sötét/világos mód) és a nyelv kiválasztásához. Hirdetési hálózatok (pl. Google AdSense) szintén használhatnak sütiket személyre szabott hirdetések megjelenítéséhez.",
+      },
+      {
+        heading: "4. Harmadik felek szolgáltatásai",
+        content: "Az alábbi harmadik féltől származó szolgáltatásokat használhatjuk:\n\n• Google Analytics — forgalomelemzéshez\n• Google AdSense — hirdetések megjelenítéséhez\n\nAz egyes szolgáltatások adatkezelési gyakorlatáról az adott szolgáltatás saját adatvédelmi irányelvében tájékozódhatsz.",
+      },
+      {
+        heading: "5. A te jogaid",
+        content: "A sütiket bármikor letilthatod vagy törölheted a böngésződ beállításaiban. Vedd figyelembe, hogy sütik nélkül egyes funkciók nem feltétlenül működnek megfelelően.",
+      },
+      {
+        heading: "6. Az irányelv módosítása",
+        content: "Ezt az irányelvet a jogszabályi változásoknak vagy szolgáltatásunk fejlődésének megfelelően frissíthetjük. Minden módosítást ezen az oldalon teszünk közzé.",
+      },
+      {
+        heading: "7. Kapcsolat",
+        content: "Adatvédelmi kérdésekben írj nekünk a support@toolbox-pdf.com címre.",
+      },
+    ],
+  },
+  terms: {
+    title: "Felhasználási feltételek",
+    lastUpdated: "Utolsó frissítés: 2026. március 1.",
+    intro: "Köszönjük, hogy a ToolBox PDF-et használod. A szolgáltatás elérésével vagy használatával elfogadod az alábbi feltételeket.",
+    sections: [
+      {
+        heading: "1. A szolgáltatásról",
+        content: "A ToolBox PDF egy ingyenes online szolgáltatás, amellyel PDF-fájlokat egyesíthetsz, feloszthatsz, konvertálhatsz, szerkeszthetsz és tömöríthetsz közvetlenül a böngésződben.",
+      },
+      {
+        heading: "2. Elfogadható használat",
+        content: "• A szolgáltatást kizárólag törvényes célokra használhatod.\n• Ne dolgozz fel olyan fájlokat, amelyek sértik a szerzői jogokat vagy a szellemi tulajdont.\n• Ne élj vissza a szolgáltatással, és ne terheld túl a szervereinket.\n• Automatizált hozzáférés (botok, scraperek stb.) nem engedélyezett.",
+      },
+      {
+        heading: "3. Fájlkezelés",
+        content: "A feltöltött fájlokat kizárólag a kért művelet végrehajtásához használjuk. 2 órán belül automatikusan törlődnek a szervereinkről. Nem elemezzük és nem őrizzük meg a fájljaidat.",
+      },
+      {
+        heading: "4. Felelősségkizárás",
+        content: "A szolgáltatás 'adott állapotban' érhető el. Nem vállalunk garanciát a konverzió pontosságára, a megszakítás nélküli elérhetőségre vagy az adatvesztés elleni védelemre vonatkozóan. Feldolgozás előtt mindig készíts biztonsági másolatot a fontos fájlokról.",
+      },
+      {
+        heading: "5. Szellemi tulajdon",
+        content: "Az oldal teljes tartalma — beleértve a dizájnt, logókat és kódot — a ToolBox tulajdona. A feltöltött fájljaid felett teljes jogot megőrzöd. Semmilyen tulajdonjogot nem formálunk a te tartalmaidra.",
+      },
+      {
+        heading: "6. A szolgáltatás módosítása",
+        content: "Fenntartjuk a jogot, hogy bármikor, előzetes értesítés nélkül módosítsuk vagy megszüntessük a funkciókat.",
+      },
+      {
+        heading: "7. A feltételek módosítása",
+        content: "Ezek a feltételek szükség szerint módosulhatnak. A változtatásokat ezen az oldalon tesszük közzé. A szolgáltatás további használata a módosítások után a frissített feltételek elfogadását jelenti.",
+      },
+      {
+        heading: "8. Kapcsolat",
+        content: "A feltételekkel kapcsolatos kérdésekben írj nekünk a support@toolbox-pdf.com címre.",
+      },
+    ],
+  },
+};
+
+export default hu;

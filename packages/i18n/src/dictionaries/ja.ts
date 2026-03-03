@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const ja: Dictionary = {
+  home: {
+    title: "あらゆる作業に必要なツール",
+    titleAccent: "PDF",
+    description: "PDFファイルの結合、分割、圧縮、変換。無料で高速、簡単に使えます。",
+    tabAll: "すべて",
+    categoryOrganize: "整理",
+    categoryConvert: "変換",
+    categoryEdit: "編集",
+    categoryOptimize: "最適化",
+    categorySecurity: "セキュリティ",
+    searchPlaceholder: "ツールを検索...",
+    noResults: "ツールが見つかりませんでした。",
+  },
+  trust: {
+    encryption: "安全な暗号化",
+    encryptionDesc: "ファイルは256ビットSSL暗号化で保護されています。",
+    autoDelete: "自動削除",
+    autoDeleteDesc: "アップロードされたファイルは2時間後に自動的に削除されます。",
+    free: "完全無料",
+    freeDesc: "すべてのツールを制限なく、完全に無料でご利用いただけます。",
+    cloud: "クラウド処理",
+    cloudDesc: "サーバー上で処理されるため、お使いのデバイスに負荷がかかりません。",
+  },
+  tools: {
+    // 整理
+    merge: { title: "PDF 結合", description: "複数のPDFファイルを1つのドキュメントに結合します。" },
+    split: { title: "PDF 分割", description: "PDFを個別のページやセクションに分割します。" },
+    "delete-pages": { title: "ページ削除", description: "PDFドキュメントから特定のページを削除します。" },
+    "extract-pages": { title: "ページ抽出", description: "選択したページを新しいPDFファイルとして抽出します。" },
+    "organize-pages": { title: "ページ整理", description: "ページの並べ替え、追加、削除を視覚的に行います。" },
+    "scan-to-pdf": { title: "スキャンからPDF", description: "デバイスからスキャンを取り込み、PDFに変換します。" },
+
+    // 変換
+    "pdf-to-word": { title: "PDFからWord", description: "PDFドキュメントを編集可能なWordファイルに変換します。" },
+    "pdf-to-jpg": { title: "PDFからJPG", description: "PDFページを高品質なJPG画像に変換します。" },
+    "pdf-to-excel": { title: "PDFからExcel", description: "PDFから表やデータをExcelスプレッドシートに抽出します。" },
+    "pdf-to-ppt": { title: "PDFからPPT", description: "PDFファイルを編集可能なPowerPointスライドに変換します。" },
+    "pdf-to-png": { title: "PDFからPNG", description: "PDFページを高品質なPNG画像に変換します。" },
+    "pdf-to-text": { title: "PDFからテキスト", description: "PDFドキュメントからすべてのテキスト内容を抽出します。" },
+    "pdf-to-pdfa": { title: "PDFからPDF/A", description: "長期保存用のPDF/A形式に変換します。" },
+    "word-to-pdf": { title: "WordからPDF", description: "WordドキュメントをPDF形式に変換します。" },
+    "jpg-to-pdf": { title: "JPGからPDF", description: "JPG画像をPDFドキュメントに変換します。" },
+    "excel-to-pdf": { title: "ExcelからPDF", description: "ExcelスプレッドシートをPDF形式に変換します。" },
+    "ppt-to-pdf": { title: "PPTからPDF", description: "PowerPointプレゼンテーションをPDF形式に変換します。" },
+    "html-to-pdf": { title: "HTMLからPDF", description: "WebページやHTMLファイルをPDFに変換します。" },
+    "png-to-pdf": { title: "PNGからPDF", description: "PNG画像をPDFドキュメントに変換します。" },
+    "image-to-pdf": { title: "画像からPDF", description: "あらゆる形式の複数の画像を1つのPDFにまとめます。" },
+
+    // 編集
+    "edit-pdf": { title: "PDF 編集", description: "PDFにテキスト、画像、図形、注釈を追加します。" },
+    rotate: { title: "PDF 回転", description: "PDFページを正しい向きに回転させます。" },
+    "page-numbers": { title: "ページ番号", description: "PDFドキュメントにページ番号を追加します。" },
+    watermark: { title: "透かし", description: "PDFにテキストまたは画像の透かしを追加します。" },
+    crop: { title: "PDF トリミング", description: "PDFページの余白をトリミングしたり、特定の領域を選択します。" },
+    sign: { title: "PDF 署名", description: "PDFドキュメントに電子署名を追加します。" },
+    annotate: { title: "PDF 注釈", description: "PDFにハイライト、下線、コメントを追加します。" },
+    flatten: { title: "PDF フラット化", description: "フォームフィールドと注釈をページコンテンツに統合します。" },
+    resize: { title: "PDF リサイズ", description: "PDFのページサイズを変更します（A4、レター、カスタム）。" },
+    "edit-metadata": { title: "メタデータ編集", description: "PDFのタイトル、作成者、キーワード、その他のメタデータを変更します。" },
+    grayscale: { title: "グレースケール", description: "PDFのカラーを白黒に変換します。" },
+
+    // 最適化
+    compress: { title: "PDF 圧縮", description: "品質を損なうことなくPDFファイルサイズを縮小します。" },
+    repair: { title: "PDF 修復", description: "破損したPDFファイルを修復します。" },
+    ocr: { title: "OCR PDF", description: "テキスト認識でスキャンしたPDFを検索可能にします。" },
+    "web-optimize": { title: "Web最適化", description: "Web上での高速読み込みのためにPDFをリニアライズします。" },
+
+    // セキュリティ
+    protect: { title: "PDF 保護", description: "PDFにパスワード保護と暗号化を追加します。" },
+    unlock: { title: "PDF ロック解除", description: "PDFファイルからパスワード保護を解除します。" },
+    redact: { title: "PDF 墨消し", description: "PDFから機密情報を完全に削除します。" },
+    compare: { title: "PDF 比較", description: "2つのPDFを並べて比較し、差異を見つけます。" },
+    translate: { title: "PDF 翻訳", description: "AIを使ってPDFの内容を別の言語に翻訳します。" },
+  },
+  nav: {
+    allTools: "すべてのツール",
+    language: "言語",
+  },
+  footer: {
+    tools: "ツール",
+    legal: "法的情報",
+    privacy: "プライバシーポリシー",
+    terms: "利用規約",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "すべてのツールに戻る",
+    dropFiles: "ここにファイルをドロップ",
+    acceptedFormats: "対応形式",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - 無料PDFツール",
+    siteDescription: "PDFファイルの結合、分割、圧縮、変換をオンラインで無料で。",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "当サイトではCookieを使用しています。",
+    accept: "同意する",
+    decline: "拒否する",
+  },
+  privacy: {
+    title: "プライバシーポリシー",
+    lastUpdated: "最終更新日：2026年3月1日",
+    intro: "ToolBox PDFでは、ユーザーの皆さまのプライバシーを大切にしています。このポリシーでは、サービスご利用時に収集する情報とその取り扱いについてご説明します。",
+    sections: [
+      {
+        heading: "1. 収集する情報",
+        content: "ToolBox PDFは会員登録不要でご利用いただけます。個人情報の収集は行っておりません。ただし、サービス改善のため、以下の情報を自動的に取得する場合があります。\n\n• ブラウザの種類・バージョン\n• ご利用中のOS情報\n• 閲覧ページ・滞在時間\n• 利用状況を把握するためのCookie",
+      },
+      {
+        heading: "2. ファイルの取り扱い",
+        content: "アップロードされたファイルはサーバー上で処理された後、2時間以内に自動削除されます。ファイルの内容を閲覧・保存・第三者と共有することは一切ありません。",
+      },
+      {
+        heading: "3. Cookieについて",
+        content: "テーマ（ダーク/ライトモード）や言語設定を保存するためにCookieを使用しています。また、広告ネットワーク（Google AdSenseなど）がパーソナライズド広告の配信にCookieを利用する場合があります。",
+      },
+      {
+        heading: "4. 外部サービスの利用",
+        content: "当サービスでは、以下の外部サービスを利用する場合があります。\n\n• Google Analytics（アクセス解析）\n• Google AdSense（広告配信）\n\n各サービスのプライバシーポリシーもあわせてご確認ください。",
+      },
+      {
+        heading: "5. お客さまの権利",
+        content: "ブラウザの設定からCookieの無効化や削除をいつでも行えます。ただし、Cookieを無効にすると一部の機能が正しく動作しない場合があります。",
+      },
+      {
+        heading: "6. ポリシーの変更",
+        content: "法令の改正やサービスの変更に伴い、本ポリシーを更新する場合があります。変更内容はこのページに掲載いたします。",
+      },
+      {
+        heading: "7. お問い合わせ",
+        content: "プライバシーに関するご質問は support@toolbox-pdf.com までお気軽にどうぞ。",
+      },
+    ],
+  },
+  terms: {
+    title: "利用規約",
+    lastUpdated: "最終更新日：2026年3月1日",
+    intro: "ToolBox PDFをご利用いただきありがとうございます。本サービスをご利用になる場合、以下の利用規約に同意いただいたものとみなします。",
+    sections: [
+      {
+        heading: "1. サービスについて",
+        content: "ToolBox PDFは、ブラウザ上でPDFの結合・分割・変換・編集・圧縮が行える無料のオンラインサービスです。",
+      },
+      {
+        heading: "2. 利用上のルール",
+        content: "• 合法的な目的にのみご利用ください。\n• 著作権や知的財産権を侵害するファイルの処理は禁止です。\n• サーバーに過度な負荷をかける行為はおやめください。\n• ボットやスクレイパーなどによる自動アクセスは許可されていません。",
+      },
+      {
+        heading: "3. ファイルの取り扱い",
+        content: "アップロードされたファイルは、リクエストされた処理のみに使用され、2時間以内にサーバーから自動削除されます。ファイルの内容を分析・保持することはありません。",
+      },
+      {
+        heading: "4. 免責事項",
+        content: "本サービスは「現状のまま」で提供されます。変換精度、サービスの継続的な稼働、データの損失防止について保証するものではありません。大切なファイルは必ず事前にバックアップをお取りください。",
+      },
+      {
+        heading: "5. 知的財産権",
+        content: "サイト上のデザイン・ロゴ・コードなどのコンテンツはToolBoxに帰属します。お客さまがアップロードしたファイルの権利はお客さまに帰属し、当サービスがその所有権を主張することはありません。",
+      },
+      {
+        heading: "6. サービスの変更",
+        content: "予告なく機能の変更や提供の終了を行う場合があります。あらかじめご了承ください。",
+      },
+      {
+        heading: "7. 規約の更新",
+        content: "本規約は必要に応じて改定される場合があります。変更内容はこのページに掲載します。改定後も引き続きサービスをご利用いただいた場合、変更後の規約に同意いただいたものとみなします。",
+      },
+      {
+        heading: "8. お問い合わせ",
+        content: "利用規約に関するご質問は support@toolbox-pdf.com までご連絡ください。",
+      },
+    ],
+  },
+};
+
+export default ja;

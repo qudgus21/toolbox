@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const fi: Dictionary = {
+  home: {
+    title: "Kaikki tarvitsemasi työkalut työskentelyyn",
+    titleAccent: "PDFs",
+    description: "Yhdistä, jaa, pakkaa ja muunna PDF-tiedostoja. Ilmainen, nopea ja helppokäyttöinen.",
+    tabAll: "Kaikki",
+    categoryOrganize: "Järjestä",
+    categoryConvert: "Muunna",
+    categoryEdit: "Muokkaa",
+    categoryOptimize: "Optimoi",
+    categorySecurity: "Tietoturva",
+    searchPlaceholder: "Etsi työkaluja...",
+    noResults: "Työkaluja ei löytynyt.",
+  },
+  trust: {
+    encryption: "Turvallinen salaus",
+    encryptionDesc: "Tiedostosi on suojattu 256-bittisellä SSL-salauksella.",
+    autoDelete: "Automaattinen poisto",
+    autoDeleteDesc: "Ladatut tiedostot poistetaan automaattisesti 2 tunnin kuluttua.",
+    free: "Täysin ilmainen",
+    freeDesc: "Käytä kaikkia työkaluja ilman rajoituksia, täysin ilmaiseksi.",
+    cloud: "Pilvikäsittely",
+    cloudDesc: "Käsitelty palvelimillamme, ei vaikutusta laitteeseesi.",
+  },
+  tools: {
+    // Järjestä
+    merge: { title: "Yhdistä PDF", description: "Yhdistä useita PDF-tiedostoja yhdeksi asiakirjaksi." },
+    split: { title: "Jaa PDF", description: "Jaa PDF yksittäisiksi sivuiksi tai osioiksi." },
+    "delete-pages": { title: "Poista sivuja", description: "Poista tietyt sivut PDF-asiakirjasta." },
+    "extract-pages": { title: "Poimi sivuja", description: "Poimi valitut sivut uuteen PDF-tiedostoon." },
+    "organize-pages": { title: "Järjestä sivuja", description: "Järjestä, lisää tai poista sivuja visuaalisesti." },
+    "scan-to-pdf": { title: "Skannaa PDF:ksi", description: "Skannaa laitteellasi ja muunna PDF-muotoon." },
+
+    // Muunna
+    "pdf-to-word": { title: "PDF Wordiksi", description: "Muunna PDF-asiakirjat muokattaviksi Word-tiedostoiksi." },
+    "pdf-to-jpg": { title: "PDF JPG:ksi", description: "Muunna PDF-sivut korkealaatuisiksi JPG-kuviksi." },
+    "pdf-to-excel": { title: "PDF Exceliksi", description: "Poimi taulukot ja tiedot PDF:stä Excel-taulukoiksi." },
+    "pdf-to-ppt": { title: "PDF PPT:ksi", description: "Muunna PDF-tiedostot muokattaviksi PowerPoint-dioiksi." },
+    "pdf-to-png": { title: "PDF PNG:ksi", description: "Muunna PDF-sivut korkealaatuisiksi PNG-kuviksi." },
+    "pdf-to-text": { title: "PDF tekstiksi", description: "Poimi kaikki tekstisisältö PDF-asiakirjoista." },
+    "pdf-to-pdfa": { title: "PDF PDF/A:ksi", description: "Muunna PDF/A-muotoon pitkäaikaista arkistointia varten." },
+    "word-to-pdf": { title: "Word PDF:ksi", description: "Muunna Word-asiakirjat PDF-muotoon." },
+    "jpg-to-pdf": { title: "JPG PDF:ksi", description: "Muunna JPG-kuvat PDF-asiakirjaksi." },
+    "excel-to-pdf": { title: "Excel PDF:ksi", description: "Muunna Excel-taulukot PDF-muotoon." },
+    "ppt-to-pdf": { title: "PPT PDF:ksi", description: "Muunna PowerPoint-esitykset PDF-muotoon." },
+    "html-to-pdf": { title: "HTML PDF:ksi", description: "Muunna verkkosivut ja HTML-tiedostot PDF-muotoon." },
+    "png-to-pdf": { title: "PNG PDF:ksi", description: "Muunna PNG-kuvat PDF-asiakirjaksi." },
+    "image-to-pdf": { title: "Kuva PDF:ksi", description: "Yhdistä useita kuvia mistä tahansa muodosta yhdeksi PDF:ksi." },
+
+    // Muokkaa
+    "edit-pdf": { title: "Muokkaa PDF", description: "Lisää tekstiä, kuvia, muotoja ja merkintöjä PDF:ään." },
+    rotate: { title: "Kierrä PDF", description: "Kierrä PDF-sivut oikeaan suuntaan." },
+    "page-numbers": { title: "Sivunumerot", description: "Lisää sivunumerot PDF-asiakirjaasi." },
+    watermark: { title: "Vesileima", description: "Lisää teksti- tai kuvavesileimoja PDF:ään." },
+    crop: { title: "Rajaa PDF", description: "Rajaa marginaalit tai valitse tietyt alueet PDF-sivuista." },
+    sign: { title: "Allekirjoita PDF", description: "Lisää sähköisiä allekirjoituksia PDF-asiakirjoihin." },
+    annotate: { title: "Merkinnät PDF", description: "Korosta, alleviivaa ja lisää kommentteja PDF:iin." },
+    flatten: { title: "Litistä PDF", description: "Yhdistä lomakekentät ja merkinnät sivun sisältöön." },
+    resize: { title: "Muuta PDF:n kokoa", description: "Muuta PDF-sivun kokoa (A4, Letter, mukautettu)." },
+    "edit-metadata": { title: "Muokkaa metatietoja", description: "Muuta PDF:n otsikkoa, tekijää, avainsanoja ja muita metatietoja." },
+    grayscale: { title: "Harmaasävy", description: "Muunna PDF:n värit mustavalkoisiksi." },
+
+    // Optimoi
+    compress: { title: "Pakkaa PDF", description: "Pienennä PDF-tiedoston kokoa laadun kärsimättä." },
+    repair: { title: "Korjaa PDF", description: "Korjaa vaurioituneet tai vioittuneet PDF-tiedostot." },
+    ocr: { title: "OCR PDF", description: "Tee skannatuista PDF:istä haettavia tekstintunnistuksella." },
+    "web-optimize": { title: "Verkko-optimointi", description: "Linearisoi PDF:t nopeampaa verkkolataamista varten." },
+
+    // Tietoturva
+    protect: { title: "Suojaa PDF", description: "Lisää salasanasuojaus ja salaa PDF-tiedostosi." },
+    unlock: { title: "Avaa PDF", description: "Poista salasanasuojaus PDF-tiedostoista." },
+    redact: { title: "Peitä PDF", description: "Poista arkaluonteiset tiedot pysyvästi PDF:stä." },
+    compare: { title: "Vertaa PDF", description: "Vertaa kahta PDF:ää rinnakkain ja löydä erot." },
+    translate: { title: "Käännä PDF", description: "Käännä PDF:n sisältö toiselle kielelle tekoälyllä." },
+  },
+  nav: {
+    allTools: "Kaikki työkalut",
+    language: "Kieli",
+  },
+  footer: {
+    tools: "Työkalut",
+    legal: "Oikeudelliset tiedot",
+    privacy: "Tietosuojakäytäntö",
+    terms: "Käyttöehdot",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Takaisin kaikkiin työkaluihin",
+    dropFiles: "Pudota tiedostot tähän",
+    acceptedFormats: "Hyväksytyt muodot",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Ilmaiset PDF-työkalut",
+    siteDescription: "Yhdistä, jaa, pakkaa ja muunna PDF-tiedostoja verkossa ilmaiseksi.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Käytämme evästeitä parantaaksemme kokemustasi.",
+    accept: "Hyväksy",
+    decline: "Hylkää",
+  },
+  privacy: {
+    title: "Tietosuojakäytäntö",
+    lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
+    intro: "ToolBox PDF:ssä yksityisyytesi on meille tärkeää. Tämä käytäntö selittää, mitä tietoja keräämme palvelumme käytön yhteydessä ja miten käsittelemme niitä.",
+    sections: [
+      {
+        heading: "1. Keräämämme tiedot",
+        content: "ToolBox PDF ei vaadi rekisteröitymistä. Emme kerää henkilötietoja. Saatamme kuitenkin kerätä automaattisesti ei-tunnistavia tietoja palvelun parantamiseksi:\n\n• Selaimen tyyppi ja versio\n• Käyttöjärjestelmä\n• Vieraillut sivut ja käytetty aika\n• Evästeet ja vastaavat teknologiat käyttötapojen analysointiin",
+      },
+      {
+        heading: "2. Tiedostojen käsittely",
+        content: "Lataamasi tiedostot käsitellään palvelimillamme ja poistetaan automaattisesti 2 tunnin kuluessa. Emme lue, tallenna tai jaa tiedostojesi sisältöä kenellekään.",
+      },
+      {
+        heading: "3. Evästeet",
+        content: "Käytämme evästeitä asetustesi muistamiseen, kuten teema (tumma/vaalea tila) ja kielivalinta. Mainosverkostot (esim. Google AdSense) voivat myös käyttää evästeitä kohdennettujen mainosten näyttämiseen.",
+      },
+      {
+        heading: "4. Kolmannen osapuolen palvelut",
+        content: "Saatamme käyttää seuraavia kolmannen osapuolen palveluita:\n\n• Google Analytics -- liikenteen analysointiin\n• Google AdSense -- mainosten näyttämiseen\n\nTutustu kunkin palvelun omaan tietosuojakäytäntöön saadaksesi lisätietoja tietojesi käsittelystä.",
+      },
+      {
+        heading: "5. Oikeutesi",
+        content: "Voit poistaa evästeet käytöstä tai tyhjentää ne selaimesi asetuksista milloin tahansa. Huomioithan, että jotkin ominaisuudet eivät välttämättä toimi oikein ilman evästeitä.",
+      },
+      {
+        heading: "6. Muutokset tähän käytäntöön",
+        content: "Voimme päivittää tätä käytäntöä lainsäädännön muuttuessa tai palvelumme kehittyessä. Mahdolliset muutokset julkaistaan tällä sivulla.",
+      },
+      {
+        heading: "7. Ota yhteyttä",
+        content: "Tietosuojaan liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Käyttöehdot",
+    lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
+    intro: "Kiitos, että käytät ToolBox PDF:ää. Käyttämällä palveluamme hyväksyt seuraavat ehdot.",
+    sections: [
+      {
+        heading: "1. Palvelusta",
+        content: "ToolBox PDF on ilmainen verkkopalvelu, jonka avulla voit yhdistää, jakaa, muuntaa, muokata ja pakata PDF-tiedostoja suoraan selaimessasi.",
+      },
+      {
+        heading: "2. Hyväksyttävä käyttö",
+        content: "• Palvelua saa käyttää vain laillisiin tarkoituksiin.\n• Älä käsittele tiedostoja, jotka loukkaavat tekijänoikeuksia tai immateriaalioikeuksia.\n• Älä väärinkäytä palvelua tai kuormita palvelimiamme liiallisesti.\n• Automatisoitu käyttö (botit, scraperit yms.) ei ole sallittua.",
+      },
+      {
+        heading: "3. Tiedostojen käsittely",
+        content: "Ladattuja tiedostoja käytetään ainoastaan pyydetyn toiminnon suorittamiseen. Ne poistetaan automaattisesti palvelimiltamme 2 tunnin kuluessa. Emme analysoi tai säilytä tiedostojasi.",
+      },
+      {
+        heading: "4. Vastuuvapauslauseke",
+        content: "Palvelu tarjotaan \"sellaisena kuin se on.\" Emme takaa muunnosten tarkkuutta, keskeytymätöntä saatavuutta tai suojaa tietojen häviämistä vastaan. Ota aina varmuuskopio tärkeistä tiedostoista ennen käsittelyä.",
+      },
+      {
+        heading: "5. Immateriaalioikeudet",
+        content: "Kaikki tämän sivuston sisältö -- mukaan lukien ulkoasu, logot ja koodi -- kuuluu ToolBoxille. Sinä säilytät kaikki oikeudet lataamiisi tiedostoihin. Emme vaadi omistusoikeutta sisältöösi.",
+      },
+      {
+        heading: "6. Palvelun muutokset",
+        content: "Pidätämme oikeuden muuttaa tai lakkauttaa ominaisuuksia milloin tahansa ilman ennakkoilmoitusta.",
+      },
+      {
+        heading: "7. Ehtojen päivitykset",
+        content: "Näitä ehtoja voidaan tarkistaa tarpeen mukaan. Muutokset julkaistaan tällä sivulla. Palvelun jatkuva käyttö muutosten jälkeen merkitsee päivitettyjen ehtojen hyväksymistä.",
+      },
+      {
+        heading: "8. Ota yhteyttä",
+        content: "Näihin ehtoihin liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default fi;

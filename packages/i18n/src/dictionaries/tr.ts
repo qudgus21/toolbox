@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const tr: Dictionary = {
+  home: {
+    title: "İhtiyacınız olan her araç",
+    titleAccent: "PDF'ler",
+    description: "PDF dosyalarını birleştirin, bölün, sıkıştırın ve dönüştürün. Ücretsiz, hızlı ve kullanımı kolay.",
+    tabAll: "Tümü",
+    categoryOrganize: "Düzenle",
+    categoryConvert: "Dönüştür",
+    categoryEdit: "Düzenle",
+    categoryOptimize: "Optimize Et",
+    categorySecurity: "Güvenlik",
+    searchPlaceholder: "Araç ara...",
+    noResults: "Araç bulunamadı.",
+  },
+  trust: {
+    encryption: "Güvenli Şifreleme",
+    encryptionDesc: "Dosyalarınız 256 bit SSL şifreleme ile korunmaktadır.",
+    autoDelete: "Otomatik Silme",
+    autoDeleteDesc: "Yüklenen dosyalar 2 saat sonra otomatik olarak silinir.",
+    free: "Tamamen Ücretsiz",
+    freeDesc: "Tüm araçları sınırsız ve tamamen ücretsiz kullanın.",
+    cloud: "Bulut İşleme",
+    cloudDesc: "Sunucularımızda işlenir, cihazınızı etkilemez.",
+  },
+  tools: {
+    // Düzenleme
+    merge: { title: "PDF Birleştir", description: "Birden fazla PDF dosyasını tek bir belgede birleştirin." },
+    split: { title: "PDF Böl", description: "PDF'yi ayrı sayfalara veya bölümlere ayırın." },
+    "delete-pages": { title: "Sayfa Sil", description: "PDF belgesinden belirli sayfaları kaldırın." },
+    "extract-pages": { title: "Sayfa Çıkar", description: "Seçilen sayfaları yeni bir PDF dosyasına çıkarın." },
+    "organize-pages": { title: "Sayfaları Düzenle", description: "Sayfaları görsel olarak yeniden sıralayın, ekleyin veya kaldırın." },
+    "scan-to-pdf": { title: "PDF'ye Tara", description: "Cihazınızdan tarama yapın ve PDF'ye dönüştürün." },
+
+    // Dönüştürme
+    "pdf-to-word": { title: "PDF'den Word'e", description: "PDF belgelerini düzenlenebilir Word dosyalarına dönüştürün." },
+    "pdf-to-jpg": { title: "PDF'den JPG'ye", description: "PDF sayfalarını yüksek kaliteli JPG görsellerine dönüştürün." },
+    "pdf-to-excel": { title: "PDF'den Excel'e", description: "PDF'lerden tabloları ve verileri Excel tablolarına aktarın." },
+    "pdf-to-ppt": { title: "PDF'den PPT'ye", description: "PDF dosyalarını düzenlenebilir PowerPoint slaytlarına dönüştürün." },
+    "pdf-to-png": { title: "PDF'den PNG'ye", description: "PDF sayfalarını yüksek kaliteli PNG görsellerine dönüştürün." },
+    "pdf-to-text": { title: "PDF'den Metne", description: "PDF belgelerinden tüm metin içeriğini çıkarın." },
+    "pdf-to-pdfa": { title: "PDF'den PDF/A'ya", description: "Uzun süreli arşivleme için PDF/A formatına dönüştürün." },
+    "word-to-pdf": { title: "Word'den PDF'ye", description: "Word belgelerini PDF formatına dönüştürün." },
+    "jpg-to-pdf": { title: "JPG'den PDF'ye", description: "JPG görsellerini PDF belgesine dönüştürün." },
+    "excel-to-pdf": { title: "Excel'den PDF'ye", description: "Excel tablolarını PDF formatına dönüştürün." },
+    "ppt-to-pdf": { title: "PPT'den PDF'ye", description: "PowerPoint sunumlarını PDF formatına dönüştürün." },
+    "html-to-pdf": { title: "HTML'den PDF'ye", description: "Web sayfalarını ve HTML dosyalarını PDF'ye dönüştürün." },
+    "png-to-pdf": { title: "PNG'den PDF'ye", description: "PNG görsellerini PDF belgesine dönüştürün." },
+    "image-to-pdf": { title: "Görsel'den PDF'ye", description: "Herhangi bir formattaki birden fazla görseli tek bir PDF'de birleştirin." },
+
+    // Düzenleme
+    "edit-pdf": { title: "PDF Düzenle", description: "PDF'ye metin, görsel, şekil ve açıklamalar ekleyin." },
+    rotate: { title: "PDF Döndür", description: "PDF sayfalarını doğru yöne döndürün." },
+    "page-numbers": { title: "Sayfa Numaraları", description: "PDF belgenize sayfa numaraları ekleyin." },
+    watermark: { title: "Filigran", description: "PDF'nize metin veya görsel filigran ekleyin." },
+    crop: { title: "PDF Kırp", description: "PDF sayfalarının kenar boşluklarını kırpın veya belirli alanları seçin." },
+    sign: { title: "PDF İmzala", description: "PDF belgelerinize elektronik imza ekleyin." },
+    annotate: { title: "PDF'ye Not Ekle", description: "PDF'leri vurgulayın, altını çizin ve yorum ekleyin." },
+    flatten: { title: "PDF Düzleştir", description: "Form alanlarını ve açıklamaları sayfa içeriğine birleştirin." },
+    resize: { title: "PDF Boyutlandır", description: "PDF sayfa boyutunu değiştirin (A4, Letter, özel)." },
+    "edit-metadata": { title: "Meta Veri Düzenle", description: "PDF başlığını, yazarını, anahtar kelimelerini ve diğer meta verileri değiştirin." },
+    grayscale: { title: "Gri Tonlama", description: "PDF renklerini siyah beyaza dönüştürün." },
+
+    // Optimize Etme
+    compress: { title: "PDF Sıkıştır", description: "Kalite kaybı olmadan PDF dosya boyutunu küçültün." },
+    repair: { title: "PDF Onar", description: "Hasarlı veya bozuk PDF dosyalarını onarın." },
+    ocr: { title: "OCR PDF", description: "Taranan PDF'leri metin tanıma ile aranabilir hale getirin." },
+    "web-optimize": { title: "Web Optimize", description: "PDF'leri daha hızlı web yüklemesi için optimize edin." },
+
+    // Güvenlik
+    protect: { title: "PDF Koru", description: "PDF'nize şifre koruması ekleyin ve şifreleyin." },
+    unlock: { title: "PDF Kilidini Aç", description: "PDF dosyalarından şifre korumasını kaldırın." },
+    redact: { title: "PDF Redakte Et", description: "PDF'lerden hassas bilgileri kalıcı olarak kaldırın." },
+    compare: { title: "PDF Karşılaştır", description: "İki PDF'yi yan yana karşılaştırın ve farkları bulun." },
+    translate: { title: "PDF Çevir", description: "PDF içeriğini yapay zeka ile başka bir dile çevirin." },
+  },
+  nav: {
+    allTools: "Tüm Araçlar",
+    language: "Dil",
+  },
+  footer: {
+    tools: "Araçlar",
+    legal: "Yasal",
+    privacy: "Gizlilik Politikası",
+    terms: "Hizmet Şartları",
+    copyright: "ToolBox. Tüm hakları saklıdır.",
+  },
+  common: {
+    backToAll: "Tüm araçlara dön",
+    dropFiles: "Dosyalarınızı buraya bırakın",
+    acceptedFormats: "Kabul edilen formatlar",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Ücretsiz PDF Araçları",
+    siteDescription: "PDF dosyalarını çevrimiçi olarak ücretsiz birleştirin, bölün, sıkıştırın ve dönüştürün.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Deneyiminizi iyileştirmek için çerez kullanıyoruz.",
+    accept: "Kabul et",
+    decline: "Reddet",
+  },
+  privacy: {
+    title: "Gizlilik Politikası",
+    lastUpdated: "Son güncelleme: 1 Mart 2026",
+    intro: "ToolBox PDF olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken hangi bilgileri topladığımızı ve bunları nasıl işlediğimizi açıklar.",
+    sections: [
+      {
+        heading: "1. Topladığımız Bilgiler",
+        content: "ToolBox PDF'de hesap oluşturmanız gerekmez. Kişisel bilgi toplamıyoruz. Ancak hizmeti iyileştirmek amacıyla kimliğinizi belirlemeyen bazı verileri otomatik olarak toplayabiliriz:\n\n• Tarayıcı türü ve sürümü\n• İşletim sistemi\n• Ziyaret edilen sayfalar ve geçirilen süre\n• Kullanım alışkanlıklarını analiz etmek için çerezler ve benzeri teknolojiler",
+      },
+      {
+        heading: "2. Dosya İşleme",
+        content: "Yüklediğiniz dosyalar sunucularımızda işlenir ve 2 saat içinde otomatik olarak silinir. Dosyalarınızın içeriğini okumaz, saklamaz veya üçüncü taraflarla paylaşmayız.",
+      },
+      {
+        heading: "3. Çerezler",
+        content: "Tema tercihiniz (koyu/açık mod) ve dil seçiminiz gibi ayarları hatırlamak için çerez kullanıyoruz. Reklam ağları (örneğin Google AdSense) da kişiselleştirilmiş reklamlar göstermek için çerez kullanabilir.",
+      },
+      {
+        heading: "4. Üçüncü Taraf Hizmetler",
+        content: "Aşağıdaki üçüncü taraf hizmetlerini kullanabiliriz:\n\n• Google Analytics – trafik analizi için\n• Google AdSense – reklam gösterimi için\n\nBu hizmetlerin verilerinizi nasıl işlediğine dair bilgi için kendi gizlilik politikalarına başvurabilirsiniz.",
+      },
+      {
+        heading: "5. Haklarınız",
+        content: "Tarayıcı ayarlarından çerezleri istediğiniz zaman devre dışı bırakabilir veya silebilirsiniz. Çerezler olmadan bazı özelliklerin düzgün çalışmayabileceğini unutmayın.",
+      },
+      {
+        heading: "6. Politika Değişiklikleri",
+        content: "Yasalar değiştikçe veya hizmetimiz geliştikçe bu politikayı güncelleyebiliriz. Tüm değişiklikler bu sayfada yayımlanacaktır.",
+      },
+      {
+        heading: "7. İletişim",
+        content: "Gizlilikle ilgili sorularınız için bize support@toolbox-pdf.com adresinden ulaşabilirsiniz.",
+      },
+    ],
+  },
+  terms: {
+    title: "Hizmet Şartları",
+    lastUpdated: "Son güncelleme: 1 Mart 2026",
+    intro: "ToolBox PDF'i kullandığınız için teşekkürler. Hizmetimize erişerek veya kullanarak aşağıdaki şartları kabul etmiş olursunuz.",
+    sections: [
+      {
+        heading: "1. Hizmet Hakkında",
+        content: "ToolBox PDF, doğrudan tarayıcınızda PDF dosyalarını birleştirmenize, bölmenize, dönüştürmenize, düzenlemenize ve sıkıştırmanıza olanak tanıyan ücretsiz bir çevrimiçi hizmettir.",
+      },
+      {
+        heading: "2. Kabul Edilebilir Kullanım",
+        content: "• Hizmeti yalnızca yasal amaçlarla kullanabilirsiniz.\n• Telif hakkı veya fikri mülkiyeti ihlal eden dosyaları işlemeyiniz.\n• Hizmeti kötüye kullanmayınız veya sunuculara aşırı yük bindirmeyiniz.\n• Otomatik erişim (bot, scraper vb.) kullanımına izin verilmez.",
+      },
+      {
+        heading: "3. Dosya İşleme",
+        content: "Yüklenen dosyalar yalnızca talep ettiğiniz işlemi gerçekleştirmek için kullanılır. 2 saat içinde sunucularımızdan otomatik olarak silinir. Dosyalarınızı analiz etmez veya saklamayız.",
+      },
+      {
+        heading: "4. Sorumluluk Reddi",
+        content: "Hizmet \"olduğu gibi\" sunulmaktadır. Dönüştürme doğruluğu, kesintisiz erişim veya veri kaybına karşı koruma konusunda garanti vermiyoruz. Önemli dosyalarınızın yedeğini her zaman alın.",
+      },
+      {
+        heading: "5. Fikri Mülkiyet",
+        content: "Bu sitedeki tüm içerik — tasarım, logolar ve kod dahil — ToolBox'a aittir. Yüklediğiniz dosyalar üzerindeki tüm haklar size aittir. İçeriğiniz üzerinde hiçbir hak iddia etmiyoruz.",
+      },
+      {
+        heading: "6. Hizmet Değişiklikleri",
+        content: "Herhangi bir özelliği önceden haber vermeksizin istediğimiz zaman değiştirme veya kaldırma hakkımızı saklı tutarız.",
+      },
+      {
+        heading: "7. Şartların Güncellenmesi",
+        content: "Bu şartlar gerektiğinde güncellenebilir. Değişiklikler bu sayfada yayımlanacaktır. Değişikliklerden sonra hizmeti kullanmaya devam etmeniz, güncellenmiş şartları kabul ettiğiniz anlamına gelir.",
+      },
+      {
+        heading: "8. İletişim",
+        content: "Bu şartlarla ilgili sorularınız için bize support@toolbox-pdf.com adresinden ulaşabilirsiniz.",
+      },
+    ],
+  },
+};
+
+export default tr;

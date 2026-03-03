@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const is: Dictionary = {
+  home: {
+    title: "Öll verkfærin sem þú þarft til að vinna með",
+    titleAccent: "PDFs",
+    description: "Sameina, skipta, þjappa og umbreyta PDF skrám. Ókeypis, hratt og auðvelt.",
+    tabAll: "Allt",
+    categoryOrganize: "Skipuleggja",
+    categoryConvert: "Umbreyta",
+    categoryEdit: "Breyta",
+    categoryOptimize: "Fínstilla",
+    categorySecurity: "Öryggi",
+    searchPlaceholder: "Leita að verkfærum...",
+    noResults: "Engin verkfæri fundust.",
+  },
+  trust: {
+    encryption: "Örugg dulkóðun",
+    encryptionDesc: "Skrárnar þínar eru verndaðar með 256-bita SSL dulkóðun.",
+    autoDelete: "Sjálfvirk eyðing",
+    autoDeleteDesc: "Upphlaðnar skrár eru sjálfkrafa eyddar eftir 2 klukkustundir.",
+    free: "Alveg ókeypis",
+    freeDesc: "Notaðu öll verkfæri án takmarkana, alveg ókeypis.",
+    cloud: "Skýjavinnsla",
+    cloudDesc: "Unnið á netþjónum okkar, engin áhrif á tækið þitt.",
+  },
+  tools: {
+    // Skipuleggja
+    merge: { title: "Sameina PDF", description: "Sameina margar PDF skrár í eitt skjal." },
+    split: { title: "Skipta PDF", description: "Skipta PDF í einstakar síður eða hluta." },
+    "delete-pages": { title: "Eyða síðum", description: "Fjarlægja tilteknar síður úr PDF skjali." },
+    "extract-pages": { title: "Draga út síður", description: "Draga valdar síður út í nýja PDF skrá." },
+    "organize-pages": { title: "Skipuleggja síður", description: "Endurraða, bæta við eða fjarlægja síður sjónrænt." },
+    "scan-to-pdf": { title: "Skanna í PDF", description: "Skanna úr tækinu þínu og umbreyta í PDF." },
+
+    // Umbreyta
+    "pdf-to-word": { title: "PDF í Word", description: "Umbreyta PDF skjölum í breytanlegar Word skrár." },
+    "pdf-to-jpg": { title: "PDF í JPG", description: "Umbreyta PDF síðum í hágæða JPG myndir." },
+    "pdf-to-excel": { title: "PDF í Excel", description: "Draga töflur og gögn úr PDF í Excel töflureikna." },
+    "pdf-to-ppt": { title: "PDF í PPT", description: "Umbreyta PDF skrám í breytanlegar PowerPoint glærur." },
+    "pdf-to-png": { title: "PDF í PNG", description: "Umbreyta PDF síðum í hágæða PNG myndir." },
+    "pdf-to-text": { title: "PDF í texta", description: "Draga allt textainnihald úr PDF skjölum." },
+    "pdf-to-pdfa": { title: "PDF í PDF/A", description: "Umbreyta í PDF/A snið til langtíma varðveislu." },
+    "word-to-pdf": { title: "Word í PDF", description: "Umbreyta Word skjölum á PDF snið." },
+    "jpg-to-pdf": { title: "JPG í PDF", description: "Umbreyta JPG myndum í PDF skjal." },
+    "excel-to-pdf": { title: "Excel í PDF", description: "Umbreyta Excel töflureiknum á PDF snið." },
+    "ppt-to-pdf": { title: "PPT í PDF", description: "Umbreyta PowerPoint kynningum á PDF snið." },
+    "html-to-pdf": { title: "HTML í PDF", description: "Umbreyta vefsíðum og HTML skrám í PDF." },
+    "png-to-pdf": { title: "PNG í PDF", description: "Umbreyta PNG myndum í PDF skjal." },
+    "image-to-pdf": { title: "Mynd í PDF", description: "Sameina margar myndir á hvaða sniði sem er í eina PDF." },
+
+    // Breyta
+    "edit-pdf": { title: "Breyta PDF", description: "Bæta texta, myndum, formum og athugasemdum við PDF." },
+    rotate: { title: "Snúa PDF", description: "Snúa PDF síðum í rétta stefnu." },
+    "page-numbers": { title: "Síðunúmer", description: "Bæta síðunúmerum við PDF skjalið þitt." },
+    watermark: { title: "Vatnsmerki", description: "Bæta texta- eða myndvatnsmerki við PDF." },
+    crop: { title: "Klippa PDF", description: "Klippa spássíur eða velja tiltekin svæði á PDF síðum." },
+    sign: { title: "Undirrita PDF", description: "Bæta rafrænum undirskriftum við PDF skjöl." },
+    annotate: { title: "Athugasemda PDF", description: "Draga fram, undirstrika og bæta athugasemdum við PDF." },
+    flatten: { title: "Fletja PDF", description: "Sameina eyðublöðsreiti og athugasemdir í síðuinnihald." },
+    resize: { title: "Breyta stærð PDF", description: "Breyta stærð PDF síðu (A4, Letter, sérsniðið)." },
+    "edit-metadata": { title: "Breyta lýsigögnum", description: "Breyta titli, höfundi, lykilorðum og öðrum lýsigögnum PDF." },
+    grayscale: { title: "Gráskali", description: "Umbreyta PDF litum í svarthvítt." },
+
+    // Fínstilla
+    compress: { title: "Þjappa PDF", description: "Minnka PDF skráarstærð án þess að missa gæði." },
+    repair: { title: "Gera við PDF", description: "Laga skemmdar eða spilltar PDF skrár." },
+    ocr: { title: "OCR PDF", description: "Gera skannaðar PDF skrár leitanlegar með textaþekkingu." },
+    "web-optimize": { title: "Vefínstilling", description: "Línugerðu PDF fyrir hraðari vefhleðslu." },
+
+    // Öryggi
+    protect: { title: "Vernda PDF", description: "Bæta lykilorðsvörn og dulkóðun við PDF skjalið þitt." },
+    unlock: { title: "Opna PDF", description: "Fjarlægja lykilorðsvörn af PDF skrám." },
+    redact: { title: "Afmá PDF", description: "Fjarlægja varanlega viðkvæmar upplýsingar úr PDF." },
+    compare: { title: "Bera saman PDF", description: "Bera saman tvö PDF hlið við hlið og finna mun." },
+    translate: { title: "Þýða PDF", description: "Þýða PDF efni á annað tungumál með gervigreind." },
+  },
+  nav: {
+    allTools: "Öll verkfæri",
+    language: "Tungumál",
+  },
+  footer: {
+    tools: "Verkfæri",
+    legal: "Lagalegar upplýsingar",
+    privacy: "Persónuverndarstefna",
+    terms: "Þjónustuskilmálar",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Til baka í öll verkfæri",
+    dropFiles: "Dragðu skrár hingað",
+    acceptedFormats: "Studd snið",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Ókeypis PDF verkfæri",
+    siteDescription: "Sameina, skipta, þjappa og umbreyta PDF skrám á netinu ókeypis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Við notum vafrakökur til að bæta upplifun þína.",
+    accept: "Samþykkja",
+    decline: "Hafna",
+  },
+  privacy: {
+    title: "Persónuverndarstefna",
+    lastUpdated: "Síðast uppfært: 1. mars 2026",
+    intro: "Hjá ToolBox PDF er persónuvernd þín okkur mikilvæg. Þessi stefna útskýrir hvaða upplýsingar við söfnum þegar þú notar þjónustu okkar og hvernig við meðhöndlum þær.",
+    sections: [
+      {
+        heading: "1. Upplýsingar sem við söfnum",
+        content: "ToolBox PDF krefst ekki skráningar. Við söfnum ekki persónuupplýsingum. Hins vegar getum við sjálfkrafa safnað ópersónugreinanlegum gögnum til að bæta þjónustuna:\n\n• Gerð og útgáfa vafrans\n• Stýrikerfi\n• Heimsóttar síður og tími á þeim\n• Vefkökur og svipaðar tækni til að greina notkunarmynstur",
+      },
+      {
+        heading: "2. Meðhöndlun skráa",
+        content: "Skrár sem þú hleður upp eru unnar á netþjónum okkar og sjálfkrafa eyddar innan 2 klukkustunda. Við lesum ekki, geymum ekki og deilum ekki efni skráanna þinna með neinum.",
+      },
+      {
+        heading: "3. Vefkökur",
+        content: "Við notum vefkökur til að muna stillingar þínar eins og þema (dökkt/ljóst) og tungumálaval. Auglýsingakerfi (t.d. Google AdSense) geta einnig notað vefkökur til að birta sérsniðnar auglýsingar.",
+      },
+      {
+        heading: "4. Þjónusta þriðja aðila",
+        content: "Við getum notað eftirfarandi þjónustu þriðja aðila:\n\n• Google Analytics -- til umferðargreiningar\n• Google AdSense -- til auglýsingabirtinga\n\nVinsamlegast skoðaðu persónuverndarstefnu hverrar þjónustu fyrir sig til að fá upplýsingar um hvernig þær meðhöndla gögnin þín.",
+      },
+      {
+        heading: "5. Réttindi þín",
+        content: "Þú getur slökkt á eða eytt vefkökum í stillingum vafrans þíns hvenær sem er. Athugaðu að sumir eiginleikar virka hugsanlega ekki rétt án vefkaka.",
+      },
+      {
+        heading: "6. Breytingar á þessari stefnu",
+        content: "Við getum uppfært þessa stefnu eftir því sem lög breytast eða þjónusta okkar þróast. Allar breytingar verða birtar á þessari síðu.",
+      },
+      {
+        heading: "7. Hafðu samband",
+        content: "Ef þú hefur spurningar um persónuvernd geturðu haft samband við okkur á support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Þjónustuskilmálar",
+    lastUpdated: "Síðast uppfært: 1. mars 2026",
+    intro: "Takk fyrir að nota ToolBox PDF. Með því að opna eða nota þjónustu okkar samþykkir þú eftirfarandi skilmála.",
+    sections: [
+      {
+        heading: "1. Um þjónustuna",
+        content: "ToolBox PDF er ókeypis netþjónusta sem gerir þér kleift að sameina, skipta, umbreyta, breyta og þjappa PDF skrár beint í vafranum þínum.",
+      },
+      {
+        heading: "2. Leyfileg notkun",
+        content: "• Þú mátt eingöngu nota þjónustuna í löglegum tilgangi.\n• Ekki vinna úr skrám sem brjóta höfundarrétt eða hugverkaréttindi.\n• Ekki misnota þjónustuna eða setja óhóflegt álag á netþjóna okkar.\n• Sjálfvirk aðgangur (vélmenni, scraparar o.s.frv.) er ekki leyfður.",
+      },
+      {
+        heading: "3. Meðhöndlun skráa",
+        content: "Upphlöðnum skrám er eingöngu beitt til að framkvæma umbeðna aðgerð. Þeim er sjálfkrafa eytt af netþjónum okkar innan 2 klukkustunda. Við greinum ekki eða geymum skrár þínar.",
+      },
+      {
+        heading: "4. Fyrirvari",
+        content: "Þjónustan er veitt 'eins og hún er.' Við gefum engar ábyrgðir varðandi nákvæmni umbreytinga, óslitið framboð eða vörn gegn gagnatapi. Taktu alltaf öryggisafrit af mikilvægum skrám áður en þú vinnur úr þeim.",
+      },
+      {
+        heading: "5. Hugverkaréttur",
+        content: "Allt efni á þessari vefsíðu -- þar á meðal hönnun, lógó og kóði -- tilheyrir ToolBox. Þú heldur öllum réttindum yfir skrám sem þú hleður upp. Við gerum ekki tilkall til eignarréttar á efninu þínu.",
+      },
+      {
+        heading: "6. Breytingar á þjónustu",
+        content: "Við áskildum okkur rétt til að breyta eða hætta eiginleikum hvenær sem er án fyrirvara.",
+      },
+      {
+        heading: "7. Uppfærslur á þessum skilmálum",
+        content: "Þessir skilmálar geta verið endurskoðaðir eftir þörfum. Breytingar verða birtar á þessari síðu. Áframhaldandi notkun þjónustunnar eftir breytingar þýðir samþykki á uppfærðum skilmálum.",
+      },
+      {
+        heading: "8. Hafðu samband",
+        content: "Ef þú hefur spurningar um þessa skilmála geturðu haft samband við okkur á support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default is;

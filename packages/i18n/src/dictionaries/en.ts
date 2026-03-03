@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const en: Dictionary = {
+  home: {
+    title: "Every tool you need to work with",
+    titleAccent: "PDFs",
+    description: "Merge, split, compress, and convert PDF files. Free, fast, and easy to use.",
+    tabAll: "All",
+    categoryOrganize: "Organize",
+    categoryConvert: "Convert",
+    categoryEdit: "Edit",
+    categoryOptimize: "Optimize",
+    categorySecurity: "Security",
+    searchPlaceholder: "Search tools...",
+    noResults: "No tools found.",
+  },
+  trust: {
+    encryption: "Secure Encryption",
+    encryptionDesc: "Your files are protected with 256-bit SSL encryption.",
+    autoDelete: "Auto Delete",
+    autoDeleteDesc: "Uploaded files are automatically deleted after 2 hours.",
+    free: "Completely Free",
+    freeDesc: "Use all tools without limits, completely free.",
+    cloud: "Cloud Processing",
+    cloudDesc: "Processed on our servers, no impact on your device.",
+  },
+  tools: {
+    // Organize
+    merge: { title: "Merge PDF", description: "Combine multiple PDF files into one document." },
+    split: { title: "Split PDF", description: "Separate a PDF into individual pages or sections." },
+    "delete-pages": { title: "Delete Pages", description: "Remove specific pages from a PDF document." },
+    "extract-pages": { title: "Extract Pages", description: "Extract selected pages into a new PDF file." },
+    "organize-pages": { title: "Organize Pages", description: "Reorder, add, or remove pages visually." },
+    "scan-to-pdf": { title: "Scan to PDF", description: "Capture scans from your device and convert to PDF." },
+
+    // Convert
+    "pdf-to-word": { title: "PDF to Word", description: "Convert PDF documents to editable Word files." },
+    "pdf-to-jpg": { title: "PDF to JPG", description: "Convert PDF pages to high-quality JPG images." },
+    "pdf-to-excel": { title: "PDF to Excel", description: "Extract tables and data from PDFs into Excel spreadsheets." },
+    "pdf-to-ppt": { title: "PDF to PPT", description: "Convert PDF files to editable PowerPoint slides." },
+    "pdf-to-png": { title: "PDF to PNG", description: "Convert PDF pages to high-quality PNG images." },
+    "pdf-to-text": { title: "PDF to Text", description: "Extract all text content from PDF documents." },
+    "pdf-to-pdfa": { title: "PDF to PDF/A", description: "Convert to PDF/A format for long-term archiving." },
+    "word-to-pdf": { title: "Word to PDF", description: "Convert Word documents to PDF format." },
+    "jpg-to-pdf": { title: "JPG to PDF", description: "Convert JPG images into a PDF document." },
+    "excel-to-pdf": { title: "Excel to PDF", description: "Convert Excel spreadsheets to PDF format." },
+    "ppt-to-pdf": { title: "PPT to PDF", description: "Convert PowerPoint presentations to PDF format." },
+    "html-to-pdf": { title: "HTML to PDF", description: "Convert web pages and HTML files to PDF." },
+    "png-to-pdf": { title: "PNG to PDF", description: "Convert PNG images into a PDF document." },
+    "image-to-pdf": { title: "Image to PDF", description: "Combine multiple images of any format into a single PDF." },
+
+    // Edit
+    "edit-pdf": { title: "Edit PDF", description: "Add text, images, shapes, and annotations to a PDF." },
+    rotate: { title: "Rotate PDF", description: "Rotate PDF pages to the correct orientation." },
+    "page-numbers": { title: "Page Numbers", description: "Add page numbers to your PDF document." },
+    watermark: { title: "Watermark", description: "Add text or image watermarks to your PDF." },
+    crop: { title: "Crop PDF", description: "Crop margins or select specific areas of PDF pages." },
+    sign: { title: "Sign PDF", description: "Add electronic signatures to your PDF documents." },
+    annotate: { title: "Annotate PDF", description: "Highlight, underline, and add comments to PDFs." },
+    flatten: { title: "Flatten PDF", description: "Merge form fields and annotations into page content." },
+    resize: { title: "Resize PDF", description: "Change PDF page size (A4, Letter, custom)." },
+    "edit-metadata": { title: "Edit Metadata", description: "Change PDF title, author, keywords, and other metadata." },
+    grayscale: { title: "Grayscale", description: "Convert PDF colors to black and white." },
+
+    // Optimize
+    compress: { title: "Compress PDF", description: "Reduce PDF file size without losing quality." },
+    repair: { title: "Repair PDF", description: "Fix damaged or corrupted PDF files." },
+    ocr: { title: "OCR PDF", description: "Make scanned PDFs searchable with text recognition." },
+    "web-optimize": { title: "Web Optimize", description: "Linearize PDFs for faster web loading." },
+
+    // Security
+    protect: { title: "Protect PDF", description: "Add password protection and encrypt your PDF." },
+    unlock: { title: "Unlock PDF", description: "Remove password protection from PDF files." },
+    redact: { title: "Redact PDF", description: "Permanently remove sensitive information from PDFs." },
+    compare: { title: "Compare PDF", description: "Compare two PDFs side by side and spot differences." },
+    translate: { title: "Translate PDF", description: "Translate PDF content to another language with AI." },
+  },
+  nav: {
+    allTools: "All Tools",
+    language: "Language",
+  },
+  footer: {
+    tools: "Tools",
+    legal: "Legal",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Back to all tools",
+    dropFiles: "Drop your files here",
+    acceptedFormats: "Accepted formats",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Free PDF Tools",
+    siteDescription: "Merge, split, compress, and convert PDF files online for free.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "We use cookies to improve your experience.",
+    accept: "Accept",
+    decline: "Decline",
+  },
+  privacy: {
+    title: "Privacy Policy",
+    lastUpdated: "Last updated: March 1, 2026",
+    intro: "At ToolBox PDF, your privacy matters. This policy explains what information we collect when you use our service and how we handle it.",
+    sections: [
+      {
+        heading: "1. Information We Collect",
+        content: "ToolBox PDF does not require registration. We do not collect personal information. However, we may automatically collect non-identifying data to improve the service:\n\n• Browser type and version\n• Operating system\n• Pages visited and time spent\n• Cookies and similar technologies for usage patterns",
+      },
+      {
+        heading: "2. File Handling",
+        content: "Files you upload are processed on our servers and automatically deleted within 2 hours. We do not read, store, or share the contents of your files with anyone.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "We use cookies to remember your preferences such as theme (dark/light mode) and language selection. Ad networks (e.g., Google AdSense) may also use cookies to serve personalized ads.",
+      },
+      {
+        heading: "4. Third-Party Services",
+        content: "We may use the following third-party services:\n\n• Google Analytics – for traffic analysis\n• Google AdSense – for serving ads\n\nPlease refer to each service's own privacy policy for details on how they handle your data.",
+      },
+      {
+        heading: "5. Your Rights",
+        content: "You can disable or delete cookies through your browser settings at any time. Note that some features may not work properly without cookies.",
+      },
+      {
+        heading: "6. Changes to This Policy",
+        content: "We may update this policy as laws change or our service evolves. Any changes will be posted on this page.",
+      },
+      {
+        heading: "7. Contact Us",
+        content: "For privacy-related questions, reach us at support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Terms of Service",
+    lastUpdated: "Last updated: March 1, 2026",
+    intro: "Thanks for using ToolBox PDF. By accessing or using our service, you agree to the following terms.",
+    sections: [
+      {
+        heading: "1. About the Service",
+        content: "ToolBox PDF is a free online service that lets you merge, split, convert, edit, and compress PDF files directly in your browser.",
+      },
+      {
+        heading: "2. Acceptable Use",
+        content: "• You may only use the service for lawful purposes.\n• Do not process files that infringe on copyrights or intellectual property.\n• Do not abuse the service or place excessive load on our servers.\n• Automated access (bots, scrapers, etc.) is not permitted.",
+      },
+      {
+        heading: "3. File Handling",
+        content: "Uploaded files are used solely to perform the requested operation. They are automatically deleted from our servers within 2 hours. We do not analyze or retain your files.",
+      },
+      {
+        heading: "4. Disclaimer",
+        content: "The service is provided \"as is.\" We make no guarantees regarding conversion accuracy, uninterrupted availability, or protection against data loss. Always keep a backup of important files before processing.",
+      },
+      {
+        heading: "5. Intellectual Property",
+        content: "All content on this site — including design, logos, and code — belongs to ToolBox. You retain full rights to any files you upload. We claim no ownership over your content.",
+      },
+      {
+        heading: "6. Service Changes",
+        content: "We reserve the right to modify or discontinue features at any time without prior notice.",
+      },
+      {
+        heading: "7. Updates to These Terms",
+        content: "These terms may be revised as needed. Changes will be posted on this page. Continued use of the service after changes constitutes acceptance of the updated terms.",
+      },
+      {
+        heading: "8. Contact Us",
+        content: "For questions about these terms, reach us at support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default en;

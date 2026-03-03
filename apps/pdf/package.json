@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@toolbox/design-tokens": "workspace:*",
+    "@toolbox/i18n": "workspace:*",
     "@toolbox/ui": "workspace:*",
     "@toolbox/utils": "workspace:*",
     "framer-motion": "^12",
+    "lucide-react": "^0.511",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19"

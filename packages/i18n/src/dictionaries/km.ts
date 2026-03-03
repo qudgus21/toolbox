@@ -1,0 +1,105 @@
+import type { Dictionary } from "../config";
+
+const km: Dictionary = {
+  home: {
+    title: "ឧបករណ៍ទាំងអស់ដែលអ្នកត្រូវការដើម្បីធ្វើការជាមួយ",
+    titleAccent: "PDF",
+    description: "បញ្ចូលរួម បែងចែក បង្រួម និងបំលែងឯកសារ PDF។ ឥតគិតថ្លៃ លឿន និងងាយស្រួលប្រើ។",
+    tabAll: "ទាំងអស់",
+    categoryOrganize: "រៀបចំ",
+    categoryConvert: "បំលែង",
+    categoryEdit: "កែសម្រួល",
+    categoryOptimize: "បង្កើនប្រសិទ្ធភាព",
+    categorySecurity: "សុវត្ថិភាព",
+    searchPlaceholder: "ស្វែងរកឧបករណ៍...",
+    noResults: "រកមិនឃើញឧបករណ៍ទេ។",
+  },
+  trust: {
+    encryption: "ការអ៊ិនគ្រីបសុវត្ថិភាព",
+    encryptionDesc: "ឯកសាររបស់អ្នកត្រូវបានការពារដោយការអ៊ិនគ្រីប SSL ២៥៦ប៊ីត។",
+    autoDelete: "លុបដោយស្វ័យប្រវត្តិ",
+    autoDeleteDesc: "ឯកសារដែលបានផ្ទុកឡើងត្រូវបានលុបដោយស្វ័យប្រវត្តិក្រោយ ២ ម៉ោង។",
+    free: "ឥតគិតថ្លៃទាំងស្រុង",
+    freeDesc: "ប្រើឧបករណ៍ទាំងអស់ដោយគ្មានដែនកំណត់ ឥតគិតថ្លៃទាំងស្រុង។",
+    cloud: "ដំណើរការលើពពក",
+    cloudDesc: "ដំណើរការនៅលើម៉ាស៊ីនមេរបស់យើង គ្មានផលប៉ះពាល់ដល់ឧបករណ៍របស់អ្នក។",
+  },
+  tools: {
+    // រៀបចំ
+    merge: { title: "បញ្ចូលរួម PDF", description: "បញ្ចូលរួមឯកសារ PDF ជាច្រើនទៅជាឯកសារតែមួយ។" },
+    split: { title: "បែងចែក PDF", description: "បែងចែក PDF ទៅជាទំព័រ ឬផ្នែកនីមួយៗ។" },
+    "delete-pages": { title: "លុបទំព័រ", description: "ដកទំព័រជាក់លាក់ចេញពីឯកសារ PDF។" },
+    "extract-pages": { title: "ទាញយកទំព័រ", description: "ទាញយកទំព័រដែលបានជ្រើសរើសទៅជាឯកសារ PDF ថ្មី។" },
+    "organize-pages": { title: "រៀបចំទំព័រ", description: "រៀបចំលំដាប់ បន្ថែម ឬដកទំព័រចេញដោយមើលឃើញ។" },
+    "scan-to-pdf": { title: "ស្កេនទៅ PDF", description: "ថតស្កេនពីឧបករណ៍របស់អ្នក និងបំលែងទៅ PDF។" },
+
+    // បំលែង
+    "pdf-to-word": { title: "PDF ទៅ Word", description: "បំលែងឯកសារ PDF ទៅជាឯកសារ Word ដែលអាចកែបាន។" },
+    "pdf-to-jpg": { title: "PDF ទៅ JPG", description: "បំលែងទំព័រ PDF ទៅជារូបភាព JPG គុណភាពខ្ពស់។" },
+    "pdf-to-excel": { title: "PDF ទៅ Excel", description: "ទាញយកតារាង និងទិន្នន័យពី PDF ទៅសៀវភៅបញ្ជី Excel។" },
+    "pdf-to-ppt": { title: "PDF ទៅ PPT", description: "បំលែងឯកសារ PDF ទៅជាស្លាយ PowerPoint ដែលអាចកែបាន។" },
+    "pdf-to-png": { title: "PDF ទៅ PNG", description: "បំលែងទំព័រ PDF ទៅជារូបភាព PNG គុណភាពខ្ពស់។" },
+    "pdf-to-text": { title: "PDF ទៅអត្ថបទ", description: "ទាញយកមាតិកាអត្ថបទទាំងអស់ពីឯកសារ PDF។" },
+    "pdf-to-pdfa": { title: "PDF ទៅ PDF/A", description: "បំលែងទៅទម្រង់ PDF/A សម្រាប់ការរក្សាទុករយៈពេលវែង។" },
+    "word-to-pdf": { title: "Word ទៅ PDF", description: "បំលែងឯកសារ Word ទៅទម្រង់ PDF។" },
+    "jpg-to-pdf": { title: "JPG ទៅ PDF", description: "បំលែងរូបភាព JPG ទៅជាឯកសារ PDF។" },
+    "excel-to-pdf": { title: "Excel ទៅ PDF", description: "បំលែងសៀវភៅបញ្ជី Excel ទៅទម្រង់ PDF។" },
+    "ppt-to-pdf": { title: "PPT ទៅ PDF", description: "បំលែងបទបង្ហាញ PowerPoint ទៅទម្រង់ PDF។" },
+    "html-to-pdf": { title: "HTML ទៅ PDF", description: "បំលែងទំព័រវេប និងឯកសារ HTML ទៅ PDF។" },
+    "png-to-pdf": { title: "PNG ទៅ PDF", description: "បំលែងរូបភាព PNG ទៅជាឯកសារ PDF។" },
+    "image-to-pdf": { title: "រូបភាពទៅ PDF", description: "បញ្ចូលរួមរូបភាពច្រើនក្នុងទម្រង់ណាមួយទៅជា PDF តែមួយ។" },
+
+    // កែសម្រួល
+    "edit-pdf": { title: "កែសម្រួល PDF", description: "បន្ថែមអត្ថបទ រូបភាព រូបរាង និងចំណាំទៅ PDF។" },
+    rotate: { title: "បង្វិល PDF", description: "បង្វិលទំព័រ PDF ទៅទិសដៅត្រឹមត្រូវ។" },
+    "page-numbers": { title: "លេខទំព័រ", description: "បន្ថែមលេខទំព័រទៅឯកសារ PDF របស់អ្នក។" },
+    watermark: { title: "ស្នាមទឹក", description: "បន្ថែមស្នាមទឹកអត្ថបទ ឬរូបភាពទៅ PDF របស់អ្នក។" },
+    crop: { title: "កាត់ PDF", description: "កាត់រឹម ឬជ្រើសរើសតំបន់ជាក់លាក់នៃទំព័រ PDF។" },
+    sign: { title: "ចុះហត្ថលេខា PDF", description: "បន្ថែមហត្ថលេខាអេឡិចត្រូនិកទៅឯកសារ PDF របស់អ្នក។" },
+    annotate: { title: "ចំណាំ PDF", description: "បន្លិច គូសបន្ទាត់ក្រោម និងបន្ថែមសម្គាល់ទៅ PDF។" },
+    flatten: { title: "ធ្វើឱ្យ PDF រាបស្មើ", description: "បញ្ចូលវាលទម្រង់ និងចំណាំទៅក្នុងមាតិកាទំព័រ។" },
+    resize: { title: "ប្ដូរទំហំ PDF", description: "ប្ដូរទំហំទំព័រ PDF (A4, Letter, ផ្ទាល់ខ្លួន)។" },
+    "edit-metadata": { title: "កែម៉េតាដាតា", description: "ប្ដូរចំណងជើង PDF អ្នកនិពន្ធ ពាក្យគន្លឹះ និងម៉េតាដាតាផ្សេងទៀត។" },
+    grayscale: { title: "ស្លេតប្រផេះ", description: "បំលែងពណ៌ PDF ទៅជាសខ្មៅ។" },
+
+    // បង្កើនប្រសិទ្ធភាព
+    compress: { title: "បង្រួម PDF", description: "កាត់បន្ថយទំហំឯកសារ PDF ដោយមិនបាត់បង់គុណភាព។" },
+    repair: { title: "ជួសជុល PDF", description: "ជួសជុលឯកសារ PDF ដែលខូច ឬពុកខូច។" },
+    ocr: { title: "OCR PDF", description: "ធ្វើឱ្យ PDF ដែលស្កេនអាចស្វែងរកបានដោយការសម្គាល់អត្ថបទ។" },
+    "web-optimize": { title: "បង្កើនប្រសិទ្ធភាពវេប", description: "បង្កើនប្រសិទ្ធភាព PDF សម្រាប់ការផ្ទុកវេបលឿនជាង។" },
+
+    // សុវត្ថិភាព
+    protect: { title: "ការពារ PDF", description: "បន្ថែមការការពារពាក្យសម្ងាត់ និងអ៊ិនគ្រីប PDF របស់អ្នក។" },
+    unlock: { title: "ដោះសោ PDF", description: "ដកការការពារពាក្យសម្ងាត់ចេញពីឯកសារ PDF។" },
+    redact: { title: "កែសម្រួលសម្ងាត់ PDF", description: "ដកព័ត៌មានរសើបចេញជាអចិន្ត្រៃយ៍ពី PDF។" },
+    compare: { title: "ប្រៀបធៀប PDF", description: "ប្រៀបធៀប PDF ពីរដាក់ជាប់គ្នា និងស្វែងរកភាពខុសគ្នា។" },
+    translate: { title: "បកប្រែ PDF", description: "បកប្រែមាតិកា PDF ទៅភាសាផ្សេងដោយ AI។" },
+  },
+  nav: {
+    allTools: "ឧបករណ៍ទាំងអស់",
+    language: "ភាសា",
+  },
+  footer: {
+    tools: "ឧបករណ៍",
+    company: "ក្រុមហ៊ុន",
+    legal: "ផ្លូវច្បាប់",
+    about: "អំពីយើង",
+    contact: "ទំនាក់ទំនង",
+    blog: "ប្លក់",
+    privacy: "គោលការណ៍ឯកជនភាព",
+    terms: "ល័ក្ខខ័ណ្ឌសេវាកម្ម",
+    copyright: "ToolBox។ រក្សាសិទ្ធិគ្រប់យ៉ាង។",
+  },
+  common: {
+    backToAll: "ត្រឡប់ទៅឧបករណ៍ទាំងអស់",
+    dropFiles: "ទម្លាក់ឯកសាររបស់អ្នកនៅទីនេះ",
+    acceptedFormats: "ទម្រង់ដែលទទួលយក",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - ឧបករណ៍ PDF ឥតគិតថ្លៃ",
+    siteDescription: "បញ្ចូលរួម បែងចែក បង្រួម និងបំលែងឯកសារ PDF តាមអ៊ីនធឺណិតដោយឥតគិតថ្លៃ។",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+};
+
+export default km;

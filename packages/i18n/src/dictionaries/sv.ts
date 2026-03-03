@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const sv: Dictionary = {
+  home: {
+    title: "Alla verktyg du behöver för att arbeta med",
+    titleAccent: "PDFs",
+    description: "Sammanfoga, dela, komprimera och konvertera PDF-filer. Gratis, snabbt och enkelt.",
+    tabAll: "Alla",
+    categoryOrganize: "Organisera",
+    categoryConvert: "Konvertera",
+    categoryEdit: "Redigera",
+    categoryOptimize: "Optimera",
+    categorySecurity: "Säkerhet",
+    searchPlaceholder: "Sök verktyg...",
+    noResults: "Inga verktyg hittades.",
+  },
+  trust: {
+    encryption: "Säker kryptering",
+    encryptionDesc: "Dina filer skyddas med 256-bitars SSL-kryptering.",
+    autoDelete: "Automatisk radering",
+    autoDeleteDesc: "Uppladdade filer raderas automatiskt efter 2 timmar.",
+    free: "Helt gratis",
+    freeDesc: "Använd alla verktyg utan begränsningar, helt gratis.",
+    cloud: "Molnbearbetning",
+    cloudDesc: "Bearbetas på våra servrar, ingen påverkan på din enhet.",
+  },
+  tools: {
+    // Organisera
+    merge: { title: "Sammanfoga PDF", description: "Kombinera flera PDF-filer till ett dokument." },
+    split: { title: "Dela PDF", description: "Dela upp en PDF i enskilda sidor eller avsnitt." },
+    "delete-pages": { title: "Radera sidor", description: "Ta bort specifika sidor från ett PDF-dokument." },
+    "extract-pages": { title: "Extrahera sidor", description: "Extrahera valda sidor till en ny PDF-fil." },
+    "organize-pages": { title: "Organisera sidor", description: "Ordna om, lägg till eller ta bort sidor visuellt." },
+    "scan-to-pdf": { title: "Skanna till PDF", description: "Skanna med din enhet och konvertera till PDF." },
+
+    // Konvertera
+    "pdf-to-word": { title: "PDF till Word", description: "Konvertera PDF-dokument till redigerbara Word-filer." },
+    "pdf-to-jpg": { title: "PDF till JPG", description: "Konvertera PDF-sidor till högkvalitativa JPG-bilder." },
+    "pdf-to-excel": { title: "PDF till Excel", description: "Extrahera tabeller och data från PDF till Excel-kalkylblad." },
+    "pdf-to-ppt": { title: "PDF till PPT", description: "Konvertera PDF-filer till redigerbara PowerPoint-bilder." },
+    "pdf-to-png": { title: "PDF till PNG", description: "Konvertera PDF-sidor till högkvalitativa PNG-bilder." },
+    "pdf-to-text": { title: "PDF till text", description: "Extrahera allt textinnehåll från PDF-dokument." },
+    "pdf-to-pdfa": { title: "PDF till PDF/A", description: "Konvertera till PDF/A-format för långtidsarkivering." },
+    "word-to-pdf": { title: "Word till PDF", description: "Konvertera Word-dokument till PDF-format." },
+    "jpg-to-pdf": { title: "JPG till PDF", description: "Konvertera JPG-bilder till ett PDF-dokument." },
+    "excel-to-pdf": { title: "Excel till PDF", description: "Konvertera Excel-kalkylblad till PDF-format." },
+    "ppt-to-pdf": { title: "PPT till PDF", description: "Konvertera PowerPoint-presentationer till PDF-format." },
+    "html-to-pdf": { title: "HTML till PDF", description: "Konvertera webbsidor och HTML-filer till PDF." },
+    "png-to-pdf": { title: "PNG till PDF", description: "Konvertera PNG-bilder till ett PDF-dokument." },
+    "image-to-pdf": { title: "Bild till PDF", description: "Kombinera flera bilder i valfritt format till en enda PDF." },
+
+    // Redigera
+    "edit-pdf": { title: "Redigera PDF", description: "Lägg till text, bilder, former och anteckningar i en PDF." },
+    rotate: { title: "Rotera PDF", description: "Rotera PDF-sidor till rätt orientering." },
+    "page-numbers": { title: "Sidnummer", description: "Lägg till sidnummer i ditt PDF-dokument." },
+    watermark: { title: "Vattenstämpel", description: "Lägg till text- eller bildvattenstämplar i din PDF." },
+    crop: { title: "Beskär PDF", description: "Beskär marginaler eller välj specifika områden på PDF-sidor." },
+    sign: { title: "Signera PDF", description: "Lägg till elektroniska signaturer i dina PDF-dokument." },
+    annotate: { title: "Annotera PDF", description: "Markera, stryk under och lägg till kommentarer i PDF:er." },
+    flatten: { title: "Platta till PDF", description: "Sammanfoga formulärfält och anteckningar med sidinnehållet." },
+    resize: { title: "Ändra storlek PDF", description: "Ändra PDF-sidstorlek (A4, Letter, anpassad)." },
+    "edit-metadata": { title: "Redigera metadata", description: "Ändra PDF-titel, författare, nyckelord och annan metadata." },
+    grayscale: { title: "Gråskala", description: "Konvertera PDF-färger till svartvitt." },
+
+    // Optimera
+    compress: { title: "Komprimera PDF", description: "Minska PDF-filstorleken utan att förlora kvalitet." },
+    repair: { title: "Reparera PDF", description: "Reparera skadade eller korrupta PDF-filer." },
+    ocr: { title: "OCR PDF", description: "Gör skannade PDF:er sökbara med textigenkänning." },
+    "web-optimize": { title: "Webboptimera", description: "Linearisera PDF:er för snabbare webbladdning." },
+
+    // Säkerhet
+    protect: { title: "Skydda PDF", description: "Lägg till lösenordsskydd och kryptera din PDF." },
+    unlock: { title: "Lås upp PDF", description: "Ta bort lösenordsskydd från PDF-filer." },
+    redact: { title: "Maskera PDF", description: "Ta permanent bort känslig information från PDF:er." },
+    compare: { title: "Jämför PDF", description: "Jämför två PDF:er sida vid sida och upptäck skillnader." },
+    translate: { title: "Översätt PDF", description: "Översätt PDF-innehåll till ett annat språk med AI." },
+  },
+  nav: {
+    allTools: "Alla verktyg",
+    language: "Språk",
+  },
+  footer: {
+    tools: "Verktyg",
+    legal: "Juridiskt",
+    privacy: "Integritetspolicy",
+    terms: "Användarvillkor",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "Tillbaka till alla verktyg",
+    dropFiles: "Släpp dina filer här",
+    acceptedFormats: "Godkända format",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - Gratis PDF-verktyg",
+    siteDescription: "Sammanfoga, dela, komprimera och konvertera PDF-filer online gratis.",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Vi använder cookies för att förbättra din upplevelse.",
+    accept: "Acceptera",
+    decline: "Avvisa",
+  },
+  privacy: {
+    title: "Integritetspolicy",
+    lastUpdated: "Senast uppdaterad: 1 mars 2026",
+    intro: "På ToolBox PDF värnar vi om din integritet. Den här policyn beskriver vilken information vi samlar in när du använder vår tjänst och hur vi hanterar den.",
+    sections: [
+      {
+        heading: "1. Information vi samlar in",
+        content: "ToolBox PDF kräver ingen registrering. Vi samlar inte in personuppgifter. Däremot kan vi automatiskt samla in icke-identifierande data för att förbättra tjänsten:\n\n• Webbläsartyp och version\n• Operativsystem\n• Besökta sidor och spenderad tid\n• Cookies och liknande tekniker för att analysera användningsmönster",
+      },
+      {
+        heading: "2. Filhantering",
+        content: "Filer du laddar upp bearbetas på våra servrar och raderas automatiskt inom 2 timmar. Vi läser, lagrar eller delar inte innehållet i dina filer med någon.",
+      },
+      {
+        heading: "3. Cookies",
+        content: "Vi använder cookies för att komma ihåg dina inställningar, som tema (mörkt/ljust läge) och språkval. Annonsnätverk (t.ex. Google AdSense) kan också använda cookies för att visa anpassade annonser.",
+      },
+      {
+        heading: "4. Tredjepartstjänster",
+        content: "Vi kan använda följande tredjepartstjänster:\n\n• Google Analytics -- för trafikanalys\n• Google AdSense -- för annonsvisning\n\nSe respektive tjänsts egen integritetspolicy för information om hur de hanterar dina uppgifter.",
+      },
+      {
+        heading: "5. Dina rättigheter",
+        content: "Du kan inaktivera eller radera cookies via webbläsarens inställningar när som helst. Tänk på att vissa funktioner kanske inte fungerar korrekt utan cookies.",
+      },
+      {
+        heading: "6. Ändringar av denna policy",
+        content: "Vi kan uppdatera denna policy i takt med att lagar ändras eller vår tjänst utvecklas. Eventuella ändringar publiceras på den här sidan.",
+      },
+      {
+        heading: "7. Kontakta oss",
+        content: "Vid frågor om integritet kan du nå oss på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Användarvillkor",
+    lastUpdated: "Senast uppdaterad: 1 mars 2026",
+    intro: "Tack för att du använder ToolBox PDF. Genom att använda vår tjänst godkänner du följande villkor.",
+    sections: [
+      {
+        heading: "1. Om tjänsten",
+        content: "ToolBox PDF är en gratis onlinetjänst som låter dig sammanfoga, dela, konvertera, redigera och komprimera PDF-filer direkt i webbläsaren.",
+      },
+      {
+        heading: "2. Godtagbar användning",
+        content: "• Du får bara använda tjänsten för lagliga ändamål.\n• Bearbeta inte filer som gör intrång i upphovsrätt eller immateriella rättigheter.\n• Missbruka inte tjänsten och belasta inte våra servrar onödigt.\n• Automatiserad åtkomst (bottar, scrapers m.m.) är inte tillåten.",
+      },
+      {
+        heading: "3. Filhantering",
+        content: "Uppladdade filer används enbart för att utföra den begärda åtgärden. De raderas automatiskt från våra servrar inom 2 timmar. Vi analyserar eller sparar inte dina filer.",
+      },
+      {
+        heading: "4. Ansvarsfriskrivning",
+        content: "Tjänsten tillhandahålls \"i befintligt skick.\" Vi lämnar inga garantier för konverteringsnoggrannhet, oavbruten tillgänglighet eller skydd mot dataförlust. Säkerhetskopiera alltid viktiga filer innan bearbetning.",
+      },
+      {
+        heading: "5. Immateriella rättigheter",
+        content: "Allt innehåll på denna webbplats -- inklusive design, logotyper och kod -- tillhör ToolBox. Du behåller alla rättigheter till de filer du laddar upp. Vi gör inga anspråk på äganderätt till ditt innehåll.",
+      },
+      {
+        heading: "6. Ändringar av tjänsten",
+        content: "Vi förbehåller oss rätten att ändra eller avsluta funktioner när som helst utan förvarning.",
+      },
+      {
+        heading: "7. Uppdateringar av dessa villkor",
+        content: "Dessa villkor kan revideras vid behov. Ändringar publiceras på den här sidan. Fortsatt användning av tjänsten efter ändringar innebär att du godkänner de uppdaterade villkoren.",
+      },
+      {
+        heading: "8. Kontakta oss",
+        content: "Vid frågor om dessa villkor kan du nå oss på support@toolbox-pdf.com.",
+      },
+    ],
+  },
+};
+
+export default sv;

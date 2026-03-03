@@ -1,0 +1,180 @@
+import type { Dictionary } from "../config";
+
+const zh: Dictionary = {
+  home: {
+    title: "处理PDF所需的每一个工具",
+    titleAccent: "PDF",
+    description: "合并、拆分、压缩和转换PDF文件。免费、快速、简单易用。",
+    tabAll: "全部",
+    categoryOrganize: "整理",
+    categoryConvert: "转换",
+    categoryEdit: "编辑",
+    categoryOptimize: "优化",
+    categorySecurity: "安全",
+    searchPlaceholder: "搜索工具...",
+    noResults: "未找到相关工具。",
+  },
+  trust: {
+    encryption: "安全加密",
+    encryptionDesc: "您的文件受到256位SSL加密保护。",
+    autoDelete: "自动删除",
+    autoDeleteDesc: "上传的文件将在2小时后自动删除。",
+    free: "完全免费",
+    freeDesc: "无限制使用所有工具，完全免费。",
+    cloud: "云端处理",
+    cloudDesc: "在我们的服务器上处理，不影响您的设备性能。",
+  },
+  tools: {
+    // 整理
+    merge: { title: "合并 PDF", description: "将多个PDF文件合并为一个文档。" },
+    split: { title: "拆分 PDF", description: "将PDF拆分为单独的页面或部分。" },
+    "delete-pages": { title: "删除页面", description: "从PDF文档中删除指定页面。" },
+    "extract-pages": { title: "提取页面", description: "将选定的页面提取为新的PDF文件。" },
+    "organize-pages": { title: "整理页面", description: "可视化地重新排序、添加或删除页面。" },
+    "scan-to-pdf": { title: "扫描转PDF", description: "从您的设备捕获扫描件并转换为PDF。" },
+
+    // 转换
+    "pdf-to-word": { title: "PDF转Word", description: "将PDF文档转换为可编辑的Word文件。" },
+    "pdf-to-jpg": { title: "PDF转JPG", description: "将PDF页面转换为高质量的JPG图片。" },
+    "pdf-to-excel": { title: "PDF转Excel", description: "从PDF中提取表格和数据到Excel电子表格。" },
+    "pdf-to-ppt": { title: "PDF转PPT", description: "将PDF文件转换为可编辑的PowerPoint幻灯片。" },
+    "pdf-to-png": { title: "PDF转PNG", description: "将PDF页面转换为高质量的PNG图片。" },
+    "pdf-to-text": { title: "PDF转文本", description: "从PDF文档中提取所有文本内容。" },
+    "pdf-to-pdfa": { title: "PDF转PDF/A", description: "转换为PDF/A格式以便长期存档。" },
+    "word-to-pdf": { title: "Word转PDF", description: "将Word文档转换为PDF格式。" },
+    "jpg-to-pdf": { title: "JPG转PDF", description: "将JPG图片转换为PDF文档。" },
+    "excel-to-pdf": { title: "Excel转PDF", description: "将Excel电子表格转换为PDF格式。" },
+    "ppt-to-pdf": { title: "PPT转PDF", description: "将PowerPoint演示文稿转换为PDF格式。" },
+    "html-to-pdf": { title: "HTML转PDF", description: "将网页和HTML文件转换为PDF。" },
+    "png-to-pdf": { title: "PNG转PDF", description: "将PNG图片转换为PDF文档。" },
+    "image-to-pdf": { title: "图片转PDF", description: "将多种格式的多张图片合并为一个PDF。" },
+
+    // 编辑
+    "edit-pdf": { title: "编辑 PDF", description: "向PDF添加文本、图片、形状和注释。" },
+    rotate: { title: "旋转 PDF", description: "将PDF页面旋转到正确的方向。" },
+    "page-numbers": { title: "页码", description: "为PDF文档添加页码。" },
+    watermark: { title: "水印", description: "为PDF添加文字或图片水印。" },
+    crop: { title: "裁剪 PDF", description: "裁剪PDF页面的边距或选择特定区域。" },
+    sign: { title: "签署 PDF", description: "为PDF文档添加电子签名。" },
+    annotate: { title: "注释 PDF", description: "在PDF上高亮、下划线和添加评论。" },
+    flatten: { title: "扁平化 PDF", description: "将表单字段和注释合并到页面内容中。" },
+    resize: { title: "调整 PDF 大小", description: "更改PDF页面尺寸（A4、Letter、自定义）。" },
+    "edit-metadata": { title: "编辑元数据", description: "更改PDF的标题、作者、关键词和其他元数据。" },
+    grayscale: { title: "灰度", description: "将PDF彩色转换为黑白。" },
+
+    // 优化
+    compress: { title: "压缩 PDF", description: "在不损失质量的情况下减小PDF文件大小。" },
+    repair: { title: "修复 PDF", description: "修复损坏的PDF文件。" },
+    ocr: { title: "OCR PDF", description: "通过文字识别使扫描的PDF可搜索。" },
+    "web-optimize": { title: "Web优化", description: "线性化PDF以加快网页加载速度。" },
+
+    // 安全
+    protect: { title: "保护 PDF", description: "为PDF添加密码保护和加密。" },
+    unlock: { title: "解锁 PDF", description: "移除PDF文件的密码保护。" },
+    redact: { title: "涂黑 PDF", description: "永久删除PDF中的敏感信息。" },
+    compare: { title: "比较 PDF", description: "并排比较两个PDF并找出差异。" },
+    translate: { title: "翻译 PDF", description: "使用AI将PDF内容翻译成其他语言。" },
+  },
+  nav: {
+    allTools: "所有工具",
+    language: "语言",
+  },
+  footer: {
+    tools: "工具",
+    legal: "法律",
+    privacy: "隐私政策",
+    terms: "服务条款",
+    copyright: "ToolBox. All rights reserved.",
+  },
+  common: {
+    backToAll: "返回所有工具",
+    dropFiles: "将文件拖放到这里",
+    acceptedFormats: "支持的格式",
+  },
+  metadata: {
+    siteTitle: "ToolBox PDF - 免费PDF工具",
+    siteDescription: "在线免费合并、拆分、压缩和转换PDF文件。",
+    toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "本站使用 Cookie 来提升您的体验。",
+    accept: "接受",
+    decline: "拒绝",
+  },
+  privacy: {
+    title: "隐私政策",
+    lastUpdated: "最后更新：2026年3月1日",
+    intro: "ToolBox PDF 非常重视您的隐私。本政策说明了我们在您使用服务时会收集哪些信息，以及我们如何处理这些信息。",
+    sections: [
+      {
+        heading: "1. 我们收集的信息",
+        content: "ToolBox PDF 无需注册即可使用，我们不会收集任何个人信息。为了改善服务体验，我们可能会自动收集以下非个人数据：\n\n• 浏览器类型和版本\n• 操作系统信息\n• 访问页面及停留时长\n• 用于分析使用习惯的 Cookie",
+      },
+      {
+        heading: "2. 文件处理",
+        content: "您上传的文件在服务器端完成处理后，将在 2 小时内自动删除。我们不会查看、保存或与任何第三方共享您的文件内容。",
+      },
+      {
+        heading: "3. Cookie 使用",
+        content: "我们使用 Cookie 来保存您的偏好设置，如主题（深色/浅色模式）和语言选择。广告网络（如 Google AdSense）也可能使用 Cookie 来投放个性化广告。",
+      },
+      {
+        heading: "4. 第三方服务",
+        content: "我们可能会使用以下第三方服务：\n\n• Google Analytics —— 流量分析\n• Google AdSense —— 广告投放\n\n详细信息请参阅各服务的隐私政策。",
+      },
+      {
+        heading: "5. 您的权利",
+        content: "您可以随时通过浏览器设置禁用或删除 Cookie。请注意，关闭 Cookie 后部分功能可能无法正常使用。",
+      },
+      {
+        heading: "6. 政策变更",
+        content: "随着法律法规或服务内容的变化，本政策可能会进行更新。所有变更将在本页面公布。",
+      },
+      {
+        heading: "7. 联系我们",
+        content: "如有隐私相关问题，请发送邮件至 support@toolbox-pdf.com。",
+      },
+    ],
+  },
+  terms: {
+    title: "服务条款",
+    lastUpdated: "最后更新：2026年3月1日",
+    intro: "感谢您使用 ToolBox PDF。使用本服务即表示您同意以下条款。",
+    sections: [
+      {
+        heading: "1. 服务简介",
+        content: "ToolBox PDF 是一款免费的在线 PDF 工具，支持在浏览器中直接完成 PDF 的合并、拆分、转换、编辑和压缩操作。",
+      },
+      {
+        heading: "2. 使用规范",
+        content: "• 仅可用于合法用途。\n• 禁止处理侵犯版权或知识产权的文件。\n• 请勿滥用服务或对服务器造成过大负载。\n• 禁止使用机器人、爬虫等自动化方式访问。",
+      },
+      {
+        heading: "3. 文件处理",
+        content: "上传的文件仅用于执行您请求的操作，处理完成后将在 2 小时内自动从服务器删除。我们不会对您的文件进行分析或留存。",
+      },
+      {
+        heading: "4. 免责声明",
+        content: "本服务按「原样」提供。我们不对转换精度、服务可用性或数据安全作任何保证。处理重要文件前，请务必做好备份。",
+      },
+      {
+        heading: "5. 知识产权",
+        content: "本站的设计、Logo 及代码等内容归 ToolBox 所有。您上传的文件始终归您所有，我们不会主张任何所有权。",
+      },
+      {
+        heading: "6. 服务变更",
+        content: "我们保留随时修改或停用部分功能的权利，届时恕不另行通知。",
+      },
+      {
+        heading: "7. 条款更新",
+        content: "本条款可能会根据需要进行修订，更新内容将在本页面发布。继续使用本服务即表示您接受修订后的条款。",
+      },
+      {
+        heading: "8. 联系我们",
+        content: "如有条款相关问题，请发送邮件至 support@toolbox-pdf.com。",
+      },
+    ],
+  },
+};
+
+export default zh;
