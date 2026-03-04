@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
+import { tools, categories } from "@/lib/tools";
 import { HomeContent } from "./home-content";
+import { SiteFooter } from "./site-footer";
 
 export async function generateMetadata({
   params,
@@ -62,6 +64,7 @@ export default async function PdfHomePage({
         }}
       />
       <HomeContent dict={dict} locale={locale} />
+      <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );
 }

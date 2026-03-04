@@ -4,11 +4,9 @@ import { Inter } from "next/font/google";
 import { Header } from "@toolbox/ui";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
 import { tools, categories } from "@/lib/tools";
-import { SiteFooter } from "./site-footer";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 import { NavMenu } from "./nav-menu";
-import { CookieConsent } from "./cookie-consent";
 import { GoogleAnalytics } from "./google-analytics";
 import "../globals.css";
 
@@ -114,14 +112,7 @@ export default async function LocaleLayout({
         </Header>
         <div className="flex min-h-screen flex-col">
           <div className="flex-1">{children}</div>
-          <SiteFooter
-            locale={locale}
-            dict={dict}
-            categories={categories}
-            tools={tools}
-          />
         </div>
-        <CookieConsent dict={dict} />
       </body>
     </html>
   );

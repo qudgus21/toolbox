@@ -82,8 +82,9 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
         onDrop={handleDrop}
         className={cn(
           "relative flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed p-12",
-          "transition-colors duration-200 cursor-pointer",
-          "border-border hover:border-accent hover:bg-accent-muted/50",
+          "transition-all duration-200 cursor-pointer",
+          "border-foreground-subtle/50 hover:border-accent hover:bg-accent-muted/50",
+          "dark:border-foreground-subtle/40 dark:hover:border-accent",
           isDragOver && "border-accent bg-accent-muted/50 scale-[1.01]",
           className,
         )}
