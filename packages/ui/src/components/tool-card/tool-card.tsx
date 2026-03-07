@@ -6,7 +6,7 @@ import { cn } from "@toolbox/utils";
 
 export interface ToolCardProps extends Omit<HTMLMotionProps<"a">, "children"> {
   href: string;
-  icon: ElementType;
+  icon?: ElementType;
   title: string;
   description: string;
   emoji?: string;
@@ -14,7 +14,7 @@ export interface ToolCardProps extends Omit<HTMLMotionProps<"a">, "children"> {
 }
 
 export const ToolCard = forwardRef<HTMLAnchorElement, ToolCardProps>(
-  ({ href, icon: Icon, title, description, emoji, iconColorClasses, className, ...props }, ref) => (
+  ({ href, icon: _Icon, title, description, emoji, iconColorClasses: _colors, className, ...props }, ref) => (
     <motion.a
       ref={ref}
       href={href}
@@ -28,19 +28,7 @@ export const ToolCard = forwardRef<HTMLAnchorElement, ToolCardProps>(
       )}
       {...props}
     >
-      <div className="flex items-start justify-between">
-        {emoji && <span className="text-4xl leading-none">{emoji}</span>}
-        <div
-          className={cn(
-            "flex h-9 w-9 items-center justify-center rounded-lg transition-colors",
-            iconColorClasses
-              ? cn(iconColorClasses.bg, iconColorClasses.text, iconColorClasses.bgHover, iconColorClasses.textHover)
-              : "bg-accent-muted text-accent group-hover:bg-accent group-hover:text-accent-foreground",
-          )}
-        >
-          <Icon className="h-[18px] w-[18px]" />
-        </div>
-      </div>
+      {emoji && <span className="text-4xl leading-none">{emoji}</span>}
       <div>
         <h3 className="text-base font-semibold text-foreground">{title}</h3>
         <p className="mt-1 text-sm text-foreground-muted">{description}</p>

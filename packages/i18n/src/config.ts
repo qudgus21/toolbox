@@ -25,6 +25,8 @@ export interface Dictionary {
     categorySecurity: string;
     searchPlaceholder: string;
     noResults: string;
+    recentTools: string;
+    favorites: string;
   };
   trust: {
     encryption: string;
@@ -70,6 +72,24 @@ export interface Dictionary {
     backToAll: string;
     dropFiles: string;
     acceptedFormats: string;
+    processing: string;
+    download: string;
+    startOver: string;
+    addMoreFiles: string;
+    process: string;
+    tryAgain: string;
+    notImplemented: string;
+    filesSelected: string;
+    filesSizeTotal: string;
+    sortByName: string;
+    sortBySize: string;
+    tryOtherTools: string;
+    privacyBadge: string;
+    encryptedFile: string;
+    clickToSelectPages: string;
+    dragToReorder: string;
+    favoriteAdded: string;
+    favoriteRemoved: string;
   };
   metadata: {
     siteTitle: string;

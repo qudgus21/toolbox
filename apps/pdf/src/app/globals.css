@@ -18,7 +18,7 @@
     --color-accent: #f87171;
     --color-accent-foreground: var(--primitive-zinc-950);
     --color-accent-hover: #fca5a5;
-    --color-accent-muted: rgba(248, 113, 113, 0.08);
+    --color-accent-muted: rgba(248, 113, 113, 0.15);
   }
 }
 
@@ -26,5 +26,5 @@
   --color-accent: #f87171;
   --color-accent-foreground: var(--primitive-zinc-950);
   --color-accent-hover: #fca5a5;
-  --color-accent-muted: rgba(248, 113, 113, 0.08);
+  --color-accent-muted: rgba(248, 113, 113, 0.15);
 }

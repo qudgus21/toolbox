@@ -6,12 +6,12 @@ export const lightColors = {
   "background-muted": zinc[100],
   "background-elevated": white,
 
-  foreground: zinc[950],
-  "foreground-muted": zinc[500],
-  "foreground-subtle": zinc[400],
+  foreground: zinc[900],
+  "foreground-muted": zinc[600],
+  "foreground-subtle": zinc[500],
 
-  border: zinc[200],
-  "border-muted": zinc[100],
+  border: zinc[300],
+  "border-muted": zinc[200],
   "border-focus": blue[500],
 
   primary: zinc[900],
@@ -43,14 +43,14 @@ export const darkColors = {
   background: zinc[950],
   "background-subtle": zinc[900],
   "background-muted": zinc[800],
-  "background-elevated": zinc[900],
+  "background-elevated": zinc[800],
 
   foreground: zinc[50],
-  "foreground-muted": zinc[400],
-  "foreground-subtle": zinc[500],
+  "foreground-muted": zinc[300],
+  "foreground-subtle": zinc[400],
 
-  border: zinc[800],
-  "border-muted": zinc[900],
+  border: zinc[700],
+  "border-muted": zinc[800],
   "border-focus": blue[500],
 
   primary: white,
@@ -66,13 +66,13 @@ export const darkColors = {
   "accent-hover": blue[400],
 
   success: green[500],
-  "success-muted": "rgba(34, 197, 94, 0.1)",
+  "success-muted": "rgba(34, 197, 94, 0.15)",
   warning: amber[500],
-  "warning-muted": "rgba(245, 158, 11, 0.1)",
+  "warning-muted": "rgba(245, 158, 11, 0.15)",
   error: red[500],
-  "error-muted": "rgba(239, 68, 68, 0.1)",
+  "error-muted": "rgba(239, 68, 68, 0.15)",
   info: blue[500],
-  "info-muted": "rgba(59, 130, 246, 0.1)",
+  "info-muted": "rgba(59, 130, 246, 0.15)",
 
   glass: "rgba(9, 9, 11, 0.8)",
   "glass-border": "rgba(255, 255, 255, 0.1)",

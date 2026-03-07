@@ -80,13 +80,13 @@ export default async function ToolPage({
         }}
       />
       <ToolPageClient
+        slug={slug}
+        locale={locale}
         title={t.title}
         description={t.description}
         acceptedTypes={tool.acceptedTypes}
         backHref={`/${locale}`}
-        backLabel={dict.common.backToAll}
-        dropLabel={dict.common.dropFiles}
-        formatsLabel={dict.common.acceptedFormats}
+        labels={dict.common}
       />
     </>
   );

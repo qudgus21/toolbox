@@ -1,0 +1,106 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { cn } from "@toolbox/utils";
+import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
+import { Button } from "@toolbox/ui";
+import type { ProcessingResult } from "@/lib/types";
+
+interface ResultCardProps {
+  result: ProcessingResult;
+  onDownload: (filename?: string) => void;
+  onReset: () => void;
+  downloadLabel?: string;
+  resetLabel?: string;
+  className?: string;
+}
+
+function formatSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+export function ResultCard({
+  result,
+  onDownload,
+  onReset,
+  downloadLabel = "Download",
+  resetLabel = "Start over",
+  className,
+}: ResultCardProps) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [filename, setFilename] = useState(result.filename);
+
+  const ext = result.filename.includes(".")
+    ? `.${result.filename.split(".").pop()}`
+    : "";
+  const nameWithoutExt = filename.endsWith(ext)
+    ? filename.slice(0, -ext.length)
+    : filename;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className={cn(
+        "rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
+        className,
+      )}
+    >
+      <CheckCircle className="mx-auto h-12 w-12 text-success" />
+
+      {/* 파일명 (편집 가능) */}
+      <div className="mt-4 flex items-center justify-center gap-2">
+        {isEditing ? (
+          <div className="flex items-center gap-1">
+            <input
+              type="text"
+              value={nameWithoutExt}
+              onChange={(e) => setFilename(e.target.value + ext)}
+              onBlur={() => setIsEditing(false)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") setIsEditing(false);
+              }}
+              autoFocus
+              className="rounded-lg border border-border bg-background px-3 py-1.5 text-center text-base font-semibold text-foreground outline-none focus:border-accent focus:ring-1 focus:ring-accent/30"
+            />
+            <span className="text-sm text-foreground-muted">{ext}</span>
+          </div>
+        ) : (
+          <>
+            <h3 className="text-lg font-semibold text-foreground">
+              {filename}
+            </h3>
+            <button
+              type="button"
+              onClick={() => setIsEditing(true)}
+              className="flex h-6 w-6 items-center justify-center rounded-md text-foreground-subtle hover:text-foreground hover:bg-background transition-colors cursor-pointer"
+            >
+              <Pencil className="h-3.5 w-3.5" />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* 파일 정보 */}
+      <p className="mt-1 text-sm text-foreground-muted">
+        {formatSize(result.size)}
+        {result.pageCount != null && ` · ${result.pageCount} pages`}
+      </p>
+
+      <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <Button variant="accent" size="lg" onClick={() => onDownload(filename)}>
+          <Download className="mr-2 h-4 w-4" />
+          {downloadLabel}
+        </Button>
+        <Button variant="ghost" size="lg" onClick={onReset}>
+          <RotateCcw className="mr-2 h-4 w-4" />
+          {resetLabel}
+        </Button>
+      </div>
+    </motion.div>
+  );
+}
