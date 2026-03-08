@@ -12,6 +12,7 @@ export interface ToolPageLayoutProps {
   action?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  size?: "sm" | "md" | "lg" | "xl" | "full";
 }
 
 export function ToolPageLayout({
@@ -22,10 +23,11 @@ export function ToolPageLayout({
   action,
   children,
   className,
+  size = "lg",
 }: ToolPageLayoutProps) {
   return (
     <main className={cn("min-h-[calc(100vh-4rem)] py-6 sm:py-8", className)}>
-      <Container size="lg">
+      <Container size={size}>
         <div className="flex items-center justify-between mb-4">
           <a
             href={backHref}

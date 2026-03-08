@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useRef, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -20,6 +20,154 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { cn } from "@toolbox/utils";
 import { X, Check, CheckSquare, Square, GripVertical } from "lucide-react";
+
+/* ─── Lazy PDF thumbnail hooks ─── */
+
+function useLazyPdfThumbnails(file: File | null) {
+  const [thumbnails, setThumbnails] = useState<Record<number, string>>({});
+  const renderedRef = useRef(new Set<number>());
+  const renderingRef = useRef(new Set<number>());
+  const fileKeyRef = useRef("");
+  const urlsRef = useRef<string[]>([]);
+  const pdfPromiseRef = useRef<Promise<unknown> | null>(null);
+  const cancelledRef = useRef(false);
+
+  useEffect(() => {
+    const fk = file ? `${file.name}-${file.size}-${file.lastModified}` : "";
+    if (fk === fileKeyRef.current) return;
+    fileKeyRef.current = fk;
+    cancelledRef.current = false;
+    renderedRef.current = new Set();
+    renderingRef.current = new Set();
+    for (const u of urlsRef.current) URL.revokeObjectURL(u);
+    urlsRef.current = [];
+    pdfPromiseRef.current = null;
+    setThumbnails({});
+
+    if (!file) return;
+
+    pdfPromiseRef.current = (async () => {
+      const pdfjsLib = await import("pdfjs-dist");
+      pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+        "pdfjs-dist/build/pdf.worker.min.mjs",
+        import.meta.url,
+      ).toString();
+      const ab = await file.arrayBuffer();
+      return pdfjsLib.getDocument({ data: ab }).promise;
+    })();
+
+    return () => {
+      cancelledRef.current = true;
+      fileKeyRef.current = "";
+    };
+  }, [file]);
+
+  const renderPage = useCallback(async (pageNum: number) => {
+    if (
+      renderedRef.current.has(pageNum) ||
+      renderingRef.current.has(pageNum) ||
+      !pdfPromiseRef.current ||
+      cancelledRef.current
+    )
+      return;
+    renderingRef.current.add(pageNum);
+
+    try {
+      const pdf = (await pdfPromiseRef.current) as {
+        numPages: number;
+        getPage: (n: number) => Promise<{
+          getViewport: (opts: { scale: number }) => { width: number; height: number };
+          render: (opts: unknown) => { promise: Promise<void> };
+        }>;
+      };
+      if (cancelledRef.current || pageNum > pdf.numPages) return;
+
+      const page = await pdf.getPage(pageNum);
+      const scale = 150 / page.getViewport({ scale: 1 }).width;
+      const vp = page.getViewport({ scale });
+
+      const canvas = document.createElement("canvas");
+      canvas.width = vp.width;
+      canvas.height = vp.height;
+      const ctx = canvas.getContext("2d")!;
+      await page.render({
+        canvasContext: ctx,
+        viewport: vp,
+        canvas,
+      } as unknown).promise;
+
+      if (cancelledRef.current) return;
+
+      const url = await new Promise<string>((resolve) => {
+        canvas.toBlob(
+          (blob) => {
+            if (!blob) {
+              resolve("");
+              return;
+            }
+            const u = URL.createObjectURL(blob);
+            urlsRef.current.push(u);
+            resolve(u);
+          },
+          "image/webp",
+          0.6,
+        );
+      });
+
+      if (cancelledRef.current) return;
+      renderedRef.current.add(pageNum);
+      setThumbnails((prev) => ({ ...prev, [pageNum]: url }));
+    } catch {
+      // silently fail
+    } finally {
+      renderingRef.current.delete(pageNum);
+    }
+  }, []);
+
+  return { thumbnails, renderPage };
+}
+
+function useThumbnailObserver(renderPage: (pageNum: number) => void) {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const pn = Number(entry.target.getAttribute("data-page"));
+            if (!isNaN(pn)) renderPage(pn);
+          }
+        }
+      },
+      { rootMargin: "400px" },
+    );
+    return () => observerRef.current?.disconnect();
+  }, [renderPage]);
+
+  const observe = useCallback((el: Element | null) => {
+    if (el) observerRef.current?.observe(el);
+  }, []);
+
+  return observe;
+}
+
+/* ─── Page skeleton ─── */
+
+function PageSkeleton() {
+  return (
+    <div className="flex h-full w-full flex-col gap-[5px] p-2.5 animate-pulse">
+      <div className="h-[5px] w-3/4 rounded-full bg-foreground-subtle/10" />
+      <div className="h-[5px] w-full rounded-full bg-foreground-subtle/10" />
+      <div className="h-[5px] w-5/6 rounded-full bg-foreground-subtle/10" />
+      <div className="h-[5px] w-full rounded-full bg-foreground-subtle/10" />
+      <div className="h-[5px] w-2/3 rounded-full bg-foreground-subtle/10" />
+      <div className="mt-auto h-[5px] w-1/2 rounded-full bg-foreground-subtle/8" />
+    </div>
+  );
+}
+
+/* ─── Types ─── */
 
 interface PageSelectorModalProps {
   file: File;
@@ -45,6 +193,7 @@ function SortablePageCard({
   onToggle,
   disableTransition,
   didDragRef,
+  observe,
 }: {
   pageNum: number;
   isSelected: boolean;
@@ -53,6 +202,7 @@ function SortablePageCard({
   onToggle: () => void;
   disableTransition: boolean;
   didDragRef: React.RefObject<boolean>;
+  observe: (el: Element | null) => void;
 }) {
   const {
     attributes,
@@ -62,7 +212,15 @@ function SortablePageCard({
     isDragging,
   } = useSortable({ id: pageNum });
 
-  const style: React.CSSProperties = {
+  const combinedRef = useCallback(
+    (el: HTMLDivElement | null) => {
+      setNodeRef(el);
+      observe(el);
+    },
+    [setNodeRef, observe],
+  );
+
+  const style: CSSProperties = {
     transform: CSS.Transform.toString(transform),
     transition:
       isDragging || disableTransition
@@ -73,7 +231,8 @@ function SortablePageCard({
 
   return (
     <div
-      ref={setNodeRef}
+      ref={combinedRef}
+      data-page={pageNum}
       style={style}
       {...attributes}
       {...listeners}
@@ -93,7 +252,7 @@ function SortablePageCard({
       )}
     >
       {/* Thumbnail */}
-      <div className="relative aspect-[4/5] w-full bg-background-muted">
+      <div className="relative aspect-[4/5] w-full bg-white dark:bg-background-muted">
         {thumb ? (
           <img
             src={thumb}
@@ -102,9 +261,7 @@ function SortablePageCard({
             draggable={false}
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
-            <div className="h-4 w-4 animate-pulse rounded-full bg-foreground-subtle/20" />
-          </div>
+          <PageSkeleton />
         )}
 
         {/* Check indicator */}
@@ -150,7 +307,8 @@ export function PageSelectorModal({
   const [selected, setSelected] = useState<Set<number>>(
     () => new Set(initialPages),
   );
-  const [thumbnails, setThumbnails] = useState<Record<number, string>>({});
+  const { thumbnails, renderPage } = useLazyPdfThumbnails(file);
+  const observe = useThumbnailObserver(renderPage);
 
   const [disableTransition, setDisableTransition] = useState(false);
   const didDragRef = useRef(false);
@@ -168,48 +326,6 @@ export function PageSelectorModal({
       document.body.style.overflow = "";
     };
   }, []);
-
-  // 페이지 썸네일 렌더링
-  useEffect(() => {
-    let cancelled = false;
-
-    async function renderThumbnails() {
-      const pdfjsLib = await import("pdfjs-dist");
-      pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-        "pdfjs-dist/build/pdf.worker.min.mjs",
-        import.meta.url,
-      ).toString();
-
-      const arrayBuffer = await file.arrayBuffer();
-      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-
-      for (let i = 1; i <= totalPages; i++) {
-        if (cancelled) return;
-        try {
-          const page = await pdf.getPage(i);
-          const scale = 150 / page.getViewport({ scale: 1 }).width;
-          const viewport = page.getViewport({ scale });
-
-          const canvas = document.createElement("canvas");
-          canvas.width = viewport.width;
-          canvas.height = viewport.height;
-          const ctx = canvas.getContext("2d")!;
-          await page.render({ canvasContext: ctx, viewport, canvas } as Parameters<typeof page.render>[0]).promise;
-
-          if (cancelled) return;
-          const dataUrl = canvas.toDataURL("image/png", 0.7);
-          setThumbnails((prev) => ({ ...prev, [i]: dataUrl }));
-        } catch {
-          // skip failed pages
-        }
-      }
-    }
-
-    renderThumbnails();
-    return () => {
-      cancelled = true;
-    };
-  }, [file, totalPages]);
 
   const togglePage = useCallback((page: number) => {
     setSelected((prev) => {
@@ -343,6 +459,7 @@ export function PageSelectorModal({
                       onToggle={() => togglePage(pageNum)}
                       disableTransition={disableTransition}
                       didDragRef={didDragRef}
+                      observe={observe}
                     />
                   ))}
                 </div>

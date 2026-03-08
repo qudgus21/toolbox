@@ -41,7 +41,7 @@ const mergePdf: ProcessorFn = async (files, options, onProgress) => {
   const pdfBytes = await merged.save();
   onProgress(100);
 
-  const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
+  const blob = new Blob([pdfBytes as BlobPart], { type: "application/pdf" });
 
   return {
     blob,

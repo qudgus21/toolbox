@@ -25,6 +25,8 @@ import { ResultCard } from "./result-card";
 import { ErrorMessage } from "./error-message";
 import { RelatedTools } from "./related-tools";
 import { PageSelectorModal } from "./page-selector-modal";
+import { SplitOptions } from "./split-options";
+import { SplitPagePreview } from "./split-page-preview";
 import { fileId } from "./file-list";
 import type { ReactNode } from "react";
 
@@ -50,6 +52,33 @@ interface CommonLabels {
   dragToReorder?: string;
 }
 
+interface SplitLabels {
+  tabRange: string;
+  tabExtract: string;
+  tabSize: string;
+  rangeCustom: string;
+  rangeFixed: string;
+  addRange: string;
+  from: string;
+  to: string;
+  everyNPages: string;
+  mergeIntoOne: string;
+  extractAll: string;
+  extractSelect: string;
+  pagesPlaceholder: string;
+  maxFileSize: string;
+  originalSize: string;
+  totalPages: string;
+  filesCreated: string;
+  fileSelected: string;
+  changeFile: string;
+  dropFile: string;
+  pages: string;
+  rangeLabel: string;
+  errorFromGreaterThanTo: string;
+  errorEmptyValue: string;
+}
+
 interface ToolPageClientProps {
   slug: string;
   locale: string;
@@ -58,6 +87,7 @@ interface ToolPageClientProps {
   acceptedTypes: string;
   backHref: string;
   labels: CommonLabels;
+  splitLabels?: SplitLabels;
   children?: ReactNode;
 }
 
@@ -92,6 +122,7 @@ export function ToolPageClient({
   acceptedTypes,
   backHref,
   labels,
+  splitLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -117,8 +148,13 @@ export function ToolPageClient({
   const [sortMenuOpen, setSortMenuOpen] = useState(false);
   const [pageSelectorFile, setPageSelectorFile] = useState<File | null>(null);
   const [fav, setFav] = useState<boolean | null>(null);
+  const [splitOptions, setSplitOptions] = useState<Record<string, unknown>>({ mode: "range" });
+  const splitSetRangesRef = useRef<((ranges: { from: number; to: number }[]) => void) | null>(null);
+  const splitSetExtractPagesRef = useRef<((pages: number[]) => void) | null>(null);
+  const splitValidateRef = useRef<(() => boolean) | null>(null);
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
+  const isSplit = slug === "split";
 
   useEffect(() => {
     setFav(isFavorite(slug));
@@ -140,10 +176,33 @@ export function ToolPageClient({
     const input = document.createElement("input");
     input.type = "file";
     input.accept = acceptedTypes;
-    input.multiple = true;
+    input.multiple = !isSplit;
     input.onchange = (e) => {
       const target = e.target as HTMLInputElement;
-      if (target.files) addFiles(Array.from(target.files));
+      if (target.files) {
+        if (isSplit) {
+          // Single file mode: replace
+          reset();
+          setTimeout(() => addFiles(Array.from(target.files!)), 0);
+        } else {
+          addFiles(Array.from(target.files));
+        }
+      }
+    };
+    input.click();
+  };
+
+  const handleSplitFileChange = () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = acceptedTypes;
+    input.multiple = false;
+    input.onchange = (e) => {
+      const target = e.target as HTMLInputElement;
+      if (target.files?.length) {
+        reset();
+        setTimeout(() => addFiles([target.files![0]], ), 0);
+      }
     };
     input.click();
   };
@@ -154,6 +213,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
+      size={isSplit ? "xl" : "lg"}
       action={fav !== null ? (
         <button
           type="button"
@@ -181,8 +241,8 @@ export function ToolPageClient({
             )}
             <FileUploadZone
               accept={acceptedTypes}
-              onFiles={addFiles}
-              title={labels.dropFiles}
+              onFiles={(f) => isSplit ? addFiles([f[0]]) : addFiles(f)}
+              title={isSplit && splitLabels ? splitLabels.dropFile : labels.dropFiles}
               description={`${labels.acceptedFormats}: ${acceptedTypes}`}
             />
             {labels.privacyBadge && (
@@ -202,115 +262,185 @@ export function ToolPageClient({
             transition={transition}
             className="space-y-4"
           >
-            {/* 툴바 */}
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-bold text-foreground-muted">
-                <span className="text-foreground font-semibold">{files.length}</span>{" "}
-                {labels.filesSelected}
-                {totalPages > 0 && (() => {
-                  const effectivePages = files.reduce((sum, f) => {
-                    const key = fileId(f);
-                    const sel = pageSelections[key];
-                    return sum + (sel ? sel.length : (pageCounts[key] ?? 0));
-                  }, 0);
-                  return (
-                    <span className="ml-1 text-foreground-subtle">
-                      · {effectivePages !== totalPages ? (
-                        <><span className="text-accent font-bold">{effectivePages}</span>/{totalPages}p</>
-                      ) : (
-                        `${totalPages}p`
-                      )}
-                    </span>
-                  );
-                })()}
-                <span className="ml-1 text-foreground-subtle">
-                  · {formatSize(files.reduce((s, f) => s + f.size, 0))}
-                </span>
-              </p>
+            {isSplit && splitLabels && files.length > 0 ? (
+              /* ─── Split: single-file mode ─── */
+              <>
+                {/* File info bar */}
+                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-muted">
+                      <svg className="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <path d="M14 2v6h6" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-foreground">
+                        {files[0].name}
+                      </p>
+                      <p className="text-xs text-foreground-muted">
+                        {formatSize(files[0].size)}
+                        {pageCounts[fileId(files[0])] && (
+                          <span> · {pageCounts[fileId(files[0])]}p</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSplitFileChange}
+                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-accent hover:text-accent transition-colors cursor-pointer"
+                  >
+                    {splitLabels.changeFile}
+                  </button>
+                </div>
 
-              <div className="flex items-center gap-2">
-                {/* 정렬 드롭다운 */}
-                {files.length > 1 && (
-                  <div className="relative">
+                {/* Split layout: preview + options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+                  {/* Page preview */}
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="self-start">
+                      <SplitPagePreview
+                        file={files[0]}
+                        pageCount={pageCounts[fileId(files[0])]}
+                        splitOptions={splitOptions}
+                        rangeLabel={splitLabels.rangeLabel}
+                        onRangesReorder={(newRanges) => splitSetRangesRef.current?.(newRanges)}
+                        onExtractPagesChange={(pages) => splitSetExtractPagesRef.current?.(pages)}
+                      />
+                    </div>
+                  )}
+
+                  {/* Options panel */}
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="lg:sticky lg:top-4 lg:self-start">
+                      <SplitOptions
+                        pageCount={pageCounts[fileId(files[0])]}
+                        fileSize={files[0].size}
+                        onChange={setSplitOptions}
+                        labels={splitLabels}
+                        onRegisterSetRanges={(setter) => { splitSetRangesRef.current = setter; }}
+                        onRegisterSetExtractPages={(setter) => { splitSetExtractPagesRef.current = setter; }}
+                        onRegisterValidate={(validator) => { splitValidateRef.current = validator; }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              /* ─── Default: multi-file mode ─── */
+              <>
+                {/* 툴바 */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    {totalPages > 0 && (() => {
+                      const effectivePages = files.reduce((sum, f) => {
+                        const key = fileId(f);
+                        const sel = pageSelections[key];
+                        return sum + (sel ? sel.length : (pageCounts[key] ?? 0));
+                      }, 0);
+                      return (
+                        <span className="ml-1 text-foreground-subtle">
+                          · {effectivePages !== totalPages ? (
+                            <><span className="text-accent font-bold">{effectivePages}</span>/{totalPages}p</>
+                          ) : (
+                            `${totalPages}p`
+                          )}
+                        </span>
+                      );
+                    })()}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {/* 정렬 드롭다운 */}
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    {/* 파일 추가 */}
                     <button
                       type="button"
-                      onClick={() => setSortMenuOpen(!sortMenuOpen)}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
                     >
-                      <ArrowDownAZ className="h-3.5 w-3.5" />
-                      {labels.sortByName ?? "Sort"}
-                      <ChevronDown
-                        className={cn(
-                          "h-3 w-3 transition-transform duration-200",
-                          sortMenuOpen && "rotate-180",
-                        )}
-                      />
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
                     </button>
-
-                    <AnimatePresence>
-                      {sortMenuOpen && (
-                        <>
-                          <div
-                            className="fixed inset-0 z-40"
-                            onClick={() => setSortMenuOpen(false)}
-                          />
-                          <motion.div
-                            initial={{ opacity: 0, y: -4 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -4 }}
-                            transition={{ duration: 0.12 }}
-                            className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
-                          >
-                            {sortOptions.map((opt) => {
-                              const Icon = opt.icon;
-                              return (
-                                <button
-                                  key={opt.value}
-                                  type="button"
-                                  onClick={() => {
-                                    sortFiles(opt.value);
-                                    setSortMenuOpen(false);
-                                  }}
-                                  className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
-                                >
-                                  <Icon className="h-4 w-4" />
-                                  {opt.label}
-                                </button>
-                              );
-                            })}
-                          </motion.div>
-                        </>
-                      )}
-                    </AnimatePresence>
                   </div>
-                )}
+                </div>
 
-                {/* 파일 추가 */}
-                <button
-                  type="button"
-                  onClick={handleAddMore}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
-                >
-                  <Plus className="h-3.5 w-3.5" />
-                  {labels.addMoreFiles}
-                </button>
-              </div>
-            </div>
-
-            {/* 파일 카드 그리드 */}
-            <FileList
-              files={files}
-              rotations={rotations}
-              pageCounts={pageCounts}
-              pageSelections={pageSelections}
-              encryptedFiles={encryptedFiles}
-              encryptedLabel={labels.encryptedFile}
-              selectPagesTooltip={labels.clickToSelectPages}
-              onRemove={removeFile}
-              onReorder={reorderFiles}
-              onRotate={rotateFile}
-              onCardClick={(file) => setPageSelectorFile(file)}
-            />
+                {/* 파일 카드 그리드 */}
+                <FileList
+                  files={files}
+                  rotations={rotations}
+                  pageCounts={pageCounts}
+                  pageSelections={pageSelections}
+                  encryptedFiles={encryptedFiles}
+                  encryptedLabel={labels.encryptedFile}
+                  selectPagesTooltip={labels.clickToSelectPages}
+                  onRemove={removeFile}
+                  onReorder={reorderFiles}
+                  onRotate={rotateFile}
+                  onCardClick={(file) => setPageSelectorFile(file)}
+                />
+              </>
+            )}
 
             {/* 도구별 옵션 UI 슬롯 */}
             {children}
@@ -323,7 +453,17 @@ export function ToolPageClient({
               <div className="mx-auto max-w-md">
                 <button
                   type="button"
-                  onClick={() => { addRecentTool(slug); processFiles({ rotations, pageSelections }); }}
+                  onClick={() => {
+                    if (isSplit && splitValidateRef.current && !splitValidateRef.current()) {
+                      return;
+                    }
+                    addRecentTool(slug);
+                    if (isSplit) {
+                      processFiles(splitOptions);
+                    } else {
+                      processFiles({ rotations, pageSelections });
+                    }
+                  }}
                   disabled={!implemented}
                   className={cn(
                     "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",

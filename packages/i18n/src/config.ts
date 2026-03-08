@@ -101,4 +101,30 @@ export interface Dictionary {
     accept: string;
     decline: string;
   };
+  splitTool: {
+    tabRange: string;
+    tabExtract: string;
+    tabSize: string;
+    rangeCustom: string;
+    rangeFixed: string;
+    addRange: string;
+    from: string;
+    to: string;
+    everyNPages: string;
+    mergeIntoOne: string;
+    extractAll: string;
+    extractSelect: string;
+    pagesPlaceholder: string;
+    maxFileSize: string;
+    originalSize: string;
+    totalPages: string;
+    filesCreated: string;
+    fileSelected: string;
+    changeFile: string;
+    dropFile: string;
+    pages: string;
+    rangeLabel: string;
+    errorFromGreaterThanTo: string;
+    errorEmptyValue: string;
+  };
 }

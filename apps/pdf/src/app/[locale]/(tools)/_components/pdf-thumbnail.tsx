@@ -59,7 +59,7 @@ export function PdfThumbnail({ file, className }: PdfThumbnailProps) {
 
   const isPdf = file.type === "application/pdf" || file.name.endsWith(".pdf");
 
-  if (!isPdf || !src) {
+  if (!isPdf) {
     return (
       <div
         className={cn(
@@ -71,6 +71,24 @@ export function PdfThumbnail({ file, className }: PdfThumbnailProps) {
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
           <path d="M14 2v6h6" />
         </svg>
+      </div>
+    );
+  }
+
+  if (!src) {
+    return (
+      <div
+        className={cn(
+          "flex flex-col gap-[8px] p-4 bg-background-muted animate-pulse",
+          className,
+        )}
+      >
+        <div className="h-[8px] w-3/4 rounded-full bg-foreground-subtle/10" />
+        <div className="h-[8px] w-full rounded-full bg-foreground-subtle/10" />
+        <div className="h-[8px] w-5/6 rounded-full bg-foreground-subtle/10" />
+        <div className="h-[8px] w-full rounded-full bg-foreground-subtle/10" />
+        <div className="h-[8px] w-2/3 rounded-full bg-foreground-subtle/10" />
+        <div className="mt-auto h-[8px] w-1/2 rounded-full bg-foreground-subtle/8" />
       </div>
     );
   }

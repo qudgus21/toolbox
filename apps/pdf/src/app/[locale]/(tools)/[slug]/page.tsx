@@ -87,6 +87,7 @@ export default async function ToolPage({
         acceptedTypes={tool.acceptedTypes}
         backHref={`/${locale}`}
         labels={dict.common}
+        splitLabels={slug === "split" ? dict.splitTool : undefined}
       />
     </>
   );
