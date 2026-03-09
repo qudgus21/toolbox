@@ -65,7 +65,7 @@ const en: Dictionary = {
     grayscale: { title: "Grayscale", description: "Convert PDF colors to black and white." },
 
     // Optimize
-    compress: { title: "Compress PDF", description: "Reduce PDF file size without losing quality." },
+    compress: { title: "Compress PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Repair PDF", description: "Fix damaged or corrupted PDF files." },
     ocr: { title: "OCR PDF", description: "Make scanned PDFs searchable with text recognition." },
     "web-optimize": { title: "Web Optimize", description: "Linearize PDFs for faster web loading." },
@@ -220,6 +220,22 @@ const en: Dictionary = {
     rangeLabel: "Range",
     errorFromGreaterThanTo: "Start page cannot be greater than end page",
     errorEmptyValue: "Please enter page numbers",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

@@ -65,7 +65,7 @@ const fi: Dictionary = {
     grayscale: { title: "Harmaasävy", description: "Muunna PDF:n värit mustavalkoisiksi." },
 
     // Optimoi
-    compress: { title: "Pakkaa PDF", description: "Pienennä PDF-tiedoston kokoa laadun kärsimättä." },
+    compress: { title: "Pakkaa PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Korjaa PDF", description: "Korjaa vaurioituneet tai vioittuneet PDF-tiedostot." },
     ocr: { title: "OCR PDF", description: "Tee skannatuista PDF:istä haettavia tekstintunnistuksella." },
     "web-optimize": { title: "Verkko-optimointi", description: "Linearisoi PDF:t nopeampaa verkkolataamista varten." },
@@ -220,6 +220,22 @@ const fi: Dictionary = {
     rangeLabel: "Alue",
     errorFromGreaterThanTo: "Aloitussivu ei voi olla suurempi kuin lopetussivu",
     errorEmptyValue: "Syötä sivunumerot",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

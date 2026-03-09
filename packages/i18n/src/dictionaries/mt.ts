@@ -65,7 +65,7 @@ const mt: Dictionary = {
     grayscale: { title: "Skala tal-griż", description: "Ikkonverti l-kuluri tal-PDF għal iswed u abjad." },
 
     // Ottimizza
-    compress: { title: "Ikkompressja PDF", description: "Naqqas id-daqs tal-fajl PDF mingħajr ma titlef il-kwalità." },
+    compress: { title: "Ikkompressja PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Sewwi PDF", description: "Irranġa fajls PDF korrotti jew imħassra." },
     ocr: { title: "OCR PDF", description: "Agħmel PDFs skennjati rikerkabbli b'rikonoxximent tat-test." },
     "web-optimize": { title: "Ottimizzazzjoni għall-web", description: "Linearizza PDFs għal tagħbija aktar mgħaġġla fuq il-web." },
@@ -220,6 +220,22 @@ const mt: Dictionary = {
     rangeLabel: "Medda",
     errorFromGreaterThanTo: "Il-paġna tal-bidu ma tistax tkun akbar mill-paġna tal-aħħar",
     errorEmptyValue: "Daħħal in-numri tal-paġni",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

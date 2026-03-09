@@ -65,7 +65,7 @@ const hu: Dictionary = {
     grayscale: { title: "Szürkeárnyalatos", description: "PDF színek konvertálása fekete-fehérre." },
 
     // Optimalizálás
-    compress: { title: "PDF tömörítése", description: "PDF fájlméret csökkentése minőségveszteség nélkül." },
+    compress: { title: "PDF tömörítése", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF javítása", description: "Sérült vagy hibás PDF fájlok javítása." },
     ocr: { title: "OCR PDF", description: "Szkennelt PDF-ek kereshetővé tétele szövegfelismeréssel." },
     "web-optimize": { title: "Webes optimalizálás", description: "PDF-ek linearizálása a gyorsabb webes betöltéshez." },
@@ -220,6 +220,22 @@ const hu: Dictionary = {
     rangeLabel: "Tartomány",
     errorFromGreaterThanTo: "A kezdőoldal nem lehet nagyobb a végoldalnál",
     errorEmptyValue: "Adja meg az oldalszámokat",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

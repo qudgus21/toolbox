@@ -49,9 +49,26 @@ const languageNames: Record<string, string> = {
   ko: "한국어",
 };
 
-const sortedLocales = Object.entries(languageNames).sort((a, b) =>
-  a[1].localeCompare(b[1]),
-);
+// 글로벌 사용자 수 기준 정렬 순서
+const popularityOrder = [
+  "en", "zh", "es", "hi", "ar", "fr", "bn", "pt", "ru", "ja",
+  "de", "ko", "it", "tr", "vi", "th", "pl", "nl", "uk", "ro",
+  "el", "cs", "sv", "hu", "he", "da", "fi", "no", "bg", "hr",
+  "sk", "sl", "lt", "lv", "et", "id", "ga", "is", "bs", "mt",
+  "mr", "pa", "te",
+];
+
+function getSortedLocales(currentLocale: string) {
+  return Object.entries(languageNames).sort((a, b) => {
+    // 현재 로케일을 최상단에
+    if (a[0] === currentLocale) return -1;
+    if (b[0] === currentLocale) return 1;
+    // 나머지는 사용자 수 기준
+    const idxA = popularityOrder.indexOf(a[0]);
+    const idxB = popularityOrder.indexOf(b[0]);
+    return (idxA === -1 ? 999 : idxA) - (idxB === -1 ? 999 : idxB);
+  });
+}
 
 interface LanguageSwitcherProps {
   locale: string;
@@ -84,7 +101,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
 
       {open && (
         <div className="absolute right-0 top-full mt-1 z-50 max-h-80 w-52 overflow-y-auto rounded-lg border border-border bg-background shadow-lg">
-          {sortedLocales.map(([code, name]) => (
+          {getSortedLocales(locale).map(([code, name]) => (
             <a
               key={code}
               href={`/${code}`}

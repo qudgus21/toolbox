@@ -27,6 +27,7 @@ import { RelatedTools } from "./related-tools";
 import { PageSelectorModal } from "./page-selector-modal";
 import { SplitOptions } from "./split-options";
 import { SplitPagePreview } from "./split-page-preview";
+import { CompressOptions } from "./compress-options";
 import { fileId } from "./file-list";
 import type { ReactNode } from "react";
 
@@ -79,6 +80,23 @@ interface SplitLabels {
   errorEmptyValue: string;
 }
 
+interface CompressLabels {
+  levelExtreme: string;
+  levelExtremeDesc: string;
+  levelRecommended: string;
+  levelRecommendedDesc: string;
+  levelLess: string;
+  levelLessDesc: string;
+  originalSize: string;
+  compressedSize: string;
+  reduction: string;
+  modeImage: string;
+  modeImageDesc: string;
+  modeRasterize: string;
+  modeRasterizeDesc: string;
+  rasterizeWarning: string;
+}
+
 interface ToolPageClientProps {
   slug: string;
   locale: string;
@@ -88,6 +106,7 @@ interface ToolPageClientProps {
   backHref: string;
   labels: CommonLabels;
   splitLabels?: SplitLabels;
+  compressLabels?: CompressLabels;
   children?: ReactNode;
 }
 
@@ -123,6 +142,7 @@ export function ToolPageClient({
   backHref,
   labels,
   splitLabels,
+  compressLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -152,9 +172,11 @@ export function ToolPageClient({
   const splitSetRangesRef = useRef<((ranges: { from: number; to: number }[]) => void) | null>(null);
   const splitSetExtractPagesRef = useRef<((pages: number[]) => void) | null>(null);
   const splitValidateRef = useRef<(() => boolean) | null>(null);
+  const [compressOptions, setCompressOptions] = useState<Record<string, unknown>>({ compressionLevel: "recommended" });
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
+  const isCompress = slug === "compress";
 
   useEffect(() => {
     setFav(isFavorite(slug));
@@ -436,10 +458,18 @@ export function ToolPageClient({
                   selectPagesTooltip={labels.clickToSelectPages}
                   onRemove={removeFile}
                   onReorder={reorderFiles}
-                  onRotate={rotateFile}
-                  onCardClick={(file) => setPageSelectorFile(file)}
+                  onRotate={isCompress ? undefined : rotateFile}
+                  onCardClick={isCompress ? undefined : (file) => setPageSelectorFile(file)}
                 />
               </>
+            )}
+
+            {/* Compress: 압축 레벨 선택 */}
+            {isCompress && compressLabels && (
+              <CompressOptions
+                onChange={setCompressOptions}
+                labels={compressLabels}
+              />
             )}
 
             {/* 도구별 옵션 UI 슬롯 */}
@@ -460,6 +490,8 @@ export function ToolPageClient({
                     addRecentTool(slug);
                     if (isSplit) {
                       processFiles(splitOptions);
+                    } else if (isCompress) {
+                      processFiles(compressOptions);
                     } else {
                       processFiles({ rotations, pageSelections });
                     }

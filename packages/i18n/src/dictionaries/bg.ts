@@ -65,7 +65,7 @@ const bg: Dictionary = {
     grayscale: { title: "Скала на Сивото", description: "Конвертирайте цветовете на PDF в черно и бяло." },
 
     // Оптимизиране
-    compress: { title: "Компресиране на PDF", description: "Намалете размера на PDF файла без загуба на качество." },
+    compress: { title: "Компресиране на PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Поправка на PDF", description: "Поправете повредени или корумпирани PDF файлове." },
     ocr: { title: "OCR PDF", description: "Направете сканираните PDF файлове търсими с разпознаване на текст." },
     "web-optimize": { title: "Уеб Оптимизация", description: "Линеаризирайте PDF файлове за по-бързо зареждане в уеб." },
@@ -220,6 +220,22 @@ const bg: Dictionary = {
     rangeLabel: "Обхват",
     errorFromGreaterThanTo: "Началната страница не може да бъде по-голяма от крайната",
     errorEmptyValue: "Въведете номера на страниците",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

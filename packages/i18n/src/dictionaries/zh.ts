@@ -65,7 +65,7 @@ const zh: Dictionary = {
     grayscale: { title: "灰度", description: "将PDF彩色转换为黑白。" },
 
     // 优化
-    compress: { title: "压缩 PDF", description: "在不损失质量的情况下减小PDF文件大小。" },
+    compress: { title: "压缩 PDF", description: "大幅缩小PDF文件。根据需要选择合适的压缩方式。" },
     repair: { title: "修复 PDF", description: "修复损坏的PDF文件。" },
     ocr: { title: "OCR PDF", description: "通过文字识别使扫描的PDF可搜索。" },
     "web-optimize": { title: "Web优化", description: "线性化PDF以加快网页加载速度。" },
@@ -220,6 +220,22 @@ const zh: Dictionary = {
     rangeLabel: "范围",
     errorFromGreaterThanTo: "起始页不能大于结束页",
     errorEmptyValue: "请输入页码",
+  },
+  compressTool: {
+    levelExtreme: "极限压缩",
+    levelExtremeDesc: "尽可能缩小文件",
+    levelRecommended: "推荐",
+    levelRecommendedDesc: "质量与大小的平衡",
+    levelLess: "低压缩",
+    levelLessDesc: "保持高质量",
+    originalSize: "原始大小",
+    compressedSize: "压缩后",
+    reduction: "缩减率",
+    modeImage: "仅压缩图片",
+    modeImageDesc: "保留文字、字体和链接，仅重新压缩图片",
+    modeRasterize: "整页转换",
+    modeRasterizeDesc: "将所有页面转为图片以实现最大压缩",
+    rasterizeWarning: "此模式下文字选择、链接和书签将丢失，适合打印或存档。",
   },
 };
 

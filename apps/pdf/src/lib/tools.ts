@@ -75,6 +75,15 @@ export const tools: ToolDefinition[] = [
     acceptedTypes: ".pdf",
   },
   {
+    slug: "compress",
+    title: "Compress PDF",
+    description: "Reduce PDF file size without losing quality.",
+    icon: Minimize2,
+    emoji: "📦",
+    category: "optimize",
+    acceptedTypes: ".pdf",
+  },
+  {
     slug: "delete-pages",
     title: "Delete Pages",
     description: "Remove specific pages from a PDF document.",
@@ -341,15 +350,6 @@ export const tools: ToolDefinition[] = [
   },
 
   // ── Optimize ──────────────────────────────────────────
-  {
-    slug: "compress",
-    title: "Compress PDF",
-    description: "Reduce PDF file size without losing quality.",
-    icon: Minimize2,
-    emoji: "📦",
-    category: "optimize",
-    acceptedTypes: ".pdf",
-  },
   {
     slug: "repair",
     title: "Repair PDF",

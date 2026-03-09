@@ -65,7 +65,7 @@ const el: Dictionary = {
     grayscale: { title: "Κλίμακα του Γκρι", description: "Μετατρέψτε τα χρώματα PDF σε ασπρόμαυρο." },
 
     // Βελτιστοποίηση
-    compress: { title: "Συμπίεση PDF", description: "Μειώστε το μέγεθος αρχείου PDF χωρίς απώλεια ποιότητας." },
+    compress: { title: "Συμπίεση PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Επισκευή PDF", description: "Διορθώστε κατεστραμμένα ή αλλοιωμένα αρχεία PDF." },
     ocr: { title: "OCR PDF", description: "Κάντε τα σαρωμένα PDF αναζητήσιμα με αναγνώριση κειμένου." },
     "web-optimize": { title: "Βελτιστοποίηση για Web", description: "Γραμμικοποιήστε PDF για ταχύτερη φόρτωση στο web." },
@@ -220,6 +220,22 @@ const el: Dictionary = {
     rangeLabel: "Εύρος",
     errorFromGreaterThanTo: "Η αρχική σελίδα δεν μπορεί να είναι μεγαλύτερη από την τελική",
     errorEmptyValue: "Εισάγετε αριθμούς σελίδων",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

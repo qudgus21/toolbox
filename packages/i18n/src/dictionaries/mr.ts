@@ -65,7 +65,7 @@ const mr: Dictionary = {
     grayscale: { title: "ग्रेस्केल", description: "PDF रंग काळ्या आणि पांढऱ्यात रूपांतरित करा." },
 
     // ऑप्टिमाइझ करा
-    compress: { title: "PDF संकुचित करा", description: "गुणवत्ता न गमावता PDF फाइल आकार कमी करा." },
+    compress: { title: "PDF संकुचित करा", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF दुरुस्त करा", description: "खराब झालेल्या किंवा दूषित PDF फाइल्स दुरुस्त करा." },
     ocr: { title: "OCR PDF", description: "मजकूर ओळखीसह स्कॅन केलेले PDF शोधण्यायोग्य बनवा." },
     "web-optimize": { title: "वेब ऑप्टिमाइझ", description: "जलद वेब लोडिंगसाठी PDF लिनियराइझ करा." },
@@ -220,6 +220,22 @@ const mr: Dictionary = {
     rangeLabel: "श्रेणी",
     errorFromGreaterThanTo: "सुरुवातीचे पृष्ठ शेवटच्या पृष्ठापेक्षा मोठे असू शकत नाही",
     errorEmptyValue: "कृपया पृष्ठ क्रमांक प्रविष्ट करा",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

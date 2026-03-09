@@ -65,7 +65,7 @@ const fr: Dictionary = {
     grayscale: { title: "Niveaux de gris", description: "Convertissez les couleurs du PDF en noir et blanc." },
 
     // Optimiser
-    compress: { title: "Compresser PDF", description: "Réduisez la taille du fichier PDF sans perte de qualité." },
+    compress: { title: "Compresser PDF", description: "Réduisez considérablement la taille de vos PDF. Choisissez la méthode de compression adaptée." },
     repair: { title: "Réparer PDF", description: "Réparez les fichiers PDF endommagés ou corrompus." },
     ocr: { title: "OCR PDF", description: "Rendez les PDFs numérisés consultables grâce à la reconnaissance de texte." },
     "web-optimize": { title: "Optimiser pour le web", description: "Linéarisez les PDFs pour un chargement web plus rapide." },
@@ -220,6 +220,22 @@ const fr: Dictionary = {
     rangeLabel: "Plage",
     errorFromGreaterThanTo: "La page de début ne peut pas dépasser la page de fin",
     errorEmptyValue: "Veuillez saisir les numéros de page",
+  },
+  compressTool: {
+    levelExtreme: "Maximale",
+    levelExtremeDesc: "Taille de fichier la plus réduite",
+    levelRecommended: "Recommandée",
+    levelRecommendedDesc: "Équilibre entre qualité et taille",
+    levelLess: "Faible compression",
+    levelLessDesc: "Préserve une haute qualité",
+    originalSize: "Taille originale",
+    compressedSize: "Après compression",
+    reduction: "Réduction",
+    modeImage: "Images uniquement",
+    modeImageDesc: "Recompresse les images en conservant texte, polices et liens",
+    modeRasterize: "Conversion intégrale",
+    modeRasterizeDesc: "Convertit chaque page en image pour une compression maximale",
+    rasterizeWarning: "Ce mode supprime la sélection de texte, les liens et les signets. Idéal pour l'impression ou l'archivage.",
   },
 };
 

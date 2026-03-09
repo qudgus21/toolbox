@@ -65,7 +65,7 @@ const sv: Dictionary = {
     grayscale: { title: "Gråskala", description: "Konvertera PDF-färger till svartvitt." },
 
     // Optimera
-    compress: { title: "Komprimera PDF", description: "Minska PDF-filstorleken utan att förlora kvalitet." },
+    compress: { title: "Komprimera PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Reparera PDF", description: "Reparera skadade eller korrupta PDF-filer." },
     ocr: { title: "OCR PDF", description: "Gör skannade PDF:er sökbara med textigenkänning." },
     "web-optimize": { title: "Webboptimera", description: "Linearisera PDF:er för snabbare webbladdning." },
@@ -220,6 +220,22 @@ const sv: Dictionary = {
     rangeLabel: "Intervall",
     errorFromGreaterThanTo: "Startsidan kan inte vara större än slutsidan",
     errorEmptyValue: "Ange sidnummer",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

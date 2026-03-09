@@ -63,7 +63,7 @@ const ms: Dictionary = {
     grayscale: { title: "Skala Kelabu", description: "Tukar warna PDF kepada hitam putih." },
 
     // Optimum
-    compress: { title: "Mampat PDF", description: "Kurangkan saiz fail PDF tanpa kehilangan kualiti." },
+    compress: { title: "Mampat PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Baiki PDF", description: "Baiki fail PDF yang rosak atau korup." },
     ocr: { title: "OCR PDF", description: "Jadikan PDF yang diimbas boleh dicari dengan pengecaman teks." },
     "web-optimize": { title: "Optimum Web", description: "Optimumkan PDF untuk pemuatan web yang lebih pantas." },
@@ -141,6 +141,17 @@ const ms: Dictionary = {
     rangeLabel: "Julat",
     errorFromGreaterThanTo: "Halaman mula tidak boleh lebih besar daripada halaman akhir",
     errorEmptyValue: "Sila masukkan nombor halaman",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
   },
 };
 

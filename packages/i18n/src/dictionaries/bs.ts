@@ -65,7 +65,7 @@ const bs: Dictionary = {
     grayscale: { title: "Sivi tonovi", description: "Konvertujte PDF boje u crno-bijelo." },
 
     // Optimizuj
-    compress: { title: "Kompresuj PDF", description: "Smanjite veličinu PDF datoteke bez gubitka kvaliteta." },
+    compress: { title: "Kompresuj PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Popravi PDF", description: "Popravite oštećene ili korumpirane PDF datoteke." },
     ocr: { title: "OCR PDF", description: "Učinite skenirane PDF-ove pretražljivim pomoću prepoznavanja teksta." },
     "web-optimize": { title: "Web optimizacija", description: "Linearizirajte PDF-ove za brže učitavanje na webu." },
@@ -220,6 +220,22 @@ const bs: Dictionary = {
     rangeLabel: "Raspon",
     errorFromGreaterThanTo: "Početna stranica ne može biti veća od krajnje",
     errorEmptyValue: "Unesite brojeve stranica",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

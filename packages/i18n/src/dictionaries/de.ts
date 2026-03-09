@@ -65,7 +65,7 @@ const de: Dictionary = {
     grayscale: { title: "Graustufen", description: "PDF-Farben in Schwarz-Wei\u00df konvertieren." },
 
     // Optimieren
-    compress: { title: "PDF komprimieren", description: "PDF-Dateigr\u00f6\u00dfe ohne Qualit\u00e4tsverlust reduzieren." },
+    compress: { title: "PDF komprimieren", description: "PDF-Dateien deutlich verkleinern. W\u00e4hlen Sie die passende Komprimierungsmethode." },
     repair: { title: "PDF reparieren", description: "Besch\u00e4digte oder fehlerhafte PDF-Dateien reparieren." },
     ocr: { title: "OCR PDF", description: "Gescannte PDFs mit Texterkennung durchsuchbar machen." },
     "web-optimize": { title: "Web-Optimierung", description: "PDFs f\u00fcr schnelleres Laden im Web linearisieren." },
@@ -220,6 +220,22 @@ const de: Dictionary = {
     rangeLabel: "Bereich",
     errorFromGreaterThanTo: "Die Startseite darf nicht größer als die Endseite sein",
     errorEmptyValue: "Bitte Seitenzahlen eingeben",
+  },
+  compressTool: {
+    levelExtreme: "Maximale",
+    levelExtremeDesc: "Kleinstmögliche Dateigröße",
+    levelRecommended: "Empfohlen",
+    levelRecommendedDesc: "Ausgewogenes Verhältnis",
+    levelLess: "Geringe Kompression",
+    levelLessDesc: "Hohe Qualität beibehalten",
+    originalSize: "Originalgröße",
+    compressedSize: "Nach Kompression",
+    reduction: "Reduktion",
+    modeImage: "Nur Bilder",
+    modeImageDesc: "Komprimiert Bilder neu, Text, Schriftarten und Links bleiben erhalten",
+    modeRasterize: "Komplette Seitenkonvertierung",
+    modeRasterizeDesc: "Wandelt jede Seite in ein Bild um für maximale Komprimierung",
+    rasterizeWarning: "In diesem Modus gehen Textauswahl, Links und Lesezeichen verloren. Geeignet für Druck oder Archivierung.",
   },
 };
 

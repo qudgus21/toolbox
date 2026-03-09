@@ -65,7 +65,7 @@ const bn: Dictionary = {
     grayscale: { title: "গ্রেস্কেল", description: "PDF রঙ কালো এবং সাদায় রূপান্তর করুন।" },
 
     // অপ্টিমাইজ
-    compress: { title: "PDF সংকুচিত করুন", description: "গুণমান না হারিয়ে PDF ফাইলের আকার কমান।" },
+    compress: { title: "PDF সংকুচিত করুন", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF মেরামত করুন", description: "ক্ষতিগ্রস্ত বা দূষিত PDF ফাইল মেরামত করুন।" },
     ocr: { title: "OCR PDF", description: "টেক্সট রিকগনিশন দিয়ে স্ক্যান করা PDF অনুসন্ধানযোগ্য করুন।" },
     "web-optimize": { title: "ওয়েব অপ্টিমাইজ", description: "দ্রুত ওয়েব লোডিংয়ের জন্য PDF লিনিয়ারাইজ করুন।" },
@@ -220,6 +220,22 @@ const bn: Dictionary = {
     rangeLabel: "পরিসর",
     errorFromGreaterThanTo: "শুরুর পৃষ্ঠা শেষ পৃষ্ঠার চেয়ে বড় হতে পারে না",
     errorEmptyValue: "পৃষ্ঠা নম্বর লিখুন",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

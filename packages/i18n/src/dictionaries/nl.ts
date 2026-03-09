@@ -65,7 +65,7 @@ const nl: Dictionary = {
     grayscale: { title: "Grijstinten", description: "Converteer PDF-kleuren naar zwart-wit." },
 
     // Optimaliseren
-    compress: { title: "PDF comprimeren", description: "Verklein de PDF-bestandsgrootte zonder kwaliteitsverlies." },
+    compress: { title: "PDF comprimeren", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF repareren", description: "Repareer beschadigde of corrupte PDF-bestanden." },
     ocr: { title: "OCR PDF", description: "Maak gescande PDF's doorzoekbaar met tekstherkenning." },
     "web-optimize": { title: "Weboptimalisatie", description: "Optimaliseer PDF's voor sneller laden op het web." },
@@ -220,6 +220,22 @@ const nl: Dictionary = {
     rangeLabel: "Bereik",
     errorFromGreaterThanTo: "De startpagina mag niet groter zijn dan de eindpagina",
     errorEmptyValue: "Voer paginanummers in",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

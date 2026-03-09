@@ -65,7 +65,7 @@ const tr: Dictionary = {
     grayscale: { title: "Gri Tonlama", description: "PDF renklerini siyah beyaza dönüştürün." },
 
     // Optimize Etme
-    compress: { title: "PDF Sıkıştır", description: "Kalite kaybı olmadan PDF dosya boyutunu küçültün." },
+    compress: { title: "PDF Sıkıştır", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF Onar", description: "Hasarlı veya bozuk PDF dosyalarını onarın." },
     ocr: { title: "OCR PDF", description: "Taranan PDF'leri metin tanıma ile aranabilir hale getirin." },
     "web-optimize": { title: "Web Optimize", description: "PDF'leri daha hızlı web yüklemesi için optimize edin." },
@@ -220,6 +220,22 @@ const tr: Dictionary = {
     rangeLabel: "Aralık",
     errorFromGreaterThanTo: "Başlangıç sayfası bitiş sayfasından büyük olamaz",
     errorEmptyValue: "Lütfen sayfa numaralarını girin",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

@@ -65,7 +65,7 @@ const et: Dictionary = {
     grayscale: { title: "Halltoonid", description: "Teisendage PDF-i värvid mustvalgeks." },
 
     // Optimeeri
-    compress: { title: "Tihenda PDF", description: "Vähendage PDF-faili suurust ilma kvaliteeti kaotamata." },
+    compress: { title: "Tihenda PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Paranda PDF", description: "Parandage kahjustatud või rikutud PDF-faile." },
     ocr: { title: "OCR PDF", description: "Muutke skaneeritud PDF-id otsitavaks tekstituvastuse abil." },
     "web-optimize": { title: "Veebioptimeerimine", description: "Lineariseerige PDF-id kiiremaks veebis laadimiseks." },
@@ -220,6 +220,22 @@ const et: Dictionary = {
     rangeLabel: "Vahemik",
     errorFromGreaterThanTo: "Algusleht ei saa olla suurem kui lõppleht",
     errorEmptyValue: "Sisestage leheküljenumbrid",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

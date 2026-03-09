@@ -65,7 +65,7 @@ const cs: Dictionary = {
     grayscale: { title: "Stupně šedi", description: "Převeďte barvy PDF na černobílé." },
 
     // Optimalizovat
-    compress: { title: "Komprimovat PDF", description: "Zmenšete velikost PDF souboru bez ztráty kvality." },
+    compress: { title: "Komprimovat PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Opravit PDF", description: "Opravte poškozené nebo chybné PDF soubory." },
     ocr: { title: "OCR PDF", description: "Umožněte vyhledávání v naskenovaných PDF pomocí rozpoznávání textu." },
     "web-optimize": { title: "Optimalizace pro web", description: "Linearizujte PDF pro rychlejší načítání na webu." },
@@ -220,6 +220,22 @@ const cs: Dictionary = {
     rangeLabel: "Rozsah",
     errorFromGreaterThanTo: "Počáteční stránka nemůže být větší než koncová",
     errorEmptyValue: "Zadejte čísla stránek",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

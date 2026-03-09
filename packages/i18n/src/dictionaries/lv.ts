@@ -65,7 +65,7 @@ const lv: Dictionary = {
     grayscale: { title: "Pelēktoņi", description: "Konvertējiet PDF krāsas uz melnbaltu." },
 
     // Optimizēt
-    compress: { title: "Saspiest PDF", description: "Samaziniet PDF faila izmēru, nezaudējot kvalitāti." },
+    compress: { title: "Saspiest PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Labot PDF", description: "Salabojiet bojātus vai korumpētus PDF failus." },
     ocr: { title: "OCR PDF", description: "Padariet skenētus PDF meklējamus ar teksta atpazīšanu." },
     "web-optimize": { title: "Tīmekļa optimizācija", description: "Linearizējiet PDF failus ātrākai ielādei tīmeklī." },
@@ -220,6 +220,22 @@ const lv: Dictionary = {
     rangeLabel: "Diapazons",
     errorFromGreaterThanTo: "Sākuma lapa nevar būt lielāka par beigu lapu",
     errorEmptyValue: "Ievadiet lappušu numurus",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

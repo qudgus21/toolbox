@@ -65,7 +65,7 @@ const id: Dictionary = {
     grayscale: { title: "Skala Abu-abu", description: "Konversi warna PDF menjadi hitam putih." },
 
     // Optimasi
-    compress: { title: "Kompres PDF", description: "Kurangi ukuran file PDF tanpa kehilangan kualitas." },
+    compress: { title: "Kompres PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Perbaiki PDF", description: "Perbaiki file PDF yang rusak atau korup." },
     ocr: { title: "OCR PDF", description: "Buat PDF hasil pindai dapat dicari dengan pengenalan teks." },
     "web-optimize": { title: "Optimasi Web", description: "Linearisasi PDF untuk pemuatan web yang lebih cepat." },
@@ -220,6 +220,22 @@ const id: Dictionary = {
     rangeLabel: "Rentang",
     errorFromGreaterThanTo: "Halaman awal tidak boleh lebih besar dari halaman akhir",
     errorEmptyValue: "Masukkan nomor halaman",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

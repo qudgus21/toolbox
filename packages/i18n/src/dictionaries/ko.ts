@@ -65,7 +65,7 @@ const ko: Dictionary = {
     grayscale: { title: "흑백 변환", description: "PDF 색상을 흑백으로 변환합니다." },
 
     // Optimize
-    compress: { title: "PDF 압축", description: "품질 손실 없이 PDF 파일 크기를 줄입니다." },
+    compress: { title: "PDF 압축", description: "PDF 파일 크기를 대폭 줄여보세요. 용도에 맞게 압축 방식을 선택할 수 있습니다." },
     repair: { title: "PDF 복구", description: "손상되거나 깨진 PDF 파일을 복구합니다." },
     ocr: { title: "OCR PDF", description: "스캔된 PDF를 텍스트 인식으로 검색 가능하게 만듭니다." },
     "web-optimize": { title: "웹 최적화", description: "웹에서 빠르게 로드되도록 PDF를 최적화합니다." },
@@ -220,6 +220,22 @@ const ko: Dictionary = {
     rangeLabel: "범위",
     errorFromGreaterThanTo: "시작 페이지가 끝 페이지보다 클 수 없습니다",
     errorEmptyValue: "페이지 번호를 입력해 주세요",
+  },
+  compressTool: {
+    levelExtreme: "최대 압축",
+    levelExtremeDesc: "파일 크기를 최대한 줄입니다",
+    levelRecommended: "권장",
+    levelRecommendedDesc: "품질과 크기의 균형을 맞춥니다",
+    levelLess: "낮은 압축",
+    levelLessDesc: "높은 품질을 유지합니다",
+    originalSize: "원본 크기",
+    compressedSize: "압축 후 크기",
+    reduction: "절감률",
+    modeImage: "이미지만 압축",
+    modeImageDesc: "텍스트·폰트·링크를 유지하고 이미지만 재압축합니다",
+    modeRasterize: "전체 페이지 변환",
+    modeRasterizeDesc: "모든 페이지를 이미지로 변환하여 최대한 압축합니다",
+    rasterizeWarning: "이 모드는 텍스트 선택·복사, 링크, 북마크가 사라집니다. 인쇄나 보관용에 적합합니다.",
   },
 };
 

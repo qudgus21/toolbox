@@ -65,7 +65,7 @@ const es: Dictionary = {
     grayscale: { title: "Escala de grises", description: "Convierte los colores del PDF a blanco y negro." },
 
     // Optimizar
-    compress: { title: "Comprimir PDF", description: "Reduce el tamaño del archivo PDF sin perder calidad." },
+    compress: { title: "Comprimir PDF", description: "Reduce significativamente el tamaño de tus PDF. Elige el método de compresión que mejor se adapte." },
     repair: { title: "Reparar PDF", description: "Repara archivos PDF dañados o corruptos." },
     ocr: { title: "OCR PDF", description: "Haz que los PDFs escaneados sean buscables con reconocimiento de texto." },
     "web-optimize": { title: "Optimizar para web", description: "Linealiza PDFs para una carga web más rápida." },
@@ -220,6 +220,22 @@ const es: Dictionary = {
     rangeLabel: "Rango",
     errorFromGreaterThanTo: "La página inicial no puede ser mayor que la final",
     errorEmptyValue: "Introduce los números de página",
+  },
+  compressTool: {
+    levelExtreme: "Máxima",
+    levelExtremeDesc: "El tamaño más pequeño posible",
+    levelRecommended: "Recomendada",
+    levelRecommendedDesc: "Equilibrio entre calidad y tamaño",
+    levelLess: "Baja compresión",
+    levelLessDesc: "Mantiene alta calidad",
+    originalSize: "Tamaño original",
+    compressedSize: "Tamaño comprimido",
+    reduction: "Reducción",
+    modeImage: "Solo imágenes",
+    modeImageDesc: "Recomprime las imágenes manteniendo texto, fuentes y enlaces",
+    modeRasterize: "Conversión completa",
+    modeRasterizeDesc: "Convierte cada página en imagen para máxima compresión",
+    rasterizeWarning: "Este modo elimina la selección de texto, enlaces y marcadores. Ideal para impresión o archivo.",
   },
 };
 

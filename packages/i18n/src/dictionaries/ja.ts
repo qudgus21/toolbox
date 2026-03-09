@@ -65,7 +65,7 @@ const ja: Dictionary = {
     grayscale: { title: "グレースケール", description: "PDFのカラーを白黒に変換します。" },
 
     // 最適化
-    compress: { title: "PDF 圧縮", description: "品質を損なうことなくPDFファイルサイズを縮小します。" },
+    compress: { title: "PDF 圧縮", description: "PDFファイルを大幅に軽量化。用途に合わせて圧縮方式を選べます。" },
     repair: { title: "PDF 修復", description: "破損したPDFファイルを修復します。" },
     ocr: { title: "OCR PDF", description: "テキスト認識でスキャンしたPDFを検索可能にします。" },
     "web-optimize": { title: "Web最適化", description: "Web上での高速読み込みのためにPDFをリニアライズします。" },
@@ -220,6 +220,22 @@ const ja: Dictionary = {
     rangeLabel: "範囲",
     errorFromGreaterThanTo: "開始ページは終了ページより大きくできません",
     errorEmptyValue: "ページ番号を入力してください",
+  },
+  compressTool: {
+    levelExtreme: "最大圧縮",
+    levelExtremeDesc: "ファイルサイズを最小限に",
+    levelRecommended: "おすすめ",
+    levelRecommendedDesc: "品質とサイズのバランス",
+    levelLess: "低圧縮",
+    levelLessDesc: "高品質を維持",
+    originalSize: "元のサイズ",
+    compressedSize: "圧縮後",
+    reduction: "削減率",
+    modeImage: "画像のみ圧縮",
+    modeImageDesc: "テキスト・フォント・リンクを保持し、画像のみ再圧縮します",
+    modeRasterize: "ページ全体を変換",
+    modeRasterizeDesc: "全ページを画像化して最大限に圧縮します",
+    rasterizeWarning: "このモードではテキスト選択・コピー、リンク、ブックマークが失われます。印刷や保存用に適しています。",
   },
 };
 

@@ -65,7 +65,7 @@ const ar: Dictionary = {
     grayscale: { title: "تدرج الرمادي", description: "تحويل ألوان PDF إلى الأبيض والأسود." },
 
     // تحسين
-    compress: { title: "ضغط PDF", description: "تقليل حجم ملف PDF دون فقدان الجودة." },
+    compress: { title: "ضغط PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "إصلاح PDF", description: "إصلاح ملفات PDF التالفة أو المعطوبة." },
     ocr: { title: "OCR PDF", description: "جعل ملفات PDF الممسوحة ضوئياً قابلة للبحث بالتعرف على النص." },
     "web-optimize": { title: "تحسين للويب", description: "تحسين ملفات PDF للتحميل الأسرع على الويب." },
@@ -220,6 +220,22 @@ const ar: Dictionary = {
     rangeLabel: "النطاق",
     errorFromGreaterThanTo: "لا يمكن أن تكون صفحة البداية أكبر من صفحة النهاية",
     errorEmptyValue: "يرجى إدخال أرقام الصفحات",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

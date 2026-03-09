@@ -6,6 +6,7 @@ const registry = new Map<string, () => Promise<{ default: ProcessorFn }>>();
 // 새 도구를 추가할 때 여기에 한 줄씩 추가
 registry.set("merge", () => import("./processors/merge"));
 registry.set("split", () => import("./processors/split"));
+registry.set("compress", () => import("./processors/compress"));
 // registry.set("rotate", () => import("./processors/rotate"));
 // ... 도구 추가 시 여기에 등록
 

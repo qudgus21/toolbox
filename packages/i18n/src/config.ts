@@ -1,9 +1,9 @@
 export const locales = [
-  "ko", "en", "ja", "zh", "es", "fr", "de", "pt", "it", "ru",
-  "vi", "th", "id", "hi", "ar", "tr", "pl", "nl",
-  "bs", "da", "et", "ga", "hr", "lv", "lt", "hu", "mt", "no",
-  "ro", "sk", "sl", "fi", "sv", "is", "cs", "el", "bg", "uk",
-  "he", "mr", "bn", "pa", "te",
+  "en", "zh", "es", "hi", "ar", "fr", "bn", "pt", "ru", "ja",
+  "de", "ko", "it", "tr", "vi", "th", "pl", "nl", "uk", "ro",
+  "el", "cs", "sv", "hu", "he", "da", "fi", "no", "bg", "hr",
+  "sk", "sl", "lt", "lv", "et", "ga", "is", "bs", "mt", "id",
+  "mr", "pa", "te",
 ] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ko";
@@ -126,5 +126,21 @@ export interface Dictionary {
     rangeLabel: string;
     errorFromGreaterThanTo: string;
     errorEmptyValue: string;
+  };
+  compressTool: {
+    levelExtreme: string;
+    levelExtremeDesc: string;
+    levelRecommended: string;
+    levelRecommendedDesc: string;
+    levelLess: string;
+    levelLessDesc: string;
+    originalSize: string;
+    compressedSize: string;
+    reduction: string;
+    modeImage: string;
+    modeImageDesc: string;
+    modeRasterize: string;
+    modeRasterizeDesc: string;
+    rasterizeWarning: string;
   };
 }

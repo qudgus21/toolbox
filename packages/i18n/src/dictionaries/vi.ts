@@ -65,7 +65,7 @@ const vi: Dictionary = {
     grayscale: { title: "Chuyển xám", description: "Chuyển đổi màu sắc PDF sang đen trắng." },
 
     // Tối ưu
-    compress: { title: "Nén PDF", description: "Giảm kích thước tệp PDF mà không mất chất lượng." },
+    compress: { title: "Nén PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Sửa chữa PDF", description: "Sửa các tệp PDF bị hỏng hoặc lỗi." },
     ocr: { title: "OCR PDF", description: "Làm cho PDF quét có thể tìm kiếm bằng nhận dạng văn bản." },
     "web-optimize": { title: "Tối ưu web", description: "Tuyến tính hóa PDF để tải nhanh hơn trên web." },
@@ -220,6 +220,22 @@ const vi: Dictionary = {
     rangeLabel: "Phạm vi",
     errorFromGreaterThanTo: "Trang bắt đầu không thể lớn hơn trang kết thúc",
     errorEmptyValue: "Vui lòng nhập số trang",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

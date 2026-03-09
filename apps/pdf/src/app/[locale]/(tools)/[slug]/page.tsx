@@ -88,6 +88,7 @@ export default async function ToolPage({
         backHref={`/${locale}`}
         labels={dict.common}
         splitLabels={slug === "split" ? dict.splitTool : undefined}
+        compressLabels={slug === "compress" ? dict.compressTool : undefined}
       />
     </>
   );

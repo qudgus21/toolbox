@@ -63,7 +63,7 @@ const km: Dictionary = {
     grayscale: { title: "ស្លេតប្រផេះ", description: "បំលែងពណ៌ PDF ទៅជាសខ្មៅ។" },
 
     // បង្កើនប្រសិទ្ធភាព
-    compress: { title: "បង្រួម PDF", description: "កាត់បន្ថយទំហំឯកសារ PDF ដោយមិនបាត់បង់គុណភាព។" },
+    compress: { title: "បង្រួម PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "ជួសជុល PDF", description: "ជួសជុលឯកសារ PDF ដែលខូច ឬពុកខូច។" },
     ocr: { title: "OCR PDF", description: "ធ្វើឱ្យ PDF ដែលស្កេនអាចស្វែងរកបានដោយការសម្គាល់អត្ថបទ។" },
     "web-optimize": { title: "បង្កើនប្រសិទ្ធភាពវេប", description: "បង្កើនប្រសិទ្ធភាព PDF សម្រាប់ការផ្ទុកវេបលឿនជាង។" },
@@ -141,6 +141,17 @@ const km: Dictionary = {
     rangeLabel: "ជួរ",
     errorFromGreaterThanTo: "ទំព័រចាប់ផ្តើមមិនអាចធំជាងទំព័របញ្ចប់បានទេ",
     errorEmptyValue: "សូមបញ្ចូលលេខទំព័រ",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
   },
 };
 

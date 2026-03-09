@@ -65,7 +65,7 @@ const te: Dictionary = {
     grayscale: { title: "గ్రేస్కేల్", description: "PDF రంగులను నలుపు మరియు తెలుపుగా మార్చండి." },
 
     // ఆప్టిమైజ్ చేయి
-    compress: { title: "PDF కుదించు", description: "నాణ్యత కోల్పోకుండా PDF ఫైల్ పరిమాణాన్ని తగ్గించండి." },
+    compress: { title: "PDF కుదించు", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "PDF రిపేర్ చేయి", description: "దెబ్బతిన్న లేదా పాడైన PDF ఫైల్‌లను రిపేర్ చేయండి." },
     ocr: { title: "OCR PDF", description: "టెక్స్ట్ రికగ్నిషన్‌తో స్కాన్ చేసిన PDF లను శోధించగలిగేలా చేయండి." },
     "web-optimize": { title: "వెబ్ ఆప్టిమైజ్", description: "వేగవంతమైన వెబ్ లోడింగ్ కోసం PDF లను లినియరైజ్ చేయండి." },
@@ -220,6 +220,22 @@ const te: Dictionary = {
     rangeLabel: "పరిధి",
     errorFromGreaterThanTo: "ప్రారంభ పేజీ చివరి పేజీ కంటే ఎక్కువ ఉండకూడదు",
     errorEmptyValue: "దయచేసి పేజీ నంబర్లు నమోదు చేయండి",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 

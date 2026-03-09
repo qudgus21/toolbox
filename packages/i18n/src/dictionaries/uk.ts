@@ -65,7 +65,7 @@ const uk: Dictionary = {
     grayscale: { title: "Відтінки Сірого", description: "Конвертуйте кольори PDF у чорно-біле." },
 
     // Оптимізація
-    compress: { title: "Стиснути PDF", description: "Зменшіть розмір PDF-файлу без втрати якості." },
+    compress: { title: "Стиснути PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
     repair: { title: "Відновити PDF", description: "Виправте пошкоджені або зіпсовані PDF-файли." },
     ocr: { title: "OCR PDF", description: "Зробіть скановані PDF доступними для пошуку за допомогою розпізнавання тексту." },
     "web-optimize": { title: "Веб-оптимізація", description: "Лінеаризуйте PDF для швидшого завантаження у вебі." },
@@ -220,6 +220,22 @@ const uk: Dictionary = {
     rangeLabel: "Діапазон",
     errorFromGreaterThanTo: "Початкова сторінка не може бути більшою за кінцеву",
     errorEmptyValue: "Введіть номери сторінок",
+  },
+  compressTool: {
+    levelExtreme: "Maximum",
+    levelExtremeDesc: "Smallest file size possible",
+    levelRecommended: "Recommended",
+    levelRecommendedDesc: "Balance between quality and size",
+    levelLess: "Low compression",
+    levelLessDesc: "Preserves high quality",
+    originalSize: "Original size",
+    compressedSize: "Compressed size",
+    reduction: "Reduction",
+    modeImage: "Image compression",
+    modeImageDesc: "Re-compresses images while keeping text, fonts, and links intact",
+    modeRasterize: "Full page conversion",
+    modeRasterizeDesc: "Converts every page to an image for maximum compression",
+    rasterizeWarning: "This mode removes text selection, links, and bookmarks. Best for printing or archiving.",
   },
 };
 
