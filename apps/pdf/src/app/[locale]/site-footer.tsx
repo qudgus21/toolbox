@@ -1,6 +1,7 @@
 import type { Dictionary } from "@toolbox/i18n";
 import type { ToolDefinition } from "@/lib/tools";
 import { Container } from "@toolbox/ui";
+import { categoryIconMap } from "@/lib/tool-icons";
 
 const categoryLabelKeys: Record<string, keyof Dictionary["home"]> = {
   organize: "categoryOrganize",
@@ -28,7 +29,7 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             return (
               <div key={cat.key}>
                 <h4 className="text-sm font-semibold text-foreground mb-3">
-                  {cat.emoji} {dict.home[categoryLabelKeys[cat.key]]}
+                  {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <CatIcon className="inline-block h-4 w-4 align-middle -mt-0.5 mr-1" />; })() : <>{cat.emoji} </>}{dict.home[categoryLabelKeys[cat.key]]}
                 </h4>
                 <ul className="space-y-1.5">
                   {catTools.map((tool) => (

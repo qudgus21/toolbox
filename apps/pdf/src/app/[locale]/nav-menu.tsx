@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Dictionary } from "@toolbox/i18n";
+import { toolIconMap, categoryIconMap } from "@/lib/tool-icons";
 
 interface NavTool {
   slug: string;
@@ -37,7 +38,7 @@ export function NavMenu({ locale, dict, categories, tools, categoryLabelKeys }: 
             <button
               className="cursor-pointer flex items-center gap-1.5 px-3 py-2.5 text-base font-medium text-foreground-muted hover:text-foreground transition-colors"
             >
-              <span className="text-lg">{cat.emoji}</span>
+              {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <CatIcon className="h-5 w-5" />; })() : <span className="text-lg">{cat.emoji}</span>}
               <span>{dict.home[categoryLabelKeys[cat.key]]}</span>
             </button>
 
@@ -65,7 +66,7 @@ export function NavMenu({ locale, dict, categories, tools, categoryLabelKeys }: 
                           href={`/${locale}/${tool.slug}`}
                           className="flex items-center gap-2.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground hover:bg-background-muted"
                         >
-                          <span className="text-base shrink-0">{tool.emoji}</span>
+                          {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-5 w-auto shrink-0" />; })() : <span className="text-base shrink-0">{tool.emoji}</span>}
                           <span className="font-medium">{dict.tools[tool.slug].title}</span>
                         </a>
                       ))}

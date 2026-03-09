@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, LayoutGrid, List, Shield, Trash2, Gift, Cloud, Star } from "lucide-react";
 import { Container, ToolCard } from "@toolbox/ui";
 import { tools, categories, categoryColors } from "@/lib/tools";
+import { toolIconMap, categoryIconMap } from "@/lib/tool-icons";
 import { getFavorites, toggleFavorite, reorderFavorites } from "@toolbox/storage";
 import {
   DndContext,
@@ -25,6 +26,14 @@ import { cn } from "@toolbox/utils";
 import type { Dictionary } from "@toolbox/i18n";
 
 type CategoryFilter = "all" | "organize" | "convert" | "edit" | "optimize" | "security";
+
+const categoryTabColors: Record<Exclude<CategoryFilter, "all">, { icon: string }> = {
+  organize: { icon: "text-amber-500" },
+  convert:  { icon: "text-blue-500" },
+  edit:     { icon: "text-purple-500" },
+  optimize: { icon: "text-green-500" },
+  security: { icon: "text-zinc-400" },
+};
 
 const categoryLabelKeys: Record<string, keyof Dictionary["home"]> = {
   organize: "categoryOrganize",
@@ -117,6 +126,11 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const [toast, setToast] = useState<string | null>(null);
   const [disableFavTransition, setDisableFavTransition] = useState(false);
   const didDragRef = useRef(false);
+  const isInitialMount = useRef(true);
+
+  useEffect(() => {
+    isInitialMount.current = false;
+  }, []);
 
   const refreshFavs = useCallback(() => {
     setFavSlugs(getFavorites());
@@ -190,44 +204,43 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const isSearching = search.trim().length > 0;
   const showFavSection = favSlugs !== null && !isSearching && activeTab === "all" && favTools.length > 0;
 
-  const equalizeCardHeights = useCallback((node: HTMLDivElement | null) => {
-    if (!node || viewMode !== "grid") return;
-    requestAnimationFrame(() => {
+  const equalizeCards = useCallback((node: HTMLDivElement | null) => {
+    if (!node) return;
+    const sync = () => {
+      if (viewMode !== "grid") return;
       const cards = node.querySelectorAll<HTMLElement>("[data-card]");
       cards.forEach((c) => (c.style.minHeight = ""));
       let max = 0;
       cards.forEach((c) => { max = Math.max(max, c.offsetHeight); });
-      if (max > 0) {
-        cards.forEach((c) => (c.style.minHeight = `${max}px`));
-      }
-    });
-  }, [filteredTools, viewMode]);
+      if (max > 0) cards.forEach((c) => (c.style.minHeight = `${max}px`));
+    };
+    requestAnimationFrame(sync);
+    const ro = new ResizeObserver(() => requestAnimationFrame(sync));
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [viewMode]);
 
-  const equalizeFavHeights = useCallback((node: HTMLDivElement | null) => {
-    if (!node || viewMode !== "grid") return;
-    requestAnimationFrame(() => {
-      const cards = node.querySelectorAll<HTMLElement>("[data-card]");
-      cards.forEach((c) => (c.style.minHeight = ""));
-      let max = 0;
-      cards.forEach((c) => { max = Math.max(max, c.offsetHeight); });
-      if (max > 0) {
-        cards.forEach((c) => (c.style.minHeight = `${max}px`));
-      }
-    });
-  }, [favSlugs, viewMode]);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const favGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cleanup1 = equalizeCards(gridRef.current);
+    const cleanup2 = equalizeCards(favGridRef.current);
+    return () => { cleanup1?.(); cleanup2?.(); };
+  }, [equalizeCards, filteredTools, favSlugs]);
 
   const renderToolCard = (tool: typeof tools[number]) => {
     const toolDict = dict.tools[tool.slug];
     const isFav = favSlugs?.includes(tool.slug) ?? false;
     return viewMode === "grid" ? (
-      <div className="relative group/fav">
+      <div className="relative group/fav h-full">
         <ToolCard
           data-card
           href={`/${locale}/${tool.slug}`}
           icon={tool.icon}
           title={toolDict.title}
           description={toolDict.description}
-          emoji={tool.emoji}
+          toolIcon={toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-10 w-auto" />; })() : undefined}
           iconColorClasses={categoryColors[tool.category]}
         />
         <button
@@ -257,7 +270,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           href={`/${locale}/${tool.slug}`}
           className="group flex items-center gap-4 rounded-lg border border-border/60 bg-background-elevated px-4 py-3 shadow-sm transition-colors hover:border-accent/50 hover:shadow-md"
         >
-          {tool.emoji && <span className="text-2xl shrink-0">{tool.emoji}</span>}
+          {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-7 w-auto shrink-0" />; })() : tool.emoji ? <span className="text-2xl shrink-0">{tool.emoji}</span> : null}
           <div className="min-w-0 flex-1">
             <h3 className="text-sm font-semibold text-foreground">{toolDict.title}</h3>
             <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
@@ -334,7 +347,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         >
           <button
             onClick={() => { setActiveTab("all"); setSearch(""); }}
-            className={`cursor-pointer rounded-full border px-6 py-2 text-base font-bold transition-colors ${
+            className={`cursor-pointer rounded-full border px-4 py-2 text-base font-bold transition-colors ${
               activeTab === "all" && !isSearching
                 ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
                 : "border-border dark:border-zinc-600 text-foreground-muted hover:bg-background-muted hover:text-foreground hover:border-foreground-subtle"
@@ -346,13 +359,13 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
             <button
               key={cat.key}
               onClick={() => { setActiveTab(cat.key); setSearch(""); }}
-              className={`cursor-pointer rounded-full border px-6 py-2 text-base font-bold transition-colors ${
+              className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-base font-bold transition-colors ${
                 activeTab === cat.key && !isSearching
                   ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
                   : "border-border dark:border-zinc-600 text-foreground-muted hover:bg-background-muted hover:text-foreground hover:border-foreground-subtle"
               }`}
             >
-              {cat.emoji} {dict.home[categoryLabelKeys[cat.key]]}
+              {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <><CatIcon className={cn("h-4 w-4 shrink-0", categoryTabColors[cat.key].icon)} />{dict.home[categoryLabelKeys[cat.key]]}</>; })() : <>{cat.emoji} {dict.home[categoryLabelKeys[cat.key]]}</>}
             </button>
           ))}
 
@@ -388,7 +401,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
             >
               <SortableContext items={favSlugs ?? []} strategy={rectSortingStrategy}>
                 <div
-                  ref={equalizeFavHeights}
+                  ref={favGridRef}
                   className={
                     viewMode === "grid"
                       ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
@@ -414,50 +427,32 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         )}
 
         {/* Tool Grid / List */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`${activeTab}-${search}-${viewMode}`}
-            ref={equalizeCardHeights}
-            className={
-              viewMode === "grid"
-                ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-                : "flex flex-col gap-2"
-            }
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.03 },
-              },
-            }}
-          >
-            {filteredTools.length === 0 ? (
-              <motion.p
-                className="col-span-full text-center py-12 text-foreground-muted"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+        <div
+          ref={gridRef}
+          className={
+            viewMode === "grid"
+              ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+              : "flex flex-col gap-2"
+          }
+        >
+          {filteredTools.length === 0 ? (
+            <p className="col-span-full text-center py-12 text-foreground-muted">
+              {dict.home.noResults}
+            </p>
+          ) : (
+            filteredTools.map((tool, i) => (
+              <motion.div
+                key={tool.slug}
+                className="h-full"
+                initial={isInitialMount.current ? { opacity: 0, y: 12 } : false}
+                animate={{ opacity: 1, y: 0 }}
+                transition={isInitialMount.current ? { duration: 0.25, delay: i * 0.03 } : { duration: 0 }}
               >
-                {dict.home.noResults}
-              </motion.p>
-            ) : (
-              filteredTools.map((tool) => (
-                <motion.div
-                  key={tool.slug}
-                  variants={{
-                    hidden: { opacity: 0, y: 12 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  transition={{ duration: 0.25 }}
-                >
-                  {renderToolCard(tool)}
-                </motion.div>
-              ))
-            )}
-          </motion.div>
-        </AnimatePresence>
+                {renderToolCard(tool)}
+              </motion.div>
+            ))
+          )}
+        </div>
 
         {/* Trust Section */}
         <motion.section

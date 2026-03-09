@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, type ElementType } from "react";
+import { forwardRef, type ElementType, type ReactNode } from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
 import { cn } from "@toolbox/utils";
 
@@ -10,11 +10,12 @@ export interface ToolCardProps extends Omit<HTMLMotionProps<"a">, "children"> {
   title: string;
   description: string;
   emoji?: string;
+  toolIcon?: ReactNode;
   iconColorClasses?: { bg: string; text: string; bgHover: string; textHover: string };
 }
 
 export const ToolCard = forwardRef<HTMLAnchorElement, ToolCardProps>(
-  ({ href, icon: _Icon, title, description, emoji, iconColorClasses: _colors, className, ...props }, ref) => (
+  ({ href, icon: _Icon, title, description, emoji, toolIcon, iconColorClasses: _colors, className, ...props }, ref) => (
     <motion.a
       ref={ref}
       href={href}
@@ -28,7 +29,11 @@ export const ToolCard = forwardRef<HTMLAnchorElement, ToolCardProps>(
       )}
       {...props}
     >
-      {emoji && <span className="text-4xl leading-none">{emoji}</span>}
+      {toolIcon ? (
+        <span className="h-10 w-auto flex items-center">{toolIcon}</span>
+      ) : emoji ? (
+        <span className="text-4xl leading-none">{emoji}</span>
+      ) : null}
       <div>
         <h3 className="text-base font-semibold text-foreground">{title}</h3>
         <p className="mt-1 text-sm text-foreground-muted">{description}</p>

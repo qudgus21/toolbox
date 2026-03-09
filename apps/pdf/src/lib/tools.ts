@@ -83,42 +83,6 @@ export const tools: ToolDefinition[] = [
     category: "optimize",
     acceptedTypes: ".pdf",
   },
-  {
-    slug: "delete-pages",
-    title: "Delete Pages",
-    description: "Remove specific pages from a PDF document.",
-    icon: Trash2,
-    emoji: "🗑️",
-    category: "organize",
-    acceptedTypes: ".pdf",
-  },
-  {
-    slug: "extract-pages",
-    title: "Extract Pages",
-    description: "Extract selected pages into a new PDF file.",
-    icon: FileOutput,
-    emoji: "📤",
-    category: "organize",
-    acceptedTypes: ".pdf",
-  },
-  {
-    slug: "organize-pages",
-    title: "Organize Pages",
-    description: "Reorder, add, or remove pages visually.",
-    icon: GripVertical,
-    emoji: "📋",
-    category: "organize",
-    acceptedTypes: ".pdf",
-  },
-  {
-    slug: "scan-to-pdf",
-    title: "Scan to PDF",
-    description: "Capture scans from your device and convert to PDF.",
-    icon: ScanLine,
-    emoji: "📸",
-    category: "organize",
-    acceptedTypes: ".jpg,.jpeg,.png",
-  },
 
   // ── Convert ───────────────────────────────────────────
   {
@@ -246,6 +210,44 @@ export const tools: ToolDefinition[] = [
     emoji: "🏞️",
     category: "convert",
     acceptedTypes: ".jpg,.jpeg,.png,.gif,.bmp,.tiff,.webp",
+  },
+
+  // ── Organize ───────────────────────────────────────────
+  {
+    slug: "delete-pages",
+    title: "Delete Pages",
+    description: "Remove specific pages from a PDF document.",
+    icon: Trash2,
+    emoji: "🗑️",
+    category: "organize",
+    acceptedTypes: ".pdf",
+  },
+  {
+    slug: "extract-pages",
+    title: "Extract Pages",
+    description: "Extract selected pages into a new PDF file.",
+    icon: FileOutput,
+    emoji: "📤",
+    category: "organize",
+    acceptedTypes: ".pdf",
+  },
+  {
+    slug: "organize-pages",
+    title: "Organize Pages",
+    description: "Reorder, add, or remove pages visually.",
+    icon: GripVertical,
+    emoji: "📋",
+    category: "organize",
+    acceptedTypes: ".pdf",
+  },
+  {
+    slug: "scan-to-pdf",
+    title: "Scan to PDF",
+    description: "Capture scans from your device and convert to PDF.",
+    icon: ScanLine,
+    emoji: "📸",
+    category: "organize",
+    acceptedTypes: ".jpg,.jpeg,.png",
   },
 
   // ── Edit ──────────────────────────────────────────────
