@@ -235,7 +235,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={isSplit ? "xl" : "lg"}
+      size={isSplit && stage !== "idle" ? "xl" : "lg"}
       action={fav !== null ? (
         <button
           type="button"

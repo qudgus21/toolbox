@@ -36,7 +36,7 @@ export function ToolPageLayout({
             <ArrowLeft className="h-4 w-4" />
             {backLabel}
           </a>
-          {action && <div>{action}</div>}
+          <div className="h-9 w-9 shrink-0">{action}</div>
         </div>
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-foreground sm:text-3xl">{title}</h1>
