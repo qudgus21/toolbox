@@ -38,7 +38,7 @@ const ko: Dictionary = {
     "scan-to-pdf": { title: "스캔 → PDF", description: "스캔한 이미지를 PDF로 변환합니다." },
 
     // Convert
-    "pdf-to-word": { title: "PDF → Word", description: "PDF를 편집 가능한 Word 파일로 변환합니다." },
+    "pdf-to-word": { title: "PDF를 Word로", description: "PDF를 편집 가능한 Word 파일로 변환합니다." },
     "pdf-to-jpg": { title: "PDF → JPG", description: "PDF 페이지를 고화질 JPG 이미지로 변환합니다." },
     "pdf-to-excel": { title: "PDF → Excel", description: "PDF의 표 데이터를 Excel로 추출합니다." },
     "pdf-to-ppt": { title: "PDF → PPT", description: "PDF를 편집 가능한 PPT 슬라이드로 변환합니다." },

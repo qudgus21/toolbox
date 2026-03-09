@@ -7,6 +7,7 @@ const registry = new Map<string, () => Promise<{ default: ProcessorFn }>>();
 registry.set("merge", () => import("./processors/merge"));
 registry.set("split", () => import("./processors/split"));
 registry.set("compress", () => import("./processors/compress"));
+registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));
 // registry.set("rotate", () => import("./processors/rotate"));
 // ... 도구 추가 시 여기에 등록
 

@@ -22,6 +22,7 @@
     "@toolbox/storage": "workspace:*",
     "@toolbox/ui": "workspace:*",
     "@toolbox/utils": "workspace:*",
+    "docx": "^9.6.0",
     "file-saver": "^2.0.5",
     "framer-motion": "^12",
     "jszip": "^3.10.1",

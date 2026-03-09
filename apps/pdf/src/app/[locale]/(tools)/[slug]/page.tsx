@@ -86,7 +86,7 @@ export default async function ToolPage({
         description={t.description}
         acceptedTypes={tool.acceptedTypes}
         backHref={`/${locale}`}
-        labels={dict.common}
+        labels={{ ...dict.common, favHint: dict.home.favHint }}
         splitLabels={slug === "split" ? dict.splitTool : undefined}
         compressLabels={slug === "compress" ? dict.compressTool : undefined}
       />

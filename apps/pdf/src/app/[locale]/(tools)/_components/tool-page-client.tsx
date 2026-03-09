@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ToolPageLayout, FileUploadZone } from "@toolbox/ui";
 import {
@@ -28,6 +28,7 @@ import { PageSelectorModal } from "./page-selector-modal";
 import { SplitOptions } from "./split-options";
 import { SplitPagePreview } from "./split-page-preview";
 import { CompressOptions } from "./compress-options";
+
 import { fileId } from "./file-list";
 import type { ReactNode } from "react";
 
@@ -51,6 +52,9 @@ interface CommonLabels {
   encryptedFile?: string;
   clickToSelectPages?: string;
   dragToReorder?: string;
+  favHint?: string;
+  favoriteAdded?: string;
+  favoriteRemoved?: string;
 }
 
 interface SplitLabels {
@@ -168,6 +172,22 @@ export function ToolPageClient({
   const [sortMenuOpen, setSortMenuOpen] = useState(false);
   const [pageSelectorFile, setPageSelectorFile] = useState<File | null>(null);
   const [fav, setFav] = useState<boolean | null>(null);
+  const [showFavHint, setShowFavHint] = useState(false);
+  const [favToast, setFavToast] = useState<string | null>(null);
+
+  const handleFavHintEnter = useCallback(() => {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem("fav-hint-seen")) return;
+    setShowFavHint(true);
+    localStorage.setItem("fav-hint-seen", "1");
+  }, []);
+
+  useEffect(() => {
+    if (!showFavHint) return;
+    const t = setTimeout(() => setShowFavHint(false), 2500);
+    return () => clearTimeout(t);
+  }, [showFavHint]);
+
   const [splitOptions, setSplitOptions] = useState<Record<string, unknown>>({ mode: "range" });
   const splitSetRangesRef = useRef<((ranges: { from: number; to: number }[]) => void) | null>(null);
   const splitSetExtractPagesRef = useRef<((pages: number[]) => void) | null>(null);
@@ -230,6 +250,7 @@ export function ToolPageClient({
   };
 
   return (
+    <>
     <ToolPageLayout
       title={title}
       description={description}
@@ -237,19 +258,40 @@ export function ToolPageClient({
       backLabel={labels.backToAll}
       size={isSplit && stage !== "idle" ? "xl" : "lg"}
       action={fav !== null ? (
-        <button
-          type="button"
-          onClick={() => { toggleFavorite(slug); setFav(!fav); }}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-background-muted transition-colors cursor-pointer"
-          aria-label="Toggle favorite"
-        >
-          <Star
-            className={cn(
-              "h-4 w-4 transition-colors",
-              fav ? "fill-amber-400 text-amber-400" : "text-foreground-subtle hover:text-amber-400",
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => {
+              const added = toggleFavorite(slug);
+              setFav(added);
+              const msg = added ? labels.favoriteAdded : labels.favoriteRemoved;
+              if (msg) setFavToast(msg);
+            }}
+            onMouseEnter={handleFavHintEnter}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-background-muted transition-colors cursor-pointer"
+            aria-label="Toggle favorite"
+          >
+            <Star
+              className={cn(
+                "h-4 w-4 transition-colors",
+                fav ? "fill-amber-400 text-amber-400" : "text-foreground-subtle hover:text-amber-400",
+              )}
+            />
+          </button>
+          <AnimatePresence>
+            {showFavHint && labels.favHint && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-full mt-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+              >
+                {labels.favHint}
+              </motion.div>
             )}
-          />
-        </button>
+          </AnimatePresence>
+        </div>
       ) : undefined}
     >
       <AnimatePresence mode="wait">
@@ -506,7 +548,7 @@ export function ToolPageClient({
                   )}
                 >
                   <span className="flex items-center justify-center gap-2">
-                    {title} {labels.process}
+                    {title}
                     <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </span>
                 </button>
@@ -567,5 +609,25 @@ export function ToolPageClient({
         />
       )}
     </ToolPageLayout>
+
+      {/* Favorite toast */}
+      <AnimatePresence>
+        {favToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            onAnimationComplete={() => {
+              setTimeout(() => setFavToast(null), 2000);
+            }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background shadow-lg"
+          >
+            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+            {favToast}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
