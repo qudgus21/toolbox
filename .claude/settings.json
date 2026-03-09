@@ -9,7 +9,8 @@
       "Read(//Applications/hbh/dev/tools/**)",
       "Bash(for f in *.ts)",
       "Bash(do tail -4 \"$f\")",
-      "Bash(tr '\\\\n' '|')"
+      "Bash(tr '\\\\n' '|')",
+      "Bash(node -e \":*)"
     ]
   }
 }
