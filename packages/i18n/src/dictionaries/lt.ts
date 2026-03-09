@@ -15,6 +15,8 @@ const lt: Dictionary = {
     noResults: "Įrankių nerasta.",
     recentTools: "Paskutiniai",
     favorites: "Mėgstami",
+    favDragHint: "Vilkite norėdami pertvarkyti",
+    favHint: "Pridėti prie mėgstamų",
   },
   trust: {
     encryption: "Saugus šifravimas",

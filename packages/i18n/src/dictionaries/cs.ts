@@ -15,6 +15,8 @@ const cs: Dictionary = {
     noResults: "Žádné nástroje nebyly nalezeny.",
     recentTools: "Poslední",
     favorites: "Oblíbené",
+    favDragHint: "Přetažením změníte pořadí",
+    favHint: "Přidat do oblíbených",
   },
   trust: {
     encryption: "Bezpečné šifrování",

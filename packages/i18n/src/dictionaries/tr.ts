@@ -15,6 +15,8 @@ const tr: Dictionary = {
     noResults: "Araç bulunamadı.",
     recentTools: "Son kullanılan",
     favorites: "Favoriler",
+    favDragHint: "Sıralamak için sürükleyin",
+    favHint: "Favorilere ekle",
   },
   trust: {
     encryption: "Güvenli Şifreleme",

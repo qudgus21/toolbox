@@ -15,6 +15,8 @@ const bs: Dictionary = {
     noResults: "Alati nisu pronađeni.",
     recentTools: "Nedavno",
     favorites: "Omiljeni",
+    favDragHint: "Prevucite za promjenu redoslijeda",
+    favHint: "Dodaj u omiljene",
   },
   trust: {
     encryption: "Sigurna enkripcija",

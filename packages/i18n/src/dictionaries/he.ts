@@ -15,6 +15,8 @@ const he: Dictionary = {
     noResults: "לא נמצאו כלים.",
     recentTools: "אחרונים",
     favorites: "מועדפים",
+    favDragHint: "גרור לשינוי סדר",
+    favHint: "הוסף למועדפים",
   },
   trust: {
     encryption: "הצפנה מאובטחת",

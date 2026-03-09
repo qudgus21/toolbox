@@ -68,16 +68,21 @@ function FavToast({ message, onDone }: { message: string; onDone: () => void }) 
   );
 }
 
+const FAV_DRAG_HINT_KEY = "fav-drag-hint-seen";
+const FAV_HINT_KEY = "fav-hint-seen";
+
 function SortableFavCard({
   slug,
   children,
   disableTransition,
   didDragRef,
+  hintText,
 }: {
   slug: string;
   children: React.ReactNode;
   disableTransition: boolean;
   didDragRef: React.RefObject<boolean>;
+  hintText: string;
 }) {
   const {
     attributes,
@@ -86,6 +91,21 @@ function SortableFavCard({
     transform,
     isDragging,
   } = useSortable({ id: slug });
+
+  const [showHint, setShowHint] = useState(false);
+
+  const handleMouseEnter = useCallback(() => {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(FAV_DRAG_HINT_KEY)) return;
+    setShowHint(true);
+    localStorage.setItem(FAV_DRAG_HINT_KEY, "1");
+  }, []);
+
+  useEffect(() => {
+    if (!showHint) return;
+    const t = setTimeout(() => setShowHint(false), 2500);
+    return () => clearTimeout(t);
+  }, [showHint]);
 
   const style: React.CSSProperties = {
     transform: CSS.Transform.toString(transform),
@@ -102,6 +122,7 @@ function SortableFavCard({
       style={style}
       {...attributes}
       {...listeners}
+      onMouseEnter={handleMouseEnter}
       onClickCapture={(e) => {
         if (didDragRef.current) {
           e.preventDefault();
@@ -113,6 +134,19 @@ function SortableFavCard({
         isDragging && "scale-105 opacity-80",
       )}
     >
+      <AnimatePresence>
+        {showHint && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+          >
+            {hintText}
+          </motion.div>
+        )}
+      </AnimatePresence>
       {children}
     </div>
   );
@@ -125,12 +159,26 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const [favSlugs, setFavSlugs] = useState<string[] | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [disableFavTransition, setDisableFavTransition] = useState(false);
+  const [favHintSlug, setFavHintSlug] = useState<string | null>(null);
   const didDragRef = useRef(false);
   const isInitialMount = useRef(true);
 
   useEffect(() => {
     isInitialMount.current = false;
   }, []);
+
+  const handleFavHintEnter = useCallback((slug: string) => {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(FAV_HINT_KEY)) return;
+    setFavHintSlug(slug);
+    localStorage.setItem(FAV_HINT_KEY, "1");
+  }, []);
+
+  useEffect(() => {
+    if (!favHintSlug) return;
+    const t = setTimeout(() => setFavHintSlug(null), 2500);
+    return () => clearTimeout(t);
+  }, [favHintSlug]);
 
   const refreshFavs = useCallback(() => {
     setFavSlugs(getFavorites());
@@ -229,7 +277,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     return () => { cleanup1?.(); cleanup2?.(); };
   }, [equalizeCards, filteredTools, favSlugs]);
 
-  const renderToolCard = (tool: typeof tools[number]) => {
+  const renderToolCard = (tool: typeof tools[number], ctx: "grid" | "fav" = "grid") => {
     const toolDict = dict.tools[tool.slug];
     const isFav = favSlugs?.includes(tool.slug) ?? false;
     return viewMode === "grid" ? (
@@ -246,6 +294,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         <button
           type="button"
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}
+          onMouseEnter={ctx === "grid" ? () => handleFavHintEnter(tool.slug) : undefined}
           className={cn(
             "absolute top-2 right-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all duration-150 cursor-pointer",
             isFav
@@ -262,6 +311,19 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
                 : "text-foreground-muted hover:text-amber-400",
             )}
           />
+          <AnimatePresence>
+            {ctx === "grid" && favHintSlug === tool.slug && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+              >
+                {dict.home.favHint}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
       </div>
     ) : (
@@ -279,6 +341,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         <button
           type="button"
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}
+          onMouseEnter={ctx === "grid" ? () => handleFavHintEnter(tool.slug) : undefined}
           className={cn(
             "absolute top-1/2 -translate-y-1/2 right-3 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all duration-150 cursor-pointer",
             isFav
@@ -295,6 +358,19 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
                 : "text-foreground-muted hover:text-amber-400",
             )}
           />
+          <AnimatePresence>
+            {ctx === "grid" && favHintSlug === tool.slug && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+              >
+                {dict.home.favHint}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </button>
       </div>
     );
@@ -409,8 +485,8 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
                   }
                 >
                   {favTools.map((tool) => (
-                    <SortableFavCard key={`fav-${tool.slug}`} slug={tool.slug} disableTransition={disableFavTransition} didDragRef={didDragRef}>
-                      {renderToolCard(tool)}
+                    <SortableFavCard key={`fav-${tool.slug}`} slug={tool.slug} disableTransition={disableFavTransition} didDragRef={didDragRef} hintText={dict.home.favDragHint}>
+                      {renderToolCard(tool, "fav")}
                     </SortableFavCard>
                   ))}
                 </div>

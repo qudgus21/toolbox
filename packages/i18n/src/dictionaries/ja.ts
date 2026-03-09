@@ -15,6 +15,8 @@ const ja: Dictionary = {
     noResults: "ツールが見つかりませんでした。",
     recentTools: "最近の使用",
     favorites: "お気に入り",
+    favDragHint: "ドラッグして並べ替え",
+    favHint: "お気に入りに追加",
   },
   trust: {
     encryption: "安全な暗号化",

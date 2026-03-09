@@ -15,6 +15,8 @@ const fr: Dictionary = {
     noResults: "Aucun outil trouvé.",
     recentTools: "Récents",
     favorites: "Favoris",
+    favDragHint: "Glissez pour réorganiser",
+    favHint: "Ajouter aux favoris",
   },
   trust: {
     encryption: "Chiffrement sécurisé",

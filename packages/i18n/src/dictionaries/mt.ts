@@ -15,6 +15,8 @@ const mt: Dictionary = {
     noResults: "L-ebda għodda ma nstabet.",
     recentTools: "Riċenti",
     favorites: "Favoriti",
+    favDragHint: "Iġbed biex tibdel l-ordni",
+    favHint: "Żid mal-favoriti",
   },
   trust: {
     encryption: "Kriptaġġ sigur",

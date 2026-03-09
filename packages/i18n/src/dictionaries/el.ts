@@ -15,6 +15,8 @@ const el: Dictionary = {
     noResults: "Δεν βρέθηκαν εργαλεία.",
     recentTools: "Πρόσφατα",
     favorites: "Αγαπημένα",
+    favDragHint: "Σύρετε για αναδιάταξη",
+    favHint: "Προσθήκη στα αγαπημένα",
   },
   trust: {
     encryption: "Ασφαλής Κρυπτογράφηση",

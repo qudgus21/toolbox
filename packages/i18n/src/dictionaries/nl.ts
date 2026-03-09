@@ -15,6 +15,8 @@ const nl: Dictionary = {
     noResults: "Geen tools gevonden.",
     recentTools: "Recent",
     favorites: "Favorieten",
+    favDragHint: "Sleep om te herordenen",
+    favHint: "Toevoegen aan favorieten",
   },
   trust: {
     encryption: "Veilige versleuteling",

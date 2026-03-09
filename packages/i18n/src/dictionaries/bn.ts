@@ -15,6 +15,8 @@ const bn: Dictionary = {
     noResults: "কোনো টুল পাওয়া যায়নি।",
     recentTools: "সাম্প্রতিক",
     favorites: "পছন্দসই",
+    favDragHint: "সাজাতে টেনে আনুন",
+    favHint: "পছন্দে যোগ করুন",
   },
   trust: {
     encryption: "নিরাপদ এনক্রিপশন",

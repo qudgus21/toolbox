@@ -15,6 +15,8 @@ const fi: Dictionary = {
     noResults: "Työkaluja ei löytynyt.",
     recentTools: "Viimeisimmät",
     favorites: "Suosikit",
+    favDragHint: "Järjestä vetämällä",
+    favHint: "Lisää suosikkeihin",
   },
   trust: {
     encryption: "Turvallinen salaus",

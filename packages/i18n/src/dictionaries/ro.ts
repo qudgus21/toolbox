@@ -15,6 +15,8 @@ const ro: Dictionary = {
     noResults: "Niciun instrument găsit.",
     recentTools: "Recente",
     favorites: "Favorite",
+    favDragHint: "Trageți pentru a reordona",
+    favHint: "Adaugă la favorite",
   },
   trust: {
     encryption: "Criptare securizată",

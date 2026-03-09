@@ -15,6 +15,8 @@ const pa: Dictionary = {
     noResults: "ਕੋਈ ਔਜ਼ਾਰ ਨਹੀਂ ਮਿਲੇ।",
     recentTools: "ਤਾਜ਼ਾ",
     favorites: "ਮਨਪਸੰਦ",
+    favDragHint: "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਘਸੀਟੋ",
+    favHint: "ਮਨਪਸੰਦ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ",
   },
   trust: {
     encryption: "ਸੁਰੱਖਿਅਤ ਐਨਕ੍ਰਿਪਸ਼ਨ",

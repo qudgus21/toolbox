@@ -15,6 +15,8 @@ const zh: Dictionary = {
     noResults: "未找到相关工具。",
     recentTools: "最近使用",
     favorites: "收藏夹",
+    favDragHint: "拖动排序",
+    favHint: "添加到收藏",
   },
   trust: {
     encryption: "安全加密",

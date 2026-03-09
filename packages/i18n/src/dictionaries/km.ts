@@ -13,6 +13,8 @@ const km: Dictionary = {
     categorySecurity: "សុវត្ថិភាព",
     searchPlaceholder: "ស្វែងរកឧបករណ៍...",
     noResults: "រកមិនឃើញឧបករណ៍ទេ។",
+    favDragHint: "អូសដើម្បីរៀបចំ",
+    favHint: "បន្ថែមទៅចំណូលចិត្ត",
   },
   trust: {
     encryption: "ការអ៊ិនគ្រីបសុវត្ថិភាព",

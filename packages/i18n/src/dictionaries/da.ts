@@ -15,6 +15,8 @@ const da: Dictionary = {
     noResults: "Ingen værktøjer fundet.",
     recentTools: "Seneste",
     favorites: "Favoritter",
+    favDragHint: "Træk for at ændre rækkefølge",
+    favHint: "Tilføj til favoritter",
   },
   trust: {
     encryption: "Sikker kryptering",

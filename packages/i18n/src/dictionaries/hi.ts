@@ -15,6 +15,8 @@ const hi: Dictionary = {
     noResults: "कोई उपकरण नहीं मिला।",
     recentTools: "हाल के",
     favorites: "पसंदीदा",
+    favDragHint: "क्रम बदलने के लिए खींचें",
+    favHint: "पसंदीदा में जोड़ें",
   },
   trust: {
     encryption: "सुरक्षित एन्क्रिप्शन",

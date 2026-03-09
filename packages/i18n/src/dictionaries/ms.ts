@@ -13,6 +13,8 @@ const ms: Dictionary = {
     categorySecurity: "Keselamatan",
     searchPlaceholder: "Cari alat...",
     noResults: "Tiada alat ditemui.",
+    favDragHint: "Seret untuk susun semula",
+    favHint: "Tambah ke kegemaran",
   },
   trust: {
     encryption: "Penyulitan Selamat",

@@ -15,6 +15,8 @@ const sv: Dictionary = {
     noResults: "Inga verktyg hittades.",
     recentTools: "Senaste",
     favorites: "Favoriter",
+    favDragHint: "Dra för att ändra ordning",
+    favHint: "Lägg till i favoriter",
   },
   trust: {
     encryption: "Säker kryptering",

@@ -27,6 +27,8 @@ export interface Dictionary {
     noResults: string;
     recentTools: string;
     favorites: string;
+    favDragHint: string;
+    favHint: string;
   };
   trust: {
     encryption: string;

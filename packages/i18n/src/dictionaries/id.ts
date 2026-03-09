@@ -15,6 +15,8 @@ const id: Dictionary = {
     noResults: "Tidak ada alat yang ditemukan.",
     recentTools: "Terbaru",
     favorites: "Favorit",
+    favDragHint: "Seret untuk mengurutkan",
+    favHint: "Tambah ke favorit",
   },
   trust: {
     encryption: "Enkripsi Aman",

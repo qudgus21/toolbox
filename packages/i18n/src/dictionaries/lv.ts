@@ -15,6 +15,8 @@ const lv: Dictionary = {
     noResults: "Rīki nav atrasti.",
     recentTools: "Nesen izmantotie",
     favorites: "Izlase",
+    favDragHint: "Velciet, lai pārkārtotu",
+    favHint: "Pievienot izlasei",
   },
   trust: {
     encryption: "Droša šifrēšana",

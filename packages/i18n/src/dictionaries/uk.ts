@@ -15,6 +15,8 @@ const uk: Dictionary = {
     noResults: "Інструменти не знайдено.",
     recentTools: "Нещодавні",
     favorites: "Обране",
+    favDragHint: "Перетягніть для сортування",
+    favHint: "Додати до обраного",
   },
   trust: {
     encryption: "Надійне Шифрування",

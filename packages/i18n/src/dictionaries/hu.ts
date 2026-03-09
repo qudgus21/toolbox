@@ -15,6 +15,8 @@ const hu: Dictionary = {
     noResults: "Nem található eszköz.",
     recentTools: "Legutóbbi",
     favorites: "Kedvencek",
+    favDragHint: "Húzd az átrendezéshez",
+    favHint: "Hozzáadás a kedvencekhez",
   },
   trust: {
     encryption: "Biztonságos titkosítás",

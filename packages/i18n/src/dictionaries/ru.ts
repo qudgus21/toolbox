@@ -15,6 +15,8 @@ const ru: Dictionary = {
     noResults: "\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u044b.",
     recentTools: "Недавние",
     favorites: "Избранное",
+    favDragHint: "Перетащите для сортировки",
+    favHint: "Добавить в избранное",
   },
   trust: {
     encryption: "\u041d\u0430\u0434\u0451\u0436\u043d\u043e\u0435 \u0448\u0438\u0444\u0440\u043e\u0432\u0430\u043d\u0438\u0435",

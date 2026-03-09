@@ -15,6 +15,8 @@ const mr: Dictionary = {
     noResults: "कोणतीही साधने सापडली नाहीत.",
     recentTools: "अलीकडील",
     favorites: "आवडते",
+    favDragHint: "क्रम बदलण्यासाठी ड्रॅग करा",
+    favHint: "आवडींमध्ये जोडा",
   },
   trust: {
     encryption: "सुरक्षित एन्क्रिप्शन",

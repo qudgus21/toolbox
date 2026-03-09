@@ -15,6 +15,8 @@ const vi: Dictionary = {
     noResults: "Không tìm thấy công cụ nào.",
     recentTools: "Gần đây",
     favorites: "Yêu thích",
+    favDragHint: "Kéo để sắp xếp lại",
+    favHint: "Thêm vào yêu thích",
   },
   trust: {
     encryption: "Mã hóa an toàn",

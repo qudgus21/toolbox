@@ -15,6 +15,8 @@ const bg: Dictionary = {
     noResults: "Не са намерени инструменти.",
     recentTools: "Скорошни",
     favorites: "Любими",
+    favDragHint: "Плъзнете за пренареждане",
+    favHint: "Добави в любими",
   },
   trust: {
     encryption: "Сигурно Криптиране",

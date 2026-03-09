@@ -15,6 +15,8 @@ const ga: Dictionary = {
     noResults: "Níor aimsíodh uirlisí ar bith.",
     recentTools: "Le déanaí",
     favorites: "Ceanáin",
+    favDragHint: "Tarraing chun athordú",
+    favHint: "Cuir le ceanáin",
   },
   trust: {
     encryption: "Criptiú slán",

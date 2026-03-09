@@ -15,6 +15,8 @@ const ar: Dictionary = {
     noResults: "لم يتم العثور على أدوات.",
     recentTools: "الأخيرة",
     favorites: "المفضلة",
+    favDragHint: "اسحب لإعادة الترتيب",
+    favHint: "أضف إلى المفضلة",
   },
   trust: {
     encryption: "تشفير آمن",

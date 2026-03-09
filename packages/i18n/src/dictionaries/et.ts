@@ -15,6 +15,8 @@ const et: Dictionary = {
     noResults: "Tööriistu ei leitud.",
     recentTools: "Hiljutised",
     favorites: "Lemmikud",
+    favDragHint: "Lohistage ümberjärjestamiseks",
+    favHint: "Lisa lemmikutesse",
   },
   trust: {
     encryption: "Turvaline krüpteerimine",

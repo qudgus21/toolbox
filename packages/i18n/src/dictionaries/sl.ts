@@ -15,6 +15,8 @@ const sl: Dictionary = {
     noResults: "Nobeno orodje ni bilo najdeno.",
     recentTools: "Nedavno",
     favorites: "Priljubljeni",
+    favDragHint: "Povlecite za prerazporeditev",
+    favHint: "Dodaj med priljubljene",
   },
   trust: {
     encryption: "Varno šifriranje",

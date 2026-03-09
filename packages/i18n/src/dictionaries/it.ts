@@ -15,6 +15,8 @@ const it: Dictionary = {
     noResults: "Nessuno strumento trovato.",
     recentTools: "Recenti",
     favorites: "Preferiti",
+    favDragHint: "Trascina per riordinare",
+    favHint: "Aggiungi ai preferiti",
   },
   trust: {
     encryption: "Crittografia Sicura",

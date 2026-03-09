@@ -15,6 +15,8 @@ const ko: Dictionary = {
     noResults: "검색 결과가 없습니다.",
     recentTools: "최근 사용",
     favorites: "즐겨찾기",
+    favDragHint: "드래그하여 순서 변경",
+    favHint: "즐겨찾기에 추가",
   },
   trust: {
     encryption: "보안 암호화",

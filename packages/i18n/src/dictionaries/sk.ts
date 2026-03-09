@@ -15,6 +15,8 @@ const sk: Dictionary = {
     noResults: "Žiadne nástroje sa nenašli.",
     recentTools: "Posledné",
     favorites: "Obľúbené",
+    favDragHint: "Potiahnutím zmeníte poradie",
+    favHint: "Pridať medzi obľúbené",
   },
   trust: {
     encryption: "Bezpečné šifrovanie",

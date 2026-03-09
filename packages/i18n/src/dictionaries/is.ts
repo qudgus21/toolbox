@@ -15,6 +15,8 @@ const is: Dictionary = {
     noResults: "Engin verkfæri fundust.",
     recentTools: "Nýlegt",
     favorites: "Eftirlæti",
+    favDragHint: "Dragðu til að endurraða",
+    favHint: "Bæta við eftirlæti",
   },
   trust: {
     encryption: "Örugg dulkóðun",

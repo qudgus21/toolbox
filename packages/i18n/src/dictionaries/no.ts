@@ -15,6 +15,8 @@ const no: Dictionary = {
     noResults: "Ingen verktøy funnet.",
     recentTools: "Nylige",
     favorites: "Favoritter",
+    favDragHint: "Dra for å endre rekkefølge",
+    favHint: "Legg til i favoritter",
   },
   trust: {
     encryption: "Sikker kryptering",

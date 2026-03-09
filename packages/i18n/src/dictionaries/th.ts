@@ -15,6 +15,8 @@ const th: Dictionary = {
     noResults: "ไม่พบเครื่องมือ",
     recentTools: "ล่าสุด",
     favorites: "รายการโปรด",
+    favDragHint: "ลากเพื่อจัดเรียง",
+    favHint: "เพิ่มในรายการโปรด",
   },
   trust: {
     encryption: "การเข้ารหัสที่ปลอดภัย",

@@ -15,6 +15,8 @@ const te: Dictionary = {
     noResults: "సాధనాలు కనుగొనబడలేదు.",
     recentTools: "ఇటీవల",
     favorites: "ఇష్టమైనవి",
+    favDragHint: "క్రమం మార్చడానికి లాగండి",
+    favHint: "ఇష్టమైనవాటికి జోడించు",
   },
   trust: {
     encryption: "సురక్షిత ఎన్‌క్రిప్షన్",
