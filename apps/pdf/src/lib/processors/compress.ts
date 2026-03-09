@@ -292,7 +292,7 @@ async function recompressFlatImage(
 
     // 3. RGBA 변환 → ImageData → ImageBitmap
     const rgba = toRGBA(pixels, w, h, components);
-    const imageData = new ImageData(rgba, w, h);
+    const imageData = new ImageData(new Uint8ClampedArray(rgba.buffer as ArrayBuffer), w, h);
     const bitmap = await createImageBitmap(imageData);
 
     // 4. 스케일 조정
@@ -408,7 +408,7 @@ async function recompressFlatImageWithSmask(
       h,
       components,
     );
-    const imageData = new ImageData(rgba, w, h);
+    const imageData = new ImageData(new Uint8ClampedArray(rgba.buffer as ArrayBuffer), w, h);
     const bitmap = await createImageBitmap(imageData);
 
     let outW = w;

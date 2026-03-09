@@ -89,6 +89,8 @@ export default async function ToolPage({
         labels={{ ...dict.common, favHint: dict.home.favHint }}
         splitLabels={slug === "split" ? dict.splitTool : undefined}
         compressLabels={slug === "compress" ? dict.compressTool : undefined}
+        deletePagesLabels={slug === "delete-pages" ? dict.deletePagesTool : undefined}
+        extractPagesLabels={slug === "extract-pages" ? dict.extractPagesTool : undefined}
       />
     </>
   );

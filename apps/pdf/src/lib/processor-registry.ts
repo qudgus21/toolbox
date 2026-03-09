@@ -6,8 +6,11 @@ const registry = new Map<string, () => Promise<{ default: ProcessorFn }>>();
 // 새 도구를 추가할 때 여기에 한 줄씩 추가
 registry.set("merge", () => import("./processors/merge"));
 registry.set("split", () => import("./processors/split"));
-registry.set("compress", () => import("./processors/compress"));
-registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));
+registry.set("delete-pages", () => import("./processors/delete-pages"));
+registry.set("extract-pages", () => import("./processors/extract-pages"));
+// compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
+// registry.set("compress", () => import("./processors/compress"));
+// registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));
 // registry.set("rotate", () => import("./processors/rotate"));
 // ... 도구 추가 시 여기에 등록
 

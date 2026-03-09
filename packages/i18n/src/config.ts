@@ -92,6 +92,7 @@ export interface Dictionary {
     dragToReorder: string;
     favoriteAdded: string;
     favoriteRemoved: string;
+    comingSoon: string;
   };
   metadata: {
     siteTitle: string;
@@ -144,5 +145,40 @@ export interface Dictionary {
     modeRasterize: string;
     modeRasterizeDesc: string;
     rasterizeWarning: string;
+  };
+  deletePagesTool: {
+    dropFile: string;
+    changeFile: string;
+    pagesToDelete: string;
+    pagesPlaceholder: string;
+    selectAll: string;
+    deselectAll: string;
+    selectOdd: string;
+    selectEven: string;
+    willBeDeleted: string;
+    willRemain: string;
+    pages: string;
+    noPageSelected: string;
+    cannotDeleteAll: string;
+  };
+  extractPagesTool: {
+    dropFile: string;
+    changeFile: string;
+    pagesToExtract: string;
+    pagesPlaceholder: string;
+    selectAll: string;
+    deselectAll: string;
+    selectOdd: string;
+    selectEven: string;
+    willBeExtracted: string;
+    willRemain: string;
+    pages: string;
+    noPageSelected: string;
+    cannotExtractAll: string;
+    pageOf: string;
+    addPage: string;
+    removePage: string;
+    selectedPages: string;
+    dragToReorder: string;
   };
 }

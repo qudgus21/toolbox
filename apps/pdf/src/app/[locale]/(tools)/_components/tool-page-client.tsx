@@ -28,6 +28,10 @@ import { PageSelectorModal } from "./page-selector-modal";
 import { SplitOptions } from "./split-options";
 import { SplitPagePreview } from "./split-page-preview";
 import { CompressOptions } from "./compress-options";
+import { DeletePagesPreview } from "./delete-pages-preview";
+import { DeletePagesOptions } from "./delete-pages-options";
+import { ExtractPagesPreview } from "./extract-pages-preview";
+import { ExtractPagesOptions } from "./extract-pages-options";
 
 import { fileId } from "./file-list";
 import type { ReactNode } from "react";
@@ -101,6 +105,43 @@ interface CompressLabels {
   rasterizeWarning: string;
 }
 
+interface DeletePagesLabels {
+  dropFile: string;
+  changeFile: string;
+  pagesToDelete: string;
+  pagesPlaceholder: string;
+  selectAll: string;
+  deselectAll: string;
+  selectOdd: string;
+  selectEven: string;
+  willBeDeleted: string;
+  willRemain: string;
+  pages: string;
+  noPageSelected: string;
+  cannotDeleteAll: string;
+}
+
+interface ExtractPagesLabels {
+  dropFile: string;
+  changeFile: string;
+  pagesToExtract: string;
+  pagesPlaceholder: string;
+  selectAll: string;
+  deselectAll: string;
+  selectOdd: string;
+  selectEven: string;
+  willBeExtracted: string;
+  willRemain: string;
+  pages: string;
+  noPageSelected: string;
+  cannotExtractAll: string;
+  pageOf: string;
+  addPage: string;
+  removePage: string;
+  selectedPages: string;
+  dragToReorder: string;
+}
+
 interface ToolPageClientProps {
   slug: string;
   locale: string;
@@ -111,6 +152,8 @@ interface ToolPageClientProps {
   labels: CommonLabels;
   splitLabels?: SplitLabels;
   compressLabels?: CompressLabels;
+  deletePagesLabels?: DeletePagesLabels;
+  extractPagesLabels?: ExtractPagesLabels;
   children?: ReactNode;
 }
 
@@ -147,6 +190,8 @@ export function ToolPageClient({
   labels,
   splitLabels,
   compressLabels,
+  deletePagesLabels,
+  extractPagesLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -193,10 +238,17 @@ export function ToolPageClient({
   const splitSetExtractPagesRef = useRef<((pages: number[]) => void) | null>(null);
   const splitValidateRef = useRef<(() => boolean) | null>(null);
   const [compressOptions, setCompressOptions] = useState<Record<string, unknown>>({ compressionLevel: "recommended" });
+  const [deletedPages, setDeletedPages] = useState<Set<number>>(new Set());
+  const [deletePageOrder, setDeletePageOrder] = useState<number[]>([]);
+  const [extractedPages, setExtractedPages] = useState<Set<number>>(new Set());
+  const [extractPageOrder, setExtractPageOrder] = useState<number[]>([]);
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
   const isCompress = slug === "compress";
+  const isDeletePages = slug === "delete-pages";
+  const isExtractPages = slug === "extract-pages";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages;
 
   useEffect(() => {
     setFav(isFavorite(slug));
@@ -218,13 +270,16 @@ export function ToolPageClient({
     const input = document.createElement("input");
     input.type = "file";
     input.accept = acceptedTypes;
-    input.multiple = !isSplit;
+    input.multiple = !isSingleFileMode;
     input.onchange = (e) => {
       const target = e.target as HTMLInputElement;
       if (target.files) {
-        if (isSplit) {
-          // Single file mode: replace
+        if (isSingleFileMode) {
           reset();
+          setDeletedPages(new Set());
+          setDeletePageOrder([]);
+          setExtractedPages(new Set());
+          setExtractPageOrder([]);
           setTimeout(() => addFiles(Array.from(target.files!)), 0);
         } else {
           addFiles(Array.from(target.files));
@@ -234,7 +289,7 @@ export function ToolPageClient({
     input.click();
   };
 
-  const handleSplitFileChange = () => {
+  const handleSingleFileChange = () => {
     const input = document.createElement("input");
     input.type = "file";
     input.accept = acceptedTypes;
@@ -243,11 +298,37 @@ export function ToolPageClient({
       const target = e.target as HTMLInputElement;
       if (target.files?.length) {
         reset();
-        setTimeout(() => addFiles([target.files![0]], ), 0);
+        if (isDeletePages) { setDeletedPages(new Set()); setDeletePageOrder([]); }
+        if (isExtractPages) { setExtractedPages(new Set()); setExtractPageOrder([]); }
+        setTimeout(() => addFiles([target.files![0]]), 0);
       }
     };
     input.click();
   };
+
+  const handleToggleDeletePage = useCallback((pageNum: number) => {
+    setDeletedPages((prev) => {
+      const next = new Set(prev);
+      if (next.has(pageNum)) {
+        next.delete(pageNum);
+      } else {
+        next.add(pageNum);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleToggleExtractPage = useCallback((pageNum: number) => {
+    setExtractedPages((prev) => {
+      const next = new Set(prev);
+      if (next.has(pageNum)) {
+        next.delete(pageNum);
+      } else {
+        next.add(pageNum);
+      }
+      return next;
+    });
+  }, []);
 
   return (
     <>
@@ -256,7 +337,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={isSplit && stage !== "idle" ? "xl" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages) && stage !== "idle" ? "xl" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -305,8 +386,8 @@ export function ToolPageClient({
             )}
             <FileUploadZone
               accept={acceptedTypes}
-              onFiles={(f) => isSplit ? addFiles([f[0]]) : addFiles(f)}
-              title={isSplit && splitLabels ? splitLabels.dropFile : labels.dropFiles}
+              onFiles={(f) => isSingleFileMode ? addFiles([f[0]]) : addFiles(f)}
+              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : labels.dropFiles}
               description={`${labels.acceptedFormats}: ${acceptedTypes}`}
             />
             {labels.privacyBadge && (
@@ -352,7 +433,7 @@ export function ToolPageClient({
                   </div>
                   <button
                     type="button"
-                    onClick={handleSplitFileChange}
+                    onClick={handleSingleFileChange}
                     className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-accent hover:text-accent transition-colors cursor-pointer"
                   >
                     {splitLabels.changeFile}
@@ -386,6 +467,126 @@ export function ToolPageClient({
                         onRegisterSetRanges={(setter) => { splitSetRangesRef.current = setter; }}
                         onRegisterSetExtractPages={(setter) => { splitSetExtractPagesRef.current = setter; }}
                         onRegisterValidate={(validator) => { splitValidateRef.current = validator; }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : isDeletePages && deletePagesLabels && files.length > 0 ? (
+              /* ─── Delete Pages: single-file mode ─── */
+              <>
+                {/* File info bar */}
+                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-muted">
+                      <svg className="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <path d="M14 2v6h6" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-foreground">
+                        {files[0].name}
+                      </p>
+                      <p className="text-xs text-foreground-muted">
+                        {formatSize(files[0].size)}
+                        {pageCounts[fileId(files[0])] && (
+                          <span> · {pageCounts[fileId(files[0])]}p</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSingleFileChange}
+                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-accent hover:text-accent transition-colors cursor-pointer"
+                  >
+                    {deletePagesLabels.changeFile}
+                  </button>
+                </div>
+
+                {/* Delete pages layout: preview + options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="self-start">
+                      <DeletePagesPreview
+                        file={files[0]}
+                        pageCount={pageCounts[fileId(files[0])]}
+                        deletedPages={deletedPages}
+                        orderedPages={deletePageOrder.length === pageCounts[fileId(files[0])] ? deletePageOrder : Array.from({ length: pageCounts[fileId(files[0])] }, (_, i) => i + 1)}
+                        onTogglePage={handleToggleDeletePage}
+                        onOrderChange={setDeletePageOrder}
+                      />
+                    </div>
+                  )}
+
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="lg:sticky lg:top-4 lg:self-start">
+                      <DeletePagesOptions
+                        pageCount={pageCounts[fileId(files[0])]}
+                        deletedPages={deletedPages}
+                        onDeletedPagesChange={setDeletedPages}
+                        labels={deletePagesLabels}
+                      />
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : isExtractPages && extractPagesLabels && files.length > 0 ? (
+              /* ─── Extract Pages: single-file mode ─── */
+              <>
+                {/* File info bar */}
+                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-muted">
+                      <svg className="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <path d="M14 2v6h6" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-foreground">
+                        {files[0].name}
+                      </p>
+                      <p className="text-xs text-foreground-muted">
+                        {formatSize(files[0].size)}
+                        {pageCounts[fileId(files[0])] && (
+                          <span> · {pageCounts[fileId(files[0])]}p</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSingleFileChange}
+                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-accent hover:text-accent transition-colors cursor-pointer"
+                  >
+                    {extractPagesLabels.changeFile}
+                  </button>
+                </div>
+
+                {/* Extract pages layout: preview + options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="self-start">
+                      <ExtractPagesPreview
+                        file={files[0]}
+                        pageCount={pageCounts[fileId(files[0])]}
+                        selectedPages={extractedPages}
+                        orderedPages={extractPageOrder.length === pageCounts[fileId(files[0])] ? extractPageOrder : Array.from({ length: pageCounts[fileId(files[0])] }, (_, i) => i + 1)}
+                        onTogglePage={handleToggleExtractPage}
+                        onOrderChange={setExtractPageOrder}
+                      />
+                    </div>
+                  )}
+
+                  {pageCounts[fileId(files[0])] && (
+                    <div className="lg:sticky lg:top-4 lg:self-start">
+                      <ExtractPagesOptions
+                        pageCount={pageCounts[fileId(files[0])]}
+                        extractedPages={extractedPages}
+                        onExtractedPagesChange={setExtractedPages}
+                        labels={extractPagesLabels}
                       />
                     </div>
                   )}
@@ -534,11 +735,21 @@ export function ToolPageClient({
                       processFiles(splitOptions);
                     } else if (isCompress) {
                       processFiles(compressOptions);
+                    } else if (isDeletePages) {
+                      processFiles({
+                        pagesToDelete: Array.from(deletedPages),
+                        pageOrder: deletePageOrder.length > 0 ? deletePageOrder : undefined,
+                      });
+                    } else if (isExtractPages) {
+                      processFiles({
+                        pagesToExtract: Array.from(extractedPages),
+                        pageOrder: extractPageOrder.length > 0 ? extractPageOrder : undefined,
+                      });
                     } else {
                       processFiles({ rotations, pageSelections });
                     }
                   }}
-                  disabled={!implemented}
+                  disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0)))}
                   className={cn(
                     "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                     "bg-accent text-accent-foreground shadow-md",
