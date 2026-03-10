@@ -40,6 +40,7 @@ const en: Dictionary = {
     // Convert
     "pdf-to-word": { title: "PDF to Word", description: "Convert PDF documents to editable Word files." },
     "pdf-to-jpg": { title: "PDF to JPG", description: "Convert PDF pages to high-quality JPG images." },
+    "extract-images": { title: "Extract Images", description: "Extract embedded images from PDF in original quality." },
     "pdf-to-excel": { title: "PDF to Excel", description: "Extract tables and data from PDFs into Excel spreadsheets." },
     "pdf-to-ppt": { title: "PDF to PPT", description: "Convert PDF files to editable PowerPoint slides." },
     "pdf-to-png": { title: "PDF to PNG", description: "Convert PDF pages to high-quality PNG images." },
@@ -274,6 +275,26 @@ const en: Dictionary = {
     removePage: "Remove",
     selectedPages: "Selected pages",
     dragToReorder: "Drag to reorder",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Image quality",
+    qualityHigh: "High quality",
+    qualityHighDesc: "Sharp images, larger file size",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanced quality and file size",
+    qualityLow: "Low size",
+    qualityLowDesc: "Smaller file size, lower quality",
+    convertInfo: "Multiple pages will be downloaded as a ZIP file",
+    convertButton: "Convert to JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Select a PDF file",
+    changeFile: "Change file",
+    description: "Automatically finds and extracts images embedded in your PDF",
+    jpegNote: "JPEG images are extracted in original quality",
+    pngNote: "Other images are converted to PNG",
+    minSizeNote: "Images smaller than 50×50px are excluded",
+    noImagesFound: "No extractable images found in this PDF",
   },
 };
 

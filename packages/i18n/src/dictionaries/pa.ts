@@ -40,6 +40,7 @@ const pa: Dictionary = {
     // ਬਦਲੋ
     "pdf-to-word": { title: "PDF ਤੋਂ Word", description: "PDF ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਸੰਪਾਦਨਯੋਗ Word ਫਾਈਲਾਂ ਵਿੱਚ ਬਦਲੋ।" },
     "pdf-to-jpg": { title: "PDF ਤੋਂ JPG", description: "PDF ਪੰਨਿਆਂ ਨੂੰ ਉੱਚ-ਗੁਣਵੱਤਾ JPG ਚਿੱਤਰਾਂ ਵਿੱਚ ਬਦਲੋ।" },
+    "extract-images": { title: "ਚਿੱਤਰ ਕੱਢੋ", description: "PDF ਵਿੱਚ ਸ਼ਾਮਲ ਚਿੱਤਰਾਂ ਨੂੰ ਅਸਲ ਗੁਣਵੱਤਾ ਵਿੱਚ ਕੱਢੋ।" },
     "pdf-to-excel": { title: "PDF ਤੋਂ Excel", description: "PDF ਵਿੱਚੋਂ ਟੇਬਲ ਅਤੇ ਡੇਟਾ Excel ਸਪ੍ਰੈਡਸ਼ੀਟ ਵਿੱਚ ਕੱਢੋ।" },
     "pdf-to-ppt": { title: "PDF ਤੋਂ PPT", description: "PDF ਫਾਈਲਾਂ ਨੂੰ ਸੰਪਾਦਨਯੋਗ PowerPoint ਸਲਾਈਡਾਂ ਵਿੱਚ ਬਦਲੋ।" },
     "pdf-to-png": { title: "PDF ਤੋਂ PNG", description: "PDF ਪੰਨਿਆਂ ਨੂੰ ਉੱਚ-ਗੁਣਵੱਤਾ PNG ਚਿੱਤਰਾਂ ਵਿੱਚ ਬਦਲੋ।" },
@@ -274,6 +275,26 @@ const pa: Dictionary = {
     removePage: "ਹਟਾਓ",
     selectedPages: "ਚੁਣੇ ਹੋਏ ਪੰਨੇ",
     dragToReorder: "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਘਸੀਟੋ",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "ਤਸਵੀਰ ਗੁਣਵੱਤਾ",
+    qualityHigh: "ਉੱਚ ਗੁਣਵੱਤਾ",
+    qualityHighDesc: "ਸਾਫ਼ ਤਸਵੀਰਾਂ, ਵੱਡੀ ਫ਼ਾਈਲ",
+    qualityMedium: "ਆਮ",
+    qualityMediumDesc: "ਗੁਣਵੱਤਾ ਤੇ ਆਕਾਰ ਵਿਚਕਾਰ ਸੰਤੁਲਨ",
+    qualityLow: "ਛੋਟਾ ਆਕਾਰ",
+    qualityLowDesc: "ਛੋਟੀ ਫ਼ਾਈਲ, ਘੱਟ ਗੁਣਵੱਤਾ",
+    convertInfo: "ਕਈ ਪੰਨੇ ZIP ਫ਼ਾਈਲ ਵਜੋਂ ਡਾਊਨਲੋਡ ਹੋਣਗੇ",
+    convertButton: "JPG ਵਿੱਚ ਬਦਲੋ",
+  },
+  extractImagesTool: {
+    dropFile: "PDF ਫ਼ਾਈਲ ਚੁਣੋ",
+    changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
+    description: "PDF ਵਿੱਚ ਮੌਜੂਦ ਚਿੱਤਰਾਂ ਨੂੰ ਆਪਣੇ ਆਪ ਲੱਭ ਕੇ ਕੱਢਦਾ ਹੈ",
+    jpegNote: "JPEG ਚਿੱਤਰ ਅਸਲ ਗੁਣਵੱਤਾ ਵਿੱਚ ਕੱਢੇ ਜਾਂਦੇ ਹਨ",
+    pngNote: "ਹੋਰ ਚਿੱਤਰ PNG ਵਿੱਚ ਬਦਲੇ ਜਾਂਦੇ ਹਨ",
+    minSizeNote: "50×50px ਤੋਂ ਛੋਟੇ ਚਿੱਤਰ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ",
+    noImagesFound: "ਇਸ PDF ਵਿੱਚ ਕੱਢਣ ਯੋਗ ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ ਮਿਲਿਆ",
   },
 };
 

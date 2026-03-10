@@ -40,6 +40,7 @@ const vi: Dictionary = {
     // Chuyển đổi
     "pdf-to-word": { title: "PDF sang Word", description: "Chuyển đổi tài liệu PDF thành tệp Word có thể chỉnh sửa." },
     "pdf-to-jpg": { title: "PDF sang JPG", description: "Chuyển đổi các trang PDF thành hình ảnh JPG chất lượng cao." },
+    "extract-images": { title: "Trích xuất hình ảnh", description: "Trích xuất hình ảnh nhúng trong PDF với chất lượng gốc." },
     "pdf-to-excel": { title: "PDF sang Excel", description: "Trích xuất bảng và dữ liệu từ PDF sang bảng tính Excel." },
     "pdf-to-ppt": { title: "PDF sang PPT", description: "Chuyển đổi tệp PDF thành slide PowerPoint có thể chỉnh sửa." },
     "pdf-to-png": { title: "PDF sang PNG", description: "Chuyển đổi các trang PDF thành hình ảnh PNG chất lượng cao." },
@@ -274,6 +275,26 @@ const vi: Dictionary = {
     removePage: "Xóa",
     selectedPages: "Trang đã chọn",
     dragToReorder: "Kéo để sắp xếp lại",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Chất lượng ảnh",
+    qualityHigh: "Chất lượng cao",
+    qualityHighDesc: "Ảnh sắc nét, dung lượng lớn hơn",
+    qualityMedium: "Tiêu chuẩn",
+    qualityMediumDesc: "Cân bằng giữa chất lượng và dung lượng",
+    qualityLow: "Dung lượng nhỏ",
+    qualityLowDesc: "File nhỏ hơn, chất lượng thấp hơn",
+    convertInfo: "Nhiều trang sẽ được tải xuống dưới dạng file ZIP",
+    convertButton: "Chuyển sang JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Chọn tệp PDF",
+    changeFile: "Đổi tệp",
+    description: "Tự động tìm và trích xuất hình ảnh được nhúng trong PDF của bạn",
+    jpegNote: "Hình ảnh JPEG được trích xuất nguyên chất lượng gốc",
+    pngNote: "Các hình ảnh khác được chuyển đổi sang PNG",
+    minSizeNote: "Hình ảnh nhỏ hơn 50×50px sẽ bị bỏ qua",
+    noImagesFound: "Không tìm thấy hình ảnh nào có thể trích xuất trong PDF này",
   },
 };
 

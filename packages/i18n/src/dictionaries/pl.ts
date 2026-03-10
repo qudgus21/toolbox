@@ -40,6 +40,7 @@ const pl: Dictionary = {
     // Konwersja
     "pdf-to-word": { title: "PDF do Word", description: "Konwertuj dokumenty PDF na edytowalne pliki Word." },
     "pdf-to-jpg": { title: "PDF do JPG", description: "Konwertuj strony PDF na wysokiej jakości obrazy JPG." },
+    "extract-images": { title: "Wyodrębnij obrazy", description: "Wyodrębnij osadzone obrazy z PDF w oryginalnej jakości." },
     "pdf-to-excel": { title: "PDF do Excel", description: "Wyodrębnij tabele i dane z PDF do arkuszy Excel." },
     "pdf-to-ppt": { title: "PDF do PPT", description: "Konwertuj pliki PDF na edytowalne slajdy PowerPoint." },
     "pdf-to-png": { title: "PDF do PNG", description: "Konwertuj strony PDF na wysokiej jakości obrazy PNG." },
@@ -274,6 +275,26 @@ const pl: Dictionary = {
     removePage: "Usuń",
     selectedPages: "Wybrane strony",
     dragToReorder: "Przeciągnij, aby zmienić kolejność",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Jakość obrazu",
+    qualityHigh: "Wysoka jakość",
+    qualityHighDesc: "Ostre obrazy, większy plik",
+    qualityMedium: "Standardowa",
+    qualityMediumDesc: "Równowaga jakości i rozmiaru",
+    qualityLow: "Mały rozmiar",
+    qualityLowDesc: "Mniejszy plik, niższa jakość",
+    convertInfo: "Wiele stron zostanie pobranych jako plik ZIP",
+    convertButton: "Konwertuj do JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Wybierz plik PDF",
+    changeFile: "Zmień plik",
+    description: "Automatycznie wyszukuje i wyodrębnia obrazy osadzone w Twoim PDF",
+    jpegNote: "Obrazy JPEG są wyodrębniane w oryginalnej jakości",
+    pngNote: "Pozostałe obrazy konwertowane są do PNG",
+    minSizeNote: "Obrazy mniejsze niż 50×50px są pomijane",
+    noImagesFound: "Nie znaleziono obrazów do wyodrębnienia w tym PDF",
   },
 };
 

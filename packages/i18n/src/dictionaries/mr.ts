@@ -40,6 +40,7 @@ const mr: Dictionary = {
     // रूपांतरित करा
     "pdf-to-word": { title: "PDF ते Word", description: "PDF दस्तऐवज संपादनयोग्य Word फाइल्समध्ये रूपांतरित करा." },
     "pdf-to-jpg": { title: "PDF ते JPG", description: "PDF पृष्ठे उच्च-गुणवत्तेच्या JPG प्रतिमांमध्ये रूपांतरित करा." },
+    "extract-images": { title: "प्रतिमा काढा", description: "PDF मधील अंतर्भूत प्रतिमा मूळ गुणवत्तेत काढा." },
     "pdf-to-excel": { title: "PDF ते Excel", description: "PDF मधून तक्ते आणि डेटा Excel स्प्रेडशीटमध्ये काढा." },
     "pdf-to-ppt": { title: "PDF ते PPT", description: "PDF फाइल्स संपादनयोग्य PowerPoint स्लाइड्समध्ये रूपांतरित करा." },
     "pdf-to-png": { title: "PDF ते PNG", description: "PDF पृष्ठे उच्च-गुणवत्तेच्या PNG प्रतिमांमध्ये रूपांतरित करा." },
@@ -274,6 +275,26 @@ const mr: Dictionary = {
     removePage: "काढा",
     selectedPages: "निवडलेली पाने",
     dragToReorder: "क्रम बदलण्यासाठी ड्रॅग करा",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "प्रतिमा गुणवत्ता",
+    qualityHigh: "उच्च गुणवत्ता",
+    qualityHighDesc: "स्पष्ट प्रतिमा, मोठी फाइल",
+    qualityMedium: "सामान्य",
+    qualityMediumDesc: "गुणवत्ता आणि आकाराचा समतोल",
+    qualityLow: "लहान आकार",
+    qualityLowDesc: "लहान फाइल, कमी गुणवत्ता",
+    convertInfo: "अनेक पाने ZIP फाइल म्हणून डाउनलोड होतील",
+    convertButton: "JPG मध्ये रूपांतर करा",
+  },
+  extractImagesTool: {
+    dropFile: "PDF फाइल निवडा",
+    changeFile: "फाइल बदला",
+    description: "PDF मधील अंतर्भूत प्रतिमा आपोआप शोधून काढतो",
+    jpegNote: "JPEG प्रतिमा मूळ गुणवत्तेत काढल्या जातात",
+    pngNote: "इतर प्रतिमा PNG मध्ये रूपांतरित केल्या जातात",
+    minSizeNote: "50×50px पेक्षा लहान प्रतिमा वगळल्या जातात",
+    noImagesFound: "या PDF मध्ये काढता येण्यासारख्या प्रतिमा सापडल्या नाहीत",
   },
 };
 

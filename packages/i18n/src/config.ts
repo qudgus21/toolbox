@@ -181,4 +181,24 @@ export interface Dictionary {
     selectedPages: string;
     dragToReorder: string;
   };
+  pdfToJpgTool: {
+    qualityLabel: string;
+    qualityHigh: string;
+    qualityHighDesc: string;
+    qualityMedium: string;
+    qualityMediumDesc: string;
+    qualityLow: string;
+    qualityLowDesc: string;
+    convertInfo: string;
+    convertButton: string;
+  };
+  extractImagesTool: {
+    dropFile: string;
+    changeFile: string;
+    description: string;
+    jpegNote: string;
+    pngNote: string;
+    minSizeNote: string;
+    noImagesFound: string;
+  };
 }

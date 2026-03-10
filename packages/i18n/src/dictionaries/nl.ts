@@ -40,6 +40,7 @@ const nl: Dictionary = {
     // Converteren
     "pdf-to-word": { title: "PDF naar Word", description: "Converteer PDF-documenten naar bewerkbare Word-bestanden." },
     "pdf-to-jpg": { title: "PDF naar JPG", description: "Converteer PDF-pagina's naar hoogwaardige JPG-afbeeldingen." },
+    "extract-images": { title: "Afbeeldingen extraheren", description: "Haal ingesloten afbeeldingen uit een PDF in originele kwaliteit." },
     "pdf-to-excel": { title: "PDF naar Excel", description: "Extraheer tabellen en gegevens uit PDF's naar Excel-spreadsheets." },
     "pdf-to-ppt": { title: "PDF naar PPT", description: "Converteer PDF-bestanden naar bewerkbare PowerPoint-dia's." },
     "pdf-to-png": { title: "PDF naar PNG", description: "Converteer PDF-pagina's naar hoogwaardige PNG-afbeeldingen." },
@@ -274,6 +275,26 @@ const nl: Dictionary = {
     removePage: "Verwijderen",
     selectedPages: "Geselecteerde pagina's",
     dragToReorder: "Sleep om te herordenen",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Beeldkwaliteit",
+    qualityHigh: "Hoge kwaliteit",
+    qualityHighDesc: "Scherpe afbeeldingen, groter bestand",
+    qualityMedium: "Standaard",
+    qualityMediumDesc: "Balans tussen kwaliteit en grootte",
+    qualityLow: "Klein bestand",
+    qualityLowDesc: "Kleiner bestand, lagere kwaliteit",
+    convertInfo: "Meerdere pagina's worden als ZIP-bestand gedownload",
+    convertButton: "Converteren naar JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Selecteer een PDF-bestand",
+    changeFile: "Bestand wijzigen",
+    description: "Vindt en extraheert automatisch afbeeldingen uit uw PDF",
+    jpegNote: "JPEG-afbeeldingen worden in originele kwaliteit geëxtraheerd",
+    pngNote: "Overige afbeeldingen worden omgezet naar PNG",
+    minSizeNote: "Afbeeldingen kleiner dan 50×50px worden overgeslagen",
+    noImagesFound: "Geen extraheerbare afbeeldingen gevonden in deze PDF",
   },
 };
 

@@ -40,6 +40,7 @@ const sl: Dictionary = {
     // Pretvori
     "pdf-to-word": { title: "PDF v Word", description: "Pretvorite PDF dokumente v uredljive Word datoteke." },
     "pdf-to-jpg": { title: "PDF v JPG", description: "Pretvorite PDF strani v visokokakovostne JPG slike." },
+    "extract-images": { title: "Izvleči slike", description: "Izvlecite vgrajene slike iz PDF v izvirni kakovosti." },
     "pdf-to-excel": { title: "PDF v Excel", description: "Izvlecite tabele in podatke iz PDF v Excelove preglednice." },
     "pdf-to-ppt": { title: "PDF v PPT", description: "Pretvorite PDF datoteke v uredljive PowerPoint diapozitive." },
     "pdf-to-png": { title: "PDF v PNG", description: "Pretvorite PDF strani v visokokakovostne PNG slike." },
@@ -274,6 +275,26 @@ const sl: Dictionary = {
     removePage: "Odstrani",
     selectedPages: "Izbrane strani",
     dragToReorder: "Povlecite za prerazporeditev",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kakovost slike",
+    qualityHigh: "Visoka kakovost",
+    qualityHighDesc: "Ostre slike, večja datoteka",
+    qualityMedium: "Standardno",
+    qualityMediumDesc: "Ravnotežje med kakovostjo in velikostjo",
+    qualityLow: "Majhna velikost",
+    qualityLowDesc: "Manjša datoteka, nižja kakovost",
+    convertInfo: "Več strani bo prenesenih kot ZIP datoteka",
+    convertButton: "Pretvori v JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Izberite datoteko PDF",
+    changeFile: "Zamenjaj datoteko",
+    description: "Samodejno poišče in izvleče slike, vgrajene v vaš PDF",
+    jpegNote: "Slike JPEG se izvlečejo v izvirni kakovosti",
+    pngNote: "Ostale slike se pretvorijo v PNG",
+    minSizeNote: "Slike, manjše od 50×50px, so izključene",
+    noImagesFound: "V tem PDF-ju ni bilo najdenih slik za izvlečenje",
   },
 };
 

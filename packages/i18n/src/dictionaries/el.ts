@@ -40,6 +40,7 @@ const el: Dictionary = {
     // Μετατροπή
     "pdf-to-word": { title: "PDF σε Word", description: "Μετατρέψτε έγγραφα PDF σε επεξεργάσιμα αρχεία Word." },
     "pdf-to-jpg": { title: "PDF σε JPG", description: "Μετατρέψτε σελίδες PDF σε εικόνες JPG υψηλής ποιότητας." },
+    "extract-images": { title: "Εξαγωγή εικόνων", description: "Εξαγάγετε ενσωματωμένες εικόνες από PDF στην αρχική ποιότητα." },
     "pdf-to-excel": { title: "PDF σε Excel", description: "Εξαγάγετε πίνακες και δεδομένα από PDF σε υπολογιστικά φύλλα Excel." },
     "pdf-to-ppt": { title: "PDF σε PPT", description: "Μετατρέψτε αρχεία PDF σε επεξεργάσιμες διαφάνειες PowerPoint." },
     "pdf-to-png": { title: "PDF σε PNG", description: "Μετατρέψτε σελίδες PDF σε εικόνες PNG υψηλής ποιότητας." },
@@ -274,6 +275,26 @@ const el: Dictionary = {
     removePage: "Αφαίρεση",
     selectedPages: "Επιλεγμένες σελίδες",
     dragToReorder: "Σύρετε για αναδιάταξη",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Ποιότητα εικόνας",
+    qualityHigh: "Υψηλή ποιότητα",
+    qualityHighDesc: "Ευκρινείς εικόνες, μεγαλύτερο αρχείο",
+    qualityMedium: "Κανονική",
+    qualityMediumDesc: "Ισορροπία ποιότητας και μεγέθους",
+    qualityLow: "Μικρό μέγεθος",
+    qualityLowDesc: "Μικρότερο αρχείο, χαμηλότερη ποιότητα",
+    convertInfo: "Πολλαπλές σελίδες θα ληφθούν ως αρχείο ZIP",
+    convertButton: "Μετατροπή σε JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Επιλέξτε αρχείο PDF",
+    changeFile: "Αλλαγή αρχείου",
+    description: "Εντοπίζει και εξάγει αυτόματα τις εικόνες που είναι ενσωματωμένες στο PDF σας",
+    jpegNote: "Οι εικόνες JPEG εξάγονται στην αρχική ποιότητα",
+    pngNote: "Οι υπόλοιπες εικόνες μετατρέπονται σε PNG",
+    minSizeNote: "Εικόνες μικρότερες από 50×50px εξαιρούνται",
+    noImagesFound: "Δεν βρέθηκαν εικόνες προς εξαγωγή σε αυτό το PDF",
   },
 };
 

@@ -40,6 +40,7 @@ const bg: Dictionary = {
     // Конвертиране
     "pdf-to-word": { title: "PDF в Word", description: "Конвертирайте PDF документи в редактируеми Word файлове." },
     "pdf-to-jpg": { title: "PDF в JPG", description: "Конвертирайте PDF страници в JPG изображения с високо качество." },
+    "extract-images": { title: "Извличане на изображения", description: "Извлечете вградените изображения от PDF в оригинално качество." },
     "pdf-to-excel": { title: "PDF в Excel", description: "Извлечете таблици и данни от PDF в Excel таблици." },
     "pdf-to-ppt": { title: "PDF в PPT", description: "Конвертирайте PDF файлове в редактируеми PowerPoint слайдове." },
     "pdf-to-png": { title: "PDF в PNG", description: "Конвертирайте PDF страници в PNG изображения с високо качество." },
@@ -274,6 +275,26 @@ const bg: Dictionary = {
     removePage: "Премахни",
     selectedPages: "Избрани страници",
     dragToReorder: "Плъзнете за пренареждане",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Качество на изображението",
+    qualityHigh: "Високо качество",
+    qualityHighDesc: "Ясни изображения, по-голям файл",
+    qualityMedium: "Стандартно",
+    qualityMediumDesc: "Баланс между качество и размер",
+    qualityLow: "Малък размер",
+    qualityLowDesc: "По-малък файл, по-ниско качество",
+    convertInfo: "Множество страници ще бъдат изтеглени като ZIP файл",
+    convertButton: "Конвертиране в JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Изберете PDF файл",
+    changeFile: "Смяна на файла",
+    description: "Автоматично открива и извлича изображенията, вградени във вашия PDF",
+    jpegNote: "JPEG изображенията се извличат в оригинално качество",
+    pngNote: "Останалите изображения се конвертират в PNG",
+    minSizeNote: "Изображения по-малки от 50×50px се пропускат",
+    noImagesFound: "Не са намерени изображения за извличане в този PDF",
   },
 };
 

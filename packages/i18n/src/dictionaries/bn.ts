@@ -40,6 +40,7 @@ const bn: Dictionary = {
     // রূপান্তর
     "pdf-to-word": { title: "PDF থেকে Word", description: "PDF নথিকে সম্পাদনযোগ্য Word ফাইলে রূপান্তর করুন।" },
     "pdf-to-jpg": { title: "PDF থেকে JPG", description: "PDF পৃষ্ঠাগুলোকে উচ্চ-মানের JPG ছবিতে রূপান্তর করুন।" },
+    "extract-images": { title: "ছবি বের করুন", description: "PDF-এ থাকা ছবিগুলো মূল মানেই বের করুন।" },
     "pdf-to-excel": { title: "PDF থেকে Excel", description: "PDF থেকে টেবিল ও ডেটা Excel স্প্রেডশিটে বের করুন।" },
     "pdf-to-ppt": { title: "PDF থেকে PPT", description: "PDF ফাইল সম্পাদনযোগ্য PowerPoint স্লাইডে রূপান্তর করুন।" },
     "pdf-to-png": { title: "PDF থেকে PNG", description: "PDF পৃষ্ঠাগুলোকে উচ্চ-মানের PNG ছবিতে রূপান্তর করুন।" },
@@ -274,6 +275,26 @@ const bn: Dictionary = {
     removePage: "সরান",
     selectedPages: "নির্বাচিত পৃষ্ঠা",
     dragToReorder: "ক্রম পরিবর্তনে টেনে আনুন",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "ছবির মান",
+    qualityHigh: "উচ্চ মান",
+    qualityHighDesc: "স্পষ্ট ছবি, বড় ফাইল",
+    qualityMedium: "সাধারণ",
+    qualityMediumDesc: "মান ও আকারের ভারসাম্য",
+    qualityLow: "ছোট আকার",
+    qualityLowDesc: "ছোট ফাইল, কম মান",
+    convertInfo: "একাধিক পৃষ্ঠা ZIP ফাইল হিসেবে ডাউনলোড হবে",
+    convertButton: "JPG-এ রূপান্তর করুন",
+  },
+  extractImagesTool: {
+    dropFile: "একটি PDF ফাইল নির্বাচন করুন",
+    changeFile: "ফাইল পরিবর্তন",
+    description: "PDF-এ থাকা ছবিগুলো স্বয়ংক্রিয়ভাবে খুঁজে বের করে",
+    jpegNote: "JPEG ছবি মূল মানে বের হয়",
+    pngNote: "অন্যান্য ছবি PNG-তে রূপান্তরিত হয়",
+    minSizeNote: "50×50px-এর ছোট ছবি বাদ দেওয়া হয়",
+    noImagesFound: "এই PDF-এ বের করার মতো কোনো ছবি পাওয়া যায়নি",
   },
 };
 

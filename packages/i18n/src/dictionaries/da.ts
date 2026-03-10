@@ -40,6 +40,7 @@ const da: Dictionary = {
     // Konverter
     "pdf-to-word": { title: "PDF til Word", description: "Konverter PDF-dokumenter til redigerbare Word-filer." },
     "pdf-to-jpg": { title: "PDF til JPG", description: "Konverter PDF-sider til JPG-billeder i høj kvalitet." },
+    "extract-images": { title: "Udtræk billeder", description: "Udtræk indlejrede billeder fra PDF i original kvalitet." },
     "pdf-to-excel": { title: "PDF til Excel", description: "Udtræk tabeller og data fra PDF-filer til Excel-regneark." },
     "pdf-to-ppt": { title: "PDF til PPT", description: "Konverter PDF-filer til redigerbare PowerPoint-slides." },
     "pdf-to-png": { title: "PDF til PNG", description: "Konverter PDF-sider til PNG-billeder i høj kvalitet." },
@@ -274,6 +275,26 @@ const da: Dictionary = {
     removePage: "Fjern",
     selectedPages: "Valgte sider",
     dragToReorder: "Træk for at ændre rækkefølge",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Billedkvalitet",
+    qualityHigh: "Høj kvalitet",
+    qualityHighDesc: "Skarpe billeder, større fil",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanceret kvalitet og filstørrelse",
+    qualityLow: "Lille fil",
+    qualityLowDesc: "Mindre fil, lavere kvalitet",
+    convertInfo: "Flere sider downloades som en ZIP-fil",
+    convertButton: "Konverter til JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Vælg en PDF-fil",
+    changeFile: "Skift fil",
+    description: "Finder og udtrækker automatisk billeder indlejret i din PDF",
+    jpegNote: "JPEG-billeder udtrækkes i original kvalitet",
+    pngNote: "Andre billeder konverteres til PNG",
+    minSizeNote: "Billeder under 50×50px udelades",
+    noImagesFound: "Ingen billeder fundet til udtrækning i denne PDF",
   },
 };
 

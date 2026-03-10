@@ -40,6 +40,7 @@ const ko: Dictionary = {
     // Convert
     "pdf-to-word": { title: "PDF를 Word로", description: "PDF를 편집 가능한 Word 파일로 변환합니다." },
     "pdf-to-jpg": { title: "PDF → JPG", description: "PDF 페이지를 고화질 JPG 이미지로 변환합니다." },
+    "extract-images": { title: "이미지 추출", description: "PDF에 포함된 이미지를 원본 품질 그대로 추출합니다." },
     "pdf-to-excel": { title: "PDF → Excel", description: "PDF의 표 데이터를 Excel로 추출합니다." },
     "pdf-to-ppt": { title: "PDF → PPT", description: "PDF를 편집 가능한 PPT 슬라이드로 변환합니다." },
     "pdf-to-png": { title: "PDF → PNG", description: "PDF 페이지를 고화질 PNG 이미지로 변환합니다." },
@@ -274,6 +275,26 @@ const ko: Dictionary = {
     removePage: "제거",
     selectedPages: "선택된 페이지",
     dragToReorder: "드래그로 순서를 변경할 수 있습니다",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "이미지 품질",
+    qualityHigh: "고화질",
+    qualityHighDesc: "선명한 이미지, 큰 파일 크기",
+    qualityMedium: "표준",
+    qualityMediumDesc: "적절한 화질과 파일 크기",
+    qualityLow: "저용량",
+    qualityLowDesc: "작은 파일 크기, 낮은 화질",
+    convertInfo: "여러 페이지는 ZIP 파일로 다운로드됩니다",
+    convertButton: "JPG로 변환",
+  },
+  extractImagesTool: {
+    dropFile: "PDF 파일을 선택하세요",
+    changeFile: "파일 변경",
+    description: "PDF에 포함된 이미지를 자동으로 찾아 추출합니다",
+    jpegNote: "JPEG 이미지는 원본 그대로 추출됩니다",
+    pngNote: "기타 이미지는 PNG로 변환됩니다",
+    minSizeNote: "50×50px 미만의 작은 이미지는 제외됩니다",
+    noImagesFound: "PDF에서 추출 가능한 이미지를 찾지 못했습니다",
   },
 };
 

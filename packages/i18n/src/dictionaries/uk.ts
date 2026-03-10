@@ -40,6 +40,7 @@ const uk: Dictionary = {
     // Конвертація
     "pdf-to-word": { title: "PDF у Word", description: "Конвертуйте PDF-документи в редаговані файли Word." },
     "pdf-to-jpg": { title: "PDF у JPG", description: "Конвертуйте сторінки PDF у високоякісні зображення JPG." },
+    "extract-images": { title: "Витягнути зображення", description: "Витягніть вбудовані зображення з PDF в оригінальній якості." },
     "pdf-to-excel": { title: "PDF у Excel", description: "Витягуйте таблиці та дані з PDF у таблиці Excel." },
     "pdf-to-ppt": { title: "PDF у PPT", description: "Конвертуйте PDF-файли в редаговані слайди PowerPoint." },
     "pdf-to-png": { title: "PDF у PNG", description: "Конвертуйте сторінки PDF у високоякісні зображення PNG." },
@@ -274,6 +275,26 @@ const uk: Dictionary = {
     removePage: "Видалити",
     selectedPages: "Обрані сторінки",
     dragToReorder: "Перетягніть для зміни порядку",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Якість зображення",
+    qualityHigh: "Висока якість",
+    qualityHighDesc: "Чіткі зображення, більший файл",
+    qualityMedium: "Стандартна",
+    qualityMediumDesc: "Баланс між якістю та розміром",
+    qualityLow: "Малий розмір",
+    qualityLowDesc: "Менший файл, нижча якість",
+    convertInfo: "Кілька сторінок буде завантажено як ZIP-архів",
+    convertButton: "Конвертувати в JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Оберіть PDF-файл",
+    changeFile: "Змінити файл",
+    description: "Автоматично знаходить і витягує зображення, вбудовані у ваш PDF",
+    jpegNote: "JPEG-зображення витягуються в оригінальній якості",
+    pngNote: "Інші зображення конвертуються у PNG",
+    minSizeNote: "Зображення менші за 50×50px не включаються",
+    noImagesFound: "У цьому PDF не знайдено зображень для витягування",
   },
 };
 

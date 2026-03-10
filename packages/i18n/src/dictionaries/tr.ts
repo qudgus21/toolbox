@@ -40,6 +40,7 @@ const tr: Dictionary = {
     // Dönüştürme
     "pdf-to-word": { title: "PDF'den Word'e", description: "PDF belgelerini düzenlenebilir Word dosyalarına dönüştürün." },
     "pdf-to-jpg": { title: "PDF'den JPG'ye", description: "PDF sayfalarını yüksek kaliteli JPG görsellerine dönüştürün." },
+    "extract-images": { title: "Görselleri Çıkar", description: "PDF'teki gömülü görselleri orijinal kalitede çıkarın." },
     "pdf-to-excel": { title: "PDF'den Excel'e", description: "PDF'lerden tabloları ve verileri Excel tablolarına aktarın." },
     "pdf-to-ppt": { title: "PDF'den PPT'ye", description: "PDF dosyalarını düzenlenebilir PowerPoint slaytlarına dönüştürün." },
     "pdf-to-png": { title: "PDF'den PNG'ye", description: "PDF sayfalarını yüksek kaliteli PNG görsellerine dönüştürün." },
@@ -274,6 +275,26 @@ const tr: Dictionary = {
     removePage: "Kaldır",
     selectedPages: "Seçili sayfalar",
     dragToReorder: "Sıralamayı değiştirmek için sürükleyin",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Görüntü kalitesi",
+    qualityHigh: "Yüksek kalite",
+    qualityHighDesc: "Net görüntüler, daha büyük dosya",
+    qualityMedium: "Standart",
+    qualityMediumDesc: "Kalite ve boyut dengesi",
+    qualityLow: "Küçük boyut",
+    qualityLowDesc: "Daha küçük dosya, düşük kalite",
+    convertInfo: "Birden fazla sayfa ZIP dosyası olarak indirilir",
+    convertButton: "JPG'ye dönüştür",
+  },
+  extractImagesTool: {
+    dropFile: "Bir PDF dosyası seçin",
+    changeFile: "Dosyayı değiştir",
+    description: "PDF'inizdeki gömülü görselleri otomatik olarak bulur ve çıkarır",
+    jpegNote: "JPEG görseller orijinal kalitede çıkarılır",
+    pngNote: "Diğer görseller PNG'ye dönüştürülür",
+    minSizeNote: "50×50px'ten küçük görseller dahil edilmez",
+    noImagesFound: "Bu PDF'te çıkarılabilir görsel bulunamadı",
   },
 };
 

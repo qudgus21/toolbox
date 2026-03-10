@@ -40,6 +40,7 @@ const mt: Dictionary = {
     // Ikkonverti
     "pdf-to-word": { title: "PDF għal Word", description: "Ikkonverti dokumenti PDF f'fajls Word editjabbli." },
     "pdf-to-jpg": { title: "PDF għal JPG", description: "Ikkonverti paġni PDF f'immaġni JPG ta' kwalità għolja." },
+    "extract-images": { title: "Estratti l-Immaġni", description: "Estratti l-immaġni inkorporati minn PDF fil-kwalità oriġinali." },
     "pdf-to-excel": { title: "PDF għal Excel", description: "Estratta tabelli u data minn PDFs f'spreadsheets Excel." },
     "pdf-to-ppt": { title: "PDF għal PPT", description: "Ikkonverti fajls PDF f'slides PowerPoint editjabbli." },
     "pdf-to-png": { title: "PDF għal PNG", description: "Ikkonverti paġni PDF f'immaġni PNG ta' kwalità għolja." },
@@ -274,6 +275,26 @@ const mt: Dictionary = {
     removePage: "Neħħi",
     selectedPages: "Paġni magħżula",
     dragToReorder: "Iġbed biex tbiddel l-ordni",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kwalità tal-istampa",
+    qualityHigh: "Kwalità għolja",
+    qualityHighDesc: "Stampi ċari, fajl akbar",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Bilanċ bejn kwalità u daqs",
+    qualityLow: "Daqs żgħir",
+    qualityLowDesc: "Fajl iżgħar, kwalità aktar baxxa",
+    convertInfo: "Diversi paġni jiġu mniżżla bħala fajl ZIP",
+    convertButton: "Ikkonverti għal JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Agħżel fajl PDF",
+    changeFile: "Ibdel il-fajl",
+    description: "Issib u jestrattu awtomatikament l-immaġni inkorporati fil-PDF tiegħek",
+    jpegNote: "L-immaġni JPEG jiġu estratti fil-kwalità oriġinali",
+    pngNote: "Immaġni oħra jiġu kkonvertiti għal PNG",
+    minSizeNote: "Immaġni iżgħar minn 50×50px jiġu esklużi",
+    noImagesFound: "Ma nstab l-ebda immaġni estrattabbli f'dan il-PDF",
   },
 };
 

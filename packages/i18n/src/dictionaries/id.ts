@@ -40,6 +40,7 @@ const id: Dictionary = {
     // Konversi
     "pdf-to-word": { title: "PDF ke Word", description: "Konversi dokumen PDF ke file Word yang dapat diedit." },
     "pdf-to-jpg": { title: "PDF ke JPG", description: "Konversi halaman PDF ke gambar JPG berkualitas tinggi." },
+    "extract-images": { title: "Ekstrak Gambar", description: "Ekstrak gambar yang tertanam di PDF dengan kualitas asli." },
     "pdf-to-excel": { title: "PDF ke Excel", description: "Ekstrak tabel dan data dari PDF ke spreadsheet Excel." },
     "pdf-to-ppt": { title: "PDF ke PPT", description: "Konversi file PDF ke slide PowerPoint yang dapat diedit." },
     "pdf-to-png": { title: "PDF ke PNG", description: "Konversi halaman PDF ke gambar PNG berkualitas tinggi." },
@@ -274,6 +275,26 @@ const id: Dictionary = {
     removePage: "Hapus",
     selectedPages: "Halaman terpilih",
     dragToReorder: "Seret untuk mengubah urutan",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kualitas gambar",
+    qualityHigh: "Kualitas tinggi",
+    qualityHighDesc: "Gambar tajam, ukuran file lebih besar",
+    qualityMedium: "Standar",
+    qualityMediumDesc: "Seimbang antara kualitas dan ukuran",
+    qualityLow: "Ukuran kecil",
+    qualityLowDesc: "File lebih kecil, kualitas lebih rendah",
+    convertInfo: "Beberapa halaman akan diunduh sebagai file ZIP",
+    convertButton: "Konversi ke JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Pilih file PDF",
+    changeFile: "Ganti file",
+    description: "Otomatis menemukan dan mengekstrak gambar yang tertanam dalam PDF Anda",
+    jpegNote: "Gambar JPEG diekstrak dalam kualitas asli",
+    pngNote: "Gambar lainnya dikonversi ke PNG",
+    minSizeNote: "Gambar lebih kecil dari 50×50px tidak disertakan",
+    noImagesFound: "Tidak ditemukan gambar yang dapat diekstrak dalam PDF ini",
   },
 };
 

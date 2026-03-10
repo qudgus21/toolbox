@@ -40,6 +40,7 @@ const zh: Dictionary = {
     // 转换
     "pdf-to-word": { title: "PDF转Word", description: "将PDF文档转换为可编辑的Word文件。" },
     "pdf-to-jpg": { title: "PDF转JPG", description: "将PDF页面转换为高质量的JPG图片。" },
+    "extract-images": { title: "提取图片", description: "以原始质量提取PDF中嵌入的图片。" },
     "pdf-to-excel": { title: "PDF转Excel", description: "从PDF中提取表格和数据到Excel电子表格。" },
     "pdf-to-ppt": { title: "PDF转PPT", description: "将PDF文件转换为可编辑的PowerPoint幻灯片。" },
     "pdf-to-png": { title: "PDF转PNG", description: "将PDF页面转换为高质量的PNG图片。" },
@@ -274,6 +275,26 @@ const zh: Dictionary = {
     removePage: "移除",
     selectedPages: "已选页面",
     dragToReorder: "拖动调整顺序",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "图片质量",
+    qualityHigh: "高质量",
+    qualityHighDesc: "清晰图片，文件较大",
+    qualityMedium: "标准",
+    qualityMediumDesc: "质量与大小均衡",
+    qualityLow: "小文件",
+    qualityLowDesc: "文件更小，质量较低",
+    convertInfo: "多页将以 ZIP 文件下载",
+    convertButton: "转换为 JPG",
+  },
+  extractImagesTool: {
+    dropFile: "选择PDF文件",
+    changeFile: "更换文件",
+    description: "自动查找并提取PDF中嵌入的图片",
+    jpegNote: "JPEG图片以原始质量提取",
+    pngNote: "其他图片会转换为PNG格式",
+    minSizeNote: "小于50×50px的图片会被排除",
+    noImagesFound: "未在此PDF中找到可提取的图片",
   },
 };
 

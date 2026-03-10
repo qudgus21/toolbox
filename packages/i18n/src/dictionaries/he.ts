@@ -40,6 +40,7 @@ const he: Dictionary = {
     // המרה
     "pdf-to-word": { title: "PDF ל-Word", description: "המר מסמכי PDF לקובצי Word הניתנים לעריכה." },
     "pdf-to-jpg": { title: "PDF ל-JPG", description: "המר עמודי PDF לתמונות JPG באיכות גבוהה." },
+    "extract-images": { title: "חילוץ תמונות", description: "חלצו תמונות מוטמעות מ-PDF באיכות המקורית." },
     "pdf-to-excel": { title: "PDF ל-Excel", description: "חלץ טבלאות ונתונים מ-PDF לגיליונות Excel." },
     "pdf-to-ppt": { title: "PDF ל-PPT", description: "המר קובצי PDF לשקפי PowerPoint הניתנים לעריכה." },
     "pdf-to-png": { title: "PDF ל-PNG", description: "המר עמודי PDF לתמונות PNG באיכות גבוהה." },
@@ -274,6 +275,26 @@ const he: Dictionary = {
     removePage: "הסרה",
     selectedPages: "עמודים נבחרים",
     dragToReorder: "גררו לשינוי הסדר",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "איכות תמונה",
+    qualityHigh: "איכות גבוהה",
+    qualityHighDesc: "תמונות חדות, קובץ גדול יותר",
+    qualityMedium: "רגילה",
+    qualityMediumDesc: "איזון בין איכות לגודל",
+    qualityLow: "גודל קטן",
+    qualityLowDesc: "קובץ קטן יותר, איכות נמוכה יותר",
+    convertInfo: "מספר עמודים יורדו כקובץ ZIP",
+    convertButton: "המרה ל-JPG",
+  },
+  extractImagesTool: {
+    dropFile: "בחרו קובץ PDF",
+    changeFile: "החלפת קובץ",
+    description: "מאתר ומחלץ באופן אוטומטי תמונות מוטמעות ב-PDF שלכם",
+    jpegNote: "תמונות JPEG מחולצות באיכות המקורית",
+    pngNote: "תמונות אחרות מומרות ל-PNG",
+    minSizeNote: "תמונות קטנות מ-50×50px אינן נכללות",
+    noImagesFound: "לא נמצאו תמונות לחילוץ ב-PDF זה",
   },
 };
 

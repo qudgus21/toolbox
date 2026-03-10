@@ -40,6 +40,7 @@ const ar: Dictionary = {
     // تحويل
     "pdf-to-word": { title: "PDF إلى Word", description: "تحويل مستندات PDF إلى ملفات Word قابلة للتحرير." },
     "pdf-to-jpg": { title: "PDF إلى JPG", description: "تحويل صفحات PDF إلى صور JPG عالية الجودة." },
+    "extract-images": { title: "استخراج الصور", description: "استخرج الصور المضمّنة في ملف PDF بجودتها الأصلية." },
     "pdf-to-excel": { title: "PDF إلى Excel", description: "استخراج الجداول والبيانات من PDF إلى جداول بيانات Excel." },
     "pdf-to-ppt": { title: "PDF إلى PPT", description: "تحويل ملفات PDF إلى شرائح PowerPoint قابلة للتحرير." },
     "pdf-to-png": { title: "PDF إلى PNG", description: "تحويل صفحات PDF إلى صور PNG عالية الجودة." },
@@ -274,6 +275,26 @@ const ar: Dictionary = {
     removePage: "إزالة",
     selectedPages: "الصفحات المحددة",
     dragToReorder: "اسحب لإعادة الترتيب",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "جودة الصورة",
+    qualityHigh: "جودة عالية",
+    qualityHighDesc: "صور واضحة، حجم ملف أكبر",
+    qualityMedium: "قياسي",
+    qualityMediumDesc: "توازن بين الجودة وحجم الملف",
+    qualityLow: "حجم صغير",
+    qualityLowDesc: "حجم ملف أصغر، جودة أقل",
+    convertInfo: "سيتم تنزيل الصفحات المتعددة كملف ZIP",
+    convertButton: "تحويل إلى JPG",
+  },
+  extractImagesTool: {
+    dropFile: "اختر ملف PDF",
+    changeFile: "تغيير الملف",
+    description: "يعثر تلقائيًا على الصور المضمّنة في ملف PDF ويستخرجها",
+    jpegNote: "تُستخرج صور JPEG بجودتها الأصلية",
+    pngNote: "تُحوَّل الصور الأخرى إلى PNG",
+    minSizeNote: "تُستبعد الصور الأصغر من 50×50 بكسل",
+    noImagesFound: "لم يُعثر على صور قابلة للاستخراج في هذا الملف",
   },
 };
 

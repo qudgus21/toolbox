@@ -38,6 +38,7 @@ const ms: Dictionary = {
     // Tukar
     "pdf-to-word": { title: "PDF ke Word", description: "Tukar dokumen PDF kepada fail Word yang boleh disunting." },
     "pdf-to-jpg": { title: "PDF ke JPG", description: "Tukar halaman PDF kepada imej JPG berkualiti tinggi." },
+    "extract-images": { title: "Ekstrak Imej", description: "Ekstrak imej terbenam daripada PDF dalam kualiti asal." },
     "pdf-to-excel": { title: "PDF ke Excel", description: "Ekstrak jadual dan data daripada PDF ke hamparan Excel." },
     "pdf-to-ppt": { title: "PDF ke PPT", description: "Tukar fail PDF kepada slaid PowerPoint yang boleh disunting." },
     "pdf-to-png": { title: "PDF ke PNG", description: "Tukar halaman PDF kepada imej PNG berkualiti tinggi." },
@@ -190,6 +191,26 @@ const ms: Dictionary = {
     removePage: "Buang",
     selectedPages: "Halaman terpilih",
     dragToReorder: "Seret untuk susun semula",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kualiti imej",
+    qualityHigh: "Kualiti tinggi",
+    qualityHighDesc: "Imej tajam, saiz fail lebih besar",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Seimbang antara kualiti dan saiz",
+    qualityLow: "Saiz kecil",
+    qualityLowDesc: "Fail lebih kecil, kualiti lebih rendah",
+    convertInfo: "Beberapa halaman akan dimuat turun sebagai fail ZIP",
+    convertButton: "Tukar ke JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Pilih fail PDF",
+    changeFile: "Tukar fail",
+    description: "Mencari dan mengekstrak imej terbenam dalam PDF anda secara automatik",
+    jpegNote: "Imej JPEG diekstrak dalam kualiti asal",
+    pngNote: "Imej lain ditukar kepada PNG",
+    minSizeNote: "Imej lebih kecil daripada 50×50px dikecualikan",
+    noImagesFound: "Tiada imej boleh diekstrak ditemui dalam PDF ini",
   },
 };
 

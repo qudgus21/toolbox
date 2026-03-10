@@ -40,6 +40,7 @@ const is: Dictionary = {
     // Umbreyta
     "pdf-to-word": { title: "PDF í Word", description: "Umbreyta PDF skjölum í breytanlegar Word skrár." },
     "pdf-to-jpg": { title: "PDF í JPG", description: "Umbreyta PDF síðum í hágæða JPG myndir." },
+    "extract-images": { title: "Draga út myndir", description: "Dragið innfelldar myndir úr PDF í upprunalegum gæðum." },
     "pdf-to-excel": { title: "PDF í Excel", description: "Draga töflur og gögn úr PDF í Excel töflureikna." },
     "pdf-to-ppt": { title: "PDF í PPT", description: "Umbreyta PDF skrám í breytanlegar PowerPoint glærur." },
     "pdf-to-png": { title: "PDF í PNG", description: "Umbreyta PDF síðum í hágæða PNG myndir." },
@@ -274,6 +275,26 @@ const is: Dictionary = {
     removePage: "Fjarlægja",
     selectedPages: "Valdar síður",
     dragToReorder: "Dragðu til að endurraða",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Myndgæði",
+    qualityHigh: "Há gæði",
+    qualityHighDesc: "Skarpar myndir, stærri skrá",
+    qualityMedium: "Staðlað",
+    qualityMediumDesc: "Jafnvægi á milli gæða og stærðar",
+    qualityLow: "Lítil stærð",
+    qualityLowDesc: "Minni skrá, lægri gæði",
+    convertInfo: "Margar síður verða sóttar sem ZIP-skrá",
+    convertButton: "Breyta í JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Veldu PDF-skjal",
+    changeFile: "Breyta skjali",
+    description: "Finnur og dregur sjálfkrafa út myndir sem eru innfelldar í PDF-inu þínu",
+    jpegNote: "JPEG myndir eru dregnar út í upprunalegum gæðum",
+    pngNote: "Aðrar myndir eru umbreyttar í PNG",
+    minSizeNote: "Myndir minni en 50×50px eru undanskildar",
+    noImagesFound: "Engar útdraganlegar myndir fundust í þessu PDF",
   },
 };
 

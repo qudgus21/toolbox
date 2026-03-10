@@ -38,6 +38,7 @@ const km: Dictionary = {
     // បំលែង
     "pdf-to-word": { title: "PDF ទៅ Word", description: "បំលែងឯកសារ PDF ទៅជាឯកសារ Word ដែលអាចកែបាន។" },
     "pdf-to-jpg": { title: "PDF ទៅ JPG", description: "បំលែងទំព័រ PDF ទៅជារូបភាព JPG គុណភាពខ្ពស់។" },
+    "extract-images": { title: "ស្រង់រូបភាព", description: "ស្រង់រូបភាពដែលបានបញ្ចូលក្នុង PDF ក្នុងគុណភាពដើម។" },
     "pdf-to-excel": { title: "PDF ទៅ Excel", description: "ទាញយកតារាង និងទិន្នន័យពី PDF ទៅសៀវភៅបញ្ជី Excel។" },
     "pdf-to-ppt": { title: "PDF ទៅ PPT", description: "បំលែងឯកសារ PDF ទៅជាស្លាយ PowerPoint ដែលអាចកែបាន។" },
     "pdf-to-png": { title: "PDF ទៅ PNG", description: "បំលែងទំព័រ PDF ទៅជារូបភាព PNG គុណភាពខ្ពស់។" },
@@ -190,6 +191,26 @@ const km: Dictionary = {
     removePage: "លុប",
     selectedPages: "ទំព័រដែលបានជ្រើសរើស",
     dragToReorder: "អូសដើម្បីរៀបចំលំដាប់",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "គុណភាពរូបភាព",
+    qualityHigh: "គុណភាពខ្ពស់",
+    qualityHighDesc: "រូបភាពច្បាស់ ទំហំឯកសារធំ",
+    qualityMedium: "ស្តង់ដារ",
+    qualityMediumDesc: "តុល្យភាពគុណភាព និងទំហំ",
+    qualityLow: "ទំហំតូច",
+    qualityLowDesc: "ឯកសារតូច គុណភាពទាប",
+    convertInfo: "ទំព័រច្រើនត្រូវបានទាញយកជាឯកសារ ZIP",
+    convertButton: "បម្លែងទៅ JPG",
+  },
+  extractImagesTool: {
+    dropFile: "ជ្រើសឯកសារ PDF",
+    changeFile: "ប្តូរឯកសារ",
+    description: "ស្វែងរក និងស្រង់រូបភាពដែលបានបញ្ចូលក្នុង PDF របស់អ្នកដោយស្វ័យប្រវត្តិ",
+    jpegNote: "រូបភាព JPEG ត្រូវបានស្រង់ក្នុងគុណភាពដើម",
+    pngNote: "រូបភាពផ្សេងទៀតត្រូវបានបម្លែងទៅជា PNG",
+    minSizeNote: "រូបភាពតូចជាង 50×50px ត្រូវបានដកចេញ",
+    noImagesFound: "រកមិនឃើញរូបភាពដែលអាចស្រង់បានក្នុង PDF នេះទេ",
   },
 };
 

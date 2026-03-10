@@ -40,6 +40,7 @@ const te: Dictionary = {
     // మార్చు
     "pdf-to-word": { title: "PDF నుండి Word", description: "PDF డాక్యుమెంట్‌లను సవరించగల Word ఫైల్‌లుగా మార్చండి." },
     "pdf-to-jpg": { title: "PDF నుండి JPG", description: "PDF పేజీలను అధిక-నాణ్యత JPG చిత్రాలుగా మార్చండి." },
+    "extract-images": { title: "చిత్రాలను సంగ్రహించు", description: "PDF లోని పొందుపరిచిన చిత్రాలను అసలు నాణ్యతలో సంగ్రహించండి." },
     "pdf-to-excel": { title: "PDF నుండి Excel", description: "PDF ల నుండి పట్టికలు మరియు డేటాను Excel స్ప్రెడ్‌షీట్‌లలోకి వెలికితీయండి." },
     "pdf-to-ppt": { title: "PDF నుండి PPT", description: "PDF ఫైల్‌లను సవరించగల PowerPoint స్లైడ్‌లుగా మార్చండి." },
     "pdf-to-png": { title: "PDF నుండి PNG", description: "PDF పేజీలను అధిక-నాణ్యత PNG చిత్రాలుగా మార్చండి." },
@@ -274,6 +275,26 @@ const te: Dictionary = {
     removePage: "తొలగించు",
     selectedPages: "ఎంచుకున్న పేజీలు",
     dragToReorder: "క్రమం మార్చడానికి లాగండి",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "చిత్ర నాణ్యత",
+    qualityHigh: "అధిక నాణ్యత",
+    qualityHighDesc: "స్పష్టమైన చిత్రాలు, పెద్ద ఫైల్",
+    qualityMedium: "సాధారణ",
+    qualityMediumDesc: "నాణ్యత మరియు పరిమాణం మధ్య సమతుల్యం",
+    qualityLow: "చిన్న పరిమాణం",
+    qualityLowDesc: "చిన్న ఫైల్, తక్కువ నాణ్యత",
+    convertInfo: "అనేక పేజీలు ZIP ఫైల్‌గా డౌన్‌లోడ్ అవుతాయి",
+    convertButton: "JPGకి మార్చు",
+  },
+  extractImagesTool: {
+    dropFile: "PDF ఫైల్‌ను ఎంచుకోండి",
+    changeFile: "ఫైల్ మార్చు",
+    description: "మీ PDF లో పొందుపరిచిన చిత్రాలను స్వయంచాలకంగా కనుగొని సంగ్రహిస్తుంది",
+    jpegNote: "JPEG చిత్రాలు అసలు నాణ్యతలో సంగ్రహించబడతాయి",
+    pngNote: "ఇతర చిత్రాలు PNG కి మార్చబడతాయి",
+    minSizeNote: "50×50px కంటే చిన్న చిత్రాలు మినహాయించబడతాయి",
+    noImagesFound: "ఈ PDF లో సంగ్రహించగల చిత్రాలు కనుగొనబడలేదు",
   },
 };
 

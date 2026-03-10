@@ -40,6 +40,7 @@ const th: Dictionary = {
     // แปลงไฟล์
     "pdf-to-word": { title: "PDF เป็น Word", description: "แปลงเอกสาร PDF เป็นไฟล์ Word ที่แก้ไขได้" },
     "pdf-to-jpg": { title: "PDF เป็น JPG", description: "แปลงหน้า PDF เป็นภาพ JPG คุณภาพสูง" },
+    "extract-images": { title: "ดึงรูปภาพ", description: "ดึงรูปภาพที่ฝังอยู่ใน PDF ออกมาในคุณภาพต้นฉบับ" },
     "pdf-to-excel": { title: "PDF เป็น Excel", description: "ดึงตารางและข้อมูลจาก PDF ไปยังสเปรดชีต Excel" },
     "pdf-to-ppt": { title: "PDF เป็น PPT", description: "แปลงไฟล์ PDF เป็นสไลด์ PowerPoint ที่แก้ไขได้" },
     "pdf-to-png": { title: "PDF เป็น PNG", description: "แปลงหน้า PDF เป็นภาพ PNG คุณภาพสูง" },
@@ -274,6 +275,26 @@ const th: Dictionary = {
     removePage: "ลบ",
     selectedPages: "หน้าที่เลือก",
     dragToReorder: "ลากเพื่อจัดลำดับใหม่",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "คุณภาพภาพ",
+    qualityHigh: "คุณภาพสูง",
+    qualityHighDesc: "ภาพคมชัด ไฟล์ใหญ่ขึ้น",
+    qualityMedium: "มาตรฐาน",
+    qualityMediumDesc: "สมดุลระหว่างคุณภาพและขนาด",
+    qualityLow: "ไฟล์เล็ก",
+    qualityLowDesc: "ไฟล์เล็กลง คุณภาพลดลง",
+    convertInfo: "หลายหน้าจะถูกดาวน์โหลดเป็นไฟล์ ZIP",
+    convertButton: "แปลงเป็น JPG",
+  },
+  extractImagesTool: {
+    dropFile: "เลือกไฟล์ PDF",
+    changeFile: "เปลี่ยนไฟล์",
+    description: "ค้นหาและดึงรูปภาพที่ฝังอยู่ใน PDF ของคุณโดยอัตโนมัติ",
+    jpegNote: "รูปภาพ JPEG จะถูกดึงออกมาในคุณภาพต้นฉบับ",
+    pngNote: "รูปภาพอื่นๆ จะถูกแปลงเป็น PNG",
+    minSizeNote: "รูปภาพที่เล็กกว่า 50×50px จะไม่ถูกรวม",
+    noImagesFound: "ไม่พบรูปภาพที่สามารถดึงได้ใน PDF นี้",
   },
 };
 

@@ -40,6 +40,7 @@ const ga: Dictionary = {
     // Tiontaigh
     "pdf-to-word": { title: "PDF go Word", description: "Tiontaigh doiciméid PDF go comhaid Word in-eagarthóireachta." },
     "pdf-to-jpg": { title: "PDF go JPG", description: "Tiontaigh leathanaigh PDF go híomhánna JPG ardchaighdeáin." },
+    "extract-images": { title: "Bain íomhánna", description: "Bain na híomhánna leabaithe amach as PDF ag an gcáilíocht bhunaidh." },
     "pdf-to-excel": { title: "PDF go Excel", description: "Bain táblaí agus sonraí as comhaid PDF go scarbhileoga Excel." },
     "pdf-to-ppt": { title: "PDF go PPT", description: "Tiontaigh comhaid PDF go sleamhnáin PowerPoint in-eagarthóireachta." },
     "pdf-to-png": { title: "PDF go PNG", description: "Tiontaigh leathanaigh PDF go híomhánna PNG ardchaighdeáin." },
@@ -274,6 +275,26 @@ const ga: Dictionary = {
     removePage: "Bain",
     selectedPages: "Leathanaigh roghnaithe",
     dragToReorder: "Tarraing chun athordú",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Cáilíocht íomhá",
+    qualityHigh: "Ardcháilíocht",
+    qualityHighDesc: "Íomhánna géara, comhad níos mó",
+    qualityMedium: "Caighdeánach",
+    qualityMediumDesc: "Cothromaíocht idir cáilíocht agus méid",
+    qualityLow: "Méid beag",
+    qualityLowDesc: "Comhad níos lú, cáilíocht níos ísle",
+    convertInfo: "Déanfar leathanaigh iolracha a íoslódáil mar chomhad ZIP",
+    convertButton: "Tiontaigh go JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Roghnaigh comhad PDF",
+    changeFile: "Athraigh comhad",
+    description: "Aimsíonn agus baineann sé íomhánna leabaithe i do PDF go huathoibríoch",
+    jpegNote: "Baintear íomhánna JPEG amach ag an gcáilíocht bhunaidh",
+    pngNote: "Tiontaítear íomhánna eile go PNG",
+    minSizeNote: "Fágtar ar lár íomhánna níos lú ná 50×50px",
+    noImagesFound: "Níor aimsíodh aon íomhánna inbhainte sa PDF seo",
   },
 };
 

@@ -40,6 +40,7 @@ const lt: Dictionary = {
     // Konvertuoti
     "pdf-to-word": { title: "PDF į Word", description: "Konvertuokite PDF dokumentus į redaguojamus Word failus." },
     "pdf-to-jpg": { title: "PDF į JPG", description: "Konvertuokite PDF puslapius į aukštos kokybės JPG vaizdus." },
+    "extract-images": { title: "Išgauti vaizdus", description: "Išgaukite PDF faile įterptas nuotraukas originalia kokybe." },
     "pdf-to-excel": { title: "PDF į Excel", description: "Išskleiskite lenteles ir duomenis iš PDF į Excel skaičiuokles." },
     "pdf-to-ppt": { title: "PDF į PPT", description: "Konvertuokite PDF failus į redaguojamas PowerPoint skaidres." },
     "pdf-to-png": { title: "PDF į PNG", description: "Konvertuokite PDF puslapius į aukštos kokybės PNG vaizdus." },
@@ -274,6 +275,26 @@ const lt: Dictionary = {
     removePage: "Pašalinti",
     selectedPages: "Pasirinkti puslapiai",
     dragToReorder: "Vilkite norėdami pertvarkyti",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Vaizdo kokybė",
+    qualityHigh: "Aukšta kokybė",
+    qualityHighDesc: "Ryškūs vaizdai, didesnis failas",
+    qualityMedium: "Standartinė",
+    qualityMediumDesc: "Kokybės ir dydžio balansas",
+    qualityLow: "Mažas dydis",
+    qualityLowDesc: "Mažesnis failas, žemesnė kokybė",
+    convertInfo: "Keli puslapiai bus atsisiųsti kaip ZIP failas",
+    convertButton: "Konvertuoti į JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Pasirinkite PDF failą",
+    changeFile: "Keisti failą",
+    description: "Automatiškai suranda ir išgauna jūsų PDF faile įterptus vaizdus",
+    jpegNote: "JPEG vaizdai išgaunami originalia kokybe",
+    pngNote: "Kiti vaizdai konvertuojami į PNG",
+    minSizeNote: "Mažesni nei 50×50px vaizdai neįtraukiami",
+    noImagesFound: "Šiame PDF nerasta jokių išgaunamų vaizdų",
   },
 };
 

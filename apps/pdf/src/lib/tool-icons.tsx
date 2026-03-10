@@ -324,6 +324,27 @@ const PdfToExcelIcon: FC<IconProps> = (props) => (
 const PdfToPptIcon: FC<IconProps> = (props) => (
   <ConvertDocIcon srcColor={C.pdf} srcLetter="P" destColor={C.ppt} destLetter="S" {...props} />
 );
+const ExtractImagesIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* PDF source document */}
+    <Doc x={2} y={6} w={20} h={28} color={C.pdf} foldSize={5} letter="P" />
+    {/* Extraction arrow */}
+    <path d="M24,20 l4,0" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26.5,17.5 l2.5,2.5 -2.5,2.5" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Extracted image 1 (top) — landscape photo */}
+    <rect x="30" y="4" width="15" height="11" rx="2" fill={C.image.light} stroke={C.image.fill} strokeWidth="1.5" />
+    <circle cx="34" cy="8" r="2" fill={C.image.fill} opacity="0.45" />
+    <path d="M31,13 l4,-4 3,2 2,-1.5 3,3.5 H31Z" fill={C.image.fill} opacity="0.3" />
+    {/* Extracted image 2 (bottom) — portrait photo */}
+    <rect x="30" y="18" width="15" height="11" rx="2" fill={C.image.light} stroke={C.image.fill} strokeWidth="1.5" />
+    <circle cx="34.5" cy="22" r="1.8" fill={C.image.fill} opacity="0.45" />
+    <path d="M31,27 l3,-3 2.5,1.5 2,-1 3.5,2.5 H31Z" fill={C.image.fill} opacity="0.3" />
+    {/* Small floating image 3 (hint of more) */}
+    <rect x="33" y="32" width="10" height="8" rx="1.5" fill={C.image.light} stroke={C.image.fill} strokeWidth="1" opacity="0.6" />
+    <path d="M34,38 l2.5,-3 2,1.5 2.5,-1.5" stroke={C.image.fill} strokeWidth="0.8" opacity="0.4" strokeLinecap="round" />
+  </svg>
+);
+
 const PdfToPngIcon: FC<IconProps> = (props) => (
   <ConvertDocIcon srcColor={C.pdf} srcLetter="P" destColor={C.png} destLetter="G" destType="image" {...props} />
 );
@@ -689,6 +710,7 @@ export const toolIconMap: Record<string, FC<IconProps>> = {
   // Convert — PDF to X
   "pdf-to-word": PdfToWordIcon,
   "pdf-to-jpg": PdfToJpgIcon,
+  "extract-images": ExtractImagesIcon,
   "pdf-to-excel": PdfToExcelIcon,
   "pdf-to-ppt": PdfToPptIcon,
   "pdf-to-png": PdfToPngIcon,

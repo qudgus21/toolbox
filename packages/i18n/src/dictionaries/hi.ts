@@ -40,6 +40,7 @@ const hi: Dictionary = {
     // रूपांतरित करें
     "pdf-to-word": { title: "PDF से Word", description: "PDF दस्तावेज़ों को संपादन योग्य Word फ़ाइलों में बदलें।" },
     "pdf-to-jpg": { title: "PDF से JPG", description: "PDF पृष्ठों को उच्च गुणवत्ता वाली JPG छवियों में बदलें।" },
+    "extract-images": { title: "इमेज निकालें", description: "PDF में एम्बेड की गई इमेज को मूल गुणवत्ता में निकालें।" },
     "pdf-to-excel": { title: "PDF से Excel", description: "PDF से तालिकाओं और डेटा को Excel स्प्रेडशीट में निकालें।" },
     "pdf-to-ppt": { title: "PDF से PPT", description: "PDF फ़ाइलों को संपादन योग्य PowerPoint स्लाइड में बदलें।" },
     "pdf-to-png": { title: "PDF से PNG", description: "PDF पृष्ठों को उच्च गुणवत्ता वाली PNG छवियों में बदलें।" },
@@ -274,6 +275,26 @@ const hi: Dictionary = {
     removePage: "हटाएँ",
     selectedPages: "चयनित पेज",
     dragToReorder: "क्रम बदलने के लिए खींचें",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "इमेज क्वालिटी",
+    qualityHigh: "उच्च गुणवत्ता",
+    qualityHighDesc: "साफ़ इमेज, बड़ी फ़ाइल",
+    qualityMedium: "सामान्य",
+    qualityMediumDesc: "गुणवत्ता और आकार में संतुलन",
+    qualityLow: "छोटा आकार",
+    qualityLowDesc: "छोटी फ़ाइल, कम गुणवत्ता",
+    convertInfo: "कई पेज ZIP फ़ाइल के रूप में डाउनलोड होंगे",
+    convertButton: "JPG में बदलें",
+  },
+  extractImagesTool: {
+    dropFile: "एक PDF फ़ाइल चुनें",
+    changeFile: "फ़ाइल बदलें",
+    description: "PDF में मौजूद इमेज को अपने आप ढूँढकर निकालता है",
+    jpegNote: "JPEG इमेज मूल गुणवत्ता में निकाली जाती हैं",
+    pngNote: "अन्य इमेज PNG में बदल दी जाती हैं",
+    minSizeNote: "50×50px से छोटी इमेज शामिल नहीं की जातीं",
+    noImagesFound: "इस PDF में निकालने योग्य कोई इमेज नहीं मिली",
   },
 };
 

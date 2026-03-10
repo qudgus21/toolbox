@@ -40,6 +40,7 @@ const ja: Dictionary = {
     // 変換
     "pdf-to-word": { title: "PDFからWord", description: "PDFドキュメントを編集可能なWordファイルに変換します。" },
     "pdf-to-jpg": { title: "PDFからJPG", description: "PDFページを高品質なJPG画像に変換します。" },
+    "extract-images": { title: "画像を抽出", description: "PDFに埋め込まれた画像をオリジナル品質で抽出します。" },
     "pdf-to-excel": { title: "PDFからExcel", description: "PDFから表やデータをExcelスプレッドシートに抽出します。" },
     "pdf-to-ppt": { title: "PDFからPPT", description: "PDFファイルを編集可能なPowerPointスライドに変換します。" },
     "pdf-to-png": { title: "PDFからPNG", description: "PDFページを高品質なPNG画像に変換します。" },
@@ -274,6 +275,26 @@ const ja: Dictionary = {
     removePage: "削除",
     selectedPages: "選択中のページ",
     dragToReorder: "ドラッグで並べ替え",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "画質",
+    qualityHigh: "高画質",
+    qualityHighDesc: "鮮明な画像、ファイルサイズ大",
+    qualityMedium: "標準",
+    qualityMediumDesc: "画質とサイズのバランス型",
+    qualityLow: "軽量",
+    qualityLowDesc: "ファイルサイズ小、画質低め",
+    convertInfo: "複数ページはZIPファイルでダウンロードされます",
+    convertButton: "JPGに変換",
+  },
+  extractImagesTool: {
+    dropFile: "PDFファイルを選択",
+    changeFile: "ファイルを変更",
+    description: "PDFに含まれる画像を自動的に検出して抽出します",
+    jpegNote: "JPEG画像はオリジナル品質のまま抽出されます",
+    pngNote: "その他の画像はPNGに変換されます",
+    minSizeNote: "50×50px未満の画像は除外されます",
+    noImagesFound: "このPDFから抽出可能な画像は見つかりませんでした",
   },
 };
 

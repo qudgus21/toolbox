@@ -40,6 +40,7 @@ const lv: Dictionary = {
     // Konvertēt
     "pdf-to-word": { title: "PDF uz Word", description: "Konvertējiet PDF dokumentus rediģējamos Word failos." },
     "pdf-to-jpg": { title: "PDF uz JPG", description: "Konvertējiet PDF lapas augstas kvalitātes JPG attēlos." },
+    "extract-images": { title: "Izvilkt attēlus", description: "Izvelciet PDF iegultos attēlus oriģinālajā kvalitātē." },
     "pdf-to-excel": { title: "PDF uz Excel", description: "Izvelciet tabulas un datus no PDF failiem Excel izklājlapās." },
     "pdf-to-ppt": { title: "PDF uz PPT", description: "Konvertējiet PDF failus rediģējamos PowerPoint slaidos." },
     "pdf-to-png": { title: "PDF uz PNG", description: "Konvertējiet PDF lapas augstas kvalitātes PNG attēlos." },
@@ -274,6 +275,26 @@ const lv: Dictionary = {
     removePage: "Noņemt",
     selectedPages: "Izvēlētās lapas",
     dragToReorder: "Velciet, lai pārkārtotu",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Attēla kvalitāte",
+    qualityHigh: "Augsta kvalitāte",
+    qualityHighDesc: "Asi attēli, lielāks fails",
+    qualityMedium: "Standarta",
+    qualityMediumDesc: "Līdzsvars starp kvalitāti un izmēru",
+    qualityLow: "Mazs izmērs",
+    qualityLowDesc: "Mazāks fails, zemāka kvalitāte",
+    convertInfo: "Vairākas lapas tiks lejupielādētas kā ZIP fails",
+    convertButton: "Pārvērst uz JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Izvēlieties PDF failu",
+    changeFile: "Mainīt failu",
+    description: "Automātiski atrod un izvelk jūsu PDF failā iestrādātos attēlus",
+    jpegNote: "JPEG attēli tiek izvilkti oriģinālajā kvalitātē",
+    pngNote: "Pārējie attēli tiek pārveidoti uz PNG",
+    minSizeNote: "Attēli, kas mazāki par 50×50px, tiek izlaisti",
+    noImagesFound: "Šajā PDF nav atrasti izvelkami attēli",
   },
 };
 

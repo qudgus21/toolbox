@@ -40,6 +40,7 @@ const hu: Dictionary = {
     // Konvertálás
     "pdf-to-word": { title: "PDF-ből Word", description: "PDF dokumentumok konvertálása szerkeszthető Word fájlokká." },
     "pdf-to-jpg": { title: "PDF-ből JPG", description: "PDF oldalak konvertálása kiváló minőségű JPG képekké." },
+    "extract-images": { title: "Képek kinyerése", description: "A PDF-be ágyazott képek kinyerése eredeti minőségben." },
     "pdf-to-excel": { title: "PDF-ből Excel", description: "Táblázatok és adatok kinyerése PDF-ből Excel táblázatokba." },
     "pdf-to-ppt": { title: "PDF-ből PPT", description: "PDF fájlok konvertálása szerkeszthető PowerPoint diákká." },
     "pdf-to-png": { title: "PDF-ből PNG", description: "PDF oldalak konvertálása kiváló minőségű PNG képekké." },
@@ -274,6 +275,26 @@ const hu: Dictionary = {
     removePage: "Eltávolítás",
     selectedPages: "Kijelölt oldalak",
     dragToReorder: "Húzza az átrendezéshez",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Képminőség",
+    qualityHigh: "Magas minőség",
+    qualityHighDesc: "Éles képek, nagyobb fájl",
+    qualityMedium: "Normál",
+    qualityMediumDesc: "Kiegyensúlyozott minőség és méret",
+    qualityLow: "Kis méret",
+    qualityLowDesc: "Kisebb fájl, alacsonyabb minőség",
+    convertInfo: "Több oldal ZIP fájlként lesz letöltve",
+    convertButton: "Konvertálás JPG-be",
+  },
+  extractImagesTool: {
+    dropFile: "Válasszon PDF-fájlt",
+    changeFile: "Fájl módosítása",
+    description: "Automatikusan megkeresi és kinyeri a PDF-be ágyazott képeket",
+    jpegNote: "A JPEG képek eredeti minőségben kerülnek kinyerésre",
+    pngNote: "A többi kép PNG formátumba kerül átalakításra",
+    minSizeNote: "Az 50×50px-nél kisebb képek kihagyásra kerülnek",
+    noImagesFound: "Nem találhatók kinyerhető képek ebben a PDF-ben",
   },
 };
 

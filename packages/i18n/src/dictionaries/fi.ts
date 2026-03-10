@@ -40,6 +40,7 @@ const fi: Dictionary = {
     // Muunna
     "pdf-to-word": { title: "PDF Wordiksi", description: "Muunna PDF-asiakirjat muokattaviksi Word-tiedostoiksi." },
     "pdf-to-jpg": { title: "PDF JPG:ksi", description: "Muunna PDF-sivut korkealaatuisiksi JPG-kuviksi." },
+    "extract-images": { title: "Poimi kuvat", description: "Poimi PDF:ään upotetut kuvat alkuperäisessä laadussa." },
     "pdf-to-excel": { title: "PDF Exceliksi", description: "Poimi taulukot ja tiedot PDF:stä Excel-taulukoiksi." },
     "pdf-to-ppt": { title: "PDF PPT:ksi", description: "Muunna PDF-tiedostot muokattaviksi PowerPoint-dioiksi." },
     "pdf-to-png": { title: "PDF PNG:ksi", description: "Muunna PDF-sivut korkealaatuisiksi PNG-kuviksi." },
@@ -274,6 +275,26 @@ const fi: Dictionary = {
     removePage: "Poista",
     selectedPages: "Valitut sivut",
     dragToReorder: "Vedä järjestyksen muuttamiseksi",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kuvanlaatu",
+    qualityHigh: "Korkea laatu",
+    qualityHighDesc: "Tarkat kuvat, suurempi tiedosto",
+    qualityMedium: "Normaali",
+    qualityMediumDesc: "Tasapaino laadun ja koon välillä",
+    qualityLow: "Pieni koko",
+    qualityLowDesc: "Pienempi tiedosto, heikompi laatu",
+    convertInfo: "Useampi sivu ladataan ZIP-tiedostona",
+    convertButton: "Muunna JPG-muotoon",
+  },
+  extractImagesTool: {
+    dropFile: "Valitse PDF-tiedosto",
+    changeFile: "Vaihda tiedosto",
+    description: "Etsii ja poimii automaattisesti PDF-tiedostoon upotetut kuvat",
+    jpegNote: "JPEG-kuvat poimitaan alkuperäisessä laadussa",
+    pngNote: "Muut kuvat muunnetaan PNG-muotoon",
+    minSizeNote: "Alle 50×50px kuvat jätetään pois",
+    noImagesFound: "Tästä PDF-tiedostosta ei löytynyt poimittavia kuvia",
   },
 };
 

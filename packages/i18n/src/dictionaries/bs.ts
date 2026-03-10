@@ -40,6 +40,7 @@ const bs: Dictionary = {
     // Konvertuj
     "pdf-to-word": { title: "PDF u Word", description: "Konvertujte PDF dokumente u Word datoteke za uređivanje." },
     "pdf-to-jpg": { title: "PDF u JPG", description: "Konvertujte PDF stranice u visokokvalitetne JPG slike." },
+    "extract-images": { title: "Izdvajanje slika", description: "Izdvojite ugrađene slike iz PDF-a u originalnom kvalitetu." },
     "pdf-to-excel": { title: "PDF u Excel", description: "Izvucite tabele i podatke iz PDF-ova u Excel tabele." },
     "pdf-to-ppt": { title: "PDF u PPT", description: "Konvertujte PDF datoteke u PowerPoint slajdove za uređivanje." },
     "pdf-to-png": { title: "PDF u PNG", description: "Konvertujte PDF stranice u visokokvalitetne PNG slike." },
@@ -274,6 +275,26 @@ const bs: Dictionary = {
     removePage: "Ukloni",
     selectedPages: "Odabrane stranice",
     dragToReorder: "Povucite za promjenu redoslijeda",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kvalitet slike",
+    qualityHigh: "Visoki kvalitet",
+    qualityHighDesc: "Oštre slike, veća datoteka",
+    qualityMedium: "Standardno",
+    qualityMediumDesc: "Balans kvaliteta i veličine",
+    qualityLow: "Mala veličina",
+    qualityLowDesc: "Manja datoteka, niži kvalitet",
+    convertInfo: "Više stranica će biti preuzeto kao ZIP datoteka",
+    convertButton: "Pretvori u JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Odaberite PDF datoteku",
+    changeFile: "Promijeni datoteku",
+    description: "Automatski pronalazi i izdvaja slike ugrađene u vaš PDF",
+    jpegNote: "JPEG slike se izdvajaju u originalnom kvalitetu",
+    pngNote: "Ostale slike se konvertuju u PNG",
+    minSizeNote: "Slike manje od 50×50px se izostavljaju",
+    noImagesFound: "Nisu pronađene slike za izdvajanje u ovom PDF-u",
   },
 };
 

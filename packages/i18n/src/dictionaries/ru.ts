@@ -40,6 +40,7 @@ const ru: Dictionary = {
     // \u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u044f
     "pdf-to-word": { title: "PDF \u0432 Word", description: "\u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0438\u0440\u0443\u0439\u0442\u0435 PDF-\u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b \u0432 \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0443\u0435\u043c\u044b\u0435 \u0444\u0430\u0439\u043b\u044b Word." },
     "pdf-to-jpg": { title: "PDF \u0432 JPG", description: "\u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0438\u0440\u0443\u0439\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b PDF \u0432 \u0432\u044b\u0441\u043e\u043a\u043e\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f JPG." },
+    "extract-images": { title: "Извлечь изображения", description: "Извлеките встроенные изображения из PDF в исходном качестве." },
     "pdf-to-excel": { title: "PDF \u0432 Excel", description: "\u0418\u0437\u0432\u043b\u0435\u043a\u0438\u0442\u0435 \u0442\u0430\u0431\u043b\u0438\u0446\u044b \u0438 \u0434\u0430\u043d\u043d\u044b\u0435 \u0438\u0437 PDF \u0432 \u0442\u0430\u0431\u043b\u0438\u0446\u044b Excel." },
     "pdf-to-ppt": { title: "PDF \u0432 PPT", description: "\u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0438\u0440\u0443\u0439\u0442\u0435 PDF-\u0444\u0430\u0439\u043b\u044b \u0432 \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u0443\u0435\u043c\u044b\u0435 \u0441\u043b\u0430\u0439\u0434\u044b PowerPoint." },
     "pdf-to-png": { title: "PDF \u0432 PNG", description: "\u041a\u043e\u043d\u0432\u0435\u0440\u0442\u0438\u0440\u0443\u0439\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b PDF \u0432 \u0432\u044b\u0441\u043e\u043a\u043e\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f PNG." },
@@ -274,6 +275,26 @@ const ru: Dictionary = {
     removePage: "Удалить",
     selectedPages: "Выбранные страницы",
     dragToReorder: "Перетащите для изменения порядка",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Качество изображения",
+    qualityHigh: "Высокое качество",
+    qualityHighDesc: "Чёткие изображения, больший размер файла",
+    qualityMedium: "Стандартное",
+    qualityMediumDesc: "Баланс качества и размера",
+    qualityLow: "Малый размер",
+    qualityLowDesc: "Меньший файл, ниже качество",
+    convertInfo: "Несколько страниц будут скачаны в ZIP-архиве",
+    convertButton: "Конвертировать в JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Выберите PDF-файл",
+    changeFile: "Сменить файл",
+    description: "Автоматически находит и извлекает изображения из вашего PDF",
+    jpegNote: "JPEG-изображения извлекаются в исходном качестве",
+    pngNote: "Остальные изображения конвертируются в PNG",
+    minSizeNote: "Изображения менее 50×50px не включаются",
+    noImagesFound: "В этом PDF не найдено извлекаемых изображений",
   },
 };
 

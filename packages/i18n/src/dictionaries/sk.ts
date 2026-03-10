@@ -40,6 +40,7 @@ const sk: Dictionary = {
     // Konvertovať
     "pdf-to-word": { title: "PDF do Word", description: "Konvertujte PDF dokumenty na editovateľné Word súbory." },
     "pdf-to-jpg": { title: "PDF do JPG", description: "Konvertujte PDF stránky na vysokokvalitné JPG obrázky." },
+    "extract-images": { title: "Extrahovať obrázky", description: "Extrahujte vložené obrázky z PDF v pôvodnej kvalite." },
     "pdf-to-excel": { title: "PDF do Excel", description: "Extrahujte tabuľky a dáta z PDF do Excel tabuľiek." },
     "pdf-to-ppt": { title: "PDF do PPT", description: "Konvertujte PDF súbory na editovateľné PowerPoint snímky." },
     "pdf-to-png": { title: "PDF do PNG", description: "Konvertujte PDF stránky na vysokokvalitné PNG obrázky." },
@@ -274,6 +275,26 @@ const sk: Dictionary = {
     removePage: "Odstrániť",
     selectedPages: "Vybraté stránky",
     dragToReorder: "Potiahnite pre zmenu poradia",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Kvalita obrázka",
+    qualityHigh: "Vysoká kvalita",
+    qualityHighDesc: "Ostré obrázky, väčší súbor",
+    qualityMedium: "Štandardná",
+    qualityMediumDesc: "Vyvážená kvalita a veľkosť",
+    qualityLow: "Malá veľkosť",
+    qualityLowDesc: "Menší súbor, nižšia kvalita",
+    convertInfo: "Viac stránok sa stiahne ako ZIP súbor",
+    convertButton: "Previesť na JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Vyberte PDF súbor",
+    changeFile: "Zmeniť súbor",
+    description: "Automaticky nájde a extrahuje obrázky vložené vo vašom PDF",
+    jpegNote: "JPEG obrázky sa extrahujú v pôvodnej kvalite",
+    pngNote: "Ostatné obrázky sa skonvertujú do PNG",
+    minSizeNote: "Obrázky menšie ako 50×50px sa vynechajú",
+    noImagesFound: "V tomto PDF sa nenašli žiadne extrahovateľné obrázky",
   },
 };
 

@@ -91,6 +91,8 @@ export default async function ToolPage({
         compressLabels={slug === "compress" ? dict.compressTool : undefined}
         deletePagesLabels={slug === "delete-pages" ? dict.deletePagesTool : undefined}
         extractPagesLabels={slug === "extract-pages" ? dict.extractPagesTool : undefined}
+        pdfToJpgLabels={slug === "pdf-to-jpg" ? dict.pdfToJpgTool : undefined}
+        extractImagesLabels={slug === "extract-images" ? dict.extractImagesTool : undefined}
       />
     </>
   );

@@ -40,6 +40,7 @@ const pt: Dictionary = {
     // Converter
     "pdf-to-word": { title: "PDF para Word", description: "Converta documentos PDF em arquivos Word edit\u00e1veis." },
     "pdf-to-jpg": { title: "PDF para JPG", description: "Converta p\u00e1ginas PDF em imagens JPG de alta qualidade." },
+    "extract-images": { title: "Extrair imagens", description: "Extraia imagens incorporadas do PDF na qualidade original." },
     "pdf-to-excel": { title: "PDF para Excel", description: "Extraia tabelas e dados de PDFs para planilhas Excel." },
     "pdf-to-ppt": { title: "PDF para PPT", description: "Converta arquivos PDF em slides PowerPoint edit\u00e1veis." },
     "pdf-to-png": { title: "PDF para PNG", description: "Converta p\u00e1ginas PDF em imagens PNG de alta qualidade." },
@@ -274,6 +275,26 @@ const pt: Dictionary = {
     removePage: "Remover",
     selectedPages: "Páginas selecionadas",
     dragToReorder: "Arraste para reordenar",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Qualidade da imagem",
+    qualityHigh: "Alta qualidade",
+    qualityHighDesc: "Imagens nítidas, arquivo maior",
+    qualityMedium: "Padrão",
+    qualityMediumDesc: "Equilíbrio entre qualidade e tamanho",
+    qualityLow: "Tamanho reduzido",
+    qualityLowDesc: "Arquivo menor, qualidade inferior",
+    convertInfo: "Várias páginas serão baixadas como arquivo ZIP",
+    convertButton: "Converter para JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Selecione um arquivo PDF",
+    changeFile: "Trocar arquivo",
+    description: "Encontra e extrai automaticamente as imagens incorporadas no seu PDF",
+    jpegNote: "Imagens JPEG são extraídas na qualidade original",
+    pngNote: "Outras imagens são convertidas para PNG",
+    minSizeNote: "Imagens menores que 50×50px são excluídas",
+    noImagesFound: "Nenhuma imagem extraível encontrada neste PDF",
   },
 };
 

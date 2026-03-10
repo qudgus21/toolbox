@@ -40,6 +40,7 @@ const sv: Dictionary = {
     // Konvertera
     "pdf-to-word": { title: "PDF till Word", description: "Konvertera PDF-dokument till redigerbara Word-filer." },
     "pdf-to-jpg": { title: "PDF till JPG", description: "Konvertera PDF-sidor till högkvalitativa JPG-bilder." },
+    "extract-images": { title: "Extrahera bilder", description: "Extrahera inbäddade bilder från PDF i originalkvalitet." },
     "pdf-to-excel": { title: "PDF till Excel", description: "Extrahera tabeller och data från PDF till Excel-kalkylblad." },
     "pdf-to-ppt": { title: "PDF till PPT", description: "Konvertera PDF-filer till redigerbara PowerPoint-bilder." },
     "pdf-to-png": { title: "PDF till PNG", description: "Konvertera PDF-sidor till högkvalitativa PNG-bilder." },
@@ -274,6 +275,26 @@ const sv: Dictionary = {
     removePage: "Ta bort",
     selectedPages: "Valda sidor",
     dragToReorder: "Dra för att ändra ordning",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Bildkvalitet",
+    qualityHigh: "Hög kvalitet",
+    qualityHighDesc: "Skarpa bilder, större fil",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balans mellan kvalitet och storlek",
+    qualityLow: "Liten fil",
+    qualityLowDesc: "Mindre fil, lägre kvalitet",
+    convertInfo: "Flera sidor laddas ner som ZIP-fil",
+    convertButton: "Konvertera till JPG",
+  },
+  extractImagesTool: {
+    dropFile: "Välj en PDF-fil",
+    changeFile: "Byt fil",
+    description: "Hittar och extraherar automatiskt bilder inbäddade i din PDF",
+    jpegNote: "JPEG-bilder extraheras i originalkvalitet",
+    pngNote: "Övriga bilder konverteras till PNG",
+    minSizeNote: "Bilder mindre än 50×50px utesluts",
+    noImagesFound: "Inga extraherbara bilder hittades i denna PDF",
   },
 };
 

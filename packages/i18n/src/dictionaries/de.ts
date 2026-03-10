@@ -40,6 +40,7 @@ const de: Dictionary = {
     // Konvertieren
     "pdf-to-word": { title: "PDF zu Word", description: "PDF-Dokumente in bearbeitbare Word-Dateien konvertieren." },
     "pdf-to-jpg": { title: "PDF zu JPG", description: "PDF-Seiten in hochwertige JPG-Bilder konvertieren." },
+    "extract-images": { title: "Bilder extrahieren", description: "Eingebettete Bilder aus PDF in Originalqualität extrahieren." },
     "pdf-to-excel": { title: "PDF zu Excel", description: "Tabellen und Daten aus PDFs in Excel-Tabellen extrahieren." },
     "pdf-to-ppt": { title: "PDF zu PPT", description: "PDF-Dateien in bearbeitbare PowerPoint-Folien konvertieren." },
     "pdf-to-png": { title: "PDF zu PNG", description: "PDF-Seiten in hochwertige PNG-Bilder konvertieren." },
@@ -274,6 +275,26 @@ const de: Dictionary = {
     removePage: "Entfernen",
     selectedPages: "Ausgewählte Seiten",
     dragToReorder: "Ziehen zum Neuanordnen",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Bildqualität",
+    qualityHigh: "Hohe Qualität",
+    qualityHighDesc: "Scharfe Bilder, größere Datei",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Ausgewogene Qualität und Dateigröße",
+    qualityLow: "Kleine Datei",
+    qualityLowDesc: "Kleinere Datei, geringere Qualität",
+    convertInfo: "Mehrere Seiten werden als ZIP-Datei heruntergeladen",
+    convertButton: "In JPG umwandeln",
+  },
+  extractImagesTool: {
+    dropFile: "PDF-Datei auswählen",
+    changeFile: "Datei ändern",
+    description: "Findet und extrahiert automatisch in Ihrer PDF eingebettete Bilder",
+    jpegNote: "JPEG-Bilder werden in Originalqualität extrahiert",
+    pngNote: "Andere Bilder werden in PNG konvertiert",
+    minSizeNote: "Bilder kleiner als 50×50px werden ausgelassen",
+    noImagesFound: "Keine extrahierbaren Bilder in dieser PDF gefunden",
   },
 };
 

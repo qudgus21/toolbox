@@ -40,6 +40,7 @@ const et: Dictionary = {
     // Teisenda
     "pdf-to-word": { title: "PDF Wordiks", description: "Teisendage PDF-dokumendid redigeeritavateks Word-failideks." },
     "pdf-to-jpg": { title: "PDF JPG-ks", description: "Teisendage PDF-lehed kõrgekvaliteedilisteks JPG-piltideks." },
+    "extract-images": { title: "Piltide eraldamine", description: "Eraldage PDF-i manustatud pildid algses kvaliteedis." },
     "pdf-to-excel": { title: "PDF Exceliks", description: "Eraldage tabelid ja andmed PDF-idest Exceli tabelitesse." },
     "pdf-to-ppt": { title: "PDF PPT-ks", description: "Teisendage PDF-failid redigeeritavateks PowerPointi slaidideks." },
     "pdf-to-png": { title: "PDF PNG-ks", description: "Teisendage PDF-lehed kõrgekvaliteedilisteks PNG-piltideks." },
@@ -274,6 +275,26 @@ const et: Dictionary = {
     removePage: "Eemalda",
     selectedPages: "Valitud leheküljed",
     dragToReorder: "Lohistage järjestuse muutmiseks",
+  },
+  pdfToJpgTool: {
+    qualityLabel: "Pildi kvaliteet",
+    qualityHigh: "Kõrge kvaliteet",
+    qualityHighDesc: "Teravad pildid, suurem fail",
+    qualityMedium: "Tavaline",
+    qualityMediumDesc: "Tasakaal kvaliteedi ja suuruse vahel",
+    qualityLow: "Väike fail",
+    qualityLowDesc: "Väiksem fail, madalam kvaliteet",
+    convertInfo: "Mitu lehekülge laaditakse alla ZIP-failina",
+    convertButton: "Teisenda JPG-ks",
+  },
+  extractImagesTool: {
+    dropFile: "Valige PDF-fail",
+    changeFile: "Muuda faili",
+    description: "Leiab ja eraldab automaatselt teie PDF-i manustatud pildid",
+    jpegNote: "JPEG-pildid eraldatakse algses kvaliteedis",
+    pngNote: "Muud pildid teisendatakse PNG-ks",
+    minSizeNote: "Alla 50×50px pildid jäetakse välja",
+    noImagesFound: "Sellest PDF-ist ei leitud eraldatavaid pilte",
   },
 };
 
