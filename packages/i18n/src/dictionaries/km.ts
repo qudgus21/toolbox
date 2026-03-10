@@ -229,6 +229,26 @@ const km: Dictionary = {
     minSizeNote: "រូបភាពតូចជាង 50×50px ត្រូវបានដកចេញ",
     noImagesFound: "រកមិនឃើញរូបភាពដែលអាចស្រង់បានក្នុង PDF នេះទេ",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Page orientation",
+    portrait: "Portrait",
+    landscape: "Landscape",
+    pageSizeLabel: "Page size",
+    pageSizeFit: "Fit to image",
+    pageSizeFitDesc: "Page size adjusts to match each image",
+    pageSizeGroupDoc: "Document",
+    pageSizeGroupPhoto: "Photo",
+    pageSizeGroupOther: "Other",
+    marginLabel: "Margin",
+    marginNone: "None",
+    marginSmall: "Narrow",
+    marginLarge: "Wide",
+    marginUnit: "mm",
+    mergeAllLabel: "Merge into one PDF",
+    mergeAllDesc: "Combine all images into a single PDF file",
+    convertButton: "Convert to PDF",
+    convertInfo: "Converting files to separate PDFs will download as a ZIP",
+  },
 };
 
 export default km;

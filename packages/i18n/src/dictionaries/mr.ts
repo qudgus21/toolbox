@@ -313,6 +313,26 @@ const mr: Dictionary = {
     minSizeNote: "50×50px पेक्षा लहान प्रतिमा वगळल्या जातात",
     noImagesFound: "या PDF मध्ये काढता येण्यासारख्या प्रतिमा सापडल्या नाहीत",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Page orientation",
+    portrait: "Portrait",
+    landscape: "Landscape",
+    pageSizeLabel: "Page size",
+    pageSizeFit: "Fit to image",
+    pageSizeFitDesc: "Page size adjusts to match each image",
+    pageSizeGroupDoc: "Document",
+    pageSizeGroupPhoto: "Photo",
+    pageSizeGroupOther: "Other",
+    marginLabel: "Margin",
+    marginNone: "None",
+    marginSmall: "Narrow",
+    marginLarge: "Wide",
+    marginUnit: "mm",
+    mergeAllLabel: "Merge into one PDF",
+    mergeAllDesc: "Combine all images into a single PDF file",
+    convertButton: "Convert to PDF",
+    convertInfo: "Converting files to separate PDFs will download as a ZIP",
+  },
 };
 
 export default mr;

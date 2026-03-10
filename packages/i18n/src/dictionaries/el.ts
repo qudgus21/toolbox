@@ -313,6 +313,26 @@ const el: Dictionary = {
     minSizeNote: "Εικόνες μικρότερες από 50×50px εξαιρούνται",
     noImagesFound: "Δεν βρέθηκαν εικόνες προς εξαγωγή σε αυτό το PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Προσανατολισμός σελίδας",
+    portrait: "Κατακόρυφα",
+    landscape: "Οριζόντια",
+    pageSizeLabel: "Μέγεθος σελίδας",
+    pageSizeFit: "Προσαρμογή στην εικόνα",
+    pageSizeFitDesc: "Το μέγεθος σελίδας προσαρμόζεται σε κάθε εικόνα",
+    pageSizeGroupDoc: "Έγγραφο",
+    pageSizeGroupPhoto: "Φωτογραφία",
+    pageSizeGroupOther: "Άλλο",
+    marginLabel: "Περιθώριο",
+    marginNone: "Κανένα",
+    marginSmall: "Στενό",
+    marginLarge: "Πλατύ",
+    marginUnit: "mm",
+    mergeAllLabel: "Συγχώνευση σε ένα PDF",
+    mergeAllDesc: "Συνδυάζει όλες τις εικόνες σε ένα αρχείο PDF",
+    convertButton: "Μετατροπή σε PDF",
+    convertInfo: "Η μετατροπή σε ξεχωριστά PDF κατεβαίνει ως ZIP",
+  },
 };
 
 export default el;

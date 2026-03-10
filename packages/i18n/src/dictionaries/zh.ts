@@ -313,6 +313,26 @@ const zh: Dictionary = {
     minSizeNote: "小于50×50px的图片会被排除",
     noImagesFound: "未在此PDF中找到可提取的图片",
   },
+  jpgToPdfTool: {
+    orientationLabel: "页面方向",
+    portrait: "纵向",
+    landscape: "横向",
+    pageSizeLabel: "页面大小",
+    pageSizeFit: "适应图片",
+    pageSizeFitDesc: "页面大小自动匹配每张图片",
+    pageSizeGroupDoc: "文档",
+    pageSizeGroupPhoto: "照片",
+    pageSizeGroupOther: "其他",
+    marginLabel: "页边距",
+    marginNone: "无",
+    marginSmall: "窄",
+    marginLarge: "宽",
+    marginUnit: "mm",
+    mergeAllLabel: "合并为一个PDF",
+    mergeAllDesc: "将所有图片合并到一个PDF文件中",
+    convertButton: "转换为PDF",
+    convertInfo: "转换为单独的PDF时将以ZIP格式下载",
+  },
 };
 
 export default zh;

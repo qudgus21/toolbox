@@ -313,6 +313,26 @@ const da: Dictionary = {
     minSizeNote: "Billeder under 50×50px udelades",
     noImagesFound: "Ingen billeder fundet til udtrækning i denne PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Sideretning",
+    portrait: "Stående",
+    landscape: "Liggende",
+    pageSizeLabel: "Sidestørrelse",
+    pageSizeFit: "Tilpas til billede",
+    pageSizeFitDesc: "Sidestørrelsen tilpasses hvert enkelt billede",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Andet",
+    marginLabel: "Margen",
+    marginNone: "Ingen",
+    marginSmall: "Smal",
+    marginLarge: "Bred",
+    marginUnit: "mm",
+    mergeAllLabel: "Saml i én PDF",
+    mergeAllDesc: "Kombinerer alle billeder i én enkelt PDF-fil",
+    convertButton: "Konverter til PDF",
+    convertInfo: "Konvertering til separate PDF-filer downloades som ZIP",
+  },
 };
 
 export default da;

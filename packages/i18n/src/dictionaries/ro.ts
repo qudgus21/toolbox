@@ -301,6 +301,26 @@ const ro: Dictionary = {
     minSizeNote: "Imaginile mai mici de 50×50px sunt excluse",
     noImagesFound: "Nu s-au găsit imagini extractabile în acest PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orientarea paginii",
+    portrait: "Portret",
+    landscape: "Peisaj",
+    pageSizeLabel: "Dimensiunea paginii",
+    pageSizeFit: "Potrivire la imagine",
+    pageSizeFitDesc: "Dimensiunea paginii se adaptează la fiecare imagine",
+    pageSizeGroupDoc: "Document",
+    pageSizeGroupPhoto: "Fotografie",
+    pageSizeGroupOther: "Altele",
+    marginLabel: "Margine",
+    marginNone: "Fără",
+    marginSmall: "Îngustă",
+    marginLarge: "Largă",
+    marginUnit: "mm",
+    mergeAllLabel: "Unește într-un singur PDF",
+    mergeAllDesc: "Combină toate imaginile într-un singur fișier PDF",
+    convertButton: "Convertește în PDF",
+    convertInfo: "Conversia în PDF-uri separate se descarcă ca ZIP",
+  },
 };
 
 export default ro;

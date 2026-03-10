@@ -313,6 +313,26 @@ const hr: Dictionary = {
     minSizeNote: "Slike manje od 50×50px se izostavljaju",
     noImagesFound: "U ovom PDF-u nisu pronađene slike za izdvajanje",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orijentacija stranice",
+    portrait: "Uspravno",
+    landscape: "Vodoravno",
+    pageSizeLabel: "Veličina stranice",
+    pageSizeFit: "Prilagodi slici",
+    pageSizeFitDesc: "Veličina stranice prilagođava se svakoj slici",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Fotografija",
+    pageSizeGroupOther: "Ostalo",
+    marginLabel: "Margina",
+    marginNone: "Bez margine",
+    marginSmall: "Uska",
+    marginLarge: "Široka",
+    marginUnit: "mm",
+    mergeAllLabel: "Spoji u jedan PDF",
+    mergeAllDesc: "Kombinira sve slike u jednu PDF datoteku",
+    convertButton: "Pretvori u PDF",
+    convertInfo: "Pretvaranje u zasebne PDF-ove preuzima se kao ZIP",
+  },
 };
 
 export default hr;

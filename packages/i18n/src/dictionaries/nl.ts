@@ -313,6 +313,26 @@ const nl: Dictionary = {
     minSizeNote: "Afbeeldingen kleiner dan 50×50px worden overgeslagen",
     noImagesFound: "Geen extraheerbare afbeeldingen gevonden in deze PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Pagina-oriëntatie",
+    portrait: "Staand",
+    landscape: "Liggend",
+    pageSizeLabel: "Paginaformaat",
+    pageSizeFit: "Aanpassen aan afbeelding",
+    pageSizeFitDesc: "Het paginaformaat past zich aan elke afbeelding aan",
+    pageSizeGroupDoc: "Document",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Overig",
+    marginLabel: "Marge",
+    marginNone: "Geen",
+    marginSmall: "Smal",
+    marginLarge: "Breed",
+    marginUnit: "mm",
+    mergeAllLabel: "Samenvoegen tot één PDF",
+    mergeAllDesc: "Alle afbeeldingen combineren in één PDF-bestand",
+    convertButton: "Omzetten naar PDF",
+    convertInfo: "Bij afzonderlijke PDF's wordt het gedownload als ZIP",
+  },
 };
 
 export default nl;

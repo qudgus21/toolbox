@@ -313,6 +313,26 @@ const sv: Dictionary = {
     minSizeNote: "Bilder mindre än 50×50px utesluts",
     noImagesFound: "Inga extraherbara bilder hittades i denna PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Sidorientering",
+    portrait: "Stående",
+    landscape: "Liggande",
+    pageSizeLabel: "Sidstorlek",
+    pageSizeFit: "Anpassa till bild",
+    pageSizeFitDesc: "Sidstorleken anpassas efter varje bild",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Övrigt",
+    marginLabel: "Marginal",
+    marginNone: "Ingen",
+    marginSmall: "Smal",
+    marginLarge: "Bred",
+    marginUnit: "mm",
+    mergeAllLabel: "Slå ihop till en PDF",
+    mergeAllDesc: "Samla alla bilder i en enda PDF-fil",
+    convertButton: "Konvertera till PDF",
+    convertInfo: "Konvertering till separata PDF-filer laddas ner som ZIP",
+  },
 };
 
 export default sv;

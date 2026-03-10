@@ -313,6 +313,26 @@ const bg: Dictionary = {
     minSizeNote: "Изображения по-малки от 50×50px се пропускат",
     noImagesFound: "Не са намерени изображения за извличане в този PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Ориентация на страницата",
+    portrait: "Портрет",
+    landscape: "Пейзаж",
+    pageSizeLabel: "Размер на страницата",
+    pageSizeFit: "Побиране в изображението",
+    pageSizeFitDesc: "Размерът на страницата се нагажда към всяко изображение",
+    pageSizeGroupDoc: "Документ",
+    pageSizeGroupPhoto: "Снимка",
+    pageSizeGroupOther: "Друго",
+    marginLabel: "Поле",
+    marginNone: "Без поле",
+    marginSmall: "Тясно",
+    marginLarge: "Широко",
+    marginUnit: "mm",
+    mergeAllLabel: "Обединяване в един PDF",
+    mergeAllDesc: "Събира всички изображения в един PDF файл",
+    convertButton: "Конвертиране в PDF",
+    convertInfo: "При конвертиране в отделни PDF файлове ще се изтеглят като ZIP",
+  },
 };
 
 export default bg;

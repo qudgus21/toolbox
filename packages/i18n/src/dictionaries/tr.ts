@@ -313,6 +313,26 @@ const tr: Dictionary = {
     minSizeNote: "50×50px'ten küçük görseller dahil edilmez",
     noImagesFound: "Bu PDF'te çıkarılabilir görsel bulunamadı",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Sayfa yönü",
+    portrait: "Dikey",
+    landscape: "Yatay",
+    pageSizeLabel: "Sayfa boyutu",
+    pageSizeFit: "Görsele sığdır",
+    pageSizeFitDesc: "Sayfa boyutu her görsele göre ayarlanır",
+    pageSizeGroupDoc: "Belge",
+    pageSizeGroupPhoto: "Fotoğraf",
+    pageSizeGroupOther: "Diğer",
+    marginLabel: "Kenar boşluğu",
+    marginNone: "Yok",
+    marginSmall: "Dar",
+    marginLarge: "Geniş",
+    marginUnit: "mm",
+    mergeAllLabel: "Tek PDF olarak birleştir",
+    mergeAllDesc: "Tüm görselleri tek bir PDF dosyasında birleştirir",
+    convertButton: "PDF'ye dönüştür",
+    convertInfo: "Ayrı PDF'lere dönüştürülürse ZIP olarak indirilir",
+  },
 };
 
 export default tr;

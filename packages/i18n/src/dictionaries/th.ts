@@ -313,6 +313,26 @@ const th: Dictionary = {
     minSizeNote: "รูปภาพที่เล็กกว่า 50×50px จะไม่ถูกรวม",
     noImagesFound: "ไม่พบรูปภาพที่สามารถดึงได้ใน PDF นี้",
   },
+  jpgToPdfTool: {
+    orientationLabel: "แนวหน้ากระดาษ",
+    portrait: "แนวตั้ง",
+    landscape: "แนวนอน",
+    pageSizeLabel: "ขนาดหน้า",
+    pageSizeFit: "พอดีรูปภาพ",
+    pageSizeFitDesc: "ขนาดหน้าจะปรับให้เข้ากับแต่ละรูปภาพ",
+    pageSizeGroupDoc: "เอกสาร",
+    pageSizeGroupPhoto: "ภาพถ่าย",
+    pageSizeGroupOther: "อื่นๆ",
+    marginLabel: "ขอบ",
+    marginNone: "ไม่มี",
+    marginSmall: "แคบ",
+    marginLarge: "กว้าง",
+    marginUnit: "mm",
+    mergeAllLabel: "รวมเป็น PDF เดียว",
+    mergeAllDesc: "รวมรูปภาพทั้งหมดไว้ในไฟล์ PDF เดียว",
+    convertButton: "แปลงเป็น PDF",
+    convertInfo: "การแปลงเป็น PDF แยกไฟล์จะดาวน์โหลดเป็น ZIP",
+  },
 };
 
 export default th;

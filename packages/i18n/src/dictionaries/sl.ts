@@ -313,6 +313,26 @@ const sl: Dictionary = {
     minSizeNote: "Slike, manjše od 50×50px, so izključene",
     noImagesFound: "V tem PDF-ju ni bilo najdenih slik za izvlečenje",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Usmerjenost strani",
+    portrait: "Pokončno",
+    landscape: "Ležeče",
+    pageSizeLabel: "Velikost strani",
+    pageSizeFit: "Prilagodi sliki",
+    pageSizeFitDesc: "Velikost strani se prilagodi vsaki sliki",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Fotografija",
+    pageSizeGroupOther: "Drugo",
+    marginLabel: "Rob",
+    marginNone: "Brez",
+    marginSmall: "Ozek",
+    marginLarge: "Širok",
+    marginUnit: "mm",
+    mergeAllLabel: "Združi v en PDF",
+    mergeAllDesc: "Združi vse slike v eno PDF-datoteko",
+    convertButton: "Pretvori v PDF",
+    convertInfo: "Pretvorba v ločene PDF-je se prenese kot ZIP",
+  },
 };
 
 export default sl;

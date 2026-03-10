@@ -313,6 +313,26 @@ const ar: Dictionary = {
     minSizeNote: "تُستبعد الصور الأصغر من 50×50 بكسل",
     noImagesFound: "لم يُعثر على صور قابلة للاستخراج في هذا الملف",
   },
+  jpgToPdfTool: {
+    orientationLabel: "اتجاه الصفحة",
+    portrait: "طولي",
+    landscape: "عرضي",
+    pageSizeLabel: "حجم الصفحة",
+    pageSizeFit: "ملاءمة الصورة",
+    pageSizeFitDesc: "يتكيّف حجم الصفحة مع كل صورة تلقائيًا",
+    pageSizeGroupDoc: "مستند",
+    pageSizeGroupPhoto: "صورة",
+    pageSizeGroupOther: "أخرى",
+    marginLabel: "الهامش",
+    marginNone: "بدون هامش",
+    marginSmall: "ضيّق",
+    marginLarge: "واسع",
+    marginUnit: "mm",
+    mergeAllLabel: "دمج في ملف PDF واحد",
+    mergeAllDesc: "يجمع كل الصور في ملف PDF واحد",
+    convertButton: "تحويل إلى PDF",
+    convertInfo: "عند التحويل إلى ملفات PDF منفصلة سيتم التنزيل بصيغة ZIP",
+  },
 };
 
 export default ar;

@@ -313,6 +313,26 @@ const ru: Dictionary = {
     minSizeNote: "Изображения менее 50×50px не включаются",
     noImagesFound: "В этом PDF не найдено извлекаемых изображений",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Ориентация страницы",
+    portrait: "Книжная",
+    landscape: "Альбомная",
+    pageSizeLabel: "Размер страницы",
+    pageSizeFit: "По размеру изображения",
+    pageSizeFitDesc: "Размер страницы подстраивается под каждое изображение",
+    pageSizeGroupDoc: "Документ",
+    pageSizeGroupPhoto: "Фото",
+    pageSizeGroupOther: "Другое",
+    marginLabel: "Поля",
+    marginNone: "Без полей",
+    marginSmall: "Узкие",
+    marginLarge: "Широкие",
+    marginUnit: "mm",
+    mergeAllLabel: "Объединить в один PDF",
+    mergeAllDesc: "Собрать все изображения в один PDF-файл",
+    convertButton: "Конвертировать в PDF",
+    convertInfo: "При конвертации в отдельные PDF файлы скачаются в виде ZIP-архива",
+  },
 };
 
 export default ru;

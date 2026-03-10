@@ -313,6 +313,26 @@ const cs: Dictionary = {
     minSizeNote: "Obrázky menší než 50×50px jsou vynechány",
     noImagesFound: "V tomto PDF nebyly nalezeny žádné extrahovatelné obrázky",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orientace stránky",
+    portrait: "Na výšku",
+    landscape: "Na šířku",
+    pageSizeLabel: "Velikost stránky",
+    pageSizeFit: "Přizpůsobit obrázku",
+    pageSizeFitDesc: "Velikost stránky se přizpůsobí každému obrázku",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Fotografie",
+    pageSizeGroupOther: "Ostatní",
+    marginLabel: "Okraj",
+    marginNone: "Žádný",
+    marginSmall: "Úzký",
+    marginLarge: "Široký",
+    marginUnit: "mm",
+    mergeAllLabel: "Sloučit do jednoho PDF",
+    mergeAllDesc: "Spojí všechny obrázky do jednoho PDF souboru",
+    convertButton: "Převést do PDF",
+    convertInfo: "Při převodu do samostatných PDF se stáhne jako ZIP",
+  },
 };
 
 export default cs;

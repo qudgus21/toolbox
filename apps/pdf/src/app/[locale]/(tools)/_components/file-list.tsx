@@ -15,10 +15,50 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useState, useRef, type CSSProperties } from "react";
+import { useState, useRef, useMemo, type CSSProperties } from "react";
 import { cn } from "@toolbox/utils";
 import { X, RotateCw, Lock } from "lucide-react";
 import { PdfThumbnail } from "./pdf-thumbnail";
+
+/** Page aspect ratios (width/height in portrait) for visual preview */
+const PAGE_ASPECT_RATIOS: Record<string, number> = {
+  a4: 210 / 297,
+  a3: 297 / 420,
+  a5: 148 / 210,
+  letter: 216 / 279,
+  legal: 216 / 356,
+  b5: 176 / 250,
+  photo4x6: 102 / 152,
+  photo5x7: 127 / 178,
+  postcard: 100 / 148,
+};
+
+/** Convert mm margin to CSS percentage (based on A4 width 210mm) */
+function marginMmToPct(mm: number): string {
+  if (mm <= 0) return "0%";
+  return `${((mm / 210) * 100).toFixed(1)}%`;
+}
+
+const IMAGE_EXTENSIONS = new Set([
+  "jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp", "svg",
+]);
+
+function isImageFile(file: File): boolean {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+  return IMAGE_EXTENSIONS.has(ext) || file.type.startsWith("image/");
+}
+
+function ImageThumbnail({ file, className }: { file: File; className?: string }) {
+  const url = useMemo(() => URL.createObjectURL(file), [file]);
+  return (
+    <img
+      src={url}
+      alt={file.name}
+      className={cn("object-contain", className)}
+      onLoad={() => URL.revokeObjectURL(url)}
+    />
+  );
+}
 
 interface FileListProps {
   files: File[];
@@ -28,6 +68,12 @@ interface FileListProps {
   encryptedFiles?: Set<string>;
   encryptedLabel?: string;
   selectPagesTooltip?: string;
+  /** When set, show image inside a page-shaped frame with orientation */
+  pageOrientation?: "portrait" | "landscape";
+  /** Page size key for aspect ratio preview (a4, letter, etc.) */
+  pageSize?: string;
+  /** Margin in mm for visual preview */
+  pageMargin?: number;
   onRemove: (index: number) => void;
   onReorder: (files: File[]) => void;
   onRotate?: (fileKey: string) => void;
@@ -57,6 +103,9 @@ function SortableCard({
   onRotate,
   onCardClick,
   selectPagesTooltip,
+  pageOrientation,
+  pageSize,
+  pageMargin,
   disableTransition,
   didDragRef,
 }: {
@@ -71,6 +120,9 @@ function SortableCard({
   onRotate?: () => void;
   onCardClick?: () => void;
   selectPagesTooltip?: string;
+  pageOrientation?: "portrait" | "landscape";
+  pageSize?: string;
+  pageMargin?: number;
   disableTransition: boolean;
   didDragRef: React.RefObject<boolean>;
 }) {
@@ -129,13 +181,46 @@ function SortableCard({
         </button>
 
         {/* 썸네일 */}
-        <div className="relative aspect-[7/8] w-full overflow-hidden rounded-t-xl">
-          <div
-            className="h-full w-full transition-transform duration-300"
-            style={{ transform: `rotate(${rotation}deg)` }}
-          >
-            <PdfThumbnail file={file} className="h-full w-full" />
-          </div>
+        <div className={cn(
+          "relative w-full overflow-hidden rounded-t-xl transition-all duration-300",
+          "aspect-[4/5]",
+        )}>
+          {pageOrientation && isImageFile(file) ? (() => {
+            const baseRatio = PAGE_ASPECT_RATIOS[pageSize ?? "a4"] ?? PAGE_ASPECT_RATIOS.a4;
+            // Orientation: just flip aspect ratio (no rotation)
+            const pageAR = pageOrientation === "landscape" ? 1 / baseRatio : baseRatio;
+            const marginPct = marginMmToPct(pageMargin ?? 0);
+            return (
+              /* Gray card bg → square safe zone → white page rotates inside */
+              <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
+                <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
+                  <div
+                    className="relative overflow-hidden flex items-center justify-center transition-all duration-300 [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
+                    style={{
+                      aspectRatio: String(pageAR),
+                      ...(pageAR <= 1 ? { height: '100%' } : { width: '100%' }),
+                      padding: marginPct,
+                      transform: `rotate(${rotation}deg)`,
+                      backgroundColor: '#fff',
+                    }}
+                  >
+                    <ImageThumbnail file={file} className="w-full h-full object-contain" />
+                  </div>
+                </div>
+              </div>
+            );
+          })() : (
+            <div
+              className="h-full w-full transition-transform duration-300"
+              style={{ transform: `rotate(${rotation}deg)` }}
+            >
+              {isImageFile(file) ? (
+                <ImageThumbnail file={file} className="h-full w-full" />
+              ) : (
+                <PdfThumbnail file={file} className="h-full w-full" />
+              )}
+            </div>
+          )}
 
           {/* 순서 번호 뱃지 */}
           <span className="absolute top-2 left-2 flex h-6 min-w-6 items-center justify-center rounded-full bg-accent px-1.5 text-[11px] font-bold text-accent-foreground shadow-sm">
@@ -178,14 +263,16 @@ function SortableCard({
           <p className="truncate text-xs font-medium text-foreground">
             {file.name}
           </p>
-          <p className="mt-0.5 text-[11px] text-foreground-muted">
-            {formatSize(file.size)}
-            {pageCount != null && selectedPageCount != null && selectedPageCount < pageCount ? (
-              <span className="text-accent font-bold"> · {selectedPageCount}/{pageCount}p</span>
-            ) : pageCount != null ? (
-              ` · ${pageCount}p`
-            ) : null}
-          </p>
+          {!pageOrientation && (
+            <p className="mt-0.5 text-[11px] text-foreground-muted">
+              {formatSize(file.size)}
+              {pageCount != null && selectedPageCount != null && selectedPageCount < pageCount ? (
+                <span className="text-accent font-bold"> · {selectedPageCount}/{pageCount}p</span>
+              ) : pageCount != null ? (
+                ` · ${pageCount}p`
+              ) : null}
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -200,6 +287,9 @@ export function FileList({
   encryptedFiles = new Set(),
   encryptedLabel,
   selectPagesTooltip,
+  pageOrientation,
+  pageSize,
+  pageMargin,
   onRemove,
   onReorder,
   onRotate,
@@ -253,10 +343,10 @@ export function FileList({
         <div
           className={cn(
             "grid gap-4",
-            files.length === 1 && "grid-cols-1 max-w-[200px] mx-auto",
-            files.length === 2 && "grid-cols-2 max-w-[420px] mx-auto",
+            files.length === 1 && "grid-cols-1 max-w-[240px] mx-auto",
+            files.length === 2 && "grid-cols-2 max-w-[500px] mx-auto",
             files.length >= 3 &&
-              "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5",
+              "grid-cols-2 sm:grid-cols-3 md:grid-cols-4",
             className,
           )}
         >
@@ -276,6 +366,9 @@ export function FileList({
                 onRotate={onRotate ? () => onRotate(key) : undefined}
                 onCardClick={onCardClick ? () => onCardClick(file) : undefined}
                 selectPagesTooltip={selectPagesTooltip}
+                pageOrientation={pageOrientation}
+                pageSize={pageSize}
+                pageMargin={pageMargin}
                 disableTransition={disableTransition}
                 didDragRef={didDragRef}
               />

@@ -313,6 +313,26 @@ const pt: Dictionary = {
     minSizeNote: "Imagens menores que 50×50px são excluídas",
     noImagesFound: "Nenhuma imagem extraível encontrada neste PDF",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orientação da página",
+    portrait: "Retrato",
+    landscape: "Paisagem",
+    pageSizeLabel: "Tamanho da página",
+    pageSizeFit: "Ajustar à imagem",
+    pageSizeFitDesc: "O tamanho da página se adapta a cada imagem",
+    pageSizeGroupDoc: "Documento",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Outro",
+    marginLabel: "Margem",
+    marginNone: "Sem margem",
+    marginSmall: "Estreita",
+    marginLarge: "Larga",
+    marginUnit: "mm",
+    mergeAllLabel: "Unir em um único PDF",
+    mergeAllDesc: "Combina todas as imagens em um único arquivo PDF",
+    convertButton: "Converter para PDF",
+    convertInfo: "A conversão em PDFs separados será baixada como ZIP",
+  },
 };
 
 export default pt;

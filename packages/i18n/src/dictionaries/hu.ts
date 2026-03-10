@@ -313,6 +313,26 @@ const hu: Dictionary = {
     minSizeNote: "Az 50×50px-nél kisebb képek kihagyásra kerülnek",
     noImagesFound: "Nem találhatók kinyerhető képek ebben a PDF-ben",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Oldal tájolása",
+    portrait: "Álló",
+    landscape: "Fekvő",
+    pageSizeLabel: "Oldalméret",
+    pageSizeFit: "Képhez igazítás",
+    pageSizeFitDesc: "Az oldalméret minden képhez automatikusan igazodik",
+    pageSizeGroupDoc: "Dokumentum",
+    pageSizeGroupPhoto: "Fotó",
+    pageSizeGroupOther: "Egyéb",
+    marginLabel: "Margó",
+    marginNone: "Nincs",
+    marginSmall: "Keskeny",
+    marginLarge: "Széles",
+    marginUnit: "mm",
+    mergeAllLabel: "Összefűzés egy PDF-be",
+    mergeAllDesc: "Az összes képet egyetlen PDF-fájlba egyesíti",
+    convertButton: "Konvertálás PDF-be",
+    convertInfo: "Külön PDF-ekké alakítva ZIP-ként töltődik le",
+  },
 };
 
 export default hu;

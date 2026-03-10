@@ -313,6 +313,26 @@ const vi: Dictionary = {
     minSizeNote: "Hình ảnh nhỏ hơn 50×50px sẽ bị bỏ qua",
     noImagesFound: "Không tìm thấy hình ảnh nào có thể trích xuất trong PDF này",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Hướng trang",
+    portrait: "Dọc",
+    landscape: "Ngang",
+    pageSizeLabel: "Kích thước trang",
+    pageSizeFit: "Vừa với ảnh",
+    pageSizeFitDesc: "Kích thước trang tự động điều chỉnh theo từng ảnh",
+    pageSizeGroupDoc: "Tài liệu",
+    pageSizeGroupPhoto: "Ảnh",
+    pageSizeGroupOther: "Khác",
+    marginLabel: "Lề",
+    marginNone: "Không",
+    marginSmall: "Hẹp",
+    marginLarge: "Rộng",
+    marginUnit: "mm",
+    mergeAllLabel: "Gộp thành một PDF",
+    mergeAllDesc: "Gộp tất cả ảnh vào một file PDF duy nhất",
+    convertButton: "Chuyển sang PDF",
+    convertInfo: "Chuyển đổi thành các PDF riêng lẻ sẽ được tải về dưới dạng ZIP",
+  },
 };
 
 export default vi;

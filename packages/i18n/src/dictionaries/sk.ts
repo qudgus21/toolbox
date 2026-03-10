@@ -313,6 +313,26 @@ const sk: Dictionary = {
     minSizeNote: "Obrázky menšie ako 50×50px sa vynechajú",
     noImagesFound: "V tomto PDF sa nenašli žiadne extrahovateľné obrázky",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orientácia stránky",
+    portrait: "Na výšku",
+    landscape: "Na šírku",
+    pageSizeLabel: "Veľkosť stránky",
+    pageSizeFit: "Prispôsobiť obrázku",
+    pageSizeFitDesc: "Veľkosť stránky sa prispôsobí každému obrázku",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Fotografia",
+    pageSizeGroupOther: "Ostatné",
+    marginLabel: "Okraj",
+    marginNone: "Žiadny",
+    marginSmall: "Úzky",
+    marginLarge: "Široký",
+    marginUnit: "mm",
+    mergeAllLabel: "Zlúčiť do jedného PDF",
+    mergeAllDesc: "Spojí všetky obrázky do jedného PDF súboru",
+    convertButton: "Previesť do PDF",
+    convertInfo: "Pri prevode do samostatných PDF sa stiahne ako ZIP",
+  },
 };
 
 export default sk;

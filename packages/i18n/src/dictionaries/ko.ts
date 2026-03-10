@@ -313,6 +313,26 @@ const ko: Dictionary = {
     minSizeNote: "50×50px 미만의 작은 이미지는 제외됩니다",
     noImagesFound: "PDF에서 추출 가능한 이미지를 찾지 못했습니다",
   },
+  jpgToPdfTool: {
+    orientationLabel: "페이지 방향",
+    portrait: "세로",
+    landscape: "가로",
+    pageSizeLabel: "페이지 크기",
+    pageSizeFit: "원본 맞춤",
+    pageSizeFitDesc: "이미지 크기에 맞게 페이지를 자동 조절합니다",
+    pageSizeGroupDoc: "문서",
+    pageSizeGroupPhoto: "사진",
+    pageSizeGroupOther: "기타",
+    marginLabel: "여백",
+    marginNone: "없음",
+    marginSmall: "좁게",
+    marginLarge: "넓게",
+    marginUnit: "mm",
+    mergeAllLabel: "하나의 PDF로 합치기",
+    mergeAllDesc: "모든 이미지를 하나의 PDF 파일로 병합합니다",
+    convertButton: "PDF로 변환",
+    convertInfo: "여러 파일을 개별 PDF로 변환하면 ZIP으로 다운로드됩니다",
+  },
 };
 
 export default ko;

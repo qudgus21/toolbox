@@ -313,6 +313,26 @@ const uk: Dictionary = {
     minSizeNote: "Зображення менші за 50×50px не включаються",
     noImagesFound: "У цьому PDF не знайдено зображень для витягування",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Орієнтація сторінки",
+    portrait: "Книжкова",
+    landscape: "Альбомна",
+    pageSizeLabel: "Розмір сторінки",
+    pageSizeFit: "Підігнати під зображення",
+    pageSizeFitDesc: "Розмір сторінки підлаштовується під кожне зображення",
+    pageSizeGroupDoc: "Документ",
+    pageSizeGroupPhoto: "Фото",
+    pageSizeGroupOther: "Інше",
+    marginLabel: "Поля",
+    marginNone: "Без полів",
+    marginSmall: "Вузькі",
+    marginLarge: "Широкі",
+    marginUnit: "mm",
+    mergeAllLabel: "Об'єднати в один PDF",
+    mergeAllDesc: "Зібрати всі зображення в один PDF-файл",
+    convertButton: "Конвертувати в PDF",
+    convertInfo: "При конвертації в окремі PDF файли завантажаться як ZIP-архів",
+  },
 };
 
 export default uk;

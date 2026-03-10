@@ -313,6 +313,26 @@ const hi: Dictionary = {
     minSizeNote: "50×50px से छोटी इमेज शामिल नहीं की जातीं",
     noImagesFound: "इस PDF में निकालने योग्य कोई इमेज नहीं मिली",
   },
+  jpgToPdfTool: {
+    orientationLabel: "पेज की दिशा",
+    portrait: "पोर्ट्रेट",
+    landscape: "लैंडस्केप",
+    pageSizeLabel: "पेज का आकार",
+    pageSizeFit: "इमेज के अनुसार",
+    pageSizeFitDesc: "पेज का आकार हर इमेज के हिसाब से बदलता है",
+    pageSizeGroupDoc: "दस्तावेज़",
+    pageSizeGroupPhoto: "फ़ोटो",
+    pageSizeGroupOther: "अन्य",
+    marginLabel: "मार्जिन",
+    marginNone: "कोई नहीं",
+    marginSmall: "छोटा",
+    marginLarge: "बड़ा",
+    marginUnit: "mm",
+    mergeAllLabel: "एक PDF में जोड़ें",
+    mergeAllDesc: "सभी इमेज को एक ही PDF फ़ाइल में मिलाएँ",
+    convertButton: "PDF में बदलें",
+    convertInfo: "अलग-अलग PDF में बदलने पर ZIP के रूप में डाउनलोड होगा",
+  },
 };
 
 export default hi;

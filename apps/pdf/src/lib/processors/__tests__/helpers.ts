@@ -4,6 +4,7 @@ import { PDFDocument } from "pdf-lib";
 import JSZip from "jszip";
 
 const FIXTURES_DIR = resolve(__dirname, "../../../../test-fixtures");
+const ROOT_FIXTURES_DIR = resolve(__dirname, "../../../../../../test-fixtures");
 
 /**
  * Load a test fixture PDF as a File object (Node emulation)
@@ -158,4 +159,14 @@ export function createProgressTracker() {
  */
 export function fileId(file: File): string {
   return `${file.name}-${file.size}-${file.lastModified}`;
+}
+
+/**
+ * Load an image fixture (jpg/png) from the root test-fixtures directory
+ */
+export function loadImageFixture(subdir: "jpg" | "png", filename: string): File {
+  const buf = readFileSync(resolve(ROOT_FIXTURES_DIR, subdir, filename));
+  const mimeType = subdir === "jpg" ? "image/jpeg" : "image/png";
+  const blob = new Blob([buf], { type: mimeType });
+  return new File([blob], filename, { type: mimeType });
 }

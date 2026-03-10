@@ -313,6 +313,26 @@ const he: Dictionary = {
     minSizeNote: "תמונות קטנות מ-50×50px אינן נכללות",
     noImagesFound: "לא נמצאו תמונות לחילוץ ב-PDF זה",
   },
+  jpgToPdfTool: {
+    orientationLabel: "כיוון העמוד",
+    portrait: "לאורך",
+    landscape: "לרוחב",
+    pageSizeLabel: "גודל עמוד",
+    pageSizeFit: "התאמה לתמונה",
+    pageSizeFitDesc: "גודל העמוד מתאים את עצמו לכל תמונה",
+    pageSizeGroupDoc: "מסמך",
+    pageSizeGroupPhoto: "תמונה",
+    pageSizeGroupOther: "אחר",
+    marginLabel: "שוליים",
+    marginNone: "ללא",
+    marginSmall: "צרים",
+    marginLarge: "רחבים",
+    marginUnit: "mm",
+    mergeAllLabel: "איחוד לקובץ PDF אחד",
+    mergeAllDesc: "משלב את כל התמונות בקובץ PDF אחד",
+    convertButton: "המרה ל-PDF",
+    convertInfo: "המרה לקובצי PDF נפרדים תוריד כקובץ ZIP",
+  },
 };
 
 export default he;

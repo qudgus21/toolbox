@@ -313,6 +313,26 @@ const fi: Dictionary = {
     minSizeNote: "Alle 50×50px kuvat jätetään pois",
     noImagesFound: "Tästä PDF-tiedostosta ei löytynyt poimittavia kuvia",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Sivun suunta",
+    portrait: "Pysty",
+    landscape: "Vaaka",
+    pageSizeLabel: "Sivukoko",
+    pageSizeFit: "Sovita kuvaan",
+    pageSizeFitDesc: "Sivukoko mukautuu jokaisen kuvan mukaan",
+    pageSizeGroupDoc: "Asiakirja",
+    pageSizeGroupPhoto: "Valokuva",
+    pageSizeGroupOther: "Muu",
+    marginLabel: "Marginaali",
+    marginNone: "Ei marginaalia",
+    marginSmall: "Kapea",
+    marginLarge: "Leveä",
+    marginUnit: "mm",
+    mergeAllLabel: "Yhdistä yhdeksi PDF-tiedostoksi",
+    mergeAllDesc: "Kokoaa kaikki kuvat yhteen PDF-tiedostoon",
+    convertButton: "Muunna PDF-muotoon",
+    convertInfo: "Erillisiksi PDF-tiedostoiksi muunnettaessa ladataan ZIP-tiedostona",
+  },
 };
 
 export default fi;

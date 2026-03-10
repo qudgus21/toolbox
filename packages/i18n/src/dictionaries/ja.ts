@@ -313,6 +313,26 @@ const ja: Dictionary = {
     minSizeNote: "50×50px未満の画像は除外されます",
     noImagesFound: "このPDFから抽出可能な画像は見つかりませんでした",
   },
+  jpgToPdfTool: {
+    orientationLabel: "ページの向き",
+    portrait: "縦向き",
+    landscape: "横向き",
+    pageSizeLabel: "ページサイズ",
+    pageSizeFit: "画像に合わせる",
+    pageSizeFitDesc: "各画像に合わせてページサイズを自動調整します",
+    pageSizeGroupDoc: "文書",
+    pageSizeGroupPhoto: "写真",
+    pageSizeGroupOther: "その他",
+    marginLabel: "余白",
+    marginNone: "なし",
+    marginSmall: "狭い",
+    marginLarge: "広い",
+    marginUnit: "mm",
+    mergeAllLabel: "1つのPDFに結合",
+    mergeAllDesc: "すべての画像を1つのPDFファイルにまとめます",
+    convertButton: "PDFに変換",
+    convertInfo: "個別のPDFに変換する場合はZIPでダウンロードされます",
+  },
 };
 
 export default ja;

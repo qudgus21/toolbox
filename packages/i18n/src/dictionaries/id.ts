@@ -313,6 +313,26 @@ const id: Dictionary = {
     minSizeNote: "Gambar lebih kecil dari 50×50px tidak disertakan",
     noImagesFound: "Tidak ditemukan gambar yang dapat diekstrak dalam PDF ini",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Orientasi halaman",
+    portrait: "Potret",
+    landscape: "Lanskap",
+    pageSizeLabel: "Ukuran halaman",
+    pageSizeFit: "Sesuaikan dengan gambar",
+    pageSizeFitDesc: "Ukuran halaman menyesuaikan setiap gambar",
+    pageSizeGroupDoc: "Dokumen",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Lainnya",
+    marginLabel: "Margin",
+    marginNone: "Tanpa margin",
+    marginSmall: "Sempit",
+    marginLarge: "Lebar",
+    marginUnit: "mm",
+    mergeAllLabel: "Gabungkan menjadi satu PDF",
+    mergeAllDesc: "Menggabungkan semua gambar ke dalam satu file PDF",
+    convertButton: "Konversi ke PDF",
+    convertInfo: "Konversi ke PDF terpisah akan diunduh sebagai ZIP",
+  },
 };
 
 export default id;

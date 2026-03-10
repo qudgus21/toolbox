@@ -301,6 +301,26 @@ const no: Dictionary = {
     minSizeNote: "Bilder under 50×50px utelates",
     noImagesFound: "Ingen bilder å hente ut ble funnet i denne PDF-en",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Sideretning",
+    portrait: "Stående",
+    landscape: "Liggende",
+    pageSizeLabel: "Sidestørrelse",
+    pageSizeFit: "Tilpass til bilde",
+    pageSizeFitDesc: "Sidestørrelsen tilpasses hvert enkelt bilde",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Annet",
+    marginLabel: "Marg",
+    marginNone: "Ingen",
+    marginSmall: "Smal",
+    marginLarge: "Bred",
+    marginUnit: "mm",
+    mergeAllLabel: "Slå sammen til én PDF",
+    mergeAllDesc: "Samler alle bilder i én enkelt PDF-fil",
+    convertButton: "Konverter til PDF",
+    convertInfo: "Konvertering til separate PDF-filer lastes ned som ZIP",
+  },
 };
 
 export default no;

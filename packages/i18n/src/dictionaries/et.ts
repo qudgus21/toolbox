@@ -313,6 +313,26 @@ const et: Dictionary = {
     minSizeNote: "Alla 50×50px pildid jäetakse välja",
     noImagesFound: "Sellest PDF-ist ei leitud eraldatavaid pilte",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Lehekülje suund",
+    portrait: "Püstpaigutus",
+    landscape: "Rõhtpaigutus",
+    pageSizeLabel: "Lehekülje suurus",
+    pageSizeFit: "Sobita pildiga",
+    pageSizeFitDesc: "Lehekülje suurus kohandub iga pildi järgi",
+    pageSizeGroupDoc: "Dokument",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Muu",
+    marginLabel: "Veeris",
+    marginNone: "Puudub",
+    marginSmall: "Kitsas",
+    marginLarge: "Lai",
+    marginUnit: "mm",
+    mergeAllLabel: "Ühenda üheks PDF-iks",
+    mergeAllDesc: "Koondab kõik pildid ühte PDF-faili",
+    convertButton: "Teisenda PDF-iks",
+    convertInfo: "Eraldi PDF-ideks teisendamisel laaditakse alla ZIP-failina",
+  },
 };
 
 export default et;

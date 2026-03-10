@@ -313,6 +313,26 @@ const lt: Dictionary = {
     minSizeNote: "Mažesni nei 50×50px vaizdai neįtraukiami",
     noImagesFound: "Šiame PDF nerasta jokių išgaunamų vaizdų",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Puslapio orientacija",
+    portrait: "Stačias",
+    landscape: "Gulsčias",
+    pageSizeLabel: "Puslapio dydis",
+    pageSizeFit: "Pritaikyti paveikslėliui",
+    pageSizeFitDesc: "Puslapio dydis prisitaiko prie kiekvieno paveikslėlio",
+    pageSizeGroupDoc: "Dokumentas",
+    pageSizeGroupPhoto: "Nuotrauka",
+    pageSizeGroupOther: "Kita",
+    marginLabel: "Paraštė",
+    marginNone: "Be paraščių",
+    marginSmall: "Siaura",
+    marginLarge: "Plati",
+    marginUnit: "mm",
+    mergeAllLabel: "Sujungti į vieną PDF",
+    mergeAllDesc: "Sujungia visus paveikslėlius į vieną PDF failą",
+    convertButton: "Konvertuoti į PDF",
+    convertInfo: "Konvertuojant į atskirus PDF failus bus atsisiųsta kaip ZIP",
+  },
 };
 
 export default lt;

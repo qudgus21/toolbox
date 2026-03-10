@@ -313,6 +313,26 @@ const lv: Dictionary = {
     minSizeNote: "Attēli, kas mazāki par 50×50px, tiek izlaisti",
     noImagesFound: "Šajā PDF nav atrasti izvelkami attēli",
   },
+  jpgToPdfTool: {
+    orientationLabel: "Lapas orientācija",
+    portrait: "Portrets",
+    landscape: "Ainava",
+    pageSizeLabel: "Lapas izmērs",
+    pageSizeFit: "Pielāgot attēlam",
+    pageSizeFitDesc: "Lapas izmērs pielāgojas katram attēlam",
+    pageSizeGroupDoc: "Dokuments",
+    pageSizeGroupPhoto: "Foto",
+    pageSizeGroupOther: "Cits",
+    marginLabel: "Apmale",
+    marginNone: "Nav",
+    marginSmall: "Šaura",
+    marginLarge: "Plata",
+    marginUnit: "mm",
+    mergeAllLabel: "Apvienot vienā PDF",
+    mergeAllDesc: "Apvieno visus attēlus vienā PDF failā",
+    convertButton: "Konvertēt uz PDF",
+    convertInfo: "Konvertējot atsevišķos PDF failos, lejupielāde notiks kā ZIP",
+  },
 };
 
 export default lv;

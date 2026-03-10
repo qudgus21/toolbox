@@ -218,4 +218,24 @@ export interface Dictionary {
     minSizeNote: string;
     noImagesFound: string;
   };
+  jpgToPdfTool: {
+    orientationLabel: string;
+    portrait: string;
+    landscape: string;
+    pageSizeLabel: string;
+    pageSizeFit: string;
+    pageSizeFitDesc: string;
+    pageSizeGroupDoc: string;
+    pageSizeGroupPhoto: string;
+    pageSizeGroupOther: string;
+    marginLabel: string;
+    marginNone: string;
+    marginSmall: string;
+    marginLarge: string;
+    marginUnit: string;
+    mergeAllLabel: string;
+    mergeAllDesc: string;
+    convertButton: string;
+    convertInfo: string;
+  };
 }
