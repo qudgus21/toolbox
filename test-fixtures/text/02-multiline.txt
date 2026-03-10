@@ -1,0 +1,5 @@
+Line 1: Introduction
+Line 2: This file contains multiple lines.
+Line 3: Each line should appear in the extracted text.
+Line 4: Numbers 12345 and symbols !@#$%
+Line 5: End of file.

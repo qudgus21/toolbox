@@ -115,15 +115,6 @@ export const tools: ToolDefinition[] = [
     acceptedTypes: ".pdf",
   },
   {
-    slug: "pdf-to-pdfa",
-    title: "PDF to PDF/A",
-    description: "Convert to PDF/A format for long-term archiving.",
-    icon: FileCheck,
-    emoji: "🗃️",
-    category: "convert",
-    acceptedTypes: ".pdf",
-  },
-  {
     slug: "jpg-to-pdf",
     title: "JPG to PDF",
     description: "Convert JPG images into a PDF document.",
@@ -340,6 +331,16 @@ export const tools: ToolDefinition[] = [
   },
 
   // ── Coming Soon (server required) ─────────────────────
+  {
+    slug: "pdf-to-pdfa",
+    title: "PDF to PDF/A",
+    description: "Convert to PDF/A format for long-term archiving.",
+    icon: FileCheck,
+    emoji: "🗃️",
+    category: "convert",
+    acceptedTypes: ".pdf",
+    comingSoon: true,
+  },
   {
     slug: "compress",
     title: "Compress PDF",

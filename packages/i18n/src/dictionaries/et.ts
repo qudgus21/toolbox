@@ -287,6 +287,23 @@ const et: Dictionary = {
     convertInfo: "Mitu lehekülge laaditakse alla ZIP-failina",
     convertButton: "Teisenda JPG-ks",
   },
+  pdfToPngTool: {
+    qualityLabel: "Resolution",
+    qualityHigh: "High resolution",
+    qualityHighDesc: "Sharp images, larger file size",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanced resolution and file size",
+    qualityLow: "Low resolution",
+    qualityLowDesc: "Smaller file size, lower resolution",
+    convertInfo: "PNG is a lossless format that supports transparency",
+    convertButton: "Convert to PNG",
+  },
+  pdfToTextTool: {
+    description: "Automatically extracts text from your PDF and converts it to a text file",
+    pageBreakNote: "Page breaks are automatically inserted between pages",
+    encodingNote: "Saved in UTF-8 encoding",
+    convertButton: "Extract text",
+  },
   extractImagesTool: {
     dropFile: "Valige PDF-fail",
     changeFile: "Muuda faili",

@@ -287,6 +287,23 @@ const ar: Dictionary = {
     convertInfo: "سيتم تنزيل الصفحات المتعددة كملف ZIP",
     convertButton: "تحويل إلى JPG",
   },
+  pdfToPngTool: {
+    qualityLabel: "Resolution",
+    qualityHigh: "High resolution",
+    qualityHighDesc: "Sharp images, larger file size",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanced resolution and file size",
+    qualityLow: "Low resolution",
+    qualityLowDesc: "Smaller file size, lower resolution",
+    convertInfo: "PNG is a lossless format that supports transparency",
+    convertButton: "Convert to PNG",
+  },
+  pdfToTextTool: {
+    description: "Automatically extracts text from your PDF and converts it to a text file",
+    pageBreakNote: "Page breaks are automatically inserted between pages",
+    encodingNote: "Saved in UTF-8 encoding",
+    convertButton: "Extract text",
+  },
   extractImagesTool: {
     dropFile: "اختر ملف PDF",
     changeFile: "تغيير الملف",

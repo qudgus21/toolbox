@@ -192,6 +192,23 @@ export interface Dictionary {
     convertInfo: string;
     convertButton: string;
   };
+  pdfToPngTool: {
+    qualityLabel: string;
+    qualityHigh: string;
+    qualityHighDesc: string;
+    qualityMedium: string;
+    qualityMediumDesc: string;
+    qualityLow: string;
+    qualityLowDesc: string;
+    convertInfo: string;
+    convertButton: string;
+  };
+  pdfToTextTool: {
+    description: string;
+    pageBreakNote: string;
+    encodingNote: string;
+    convertButton: string;
+  };
   extractImagesTool: {
     dropFile: string;
     changeFile: string;

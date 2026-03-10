@@ -287,6 +287,23 @@ const hi: Dictionary = {
     convertInfo: "कई पेज ZIP फ़ाइल के रूप में डाउनलोड होंगे",
     convertButton: "JPG में बदलें",
   },
+  pdfToPngTool: {
+    qualityLabel: "Resolution",
+    qualityHigh: "High resolution",
+    qualityHighDesc: "Sharp images, larger file size",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanced resolution and file size",
+    qualityLow: "Low resolution",
+    qualityLowDesc: "Smaller file size, lower resolution",
+    convertInfo: "PNG is a lossless format that supports transparency",
+    convertButton: "Convert to PNG",
+  },
+  pdfToTextTool: {
+    description: "Automatically extracts text from your PDF and converts it to a text file",
+    pageBreakNote: "Page breaks are automatically inserted between pages",
+    encodingNote: "Saved in UTF-8 encoding",
+    convertButton: "Extract text",
+  },
   extractImagesTool: {
     dropFile: "एक PDF फ़ाइल चुनें",
     changeFile: "फ़ाइल बदलें",

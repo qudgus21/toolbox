@@ -9,6 +9,8 @@ registry.set("split", () => import("./processors/split"));
 registry.set("delete-pages", () => import("./processors/delete-pages"));
 registry.set("extract-pages", () => import("./processors/extract-pages"));
 registry.set("pdf-to-jpg", () => import("./processors/pdf-to-jpg"));
+registry.set("pdf-to-png", () => import("./processors/pdf-to-png"));
+registry.set("pdf-to-text", () => import("./processors/pdf-to-text"));
 registry.set("extract-images", () => import("./processors/extract-images"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));

@@ -203,6 +203,23 @@ const km: Dictionary = {
     convertInfo: "ទំព័រច្រើនត្រូវបានទាញយកជាឯកសារ ZIP",
     convertButton: "បម្លែងទៅ JPG",
   },
+  pdfToPngTool: {
+    qualityLabel: "Resolution",
+    qualityHigh: "High resolution",
+    qualityHighDesc: "Sharp images, larger file size",
+    qualityMedium: "Standard",
+    qualityMediumDesc: "Balanced resolution and file size",
+    qualityLow: "Low resolution",
+    qualityLowDesc: "Smaller file size, lower resolution",
+    convertInfo: "PNG is a lossless format that supports transparency",
+    convertButton: "Convert to PNG",
+  },
+  pdfToTextTool: {
+    description: "Automatically extracts text from your PDF and converts it to a text file",
+    pageBreakNote: "Page breaks are automatically inserted between pages",
+    encodingNote: "Saved in UTF-8 encoding",
+    convertButton: "Extract text",
+  },
   extractImagesTool: {
     dropFile: "ជ្រើសឯកសារ PDF",
     changeFile: "ប្តូរឯកសារ",

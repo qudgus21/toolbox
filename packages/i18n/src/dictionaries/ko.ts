@@ -287,6 +287,23 @@ const ko: Dictionary = {
     convertInfo: "여러 페이지는 ZIP 파일로 다운로드됩니다",
     convertButton: "JPG로 변환",
   },
+  pdfToPngTool: {
+    qualityLabel: "해상도",
+    qualityHigh: "고해상도",
+    qualityHighDesc: "선명한 이미지, 큰 파일 크기",
+    qualityMedium: "표준",
+    qualityMediumDesc: "적절한 해상도와 파일 크기",
+    qualityLow: "저해상도",
+    qualityLowDesc: "작은 파일 크기, 낮은 해상도",
+    convertInfo: "PNG는 무손실 포맷으로 투명 배경을 지원합니다",
+    convertButton: "PNG로 변환",
+  },
+  pdfToTextTool: {
+    description: "PDF의 텍스트를 자동으로 추출하여 텍스트 파일로 변환합니다",
+    pageBreakNote: "페이지 구분선이 자동으로 삽입됩니다",
+    encodingNote: "UTF-8 인코딩으로 저장됩니다",
+    convertButton: "텍스트 추출",
+  },
   extractImagesTool: {
     dropFile: "PDF 파일을 선택하세요",
     changeFile: "파일 변경",
