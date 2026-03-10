@@ -148,7 +148,7 @@ export const tools: ToolDefinition[] = [
     icon: Images,
     emoji: "🏞️",
     category: "convert",
-    acceptedTypes: ".jpg,.jpeg,.png,.gif,.bmp,.tiff,.webp",
+    acceptedTypes: ".jpg,.jpeg,.png,.gif,.webp,.svg,.avif,.bmp,.ico",
   },
 
   // ── Organize ───────────────────────────────────────────

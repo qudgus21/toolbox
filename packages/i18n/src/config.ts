@@ -238,4 +238,44 @@ export interface Dictionary {
     convertButton: string;
     convertInfo: string;
   };
+  pngToPdfTool: {
+    orientationLabel: string;
+    portrait: string;
+    landscape: string;
+    pageSizeLabel: string;
+    pageSizeFit: string;
+    pageSizeFitDesc: string;
+    pageSizeGroupDoc: string;
+    pageSizeGroupPhoto: string;
+    pageSizeGroupOther: string;
+    marginLabel: string;
+    marginNone: string;
+    marginSmall: string;
+    marginLarge: string;
+    marginUnit: string;
+    mergeAllLabel: string;
+    mergeAllDesc: string;
+    convertButton: string;
+    convertInfo: string;
+  };
+  imageToPdfTool: {
+    orientationLabel: string;
+    portrait: string;
+    landscape: string;
+    pageSizeLabel: string;
+    pageSizeFit: string;
+    pageSizeFitDesc: string;
+    pageSizeGroupDoc: string;
+    pageSizeGroupPhoto: string;
+    pageSizeGroupOther: string;
+    marginLabel: string;
+    marginNone: string;
+    marginSmall: string;
+    marginLarge: string;
+    marginUnit: string;
+    mergeAllLabel: string;
+    mergeAllDesc: string;
+    convertButton: string;
+    convertInfo: string;
+  };
 }

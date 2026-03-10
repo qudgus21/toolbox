@@ -170,3 +170,27 @@ export function loadImageFixture(subdir: "jpg" | "png", filename: string): File 
   const blob = new Blob([buf], { type: mimeType });
   return new File([blob], filename, { type: mimeType });
 }
+
+const MIME_MAP: Record<string, string> = {
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  png: "image/png",
+  gif: "image/gif",
+  webp: "image/webp",
+  avif: "image/avif",
+  svg: "image/svg+xml",
+  bmp: "image/bmp",
+  ico: "image/x-icon",
+};
+
+/**
+ * Load any image fixture from test-fixtures/images/ directory.
+ * Auto-detects MIME type from file extension.
+ */
+export function loadAnyImageFixture(filename: string): File {
+  const buf = readFileSync(resolve(ROOT_FIXTURES_DIR, "images", filename));
+  const ext = filename.split(".").pop()?.toLowerCase() ?? "";
+  const mimeType = MIME_MAP[ext] ?? "application/octet-stream";
+  const blob = new Blob([buf], { type: mimeType });
+  return new File([blob], filename, { type: mimeType });
+}

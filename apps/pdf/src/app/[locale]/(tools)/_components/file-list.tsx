@@ -40,7 +40,7 @@ function marginMmToPct(mm: number): string {
 }
 
 const IMAGE_EXTENSIONS = new Set([
-  "jpg", "jpeg", "png", "gif", "bmp", "tiff", "tif", "webp", "svg",
+  "jpg", "jpeg", "png", "gif", "webp", "svg", "avif", "bmp", "ico",
 ]);
 
 function isImageFile(file: File): boolean {
@@ -195,7 +195,7 @@ function SortableCard({
               <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
                 <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
                   <div
-                    className="relative overflow-hidden flex items-center justify-center transition-all duration-300 [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
+                    className="relative overflow-hidden flex items-center justify-center transition-[padding] duration-300 ease-out [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
                     style={{
                       aspectRatio: String(pageAR),
                       ...(pageAR <= 1 ? { height: '100%' } : { width: '100%' }),

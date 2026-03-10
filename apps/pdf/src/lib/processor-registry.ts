@@ -13,6 +13,8 @@ registry.set("pdf-to-png", () => import("./processors/pdf-to-png"));
 registry.set("pdf-to-text", () => import("./processors/pdf-to-text"));
 registry.set("extract-images", () => import("./processors/extract-images"));
 registry.set("jpg-to-pdf", () => import("./processors/jpg-to-pdf"));
+registry.set("png-to-pdf", () => import("./processors/png-to-pdf"));
+registry.set("image-to-pdf", () => import("./processors/image-to-pdf"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));
 // registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));

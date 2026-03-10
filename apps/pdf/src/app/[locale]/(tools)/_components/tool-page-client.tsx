@@ -37,6 +37,8 @@ import { PdfToPngOptions, type PdfToPngLabels } from "./pdf-to-png-options";
 import { PdfToTextOptions, type PdfToTextLabels } from "./pdf-to-text-options";
 import { ExtractImagesOptions, type ExtractImagesLabels } from "./extract-images-options";
 import { JpgToPdfOptions, type JpgToPdfLabels } from "./jpg-to-pdf-options";
+import { PngToPdfOptions, type PngToPdfLabels } from "./png-to-pdf-options";
+import { ImageToPdfOptions, type ImageToPdfLabels } from "./image-to-pdf-options";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
 
 import { fileId } from "./file-list";
@@ -165,6 +167,8 @@ interface ToolPageClientProps {
   pdfToTextLabels?: PdfToTextLabels;
   extractImagesLabels?: ExtractImagesLabels;
   jpgToPdfLabels?: JpgToPdfLabels;
+  pngToPdfLabels?: PngToPdfLabels;
+  imageToPdfLabels?: ImageToPdfLabels;
   children?: ReactNode;
 }
 
@@ -208,6 +212,8 @@ export function ToolPageClient({
   pdfToTextLabels,
   extractImagesLabels,
   jpgToPdfLabels,
+  pngToPdfLabels,
+  imageToPdfLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -264,6 +270,14 @@ export function ToolPageClient({
   const [jpgToPdfPageSize, setJpgToPdfPageSize] = useState<PageSizeKey>("a4");
   const [jpgToPdfMarginMm, setJpgToPdfMarginMm] = useState(0);
   const [jpgToPdfMergeAll, setJpgToPdfMergeAll] = useState(true);
+  const [pngToPdfOrientation, setPngToPdfOrientation] = useState<Orientation>("portrait");
+  const [pngToPdfPageSize, setPngToPdfPageSize] = useState<PageSizeKey>("a4");
+  const [pngToPdfMarginMm, setPngToPdfMarginMm] = useState(0);
+  const [pngToPdfMergeAll, setPngToPdfMergeAll] = useState(true);
+  const [imageToPdfOrientation, setImageToPdfOrientation] = useState<Orientation>("portrait");
+  const [imageToPdfPageSize, setImageToPdfPageSize] = useState<PageSizeKey>("a4");
+  const [imageToPdfMarginMm, setImageToPdfMarginMm] = useState(0);
+  const [imageToPdfMergeAll, setImageToPdfMergeAll] = useState(true);
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
@@ -275,6 +289,8 @@ export function ToolPageClient({
   const isPdfToText = slug === "pdf-to-text";
   const isExtractImages = slug === "extract-images";
   const isJpgToPdf = slug === "jpg-to-pdf";
+  const isPngToPdf = slug === "png-to-pdf";
+  const isImageToPdf = slug === "image-to-pdf";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText;
 
   useEffect(() => {
@@ -364,7 +380,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isPdfToJpg || isPdfToPng || isJpgToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -1020,6 +1036,228 @@ export function ToolPageClient({
                   </div>
                 </div>
               </>
+            ) : isPngToPdf && pngToPdfLabels && files.length > 0 ? (
+              /* ─── PNG to PDF: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageOrientation={pngToPdfOrientation}
+                      pageSize={pngToPdfPageSize}
+                      pageMargin={pngToPdfMarginMm}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                      onRotate={rotateFile}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <PngToPdfOptions
+                      orientation={pngToPdfOrientation}
+                      pageSize={pngToPdfPageSize}
+                      marginMm={pngToPdfMarginMm}
+                      mergeAll={pngToPdfMergeAll}
+                      fileCount={files.length}
+                      onOrientationChange={setPngToPdfOrientation}
+                      onPageSizeChange={setPngToPdfPageSize}
+                      onMarginMmChange={setPngToPdfMarginMm}
+                      onMergeAllChange={setPngToPdfMergeAll}
+                      labels={pngToPdfLabels}
+                    />
+                  </div>
+                </div>
+              </>
+            ) : isImageToPdf && imageToPdfLabels && files.length > 0 ? (
+              /* ─── Image to PDF: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageOrientation={imageToPdfOrientation}
+                      pageSize={imageToPdfPageSize}
+                      pageMargin={imageToPdfMarginMm}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                      onRotate={rotateFile}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <ImageToPdfOptions
+                      orientation={imageToPdfOrientation}
+                      pageSize={imageToPdfPageSize}
+                      marginMm={imageToPdfMarginMm}
+                      mergeAll={imageToPdfMergeAll}
+                      fileCount={files.length}
+                      onOrientationChange={setImageToPdfOrientation}
+                      onPageSizeChange={setImageToPdfPageSize}
+                      onMarginMmChange={setImageToPdfMarginMm}
+                      onMergeAllChange={setImageToPdfMergeAll}
+                      labels={imageToPdfLabels}
+                    />
+                  </div>
+                </div>
+              </>
             ) : (
               /* ─── Default: multi-file mode ─── */
               <>
@@ -1231,6 +1469,22 @@ export function ToolPageClient({
                     mergeAll: jpgToPdfMergeAll,
                     rotations,
                   });
+                } else if (isPngToPdf) {
+                  processFiles({
+                    pageSize: pngToPdfPageSize,
+                    orientation: pngToPdfOrientation,
+                    marginMm: pngToPdfMarginMm,
+                    mergeAll: pngToPdfMergeAll,
+                    rotations,
+                  });
+                } else if (isImageToPdf) {
+                  processFiles({
+                    pageSize: imageToPdfPageSize,
+                    orientation: imageToPdfOrientation,
+                    marginMm: imageToPdfMarginMm,
+                    mergeAll: imageToPdfMergeAll,
+                    rotations,
+                  });
                 } else if (isPdfToText) {
                   processFiles({});
                 } else if (isExtractImages) {
@@ -1249,7 +1503,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>
