@@ -278,4 +278,27 @@ export interface Dictionary {
     convertButton: string;
     convertInfo: string;
   };
+  htmlToPdfTool: {
+    orientationLabel: string;
+    portrait: string;
+    landscape: string;
+    pageSizeLabel: string;
+    pageSizeGroupDoc: string;
+    pageSizeGroupPhoto: string;
+    pageSizeGroupOther: string;
+    marginLabel: string;
+    marginNone: string;
+    marginSmall: string;
+    marginLarge: string;
+    marginUnit: string;
+    mergeAllLabel: string;
+    mergeAllDesc: string;
+    convertButton: string;
+    convertInfo: string;
+    previewNote: string;
+    fileBreakLabel: string;
+    fileBreakNewPage: string;
+    fileBreakContinuous: string;
+    fileGapLabel: string;
+  };
 }

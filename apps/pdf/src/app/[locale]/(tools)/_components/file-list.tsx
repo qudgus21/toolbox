@@ -15,7 +15,7 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useState, useRef, useMemo, type CSSProperties } from "react";
+import { useState, useRef, useMemo, useEffect, type CSSProperties } from "react";
 import { cn } from "@toolbox/utils";
 import { X, RotateCw, Lock } from "lucide-react";
 import { PdfThumbnail } from "./pdf-thumbnail";
@@ -57,6 +57,47 @@ function ImageThumbnail({ file, className }: { file: File; className?: string })
       className={cn("object-contain", className)}
       onLoad={() => URL.revokeObjectURL(url)}
     />
+  );
+}
+
+const HTML_EXTENSIONS = new Set(["html", "htm"]);
+
+function isHtmlFile(file: File): boolean {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+  return HTML_EXTENSIONS.has(ext) || file.type === "text/html";
+}
+
+function HtmlThumbnail({ file, className }: { file: File; className?: string }) {
+  const [html, setHtml] = useState<string>("");
+
+  useEffect(() => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      let content = reader.result as string;
+      content = content
+        .replace(/<script[\s\S]*?<\/script>/gi, "")
+        .replace(/\s+on\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]*)/gi, "");
+      setHtml(content);
+    };
+    reader.readAsText(file);
+  }, [file]);
+
+  if (!html) {
+    return <div className={cn("bg-background-muted/50", className)} />;
+  }
+
+  return (
+    <div className={cn("flex items-center justify-center overflow-hidden", className)}>
+      <div className="w-[160px] h-[220px] overflow-hidden shrink-0">
+        <iframe
+          srcDoc={html}
+          sandbox=""
+          title={file.name}
+          className="w-[800px] h-[1100px] origin-top-left border-none pointer-events-none"
+          style={{ transform: "scale(0.2)", transformOrigin: "top left" }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -185,13 +226,32 @@ function SortableCard({
           "relative w-full overflow-hidden rounded-t-xl transition-all duration-300",
           "aspect-[4/5]",
         )}>
-          {pageOrientation && isImageFile(file) ? (() => {
+          {isHtmlFile(file) ? (() => {
             const baseRatio = PAGE_ASPECT_RATIOS[pageSize ?? "a4"] ?? PAGE_ASPECT_RATIOS.a4;
-            // Orientation: just flip aspect ratio (no rotation)
+            const isLand = pageOrientation === "landscape";
+            const pageAR = isLand ? 1 / baseRatio : baseRatio;
+            const marginPct = marginMmToPct(pageMargin ?? 0);
+            return (
+              <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
+                <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
+                  <div
+                    className="bg-white overflow-hidden transition-all duration-300 ease-out [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
+                    style={{
+                      aspectRatio: String(pageAR),
+                      ...(pageAR <= 1 ? { height: "100%" } : { width: "100%" }),
+                      padding: marginPct,
+                    }}
+                  >
+                    <HtmlThumbnail file={file} className="w-full h-full" />
+                  </div>
+                </div>
+              </div>
+            );
+          })() : pageOrientation && isImageFile(file) ? (() => {
+            const baseRatio = PAGE_ASPECT_RATIOS[pageSize ?? "a4"] ?? PAGE_ASPECT_RATIOS.a4;
             const pageAR = pageOrientation === "landscape" ? 1 / baseRatio : baseRatio;
             const marginPct = marginMmToPct(pageMargin ?? 0);
             return (
-              /* Gray card bg → square safe zone → white page rotates inside */
               <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
                 <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
                   <div

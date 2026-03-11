@@ -39,7 +39,9 @@ import { ExtractImagesOptions, type ExtractImagesLabels } from "./extract-images
 import { JpgToPdfOptions, type JpgToPdfLabels } from "./jpg-to-pdf-options";
 import { PngToPdfOptions, type PngToPdfLabels } from "./png-to-pdf-options";
 import { ImageToPdfOptions, type ImageToPdfLabels } from "./image-to-pdf-options";
+import { HtmlToPdfOptions, type HtmlToPdfLabels } from "./html-to-pdf-options";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
+import type { FileBreak } from "@/lib/processors/html-to-pdf";
 
 import { fileId } from "./file-list";
 import type { ReactNode } from "react";
@@ -169,6 +171,7 @@ interface ToolPageClientProps {
   jpgToPdfLabels?: JpgToPdfLabels;
   pngToPdfLabels?: PngToPdfLabels;
   imageToPdfLabels?: ImageToPdfLabels;
+  htmlToPdfLabels?: HtmlToPdfLabels;
   children?: ReactNode;
 }
 
@@ -214,6 +217,7 @@ export function ToolPageClient({
   jpgToPdfLabels,
   pngToPdfLabels,
   imageToPdfLabels,
+  htmlToPdfLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -278,6 +282,12 @@ export function ToolPageClient({
   const [imageToPdfPageSize, setImageToPdfPageSize] = useState<PageSizeKey>("a4");
   const [imageToPdfMarginMm, setImageToPdfMarginMm] = useState(0);
   const [imageToPdfMergeAll, setImageToPdfMergeAll] = useState(true);
+  const [htmlToPdfOrientation, setHtmlToPdfOrientation] = useState<Orientation>("portrait");
+  const [htmlToPdfPageSize, setHtmlToPdfPageSize] = useState<PageSizeKey>("a4");
+  const [htmlToPdfMarginMm, setHtmlToPdfMarginMm] = useState(0);
+  const [htmlToPdfMergeAll, setHtmlToPdfMergeAll] = useState(true);
+  const [htmlToPdfFileBreak, setHtmlToPdfFileBreak] = useState<FileBreak>("new-page");
+  const [htmlToPdfFileGapMm, setHtmlToPdfFileGapMm] = useState(10);
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
@@ -291,6 +301,7 @@ export function ToolPageClient({
   const isJpgToPdf = slug === "jpg-to-pdf";
   const isPngToPdf = slug === "png-to-pdf";
   const isImageToPdf = slug === "image-to-pdf";
+  const isHtmlToPdf = slug === "html-to-pdf";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText;
 
   useEffect(() => {
@@ -380,7 +391,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -1258,6 +1269,119 @@ export function ToolPageClient({
                   </div>
                 </div>
               </>
+            ) : isHtmlToPdf && htmlToPdfLabels && files.length > 0 ? (
+              /* ─── HTML to PDF: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      pageOrientation={htmlToPdfOrientation}
+                      pageSize={htmlToPdfPageSize}
+                      pageMargin={htmlToPdfMarginMm}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <HtmlToPdfOptions
+                      orientation={htmlToPdfOrientation}
+                      pageSize={htmlToPdfPageSize as never}
+                      marginMm={htmlToPdfMarginMm}
+                      mergeAll={htmlToPdfMergeAll}
+                      fileBreak={htmlToPdfFileBreak}
+                      fileGapMm={htmlToPdfFileGapMm}
+                      fileCount={files.length}
+                      onOrientationChange={setHtmlToPdfOrientation as never}
+                      onPageSizeChange={setHtmlToPdfPageSize as never}
+                      onMarginMmChange={setHtmlToPdfMarginMm}
+                      onMergeAllChange={setHtmlToPdfMergeAll}
+                      onFileBreakChange={setHtmlToPdfFileBreak}
+                      onFileGapMmChange={setHtmlToPdfFileGapMm}
+                      labels={htmlToPdfLabels}
+                    />
+                  </div>
+                </div>
+              </>
             ) : (
               /* ─── Default: multi-file mode ─── */
               <>
@@ -1485,6 +1609,15 @@ export function ToolPageClient({
                     mergeAll: imageToPdfMergeAll,
                     rotations,
                   });
+                } else if (isHtmlToPdf) {
+                  processFiles({
+                    pageSize: htmlToPdfPageSize,
+                    orientation: htmlToPdfOrientation,
+                    marginMm: htmlToPdfMarginMm,
+                    mergeAll: htmlToPdfMergeAll,
+                    fileBreak: htmlToPdfFileBreak,
+                    fileGapMm: htmlToPdfFileGapMm,
+                  });
                 } else if (isPdfToText) {
                   processFiles({});
                 } else if (isExtractImages) {
@@ -1503,7 +1636,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>

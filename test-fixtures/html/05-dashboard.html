@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; padding: 32px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .badge { background: #22c55e20; color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card { background: linear-gradient(135deg, #1e293b, #1e293b80); border: 1px solid #334155; border-radius: 16px; padding: 24px; position: relative; overflow: hidden; }
+    .stat-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; border-radius: 50%; opacity: 0.05; }
+    .stat-card:nth-child(1)::before { background: #818cf8; }
+    .stat-card:nth-child(2)::before { background: #f472b6; }
+    .stat-card:nth-child(3)::before { background: #34d399; }
+    .stat-card:nth-child(4)::before { background: #fb923c; }
+    .stat-label { font-size: 13px; color: #94a3b8; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-value { font-size: 32px; font-weight: 800; }
+    .stat-card:nth-child(1) .stat-value { color: #818cf8; }
+    .stat-card:nth-child(2) .stat-value { color: #f472b6; }
+    .stat-card:nth-child(3) .stat-value { color: #34d399; }
+    .stat-card:nth-child(4) .stat-value { color: #fb923c; }
+    .stat-change { font-size: 12px; margin-top: 4px; }
+    .stat-change.up { color: #4ade80; }
+    .stat-change.down { color: #f87171; }
+    .panels { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 32px; }
+    .panel { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 24px; }
+    .panel-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .chart-bars { display: flex; align-items: flex-end; gap: 8px; height: 180px; }
+    .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .bar { width: 100%; border-radius: 6px 6px 0 0; min-height: 8px; transition: height 0.3s; }
+    .bar.primary { background: linear-gradient(180deg, #818cf8, #6366f1); }
+    .bar.secondary { background: linear-gradient(180deg, #f472b6, #ec4899); opacity: 0.5; width: 60%; }
+    .bar-label { font-size: 11px; color: #64748b; }
+    .activity-list { display: flex; flex-direction: column; gap: 12px; }
+    .activity-item { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; background: #0f172a40; }
+    .activity-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: white; }
+    .activity-text { flex: 1; font-size: 13px; }
+    .activity-text strong { color: #e2e8f0; }
+    .activity-text span { color: #64748b; }
+    .activity-time { font-size: 11px; color: #475569; }
+    .bottom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .progress-ring { width: 80px; height: 80px; margin: 0 auto 12px; }
+    .progress-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
+    .progress-ring .bg { stroke: #1e293b; }
+    .progress-ring .fg { transform: rotate(-90deg); transform-origin: center; }
+    .progress-label { text-align: center; }
+    .progress-label .value { font-size: 20px; font-weight: 800; }
+    .progress-label .desc { font-size: 12px; color: #64748b; }
+    .tag { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 Analytics Dashboard</h1>
+    <span class="badge">● Live</span>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">Total Revenue</div>
+      <div class="stat-value">$84,254</div>
+      <div class="stat-change up">↑ 12.5% vs last month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Active Users</div>
+      <div class="stat-value">2,847</div>
+      <div class="stat-change up">↑ 8.2% vs last month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Conversion Rate</div>
+      <div class="stat-value">3.24%</div>
+      <div class="stat-change down">↓ 1.1% vs last month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg. Order Value</div>
+      <div class="stat-value">$127</div>
+      <div class="stat-change up">↑ 4.7% vs last month</div>
+    </div>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <div class="panel-title"><span class="dot" style="background:#818cf8"></span> Monthly Revenue</div>
+      <div class="chart-bars">
+        <div class="bar-group"><div class="bar primary" style="height:45%"></div><div class="bar secondary" style="height:30%"></div><div class="bar-label">Jan</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:60%"></div><div class="bar secondary" style="height:45%"></div><div class="bar-label">Feb</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:35%"></div><div class="bar secondary" style="height:50%"></div><div class="bar-label">Mar</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:75%"></div><div class="bar secondary" style="height:40%"></div><div class="bar-label">Apr</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:55%"></div><div class="bar secondary" style="height:60%"></div><div class="bar-label">May</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:90%"></div><div class="bar secondary" style="height:55%"></div><div class="bar-label">Jun</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:70%"></div><div class="bar secondary" style="height:65%"></div><div class="bar-label">Jul</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:85%"></div><div class="bar secondary" style="height:50%"></div><div class="bar-label">Aug</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:65%"></div><div class="bar secondary" style="height:70%"></div><div class="bar-label">Sep</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:95%"></div><div class="bar secondary" style="height:60%"></div><div class="bar-label">Oct</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:80%"></div><div class="bar secondary" style="height:75%"></div><div class="bar-label">Nov</div></div>
+        <div class="bar-group"><div class="bar primary" style="height:100%"></div><div class="bar secondary" style="height:80%"></div><div class="bar-label">Dec</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title"><span class="dot" style="background:#34d399"></span> Recent Activity</div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-avatar" style="background:linear-gradient(135deg,#818cf8,#6366f1)">JK</div>
+          <div class="activity-text"><strong>Jane Kim</strong> <span>purchased Premium Plan</span></div>
+          <div class="activity-time">2m ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-avatar" style="background:linear-gradient(135deg,#f472b6,#ec4899)">AL</div>
+          <div class="activity-text"><strong>Alex Lee</strong> <span>signed up for trial</span></div>
+          <div class="activity-time">15m ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-avatar" style="background:linear-gradient(135deg,#34d399,#10b981)">MP</div>
+          <div class="activity-text"><strong>Maria Park</strong> <span>upgraded to Enterprise</span></div>
+          <div class="activity-time">1h ago</div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-avatar" style="background:linear-gradient(135deg,#fb923c,#f97316)">TN</div>
+          <div class="activity-text"><strong>Tom Nguyen</strong> <span>left a 5-star review</span></div>
+          <div class="activity-time">3h ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div class="panel" style="text-align:center">
+      <div class="panel-title" style="justify-content:center"><span class="dot" style="background:#818cf8"></span> Server Uptime</div>
+      <svg class="progress-ring" viewBox="0 0 100 100">
+        <circle class="bg" cx="50" cy="50" r="42"/>
+        <circle class="fg" cx="50" cy="50" r="42" stroke="#818cf8" stroke-dasharray="264" stroke-dashoffset="8"/>
+      </svg>
+      <div class="progress-label"><div class="value" style="color:#818cf8">99.7%</div><div class="desc">Last 30 days</div></div>
+    </div>
+    <div class="panel" style="text-align:center">
+      <div class="panel-title" style="justify-content:center"><span class="dot" style="background:#f472b6"></span> User Satisfaction</div>
+      <svg class="progress-ring" viewBox="0 0 100 100">
+        <circle class="bg" cx="50" cy="50" r="42"/>
+        <circle class="fg" cx="50" cy="50" r="42" stroke="#f472b6" stroke-dasharray="264" stroke-dashoffset="40"/>
+      </svg>
+      <div class="progress-label"><div class="value" style="color:#f472b6">84.8%</div><div class="desc">NPS Score</div></div>
+    </div>
+    <div class="panel" style="text-align:center">
+      <div class="panel-title" style="justify-content:center"><span class="dot" style="background:#34d399"></span> Task Completion</div>
+      <svg class="progress-ring" viewBox="0 0 100 100">
+        <circle class="bg" cx="50" cy="50" r="42"/>
+        <circle class="fg" cx="50" cy="50" r="42" stroke="#34d399" stroke-dasharray="264" stroke-dashoffset="53"/>
+      </svg>
+      <div class="progress-label"><div class="value" style="color:#34d399">79.9%</div><div class="desc">Sprint Progress</div></div>
+    </div>
+  </div>
+</body>
+</html>

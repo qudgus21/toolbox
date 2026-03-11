@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>매콤 크림 파스타 레시피</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: #fffbf0; color: #3d3529; }
+    .banner { background: linear-gradient(135deg, #ff6b35 0%, #f7c948 100%); padding: 48px; position: relative; overflow: hidden; }
+    .banner::before { content: '🍝'; position: absolute; top: -20px; right: 40px; font-size: 120px; opacity: 0.2; transform: rotate(-15deg); }
+    .banner h1 { font-size: 40px; font-weight: 900; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.15); position: relative; z-index: 1; }
+    .banner .subtitle { color: rgba(255,255,255,0.9); font-size: 16px; margin-top: 8px; position: relative; z-index: 1; }
+    .meta-bar { display: flex; gap: 32px; padding: 20px 48px; background: white; border-bottom: 1px solid #f0ebe0; }
+    .meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #8a7e6b; }
+    .meta-item .icon { font-size: 20px; }
+    .meta-item strong { color: #3d3529; font-size: 15px; }
+    .content { max-width: 800px; margin: 0 auto; padding: 48px; }
+    .rating { display: flex; gap: 4px; margin-bottom: 32px; }
+    .star { font-size: 24px; }
+    .star.filled { color: #f7c948; }
+    .star.empty { color: #e0d8c8; }
+    .section-badge { display: inline-block; background: linear-gradient(135deg, #ff6b35, #e85d26); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
+    h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; }
+    .ingredients { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+    .ingredient { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: white; border-radius: 12px; border: 1px solid #f0ebe0; }
+    .ingredient .check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #e0d8c8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ingredient .amount { margin-left: auto; color: #ff6b35; font-weight: 700; font-size: 14px; white-space: nowrap; }
+    .steps { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+    .step { display: flex; gap: 20px; }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #ff6b35, #f7c948); color: white; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(255,107,53,0.3); }
+    .step-content { flex: 1; padding-top: 8px; }
+    .step-content h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .step-content p { font-size: 15px; color: #6b5e4b; line-height: 1.7; }
+    .tip-box { background: linear-gradient(135deg, #fff3e0, #fff8e1); border: 2px solid #f7c948; border-radius: 16px; padding: 24px; margin-bottom: 48px; }
+    .tip-box h3 { color: #e67e22; font-size: 16px; margin-bottom: 8px; }
+    .tip-box p { font-size: 14px; color: #8a7e6b; line-height: 1.7; }
+    .nutrition { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .nutrition-card { text-align: center; padding: 20px; background: white; border-radius: 12px; border: 1px solid #f0ebe0; }
+    .nutrition-card .value { font-size: 28px; font-weight: 900; }
+    .nutrition-card:nth-child(1) .value { color: #ff6b35; }
+    .nutrition-card:nth-child(2) .value { color: #f7c948; }
+    .nutrition-card:nth-child(3) .value { color: #27ae60; }
+    .nutrition-card:nth-child(4) .value { color: #3498db; }
+    .nutrition-card .label { font-size: 12px; color: #8a7e6b; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1>매콤 크림 파스타</h1>
+    <div class="subtitle">진한 크림소스와 매콤한 양념의 환상적인 조합</div>
+  </div>
+
+  <div class="meta-bar">
+    <div class="meta-item"><span class="icon">⏱️</span><div><div style="font-size:11px">조리시간</div><strong>25분</strong></div></div>
+    <div class="meta-item"><span class="icon">👥</span><div><div style="font-size:11px">인분</div><strong>2인분</strong></div></div>
+    <div class="meta-item"><span class="icon">📊</span><div><div style="font-size:11px">난이도</div><strong>보통</strong></div></div>
+    <div class="meta-item"><span class="icon">🔥</span><div><div style="font-size:11px">칼로리</div><strong>520 kcal</strong></div></div>
+  </div>
+
+  <div class="content">
+    <div class="rating">
+      <span class="star filled">★</span>
+      <span class="star filled">★</span>
+      <span class="star filled">★</span>
+      <span class="star filled">★</span>
+      <span class="star empty">★</span>
+      <span style="font-size:14px;color:#8a7e6b;margin-left:8px;align-self:center">4.2 (328 리뷰)</span>
+    </div>
+
+    <div class="section-badge">INGREDIENTS</div>
+    <h2>재료 준비</h2>
+    <div class="ingredients">
+      <div class="ingredient"><div class="check"></div><span>펜네 파스타</span><span class="amount">200g</span></div>
+      <div class="ingredient"><div class="check"></div><span>생크림</span><span class="amount">200ml</span></div>
+      <div class="ingredient"><div class="check"></div><span>베이컨</span><span class="amount">4줄</span></div>
+      <div class="ingredient"><div class="check"></div><span>양파</span><span class="amount">1/2개</span></div>
+      <div class="ingredient"><div class="check"></div><span>마늘</span><span class="amount">3쪽</span></div>
+      <div class="ingredient"><div class="check"></div><span>고추장</span><span class="amount">1큰술</span></div>
+      <div class="ingredient"><div class="check"></div><span>파르메산 치즈</span><span class="amount">30g</span></div>
+      <div class="ingredient"><div class="check"></div><span>올리브 오일</span><span class="amount">2큰술</span></div>
+    </div>
+
+    <div class="section-badge">DIRECTIONS</div>
+    <h2>만드는 법</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>파스타 삶기</h3>
+          <p>넉넉한 물에 소금을 넣고 펜네를 알덴테로 삶아주세요. 삶은 물 1컵은 따로 남겨둡니다.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>베이컨 & 채소 볶기</h3>
+          <p>올리브 오일에 다진 마늘을 먼저 볶다가 향이 나면 베이컨과 양파를 넣고 노릇해질 때까지 볶아줍니다.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>크림소스 만들기</h3>
+          <p>불을 줄이고 생크림과 고추장을 넣어 잘 섞어줍니다. 약불에서 2~3분간 걸쭉해질 때까지 저어주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>파스타 합치기</h3>
+          <p>삶은 펜네를 소스에 넣고 잘 버무립니다. 파르메산 치즈를 뿌리고 삶은 물로 농도를 조절하세요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h3>💡 셰프의 꿀팁</h3>
+      <p>고추장 대신 고춧가루와 간장을 1:1로 섞어 쓰면 좀 더 깊은 맛이 나요. 크림소스가 너무 되직하면 삶은 물을 조금씩 추가하세요. 마지막에 레몬즙 몇 방울을 떨어뜨리면 느끼함이 줄어듭니다!</p>
+    </div>
+
+    <div class="section-badge">NUTRITION</div>
+    <h2>영양 정보 (1인분)</h2>
+    <div class="nutrition">
+      <div class="nutrition-card"><div class="value">520</div><div class="label">칼로리 (kcal)</div></div>
+      <div class="nutrition-card"><div class="value">18g</div><div class="label">단백질</div></div>
+      <div class="nutrition-card"><div class="value">62g</div><div class="label">탄수화물</div></div>
+      <div class="nutrition-card"><div class="value">24g</div><div class="label">지방</div></div>
+    </div>
+  </div>
+</body>
+</html>

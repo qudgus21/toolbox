@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #faf7f2; color: #2c2c2c; }
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 80px 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, #e94560 0%, transparent 70%); opacity: 0.3; }
+    .hero::after { content: ''; position: absolute; bottom: -150px; left: -50px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, #533483 0%, transparent 70%); opacity: 0.4; }
+    .hero h1 { font-size: 56px; font-weight: 400; letter-spacing: -1px; line-height: 1.1; position: relative; z-index: 1; }
+    .hero h1 em { font-style: italic; color: #e94560; }
+    .hero p { font-size: 18px; color: #a0aec0; margin-top: 16px; max-width: 500px; line-height: 1.6; position: relative; z-index: 1; }
+    .divider { height: 4px; background: linear-gradient(90deg, #e94560, #533483, #0f3460); }
+    .section { padding: 60px; }
+    .section-title { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: #e94560; margin-bottom: 8px; }
+    .section h2 { font-size: 36px; font-weight: 400; margin-bottom: 40px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .project-card { border-radius: 16px; overflow: hidden; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .project-img { height: 200px; position: relative; }
+    .project-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4)); }
+    .project-card:nth-child(1) .project-img { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .project-card:nth-child(2) .project-img { background: linear-gradient(135deg, #f093fb, #f5576c); }
+    .project-card:nth-child(3) .project-img { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+    .project-tag { position: absolute; bottom: 12px; left: 12px; z-index: 1; background: rgba(255,255,255,0.9); color: #333; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+    .project-info { padding: 20px; }
+    .project-info h3 { font-size: 20px; margin-bottom: 8px; }
+    .project-info p { font-size: 14px; color: #666; line-height: 1.6; }
+    .skills-section { background: #1a1a2e; color: white; padding: 60px; }
+    .skills-section h2 { color: white; }
+    .skill-bars { display: flex; flex-direction: column; gap: 20px; max-width: 600px; }
+    .skill-row { display: flex; align-items: center; gap: 16px; }
+    .skill-name { width: 120px; font-size: 14px; color: #a0aec0; text-align: right; }
+    .skill-track { flex: 1; height: 8px; background: #2d2d44; border-radius: 4px; overflow: hidden; }
+    .skill-fill { height: 100%; border-radius: 4px; }
+    .testimonials { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .testimonial { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid; }
+    .testimonial:nth-child(1) { border-color: #e94560; }
+    .testimonial:nth-child(2) { border-color: #533483; }
+    .testimonial blockquote { font-size: 16px; font-style: italic; color: #555; line-height: 1.7; margin-bottom: 16px; }
+    .testimonial .author { display: flex; align-items: center; gap: 12px; }
+    .testimonial .avatar { width: 40px; height: 40px; border-radius: 50%; }
+    .testimonial:nth-child(1) .avatar { background: linear-gradient(135deg, #e94560, #ff6b6b); }
+    .testimonial:nth-child(2) .avatar { background: linear-gradient(135deg, #533483, #7c3aed); }
+    .testimonial .author-name { font-weight: 700; font-size: 14px; }
+    .testimonial .author-role { font-size: 12px; color: #999; }
+    .contact { text-align: center; padding: 80px 60px; background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+    .contact h2 { font-size: 42px; color: #2c2c2c; margin-bottom: 12px; }
+    .contact p { font-size: 16px; color: #666; margin-bottom: 32px; }
+    .contact-btn { display: inline-block; padding: 14px 40px; background: #1a1a2e; color: white; border-radius: 50px; font-size: 16px; text-decoration: none; font-weight: 600; letter-spacing: 0.5px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Designing <em>Digital</em><br>Experiences</h1>
+    <p>Award-winning creative studio specializing in brand identity, UI/UX design, and digital storytelling since 2018.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title">Featured Work</div>
+    <h2>Selected Projects</h2>
+    <div class="grid-3">
+      <div class="project-card">
+        <div class="project-img"><span class="project-tag">BRANDING</span></div>
+        <div class="project-info">
+          <h3>Nebula Finance</h3>
+          <p>Complete brand identity redesign for a fintech startup, including logo, color system, and marketing collateral.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><span class="project-tag">UI/UX</span></div>
+        <div class="project-info">
+          <h3>Bloom Health</h3>
+          <p>Mobile-first wellness app design with a focus on accessibility, habit tracking, and personalized recommendations.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><span class="project-tag">WEB DESIGN</span></div>
+        <div class="project-info">
+          <h3>Arctic Ventures</h3>
+          <p>Interactive portfolio website for a venture capital firm featuring immersive 3D animations and data visualization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-section">
+    <div class="section-title" style="color:#e94560">Expertise</div>
+    <h2>Skills & Tools</h2>
+    <div class="skill-bars">
+      <div class="skill-row"><span class="skill-name">UI Design</span><div class="skill-track"><div class="skill-fill" style="width:95%;background:linear-gradient(90deg,#e94560,#ff6b6b)"></div></div></div>
+      <div class="skill-row"><span class="skill-name">UX Research</span><div class="skill-track"><div class="skill-fill" style="width:88%;background:linear-gradient(90deg,#533483,#7c3aed)"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Figma</span><div class="skill-track"><div class="skill-fill" style="width:92%;background:linear-gradient(90deg,#667eea,#764ba2)"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Motion</span><div class="skill-track"><div class="skill-fill" style="width:78%;background:linear-gradient(90deg,#4facfe,#00f2fe)"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Front-end</span><div class="skill-track"><div class="skill-fill" style="width:85%;background:linear-gradient(90deg,#f093fb,#f5576c)"></div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Testimonials</div>
+    <h2>What Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <blockquote>"Their design sense is extraordinary. They transformed our brand from forgettable to unforgettable in just 6 weeks."</blockquote>
+        <div class="author">
+          <div class="avatar"></div>
+          <div><div class="author-name">Sarah Chen</div><div class="author-role">CEO, Nebula Finance</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>"The attention to detail and user-centric approach made all the difference. Our app engagement increased 340%."</blockquote>
+        <div class="author">
+          <div class="avatar"></div>
+          <div><div class="author-name">David Park</div><div class="author-role">Founder, Bloom Health</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>Let's Create Together</h2>
+    <p>Have a project in mind? Let's discuss how we can bring your vision to life.</p>
+    <a href="#" class="contact-btn">Get in Touch →</a>
+  </div>
+</body>
+</html>
