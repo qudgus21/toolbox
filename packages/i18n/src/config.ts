@@ -301,4 +301,30 @@ export interface Dictionary {
     fileBreakContinuous: string;
     fileGapLabel: string;
   };
+  scanToPdfTool: {
+    orientationLabel: string;
+    portrait: string;
+    landscape: string;
+    pageSizeLabel: string;
+    pageSizeFit: string;
+    pageSizeFitDesc: string;
+    pageSizeGroupDoc: string;
+    pageSizeGroupPhoto: string;
+    pageSizeGroupOther: string;
+    marginLabel: string;
+    marginNone: string;
+    marginSmall: string;
+    marginLarge: string;
+    marginUnit: string;
+    mergeAllLabel: string;
+    mergeAllDesc: string;
+    autoEnhanceLabel: string;
+    autoEnhanceDesc: string;
+    colorModeLabel: string;
+    colorModeColor: string;
+    colorModeGrayscale: string;
+    colorModeBw: string;
+    convertButton: string;
+    convertInfo: string;
+  };
 }

@@ -194,3 +194,15 @@ export function loadAnyImageFixture(filename: string): File {
   const blob = new Blob([buf], { type: mimeType });
   return new File([blob], filename, { type: mimeType });
 }
+
+/**
+ * Load a scan fixture from test-fixtures/scan/ directory.
+ * Auto-detects MIME type from file extension.
+ */
+export function loadScanFixture(filename: string): File {
+  const buf = readFileSync(resolve(ROOT_FIXTURES_DIR, "scan", filename));
+  const ext = filename.split(".").pop()?.toLowerCase() ?? "";
+  const mimeType = MIME_MAP[ext] ?? "application/octet-stream";
+  const blob = new Blob([buf], { type: mimeType });
+  return new File([blob], filename, { type: mimeType });
+}

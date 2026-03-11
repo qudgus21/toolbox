@@ -16,6 +16,7 @@ registry.set("jpg-to-pdf", () => import("./processors/jpg-to-pdf"));
 registry.set("png-to-pdf", () => import("./processors/png-to-pdf"));
 registry.set("image-to-pdf", () => import("./processors/image-to-pdf"));
 registry.set("html-to-pdf", () => import("./processors/html-to-pdf"));
+registry.set("scan-to-pdf", () => import("./processors/scan-to-pdf"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));
 // registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));

@@ -115,6 +115,8 @@ interface FileListProps {
   pageSize?: string;
   /** Margin in mm for visual preview */
   pageMargin?: number;
+  /** CSS filter for color mode preview (e.g. "grayscale(100%)") */
+  colorFilter?: string;
   onRemove: (index: number) => void;
   onReorder: (files: File[]) => void;
   onRotate?: (fileKey: string) => void;
@@ -147,6 +149,7 @@ function SortableCard({
   pageOrientation,
   pageSize,
   pageMargin,
+  colorFilter,
   disableTransition,
   didDragRef,
 }: {
@@ -164,6 +167,7 @@ function SortableCard({
   pageOrientation?: "portrait" | "landscape";
   pageSize?: string;
   pageMargin?: number;
+  colorFilter?: string;
   disableTransition: boolean;
   didDragRef: React.RefObject<boolean>;
 }) {
@@ -255,13 +259,14 @@ function SortableCard({
               <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
                 <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
                   <div
-                    className="relative overflow-hidden flex items-center justify-center transition-[padding] duration-300 ease-out [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
+                    className="relative overflow-hidden flex items-center justify-center transition-[padding,filter] duration-300 ease-out [box-shadow:0_0_8px_rgba(0,0,0,0.25)]"
                     style={{
                       aspectRatio: String(pageAR),
                       ...(pageAR <= 1 ? { height: '100%' } : { width: '100%' }),
                       padding: marginPct,
                       transform: `rotate(${rotation}deg)`,
                       backgroundColor: '#fff',
+                      filter: colorFilter || undefined,
                     }}
                   >
                     <ImageThumbnail file={file} className="w-full h-full object-contain" />
@@ -350,6 +355,7 @@ export function FileList({
   pageOrientation,
   pageSize,
   pageMargin,
+  colorFilter,
   onRemove,
   onReorder,
   onRotate,
@@ -429,6 +435,7 @@ export function FileList({
                 pageOrientation={pageOrientation}
                 pageSize={pageSize}
                 pageMargin={pageMargin}
+                colorFilter={colorFilter}
                 disableTransition={disableTransition}
                 didDragRef={didDragRef}
               />
