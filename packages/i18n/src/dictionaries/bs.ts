@@ -458,6 +458,25 @@ const bs: Dictionary = {
     pages: "stranica",
     rotate: "Rotiraj",
   },
+  editMetadataTool: {
+    dropFile: "Odaberite PDF datoteku",
+    changeFile: "Promijeni datoteku",
+    titleLabel: "Naslov",
+    authorLabel: "Autor",
+    subjectLabel: "Predmet",
+    keywordsLabel: "Ključne riječi",
+    creatorLabel: "Program za izradu",
+    producerLabel: "PDF generator",
+    createdAtLabel: "Kreirano",
+    modifiedAtLabel: "Izmijenjeno",
+    keywordsPlaceholder: "riječ1, riječ2, riječ3",
+    clearAll: "Obriši sve",
+    applyButton: "Primijeni metapodatke",
+    noMetadata: "Metapodaci nisu pronađeni",
+    editableFields: "Polja za uređivanje",
+    readonlyFields: "Podaci o datoteci",
+    notSet: "Nije postavljeno",
+  },
 };
 
 export default bs;

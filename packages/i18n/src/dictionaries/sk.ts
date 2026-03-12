@@ -458,6 +458,25 @@ const sk: Dictionary = {
     pages: "strán",
     rotate: "Otočiť",
   },
+  editMetadataTool: {
+    dropFile: "Vyberte PDF súbor",
+    changeFile: "Zmeniť súbor",
+    titleLabel: "Názov",
+    authorLabel: "Autor",
+    subjectLabel: "Predmet",
+    keywordsLabel: "Kľúčové slová",
+    creatorLabel: "Vytvorené programom",
+    producerLabel: "Generátor PDF",
+    createdAtLabel: "Vytvorené",
+    modifiedAtLabel: "Upravené",
+    keywordsPlaceholder: "slovo1, slovo2, slovo3",
+    clearAll: "Vymazať všetko",
+    applyButton: "Použiť metadáta",
+    noMetadata: "Metadáta nenájdené",
+    editableFields: "Upraviteľné polia",
+    readonlyFields: "Info o súbore",
+    notSet: "Nenastavené",
+  },
 };
 
 export default sk;

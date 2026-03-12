@@ -446,6 +446,25 @@ const no: Dictionary = {
     pages: "sider",
     rotate: "Roter",
   },
+  editMetadataTool: {
+    dropFile: "Velg en PDF-fil",
+    changeFile: "Bytt fil",
+    titleLabel: "Tittel",
+    authorLabel: "Forfatter",
+    subjectLabel: "Emne",
+    keywordsLabel: "Nøkkelord",
+    creatorLabel: "Opprettelsesprogram",
+    producerLabel: "PDF-generator",
+    createdAtLabel: "Opprettet",
+    modifiedAtLabel: "Endret",
+    keywordsPlaceholder: "nøkkelord1, nøkkelord2, nøkkelord3",
+    clearAll: "Tøm alt",
+    applyButton: "Bruk metadata",
+    noMetadata: "Ingen metadata funnet",
+    editableFields: "Redigerbare felt",
+    readonlyFields: "Filinfo",
+    notSet: "Ikke angitt",
+  },
 };
 
 export default no;

@@ -458,6 +458,25 @@ const hi: Dictionary = {
     pages: "पेज",
     rotate: "घुमाएँ",
   },
+  editMetadataTool: {
+    dropFile: "एक PDF फ़ाइल चुनें",
+    changeFile: "फ़ाइल बदलें",
+    titleLabel: "शीर्षक",
+    authorLabel: "लेखक",
+    subjectLabel: "विषय",
+    keywordsLabel: "कीवर्ड",
+    creatorLabel: "निर्माता प्रोग्राम",
+    producerLabel: "PDF जनरेटर",
+    createdAtLabel: "बनाया गया",
+    modifiedAtLabel: "संशोधित",
+    keywordsPlaceholder: "कीवर्ड1, कीवर्ड2, कीवर्ड3",
+    clearAll: "सब मिटाएँ",
+    applyButton: "मेटाडेटा लागू करें",
+    noMetadata: "कोई मेटाडेटा नहीं मिला",
+    editableFields: "संपादन योग्य",
+    readonlyFields: "फ़ाइल जानकारी",
+    notSet: "सेट नहीं",
+  },
 };
 
 export default hi;

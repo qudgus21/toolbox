@@ -446,6 +446,25 @@ const ro: Dictionary = {
     pages: "pagini",
     rotate: "Rotește",
   },
+  editMetadataTool: {
+    dropFile: "Selectează un fișier PDF",
+    changeFile: "Schimbă fișier",
+    titleLabel: "Titlu",
+    authorLabel: "Autor",
+    subjectLabel: "Subiect",
+    keywordsLabel: "Cuvinte cheie",
+    creatorLabel: "Program creator",
+    producerLabel: "Generator PDF",
+    createdAtLabel: "Creat",
+    modifiedAtLabel: "Modificat",
+    keywordsPlaceholder: "cuvânt1, cuvânt2, cuvânt3",
+    clearAll: "Șterge tot",
+    applyButton: "Aplică metadate",
+    noMetadata: "Nu s-au găsit metadate",
+    editableFields: "Câmpuri editabile",
+    readonlyFields: "Info fișier",
+    notSet: "Nesetat",
+  },
 };
 
 export default ro;

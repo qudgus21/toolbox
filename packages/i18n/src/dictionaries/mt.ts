@@ -458,6 +458,25 @@ const mt: Dictionary = {
     pages: "paġni",
     rotate: "Dawwar",
   },
+  editMetadataTool: {
+    dropFile: "Agħżel fajl PDF",
+    changeFile: "Biddel il-fajl",
+    titleLabel: "Titlu",
+    authorLabel: "Awtur",
+    subjectLabel: "Suġġett",
+    keywordsLabel: "Kliem ewlenin",
+    creatorLabel: "Programm tal-ħolqien",
+    producerLabel: "Ġeneratur PDF",
+    createdAtLabel: "Maħluq",
+    modifiedAtLabel: "Mibdul",
+    keywordsPlaceholder: "kelma1, kelma2, kelma3",
+    clearAll: "Neħħi kollox",
+    applyButton: "Applika metadata",
+    noMetadata: "Ebda metadata misjuba",
+    editableFields: "Oqsma editabbli",
+    readonlyFields: "Info tal-fajl",
+    notSet: "Mhux issettjat",
+  },
 };
 
 export default mt;

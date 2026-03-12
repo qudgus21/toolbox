@@ -458,6 +458,25 @@ const uk: Dictionary = {
     pages: "сторінок",
     rotate: "Повернути",
   },
+  editMetadataTool: {
+    dropFile: "Оберіть PDF-файл",
+    changeFile: "Змінити файл",
+    titleLabel: "Назва",
+    authorLabel: "Автор",
+    subjectLabel: "Тема",
+    keywordsLabel: "Ключові слова",
+    creatorLabel: "Програма-творець",
+    producerLabel: "Генератор PDF",
+    createdAtLabel: "Створено",
+    modifiedAtLabel: "Змінено",
+    keywordsPlaceholder: "слово1, слово2, слово3",
+    clearAll: "Очистити все",
+    applyButton: "Застосувати метадані",
+    noMetadata: "Метадані не знайдено",
+    editableFields: "Редаговані поля",
+    readonlyFields: "Інформація про файл",
+    notSet: "Не задано",
+  },
 };
 
 export default uk;

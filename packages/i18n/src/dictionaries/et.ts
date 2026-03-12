@@ -458,6 +458,25 @@ const et: Dictionary = {
     pages: "lehekülge",
     rotate: "Pööra",
   },
+  editMetadataTool: {
+    dropFile: "Valige PDF-fail",
+    changeFile: "Muuda faili",
+    titleLabel: "Pealkiri",
+    authorLabel: "Autor",
+    subjectLabel: "Teema",
+    keywordsLabel: "Märksõnad",
+    creatorLabel: "Loomisprogramm",
+    producerLabel: "PDF-generaator",
+    createdAtLabel: "Loodud",
+    modifiedAtLabel: "Muudetud",
+    keywordsPlaceholder: "märksõna1, märksõna2, märksõna3",
+    clearAll: "Tühjenda kõik",
+    applyButton: "Rakenda metaandmed",
+    noMetadata: "Metaandmeid ei leitud",
+    editableFields: "Muudetavad väljad",
+    readonlyFields: "Faili teave",
+    notSet: "Pole määratud",
+  },
 };
 
 export default et;

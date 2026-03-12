@@ -458,6 +458,25 @@ const id: Dictionary = {
     pages: "halaman",
     rotate: "Putar",
   },
+  editMetadataTool: {
+    dropFile: "Pilih file PDF",
+    changeFile: "Ganti file",
+    titleLabel: "Judul",
+    authorLabel: "Penulis",
+    subjectLabel: "Subjek",
+    keywordsLabel: "Kata kunci",
+    creatorLabel: "Program pembuat",
+    producerLabel: "Generator PDF",
+    createdAtLabel: "Dibuat",
+    modifiedAtLabel: "Diubah",
+    keywordsPlaceholder: "kata1, kata2, kata3",
+    clearAll: "Hapus semua",
+    applyButton: "Terapkan metadata",
+    noMetadata: "Metadata tidak ditemukan",
+    editableFields: "Kolom yang dapat diedit",
+    readonlyFields: "Info file",
+    notSet: "Belum diatur",
+  },
 };
 
 export default id;

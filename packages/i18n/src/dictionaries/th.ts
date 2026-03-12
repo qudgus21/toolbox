@@ -458,6 +458,25 @@ const th: Dictionary = {
     pages: "หน้า",
     rotate: "หมุน",
   },
+  editMetadataTool: {
+    dropFile: "เลือกไฟล์ PDF",
+    changeFile: "เปลี่ยนไฟล์",
+    titleLabel: "ชื่อเรื่อง",
+    authorLabel: "ผู้แต่ง",
+    subjectLabel: "หัวเรื่อง",
+    keywordsLabel: "คำสำคัญ",
+    creatorLabel: "โปรแกรมสร้าง",
+    producerLabel: "ตัวสร้าง PDF",
+    createdAtLabel: "สร้างเมื่อ",
+    modifiedAtLabel: "แก้ไขเมื่อ",
+    keywordsPlaceholder: "คำ1, คำ2, คำ3",
+    clearAll: "ล้างทั้งหมด",
+    applyButton: "นำข้อมูลเมตาไปใช้",
+    noMetadata: "ไม่พบข้อมูลเมตา",
+    editableFields: "แก้ไขได้",
+    readonlyFields: "ข้อมูลไฟล์",
+    notSet: "ยังไม่ตั้ง",
+  },
 };
 
 export default th;

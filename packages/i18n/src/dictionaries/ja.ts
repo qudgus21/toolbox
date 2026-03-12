@@ -458,6 +458,25 @@ const ja: Dictionary = {
     pages: "ページ",
     rotate: "回転",
   },
+  editMetadataTool: {
+    dropFile: "PDFファイルを選択",
+    changeFile: "ファイルを変更",
+    titleLabel: "タイトル",
+    authorLabel: "作成者",
+    subjectLabel: "件名",
+    keywordsLabel: "キーワード",
+    creatorLabel: "作成アプリ",
+    producerLabel: "PDF生成",
+    createdAtLabel: "作成日",
+    modifiedAtLabel: "更新日",
+    keywordsPlaceholder: "キーワード1, キーワード2, キーワード3",
+    clearAll: "すべてクリア",
+    applyButton: "メタデータを適用",
+    noMetadata: "メタデータが見つかりません",
+    editableFields: "編集可能",
+    readonlyFields: "ファイル情報",
+    notSet: "未設定",
+  },
 };
 
 export default ja;

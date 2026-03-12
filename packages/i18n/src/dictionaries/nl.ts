@@ -458,6 +458,25 @@ const nl: Dictionary = {
     pages: "pagina's",
     rotate: "Draaien",
   },
+  editMetadataTool: {
+    dropFile: "Selecteer een PDF-bestand",
+    changeFile: "Bestand wijzigen",
+    titleLabel: "Titel",
+    authorLabel: "Auteur",
+    subjectLabel: "Onderwerp",
+    keywordsLabel: "Trefwoorden",
+    creatorLabel: "Maker",
+    producerLabel: "PDF-generator",
+    createdAtLabel: "Aangemaakt",
+    modifiedAtLabel: "Gewijzigd",
+    keywordsPlaceholder: "trefwoord1, trefwoord2, trefwoord3",
+    clearAll: "Alles wissen",
+    applyButton: "Metadata toepassen",
+    noMetadata: "Geen metadata gevonden",
+    editableFields: "Bewerkbare velden",
+    readonlyFields: "Bestandsinfo",
+    notSet: "Niet ingesteld",
+  },
 };
 
 export default nl;

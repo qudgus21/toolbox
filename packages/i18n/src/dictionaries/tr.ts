@@ -458,6 +458,25 @@ const tr: Dictionary = {
     pages: "sayfa",
     rotate: "Döndür",
   },
+  editMetadataTool: {
+    dropFile: "Bir PDF dosyası seçin",
+    changeFile: "Dosyayı değiştir",
+    titleLabel: "Başlık",
+    authorLabel: "Yazar",
+    subjectLabel: "Konu",
+    keywordsLabel: "Anahtar kelimeler",
+    creatorLabel: "Oluşturan program",
+    producerLabel: "PDF üretici",
+    createdAtLabel: "Oluşturulma",
+    modifiedAtLabel: "Değiştirilme",
+    keywordsPlaceholder: "kelime1, kelime2, kelime3",
+    clearAll: "Tümünü temizle",
+    applyButton: "Meta veriyi uygula",
+    noMetadata: "Meta veri bulunamadı",
+    editableFields: "Düzenlenebilir alanlar",
+    readonlyFields: "Dosya bilgisi",
+    notSet: "Belirlenmemiş",
+  },
 };
 
 export default tr;

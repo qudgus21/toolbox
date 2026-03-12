@@ -374,6 +374,25 @@ const ms: Dictionary = {
     pages: "halaman",
     rotate: "Putar",
   },
+  editMetadataTool: {
+    dropFile: "Pilih fail PDF",
+    changeFile: "Tukar fail",
+    titleLabel: "Tajuk",
+    authorLabel: "Pengarang",
+    subjectLabel: "Subjek",
+    keywordsLabel: "Kata kunci",
+    creatorLabel: "Program pencipta",
+    producerLabel: "Penjana PDF",
+    createdAtLabel: "Dicipta",
+    modifiedAtLabel: "Diubah suai",
+    keywordsPlaceholder: "kata1, kata2, kata3",
+    clearAll: "Padam semua",
+    applyButton: "Gunakan metadata",
+    noMetadata: "Tiada metadata ditemui",
+    editableFields: "Medan boleh diedit",
+    readonlyFields: "Maklumat fail",
+    notSet: "Tidak ditetapkan",
+  },
 };
 
 export default ms;

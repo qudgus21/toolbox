@@ -458,6 +458,25 @@ const pa: Dictionary = {
     pages: "ਪੰਨੇ",
     rotate: "ਘੁਮਾਓ",
   },
+  editMetadataTool: {
+    dropFile: "PDF ਫਾਈਲ ਚੁਣੋ",
+    changeFile: "ਫਾਈਲ ਬਦਲੋ",
+    titleLabel: "ਸਿਰਲੇਖ",
+    authorLabel: "ਲੇਖਕ",
+    subjectLabel: "ਵਿਸ਼ਾ",
+    keywordsLabel: "ਕੀਵਰਡ",
+    creatorLabel: "ਬਣਾਉਣ ਵਾਲਾ ਪ੍ਰੋਗਰਾਮ",
+    producerLabel: "PDF ਜਨਰੇਟਰ",
+    createdAtLabel: "ਬਣਾਇਆ",
+    modifiedAtLabel: "ਸੋਧਿਆ",
+    keywordsPlaceholder: "ਕੀਵਰਡ1, ਕੀਵਰਡ2, ਕੀਵਰਡ3",
+    clearAll: "ਸਭ ਸਾਫ਼ ਕਰੋ",
+    applyButton: "ਮੈਟਾਡੇਟਾ ਲਾਗੂ ਕਰੋ",
+    noMetadata: "ਕੋਈ ਮੈਟਾਡੇਟਾ ਨਹੀਂ ਮਿਲਿਆ",
+    editableFields: "ਸੰਪਾਦਨਯੋਗ",
+    readonlyFields: "ਫਾਈਲ ਜਾਣਕਾਰੀ",
+    notSet: "ਸੈੱਟ ਨਹੀਂ",
+  },
 };
 
 export default pa;

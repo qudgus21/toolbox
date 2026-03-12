@@ -458,6 +458,25 @@ const lv: Dictionary = {
     pages: "lapas",
     rotate: "Pagriezt",
   },
+  editMetadataTool: {
+    dropFile: "Izvēlieties PDF failu",
+    changeFile: "Mainīt failu",
+    titleLabel: "Nosaukums",
+    authorLabel: "Autors",
+    subjectLabel: "Tēma",
+    keywordsLabel: "Atslēgvārdi",
+    creatorLabel: "Izveides programma",
+    producerLabel: "PDF ģenerators",
+    createdAtLabel: "Izveidots",
+    modifiedAtLabel: "Mainīts",
+    keywordsPlaceholder: "vārds1, vārds2, vārds3",
+    clearAll: "Notīrīt visu",
+    applyButton: "Piemērot metadatus",
+    noMetadata: "Metadati nav atrasti",
+    editableFields: "Rediģējami lauki",
+    readonlyFields: "Faila informācija",
+    notSet: "Nav iestatīts",
+  },
 };
 
 export default lv;

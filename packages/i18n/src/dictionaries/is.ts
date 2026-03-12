@@ -458,6 +458,25 @@ const is: Dictionary = {
     pages: "síður",
     rotate: "Snúa",
   },
+  editMetadataTool: {
+    dropFile: "Veldu PDF skrá",
+    changeFile: "Breyta skrá",
+    titleLabel: "Titill",
+    authorLabel: "Höfundur",
+    subjectLabel: "Efni",
+    keywordsLabel: "Lykilorð",
+    creatorLabel: "Búið til af",
+    producerLabel: "PDF framleiðandi",
+    createdAtLabel: "Búið til",
+    modifiedAtLabel: "Breytt",
+    keywordsPlaceholder: "orð1, orð2, orð3",
+    clearAll: "Hreinsa allt",
+    applyButton: "Setja á lýsigögn",
+    noMetadata: "Engin lýsigögn fundust",
+    editableFields: "Breytanleg svæði",
+    readonlyFields: "Skráarupplýsingar",
+    notSet: "Ekki stillt",
+  },
 };
 
 export default is;

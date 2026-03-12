@@ -458,6 +458,25 @@ const ko: Dictionary = {
     pages: "페이지",
     rotate: "회전",
   },
+  editMetadataTool: {
+    dropFile: "PDF 파일을 선택하세요",
+    changeFile: "파일 변경",
+    titleLabel: "제목",
+    authorLabel: "작성자",
+    subjectLabel: "주제",
+    keywordsLabel: "키워드",
+    creatorLabel: "작성 프로그램",
+    producerLabel: "PDF 생성기",
+    createdAtLabel: "생성일",
+    modifiedAtLabel: "수정일",
+    keywordsPlaceholder: "키워드1, 키워드2, 키워드3",
+    clearAll: "전체 지우기",
+    applyButton: "메타데이터 적용",
+    noMetadata: "메타데이터가 없습니다",
+    editableFields: "편집 가능",
+    readonlyFields: "파일 정보",
+    notSet: "없음",
+  },
 };
 
 export default ko;

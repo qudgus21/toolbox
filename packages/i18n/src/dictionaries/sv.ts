@@ -458,6 +458,25 @@ const sv: Dictionary = {
     pages: "sidor",
     rotate: "Rotera",
   },
+  editMetadataTool: {
+    dropFile: "Välj en PDF-fil",
+    changeFile: "Byt fil",
+    titleLabel: "Titel",
+    authorLabel: "Författare",
+    subjectLabel: "Ämne",
+    keywordsLabel: "Nyckelord",
+    creatorLabel: "Skaparprogram",
+    producerLabel: "PDF-generator",
+    createdAtLabel: "Skapad",
+    modifiedAtLabel: "Ändrad",
+    keywordsPlaceholder: "nyckelord1, nyckelord2, nyckelord3",
+    clearAll: "Rensa allt",
+    applyButton: "Tillämpa metadata",
+    noMetadata: "Ingen metadata hittades",
+    editableFields: "Redigerbara fält",
+    readonlyFields: "Filinfo",
+    notSet: "Ej angiven",
+  },
 };
 
 export default sv;

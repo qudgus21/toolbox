@@ -458,6 +458,25 @@ const da: Dictionary = {
     pages: "sider",
     rotate: "Drej",
   },
+  editMetadataTool: {
+    dropFile: "Vælg en PDF-fil",
+    changeFile: "Skift fil",
+    titleLabel: "Titel",
+    authorLabel: "Forfatter",
+    subjectLabel: "Emne",
+    keywordsLabel: "Nøgleord",
+    creatorLabel: "Oprettelsesprogram",
+    producerLabel: "PDF-generator",
+    createdAtLabel: "Oprettet",
+    modifiedAtLabel: "Ændret",
+    keywordsPlaceholder: "nøgleord1, nøgleord2, nøgleord3",
+    clearAll: "Ryd alt",
+    applyButton: "Anvend metadata",
+    noMetadata: "Ingen metadata fundet",
+    editableFields: "Redigerbare felter",
+    readonlyFields: "Filinfo",
+    notSet: "Ikke angivet",
+  },
 };
 
 export default da;

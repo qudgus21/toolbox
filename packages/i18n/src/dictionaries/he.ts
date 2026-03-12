@@ -458,6 +458,25 @@ const he: Dictionary = {
     pages: "עמודים",
     rotate: "סיבוב",
   },
+  editMetadataTool: {
+    dropFile: "בחר קובץ PDF",
+    changeFile: "שנה קובץ",
+    titleLabel: "כותרת",
+    authorLabel: "מחבר",
+    subjectLabel: "נושא",
+    keywordsLabel: "מילות מפתח",
+    creatorLabel: "תוכנה יוצרת",
+    producerLabel: "מחולל PDF",
+    createdAtLabel: "נוצר",
+    modifiedAtLabel: "שונה",
+    keywordsPlaceholder: "מילה1, מילה2, מילה3",
+    clearAll: "נקה הכל",
+    applyButton: "החל מטא-נתונים",
+    noMetadata: "לא נמצאו מטא-נתונים",
+    editableFields: "שדות ניתנים לעריכה",
+    readonlyFields: "מידע על הקובץ",
+    notSet: "לא הוגדר",
+  },
 };
 
 export default he;

@@ -458,6 +458,25 @@ const lt: Dictionary = {
     pages: "puslapių",
     rotate: "Pasukti",
   },
+  editMetadataTool: {
+    dropFile: "Pasirinkite PDF failą",
+    changeFile: "Keisti failą",
+    titleLabel: "Pavadinimas",
+    authorLabel: "Autorius",
+    subjectLabel: "Tema",
+    keywordsLabel: "Raktiniai žodžiai",
+    creatorLabel: "Kūrimo programa",
+    producerLabel: "PDF generatorius",
+    createdAtLabel: "Sukurta",
+    modifiedAtLabel: "Pakeista",
+    keywordsPlaceholder: "žodis1, žodis2, žodis3",
+    clearAll: "Išvalyti viską",
+    applyButton: "Taikyti metaduomenis",
+    noMetadata: "Metaduomenys nerasti",
+    editableFields: "Redaguojami laukai",
+    readonlyFields: "Failo informacija",
+    notSet: "Nenustatyta",
+  },
 };
 
 export default lt;

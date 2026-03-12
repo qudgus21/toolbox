@@ -458,6 +458,25 @@ const vi: Dictionary = {
     pages: "trang",
     rotate: "Xoay",
   },
+  editMetadataTool: {
+    dropFile: "Chọn tệp PDF",
+    changeFile: "Đổi tệp",
+    titleLabel: "Tiêu đề",
+    authorLabel: "Tác giả",
+    subjectLabel: "Chủ đề",
+    keywordsLabel: "Từ khóa",
+    creatorLabel: "Chương trình tạo",
+    producerLabel: "Bộ tạo PDF",
+    createdAtLabel: "Ngày tạo",
+    modifiedAtLabel: "Ngày sửa",
+    keywordsPlaceholder: "từ khóa 1, từ khóa 2, từ khóa 3",
+    clearAll: "Xóa tất cả",
+    applyButton: "Áp dụng siêu dữ liệu",
+    noMetadata: "Không tìm thấy siêu dữ liệu",
+    editableFields: "Có thể chỉnh sửa",
+    readonlyFields: "Thông tin tệp",
+    notSet: "Chưa đặt",
+  },
 };
 
 export default vi;

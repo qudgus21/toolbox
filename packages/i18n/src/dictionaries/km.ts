@@ -374,6 +374,25 @@ const km: Dictionary = {
     pages: "ទំព័រ",
     rotate: "បង្វិល",
   },
+  editMetadataTool: {
+    dropFile: "ជ្រើសរើសឯកសារ PDF",
+    changeFile: "ប្ដូរឯកសារ",
+    titleLabel: "ចំណងជើង",
+    authorLabel: "អ្នកនិពន្ធ",
+    subjectLabel: "ប្រធានបទ",
+    keywordsLabel: "ពាក្យគន្លឹះ",
+    creatorLabel: "កម្មវិធីបង្កើត",
+    producerLabel: "កម្មវិធីបង្កើត PDF",
+    createdAtLabel: "បង្កើតនៅ",
+    modifiedAtLabel: "កែប្រែនៅ",
+    keywordsPlaceholder: "ពាក្យ១, ពាក្យ២, ពាក្យ៣",
+    clearAll: "សម្អាតទាំងអស់",
+    applyButton: "អនុវត្តម៉េតាដាតា",
+    noMetadata: "រកម៉េតាដាតាមិនឃើញ",
+    editableFields: "វាលកែប្រែបាន",
+    readonlyFields: "ព័ត៌មានឯកសារ",
+    notSet: "មិនបានកំណត់",
+  },
 };
 
 export default km;

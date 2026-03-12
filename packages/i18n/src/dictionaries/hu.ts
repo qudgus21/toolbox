@@ -458,6 +458,25 @@ const hu: Dictionary = {
     pages: "oldal",
     rotate: "Forgatás",
   },
+  editMetadataTool: {
+    dropFile: "Válasszon PDF fájlt",
+    changeFile: "Fájl cseréje",
+    titleLabel: "Cím",
+    authorLabel: "Szerző",
+    subjectLabel: "Tárgy",
+    keywordsLabel: "Kulcsszavak",
+    creatorLabel: "Létrehozó program",
+    producerLabel: "PDF-generátor",
+    createdAtLabel: "Létrehozva",
+    modifiedAtLabel: "Módosítva",
+    keywordsPlaceholder: "kulcsszó1, kulcsszó2, kulcsszó3",
+    clearAll: "Összes törlése",
+    applyButton: "Metaadatok alkalmazása",
+    noMetadata: "Nem találhatók metaadatok",
+    editableFields: "Szerkeszthető mezők",
+    readonlyFields: "Fájl információ",
+    notSet: "Nincs megadva",
+  },
 };
 
 export default hu;

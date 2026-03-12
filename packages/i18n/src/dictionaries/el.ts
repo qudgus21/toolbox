@@ -458,6 +458,25 @@ const el: Dictionary = {
     pages: "σελίδες",
     rotate: "Περιστροφή",
   },
+  editMetadataTool: {
+    dropFile: "Επιλέξτε αρχείο PDF",
+    changeFile: "Αλλαγή αρχείου",
+    titleLabel: "Τίτλος",
+    authorLabel: "Συγγραφέας",
+    subjectLabel: "Θέμα",
+    keywordsLabel: "Λέξεις-κλειδιά",
+    creatorLabel: "Πρόγραμμα δημιουργίας",
+    producerLabel: "Παραγωγός PDF",
+    createdAtLabel: "Δημιουργήθηκε",
+    modifiedAtLabel: "Τροποποιήθηκε",
+    keywordsPlaceholder: "λέξη1, λέξη2, λέξη3",
+    clearAll: "Εκκαθάριση",
+    applyButton: "Εφαρμογή μεταδεδομένων",
+    noMetadata: "Δεν βρέθηκαν μεταδεδομένα",
+    editableFields: "Επεξεργάσιμα πεδία",
+    readonlyFields: "Πληροφορίες αρχείου",
+    notSet: "Δεν ορίστηκε",
+  },
 };
 
 export default el;

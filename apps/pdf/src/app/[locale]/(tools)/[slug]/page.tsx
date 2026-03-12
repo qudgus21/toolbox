@@ -102,6 +102,7 @@ export default async function ToolPage({
         scanToPdfLabels={slug === "scan-to-pdf" ? dict.scanToPdfTool : undefined}
         organizePagesLabels={slug === "organize-pages" ? dict.organizePagesTool : undefined}
         rotateLabels={slug === "rotate" ? dict.rotateTool : undefined}
+        editMetadataLabels={slug === "edit-metadata" ? dict.editMetadataTool : undefined}
       />
     </>
   );

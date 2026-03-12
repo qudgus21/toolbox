@@ -20,6 +20,7 @@ registry.set("scan-to-pdf", () => import("./processors/scan-to-pdf"));
 registry.set("organize-pages", () => import("./processors/organize-pages"));
 registry.set("rotate", () => import("./processors/rotate"));
 registry.set("grayscale", () => import("./processors/grayscale"));
+registry.set("edit-metadata", () => import("./processors/edit-metadata"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));
 // registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));

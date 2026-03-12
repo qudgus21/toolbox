@@ -458,6 +458,25 @@ const es: Dictionary = {
     pages: "páginas",
     rotate: "Rotar",
   },
+  editMetadataTool: {
+    dropFile: "Selecciona un archivo PDF",
+    changeFile: "Cambiar archivo",
+    titleLabel: "Título",
+    authorLabel: "Autor",
+    subjectLabel: "Asunto",
+    keywordsLabel: "Palabras clave",
+    creatorLabel: "Programa creador",
+    producerLabel: "Generador PDF",
+    createdAtLabel: "Creado",
+    modifiedAtLabel: "Modificado",
+    keywordsPlaceholder: "palabra1, palabra2, palabra3",
+    clearAll: "Borrar todo",
+    applyButton: "Aplicar metadatos",
+    noMetadata: "No se encontraron metadatos",
+    editableFields: "Campos editables",
+    readonlyFields: "Info del archivo",
+    notSet: "Sin definir",
+  },
 };
 
 export default es;

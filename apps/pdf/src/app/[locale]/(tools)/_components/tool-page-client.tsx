@@ -44,6 +44,9 @@ import { ScanToPdfOptions, type ScanToPdfLabels } from "./scan-to-pdf-options";
 import { OrganizePagesPreview, type OrganizePageEntry } from "./organize-pages-preview";
 import { OrganizePagesOptions, type OrganizePagesLabels } from "./organize-pages-options";
 import { RotateOptions, type RotateLabels } from "./rotate-options";
+import { EditMetadataOptions, type EditMetadataLabels } from "./edit-metadata-options";
+import { usePdfMetadata } from "./use-pdf-metadata";
+import type { PdfMetadata } from "@/lib/processors/edit-metadata";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
 import type { FileBreak } from "@/lib/processors/html-to-pdf";
 import type { ScanColorMode } from "@/lib/processors/scan-to-pdf";
@@ -180,6 +183,7 @@ interface ToolPageClientProps {
   scanToPdfLabels?: ScanToPdfLabels;
   organizePagesLabels?: OrganizePagesLabels;
   rotateLabels?: RotateLabels;
+  editMetadataLabels?: EditMetadataLabels;
   children?: ReactNode;
 }
 
@@ -229,6 +233,7 @@ export function ToolPageClient({
   scanToPdfLabels,
   organizePagesLabels,
   rotateLabels,
+  editMetadataLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -324,7 +329,18 @@ export function ToolPageClient({
   const isOrganizePages = slug === "organize-pages";
   const isRotate = slug === "rotate";
   const isGrayscale = slug === "grayscale";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages;
+  const isEditMetadata = slug === "edit-metadata";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata;
+
+  const [editedMetadata, setEditedMetadata] = useState<PdfMetadata | null>(null);
+  const { metadata: originalMetadata, loading: metadataLoading } = usePdfMetadata(
+    isEditMetadata && files.length > 0 ? files[0] : null,
+  );
+  useEffect(() => {
+    if (originalMetadata) {
+      setEditedMetadata({ ...originalMetadata });
+    }
+  }, [originalMetadata]);
 
   useEffect(() => {
     setFav(isFavorite(slug));
@@ -445,7 +461,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : isExtractImages && stage !== "idle" ? "md" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isEditMetadata || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : isExtractImages && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -875,6 +891,68 @@ export function ToolPageClient({
                     />
                   </div>
                 </div>
+              </>
+            ) : isEditMetadata && editMetadataLabels && files.length > 0 ? (
+              /* ─── Edit Metadata: single-file + form sidebar ─── */
+              <>
+                {/* File info bar */}
+                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-50 dark:bg-purple-950/40">
+                      <svg className="h-5 w-5 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <path d="M14 2v6h6" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-foreground">
+                        {files[0].name}
+                      </p>
+                      <p className="text-xs text-foreground-muted">
+                        {formatSize(files[0].size)}
+                        {pageCounts[fileId(files[0])] && (
+                          <span> · {pageCounts[fileId(files[0])]}p</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSingleFileChange}
+                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-purple-500 hover:text-purple-500 transition-colors cursor-pointer"
+                  >
+                    {editMetadataLabels.changeFile}
+                  </button>
+                </div>
+
+                {/* Metadata form */}
+                {editedMetadata && (
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <EditMetadataOptions
+                      metadata={editedMetadata}
+                      original={originalMetadata}
+                      onChange={(field, value) => {
+                        setEditedMetadata((prev) =>
+                          prev ? { ...prev, [field]: value } : prev,
+                        );
+                      }}
+                      onClearAll={() => {
+                        setEditedMetadata({
+                          title: "",
+                          author: "",
+                          subject: "",
+                          keywords: "",
+                          creator: "",
+                          producer: "",
+                          creationDate: null,
+                          modificationDate: null,
+                        });
+                      }}
+                      labels={editMetadataLabels}
+                      loading={metadataLoading}
+                    />
+                  </div>
+                )}
               </>
             ) : isExtractImages && extractImagesLabels && files.length > 0 ? (
               /* ─── Extract Images: single-file mode ─── */
@@ -1996,11 +2074,22 @@ export function ToolPageClient({
                   processFiles({});
                 } else if (isGrayscale) {
                   processFiles({});
+                } else if (isEditMetadata && editedMetadata) {
+                  processFiles({
+                    title: editedMetadata.title,
+                    author: editedMetadata.author,
+                    subject: editedMetadata.subject,
+                    keywords: editedMetadata.keywords,
+                    creator: editedMetadata.creator,
+                    producer: editedMetadata.producer,
+                    creationDate: editedMetadata.creationDate || undefined,
+                    modificationDate: editedMetadata.modificationDate || undefined,
+                  });
                 } else {
                   processFiles({ rotations, pageSelections });
                 }
               }}
-              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0)}
+              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) || (isEditMetadata && !editedMetadata)}
               className={cn(
                 "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                 "bg-accent text-accent-foreground shadow-md",
@@ -2010,7 +2099,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>

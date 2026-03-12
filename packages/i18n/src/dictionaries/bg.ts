@@ -458,6 +458,25 @@ const bg: Dictionary = {
     pages: "страници",
     rotate: "Завъртане",
   },
+  editMetadataTool: {
+    dropFile: "Изберете PDF файл",
+    changeFile: "Смени файл",
+    titleLabel: "Заглавие",
+    authorLabel: "Автор",
+    subjectLabel: "Тема",
+    keywordsLabel: "Ключови думи",
+    creatorLabel: "Създаваща програма",
+    producerLabel: "PDF генератор",
+    createdAtLabel: "Създаден",
+    modifiedAtLabel: "Променен",
+    keywordsPlaceholder: "дума1, дума2, дума3",
+    clearAll: "Изчисти всичко",
+    applyButton: "Приложи метаданни",
+    noMetadata: "Не са намерени метаданни",
+    editableFields: "Редактируеми полета",
+    readonlyFields: "Информация за файла",
+    notSet: "Не е зададено",
+  },
 };
 
 export default bg;

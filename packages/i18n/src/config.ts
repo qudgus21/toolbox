@@ -363,4 +363,23 @@ export interface Dictionary {
     pages: string;
     rotate: string;
   };
+  editMetadataTool: {
+    dropFile: string;
+    changeFile: string;
+    titleLabel: string;
+    authorLabel: string;
+    subjectLabel: string;
+    keywordsLabel: string;
+    creatorLabel: string;
+    producerLabel: string;
+    createdAtLabel: string;
+    modifiedAtLabel: string;
+    keywordsPlaceholder: string;
+    clearAll: string;
+    applyButton: string;
+    noMetadata: string;
+    editableFields: string;
+    readonlyFields: string;
+    notSet: string;
+  };
 }

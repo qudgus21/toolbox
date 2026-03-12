@@ -458,6 +458,25 @@ const zh: Dictionary = {
     pages: "页",
     rotate: "旋转",
   },
+  editMetadataTool: {
+    dropFile: "选择一个PDF文件",
+    changeFile: "更换文件",
+    titleLabel: "标题",
+    authorLabel: "作者",
+    subjectLabel: "主题",
+    keywordsLabel: "关键词",
+    creatorLabel: "创建程序",
+    producerLabel: "PDF生成器",
+    createdAtLabel: "创建时间",
+    modifiedAtLabel: "修改时间",
+    keywordsPlaceholder: "关键词1, 关键词2, 关键词3",
+    clearAll: "全部清除",
+    applyButton: "应用元数据",
+    noMetadata: "未找到元数据",
+    editableFields: "可编辑字段",
+    readonlyFields: "文件信息",
+    notSet: "未设置",
+  },
 };
 
 export default zh;

@@ -458,6 +458,25 @@ const fi: Dictionary = {
     pages: "sivua",
     rotate: "Käännä",
   },
+  editMetadataTool: {
+    dropFile: "Valitse PDF-tiedosto",
+    changeFile: "Vaihda tiedosto",
+    titleLabel: "Otsikko",
+    authorLabel: "Tekijä",
+    subjectLabel: "Aihe",
+    keywordsLabel: "Avainsanat",
+    creatorLabel: "Luontiohjelma",
+    producerLabel: "PDF-generaattori",
+    createdAtLabel: "Luotu",
+    modifiedAtLabel: "Muokattu",
+    keywordsPlaceholder: "avainsana1, avainsana2, avainsana3",
+    clearAll: "Tyhjennä kaikki",
+    applyButton: "Käytä metatietoja",
+    noMetadata: "Metatietoja ei löytynyt",
+    editableFields: "Muokattavat kentät",
+    readonlyFields: "Tiedoston tiedot",
+    notSet: "Ei asetettu",
+  },
 };
 
 export default fi;

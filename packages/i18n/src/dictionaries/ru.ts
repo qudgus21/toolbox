@@ -458,6 +458,25 @@ const ru: Dictionary = {
     pages: "страниц",
     rotate: "Повернуть",
   },
+  editMetadataTool: {
+    dropFile: "Выберите PDF-файл",
+    changeFile: "Сменить файл",
+    titleLabel: "Название",
+    authorLabel: "Автор",
+    subjectLabel: "Тема",
+    keywordsLabel: "Ключевые слова",
+    creatorLabel: "Программа-создатель",
+    producerLabel: "Генератор PDF",
+    createdAtLabel: "Создан",
+    modifiedAtLabel: "Изменён",
+    keywordsPlaceholder: "слово1, слово2, слово3",
+    clearAll: "Очистить всё",
+    applyButton: "Применить метаданные",
+    noMetadata: "Метаданные не найдены",
+    editableFields: "Редактируемые поля",
+    readonlyFields: "Информация о файле",
+    notSet: "Не задано",
+  },
 };
 
 export default ru;

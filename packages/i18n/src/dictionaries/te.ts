@@ -458,6 +458,25 @@ const te: Dictionary = {
     pages: "పేజీలు",
     rotate: "తిప్పండి",
   },
+  editMetadataTool: {
+    dropFile: "PDF ఫైల్ ఎంచుకోండి",
+    changeFile: "ఫైల్ మార్చు",
+    titleLabel: "శీర్షిక",
+    authorLabel: "రచయిత",
+    subjectLabel: "విషయం",
+    keywordsLabel: "కీవర్డ్‌లు",
+    creatorLabel: "సృష్టి ప్రోగ్రామ్",
+    producerLabel: "PDF జనరేటర్",
+    createdAtLabel: "సృష్టించబడింది",
+    modifiedAtLabel: "మార్చబడింది",
+    keywordsPlaceholder: "కీవర్డ్1, కీవర్డ్2, కీవర్డ్3",
+    clearAll: "అన్నీ తొలగించు",
+    applyButton: "మెటాడేటా వర్తింపజేయి",
+    noMetadata: "మెటాడేటా కనుగొనబడలేదు",
+    editableFields: "సవరించగల ఫీల్డ్‌లు",
+    readonlyFields: "ఫైల్ సమాచారం",
+    notSet: "సెట్ చేయబడలేదు",
+  },
 };
 
 export default te;

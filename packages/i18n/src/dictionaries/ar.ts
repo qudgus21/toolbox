@@ -458,6 +458,25 @@ const ar: Dictionary = {
     pages: "صفحات",
     rotate: "تدوير",
   },
+  editMetadataTool: {
+    dropFile: "اختر ملف PDF",
+    changeFile: "تغيير الملف",
+    titleLabel: "العنوان",
+    authorLabel: "المؤلف",
+    subjectLabel: "الموضوع",
+    keywordsLabel: "الكلمات المفتاحية",
+    creatorLabel: "برنامج الإنشاء",
+    producerLabel: "مُنشئ PDF",
+    createdAtLabel: "تاريخ الإنشاء",
+    modifiedAtLabel: "تاريخ التعديل",
+    keywordsPlaceholder: "كلمة1، كلمة2، كلمة3",
+    clearAll: "مسح الكل",
+    applyButton: "تطبيق البيانات الوصفية",
+    noMetadata: "لم يتم العثور على بيانات وصفية",
+    editableFields: "حقول قابلة للتعديل",
+    readonlyFields: "معلومات الملف",
+    notSet: "غير محدد",
+  },
 };
 
 export default ar;

@@ -458,6 +458,25 @@ const bn: Dictionary = {
     pages: "পৃষ্ঠা",
     rotate: "ঘোরান",
   },
+  editMetadataTool: {
+    dropFile: "একটি PDF ফাইল নির্বাচন করুন",
+    changeFile: "ফাইল পরিবর্তন",
+    titleLabel: "শিরোনাম",
+    authorLabel: "লেখক",
+    subjectLabel: "বিষয়",
+    keywordsLabel: "কীওয়ার্ড",
+    creatorLabel: "তৈরির প্রোগ্রাম",
+    producerLabel: "PDF জেনারেটর",
+    createdAtLabel: "তৈরি",
+    modifiedAtLabel: "পরিবর্তিত",
+    keywordsPlaceholder: "কীওয়ার্ড1, কীওয়ার্ড2, কীওয়ার্ড3",
+    clearAll: "সব মুছুন",
+    applyButton: "মেটাডেটা প্রয়োগ",
+    noMetadata: "কোনো মেটাডেটা পাওয়া যায়নি",
+    editableFields: "সম্পাদনযোগ্য",
+    readonlyFields: "ফাইল তথ্য",
+    notSet: "সেট করা হয়নি",
+  },
 };
 
 export default bn;

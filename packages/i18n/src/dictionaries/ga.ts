@@ -458,6 +458,25 @@ const ga: Dictionary = {
     pages: "leathanaigh",
     rotate: "Rothlaigh",
   },
+  editMetadataTool: {
+    dropFile: "Roghnaigh comhad PDF",
+    changeFile: "Athraigh comhad",
+    titleLabel: "Teideal",
+    authorLabel: "Údar",
+    subjectLabel: "Ábhar",
+    keywordsLabel: "Eochairfhocail",
+    creatorLabel: "Clár cruthaithe",
+    producerLabel: "Gineadóir PDF",
+    createdAtLabel: "Cruthaithe",
+    modifiedAtLabel: "Athraithe",
+    keywordsPlaceholder: "focal1, focal2, focal3",
+    clearAll: "Glan gach rud",
+    applyButton: "Cuir meiteashonraí i bhfeidhm",
+    noMetadata: "Níor aimsíodh meiteashonraí",
+    editableFields: "Réimsí in-eagarthóireachta",
+    readonlyFields: "Eolas comhaid",
+    notSet: "Gan socrú",
+  },
 };
 
 export default ga;
