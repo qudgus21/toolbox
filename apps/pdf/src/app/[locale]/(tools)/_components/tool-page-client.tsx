@@ -41,6 +41,8 @@ import { PngToPdfOptions, type PngToPdfLabels } from "./png-to-pdf-options";
 import { ImageToPdfOptions, type ImageToPdfLabels } from "./image-to-pdf-options";
 import { HtmlToPdfOptions, type HtmlToPdfLabels } from "./html-to-pdf-options";
 import { ScanToPdfOptions, type ScanToPdfLabels } from "./scan-to-pdf-options";
+import { OrganizePagesPreview, type OrganizePageEntry } from "./organize-pages-preview";
+import { OrganizePagesOptions, type OrganizePagesLabels } from "./organize-pages-options";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
 import type { FileBreak } from "@/lib/processors/html-to-pdf";
 import type { ScanColorMode } from "@/lib/processors/scan-to-pdf";
@@ -175,6 +177,7 @@ interface ToolPageClientProps {
   imageToPdfLabels?: ImageToPdfLabels;
   htmlToPdfLabels?: HtmlToPdfLabels;
   scanToPdfLabels?: ScanToPdfLabels;
+  organizePagesLabels?: OrganizePagesLabels;
   children?: ReactNode;
 }
 
@@ -222,6 +225,7 @@ export function ToolPageClient({
   imageToPdfLabels,
   htmlToPdfLabels,
   scanToPdfLabels,
+  organizePagesLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -298,6 +302,7 @@ export function ToolPageClient({
   const [scanToPdfMergeAll, setScanToPdfMergeAll] = useState(true);
   const [scanToPdfAutoEnhance, setScanToPdfAutoEnhance] = useState(true);
   const [scanToPdfColorMode, setScanToPdfColorMode] = useState<ScanColorMode>("grayscale");
+  const [organizePages, setOrganizePages] = useState<OrganizePageEntry[]>([]);
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
@@ -313,7 +318,8 @@ export function ToolPageClient({
   const isImageToPdf = slug === "image-to-pdf";
   const isHtmlToPdf = slug === "html-to-pdf";
   const isScanToPdf = slug === "scan-to-pdf";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText;
+  const isOrganizePages = slug === "organize-pages";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages;
 
   useEffect(() => {
     setFav(isFavorite(slug));
@@ -345,6 +351,7 @@ export function ToolPageClient({
           setDeletePageOrder([]);
           setExtractedPages(new Set());
           setExtractPageOrder([]);
+          setOrganizePages([]);
           setTimeout(() => addFiles(Array.from(target.files!)), 0);
         } else {
           addFiles(Array.from(target.files));
@@ -365,6 +372,7 @@ export function ToolPageClient({
         reset();
         if (isDeletePages) { setDeletedPages(new Set()); setDeletePageOrder([]); }
         if (isExtractPages) { setExtractedPages(new Set()); setExtractPageOrder([]); }
+        if (isOrganizePages) { setOrganizePages([]); }
         setTimeout(() => addFiles([target.files![0]]), 0);
       }
     };
@@ -395,6 +403,35 @@ export function ToolPageClient({
     });
   }, []);
 
+  // Initialize organize-pages entries when pageCount is available
+  const organizeFileKey = files[0] ? fileId(files[0]) : "";
+  const organizePageCount = pageCounts[organizeFileKey] ?? 0;
+  useEffect(() => {
+    if (!isOrganizePages || organizePageCount === 0) return;
+    if (organizePages.length > 0) return; // already initialized
+    setOrganizePages(
+      Array.from({ length: organizePageCount }, (_, i) => ({
+        id: `org-${i + 1}`,
+        srcPage: i + 1,
+        deleted: false,
+        rotation: 0,
+        isDuplicate: false,
+      })),
+    );
+  }, [isOrganizePages, organizePageCount, organizePages.length]);
+
+  const handleOrganizePagesReset = useCallback(() => {
+    setOrganizePages(
+      Array.from({ length: organizePageCount }, (_, i) => ({
+        id: `org-${i + 1}`,
+        srcPage: i + 1,
+        deleted: false,
+        rotation: 0,
+        isDuplicate: false,
+      })),
+    );
+  }, [organizePageCount]);
+
   return (
     <>
     <ToolPageLayout
@@ -402,7 +439,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -652,6 +689,66 @@ export function ToolPageClient({
                         extractedPages={extractedPages}
                         onExtractedPagesChange={setExtractedPages}
                         labels={extractPagesLabels}
+                      />
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : isOrganizePages && organizePagesLabels && files.length > 0 ? (
+              /* ─── Organize Pages: single-file mode ─── */
+              <>
+                {/* File info bar */}
+                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-muted">
+                      <svg className="h-5 w-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <path d="M14 2v6h6" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-semibold text-foreground">
+                        {files[0].name}
+                      </p>
+                      <p className="text-xs text-foreground-muted">
+                        {formatSize(files[0].size)}
+                        {pageCounts[fileId(files[0])] && (
+                          <span> · {pageCounts[fileId(files[0])]}p</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSingleFileChange}
+                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-accent hover:text-accent transition-colors cursor-pointer"
+                  >
+                    {organizePagesLabels.changeFile}
+                  </button>
+                </div>
+
+                {/* Organize pages layout: preview + options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  {organizePages.length > 0 && (
+                    <div className="self-start">
+                      <OrganizePagesPreview
+                        file={files[0]}
+                        pageCount={pageCounts[fileId(files[0])]}
+                        pages={organizePages}
+                        onPagesChange={setOrganizePages}
+                        labels={organizePagesLabels}
+                      />
+                    </div>
+                  )}
+
+                  {organizePages.length > 0 && (
+                    <div className="lg:sticky lg:top-4 lg:self-start">
+                      <OrganizePagesOptions
+                        pageCount={pageCounts[fileId(files[0])]}
+                        pages={organizePages}
+                        onPagesChange={setOrganizePages}
+                        onResetAll={handleOrganizePagesReset}
+                        labels={organizePagesLabels}
                       />
                     </div>
                   )}
@@ -1708,6 +1805,20 @@ export function ToolPageClient({
                     pagesToExtract: Array.from(extractedPages),
                     pageOrder: extractPageOrder.length > 0 ? extractPageOrder : undefined,
                   });
+                } else if (isOrganizePages) {
+                  const pageOrder = organizePages.map((p) => p.srcPage);
+                  const deletedIndices = organizePages
+                    .map((p, i) => (p.deleted ? i : -1))
+                    .filter((i) => i >= 0);
+                  const rotationsMap: Record<string, number> = {};
+                  organizePages.forEach((p, i) => {
+                    if (p.rotation > 0) rotationsMap[String(i)] = p.rotation;
+                  });
+                  processFiles({
+                    pageOrder,
+                    deletedPages: deletedIndices,
+                    rotations: rotationsMap,
+                  });
                 } else if (isPdfToJpg) {
                   processFiles({
                     quality: jpgQuality,
@@ -1769,7 +1880,7 @@ export function ToolPageClient({
                   processFiles({ rotations, pageSelections });
                 }
               }}
-              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0)))}
+              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0)}
               className={cn(
                 "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                 "bg-accent text-accent-foreground shadow-md",

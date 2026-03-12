@@ -100,6 +100,7 @@ export default async function ToolPage({
         imageToPdfLabels={slug === "image-to-pdf" ? dict.imageToPdfTool : undefined}
         htmlToPdfLabels={slug === "html-to-pdf" ? dict.htmlToPdfTool : undefined}
         scanToPdfLabels={slug === "scan-to-pdf" ? dict.scanToPdfTool : undefined}
+        organizePagesLabels={slug === "organize-pages" ? dict.organizePagesTool : undefined}
       />
     </>
   );

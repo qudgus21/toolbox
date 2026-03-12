@@ -327,4 +327,27 @@ export interface Dictionary {
     convertButton: string;
     convertInfo: string;
   };
+  organizePagesTool: {
+    dropFile: string;
+    changeFile: string;
+    resultPages: string;
+    deletedCount: string;
+    duplicatedCount: string;
+    rotatedCount: string;
+    selectAll: string;
+    deselectAll: string;
+    selectOdd: string;
+    selectEven: string;
+    rotateAll: string;
+    resetOrder: string;
+    resetAll: string;
+    noChanges: string;
+    cannotDeleteAll: string;
+    pages: string;
+    duplicate: string;
+    rotate: string;
+    delete: string;
+    restore: string;
+    copy: string;
+  };
 }
