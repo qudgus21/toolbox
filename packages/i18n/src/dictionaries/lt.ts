@@ -445,6 +445,19 @@ const lt: Dictionary = {
     restore: "Atkurti",
     copy: "kopija",
   },
+  rotateTool: {
+    dropFile: "Pasirinkite PDF failą",
+    changeFile: "Pakeisti failą",
+    rotatedCount: "Pasukti puslapiai",
+    rotateCw: "Pagal laikrodžio rodyklę",
+    rotateCcw: "Prieš laikrodžio rodyklę",
+    rotateAllCw: "Pasukti visus pagal laikrodžio rodyklę",
+    rotateAllCcw: "Pasukti visus prieš laikrodžio rodyklę",
+    resetAll: "Atstatyti viską",
+    noChanges: "Pakeitimų nėra",
+    pages: "puslapių",
+    rotate: "Pasukti",
+  },
 };
 
 export default lt;

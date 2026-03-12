@@ -445,6 +445,19 @@ const bg: Dictionary = {
     restore: "Възстанови",
     copy: "копие",
   },
+  rotateTool: {
+    dropFile: "Изберете PDF файл",
+    changeFile: "Смяна на файл",
+    rotatedCount: "Завъртени страници",
+    rotateCw: "По часовниковата стрелка",
+    rotateCcw: "Обратно на часовниковата стрелка",
+    rotateAllCw: "Завърти всички по часовниковата",
+    rotateAllCcw: "Завърти всички обратно",
+    resetAll: "Нулиране на всички",
+    noChanges: "Няма направени промени",
+    pages: "страници",
+    rotate: "Завъртане",
+  },
 };
 
 export default bg;

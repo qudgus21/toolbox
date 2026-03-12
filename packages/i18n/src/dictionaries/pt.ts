@@ -445,6 +445,19 @@ const pt: Dictionary = {
     restore: "Restaurar",
     copy: "cópia",
   },
+  rotateTool: {
+    dropFile: "Selecione um arquivo PDF",
+    changeFile: "Trocar arquivo",
+    rotatedCount: "Páginas giradas",
+    rotateCw: "Sentido horário",
+    rotateCcw: "Sentido anti-horário",
+    rotateAllCw: "Girar tudo (horário)",
+    rotateAllCcw: "Girar tudo (anti-horário)",
+    resetAll: "Redefinir tudo",
+    noChanges: "Nenhuma alteração feita",
+    pages: "páginas",
+    rotate: "Girar",
+  },
 };
 
 export default pt;

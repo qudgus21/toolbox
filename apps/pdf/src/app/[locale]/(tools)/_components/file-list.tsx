@@ -251,7 +251,7 @@ function SortableCard({
                 </div>
               </div>
             );
-          })() : pageOrientation && isImageFile(file) ? (() => {
+          })() : pageOrientation ? (() => {
             const baseRatio = PAGE_ASPECT_RATIOS[pageSize ?? "a4"] ?? PAGE_ASPECT_RATIOS.a4;
             const pageAR = pageOrientation === "landscape" ? 1 / baseRatio : baseRatio;
             const marginPct = marginMmToPct(pageMargin ?? 0);
@@ -269,7 +269,11 @@ function SortableCard({
                       filter: colorFilter || undefined,
                     }}
                   >
-                    <ImageThumbnail file={file} className="w-full h-full object-contain" />
+                    {isImageFile(file) ? (
+                      <ImageThumbnail file={file} className="w-full h-full object-contain" />
+                    ) : (
+                      <PdfThumbnail file={file} className="w-full h-full object-contain" />
+                    )}
                   </div>
                 </div>
               </div>

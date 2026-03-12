@@ -445,6 +445,19 @@ const ko: Dictionary = {
     restore: "복원",
     copy: "사본",
   },
+  rotateTool: {
+    dropFile: "PDF 파일을 선택하세요",
+    changeFile: "파일 변경",
+    rotatedCount: "회전된 페이지",
+    rotateCw: "시계 방향",
+    rotateCcw: "반시계 방향",
+    rotateAllCw: "전체 시계 방향",
+    rotateAllCcw: "전체 반시계 방향",
+    resetAll: "초기화",
+    noChanges: "변경사항이 없습니다",
+    pages: "페이지",
+    rotate: "회전",
+  },
 };
 
 export default ko;

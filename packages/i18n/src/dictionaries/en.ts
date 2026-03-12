@@ -445,6 +445,19 @@ const en: Dictionary = {
     restore: "Restore",
     copy: "copy",
   },
+  rotateTool: {
+    dropFile: "Select a PDF file",
+    changeFile: "Change file",
+    rotatedCount: "Rotated pages",
+    rotateCw: "Clockwise",
+    rotateCcw: "Counter-clockwise",
+    rotateAllCw: "Rotate all CW",
+    rotateAllCcw: "Rotate all CCW",
+    resetAll: "Reset all",
+    noChanges: "No changes made",
+    pages: "pages",
+    rotate: "Rotate",
+  },
 };
 
 export default en;

@@ -445,6 +445,19 @@ const is: Dictionary = {
     restore: "Endurheimta",
     copy: "afrit",
   },
+  rotateTool: {
+    dropFile: "Veldu PDF-skjal",
+    changeFile: "Skipta um skjal",
+    rotatedCount: "Snúnar síður",
+    rotateCw: "Réttsælis",
+    rotateCcw: "Rangsælis",
+    rotateAllCw: "Snúa öllu réttsælis",
+    rotateAllCcw: "Snúa öllu rangsælis",
+    resetAll: "Endurstilla allt",
+    noChanges: "Engar breytingar gerðar",
+    pages: "síður",
+    rotate: "Snúa",
+  },
 };
 
 export default is;

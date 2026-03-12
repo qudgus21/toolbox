@@ -445,6 +445,19 @@ const cs: Dictionary = {
     restore: "Obnovit",
     copy: "kopie",
   },
+  rotateTool: {
+    dropFile: "Vyberte soubor PDF",
+    changeFile: "Změnit soubor",
+    rotatedCount: "Otočené stránky",
+    rotateCw: "Po směru hodin",
+    rotateCcw: "Proti směru hodin",
+    rotateAllCw: "Otočit vše po směru hodin",
+    rotateAllCcw: "Otočit vše proti směru hodin",
+    resetAll: "Obnovit vše",
+    noChanges: "Žádné změny",
+    pages: "stránek",
+    rotate: "Otočit",
+  },
 };
 
 export default cs;

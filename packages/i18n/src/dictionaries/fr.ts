@@ -445,6 +445,19 @@ const fr: Dictionary = {
     restore: "Restaurer",
     copy: "copie",
   },
+  rotateTool: {
+    dropFile: "Sélectionnez un fichier PDF",
+    changeFile: "Changer de fichier",
+    rotatedCount: "Pages pivotées",
+    rotateCw: "Sens horaire",
+    rotateCcw: "Sens antihoraire",
+    rotateAllCw: "Tout pivoter (horaire)",
+    rotateAllCcw: "Tout pivoter (antihoraire)",
+    resetAll: "Tout réinitialiser",
+    noChanges: "Aucune modification",
+    pages: "pages",
+    rotate: "Pivoter",
+  },
 };
 
 export default fr;

@@ -43,6 +43,7 @@ import { HtmlToPdfOptions, type HtmlToPdfLabels } from "./html-to-pdf-options";
 import { ScanToPdfOptions, type ScanToPdfLabels } from "./scan-to-pdf-options";
 import { OrganizePagesPreview, type OrganizePageEntry } from "./organize-pages-preview";
 import { OrganizePagesOptions, type OrganizePagesLabels } from "./organize-pages-options";
+import { RotateOptions, type RotateLabels } from "./rotate-options";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
 import type { FileBreak } from "@/lib/processors/html-to-pdf";
 import type { ScanColorMode } from "@/lib/processors/scan-to-pdf";
@@ -178,6 +179,7 @@ interface ToolPageClientProps {
   htmlToPdfLabels?: HtmlToPdfLabels;
   scanToPdfLabels?: ScanToPdfLabels;
   organizePagesLabels?: OrganizePagesLabels;
+  rotateLabels?: RotateLabels;
   children?: ReactNode;
 }
 
@@ -226,6 +228,7 @@ export function ToolPageClient({
   htmlToPdfLabels,
   scanToPdfLabels,
   organizePagesLabels,
+  rotateLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -319,6 +322,7 @@ export function ToolPageClient({
   const isHtmlToPdf = slug === "html-to-pdf";
   const isScanToPdf = slug === "scan-to-pdf";
   const isOrganizePages = slug === "organize-pages";
+  const isRotate = slug === "rotate";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages;
 
   useEffect(() => {
@@ -352,6 +356,7 @@ export function ToolPageClient({
           setExtractedPages(new Set());
           setExtractPageOrder([]);
           setOrganizePages([]);
+
           setTimeout(() => addFiles(Array.from(target.files!)), 0);
         } else {
           addFiles(Array.from(target.files));
@@ -439,7 +444,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isPdfToJpg || isPdfToPng || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : (isExtractImages || isPdfToText) && stage !== "idle" ? "md" : "lg"}
+      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : isExtractImages && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -754,6 +759,122 @@ export function ToolPageClient({
                   )}
                 </div>
               </>
+            ) : isRotate && rotateLabels && files.length > 0 ? (
+              /* ─── Rotate: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageCounts={pageCounts}
+                      pageOrientation="portrait"
+                      pageSize="a4"
+                      pageMargin={0}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                      onRotate={rotateFile}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <RotateOptions
+                      pageCount={files.length}
+                      rotations={rotations}
+                      onRotateCwAll={() => {
+                        for (const f of files) rotateFile(fileId(f));
+                      }}
+                      onRotateCcwAll={() => {
+                        for (const f of files) {
+                          rotateFile(fileId(f));
+                          rotateFile(fileId(f));
+                          rotateFile(fileId(f));
+                        }
+                      }}
+                      onResetAll={reset}
+                      labels={rotateLabels}
+                    />
+                  </div>
+                </div>
+              </>
             ) : isExtractImages && extractImagesLabels && files.length > 0 ? (
               /* ─── Extract Images: single-file mode ─── */
               <>
@@ -791,40 +912,27 @@ export function ToolPageClient({
                 <ExtractImagesOptions labels={extractImagesLabels} />
               </>
             ) : isPdfToText && pdfToTextLabels && files.length > 0 ? (
-              /* ─── PDF to Text: single-file mode ─── */
+              /* ─── PDF to Text: single-file card + options ─── */
               <>
-                {/* File info bar */}
-                <div className="flex items-center justify-between rounded-xl border border-border bg-background-elevated px-4 py-3">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-950/40">
-                      <svg className="h-5 w-5 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-                        <path d="M14 2v6h6" />
-                      </svg>
-                    </div>
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold text-foreground">
-                        {files[0].name}
-                      </p>
-                      <p className="text-xs text-foreground-muted">
-                        {formatSize(files[0].size)}
-                        {pageCounts[fileId(files[0])] && (
-                          <span> · {pageCounts[fileId(files[0])]}p</span>
-                        )}
-                      </p>
-                    </div>
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageCounts={pageCounts}
+                      pageOrientation="portrait"
+                      pageSize="a4"
+                      pageMargin={0}
+                      onRemove={() => { reset(); }}
+                      onReorder={reorderFiles}
+                    />
                   </div>
-                  <button
-                    type="button"
-                    onClick={handleSingleFileChange}
-                    className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:border-blue-500 hover:text-blue-500 transition-colors cursor-pointer"
-                  >
-                    {extractImagesLabels?.changeFile ?? labels.addMoreFiles}
-                  </button>
-                </div>
 
-                {/* Text extraction options */}
-                <PdfToTextOptions labels={pdfToTextLabels} />
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <PdfToTextOptions labels={pdfToTextLabels} />
+                  </div>
+                </div>
               </>
             ) : isPdfToJpg && pdfToJpgLabels && files.length > 0 ? (
               /* ─── PDF to JPG: multi-file + quality sidebar ─── */
@@ -920,6 +1028,9 @@ export function ToolPageClient({
                       pageCounts={pageCounts}
                       encryptedFiles={encryptedFiles}
                       encryptedLabel={labels.encryptedFile}
+                      pageOrientation="portrait"
+                      pageSize="a4"
+                      pageMargin={0}
                       onRemove={removeFile}
                       onReorder={reorderFiles}
                       onRotate={rotateFile}
@@ -1029,6 +1140,9 @@ export function ToolPageClient({
                       pageCounts={pageCounts}
                       encryptedFiles={encryptedFiles}
                       encryptedLabel={labels.encryptedFile}
+                      pageOrientation="portrait"
+                      pageSize="a4"
+                      pageMargin={0}
                       onRemove={removeFile}
                       onReorder={reorderFiles}
                       onRotate={rotateFile}
@@ -1819,6 +1933,8 @@ export function ToolPageClient({
                     deletedPages: deletedIndices,
                     rotations: rotationsMap,
                   });
+                } else if (isRotate) {
+                  processFiles({ rotations });
                 } else if (isPdfToJpg) {
                   processFiles({
                     quality: jpgQuality,
@@ -1880,7 +1996,7 @@ export function ToolPageClient({
                   processFiles({ rotations, pageSelections });
                 }
               }}
-              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0)}
+              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0)}
               className={cn(
                 "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                 "bg-accent text-accent-foreground shadow-md",

@@ -18,10 +18,10 @@ registry.set("image-to-pdf", () => import("./processors/image-to-pdf"));
 registry.set("html-to-pdf", () => import("./processors/html-to-pdf"));
 registry.set("scan-to-pdf", () => import("./processors/scan-to-pdf"));
 registry.set("organize-pages", () => import("./processors/organize-pages"));
+registry.set("rotate", () => import("./processors/rotate"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));
 // registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));
-// registry.set("rotate", () => import("./processors/rotate"));
 // ... 도구 추가 시 여기에 등록
 
 export async function getProcessor(slug: string): Promise<ProcessorFn | null> {

@@ -445,6 +445,19 @@ const bn: Dictionary = {
     restore: "ফেরান",
     copy: "কপি",
   },
+  rotateTool: {
+    dropFile: "একটি PDF ফাইল বাছুন",
+    changeFile: "ফাইল পরিবর্তন করুন",
+    rotatedCount: "ঘোরানো পৃষ্ঠা",
+    rotateCw: "ঘড়ির কাঁটার দিকে",
+    rotateCcw: "ঘড়ির কাঁটার বিপরীতে",
+    rotateAllCw: "সব ঘড়ির কাঁটার দিকে ঘোরান",
+    rotateAllCcw: "সব ঘড়ির কাঁটার বিপরীতে ঘোরান",
+    resetAll: "সব রিসেট করুন",
+    noChanges: "কোনো পরিবর্তন হয়নি",
+    pages: "পৃষ্ঠা",
+    rotate: "ঘোরান",
+  },
 };
 
 export default bn;

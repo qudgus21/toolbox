@@ -445,6 +445,19 @@ const mt: Dictionary = {
     restore: "Irrestawra",
     copy: "kopja",
   },
+  rotateTool: {
+    dropFile: "Agħżel fajl PDF",
+    changeFile: "Ibdel il-fajl",
+    rotatedCount: "Paġni mdawra",
+    rotateCw: "Fid-direzzjoni tal-arloġġ",
+    rotateCcw: "Kontra l-arloġġ",
+    rotateAllCw: "Dawwar kollox fid-direzzjoni tal-arloġġ",
+    rotateAllCcw: "Dawwar kollox kontra l-arloġġ",
+    resetAll: "Irrestawra kollox",
+    noChanges: "L-ebda bidla ma saritx",
+    pages: "paġni",
+    rotate: "Dawwar",
+  },
 };
 
 export default mt;

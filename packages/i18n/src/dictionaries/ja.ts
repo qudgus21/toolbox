@@ -445,6 +445,19 @@ const ja: Dictionary = {
     restore: "復元",
     copy: "コピー",
   },
+  rotateTool: {
+    dropFile: "PDFファイルを選択",
+    changeFile: "ファイルを変更",
+    rotatedCount: "回転済みページ",
+    rotateCw: "時計回り",
+    rotateCcw: "反時計回り",
+    rotateAllCw: "すべて時計回りに回転",
+    rotateAllCcw: "すべて反時計回りに回転",
+    resetAll: "すべてリセット",
+    noChanges: "変更はありません",
+    pages: "ページ",
+    rotate: "回転",
+  },
 };
 
 export default ja;

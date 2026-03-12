@@ -10,7 +10,8 @@
       "Bash(for f in *.ts)",
       "Bash(do tail -4 \"$f\")",
       "Bash(tr '\\\\n' '|')",
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(ls -lh /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/)"
     ]
   }
 }

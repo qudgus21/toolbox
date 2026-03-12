@@ -361,6 +361,19 @@ const ms: Dictionary = {
     restore: "Pulihkan",
     copy: "salinan",
   },
+  rotateTool: {
+    dropFile: "Pilih fail PDF",
+    changeFile: "Tukar fail",
+    rotatedCount: "Halaman yang diputar",
+    rotateCw: "Ikut arah jam",
+    rotateCcw: "Lawan arah jam",
+    rotateAllCw: "Putar semua ikut arah jam",
+    rotateAllCcw: "Putar semua lawan arah jam",
+    resetAll: "Set semula semua",
+    noChanges: "Tiada perubahan dibuat",
+    pages: "halaman",
+    rotate: "Putar",
+  },
 };
 
 export default ms;

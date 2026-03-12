@@ -445,6 +445,19 @@ const sv: Dictionary = {
     restore: "Återställ",
     copy: "kopia",
   },
+  rotateTool: {
+    dropFile: "Välj en PDF-fil",
+    changeFile: "Byt fil",
+    rotatedCount: "Roterade sidor",
+    rotateCw: "Medurs",
+    rotateCcw: "Moturs",
+    rotateAllCw: "Rotera alla medurs",
+    rotateAllCcw: "Rotera alla moturs",
+    resetAll: "Återställ alla",
+    noChanges: "Inga ändringar gjorda",
+    pages: "sidor",
+    rotate: "Rotera",
+  },
 };
 
 export default sv;

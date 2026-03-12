@@ -445,6 +445,19 @@ const sl: Dictionary = {
     restore: "Obnovi",
     copy: "kopija",
   },
+  rotateTool: {
+    dropFile: "Izberite datoteko PDF",
+    changeFile: "Zamenjaj datoteko",
+    rotatedCount: "Zasukane strani",
+    rotateCw: "V smeri urinega kazalca",
+    rotateCcw: "V nasprotni smeri",
+    rotateAllCw: "Zasukaj vse v smeri urinega kazalca",
+    rotateAllCcw: "Zasukaj vse v nasprotni smeri",
+    resetAll: "Ponastavi vse",
+    noChanges: "Ni sprememb",
+    pages: "strani",
+    rotate: "Zasukaj",
+  },
 };
 
 export default sl;

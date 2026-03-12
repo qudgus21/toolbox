@@ -445,6 +445,19 @@ const el: Dictionary = {
     restore: "Επαναφορά",
     copy: "αντίγραφο",
   },
+  rotateTool: {
+    dropFile: "Επιλέξτε αρχείο PDF",
+    changeFile: "Αλλαγή αρχείου",
+    rotatedCount: "Σελίδες που περιστράφηκαν",
+    rotateCw: "Δεξιόστροφα",
+    rotateCcw: "Αριστερόστροφα",
+    rotateAllCw: "Περιστροφή όλων δεξιόστροφα",
+    rotateAllCcw: "Περιστροφή όλων αριστερόστροφα",
+    resetAll: "Επαναφορά όλων",
+    noChanges: "Δεν έγιναν αλλαγές",
+    pages: "σελίδες",
+    rotate: "Περιστροφή",
+  },
 };
 
 export default el;

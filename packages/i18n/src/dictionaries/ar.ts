@@ -445,6 +445,19 @@ const ar: Dictionary = {
     restore: "استعادة",
     copy: "نسخة",
   },
+  rotateTool: {
+    dropFile: "اختر ملف PDF",
+    changeFile: "تغيير الملف",
+    rotatedCount: "الصفحات المُدارة",
+    rotateCw: "باتجاه عقارب الساعة",
+    rotateCcw: "عكس عقارب الساعة",
+    rotateAllCw: "تدوير الكل مع عقارب الساعة",
+    rotateAllCcw: "تدوير الكل عكس عقارب الساعة",
+    resetAll: "إعادة تعيين الكل",
+    noChanges: "لم يتم إجراء أي تغيير",
+    pages: "صفحات",
+    rotate: "تدوير",
+  },
 };
 
 export default ar;

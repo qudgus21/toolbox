@@ -350,4 +350,17 @@ export interface Dictionary {
     restore: string;
     copy: string;
   };
+  rotateTool: {
+    dropFile: string;
+    changeFile: string;
+    rotatedCount: string;
+    rotateCw: string;
+    rotateCcw: string;
+    rotateAllCw: string;
+    rotateAllCcw: string;
+    resetAll: string;
+    noChanges: string;
+    pages: string;
+    rotate: string;
+  };
 }

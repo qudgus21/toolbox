@@ -361,6 +361,19 @@ const km: Dictionary = {
     restore: "ស្ដារ",
     copy: "ច្បាប់ចម្លង",
   },
+  rotateTool: {
+    dropFile: "ជ្រើសរើសឯកសារ PDF",
+    changeFile: "ប្ដូរឯកសារ",
+    rotatedCount: "ទំព័រដែលបានបង្វិល",
+    rotateCw: "ស្របទ្រនិចនាឡិកា",
+    rotateCcw: "បញ្ច្រាសទ្រនិចនាឡិកា",
+    rotateAllCw: "បង្វិលទាំងអស់ស្របទ្រនិច",
+    rotateAllCcw: "បង្វិលទាំងអស់បញ្ច្រាសទ្រនិច",
+    resetAll: "កំណត់ឡើងវិញទាំងអស់",
+    noChanges: "មិនមានការផ្លាស់ប្ដូរ",
+    pages: "ទំព័រ",
+    rotate: "បង្វិល",
+  },
 };
 
 export default km;

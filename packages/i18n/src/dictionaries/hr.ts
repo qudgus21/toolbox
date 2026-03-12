@@ -445,6 +445,19 @@ const hr: Dictionary = {
     restore: "Vrati",
     copy: "kopija",
   },
+  rotateTool: {
+    dropFile: "Odaberite PDF datoteku",
+    changeFile: "Promijeni datoteku",
+    rotatedCount: "Zaokrenute stranice",
+    rotateCw: "U smjeru kazaljke",
+    rotateCcw: "Suprotno od kazaljke",
+    rotateAllCw: "Zakreni sve u smjeru kazaljke",
+    rotateAllCcw: "Zakreni sve suprotno",
+    resetAll: "Resetiraj sve",
+    noChanges: "Nema promjena",
+    pages: "stranica",
+    rotate: "Zakreni",
+  },
 };
 
 export default hr;

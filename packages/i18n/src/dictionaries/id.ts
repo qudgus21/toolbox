@@ -445,6 +445,19 @@ const id: Dictionary = {
     restore: "Pulihkan",
     copy: "salinan",
   },
+  rotateTool: {
+    dropFile: "Pilih file PDF",
+    changeFile: "Ganti file",
+    rotatedCount: "Halaman yang diputar",
+    rotateCw: "Searah jarum jam",
+    rotateCcw: "Berlawanan jarum jam",
+    rotateAllCw: "Putar semua searah jarum jam",
+    rotateAllCcw: "Putar semua berlawanan jarum jam",
+    resetAll: "Atur ulang semua",
+    noChanges: "Belum ada perubahan",
+    pages: "halaman",
+    rotate: "Putar",
+  },
 };
 
 export default id;

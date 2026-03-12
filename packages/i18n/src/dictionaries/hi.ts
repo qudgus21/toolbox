@@ -445,6 +445,19 @@ const hi: Dictionary = {
     restore: "वापस लाएँ",
     copy: "प्रतिलिपि",
   },
+  rotateTool: {
+    dropFile: "PDF फ़ाइल चुनें",
+    changeFile: "फ़ाइल बदलें",
+    rotatedCount: "घुमाए गए पेज",
+    rotateCw: "दाईं ओर",
+    rotateCcw: "बाईं ओर",
+    rotateAllCw: "सभी दाईं ओर घुमाएँ",
+    rotateAllCcw: "सभी बाईं ओर घुमाएँ",
+    resetAll: "सब रीसेट करें",
+    noChanges: "कोई बदलाव नहीं हुआ",
+    pages: "पेज",
+    rotate: "घुमाएँ",
+  },
 };
 
 export default hi;

@@ -445,6 +445,19 @@ const zh: Dictionary = {
     restore: "恢复",
     copy: "副本",
   },
+  rotateTool: {
+    dropFile: "选择PDF文件",
+    changeFile: "更换文件",
+    rotatedCount: "已旋转页数",
+    rotateCw: "顺时针",
+    rotateCcw: "逆时针",
+    rotateAllCw: "全部顺时针旋转",
+    rotateAllCcw: "全部逆时针旋转",
+    resetAll: "全部重置",
+    noChanges: "未做任何更改",
+    pages: "页",
+    rotate: "旋转",
+  },
 };
 
 export default zh;

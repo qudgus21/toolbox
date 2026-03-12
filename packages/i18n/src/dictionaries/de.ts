@@ -445,6 +445,19 @@ const de: Dictionary = {
     restore: "Wiederherstellen",
     copy: "Kopie",
   },
+  rotateTool: {
+    dropFile: "PDF-Datei auswählen",
+    changeFile: "Datei wechseln",
+    rotatedCount: "Gedrehte Seiten",
+    rotateCw: "Im Uhrzeigersinn",
+    rotateCcw: "Gegen den Uhrzeigersinn",
+    rotateAllCw: "Alle im Uhrzeigersinn drehen",
+    rotateAllCcw: "Alle gegen den Uhrzeigersinn drehen",
+    resetAll: "Alles zurücksetzen",
+    noChanges: "Keine Änderungen vorgenommen",
+    pages: "Seiten",
+    rotate: "Drehen",
+  },
 };
 
 export default de;

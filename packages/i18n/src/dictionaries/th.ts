@@ -445,6 +445,19 @@ const th: Dictionary = {
     restore: "กู้คืน",
     copy: "สำเนา",
   },
+  rotateTool: {
+    dropFile: "เลือกไฟล์ PDF",
+    changeFile: "เปลี่ยนไฟล์",
+    rotatedCount: "หน้าที่หมุนแล้ว",
+    rotateCw: "ตามเข็มนาฬิกา",
+    rotateCcw: "ทวนเข็มนาฬิกา",
+    rotateAllCw: "หมุนทั้งหมดตามเข็ม",
+    rotateAllCcw: "หมุนทั้งหมดทวนเข็ม",
+    resetAll: "รีเซ็ตทั้งหมด",
+    noChanges: "ยังไม่มีการเปลี่ยนแปลง",
+    pages: "หน้า",
+    rotate: "หมุน",
+  },
 };
 
 export default th;

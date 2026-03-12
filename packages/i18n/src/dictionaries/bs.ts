@@ -445,6 +445,19 @@ const bs: Dictionary = {
     restore: "Vrati",
     copy: "kopija",
   },
+  rotateTool: {
+    dropFile: "Odaberite PDF fajl",
+    changeFile: "Promijeni fajl",
+    rotatedCount: "Rotirane stranice",
+    rotateCw: "U smjeru kazaljke",
+    rotateCcw: "Suprotno od kazaljke",
+    rotateAllCw: "Rotiraj sve u smjeru kazaljke",
+    rotateAllCcw: "Rotiraj sve suprotno",
+    resetAll: "Resetuj sve",
+    noChanges: "Nema promjena",
+    pages: "stranica",
+    rotate: "Rotiraj",
+  },
 };
 
 export default bs;

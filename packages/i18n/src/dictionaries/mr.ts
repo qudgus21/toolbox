@@ -445,6 +445,19 @@ const mr: Dictionary = {
     restore: "परत आणा",
     copy: "प्रत",
   },
+  rotateTool: {
+    dropFile: "PDF फाइल निवडा",
+    changeFile: "फाइल बदला",
+    rotatedCount: "फिरवलेली पाने",
+    rotateCw: "घड्याळाच्या दिशेने",
+    rotateCcw: "घड्याळाच्या उलट दिशेने",
+    rotateAllCw: "सर्व घड्याळाच्या दिशेने फिरवा",
+    rotateAllCcw: "सर्व उलट दिशेने फिरवा",
+    resetAll: "सर्व रीसेट करा",
+    noChanges: "कोणताही बदल नाही",
+    pages: "पाने",
+    rotate: "फिरवा",
+  },
 };
 
 export default mr;

@@ -445,6 +445,19 @@ const ru: Dictionary = {
     restore: "Восстановить",
     copy: "копия",
   },
+  rotateTool: {
+    dropFile: "Выберите PDF-файл",
+    changeFile: "Сменить файл",
+    rotatedCount: "Повёрнуто страниц",
+    rotateCw: "По часовой стрелке",
+    rotateCcw: "Против часовой стрелки",
+    rotateAllCw: "Повернуть все по часовой",
+    rotateAllCcw: "Повернуть все против часовой",
+    resetAll: "Сбросить всё",
+    noChanges: "Изменений нет",
+    pages: "страниц",
+    rotate: "Повернуть",
+  },
 };
 
 export default ru;

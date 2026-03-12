@@ -445,6 +445,19 @@ const vi: Dictionary = {
     restore: "Khôi phục",
     copy: "bản sao",
   },
+  rotateTool: {
+    dropFile: "Chọn tệp PDF",
+    changeFile: "Đổi tệp",
+    rotatedCount: "Trang đã xoay",
+    rotateCw: "Xoay phải",
+    rotateCcw: "Xoay trái",
+    rotateAllCw: "Xoay tất cả sang phải",
+    rotateAllCcw: "Xoay tất cả sang trái",
+    resetAll: "Đặt lại tất cả",
+    noChanges: "Chưa có thay đổi nào",
+    pages: "trang",
+    rotate: "Xoay",
+  },
 };
 
 export default vi;

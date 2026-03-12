@@ -445,6 +445,19 @@ const hu: Dictionary = {
     restore: "Visszaállítás",
     copy: "másolat",
   },
+  rotateTool: {
+    dropFile: "Válasszon PDF-fájlt",
+    changeFile: "Fájl cseréje",
+    rotatedCount: "Elforgatott oldalak",
+    rotateCw: "Óramutató irányába",
+    rotateCcw: "Óramutató ellenében",
+    rotateAllCw: "Összes forgatása jobbra",
+    rotateAllCcw: "Összes forgatása balra",
+    resetAll: "Összes visszaállítása",
+    noChanges: "Nincs változás",
+    pages: "oldal",
+    rotate: "Forgatás",
+  },
 };
 
 export default hu;

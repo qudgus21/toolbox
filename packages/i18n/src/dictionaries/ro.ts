@@ -433,6 +433,19 @@ const ro: Dictionary = {
     restore: "Restaurează",
     copy: "copie",
   },
+  rotateTool: {
+    dropFile: "Selectează un fișier PDF",
+    changeFile: "Schimbă fișierul",
+    rotatedCount: "Pagini rotite",
+    rotateCw: "În sensul acelor de ceasornic",
+    rotateCcw: "Invers acelor de ceasornic",
+    rotateAllCw: "Rotește tot în sensul acelor",
+    rotateAllCcw: "Rotește tot invers acelor",
+    resetAll: "Resetează tot",
+    noChanges: "Nicio modificare efectuată",
+    pages: "pagini",
+    rotate: "Rotește",
+  },
 };
 
 export default ro;

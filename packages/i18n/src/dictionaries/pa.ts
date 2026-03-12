@@ -445,6 +445,19 @@ const pa: Dictionary = {
     restore: "ਵਾਪਸ ਲਿਆਓ",
     copy: "ਕਾਪੀ",
   },
+  rotateTool: {
+    dropFile: "PDF ਫ਼ਾਈਲ ਚੁਣੋ",
+    changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
+    rotatedCount: "ਘੁਮਾਏ ਗਏ ਪੰਨੇ",
+    rotateCw: "ਘੜੀ ਦੀ ਦਿਸ਼ਾ ਵਿੱਚ",
+    rotateCcw: "ਘੜੀ ਦੇ ਉਲਟ",
+    rotateAllCw: "ਸਭ ਘੜੀ ਦੀ ਦਿਸ਼ਾ ਵਿੱਚ ਘੁਮਾਓ",
+    rotateAllCcw: "ਸਭ ਘੜੀ ਦੇ ਉਲਟ ਘੁਮਾਓ",
+    resetAll: "ਸਭ ਰੀਸੈੱਟ ਕਰੋ",
+    noChanges: "ਕੋਈ ਬਦਲਾਅ ਨਹੀਂ ਹੋਇਆ",
+    pages: "ਪੰਨੇ",
+    rotate: "ਘੁਮਾਓ",
+  },
 };
 
 export default pa;

@@ -445,6 +445,19 @@ const fi: Dictionary = {
     restore: "Palauta",
     copy: "kopio",
   },
+  rotateTool: {
+    dropFile: "Valitse PDF-tiedosto",
+    changeFile: "Vaihda tiedosto",
+    rotatedCount: "Käännetyt sivut",
+    rotateCw: "Myötäpäivään",
+    rotateCcw: "Vastapäivään",
+    rotateAllCw: "Käännä kaikki myötäpäivään",
+    rotateAllCcw: "Käännä kaikki vastapäivään",
+    resetAll: "Palauta kaikki",
+    noChanges: "Ei muutoksia",
+    pages: "sivua",
+    rotate: "Käännä",
+  },
 };
 
 export default fi;

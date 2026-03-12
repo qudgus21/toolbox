@@ -433,6 +433,19 @@ const no: Dictionary = {
     restore: "Gjenopprett",
     copy: "kopi",
   },
+  rotateTool: {
+    dropFile: "Velg en PDF-fil",
+    changeFile: "Bytt fil",
+    rotatedCount: "Roterte sider",
+    rotateCw: "Med klokken",
+    rotateCcw: "Mot klokken",
+    rotateAllCw: "Roter alle med klokken",
+    rotateAllCcw: "Roter alle mot klokken",
+    resetAll: "Tilbakestill alle",
+    noChanges: "Ingen endringer gjort",
+    pages: "sider",
+    rotate: "Roter",
+  },
 };
 
 export default no;

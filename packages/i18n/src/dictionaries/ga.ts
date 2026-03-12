@@ -445,6 +445,19 @@ const ga: Dictionary = {
     restore: "Athchóirigh",
     copy: "cóip",
   },
+  rotateTool: {
+    dropFile: "Roghnaigh comhad PDF",
+    changeFile: "Athraigh comhad",
+    rotatedCount: "Leathanaigh rothlaithe",
+    rotateCw: "Ar deiseal",
+    rotateCcw: "Ar tuathal",
+    rotateAllCw: "Rothlaigh gach ceann ar deiseal",
+    rotateAllCcw: "Rothlaigh gach ceann ar tuathal",
+    resetAll: "Athshocraigh gach ceann",
+    noChanges: "Níor rinneadh aon athrú",
+    pages: "leathanaigh",
+    rotate: "Rothlaigh",
+  },
 };
 
 export default ga;

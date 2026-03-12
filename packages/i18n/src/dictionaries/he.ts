@@ -445,6 +445,19 @@ const he: Dictionary = {
     restore: "שחזור",
     copy: "עותק",
   },
+  rotateTool: {
+    dropFile: "בחרו קובץ PDF",
+    changeFile: "החלפת קובץ",
+    rotatedCount: "עמודים שסובבו",
+    rotateCw: "עם כיוון השעון",
+    rotateCcw: "נגד כיוון השעון",
+    rotateAllCw: "סיבוב הכל עם השעון",
+    rotateAllCcw: "סיבוב הכל נגד השעון",
+    resetAll: "איפוס הכל",
+    noChanges: "לא בוצעו שינויים",
+    pages: "עמודים",
+    rotate: "סיבוב",
+  },
 };
 
 export default he;

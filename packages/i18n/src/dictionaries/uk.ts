@@ -445,6 +445,19 @@ const uk: Dictionary = {
     restore: "Відновити",
     copy: "копія",
   },
+  rotateTool: {
+    dropFile: "Оберіть PDF-файл",
+    changeFile: "Змінити файл",
+    rotatedCount: "Повернуто сторінок",
+    rotateCw: "За годинниковою стрілкою",
+    rotateCcw: "Проти годинникової стрілки",
+    rotateAllCw: "Повернути все за годинниковою",
+    rotateAllCcw: "Повернути все проти годинникової",
+    resetAll: "Скинути все",
+    noChanges: "Змін не внесено",
+    pages: "сторінок",
+    rotate: "Повернути",
+  },
 };
 
 export default uk;

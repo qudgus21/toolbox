@@ -445,6 +445,19 @@ const tr: Dictionary = {
     restore: "Geri al",
     copy: "kopya",
   },
+  rotateTool: {
+    dropFile: "Bir PDF dosyası seçin",
+    changeFile: "Dosyayı değiştir",
+    rotatedCount: "Döndürülen sayfalar",
+    rotateCw: "Saat yönünde",
+    rotateCcw: "Saat yönünün tersine",
+    rotateAllCw: "Tümünü saat yönünde döndür",
+    rotateAllCcw: "Tümünü ters yönde döndür",
+    resetAll: "Tümünü sıfırla",
+    noChanges: "Değişiklik yapılmadı",
+    pages: "sayfa",
+    rotate: "Döndür",
+  },
 };
 
 export default tr;

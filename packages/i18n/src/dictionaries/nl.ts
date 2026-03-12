@@ -445,6 +445,19 @@ const nl: Dictionary = {
     restore: "Herstellen",
     copy: "kopie",
   },
+  rotateTool: {
+    dropFile: "Selecteer een PDF-bestand",
+    changeFile: "Ander bestand kiezen",
+    rotatedCount: "Gedraaide pagina's",
+    rotateCw: "Met de klok mee",
+    rotateCcw: "Tegen de klok in",
+    rotateAllCw: "Alles met de klok mee draaien",
+    rotateAllCcw: "Alles tegen de klok in draaien",
+    resetAll: "Alles resetten",
+    noChanges: "Geen wijzigingen aangebracht",
+    pages: "pagina's",
+    rotate: "Draaien",
+  },
 };
 
 export default nl;

@@ -445,6 +445,19 @@ const da: Dictionary = {
     restore: "Gendan",
     copy: "kopi",
   },
+  rotateTool: {
+    dropFile: "Vælg en PDF-fil",
+    changeFile: "Skift fil",
+    rotatedCount: "Roterede sider",
+    rotateCw: "Med uret",
+    rotateCcw: "Mod uret",
+    rotateAllCw: "Drej alle med uret",
+    rotateAllCcw: "Drej alle mod uret",
+    resetAll: "Nulstil alle",
+    noChanges: "Ingen ændringer foretaget",
+    pages: "sider",
+    rotate: "Drej",
+  },
 };
 
 export default da;

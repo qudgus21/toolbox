@@ -445,6 +445,19 @@ const te: Dictionary = {
     restore: "పునరుద్ధరించు",
     copy: "కాపీ",
   },
+  rotateTool: {
+    dropFile: "PDF ఫైల్ ఎంచుకోండి",
+    changeFile: "ఫైల్ మార్చండి",
+    rotatedCount: "తిప్పిన పేజీలు",
+    rotateCw: "సవ్యదిశలో",
+    rotateCcw: "అపసవ్యదిశలో",
+    rotateAllCw: "అన్నీ సవ్యదిశలో తిప్పండి",
+    rotateAllCcw: "అన్నీ అపసవ్యదిశలో తిప్పండి",
+    resetAll: "అన్నీ రీసెట్ చేయండి",
+    noChanges: "ఎటువంటి మార్పులు లేవు",
+    pages: "పేజీలు",
+    rotate: "తిప్పండి",
+  },
 };
 
 export default te;

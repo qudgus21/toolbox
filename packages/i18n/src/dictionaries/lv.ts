@@ -445,6 +445,19 @@ const lv: Dictionary = {
     restore: "Atjaunot",
     copy: "kopija",
   },
+  rotateTool: {
+    dropFile: "Izvēlieties PDF failu",
+    changeFile: "Mainīt failu",
+    rotatedCount: "Pagrieztās lapas",
+    rotateCw: "Pulksteņrādītāja virzienā",
+    rotateCcw: "Pretēji pulksteņrādītājam",
+    rotateAllCw: "Pagriezt visas pulksteņrādītāja virzienā",
+    rotateAllCcw: "Pagriezt visas pretēji",
+    resetAll: "Atiestatīt visu",
+    noChanges: "Nav veiktas izmaiņas",
+    pages: "lapas",
+    rotate: "Pagriezt",
+  },
 };
 
 export default lv;

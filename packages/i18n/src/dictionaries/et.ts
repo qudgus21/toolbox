@@ -445,6 +445,19 @@ const et: Dictionary = {
     restore: "Taasta",
     copy: "koopia",
   },
+  rotateTool: {
+    dropFile: "Valige PDF-fail",
+    changeFile: "Vaheta faili",
+    rotatedCount: "Pööratud leheküljed",
+    rotateCw: "Päripäeva",
+    rotateCcw: "Vastupäeva",
+    rotateAllCw: "Pööra kõik päripäeva",
+    rotateAllCcw: "Pööra kõik vastupäeva",
+    resetAll: "Lähtesta kõik",
+    noChanges: "Muudatusi pole tehtud",
+    pages: "lehekülge",
+    rotate: "Pööra",
+  },
 };
 
 export default et;
