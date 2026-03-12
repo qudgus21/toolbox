@@ -323,6 +323,7 @@ export function ToolPageClient({
   const isScanToPdf = slug === "scan-to-pdf";
   const isOrganizePages = slug === "organize-pages";
   const isRotate = slug === "rotate";
+  const isGrayscale = slug === "grayscale";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages;
 
   useEffect(() => {
@@ -1833,10 +1834,11 @@ export function ToolPageClient({
                   encryptedFiles={encryptedFiles}
                   encryptedLabel={labels.encryptedFile}
                   selectPagesTooltip={labels.clickToSelectPages}
+                  colorFilter={isGrayscale ? "grayscale(100%)" : undefined}
                   onRemove={removeFile}
                   onReorder={reorderFiles}
-                  onRotate={isCompress ? undefined : rotateFile}
-                  onCardClick={isCompress ? undefined : (file) => setPageSelectorFile(file)}
+                  onRotate={isCompress || isGrayscale ? undefined : rotateFile}
+                  onCardClick={isCompress || isGrayscale ? undefined : (file) => setPageSelectorFile(file)}
                 />
               </>
             )}
@@ -1991,6 +1993,8 @@ export function ToolPageClient({
                 } else if (isPdfToText) {
                   processFiles({});
                 } else if (isExtractImages) {
+                  processFiles({});
+                } else if (isGrayscale) {
                   processFiles({});
                 } else {
                   processFiles({ rotations, pageSelections });
