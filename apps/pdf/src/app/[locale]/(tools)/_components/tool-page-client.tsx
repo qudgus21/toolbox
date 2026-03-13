@@ -45,6 +45,8 @@ import { OrganizePagesPreview, type OrganizePageEntry } from "./organize-pages-p
 import { OrganizePagesOptions, type OrganizePagesLabels } from "./organize-pages-options";
 import { RotateOptions, type RotateLabels } from "./rotate-options";
 import { EditMetadataOptions, type EditMetadataLabels } from "./edit-metadata-options";
+import { ResizeOptions, MARGIN_VALUES, type ResizeLabels, type MarginPreset } from "./resize-options";
+import type { PageSizePreset, ScaleMode, Unit } from "@/lib/processors/resize";
 import { usePdfMetadata } from "./use-pdf-metadata";
 import type { PdfMetadata } from "@/lib/processors/edit-metadata";
 import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
@@ -183,6 +185,7 @@ interface ToolPageClientProps {
   scanToPdfLabels?: ScanToPdfLabels;
   organizePagesLabels?: OrganizePagesLabels;
   rotateLabels?: RotateLabels;
+  resizeLabels?: ResizeLabels;
   editMetadataLabels?: EditMetadataLabels;
   children?: ReactNode;
 }
@@ -233,6 +236,7 @@ export function ToolPageClient({
   scanToPdfLabels,
   organizePagesLabels,
   rotateLabels,
+  resizeLabels,
   editMetadataLabels,
   children,
 }: ToolPageClientProps) {
@@ -311,6 +315,13 @@ export function ToolPageClient({
   const [scanToPdfAutoEnhance, setScanToPdfAutoEnhance] = useState(true);
   const [scanToPdfColorMode, setScanToPdfColorMode] = useState<ScanColorMode>("grayscale");
   const [organizePages, setOrganizePages] = useState<OrganizePageEntry[]>([]);
+  const [resizePreset, setResizePreset] = useState<PageSizePreset | "custom">("a4");
+  const [resizeCustomW, setResizeCustomW] = useState(210);
+  const [resizeCustomH, setResizeCustomH] = useState(297);
+  const [resizeUnit, setResizeUnit] = useState<Unit>("mm");
+  const [resizeOrientation, setResizeOrientation] = useState<"portrait" | "landscape">("portrait");
+  const [resizeScaleMode, setResizeScaleMode] = useState<ScaleMode>("fit");
+  const [resizeMarginPreset, setResizeMarginPreset] = useState<MarginPreset>("none");
   const implemented = hasProcessor(slug);
   const autoDownloadedRef = useRef(false);
   const isSplit = slug === "split";
@@ -328,6 +339,7 @@ export function ToolPageClient({
   const isScanToPdf = slug === "scan-to-pdf";
   const isOrganizePages = slug === "organize-pages";
   const isRotate = slug === "rotate";
+  const isResize = slug === "resize";
   const isGrayscale = slug === "grayscale";
   const isEditMetadata = slug === "edit-metadata";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata;
@@ -888,6 +900,124 @@ export function ToolPageClient({
                       }}
                       onResetAll={reset}
                       labels={rotateLabels}
+                    />
+                  </div>
+                </div>
+              </>
+            ) : isResize && resizeLabels && files.length > 0 ? (
+              /* ─── Resize: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.15 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 rounded-lg border border-border bg-background-elevated p-1 shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const SortIcon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-sm text-foreground-muted hover:bg-background-muted hover:text-foreground transition-colors cursor-pointer"
+                                    >
+                                      <SortIcon className="h-3.5 w-3.5" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageCounts={pageCounts}
+                      pageOrientation={resizeOrientation}
+                      pageSize={resizePreset === "custom" ? "a4" : resizePreset}
+                      pageMargin={MARGIN_VALUES[resizeMarginPreset]}
+                      contentScale={resizeScaleMode}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                      onRotate={rotateFile}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <ResizeOptions
+                      preset={resizePreset}
+                      customWidth={resizeCustomW}
+                      customHeight={resizeCustomH}
+                      unit={resizeUnit}
+                      orientation={resizeOrientation}
+                      scaleMode={resizeScaleMode}
+                      marginPreset={resizeMarginPreset}
+                      onPresetChange={setResizePreset}
+                      onCustomWidthChange={setResizeCustomW}
+                      onCustomHeightChange={setResizeCustomH}
+                      onUnitChange={setResizeUnit}
+                      onOrientationChange={setResizeOrientation}
+                      onScaleModeChange={setResizeScaleMode}
+                      onMarginPresetChange={setResizeMarginPreset}
+                      labels={resizeLabels}
                     />
                   </div>
                 </div>
@@ -2012,6 +2142,20 @@ export function ToolPageClient({
                     pageOrder,
                     deletedPages: deletedIndices,
                     rotations: rotationsMap,
+                  });
+                } else if (isResize) {
+                  const margin = MARGIN_VALUES[resizeMarginPreset];
+                  processFiles({
+                    preset: resizePreset,
+                    customWidth: resizeCustomW,
+                    customHeight: resizeCustomH,
+                    unit: "mm",
+                    orientation: resizeOrientation,
+                    scaleMode: resizeScaleMode,
+                    marginTop: margin,
+                    marginBottom: margin,
+                    marginLeft: margin,
+                    marginRight: margin,
                   });
                 } else if (isRotate) {
                   processFiles({ rotations });

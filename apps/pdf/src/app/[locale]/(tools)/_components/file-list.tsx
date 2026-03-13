@@ -25,9 +25,12 @@ const PAGE_ASPECT_RATIOS: Record<string, number> = {
   a4: 210 / 297,
   a3: 297 / 420,
   a5: 148 / 210,
+  b4: 250 / 353,
+  b5: 176 / 250,
   letter: 216 / 279,
   legal: 216 / 356,
-  b5: 176 / 250,
+  ledger: 279 / 432,
+  tabloid: 279 / 432,
   photo4x6: 102 / 152,
   photo5x7: 127 / 178,
   postcard: 100 / 148,
@@ -115,6 +118,8 @@ interface FileListProps {
   pageSize?: string;
   /** Margin in mm for visual preview */
   pageMargin?: number;
+  /** Content scaling mode preview (fit/fill/stretch/center) */
+  contentScale?: "fit" | "fill" | "stretch" | "center";
   /** CSS filter for color mode preview (e.g. "grayscale(100%)") */
   colorFilter?: string;
   onRemove: (index: number) => void;
@@ -149,6 +154,7 @@ function SortableCard({
   pageOrientation,
   pageSize,
   pageMargin,
+  contentScale,
   colorFilter,
   disableTransition,
   didDragRef,
@@ -167,6 +173,7 @@ function SortableCard({
   pageOrientation?: "portrait" | "landscape";
   pageSize?: string;
   pageMargin?: number;
+  contentScale?: "fit" | "fill" | "stretch" | "center";
   colorFilter?: string;
   disableTransition: boolean;
   didDragRef: React.RefObject<boolean>;
@@ -254,7 +261,15 @@ function SortableCard({
           })() : pageOrientation ? (() => {
             const baseRatio = PAGE_ASPECT_RATIOS[pageSize ?? "a4"] ?? PAGE_ASPECT_RATIOS.a4;
             const pageAR = pageOrientation === "landscape" ? 1 / baseRatio : baseRatio;
-            const marginPct = marginMmToPct(pageMargin ?? 0);
+            const baseMarginPct = marginMmToPct(pageMargin ?? 0);
+            // Content scale affects how thumbnail fits within the page frame
+            const objFit: "object-contain" | "object-cover" | "object-fill" | "object-none" =
+              contentScale === "stretch" ? "object-fill" : "object-contain";
+            // fill: no extra padding (content fills available area)
+            // center: extra inset to show content smaller
+            const effectivePadding = contentScale === "fill" ? "0%"
+              : contentScale === "center" ? `calc(${baseMarginPct || "0%"} + 8%)`
+              : baseMarginPct;
             return (
               <div className="h-full w-full flex items-center justify-center bg-background-muted/50 p-3">
                 <div className="h-[78%] aspect-square shrink-0 flex items-center justify-center">
@@ -263,16 +278,16 @@ function SortableCard({
                     style={{
                       aspectRatio: String(pageAR),
                       ...(pageAR <= 1 ? { height: '100%' } : { width: '100%' }),
-                      padding: marginPct,
+                      padding: effectivePadding,
                       transform: `rotate(${rotation}deg)`,
                       backgroundColor: '#fff',
                       filter: colorFilter || undefined,
                     }}
                   >
                     {isImageFile(file) ? (
-                      <ImageThumbnail file={file} className="w-full h-full object-contain" />
+                      <ImageThumbnail file={file} className={`w-full h-full ${objFit} transition-all duration-300`} />
                     ) : (
-                      <PdfThumbnail file={file} className="w-full h-full object-contain" />
+                      <PdfThumbnail file={file} className="w-full h-full" objectFit={objFit} />
                     )}
                   </div>
                 </div>
@@ -359,6 +374,7 @@ export function FileList({
   pageOrientation,
   pageSize,
   pageMargin,
+  contentScale,
   colorFilter,
   onRemove,
   onReorder,
@@ -439,6 +455,7 @@ export function FileList({
                 pageOrientation={pageOrientation}
                 pageSize={pageSize}
                 pageMargin={pageMargin}
+                contentScale={contentScale}
                 colorFilter={colorFilter}
                 disableTransition={disableTransition}
                 didDragRef={didDragRef}

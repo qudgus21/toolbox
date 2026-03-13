@@ -6,9 +6,10 @@ import { cn } from "@toolbox/utils";
 interface PdfThumbnailProps {
   file: File;
   className?: string;
+  objectFit?: "object-contain" | "object-cover" | "object-fill" | "object-none";
 }
 
-export function PdfThumbnail({ file, className }: PdfThumbnailProps) {
+export function PdfThumbnail({ file, className, objectFit = "object-contain" }: PdfThumbnailProps) {
   const [src, setSrc] = useState<string | null>(null);
   const revokeRef = useRef<string | null>(null);
 
@@ -98,7 +99,7 @@ export function PdfThumbnail({ file, className }: PdfThumbnailProps) {
       <img
         src={src}
         alt={file.name}
-        className="h-full w-full object-contain"
+        className={cn("h-full w-full transition-all duration-300", objectFit)}
         draggable={false}
       />
     </div>

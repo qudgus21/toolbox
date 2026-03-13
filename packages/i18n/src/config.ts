@@ -363,6 +363,32 @@ export interface Dictionary {
     pages: string;
     rotate: string;
   };
+  resizeTool: {
+    pageSize: string;
+    custom: string;
+    width: string;
+    height: string;
+    unit: string;
+    mm: string;
+    inches: string;
+    orientation: string;
+    portrait: string;
+    landscape: string;
+    scaleMode: string;
+    fit: string;
+    fitDesc: string;
+    fill: string;
+    fillDesc: string;
+    stretch: string;
+    stretchDesc: string;
+    center: string;
+    centerDesc: string;
+    margins: string;
+    marginNone: string;
+    marginNarrow: string;
+    marginNormal: string;
+    marginWide: string;
+  };
   editMetadataTool: {
     dropFile: string;
     changeFile: string;

@@ -11,7 +11,17 @@
       "Bash(do tail -4 \"$f\")",
       "Bash(tr '\\\\n' '|')",
       "Bash(node -e \":*)",
-      "Bash(ls -lh /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/)"
+      "Bash(ls -lh /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/)",
+      "Bash(grep -n \"processFiles\\\\|process button\\\\|Process\\\\|onClick.*process\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
+      "Bash(grep -n \"resize\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
+      "Bash(sed 's/\\\\.ts$//')",
+      "Bash(sed 's/.*slug: \"\"//')",
+      "WebFetch(domain:www.freeconvert.com)",
+      "WebFetch(domain:deftpdf.com)",
+      "WebFetch(domain:docupub.com)",
+      "WebFetch(domain:www.i2pdf.com)",
+      "WebFetch(domain:ilovepdf.biz)",
+      "Bash(xxd)"
     ]
   }
 }
