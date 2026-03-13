@@ -408,4 +408,27 @@ export interface Dictionary {
     readonlyFields: string;
     notSet: string;
   };
+  webOptimizeTool: {
+    presetLabel: string;
+    presetScreen: string;
+    presetScreenDesc: string;
+    presetEmail: string;
+    presetEmailDesc: string;
+    presetQuality: string;
+    presetQualityDesc: string;
+    advancedLabel: string;
+    toggleImages: string;
+    toggleImagesDesc: string;
+    toggleMetadata: string;
+    toggleMetadataDesc: string;
+    toggleJsActions: string;
+    toggleJsActionsDesc: string;
+    toggleForms: string;
+    toggleFormsDesc: string;
+    toggleAnnotations: string;
+    toggleAnnotationsDesc: string;
+    toggleStreams: string;
+    toggleStreamsDesc: string;
+    optimizeButton: string;
+  };
 }

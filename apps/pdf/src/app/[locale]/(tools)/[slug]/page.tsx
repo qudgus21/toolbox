@@ -103,6 +103,7 @@ export default async function ToolPage({
         organizePagesLabels={slug === "organize-pages" ? dict.organizePagesTool : undefined}
         rotateLabels={slug === "rotate" ? dict.rotateTool : undefined}
         resizeLabels={slug === "resize" ? dict.resizeTool : undefined}
+        webOptimizeLabels={slug === "web-optimize" ? dict.webOptimizeTool : undefined}
         editMetadataLabels={slug === "edit-metadata" ? dict.editMetadataTool : undefined}
       />
     </>

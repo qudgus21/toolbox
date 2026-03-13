@@ -46,6 +46,7 @@ import { OrganizePagesOptions, type OrganizePagesLabels } from "./organize-pages
 import { RotateOptions, type RotateLabels } from "./rotate-options";
 import { EditMetadataOptions, type EditMetadataLabels } from "./edit-metadata-options";
 import { ResizeOptions, MARGIN_VALUES, type ResizeLabels, type MarginPreset } from "./resize-options";
+import { WebOptimizeOptions, type WebOptimizeLabels } from "./web-optimize-options";
 import type { PageSizePreset, ScaleMode, Unit } from "@/lib/processors/resize";
 import { usePdfMetadata } from "./use-pdf-metadata";
 import type { PdfMetadata } from "@/lib/processors/edit-metadata";
@@ -186,6 +187,7 @@ interface ToolPageClientProps {
   organizePagesLabels?: OrganizePagesLabels;
   rotateLabels?: RotateLabels;
   resizeLabels?: ResizeLabels;
+  webOptimizeLabels?: WebOptimizeLabels;
   editMetadataLabels?: EditMetadataLabels;
   children?: ReactNode;
 }
@@ -237,6 +239,7 @@ export function ToolPageClient({
   organizePagesLabels,
   rotateLabels,
   resizeLabels,
+  webOptimizeLabels,
   editMetadataLabels,
   children,
 }: ToolPageClientProps) {
@@ -284,6 +287,7 @@ export function ToolPageClient({
   const splitSetExtractPagesRef = useRef<((pages: number[]) => void) | null>(null);
   const splitValidateRef = useRef<(() => boolean) | null>(null);
   const [compressOptions, setCompressOptions] = useState<Record<string, unknown>>({ compressionLevel: "recommended" });
+  const [webOptimizeOptions, setWebOptimizeOptions] = useState<Record<string, unknown>>({ preset: "screen", images: true, metadata: true, jsActions: true, forms: true, annotations: false, thumbnails: true, streams: true });
   const [deletedPages, setDeletedPages] = useState<Set<number>>(new Set());
   const [deletePageOrder, setDeletePageOrder] = useState<number[]>([]);
   const [extractedPages, setExtractedPages] = useState<Set<number>>(new Set());
@@ -340,6 +344,7 @@ export function ToolPageClient({
   const isOrganizePages = slug === "organize-pages";
   const isRotate = slug === "rotate";
   const isResize = slug === "resize";
+  const isWebOptimize = slug === "web-optimize";
   const isGrayscale = slug === "grayscale";
   const isEditMetadata = slug === "edit-metadata";
   const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata;
@@ -2045,8 +2050,8 @@ export function ToolPageClient({
                   colorFilter={isGrayscale ? "grayscale(100%)" : undefined}
                   onRemove={removeFile}
                   onReorder={reorderFiles}
-                  onRotate={isCompress || isGrayscale ? undefined : rotateFile}
-                  onCardClick={isCompress || isGrayscale ? undefined : (file) => setPageSelectorFile(file)}
+                  onRotate={isCompress || isGrayscale || isWebOptimize ? undefined : rotateFile}
+                  onCardClick={isCompress || isGrayscale || isWebOptimize ? undefined : (file) => setPageSelectorFile(file)}
                 />
               </>
             )}
@@ -2056,6 +2061,13 @@ export function ToolPageClient({
               <CompressOptions
                 onChange={setCompressOptions}
                 labels={compressLabels}
+              />
+            )}
+
+            {isWebOptimize && webOptimizeLabels && (
+              <WebOptimizeOptions
+                onChange={setWebOptimizeOptions}
+                labels={webOptimizeLabels}
               />
             )}
 
@@ -2119,6 +2131,8 @@ export function ToolPageClient({
                   processFiles(splitOptions);
                 } else if (isCompress) {
                   processFiles(compressOptions);
+                } else if (isWebOptimize) {
+                  processFiles(webOptimizeOptions);
                 } else if (isDeletePages) {
                   processFiles({
                     pagesToDelete: Array.from(deletedPages),
@@ -2243,7 +2257,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isWebOptimize && webOptimizeLabels ? webOptimizeLabels.optimizeButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>
