@@ -27,11 +27,14 @@
     "framer-motion": "^12",
     "html2canvas": "^1.4.1",
     "jszip": "^3.10.1",
+    "konva": "^10.2.1",
     "lucide-react": "^0.511",
     "next": "^16",
+    "pdf-lib-plus-encrypt": "^1.1.0",
     "pdfjs-dist": "^5.5.207",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "react-konva": "^19.2.3"
   },
   "devDependencies": {
     "@eslint/js": "^10",

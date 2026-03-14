@@ -21,7 +21,12 @@
       "WebFetch(domain:docupub.com)",
       "WebFetch(domain:www.i2pdf.com)",
       "WebFetch(domain:ilovepdf.biz)",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(grep -n \"ProtectOptions\\\\|protectLabels\\\\|case \"\"protect\"\"\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
+      "Bash(grep -n \"isProtect\\\\|isWebOptimize\\\\|isEditMetadata\\\\|isRotate\\\\|isResize\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
+      "Bash(wc -l \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-page-client.tsx\")",
+      "Bash(do sed -i '' '/passwordOptional:/d' \"$f\")",
+      "Bash(sed -i '' '/passwordOptionalDesc:/d' \"$f\")"
     ]
   }
 }

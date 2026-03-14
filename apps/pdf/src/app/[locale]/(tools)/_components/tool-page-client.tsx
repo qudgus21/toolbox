@@ -47,6 +47,8 @@ import { RotateOptions, type RotateLabels } from "./rotate-options";
 import { EditMetadataOptions, type EditMetadataLabels } from "./edit-metadata-options";
 import { ResizeOptions, MARGIN_VALUES, type ResizeLabels, type MarginPreset } from "./resize-options";
 import { WebOptimizeOptions, type WebOptimizeLabels } from "./web-optimize-options";
+import { ProtectOptions, type ProtectLabels } from "./protect-options";
+import { EditorLayout, type EditPdfLabels } from "./edit-pdf/editor-layout";
 import type { PageSizePreset, ScaleMode, Unit } from "@/lib/processors/resize";
 import { usePdfMetadata } from "./use-pdf-metadata";
 import type { PdfMetadata } from "@/lib/processors/edit-metadata";
@@ -188,7 +190,9 @@ interface ToolPageClientProps {
   rotateLabels?: RotateLabels;
   resizeLabels?: ResizeLabels;
   webOptimizeLabels?: WebOptimizeLabels;
+  protectLabels?: ProtectLabels;
   editMetadataLabels?: EditMetadataLabels;
+  editPdfLabels?: EditPdfLabels;
   children?: ReactNode;
 }
 
@@ -240,7 +244,9 @@ export function ToolPageClient({
   rotateLabels,
   resizeLabels,
   webOptimizeLabels,
+  protectLabels,
   editMetadataLabels,
+  editPdfLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -288,6 +294,7 @@ export function ToolPageClient({
   const splitValidateRef = useRef<(() => boolean) | null>(null);
   const [compressOptions, setCompressOptions] = useState<Record<string, unknown>>({ compressionLevel: "recommended" });
   const [webOptimizeOptions, setWebOptimizeOptions] = useState<Record<string, unknown>>({ preset: "screen", images: true, metadata: true, jsActions: true, forms: true, annotations: false, thumbnails: true, streams: true });
+  const [protectOptions, setProtectOptions] = useState<Record<string, unknown>>({ userPassword: "", _valid: false });
   const [deletedPages, setDeletedPages] = useState<Set<number>>(new Set());
   const [deletePageOrder, setDeletePageOrder] = useState<number[]>([]);
   const [extractedPages, setExtractedPages] = useState<Set<number>>(new Set());
@@ -345,10 +352,13 @@ export function ToolPageClient({
   const isRotate = slug === "rotate";
   const isResize = slug === "resize";
   const isWebOptimize = slug === "web-optimize";
+  const isProtect = slug === "protect";
   const isGrayscale = slug === "grayscale";
   const isEditMetadata = slug === "edit-metadata";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata;
+  const isEditPdf = slug === "edit-pdf";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf;
 
+  const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
   const [editedMetadata, setEditedMetadata] = useState<PdfMetadata | null>(null);
   const { metadata: originalMetadata, loading: metadataLoading } = usePdfMetadata(
     isEditMetadata && files.length > 0 ? files[0] : null,
@@ -478,7 +488,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
-      size={(isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isEditMetadata || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : isExtractImages && stage !== "idle" ? "md" : "lg"}
+      size={isEditPdf && stage !== "idle" ? "full" : (isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && stage !== "idle" ? "xl" : isExtractImages && stage !== "idle" ? "md" : "lg"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -1027,6 +1037,116 @@ export function ToolPageClient({
                   </div>
                 </div>
               </>
+            ) : isProtect && protectLabels && files.length > 0 ? (
+              /* ─── Protect: multi-file + options sidebar ─── */
+              <>
+                {/* Toolbar */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-bold text-foreground-muted">
+                    <span className="text-foreground font-semibold">{files.length}</span>{" "}
+                    {labels.filesSelected}
+                    <span className="ml-1 text-foreground-subtle">
+                      · {formatSize(files.reduce((s, f) => s + f.size, 0))}
+                    </span>
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    {files.length > 1 && (
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setSortMenuOpen(!sortMenuOpen)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
+                        >
+                          <ArrowDownAZ className="h-3.5 w-3.5" />
+                          {labels.sortByName ?? "Sort"}
+                          <ChevronDown
+                            className={cn(
+                              "h-3 w-3 transition-transform duration-200",
+                              sortMenuOpen && "rotate-180",
+                            )}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {sortMenuOpen && (
+                            <>
+                              <div
+                                className="fixed inset-0 z-40"
+                                onClick={() => setSortMenuOpen(false)}
+                              />
+                              <motion.div
+                                initial={{ opacity: 0, y: -4 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -4 }}
+                                transition={{ duration: 0.12 }}
+                                className="absolute right-0 top-full z-50 mt-1 w-40 overflow-hidden rounded-xl border border-border-muted bg-background-elevated shadow-lg"
+                              >
+                                {sortOptions.map((opt) => {
+                                  const Icon = opt.icon;
+                                  return (
+                                    <button
+                                      key={opt.value}
+                                      type="button"
+                                      onClick={() => {
+                                        sortFiles(opt.value);
+                                        setSortMenuOpen(false);
+                                      }}
+                                      className="flex w-full items-center gap-2.5 px-3.5 py-2.5 text-sm text-foreground-muted hover:bg-accent-muted hover:text-accent transition-colors cursor-pointer"
+                                    >
+                                      <Icon className="h-4 w-4" />
+                                      {opt.label}
+                                    </button>
+                                  );
+                                })}
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddMore}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-accent hover:border-accent/40 hover:bg-accent-muted transition-colors cursor-pointer"
+                    >
+                      <Plus className="h-3.5 w-3.5" />
+                      {labels.addMoreFiles}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Cards + Options */}
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+                  <div className="self-start">
+                    <FileList
+                      files={files}
+                      rotations={rotations}
+                      pageCounts={pageCounts}
+                      pageOrientation="portrait"
+                      pageSize="a4"
+                      pageMargin={0}
+                      onRemove={removeFile}
+                      onReorder={reorderFiles}
+                    />
+                  </div>
+
+                  <div className="lg:sticky lg:top-4 lg:self-start">
+                    <ProtectOptions
+                      onChange={setProtectOptions}
+                      labels={protectLabels}
+                    />
+                  </div>
+                </div>
+              </>
+            ) : isEditPdf && editPdfLabels && files.length > 0 ? (
+              /* ─── Edit PDF: full-screen editor ─── */
+              <EditorLayout
+                file={files[0]}
+                labels={editPdfLabels}
+                onAnnotationsChange={setEditPdfAnnotations}
+              />
             ) : isEditMetadata && editMetadataLabels && files.length > 0 ? (
               /* ─── Edit Metadata: single-file + form sidebar ─── */
               <>
@@ -2050,8 +2170,8 @@ export function ToolPageClient({
                   colorFilter={isGrayscale ? "grayscale(100%)" : undefined}
                   onRemove={removeFile}
                   onReorder={reorderFiles}
-                  onRotate={isCompress || isGrayscale || isWebOptimize ? undefined : rotateFile}
-                  onCardClick={isCompress || isGrayscale || isWebOptimize ? undefined : (file) => setPageSelectorFile(file)}
+                  onRotate={isCompress || isGrayscale || isWebOptimize || isProtect ? undefined : rotateFile}
+                  onCardClick={isCompress || isGrayscale || isWebOptimize || isProtect ? undefined : (file) => setPageSelectorFile(file)}
                 />
               </>
             )}
@@ -2230,8 +2350,12 @@ export function ToolPageClient({
                   processFiles({});
                 } else if (isExtractImages) {
                   processFiles({});
+                } else if (isProtect) {
+                  processFiles(protectOptions);
                 } else if (isGrayscale) {
                   processFiles({});
+                } else if (isEditPdf) {
+                  processFiles({ annotations: editPdfAnnotations });
                 } else if (isEditMetadata && editedMetadata) {
                   processFiles({
                     title: editedMetadata.title,
@@ -2247,7 +2371,7 @@ export function ToolPageClient({
                   processFiles({ rotations, pageSelections });
                 }
               }}
-              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) || (isEditMetadata && !editedMetadata)}
+              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) || (isEditMetadata && !editedMetadata) || (isProtect && !protectOptions._valid)}
               className={cn(
                 "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                 "bg-accent text-accent-foreground shadow-md",
@@ -2257,7 +2381,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isWebOptimize && webOptimizeLabels ? webOptimizeLabels.optimizeButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isProtect && protectLabels ? protectLabels.protectButton : isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isWebOptimize && webOptimizeLabels ? webOptimizeLabels.optimizeButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>

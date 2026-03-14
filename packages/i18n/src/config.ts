@@ -431,4 +431,38 @@ export interface Dictionary {
     toggleStreamsDesc: string;
     optimizeButton: string;
   };
+  protectTool: {
+    passwordLabel: string;
+    confirmPasswordLabel: string;
+    passwordPlaceholder: string;
+    confirmPlaceholder: string;
+    showPassword: string;
+    hidePassword: string;
+    passwordMismatch: string;
+    passwordRequired: string;
+    strengthWeak: string;
+    strengthMedium: string;
+    strengthStrong: string;
+    advancedLabel: string;
+    permissionsLabel: string;
+    permPrinting: string;
+    permPrintingDesc: string;
+    permPrintNone: string;
+    permPrintLowRes: string;
+    permPrintHighRes: string;
+    permCopying: string;
+    permCopyingDesc: string;
+    permModifying: string;
+    permModifyingDesc: string;
+    permAnnotating: string;
+    permAnnotatingDesc: string;
+    permFillingForms: string;
+    permFillingFormsDesc: string;
+    permAccessibility: string;
+    permAccessibilityDesc: string;
+    permAssembly: string;
+    permAssemblyDesc: string;
+    protectButton: string;
+    privacyNote: string;
+  };
 }
