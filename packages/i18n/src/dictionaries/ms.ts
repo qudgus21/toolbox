@@ -529,6 +529,7 @@ const ms: Dictionary = {
     addText: "Tambah teks",
     addImage: "Tambah imej",
     uploadImage: "Muat naik imej",
+    clickToPlace: "Klik pada halaman untuk meletakkan",
     noSelection: "Pilih elemen untuk mengedit sifatnya",
     position: "Kedudukan",
     size: "Saiz",

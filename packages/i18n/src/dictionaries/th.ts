@@ -613,6 +613,7 @@ const th: Dictionary = {
     addText: "เพิ่มข้อความ",
     addImage: "เพิ่มรูปภาพ",
     uploadImage: "อัปโหลดรูปภาพ",
+    clickToPlace: "คลิกบนหน้าเพื่อวาง",
     noSelection: "เลือกองค์ประกอบเพื่อแก้ไขคุณสมบัติ",
     position: "ตำแหน่ง",
     size: "ขนาด",

@@ -518,6 +518,7 @@ export interface Dictionary {
     addText: string;
     addImage: string;
     uploadImage: string;
+    clickToPlace: string;
     noSelection: string;
     position: string;
     size: string;

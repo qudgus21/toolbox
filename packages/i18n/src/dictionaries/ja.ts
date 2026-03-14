@@ -613,6 +613,7 @@ const ja: Dictionary = {
     addText: "テキストを追加",
     addImage: "画像を追加",
     uploadImage: "画像をアップロード",
+    clickToPlace: "配置する位置をクリック",
     noSelection: "要素を選択してプロパティを編集",
     position: "位置",
     size: "サイズ",

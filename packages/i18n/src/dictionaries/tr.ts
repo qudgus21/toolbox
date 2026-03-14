@@ -613,6 +613,7 @@ const tr: Dictionary = {
     addText: "Metin ekle",
     addImage: "Görsel ekle",
     uploadImage: "Görsel yükle",
+    clickToPlace: "Yerleştirmek için sayfaya tıklayın",
     noSelection: "Özelliklerini düzenlemek için bir öğe seçin",
     position: "Konum",
     size: "Boyut",

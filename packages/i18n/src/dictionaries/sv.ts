@@ -613,6 +613,7 @@ const sv: Dictionary = {
     addText: "Lägg till text",
     addImage: "Lägg till bild",
     uploadImage: "Ladda upp bild",
+    clickToPlace: "Klicka på sidan för att placera",
     noSelection: "Välj ett element för att redigera dess egenskaper",
     position: "Position",
     size: "Storlek",

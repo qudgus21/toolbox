@@ -601,6 +601,7 @@ const no: Dictionary = {
     addText: "Legg til tekst",
     addImage: "Legg til bilde",
     uploadImage: "Last opp bilde",
+    clickToPlace: "Klikk på siden for å plassere",
     noSelection: "Velg et element for å redigere egenskapene",
     position: "Posisjon",
     size: "Størrelse",

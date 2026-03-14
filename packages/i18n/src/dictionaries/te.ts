@@ -613,6 +613,7 @@ const te: Dictionary = {
     addText: "టెక్స్ట్ జోడించు",
     addImage: "చిత్రం జోడించు",
     uploadImage: "చిత్రం అప్‌లోడ్ చేయి",
+    clickToPlace: "ఉంచడానికి పేజీపై క్లిక్ చేయండి",
     noSelection: "దాని లక్షణాలను సవరించడానికి ఒక మూలకాన్ని ఎంచుకోండి",
     position: "స్థానం",
     size: "పరిమాణం",

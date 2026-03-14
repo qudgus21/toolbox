@@ -613,6 +613,7 @@ const vi: Dictionary = {
     addText: "Thêm văn bản",
     addImage: "Thêm hình ảnh",
     uploadImage: "Tải ảnh lên",
+    clickToPlace: "Nhấp vào trang để đặt",
     noSelection: "Chọn một phần tử để chỉnh sửa thuộc tính",
     position: "Vị trí",
     size: "Kích thước",

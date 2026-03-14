@@ -613,6 +613,7 @@ const ko: Dictionary = {
     addText: "텍스트 추가",
     addImage: "이미지 추가",
     uploadImage: "이미지 업로드",
+    clickToPlace: "페이지에서 원하는 위치를 클릭하세요",
     noSelection: "요소를 선택하면 속성을 편집할 수 있습니다",
     position: "위치",
     size: "크기",

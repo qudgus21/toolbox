@@ -613,6 +613,7 @@ const fi: Dictionary = {
     addText: "Lisää teksti",
     addImage: "Lisää kuva",
     uploadImage: "Lataa kuva",
+    clickToPlace: "Napsauta sivua sijoittaaksesi",
     noSelection: "Valitse elementti muokataksesi sen ominaisuuksia",
     position: "Sijainti",
     size: "Koko",

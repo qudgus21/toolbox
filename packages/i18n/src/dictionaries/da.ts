@@ -613,6 +613,7 @@ const da: Dictionary = {
     addText: "Tilføj tekst",
     addImage: "Tilføj billede",
     uploadImage: "Upload billede",
+    clickToPlace: "Klik på siden for at placere",
     noSelection: "Vælg et element for at redigere dets egenskaber",
     position: "Position",
     size: "Størrelse",

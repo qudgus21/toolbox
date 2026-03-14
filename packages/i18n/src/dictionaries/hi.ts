@@ -613,6 +613,7 @@ const hi: Dictionary = {
     addText: "टेक्स्ट जोड़ें",
     addImage: "छवि जोड़ें",
     uploadImage: "छवि अपलोड करें",
+    clickToPlace: "रखने के लिए पृष्ठ पर क्लिक करें",
     noSelection: "गुण संपादित करने के लिए कोई तत्व चुनें",
     position: "स्थिति",
     size: "आकार",

@@ -613,6 +613,7 @@ const mr: Dictionary = {
     addText: "मजकूर जोडा",
     addImage: "प्रतिमा जोडा",
     uploadImage: "प्रतिमा अपलोड करा",
+    clickToPlace: "ठेवण्यासाठी पृष्ठावर क्लिक करा",
     noSelection: "गुणधर्म संपादित करण्यासाठी घटक निवडा",
     position: "स्थान",
     size: "आकार",

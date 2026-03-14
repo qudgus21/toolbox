@@ -613,6 +613,7 @@ const ar: Dictionary = {
     addText: "إضافة نص",
     addImage: "إضافة صورة",
     uploadImage: "رفع صورة",
+    clickToPlace: "انقر على الصفحة للوضع",
     noSelection: "حدد عنصرًا لتعديل خصائصه",
     position: "الموضع",
     size: "الحجم",

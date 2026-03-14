@@ -613,6 +613,7 @@ const he: Dictionary = {
     addText: "הוסף טקסט",
     addImage: "הוסף תמונה",
     uploadImage: "העלה תמונה",
+    clickToPlace: "לחצו על העמוד למיקום",
     noSelection: "בחרו רכיב כדי לערוך את המאפיינים שלו",
     position: "מיקום",
     size: "גודל",

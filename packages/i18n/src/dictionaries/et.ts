@@ -613,6 +613,7 @@ const et: Dictionary = {
     addText: "Lisa tekst",
     addImage: "Lisa pilt",
     uploadImage: "Laadi pilt üles",
+    clickToPlace: "Paigutamiseks klõpsake lehel",
     noSelection: "Valige element selle omaduste muutmiseks",
     position: "Asukoht",
     size: "Suurus",

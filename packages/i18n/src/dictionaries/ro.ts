@@ -601,6 +601,7 @@ const ro: Dictionary = {
     addText: "Adaugă text",
     addImage: "Adaugă imagine",
     uploadImage: "Încarcă imagine",
+    clickToPlace: "Faceți clic pe pagină pentru a plasa",
     noSelection: "Selectați un element pentru a-i edita proprietățile",
     position: "Poziție",
     size: "Dimensiune",

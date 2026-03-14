@@ -613,6 +613,7 @@ const id: Dictionary = {
     addText: "Tambah teks",
     addImage: "Tambah gambar",
     uploadImage: "Unggah gambar",
+    clickToPlace: "Klik pada halaman untuk menempatkan",
     noSelection: "Pilih elemen untuk mengedit propertinya",
     position: "Posisi",
     size: "Ukuran",

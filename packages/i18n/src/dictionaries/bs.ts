@@ -613,6 +613,7 @@ const bs: Dictionary = {
     addText: "Dodaj tekst",
     addImage: "Dodaj sliku",
     uploadImage: "Učitaj sliku",
+    clickToPlace: "Kliknite na stranicu za postavljanje",
     noSelection: "Odaberite element za uređivanje njegovih svojstava",
     position: "Pozicija",
     size: "Veličina",

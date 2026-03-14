@@ -613,6 +613,7 @@ const hu: Dictionary = {
     addText: "Szöveg hozzáadása",
     addImage: "Kép hozzáadása",
     uploadImage: "Kép feltöltése",
+    clickToPlace: "Kattintson az oldalra az elhelyezéshez",
     noSelection: "Válasszon ki egy elemet a tulajdonságainak szerkesztéséhez",
     position: "Pozíció",
     size: "Méret",

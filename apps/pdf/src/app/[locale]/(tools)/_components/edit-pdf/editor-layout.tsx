@@ -347,8 +347,16 @@ export function EditorLayout({
         {/* Center: All Pages Stacked Vertically */}
         <div
           ref={scrollContainerRef}
-          className="flex-1 overflow-y-auto bg-background-muted"
+          className="relative flex-1 overflow-y-auto bg-background-muted"
         >
+          {/* Tool placement guide */}
+          {state.activeTool !== "select" && (
+            <div className="pointer-events-none sticky left-0 top-12 z-30 flex justify-center">
+              <span className="rounded-full border border-blue-300 bg-blue-50 px-4 py-1.5 text-xs font-medium text-blue-600 shadow-sm backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-400">
+                {labels.clickToPlace}
+              </span>
+            </div>
+          )}
           <div className="flex flex-col items-center gap-6 px-4 py-6 pb-16">
             {pages.map((page, idx) => (
               <div

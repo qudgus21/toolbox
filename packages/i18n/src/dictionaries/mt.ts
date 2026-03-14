@@ -613,6 +613,7 @@ const mt: Dictionary = {
     addText: "Żid test",
     addImage: "Żid stampa",
     uploadImage: "Ittella' stampa",
+    clickToPlace: "Ikklikkja fuq il-paġna biex tpoġġi",
     noSelection: "Agħżel element biex teditja l-proprjetajiet tiegħu",
     position: "Pożizzjoni",
     size: "Daqs",

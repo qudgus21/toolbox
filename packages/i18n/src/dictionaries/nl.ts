@@ -613,6 +613,7 @@ const nl: Dictionary = {
     addText: "Tekst toevoegen",
     addImage: "Afbeelding toevoegen",
     uploadImage: "Afbeelding uploaden",
+    clickToPlace: "Klik op de pagina om te plaatsen",
     noSelection: "Selecteer een element om de eigenschappen te bewerken",
     position: "Positie",
     size: "Grootte",

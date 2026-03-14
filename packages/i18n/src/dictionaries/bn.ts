@@ -613,6 +613,7 @@ const bn: Dictionary = {
     addText: "টেক্সট যোগ করুন",
     addImage: "ছবি যোগ করুন",
     uploadImage: "ছবি আপলোড করুন",
+    clickToPlace: "স্থাপন করতে পৃষ্ঠায় ক্লিক করুন",
     noSelection: "বৈশিষ্ট্য সম্পাদনা করতে একটি উপাদান নির্বাচন করুন",
     position: "অবস্থান",
     size: "আকার",

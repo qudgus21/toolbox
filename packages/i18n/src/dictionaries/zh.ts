@@ -613,6 +613,7 @@ const zh: Dictionary = {
     addText: "添加文本",
     addImage: "添加图片",
     uploadImage: "上传图片",
+    clickToPlace: "点击页面放置",
     noSelection: "选择元素以编辑其属性",
     position: "位置",
     size: "大小",

@@ -613,6 +613,7 @@ const fr: Dictionary = {
     addText: "Ajouter du texte",
     addImage: "Ajouter une image",
     uploadImage: "Importer une image",
+    clickToPlace: "Cliquez sur la page pour placer",
     noSelection: "Sélectionnez un élément pour modifier ses propriétés",
     position: "Position",
     size: "Taille",

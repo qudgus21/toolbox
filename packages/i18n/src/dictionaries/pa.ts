@@ -613,6 +613,7 @@ const pa: Dictionary = {
     addText: "ਟੈਕਸਟ ਜੋੜੋ",
     addImage: "ਚਿੱਤਰ ਜੋੜੋ",
     uploadImage: "ਚਿੱਤਰ ਅੱਪਲੋਡ ਕਰੋ",
+    clickToPlace: "ਰੱਖਣ ਲਈ ਪੰਨੇ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
     noSelection: "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਸੋਧਣ ਲਈ ਕੋਈ ਤੱਤ ਚੁਣੋ",
     position: "ਸਥਿਤੀ",
     size: "ਆਕਾਰ",

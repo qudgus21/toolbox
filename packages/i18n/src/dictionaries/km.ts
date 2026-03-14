@@ -529,6 +529,7 @@ const km: Dictionary = {
     addText: "បន្ថែមអត្ថបទ",
     addImage: "បន្ថែមរូបភាព",
     uploadImage: "ផ្ទុករូបភាពឡើង",
+    clickToPlace: "ចុចលើទំព័រដើម្បីដាក់",
     noSelection: "ជ្រើសរើសធាតុដើម្បីកែលក្ខណៈសម្បត្តិ",
     position: "ទីតាំង",
     size: "ទំហំ",

@@ -613,6 +613,7 @@ const pt: Dictionary = {
     addText: "Adicionar texto",
     addImage: "Adicionar imagem",
     uploadImage: "Enviar imagem",
+    clickToPlace: "Clique na página para posicionar",
     noSelection: "Selecione um elemento para editar suas propriedades",
     position: "Posição",
     size: "Tamanho",

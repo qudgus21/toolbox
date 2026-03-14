@@ -613,6 +613,7 @@ const is: Dictionary = {
     addText: "Bæta við texta",
     addImage: "Bæta við mynd",
     uploadImage: "Hlaða upp mynd",
+    clickToPlace: "Smelltu á síðuna til að setja",
     noSelection: "Veldu einingu til að breyta eiginleikum hennar",
     position: "Staðsetning",
     size: "Stærð",

@@ -613,6 +613,7 @@ const lt: Dictionary = {
     addText: "Pridėti tekstą",
     addImage: "Pridėti vaizdą",
     uploadImage: "Įkelti vaizdą",
+    clickToPlace: "Spustelėkite puslapyje norėdami įdėti",
     noSelection: "Pasirinkite elementą, kad galėtumėte redaguoti jo savybes",
     position: "Padėtis",
     size: "Dydis",

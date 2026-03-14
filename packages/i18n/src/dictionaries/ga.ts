@@ -613,6 +613,7 @@ const ga: Dictionary = {
     addText: "Cuir téacs leis",
     addImage: "Cuir íomhá leis",
     uploadImage: "Uaslódáil íomhá",
+    clickToPlace: "Cliceáil ar an leathanach chun é a chur",
     noSelection: "Roghnaigh eilimint chun a airíonna a chur in eagar",
     position: "Suíomh",
     size: "Méid",

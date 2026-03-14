@@ -613,6 +613,7 @@ const cs: Dictionary = {
     addText: "Přidat text",
     addImage: "Přidat obrázek",
     uploadImage: "Nahrát obrázek",
+    clickToPlace: "Klikněte na stránku pro umístění",
     noSelection: "Vyberte prvek pro úpravu jeho vlastností",
     position: "Pozice",
     size: "Velikost",

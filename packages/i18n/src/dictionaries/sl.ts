@@ -613,6 +613,7 @@ const sl: Dictionary = {
     addText: "Dodaj besedilo",
     addImage: "Dodaj sliko",
     uploadImage: "Naloži sliko",
+    clickToPlace: "Kliknite na stran za postavitev",
     noSelection: "Izberite element za urejanje njegovih lastnosti",
     position: "Položaj",
     size: "Velikost",

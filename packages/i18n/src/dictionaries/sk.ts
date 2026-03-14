@@ -613,6 +613,7 @@ const sk: Dictionary = {
     addText: "Pridať text",
     addImage: "Pridať obrázok",
     uploadImage: "Nahrať obrázok",
+    clickToPlace: "Kliknite na stránku pre umiestnenie",
     noSelection: "Vyberte prvok na úpravu jeho vlastností",
     position: "Pozícia",
     size: "Veľkosť",

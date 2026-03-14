@@ -613,6 +613,7 @@ const lv: Dictionary = {
     addText: "Pievienot tekstu",
     addImage: "Pievienot attēlu",
     uploadImage: "Augšupielādēt attēlu",
+    clickToPlace: "Noklikšķiniet uz lapas, lai ievietotu",
     noSelection: "Atlasiet elementu, lai rediģētu tā īpašības",
     position: "Pozīcija",
     size: "Izmērs",
