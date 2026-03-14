@@ -577,6 +577,7 @@ const el: Dictionary = {
     bold: "Έντονα",
     italic: "Πλάγια",
     underline: "Υπογράμμιση",
+    lineHeight: "Διάστιχο",
     alignLeft: "Αριστερή στοίχιση",
     alignCenter: "Κέντρο",
     alignRight: "Δεξιά στοίχιση",

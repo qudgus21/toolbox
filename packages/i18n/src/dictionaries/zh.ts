@@ -577,6 +577,7 @@ const zh: Dictionary = {
     bold: "加粗",
     italic: "斜体",
     underline: "下划线",
+    lineHeight: "行间距",
     alignLeft: "左对齐",
     alignCenter: "居中",
     alignRight: "右对齐",

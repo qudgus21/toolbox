@@ -493,6 +493,7 @@ const ms: Dictionary = {
     bold: "Tebal",
     italic: "Italik",
     underline: "Garis bawah",
+    lineHeight: "Jarak baris",
     alignLeft: "Jajar kiri",
     alignCenter: "Tengah",
     alignRight: "Jajar kanan",

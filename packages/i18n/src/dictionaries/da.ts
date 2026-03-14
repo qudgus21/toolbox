@@ -577,6 +577,7 @@ const da: Dictionary = {
     bold: "Fed",
     italic: "Kursiv",
     underline: "Understregning",
+    lineHeight: "Linjeafstand",
     alignLeft: "Venstrejuster",
     alignCenter: "Centrer",
     alignRight: "Højrejuster",

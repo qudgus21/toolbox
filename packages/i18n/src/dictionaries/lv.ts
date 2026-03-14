@@ -577,6 +577,7 @@ const lv: Dictionary = {
     bold: "Treknraksts",
     italic: "Slīpraksts",
     underline: "Pasvītrojums",
+    lineHeight: "Rindu atstarpe",
     alignLeft: "Līdzināt pa kreisi",
     alignCenter: "Centrēt",
     alignRight: "Līdzināt pa labi",

@@ -577,6 +577,7 @@ const hu: Dictionary = {
     bold: "Félkövér",
     italic: "Dőlt",
     underline: "Aláhúzott",
+    lineHeight: "Sortávolság",
     alignLeft: "Balra igazítás",
     alignCenter: "Középre",
     alignRight: "Jobbra igazítás",

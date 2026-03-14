@@ -565,6 +565,7 @@ const ro: Dictionary = {
     bold: "Aldine",
     italic: "Cursive",
     underline: "Subliniat",
+    lineHeight: "Spațiere între rânduri",
     alignLeft: "Aliniere la stânga",
     alignCenter: "Centrare",
     alignRight: "Aliniere la dreapta",

@@ -577,6 +577,7 @@ const hi: Dictionary = {
     bold: "बोल्ड",
     italic: "इटैलिक",
     underline: "रेखांकन",
+    lineHeight: "पंक्ति अंतराल",
     alignLeft: "बाएँ संरेखित करें",
     alignCenter: "केंद्र",
     alignRight: "दाएँ संरेखित करें",

@@ -577,6 +577,7 @@ const uk: Dictionary = {
     bold: "Жирний",
     italic: "Курсив",
     underline: "Підкреслення",
+    lineHeight: "Міжрядковий інтервал",
     alignLeft: "За лівим краєм",
     alignCenter: "По центру",
     alignRight: "За правим краєм",

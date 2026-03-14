@@ -577,6 +577,7 @@ const he: Dictionary = {
     bold: "מודגש",
     italic: "נטוי",
     underline: "קו תחתון",
+    lineHeight: "מרווח שורות",
     alignLeft: "יישור לשמאל",
     alignCenter: "מרכז",
     alignRight: "יישור לימין",

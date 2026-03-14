@@ -577,6 +577,7 @@ const bg: Dictionary = {
     bold: "Удебелен",
     italic: "Курсив",
     underline: "Подчертан",
+    lineHeight: "Междуредие",
     alignLeft: "Ляво подравняване",
     alignCenter: "Центриране",
     alignRight: "Дясно подравняване",

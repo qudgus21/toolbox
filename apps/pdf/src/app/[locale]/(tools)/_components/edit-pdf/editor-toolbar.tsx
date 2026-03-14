@@ -518,22 +518,39 @@ function TextContextControls({
         </div>
       </div>
 
-      {/* Font size */}
-      <div className="group/tip relative">
+      {/* Font size — select + slider */}
+      <div className="group/tip relative flex items-center gap-1.5">
         <select
-          value={val.fontSize}
+          value={FONT_SIZES.includes(val.fontSize) ? val.fontSize : ""}
           onChange={(e) => {
             const newSize = Number(e.target.value);
             update({ fontSize: newSize, height: newSize });
           }}
           className="h-8 w-[56px] cursor-pointer rounded-md border border-border bg-background px-1 text-center text-xs text-foreground transition-colors hover:border-foreground-muted"
         >
+          {!FONT_SIZES.includes(val.fontSize) && (
+            <option value="" disabled>
+              {val.fontSize}
+            </option>
+          )}
           {FONT_SIZES.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>
           ))}
         </select>
+        <input
+          type="range"
+          min={8}
+          max={96}
+          step={2}
+          value={val.fontSize}
+          onChange={(e) => {
+            const newSize = Number(e.target.value);
+            update({ fontSize: newSize, height: newSize });
+          }}
+          className="h-1.5 w-20 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+        />
         <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
           {labels.fontSize}
         </div>
@@ -567,6 +584,23 @@ function TextContextControls({
         <ToggleBtn active={val.underline} onClick={() => update({ underline: !val.underline })} title={labels.underline}>
           <Underline size={14} />
         </ToggleBtn>
+      </div>
+
+      {/* Line height */}
+      <div className="group/tip relative flex items-center gap-1.5">
+        <span className="text-xs text-foreground-muted tabular-nums">{val.lineHeight.toFixed(1)}</span>
+        <input
+          type="range"
+          min={0.8}
+          max={3}
+          step={0.1}
+          value={val.lineHeight}
+          onChange={(e) => update({ lineHeight: Number(e.target.value) })}
+          className="h-1.5 w-16 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+        />
+        <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
+          {labels.lineHeight}
+        </div>
       </div>
 
       <Divider />

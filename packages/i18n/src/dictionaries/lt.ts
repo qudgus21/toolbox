@@ -577,6 +577,7 @@ const lt: Dictionary = {
     bold: "Pusjuodis",
     italic: "Kursyvas",
     underline: "Pabrauktas",
+    lineHeight: "Tarpas tarp eilučių",
     alignLeft: "Lygiuoti kairėn",
     alignCenter: "Centruoti",
     alignRight: "Lygiuoti dešinėn",

@@ -577,6 +577,7 @@ const sl: Dictionary = {
     bold: "Krepko",
     italic: "Ležeče",
     underline: "Podčrtano",
+    lineHeight: "Razmik med vrsticami",
     alignLeft: "Leva poravnava",
     alignCenter: "Sredinska poravnava",
     alignRight: "Desna poravnava",

@@ -577,6 +577,7 @@ const et: Dictionary = {
     bold: "Paks",
     italic: "Kaldkiri",
     underline: "Allajoonitud",
+    lineHeight: "Reavahe",
     alignLeft: "Joonda vasakule",
     alignCenter: "Keskel",
     alignRight: "Joonda paremale",

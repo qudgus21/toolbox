@@ -46,6 +46,7 @@ const INITIAL_TEXT_DEFAULTS: TextDefaults = {
   italic: false,
   underline: false,
   align: "left",
+  lineHeight: 1.2,
 };
 
 const INITIAL_SHAPE_DEFAULTS: ShapeDefaults = {
@@ -104,20 +105,22 @@ function editorReducer(
       let changes = action.changes;
 
       // Auto-adjust text size when text properties change
-      if (prev.type === "text") {
+      if (prev.type === "text" && !action.skipResize) {
         const merged = { ...prev, ...changes } as typeof prev;
         const needsResize =
           "fontSize" in changes ||
           "content" in changes ||
           "fontFamily" in changes ||
           "bold" in changes ||
-          "italic" in changes;
+          "italic" in changes ||
+          "lineHeight" in changes;
         if (needsResize) {
           const fontChanged =
             "fontSize" in changes ||
             "fontFamily" in changes ||
             "bold" in changes ||
-            "italic" in changes;
+            "italic" in changes ||
+            "lineHeight" in changes;
 
           // If height is already provided from DOM measurement, prefer it
           const directHeight = "height" in changes ? (changes as { height: number }).height : null;
@@ -133,6 +136,7 @@ function editorReducer(
               merged.bold,
               merged.italic,
               maxW,
+              merged.lineHeight,
             );
             changes = { ...changes, width: w, height: h };
           } else if (merged.manualWidth) {
@@ -145,6 +149,7 @@ function editorReducer(
                 merged.bold,
                 merged.italic,
                 merged.width,
+                merged.lineHeight,
               );
               changes = { ...changes, height: h };
             }
@@ -159,6 +164,7 @@ function editorReducer(
               merged.bold,
               merged.italic,
               maxW,
+              merged.lineHeight,
             );
             // If text hit the page boundary, lock the width
             if (w >= maxW) {

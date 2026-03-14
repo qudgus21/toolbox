@@ -577,6 +577,7 @@ const nl: Dictionary = {
     bold: "Vet",
     italic: "Cursief",
     underline: "Onderstrepen",
+    lineHeight: "Regelafstand",
     alignLeft: "Links uitlijnen",
     alignCenter: "Centreren",
     alignRight: "Rechts uitlijnen",

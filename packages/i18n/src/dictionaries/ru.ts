@@ -577,6 +577,7 @@ const ru: Dictionary = {
     bold: "Полужирный",
     italic: "Курсив",
     underline: "Подчёркивание",
+    lineHeight: "Межстрочный интервал",
     alignLeft: "По левому краю",
     alignCenter: "По центру",
     alignRight: "По правому краю",

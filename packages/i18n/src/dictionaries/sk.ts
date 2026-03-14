@@ -577,6 +577,7 @@ const sk: Dictionary = {
     bold: "Tučné",
     italic: "Kurzíva",
     underline: "Podčiarknutie",
+    lineHeight: "Riadkovanie",
     alignLeft: "Zarovnať vľavo",
     alignCenter: "Na stred",
     alignRight: "Zarovnať vpravo",

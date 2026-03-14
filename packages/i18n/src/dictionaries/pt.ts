@@ -577,6 +577,7 @@ const pt: Dictionary = {
     bold: "Negrito",
     italic: "Itálico",
     underline: "Sublinhado",
+    lineHeight: "Espaçamento",
     alignLeft: "Alinhar à esquerda",
     alignCenter: "Centralizar",
     alignRight: "Alinhar à direita",

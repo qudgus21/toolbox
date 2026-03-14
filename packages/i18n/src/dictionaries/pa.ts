@@ -577,6 +577,7 @@ const pa: Dictionary = {
     bold: "ਗੂੜ੍ਹਾ",
     italic: "ਤਿਰਛਾ",
     underline: "ਅੰਡਰਲਾਈਨ",
+    lineHeight: "ਲਾਈਨ ਸਪੇਸਿੰਗ",
     alignLeft: "ਖੱਬੇ ਪਾਸੇ",
     alignCenter: "ਵਿਚਕਾਰ",
     alignRight: "ਸੱਜੇ ਪਾਸੇ",

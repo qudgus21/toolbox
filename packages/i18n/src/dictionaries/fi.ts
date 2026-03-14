@@ -577,6 +577,7 @@ const fi: Dictionary = {
     bold: "Lihavoitu",
     italic: "Kursiivi",
     underline: "Alleviivaus",
+    lineHeight: "Riviväli",
     alignLeft: "Tasaa vasemmalle",
     alignCenter: "Keskitä",
     alignRight: "Tasaa oikealle",

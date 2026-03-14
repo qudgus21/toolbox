@@ -577,6 +577,7 @@ const id: Dictionary = {
     bold: "Tebal",
     italic: "Miring",
     underline: "Garis bawah",
+    lineHeight: "Spasi baris",
     alignLeft: "Rata kiri",
     alignCenter: "Tengah",
     alignRight: "Rata kanan",

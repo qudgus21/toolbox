@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback, useMemo, memo, startTransition } from "react";
+import { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo, memo, startTransition } from "react";
 import {
   Stage,
   Layer,
@@ -153,7 +153,7 @@ export function PageCanvas({
               x,
               y,
               width: measuredWidth,
-              height: state.textDefaults.fontSize,
+              height: state.textDefaults.fontSize * state.textDefaults.lineHeight,
               rotation: 0,
               opacity: 1,
               content: "Text",
@@ -165,6 +165,7 @@ export function PageCanvas({
               italic: state.textDefaults.italic,
               underline: state.textDefaults.underline,
               align: state.textDefaults.align,
+              lineHeight: state.textDefaults.lineHeight,
             },
           });
           dispatch({ type: "SET_TOOL", tool: "select" });
@@ -736,7 +737,7 @@ export function PageCanvas({
             textDecoration: el.underline ? "underline" : "none",
             textAlign: el.align as React.CSSProperties["textAlign"],
             color: el.fontColor,
-            lineHeight: 1,
+            lineHeight: el.lineHeight ?? 1.2,
             wordBreak: "break-all",
             whiteSpace: "pre-wrap",
             overflow: "hidden",
@@ -758,29 +759,17 @@ export function PageCanvas({
                 zIndex: isEditing ? 10 : 1,
               }}
             >
-              {isEditing ? (
-                <EditingTextarea
-                  initialContent={el.content}
-                  elId={el.id}
-                  dispatch={dispatch}
-                  onDone={() => setEditingTextId(null)}
-                  textStyle={textStyle}
-                  width={tw}
-                  height={th}
-                  fixedWidth={!!el.manualWidth}
-                  scale={scale}
-                />
-              ) : (
-                <div
-                  style={{
-                    ...textStyle,
-                    width: tw,
-                    height: th,
-                  }}
-                >
-                  {el.content}
-                </div>
-              )}
+              <TextOverlayDiv
+                el={el}
+                isEditing={isEditing}
+                dispatch={dispatch}
+                onEndEdit={() => setEditingTextId(null)}
+                textStyle={textStyle}
+                tw={tw}
+                th={th}
+                scale={scale}
+                maxW={(page.width - el.x) * scale}
+              />
             </div>
           );
         })}
@@ -819,92 +808,119 @@ function ImageNode({
   );
 }
 
-/* ── Editing Textarea (memo prevents re-render on content change) ── */
+/* ── Unified text overlay — always the same DOM element.
+     Editing just toggles contentEditable; no element swap = no mismatch. ── */
 
-const EditingTextarea = memo(function EditingTextarea({
-  initialContent,
-  elId,
+const TextOverlayDiv = memo(function TextOverlayDiv({
+  el,
+  isEditing,
   dispatch,
-  onDone,
+  onEndEdit,
   textStyle,
-  width,
-  fixedWidth,
+  tw,
+  th,
   scale,
+  maxW,
 }: {
-  initialContent: string;
-  elId: string;
+  el: Extract<EditorElement, { type: "text" }>;
+  isEditing: boolean;
   dispatch: EditorDispatch;
-  onDone: () => void;
+  onEndEdit: () => void;
   textStyle: React.CSSProperties;
-  width: number;
-  height: number;
-  fixedWidth: boolean;
+  tw: number;
+  th: number;
   scale: number;
+  maxW: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const contentRef = useRef(initialContent);
+  const contentRef = useRef(el.content);
+  const blurredRef = useRef(!isEditing);
 
+  // Mount only: set initial content
+  useLayoutEffect(() => {
+    if (ref.current) {
+      ref.current.innerText = el.content;
+      contentRef.current = el.content;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // External content change (undo/redo) — skip if user is typing
+  useLayoutEffect(() => {
+    if (!isEditing && ref.current && el.content !== contentRef.current) {
+      ref.current.innerText = el.content;
+      contentRef.current = el.content;
+    }
+  }, [el.content]); // intentionally omit isEditing
+
+  // Focus when entering edit mode
   useEffect(() => {
-    const el = ref.current;
-    if (el) {
-      el.innerText = initialContent;
-      el.focus();
-      // Place cursor at end
-      const sel = window.getSelection();
-      if (sel) {
-        sel.selectAllChildren(el);
-        sel.collapseToEnd();
+    if (isEditing) {
+      blurredRef.current = false;
+      if (ref.current) {
+        ref.current.focus();
+        const sel = window.getSelection();
+        if (sel) {
+          sel.selectAllChildren(ref.current);
+          sel.collapseToEnd();
+        }
       }
     }
-  }, []);
+  }, [isEditing]);
 
   return (
     <div
       ref={ref}
       contentEditable
       suppressContentEditableWarning
+      tabIndex={isEditing ? 0 : -1}
       onBlur={() => {
-        const el = ref.current;
-        if (!el) return;
-        const val = el.innerText ?? "";
-        const h = el.scrollHeight / scale;
-        if (val !== initialContent) {
+        if (!isEditing) return;
+        blurredRef.current = true;
+        const div = ref.current;
+        if (!div) return;
+        const raw = div.innerText ?? "";
+        const val = raw.endsWith("\n") ? raw.slice(0, -1) : raw;
+        if (val !== contentRef.current) {
           dispatch({
             type: "UPDATE_ELEMENT",
-            id: elId,
-            changes: { content: val, height: h },
+            id: el.id,
+            changes: { content: val },
+            skipResize: true,
           });
+          contentRef.current = val;
         }
-        onDone();
+        onEndEdit();
       }}
       onInput={() => {
-        const el = ref.current;
-        if (!el) return;
-        const val = el.innerText ?? "";
+        const div = ref.current;
+        if (!div) return;
+        const val = div.innerText ?? "";
         contentRef.current = val;
-        const h = el.scrollHeight / scale;
+        const h = div.scrollHeight / scale;
         startTransition(() => {
+          if (blurredRef.current) return;
           dispatch({
             type: "UPDATE_ELEMENT",
-            id: elId,
+            id: el.id,
             changes: { content: val, height: h },
             skipHistory: true,
           });
         });
       }}
       onKeyDown={(e) => {
-        if (e.key === "Escape") {
-          ref.current?.blur();
-        }
+        if (e.key === "Escape") ref.current?.blur();
       }}
       style={{
         ...textStyle,
-        ...(fixedWidth ? { width } : { minWidth: width }),
-        minHeight: textStyle.fontSize,
+        ...(el.manualWidth
+          ? { width: tw }
+          : { width: "max-content", minWidth: tw, maxWidth: maxW }),
+        minHeight: th,
         outline: "none",
-        pointerEvents: "auto",
-        cursor: "text",
+        pointerEvents: isEditing ? "auto" : "none",
+        cursor: isEditing ? "text" : "default",
       }}
     />
   );
-}, () => true); // Never re-render — fully uncontrolled DOM element
+});

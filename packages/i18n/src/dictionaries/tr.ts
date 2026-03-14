@@ -577,6 +577,7 @@ const tr: Dictionary = {
     bold: "Kalın",
     italic: "İtalik",
     underline: "Altı çizili",
+    lineHeight: "Satır aralığı",
     alignLeft: "Sola hizala",
     alignCenter: "Ortala",
     alignRight: "Sağa hizala",

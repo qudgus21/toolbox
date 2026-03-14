@@ -577,6 +577,7 @@ const ja: Dictionary = {
     bold: "太字",
     italic: "斜体",
     underline: "下線",
+    lineHeight: "行間",
     alignLeft: "左揃え",
     alignCenter: "中央揃え",
     alignRight: "右揃え",

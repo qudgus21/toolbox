@@ -577,6 +577,7 @@ const th: Dictionary = {
     bold: "ตัวหนา",
     italic: "ตัวเอียง",
     underline: "ขีดเส้นใต้",
+    lineHeight: "ระยะห่างบรรทัด",
     alignLeft: "ชิดซ้าย",
     alignCenter: "กึ่งกลาง",
     alignRight: "ชิดขวา",

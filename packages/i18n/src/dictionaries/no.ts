@@ -565,6 +565,7 @@ const no: Dictionary = {
     bold: "Fet",
     italic: "Kursiv",
     underline: "Understrek",
+    lineHeight: "Linjeavstand",
     alignLeft: "Venstrejuster",
     alignCenter: "Midtstill",
     alignRight: "Høyrejuster",

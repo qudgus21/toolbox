@@ -493,6 +493,7 @@ const km: Dictionary = {
     bold: "ដិត",
     italic: "ទ្រេត",
     underline: "គូសបន្ទាត់ក្រោម",
+    lineHeight: "គម្លាតបន្ទាត់",
     alignLeft: "តម្រឹមឆ្វេង",
     alignCenter: "កណ្ដាល",
     alignRight: "តម្រឹមស្ដាំ",

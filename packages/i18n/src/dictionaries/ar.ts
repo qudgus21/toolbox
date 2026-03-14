@@ -577,6 +577,7 @@ const ar: Dictionary = {
     bold: "عريض",
     italic: "مائل",
     underline: "تسطير",
+    lineHeight: "تباعد الأسطر",
     alignLeft: "محاذاة لليسار",
     alignCenter: "توسيط",
     alignRight: "محاذاة لليمين",

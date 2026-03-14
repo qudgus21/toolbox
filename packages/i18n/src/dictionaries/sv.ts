@@ -577,6 +577,7 @@ const sv: Dictionary = {
     bold: "Fet",
     italic: "Kursiv",
     underline: "Understrykning",
+    lineHeight: "Radavstånd",
     alignLeft: "Vänsterjustera",
     alignCenter: "Centrera",
     alignRight: "Högerjustera",

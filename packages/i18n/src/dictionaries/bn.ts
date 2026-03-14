@@ -577,6 +577,7 @@ const bn: Dictionary = {
     bold: "বোল্ড",
     italic: "ইটালিক",
     underline: "আন্ডারলাইন",
+    lineHeight: "লাইনের ব্যবধান",
     alignLeft: "বামে সারিবদ্ধ",
     alignCenter: "মাঝখানে",
     alignRight: "ডানে সারিবদ্ধ",

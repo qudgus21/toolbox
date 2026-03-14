@@ -577,6 +577,7 @@ const te: Dictionary = {
     bold: "బోల్డ్",
     italic: "ఇటాలిక్",
     underline: "అండర్‌లైన్",
+    lineHeight: "పంక్తి అంతరం",
     alignLeft: "ఎడమకు సమలేఖనం",
     alignCenter: "మధ్యలో",
     alignRight: "కుడికి సమలేఖనం",

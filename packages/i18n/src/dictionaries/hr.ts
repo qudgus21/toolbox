@@ -577,6 +577,7 @@ const hr: Dictionary = {
     bold: "Podebljano",
     italic: "Kurziv",
     underline: "Podcrtano",
+    lineHeight: "Prored",
     alignLeft: "Poravnaj lijevo",
     alignCenter: "Centriraj",
     alignRight: "Poravnaj desno",

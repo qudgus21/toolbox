@@ -577,6 +577,7 @@ const mt: Dictionary = {
     bold: "Grassett",
     italic: "Korsiv",
     underline: "Sottolineat",
+    lineHeight: "Spazjatura tal-linja",
     alignLeft: "Allinja x-xellug",
     alignCenter: "Ċentru",
     alignRight: "Allinja l-lemin",

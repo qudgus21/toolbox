@@ -577,6 +577,7 @@ const ga: Dictionary = {
     bold: "Trom",
     italic: "Iodálach",
     underline: "Líne faoi",
+    lineHeight: "Spásáil líne",
     alignLeft: "Ailínigh ar chlé",
     alignCenter: "Lárnaigh",
     alignRight: "Ailínigh ar dheis",

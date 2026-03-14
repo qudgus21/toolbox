@@ -577,6 +577,7 @@ const vi: Dictionary = {
     bold: "In đậm",
     italic: "In nghiêng",
     underline: "Gạch chân",
+    lineHeight: "Khoảng cách dòng",
     alignLeft: "Căn trái",
     alignCenter: "Căn giữa",
     alignRight: "Căn phải",

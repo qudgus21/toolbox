@@ -45,6 +45,7 @@ export interface TextElement extends BaseElement {
   italic: boolean;
   underline: boolean;
   align: TextAlign;
+  lineHeight: number;
   /** True when user manually resized width via anchor */
   manualWidth?: boolean;
 }
@@ -116,6 +117,7 @@ export interface TextDefaults {
   italic: boolean;
   underline: boolean;
   align: TextAlign;
+  lineHeight: number;
 }
 
 export interface ShapeDefaults {
@@ -150,7 +152,7 @@ export interface EditorState {
 export type EditorAction =
   | { type: "SET_PAGES"; pages: PageData[] }
   | { type: "ADD_ELEMENT"; element: EditorElement }
-  | { type: "UPDATE_ELEMENT"; id: string; changes: Partial<EditorElement>; skipHistory?: boolean }
+  | { type: "UPDATE_ELEMENT"; id: string; changes: Partial<EditorElement>; skipHistory?: boolean; skipResize?: boolean }
   | { type: "DELETE_ELEMENT"; id: string }
   | { type: "SELECT_ELEMENT"; id: string | null }
   | { type: "SET_TOOL"; tool: ToolType }
@@ -188,6 +190,7 @@ export interface EditPdfLabels {
   bold: string;
   italic: string;
   underline: string;
+  lineHeight: string;
   alignLeft: string;
   alignCenter: string;
   alignRight: string;
@@ -325,7 +328,7 @@ function getMeasureDiv(): HTMLDivElement | null {
       top: "-9999px",
       whiteSpace: "pre-wrap",
       wordBreak: "break-all",
-      lineHeight: "1",
+      lineHeight: "1.2",
     });
     document.body.appendChild(_measureDiv);
   }
@@ -340,14 +343,16 @@ export function measureTextSize(
   bold: boolean,
   italic: boolean,
   maxWidth: number,
+  lineHeight = 1.2,
 ): { width: number; height: number; lineCount: number } {
   const div = getMeasureDiv();
   if (!div) {
     const w = fontSize * text.length * 0.6;
-    return { width: Math.min(w, maxWidth), height: fontSize, lineCount: 1 };
+    return { width: Math.min(w, maxWidth), height: fontSize * lineHeight, lineCount: 1 };
   }
 
   div.style.font = buildFont(fontSize, fontFamily, bold, italic);
+  div.style.lineHeight = String(lineHeight);
   div.style.width = `${maxWidth}px`;
   div.innerText = text || "\u00A0";
 
@@ -357,7 +362,7 @@ export function measureTextSize(
   const naturalWidth = div.scrollWidth;
   div.style.width = `${maxWidth}px`;
 
-  const lineCount = Math.max(1, Math.round(height / fontSize));
+  const lineCount = Math.max(1, Math.round(height / (fontSize * lineHeight)));
 
   return {
     width: Math.ceil(Math.min(naturalWidth, maxWidth)),

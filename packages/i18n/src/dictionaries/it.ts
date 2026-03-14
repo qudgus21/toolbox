@@ -577,6 +577,7 @@ const it: Dictionary = {
     bold: "Grassetto",
     italic: "Corsivo",
     underline: "Sottolineato",
+    lineHeight: "Interlinea",
     alignLeft: "Allinea a sinistra",
     alignCenter: "Centra",
     alignRight: "Allinea a destra",

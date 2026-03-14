@@ -577,6 +577,7 @@ const ko: Dictionary = {
     bold: "굵게",
     italic: "기울임",
     underline: "밑줄",
+    lineHeight: "줄 간격",
     alignLeft: "왼쪽 정렬",
     alignCenter: "가운데 정렬",
     alignRight: "오른쪽 정렬",

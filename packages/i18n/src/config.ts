@@ -482,6 +482,7 @@ export interface Dictionary {
     bold: string;
     italic: string;
     underline: string;
+    lineHeight: string;
     alignLeft: string;
     alignCenter: string;
     alignRight: string;

@@ -577,6 +577,7 @@ const mr: Dictionary = {
     bold: "ठळक",
     italic: "तिरपे",
     underline: "अधोरेखित",
+    lineHeight: "ओळ अंतर",
     alignLeft: "डावीकडे संरेखित",
     alignCenter: "मध्यभागी",
     alignRight: "उजवीकडे संरेखित",

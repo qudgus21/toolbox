@@ -577,6 +577,7 @@ const is: Dictionary = {
     bold: "Feitletrað",
     italic: "Skáletrað",
     underline: "Undirstrikað",
+    lineHeight: "Línubil",
     alignLeft: "Vinstri jafna",
     alignCenter: "Miðja",
     alignRight: "Hægri jafna",
