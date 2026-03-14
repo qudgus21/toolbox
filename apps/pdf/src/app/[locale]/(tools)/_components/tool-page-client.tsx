@@ -2371,7 +2371,7 @@ export function ToolPageClient({
                   processFiles({ rotations, pageSelections });
                 }
               }}
-              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) || (isEditMetadata && !editedMetadata) || (isProtect && !protectOptions._valid)}
+              disabled={!implemented || (isDeletePages && (deletedPages.size === 0 || deletedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isExtractPages && (extractedPages.size === 0 || extractedPages.size >= (pageCounts[files[0] ? fileId(files[0]) : ""] ?? 0))) || (isOrganizePages && (organizePages.length - organizePages.filter(p => p.deleted).length) === 0) || (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) || (isEditMetadata && !editedMetadata) || (isProtect && !protectOptions._valid) || (isEditPdf && editPdfAnnotations.length === 0)}
               className={cn(
                 "group w-full overflow-hidden rounded-xl px-6 py-4 text-base font-bold",
                 "bg-accent text-accent-foreground shadow-md",
@@ -2381,7 +2381,7 @@ export function ToolPageClient({
               )}
             >
               <span className="flex items-center justify-center gap-2">
-                {isProtect && protectLabels ? protectLabels.protectButton : isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isWebOptimize && webOptimizeLabels ? webOptimizeLabels.optimizeButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
+                {isEditPdf && editPdfLabels ? editPdfLabels.applyButton : isProtect && protectLabels ? protectLabels.protectButton : isEditMetadata && editMetadataLabels ? editMetadataLabels.applyButton : isWebOptimize && webOptimizeLabels ? webOptimizeLabels.optimizeButton : isJpgToPdf && jpgToPdfLabels ? jpgToPdfLabels.convertButton : isPngToPdf && pngToPdfLabels ? pngToPdfLabels.convertButton : isImageToPdf && imageToPdfLabels ? imageToPdfLabels.convertButton : isHtmlToPdf && htmlToPdfLabels ? htmlToPdfLabels.convertButton : isScanToPdf && scanToPdfLabels ? scanToPdfLabels.convertButton : isPdfToJpg && pdfToJpgLabels ? pdfToJpgLabels.convertButton : isPdfToPng && pdfToPngLabels ? pdfToPngLabels.convertButton : isPdfToText && pdfToTextLabels ? pdfToTextLabels.convertButton : title}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
             </button>

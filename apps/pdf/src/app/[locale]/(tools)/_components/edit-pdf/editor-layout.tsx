@@ -1,10 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import dynamic from "next/dynamic";
 import { EditorToolbar } from "./editor-toolbar";
-import { EditorCanvas } from "./editor-canvas";
 import { EditorPropertiesPanel } from "./editor-properties-panel";
 import { EditorPageNavigator } from "./editor-page-navigator";
+
+// Konva requires window — must skip SSR
+const EditorCanvas = dynamic(() => import("./editor-canvas").then((m) => ({ default: m.EditorCanvas })), {
+  ssr: false,
+  loading: () => (
+    <div className="flex flex-1 items-center justify-center bg-background-muted">
+      <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent border-t-transparent" />
+    </div>
+  ),
+});
 import { useEditorStore } from "./use-editor-store";
 import { usePdfPages } from "./use-pdf-pages";
 import type { EditPdfLabels, EditorElement } from "./editor-types";
