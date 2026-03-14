@@ -561,6 +561,7 @@ const es: Dictionary = {
     privacyNote: "La contraseña se procesa completamente en el navegador y nunca se envía a ningún servidor.",
   },
   editPdfTool: {
+    dropFile: "Selecciona un archivo PDF",
     toolSelect: "Seleccionar",
     toolText: "Texto",
     toolImage: "Imagen",

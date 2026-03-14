@@ -109,6 +109,7 @@ export function ToolPageClient({
     isDeletePages,
     isExtractPages,
     isExtractImages,
+    isEditPdf,
     implemented,
     fav,
     showFavHint,
@@ -130,6 +131,7 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
+      hideHeader={isEditPdf && stage === "loaded"}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -174,7 +176,7 @@ export function ToolPageClient({
             <FileUploadZone
               accept={acceptedTypes}
               onFiles={(f) => isSingleFileMode ? addFiles([f[0]]) : addFiles(f)}
-              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : labels.dropFiles}
+              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : isEditPdf && editPdfLabels ? editPdfLabels.dropFile : labels.dropFiles}
               description={`${labels.acceptedFormats}: ${acceptedTypes}`}
             />
             {labels.privacyBadge && (

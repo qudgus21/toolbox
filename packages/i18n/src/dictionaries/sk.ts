@@ -561,6 +561,7 @@ const sk: Dictionary = {
     privacyNote: "Vaše heslo je spracované výlučne v prehliadači a nikdy nie je odoslané na server.",
   },
   editPdfTool: {
+    dropFile: "Vyberte súbor PDF",
     toolSelect: "Výber",
     toolText: "Text",
     toolImage: "Obrázok",

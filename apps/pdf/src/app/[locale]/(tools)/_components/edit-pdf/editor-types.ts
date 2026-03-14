@@ -45,6 +45,8 @@ export interface TextElement extends BaseElement {
   italic: boolean;
   underline: boolean;
   align: TextAlign;
+  /** True when user manually resized width via anchor */
+  manualWidth?: boolean;
 }
 
 export interface ImageElement extends BaseElement {
@@ -148,7 +150,7 @@ export interface EditorState {
 export type EditorAction =
   | { type: "SET_PAGES"; pages: PageData[] }
   | { type: "ADD_ELEMENT"; element: EditorElement }
-  | { type: "UPDATE_ELEMENT"; id: string; changes: Partial<EditorElement> }
+  | { type: "UPDATE_ELEMENT"; id: string; changes: Partial<EditorElement>; skipHistory?: boolean }
   | { type: "DELETE_ELEMENT"; id: string }
   | { type: "SELECT_ELEMENT"; id: string | null }
   | { type: "SET_TOOL"; tool: ToolType }
@@ -167,6 +169,8 @@ export type EditorAction =
 
 // ─── Labels ───────────────────────────────────────────────────
 export interface EditPdfLabels {
+  // Upload
+  dropFile: string;
   // Toolbar
   toolSelect: string;
   toolText: string;
@@ -241,10 +245,17 @@ export function generateId(): string {
 
 export const FONT_OPTIONS = [
   { value: "Helvetica", label: "Arial / Helvetica" },
-  { value: "Courier", label: "Courier" },
   { value: "TimesRoman", label: "Times New Roman" },
+  { value: "Courier", label: "Courier" },
   { value: "Georgia", label: "Georgia" },
   { value: "Verdana", label: "Verdana" },
+  { value: "Tahoma", label: "Tahoma" },
+  { value: "Trebuchet MS", label: "Trebuchet MS" },
+  { value: "Impact", label: "Impact" },
+  { value: "Comic Sans MS", label: "Comic Sans MS" },
+  { value: "Palatino", label: "Palatino" },
+  { value: "Garamond", label: "Garamond" },
+  { value: "Lucida Console", label: "Lucida Console" },
 ] as const;
 
 export const ZOOM_LEVELS = [0.5, 0.75, 1, 1.25, 1.5, 2] as const;
@@ -271,6 +282,89 @@ export const PRESET_COLORS = [
   "#333333",
   "#999999",
 ] as const;
+
+/** Get a canvas font string */
+function buildFont(fontSize: number, fontFamily: string, bold: boolean, italic: boolean) {
+  return `${italic ? "italic " : ""}${bold ? "bold " : ""}${fontSize}px ${fontFamily}`;
+}
+
+/** Cached canvas context for text measurement */
+let _measureCtx: CanvasRenderingContext2D | null = null;
+function getMeasureCtx(): CanvasRenderingContext2D | null {
+  if (typeof document === "undefined") return null;
+  if (!_measureCtx) {
+    _measureCtx = document.createElement("canvas").getContext("2d");
+  }
+  return _measureCtx;
+}
+
+/** Measure single-line text width using Canvas API */
+export function measureTextWidth(
+  text: string,
+  fontSize: number,
+  fontFamily: string,
+  bold = false,
+  italic = false,
+): number {
+  const ctx = getMeasureCtx();
+  if (!ctx) return fontSize * text.length * 0.6;
+  ctx.font = buildFont(fontSize, fontFamily, bold, italic);
+  return Math.ceil(ctx.measureText(text).width) + 4;
+}
+
+/** Hidden DOM element for text measurement — matches overlay styles exactly */
+let _measureDiv: HTMLDivElement | null = null;
+function getMeasureDiv(): HTMLDivElement | null {
+  if (typeof document === "undefined") return null;
+  if (!_measureDiv) {
+    _measureDiv = document.createElement("div");
+    Object.assign(_measureDiv.style, {
+      position: "absolute",
+      visibility: "hidden",
+      left: "-9999px",
+      top: "-9999px",
+      whiteSpace: "pre-wrap",
+      wordBreak: "break-all",
+      lineHeight: "1",
+    });
+    document.body.appendChild(_measureDiv);
+  }
+  return _measureDiv;
+}
+
+/** Measure text size with auto-wrap at maxWidth. Returns { width, height, lineCount }. */
+export function measureTextSize(
+  text: string,
+  fontSize: number,
+  fontFamily: string,
+  bold: boolean,
+  italic: boolean,
+  maxWidth: number,
+): { width: number; height: number; lineCount: number } {
+  const div = getMeasureDiv();
+  if (!div) {
+    const w = fontSize * text.length * 0.6;
+    return { width: Math.min(w, maxWidth), height: fontSize, lineCount: 1 };
+  }
+
+  div.style.font = buildFont(fontSize, fontFamily, bold, italic);
+  div.style.width = `${maxWidth}px`;
+  div.innerText = text || "\u00A0";
+
+  const height = div.scrollHeight;
+  // For auto-width: measure without constraint
+  div.style.width = "";
+  const naturalWidth = div.scrollWidth;
+  div.style.width = `${maxWidth}px`;
+
+  const lineCount = Math.max(1, Math.round(height / fontSize));
+
+  return {
+    width: Math.ceil(Math.min(naturalWidth, maxWidth)),
+    height,
+    lineCount,
+  };
+}
 
 export const SYMBOL_MAP: Record<SymbolKind, string> = {
   check: "✓",

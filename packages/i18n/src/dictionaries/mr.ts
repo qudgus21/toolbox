@@ -561,6 +561,7 @@ const mr: Dictionary = {
     privacyNote: "तुमचा पासवर्ड संपूर्णपणे ब्राउझरमध्ये प्रक्रिया केला जातो आणि कधीही कोणत्याही सर्व्हरला पाठवला जात नाही.",
   },
   editPdfTool: {
+    dropFile: "PDF फाइल निवडा",
     toolSelect: "निवडा",
     toolText: "मजकूर",
     toolImage: "प्रतिमा",

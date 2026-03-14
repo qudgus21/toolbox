@@ -561,6 +561,7 @@ const uk: Dictionary = {
     privacyNote: "Ваш пароль обробляється виключно у браузері й ніколи не надсилається на сервер.",
   },
   editPdfTool: {
+    dropFile: "Оберіть PDF-файл",
     toolSelect: "Виділити",
     toolText: "Текст",
     toolImage: "Зображення",

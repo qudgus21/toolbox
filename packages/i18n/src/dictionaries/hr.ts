@@ -561,6 +561,7 @@ const hr: Dictionary = {
     privacyNote: "Vaša lozinka obrađuje se isključivo u pregledniku i nikad se ne šalje na poslužitelj.",
   },
   editPdfTool: {
+    dropFile: "Odaberite PDF datoteku",
     toolSelect: "Odaberi",
     toolText: "Tekst",
     toolImage: "Slika",

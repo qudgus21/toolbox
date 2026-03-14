@@ -561,6 +561,7 @@ const te: Dictionary = {
     privacyNote: "మీ పాస్‌వర్డ్ పూర్తిగా బ్రౌజర్‌లో ప్రాసెస్ అవుతుంది, ఏ సర్వర్‌కు పంపబడదు.",
   },
   editPdfTool: {
+    dropFile: "PDF ఫైల్‌ను ఎంచుకోండి",
     toolSelect: "ఎంచుకోండి",
     toolText: "టెక్స్ట్",
     toolImage: "చిత్రం",

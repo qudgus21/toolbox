@@ -561,6 +561,7 @@ const hu: Dictionary = {
     privacyNote: "A jelszó kizárólag a böngészőben kerül feldolgozásra, és soha nem kerül szerverre.",
   },
   editPdfTool: {
+    dropFile: "Válasszon PDF-fájlt",
     toolSelect: "Kijelölés",
     toolText: "Szöveg",
     toolImage: "Kép",

@@ -26,6 +26,7 @@ interface TextAnnotation extends BaseAnnotation {
   fontFamily: string;
   fontSize: number;
   fontColor: string;
+  backgroundColor: string;
   bold: boolean;
   italic: boolean;
   align: string;
@@ -169,10 +170,24 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
       switch (ann.type) {
         case "text": {
           const font = await getFont(ann.fontFamily, ann.bold, ann.italic);
-          const pdfY = toPdfY(ann.y, ann.fontSize, ph);
+          const pdfY = toPdfY(ann.y, ann.height, ph);
+
+          // Draw background rectangle if backgroundColor is set
+          if (ann.backgroundColor && ann.backgroundColor !== "transparent") {
+            page.drawRectangle({
+              x: ann.x,
+              y: pdfY,
+              width: ann.width,
+              height: ann.height,
+              color: hexToRgb(ann.backgroundColor),
+              opacity: ann.opacity,
+              rotate: degrees(-ann.rotation),
+            });
+          }
+
           page.drawText(ann.content, {
             x: ann.x,
-            y: pdfY,
+            y: pdfY + ann.height - ann.fontSize,
             size: ann.fontSize,
             font,
             color: hexToRgb(ann.fontColor),

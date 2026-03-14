@@ -561,6 +561,7 @@ const fr: Dictionary = {
     privacyNote: "Le mot de passe est traité entièrement dans le navigateur et n'est jamais envoyé à un serveur.",
   },
   editPdfTool: {
+    dropFile: "Sélectionnez un fichier PDF",
     toolSelect: "Sélectionner",
     toolText: "Texte",
     toolImage: "Image",

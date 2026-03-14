@@ -561,6 +561,7 @@ const tr: Dictionary = {
     privacyNote: "Şifreniz tamamen tarayıcıda işlenir ve hiçbir sunucuya gönderilmez.",
   },
   editPdfTool: {
+    dropFile: "PDF dosyası seçin",
     toolSelect: "Seç",
     toolText: "Metin",
     toolImage: "Görsel",

@@ -561,6 +561,7 @@ const ko: Dictionary = {
     privacyNote: "비밀번호는 브라우저에서만 처리되며 서버로 전송되지 않습니다.",
   },
   editPdfTool: {
+    dropFile: "PDF 파일을 선택하세요",
     toolSelect: "선택",
     toolText: "텍스트",
     toolImage: "이미지",

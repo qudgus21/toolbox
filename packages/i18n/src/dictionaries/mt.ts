@@ -561,6 +561,7 @@ const mt: Dictionary = {
     privacyNote: "Il-password tiegħek tiġi pproċessata kompletament fil-browser u qatt ma tintbagħat lil-ebda server.",
   },
   editPdfTool: {
+    dropFile: "Agħżel fajl PDF",
     toolSelect: "Agħżel",
     toolText: "Test",
     toolImage: "Stampa",

@@ -561,6 +561,7 @@ const zh: Dictionary = {
     privacyNote: "密码仅在浏览器中处理，不会发送至任何服务器。",
   },
   editPdfTool: {
+    dropFile: "选择PDF文件",
     toolSelect: "选择",
     toolText: "文本",
     toolImage: "图片",

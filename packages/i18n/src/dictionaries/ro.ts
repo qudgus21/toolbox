@@ -549,6 +549,7 @@ const ro: Dictionary = {
     privacyNote: "Parola este procesată exclusiv în browser și nu este trimisă niciodată pe niciun server.",
   },
   editPdfTool: {
+    dropFile: "Selectează un fișier PDF",
     toolSelect: "Selectare",
     toolText: "Text",
     toolImage: "Imagine",

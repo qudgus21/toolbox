@@ -477,6 +477,7 @@ const ms: Dictionary = {
     privacyNote: "Kata laluan diproses sepenuhnya dalam pelayar dan tidak pernah dihantar ke mana-mana pelayan.",
   },
   editPdfTool: {
+    dropFile: "Pilih fail PDF",
     toolSelect: "Pilih",
     toolText: "Teks",
     toolImage: "Imej",

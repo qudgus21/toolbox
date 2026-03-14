@@ -561,6 +561,7 @@ const bn: Dictionary = {
     privacyNote: "আপনার পাসওয়ার্ড সম্পূর্ণ ব্রাউজারে প্রসেস হয় এবং কখনও কোনো সার্ভারে পাঠানো হয় না।",
   },
   editPdfTool: {
+    dropFile: "PDF ফাইল নির্বাচন করুন",
     toolSelect: "নির্বাচন",
     toolText: "টেক্সট",
     toolImage: "ছবি",

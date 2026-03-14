@@ -561,6 +561,7 @@ const ru: Dictionary = {
     privacyNote: "Пароль обрабатывается только в браузере и никогда не отправляется на сервер.",
   },
   editPdfTool: {
+    dropFile: "Выберите PDF-файл",
     toolSelect: "Выделение",
     toolText: "Текст",
     toolImage: "Изображение",

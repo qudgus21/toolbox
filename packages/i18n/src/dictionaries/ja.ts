@@ -561,6 +561,7 @@ const ja: Dictionary = {
     privacyNote: "パスワードはブラウザ内でのみ処理され、サーバーに送信されることはありません。",
   },
   editPdfTool: {
+    dropFile: "PDFファイルを選択",
     toolSelect: "選択",
     toolText: "テキスト",
     toolImage: "画像",

@@ -561,6 +561,7 @@ const ga: Dictionary = {
     privacyNote: "Próiseáiltear do phasfhocal go hiomlán sa bhrabhsálaí agus ní sheoltar chuig aon fhreastalaí é riamh.",
   },
   editPdfTool: {
+    dropFile: "Roghnaigh comhad PDF",
     toolSelect: "Roghnaigh",
     toolText: "Téacs",
     toolImage: "Íomhá",

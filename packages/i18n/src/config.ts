@@ -466,6 +466,7 @@ export interface Dictionary {
     privacyNote: string;
   };
   editPdfTool: {
+    dropFile: string;
     toolSelect: string;
     toolText: string;
     toolImage: string;

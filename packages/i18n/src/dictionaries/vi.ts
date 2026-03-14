@@ -561,6 +561,7 @@ const vi: Dictionary = {
     privacyNote: "Mật khẩu được xử lý hoàn toàn trong trình duyệt và không bao giờ được gửi đến máy chủ nào.",
   },
   editPdfTool: {
+    dropFile: "Chọn tệp PDF",
     toolSelect: "Chọn",
     toolText: "Văn bản",
     toolImage: "Hình ảnh",

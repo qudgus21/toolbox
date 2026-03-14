@@ -561,6 +561,7 @@ const da: Dictionary = {
     privacyNote: "Din adgangskode behandles udelukkende i browseren og sendes aldrig til en server.",
   },
   editPdfTool: {
+    dropFile: "Vælg en PDF-fil",
     toolSelect: "Vælg",
     toolText: "Tekst",
     toolImage: "Billede",

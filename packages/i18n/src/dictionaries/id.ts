@@ -561,6 +561,7 @@ const id: Dictionary = {
     privacyNote: "Kata sandi diproses sepenuhnya di browser dan tidak pernah dikirim ke server mana pun.",
   },
   editPdfTool: {
+    dropFile: "Pilih file PDF",
     toolSelect: "Pilih",
     toolText: "Teks",
     toolImage: "Gambar",

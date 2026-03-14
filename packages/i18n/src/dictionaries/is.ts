@@ -561,6 +561,7 @@ const is: Dictionary = {
     privacyNote: "Lykilorðið þitt er unnið alfarið í vafranum og er aldrei sent á neinn þjón.",
   },
   editPdfTool: {
+    dropFile: "Veldu PDF-skrá",
     toolSelect: "Velja",
     toolText: "Texti",
     toolImage: "Mynd",

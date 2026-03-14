@@ -549,6 +549,7 @@ const no: Dictionary = {
     privacyNote: "Passordet ditt behandles utelukkende i nettleseren og sendes aldri til noen server.",
   },
   editPdfTool: {
+    dropFile: "Velg en PDF-fil",
     toolSelect: "Velg",
     toolText: "Tekst",
     toolImage: "Bilde",

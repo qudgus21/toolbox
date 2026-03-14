@@ -561,6 +561,7 @@ const ar: Dictionary = {
     privacyNote: "تتم معالجة كلمة المرور بالكامل في المتصفح ولا تُرسل إلى أي خادم.",
   },
   editPdfTool: {
+    dropFile: "اختر ملف PDF",
     toolSelect: "تحديد",
     toolText: "نص",
     toolImage: "صورة",

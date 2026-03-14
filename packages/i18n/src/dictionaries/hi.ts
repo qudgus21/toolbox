@@ -561,6 +561,7 @@ const hi: Dictionary = {
     privacyNote: "पासवर्ड पूरी तरह ब्राउज़र में प्रोसेस होता है और कभी किसी सर्वर पर नहीं भेजा जाता।",
   },
   editPdfTool: {
+    dropFile: "PDF फ़ाइल चुनें",
     toolSelect: "चयन",
     toolText: "टेक्स्ट",
     toolImage: "छवि",

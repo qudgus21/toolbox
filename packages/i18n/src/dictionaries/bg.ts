@@ -561,6 +561,7 @@ const bg: Dictionary = {
     privacyNote: "Паролата ви се обработва изцяло в браузъра и никога не се изпраща към сървър.",
   },
   editPdfTool: {
+    dropFile: "Изберете PDF файл",
     toolSelect: "Избор",
     toolText: "Текст",
     toolImage: "Изображение",

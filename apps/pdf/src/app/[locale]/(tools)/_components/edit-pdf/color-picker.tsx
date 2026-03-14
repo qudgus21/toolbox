@@ -7,6 +7,7 @@ interface ColorPickerProps {
   value: string;
   onChange: (color: string) => void;
   label?: string;
+  icon?: React.ReactNode;
   allowTransparent?: boolean;
 }
 
@@ -14,6 +15,7 @@ export function ColorPicker({
   value,
   onChange,
   label,
+  icon,
   allowTransparent = false,
 }: ColorPickerProps) {
   const [open, setOpen] = useState(false);
@@ -32,32 +34,33 @@ export function ColorPicker({
   const isTransparent = value === "transparent";
 
   return (
-    <div className="relative" ref={ref}>
-      {label && (
-        <label className="mb-1 block text-xs text-foreground-muted">
-          {label}
-        </label>
-      )}
+    <div className="group/tip relative" ref={ref}>
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex h-8 w-8 items-center justify-center rounded-md border border-border transition-colors hover:border-foreground-muted"
+        className="flex h-8 items-center gap-1 rounded-md border border-border px-1.5 transition-colors hover:border-foreground-muted"
       >
+        {icon && <span className="flex items-center text-foreground-muted">{icon}</span>}
         {isTransparent ? (
-          <div className="relative h-5 w-5 overflow-hidden rounded-sm border border-border">
+          <div className="relative h-4 w-4 overflow-hidden rounded-sm border border-border">
             <div className="absolute inset-0 bg-white" />
             <div className="absolute left-0 top-0 h-[141%] w-px origin-top-left rotate-45 bg-red-500" />
           </div>
         ) : (
           <div
-            className="h-5 w-5 rounded-sm border border-border"
+            className="h-4 w-4 rounded-sm border border-border"
             style={{ backgroundColor: value }}
           />
         )}
       </button>
+      {label && !open && (
+        <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
+          {label}
+        </div>
+      )}
 
       {open && (
-        <div className="absolute left-0 top-full z-50 mt-1 rounded-lg border border-border bg-background-elevated p-2 shadow-lg">
+        <div className="absolute left-0 top-full z-[60] mt-1 rounded-lg border border-border bg-background-elevated p-2 shadow-lg">
           <div className="grid grid-cols-5 gap-1">
             {allowTransparent && (
               <button

@@ -26,7 +26,21 @@
       "Bash(grep -n \"isProtect\\\\|isWebOptimize\\\\|isEditMetadata\\\\|isRotate\\\\|isResize\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
       "Bash(wc -l \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-page-client.tsx\")",
       "Bash(do sed -i '' '/passwordOptional:/d' \"$f\")",
-      "Bash(sed -i '' '/passwordOptionalDesc:/d' \"$f\")"
+      "Bash(sed -i '' '/passwordOptionalDesc:/d' \"$f\")",
+      "Bash(git status --short apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/ apps/pdf/src/lib/processors/edit-pdf.ts apps/pdf/src/lib/processor-registry.ts apps/pdf/package.json)",
+      "Bash(ls -la apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/)",
+      "Bash(git ls-files --others --exclude-standard apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/ apps/pdf/src/lib/processors/edit-pdf.ts)",
+      "Bash(wc -l apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx)",
+      "Bash(wc -l /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-page-client.tsx /Applications/hbh/dev/tools/apps/pdf/src/lib/processors/compress.ts /Applications/hbh/dev/tools/apps/pdf/src/lib/processors/web-optimize.ts)",
+      "Bash(wc -l \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-page-client.tsx\" \"/Applications/hbh/dev/tools/apps/pdf/src/lib/processors/compress.ts\" \"/Applications/hbh/dev/tools/apps/pdf/src/lib/processors/web-optimize.ts\")",
+      "Bash(git add \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-page-client.tsx\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-page-types.ts\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/use-tool-state.ts\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/tool-loaded-content.tsx\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/sort-dropdown.tsx\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/file-info-bar.tsx\" \"apps/pdf/src/app/[locale]/\\(tools\\)/_components/multi-file-toolbar.tsx\" \"apps/pdf/src/lib/processors/pdf-image-utils.ts\" \"apps/pdf/src/lib/processors/compress.ts\" \"apps/pdf/src/lib/processors/web-optimize.ts\")",
+      "Bash(ls -la /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/[slug\\\\\\)/)",
+      "Bash(find /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf -type f -name \"*.ts*\")",
+      "Bash(grep -n \"EditPdf\\\\|editPdf\\\\|isEditPdf\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-loaded-content.tsx)",
+      "Bash(grep -A 5 \"setEditPdfAnnotations\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/use-tool-state.ts)",
+      "Bash(ls -1 \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/\")",
+      "Bash(while read f)",
+      "Bash(do echo \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/$f\")"
     ]
   }
 }

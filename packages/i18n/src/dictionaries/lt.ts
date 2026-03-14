@@ -561,6 +561,7 @@ const lt: Dictionary = {
     privacyNote: "Jūsų slaptažodis apdorojamas tik naršyklėje ir niekada nesiunčiamas į serverį.",
   },
   editPdfTool: {
+    dropFile: "Pasirinkite PDF failą",
     toolSelect: "Pasirinkti",
     toolText: "Tekstas",
     toolImage: "Vaizdas",

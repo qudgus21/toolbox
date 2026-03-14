@@ -561,6 +561,7 @@ const sv: Dictionary = {
     privacyNote: "Ditt lösenord hanteras helt i webbläsaren och skickas aldrig till någon server.",
   },
   editPdfTool: {
+    dropFile: "Välj en PDF-fil",
     toolSelect: "Markera",
     toolText: "Text",
     toolImage: "Bild",

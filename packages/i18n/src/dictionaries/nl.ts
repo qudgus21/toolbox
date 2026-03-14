@@ -561,6 +561,7 @@ const nl: Dictionary = {
     privacyNote: "Je wachtwoord wordt volledig in de browser verwerkt en nooit naar een server verzonden.",
   },
   editPdfTool: {
+    dropFile: "Selecteer een PDF-bestand",
     toolSelect: "Selecteren",
     toolText: "Tekst",
     toolImage: "Afbeelding",

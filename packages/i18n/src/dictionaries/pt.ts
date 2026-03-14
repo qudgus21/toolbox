@@ -561,6 +561,7 @@ const pt: Dictionary = {
     privacyNote: "A senha é processada inteiramente no navegador e nunca é enviada a nenhum servidor.",
   },
   editPdfTool: {
+    dropFile: "Selecione um arquivo PDF",
     toolSelect: "Selecionar",
     toolText: "Texto",
     toolImage: "Imagem",

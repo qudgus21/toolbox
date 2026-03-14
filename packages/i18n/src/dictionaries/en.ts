@@ -561,6 +561,7 @@ const en: Dictionary = {
     privacyNote: "Your password is processed entirely in the browser and never sent to any server.",
   },
   editPdfTool: {
+    dropFile: "Select a PDF file",
     toolSelect: "Select",
     toolText: "Text",
     toolImage: "Image",

@@ -561,6 +561,7 @@ const fi: Dictionary = {
     privacyNote: "Salasanasi käsitellään kokonaan selaimessa eikä sitä lähetetä millekään palvelimelle.",
   },
   editPdfTool: {
+    dropFile: "Valitse PDF-tiedosto",
     toolSelect: "Valitse",
     toolText: "Teksti",
     toolImage: "Kuva",

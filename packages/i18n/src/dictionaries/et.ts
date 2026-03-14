@@ -561,6 +561,7 @@ const et: Dictionary = {
     privacyNote: "Teie parool töödeldakse täielikult brauseris ega saadeta kunagi serverisse.",
   },
   editPdfTool: {
+    dropFile: "Valige PDF-fail",
     toolSelect: "Vali",
     toolText: "Tekst",
     toolImage: "Pilt",

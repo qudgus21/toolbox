@@ -561,6 +561,7 @@ const lv: Dictionary = {
     privacyNote: "Jūsu parole tiek apstrādāta tikai pārlūkprogrammā un nekad netiek nosūtīta uz serveri.",
   },
   editPdfTool: {
+    dropFile: "Izvēlieties PDF failu",
     toolSelect: "Atlasīt",
     toolText: "Teksts",
     toolImage: "Attēls",

@@ -561,6 +561,7 @@ const he: Dictionary = {
     privacyNote: "הסיסמה מעובדת במלואה בדפדפן ולעולם אינה נשלחת לשרת כלשהו.",
   },
   editPdfTool: {
+    dropFile: "בחר קובץ PDF",
     toolSelect: "בחירה",
     toolText: "טקסט",
     toolImage: "תמונה",

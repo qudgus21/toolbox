@@ -561,6 +561,7 @@ const th: Dictionary = {
     privacyNote: "รหัสผ่านถูกประมวลผลในเบราว์เซอร์ทั้งหมดและไม่ถูกส่งไปยังเซิร์ฟเวอร์ใด ๆ",
   },
   editPdfTool: {
+    dropFile: "เลือกไฟล์ PDF",
     toolSelect: "เลือก",
     toolText: "ข้อความ",
     toolImage: "รูปภาพ",

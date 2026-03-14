@@ -561,6 +561,7 @@ const el: Dictionary = {
     privacyNote: "Ο κωδικός σας επεξεργάζεται αποκλειστικά στο πρόγραμμα περιήγησης και δεν αποστέλλεται ποτέ σε κανέναν διακομιστή.",
   },
   editPdfTool: {
+    dropFile: "Επιλέξτε αρχείο PDF",
     toolSelect: "Επιλογή",
     toolText: "Κείμενο",
     toolImage: "Εικόνα",

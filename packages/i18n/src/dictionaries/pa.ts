@@ -561,6 +561,7 @@ const pa: Dictionary = {
     privacyNote: "ਤੁਹਾਡਾ ਪਾਸਵਰਡ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਪ੍ਰੋਸੈਸ ਹੁੰਦਾ ਹੈ ਅਤੇ ਕਦੇ ਵੀ ਕਿਸੇ ਸਰਵਰ ਨੂੰ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ।",
   },
   editPdfTool: {
+    dropFile: "PDF ਫਾਈਲ ਚੁਣੋ",
     toolSelect: "ਚੁਣੋ",
     toolText: "ਟੈਕਸਟ",
     toolImage: "ਚਿੱਤਰ",

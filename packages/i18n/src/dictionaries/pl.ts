@@ -561,6 +561,7 @@ const pl: Dictionary = {
     privacyNote: "Hasło jest przetwarzane wyłącznie w przeglądarce i nigdy nie jest przesyłane na serwer.",
   },
   editPdfTool: {
+    dropFile: "Wybierz plik PDF",
     toolSelect: "Zaznacz",
     toolText: "Tekst",
     toolImage: "Obraz",

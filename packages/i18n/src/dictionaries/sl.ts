@@ -561,6 +561,7 @@ const sl: Dictionary = {
     privacyNote: "Vaše geslo se obdela izključno v brskalniku in se nikoli ne pošlje na strežnik.",
   },
   editPdfTool: {
+    dropFile: "Izberite datoteko PDF",
     toolSelect: "Izbira",
     toolText: "Besedilo",
     toolImage: "Slika",
