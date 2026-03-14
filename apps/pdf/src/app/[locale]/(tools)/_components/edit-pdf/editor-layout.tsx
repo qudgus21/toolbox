@@ -231,7 +231,10 @@ export function EditorLayout({
 
   const scrollToPage = useCallback((idx: number) => {
     const el = pageRefs.current.get(idx);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const container = scrollContainerRef.current;
+    if (!el || !container) return;
+    const top = el.offsetTop - container.offsetTop - 5;
+    container.scrollTo({ top, behavior: "smooth" });
   }, []);
 
   const handleZoom = useCallback(
