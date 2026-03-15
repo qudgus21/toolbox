@@ -81,6 +81,11 @@ export function PageCanvas({
 
   /* ── Transformer ──────────────────────────────────────── */
 
+  const selectedType = useMemo(
+    () => annotations.find((a) => a.id === selectedElementId)?.type ?? null,
+    [annotations, selectedElementId],
+  );
+
   useEffect(() => {
     const transformer = transformerRef.current;
     const stage = stageRef.current;
@@ -94,13 +99,29 @@ export function PageCanvas({
       const node = stage.findOne(`#${selectedElementId}`);
       if (node) {
         transformer.nodes([node]);
+
+        // Configure per element type
+        if (selectedType === "ellipse") {
+          transformer.keepRatio(true);
+          transformer.enabledAnchors(["top-left", "top-right", "bottom-left", "bottom-right"]);
+        } else if (selectedType === "text") {
+          transformer.keepRatio(false);
+          transformer.enabledAnchors(["middle-left", "middle-right"]);
+        } else {
+          transformer.keepRatio(false);
+          transformer.enabledAnchors([
+            "top-left", "top-right", "bottom-left", "bottom-right",
+            "middle-left", "middle-right", "top-center", "bottom-center",
+          ]);
+        }
+
         transformer.getLayer()?.batchDraw();
         return;
       }
     }
     transformer.nodes([]);
     transformer.getLayer()?.batchDraw();
-  }, [selectedElementId, activeTool, annotations]);
+  }, [selectedElementId, activeTool, annotations, selectedType]);
 
   /* ── Coordinate conversion ────────────────────────────── */
 
@@ -701,18 +722,6 @@ export function PageCanvas({
               };
             }}
             rotateEnabled
-            keepRatio={annotations.find((a) => a.id === selectedElementId)?.type === "ellipse"}
-            enabledAnchors={
-              (() => {
-                const selType = annotations.find((a) => a.id === selectedElementId)?.type;
-                if (selType === "text") return ["middle-left", "middle-right"];
-                if (selType === "ellipse") return ["top-left", "top-right", "bottom-left", "bottom-right"];
-                return [
-                  "top-left", "top-right", "bottom-left", "bottom-right",
-                  "middle-left", "middle-right", "top-center", "bottom-center",
-                ];
-              })()
-            }
             anchorFill="#3b82f6"
             anchorStroke="#2563eb"
             anchorStrokeWidth={1}
