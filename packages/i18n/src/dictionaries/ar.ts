@@ -606,6 +606,7 @@ const ar: Dictionary = {
     sendBackward: "إرسال للخلف",
     bringToFront: "نقل للمقدمة",
     sendToBack: "نقل للخلفية",
+    pageLabel: "صفحة",
     pageOf: "{n} / {total}",
     previousPage: "الصفحة السابقة",
     nextPage: "الصفحة التالية",

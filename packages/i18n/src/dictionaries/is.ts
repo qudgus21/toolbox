@@ -606,6 +606,7 @@ const is: Dictionary = {
     sendBackward: "Færa aftar",
     bringToFront: "Setja fremst",
     sendToBack: "Setja aftast",
+    pageLabel: "Síða",
     pageOf: "{n} / {total}",
     previousPage: "Fyrri síða",
     nextPage: "Næsta síða",

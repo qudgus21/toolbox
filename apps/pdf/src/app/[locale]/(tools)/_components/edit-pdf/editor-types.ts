@@ -165,6 +165,7 @@ export type EditorAction =
       id: string;
       direction: "up" | "down" | "top" | "bottom";
     }
+  | { type: "REORDER_ANNOTATIONS"; pageIndex: number; orderedIds: string[] }
   | { type: "UPDATE_TEXT_DEFAULTS"; changes: Partial<TextDefaults> }
   | { type: "UPDATE_SHAPE_DEFAULTS"; changes: Partial<ShapeDefaults> }
   | { type: "UPDATE_DRAW_DEFAULTS"; changes: Partial<DrawDefaults> };
@@ -224,6 +225,7 @@ export interface EditPdfLabels {
   bringToFront: string;
   sendToBack: string;
   // Navigation
+  pageLabel: string;
   pageOf: string;
   previousPage: string;
   nextPage: string;

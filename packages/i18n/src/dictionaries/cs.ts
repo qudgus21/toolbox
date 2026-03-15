@@ -606,6 +606,7 @@ const cs: Dictionary = {
     sendBackward: "Posunout dozadu",
     bringToFront: "Přenést na vrch",
     sendToBack: "Přenést na spod",
+    pageLabel: "Stránka",
     pageOf: "{n} / {total}",
     previousPage: "Předchozí stránka",
     nextPage: "Další stránka",

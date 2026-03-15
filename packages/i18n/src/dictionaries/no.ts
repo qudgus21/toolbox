@@ -594,6 +594,7 @@ const no: Dictionary = {
     sendBackward: "Flytt bakover",
     bringToFront: "Flytt helt frem",
     sendToBack: "Flytt helt bak",
+    pageLabel: "Side",
     pageOf: "{n} / {total}",
     previousPage: "Forrige side",
     nextPage: "Neste side",

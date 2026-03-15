@@ -606,6 +606,7 @@ const ru: Dictionary = {
     sendBackward: "На уровень назад",
     bringToFront: "На передний план",
     sendToBack: "На задний план",
+    pageLabel: "Страница",
     pageOf: "{n} / {total}",
     previousPage: "Предыдущая страница",
     nextPage: "Следующая страница",

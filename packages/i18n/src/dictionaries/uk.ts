@@ -606,6 +606,7 @@ const uk: Dictionary = {
     sendBackward: "На рівень назад",
     bringToFront: "На передній план",
     sendToBack: "На задній план",
+    pageLabel: "Сторінка",
     pageOf: "{n} / {total}",
     previousPage: "Попередня сторінка",
     nextPage: "Наступна сторінка",

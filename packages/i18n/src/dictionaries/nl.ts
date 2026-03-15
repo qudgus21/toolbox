@@ -606,6 +606,7 @@ const nl: Dictionary = {
     sendBackward: "Naar achteren",
     bringToFront: "Naar voorgrond",
     sendToBack: "Naar achtergrond",
+    pageLabel: "Pagina",
     pageOf: "{n} / {total}",
     previousPage: "Vorige pagina",
     nextPage: "Volgende pagina",

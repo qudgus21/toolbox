@@ -606,6 +606,7 @@ const hi: Dictionary = {
     sendBackward: "पीछे भेजें",
     bringToFront: "सबसे आगे लाएँ",
     sendToBack: "सबसे पीछे भेजें",
+    pageLabel: "पृष्ठ",
     pageOf: "{n} / {total}",
     previousPage: "पिछला पृष्ठ",
     nextPage: "अगला पृष्ठ",

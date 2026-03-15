@@ -606,6 +606,7 @@ const zh: Dictionary = {
     sendBackward: "下移一层",
     bringToFront: "置于顶层",
     sendToBack: "置于底层",
+    pageLabel: "页面",
     pageOf: "{n} / {total}",
     previousPage: "上一页",
     nextPage: "下一页",

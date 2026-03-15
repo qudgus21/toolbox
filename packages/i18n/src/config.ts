@@ -511,6 +511,7 @@ export interface Dictionary {
     sendBackward: string;
     bringToFront: string;
     sendToBack: string;
+    pageLabel: string;
     pageOf: string;
     previousPage: string;
     nextPage: string;

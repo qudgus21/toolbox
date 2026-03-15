@@ -606,6 +606,7 @@ const hu: Dictionary = {
     sendBackward: "Hátrébb küldés",
     bringToFront: "Legelőre hozás",
     sendToBack: "Leghátra küldés",
+    pageLabel: "Oldal",
     pageOf: "{n} / {total}",
     previousPage: "Előző oldal",
     nextPage: "Következő oldal",

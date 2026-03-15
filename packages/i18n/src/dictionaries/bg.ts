@@ -606,6 +606,7 @@ const bg: Dictionary = {
     sendBackward: "Назад",
     bringToFront: "Най-отпред",
     sendToBack: "Най-отзад",
+    pageLabel: "Страница",
     pageOf: "{n} / {total}",
     previousPage: "Предишна страница",
     nextPage: "Следваща страница",

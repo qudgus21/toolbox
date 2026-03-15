@@ -606,6 +606,7 @@ const he: Dictionary = {
     sendBackward: "שלח אחורה",
     bringToFront: "הבא לחזית",
     sendToBack: "שלח לרקע",
+    pageLabel: "עמוד",
     pageOf: "{n} / {total}",
     previousPage: "עמוד קודם",
     nextPage: "עמוד הבא",

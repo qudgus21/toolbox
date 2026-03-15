@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import {
   MousePointer2,
   Type,
@@ -19,10 +20,6 @@ import {
   AlignCenter,
   AlignRight,
   Trash2,
-  ArrowUp,
-  ArrowDown,
-  ChevronsUp,
-  ChevronsDown,
   Paintbrush,
   PaintBucket,
   Pen,
@@ -188,10 +185,10 @@ export function EditorToolbar({
   /* ── Render ─────────────────────────────────────────────── */
 
   return (
-    <div className="relative shrink-0 rounded-t-xl border-b border-border bg-background">
+    <div className="relative z-20 shrink-0 rounded-t-xl border-b border-border bg-background">
       {/* ── Row 1: Main Tools ────────────────────────────── */}
-      <div className="flex h-14 items-center px-2">
-        <div className="flex items-center gap-0.5 overflow-x-auto">
+      <div className="flex h-12 items-center px-2">
+        <div className="flex items-center gap-0.5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {/* Select */}
           <ToolBtn
             active={activeTool === "select" && !selectedElement}
@@ -266,7 +263,7 @@ export function EditorToolbar({
           <Divider />
 
           {/* Symbol */}
-          <div ref={symbolBtnRef} className="relative">
+          <div ref={symbolBtnRef}>
             <ToolBtn
               active={activeTool === "symbol"}
               onClick={() => setShowSymbolPicker(!showSymbolPicker)}
@@ -274,11 +271,15 @@ export function EditorToolbar({
             >
               <Smile size={18} />
             </ToolBtn>
-            {showSymbolPicker && (
-              <div className="absolute left-0 top-full z-50 mt-1 rounded-lg border border-border bg-background-elevated p-2 shadow-lg">
-                <SymbolPicker onSelect={handleSymbolSelect} labels={labels} />
-              </div>
-            )}
+            {showSymbolPicker &&
+              createPortal(
+                <SymbolPickerDropdown
+                  btnRef={symbolBtnRef}
+                  onSelect={handleSymbolSelect}
+                  labels={labels}
+                />,
+                document.body,
+              )}
           </div>
 
           <Divider />
@@ -302,13 +303,13 @@ export function EditorToolbar({
 
       </div>
 
-      {/* ── Row 2: Context Bar (overlay, excludes right panel) ── */}
+      {/* ── Row 2: Context Bar (overlay) ── */}
       <div
         className={`absolute left-0 right-0 top-full z-30 border-b border-border bg-background/95 backdrop-blur-sm transition-opacity duration-150 ease-out ${
           showContextBar ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex items-center gap-2 px-3 pb-1.5">
+        <div className="flex items-center gap-2 overflow-x-auto px-3 pb-1.5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {showContextBar && (
             <ContextBarContent
               contextType={contextType!}
@@ -333,7 +334,51 @@ export function EditorToolbar({
   );
 }
 
-/* ── Context Bar ────────────────────────────────────────────── */
+/* ── Context Bar (separate component, rendered outside scroll) ── */
+
+export function EditorContextBar({
+  state,
+  dispatch,
+  labels,
+  selectedElement,
+}: {
+  state: EditorState;
+  dispatch: EditorDispatch;
+  labels: EditPdfLabels;
+  selectedElement: EditorElement | null;
+}) {
+  const activeTool = state.activeTool;
+
+  type ContextType = EditorElement["type"] | null;
+  let contextType: ContextType = null;
+  if (selectedElement) {
+    contextType = selectedElement.type;
+  } else if (
+    activeTool === "text" ||
+    activeTool === "rectangle" ||
+    activeTool === "ellipse" ||
+    activeTool === "line" ||
+    activeTool === "freehand"
+  ) {
+    contextType = activeTool as ContextType;
+  }
+
+  if (!contextType) return null;
+
+  return (
+    <div className="relative z-10 -mb-[36px] border-b border-border bg-background/95 backdrop-blur-sm" style={{ height: 36 }}>
+      <div className="flex h-full items-center gap-2 overflow-x-auto px-3 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <ContextBarContent
+          contextType={contextType}
+          selectedElement={selectedElement}
+          state={state}
+          dispatch={dispatch}
+          labels={labels}
+        />
+      </div>
+    </div>
+  );
+}
 
 function ContextBarContent({
   contextType,
@@ -429,36 +474,6 @@ function ContextBarContent({
 
           <Divider />
 
-          {/* Layer order */}
-          <div className="flex items-center gap-0.5">
-            <LayerBtn
-              onClick={() => dispatch({ type: "MOVE_LAYER", id: selectedElement.id, direction: "top" })}
-              title={labels.bringToFront}
-            >
-              <ChevronsUp size={14} />
-            </LayerBtn>
-            <LayerBtn
-              onClick={() => dispatch({ type: "MOVE_LAYER", id: selectedElement.id, direction: "up" })}
-              title={labels.bringForward}
-            >
-              <ArrowUp size={14} />
-            </LayerBtn>
-            <LayerBtn
-              onClick={() => dispatch({ type: "MOVE_LAYER", id: selectedElement.id, direction: "down" })}
-              title={labels.sendBackward}
-            >
-              <ArrowDown size={14} />
-            </LayerBtn>
-            <LayerBtn
-              onClick={() => dispatch({ type: "MOVE_LAYER", id: selectedElement.id, direction: "bottom" })}
-              title={labels.sendToBack}
-            >
-              <ChevronsDown size={14} />
-            </LayerBtn>
-          </div>
-
-          <Divider />
-
           {/* Delete */}
           <button
             type="button"
@@ -501,7 +516,7 @@ function TextContextControls({
   return (
     <>
       {/* Font family */}
-      <div className="group/tip relative">
+      <PortalTooltip label={labels.fontFamily}>
         <select
           value={val.fontFamily}
           onChange={(e) => update({ fontFamily: e.target.value })}
@@ -513,48 +528,44 @@ function TextContextControls({
             </option>
           ))}
         </select>
-        <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-          {labels.fontFamily}
-        </div>
-      </div>
+      </PortalTooltip>
 
       {/* Font size — select + slider */}
-      <div className="group/tip relative flex items-center gap-1.5">
-        <select
-          value={FONT_SIZES.includes(val.fontSize) ? val.fontSize : ""}
-          onChange={(e) => {
-            const newSize = Number(e.target.value);
-            update({ fontSize: newSize, height: newSize });
-          }}
-          className="h-8 w-[56px] cursor-pointer rounded-md border border-border bg-background px-1 text-center text-xs text-foreground transition-colors hover:border-foreground-muted"
-        >
-          {!FONT_SIZES.includes(val.fontSize) && (
-            <option value="" disabled>
-              {val.fontSize}
-            </option>
-          )}
-          {FONT_SIZES.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-        <input
-          type="range"
-          min={8}
-          max={96}
-          step={2}
-          value={val.fontSize}
-          onChange={(e) => {
-            const newSize = Number(e.target.value);
-            update({ fontSize: newSize, height: newSize });
-          }}
-          className="h-1.5 w-20 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
-        />
-        <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-          {labels.fontSize}
+      <PortalTooltip label={labels.fontSize}>
+        <div className="flex items-center gap-1.5">
+          <select
+            value={FONT_SIZES.includes(val.fontSize) ? val.fontSize : ""}
+            onChange={(e) => {
+              const newSize = Number(e.target.value);
+              update({ fontSize: newSize, height: newSize });
+            }}
+            className="h-8 w-[56px] cursor-pointer rounded-md border border-border bg-background px-1 text-center text-xs text-foreground transition-colors hover:border-foreground-muted"
+          >
+            {!FONT_SIZES.includes(val.fontSize) && (
+              <option value="" disabled>
+                {val.fontSize}
+              </option>
+            )}
+            {FONT_SIZES.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+          <input
+            type="range"
+            min={8}
+            max={96}
+            step={2}
+            value={val.fontSize}
+            onChange={(e) => {
+              const newSize = Number(e.target.value);
+              update({ fontSize: newSize, height: newSize });
+            }}
+            className="h-1.5 w-20 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+          />
         </div>
-      </div>
+      </PortalTooltip>
 
       {/* Font color & Background color */}
       <ColorPicker
@@ -587,21 +598,20 @@ function TextContextControls({
       </div>
 
       {/* Line height */}
-      <div className="group/tip relative flex items-center gap-1.5">
-        <span className="text-xs text-foreground-muted tabular-nums">{val.lineHeight.toFixed(1)}</span>
-        <input
-          type="range"
-          min={0.8}
-          max={3}
-          step={0.1}
-          value={val.lineHeight}
-          onChange={(e) => update({ lineHeight: Number(e.target.value) })}
-          className="h-1.5 w-16 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
-        />
-        <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-          {labels.lineHeight}
+      <PortalTooltip label={labels.lineHeight}>
+        <div className="flex items-center gap-1.5">
+          <span className="text-xs text-foreground-muted tabular-nums">{val.lineHeight.toFixed(1)}</span>
+          <input
+            type="range"
+            min={0.8}
+            max={3}
+            step={0.1}
+            value={val.lineHeight}
+            onChange={(e) => update({ lineHeight: Number(e.target.value) })}
+            className="h-1.5 w-16 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+          />
         </div>
-      </div>
+      </PortalTooltip>
 
       <Divider />
 
@@ -745,6 +755,99 @@ function DrawContextControls({
   );
 }
 
+/* ── Symbol Picker Dropdown (portal) ────────────────────────── */
+
+function SymbolPickerDropdown({
+  btnRef,
+  onSelect,
+  labels,
+}: {
+  btnRef: React.RefObject<HTMLDivElement | null>;
+  onSelect: (symbol: SymbolKind) => void;
+  labels: EditPdfLabels;
+}) {
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+
+  const updatePos = useCallback(() => {
+    if (!btnRef.current) return;
+    const rect = btnRef.current.getBoundingClientRect();
+    setPos({ top: rect.bottom + 4, left: rect.left });
+  }, [btnRef]);
+
+  useEffect(() => {
+    updatePos();
+    window.addEventListener("scroll", updatePos, true);
+    window.addEventListener("resize", updatePos);
+    return () => {
+      window.removeEventListener("scroll", updatePos, true);
+      window.removeEventListener("resize", updatePos);
+    };
+  }, [updatePos]);
+
+  return (
+    <div
+      className="fixed z-[200] rounded-lg border border-border bg-background-elevated p-2 shadow-lg"
+      style={{ top: pos.top, left: pos.left }}
+    >
+      <SymbolPicker onSelect={onSelect} labels={labels} />
+    </div>
+  );
+}
+
+/* ── Portal Tooltip ─────────────────────────────────────────── */
+
+function PortalTooltip({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+
+  const updatePos = useCallback(() => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    setPos({
+      top: rect.bottom + 6,
+      left: rect.left + rect.width / 2,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!hover) return;
+    updatePos();
+    window.addEventListener("scroll", updatePos, true);
+    window.addEventListener("resize", updatePos);
+    return () => {
+      window.removeEventListener("scroll", updatePos, true);
+      window.removeEventListener("resize", updatePos);
+    };
+  }, [hover, updatePos]);
+
+  return (
+    <div
+      ref={ref}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {children}
+      {hover &&
+        createPortal(
+          <div
+            className="pointer-events-none fixed z-[200] -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background shadow-lg"
+            style={{ top: pos.top, left: pos.left }}
+          >
+            {label}
+          </div>,
+          document.body,
+        )}
+    </div>
+  );
+}
+
 /* ── Shared UI Components ───────────────────────────────────── */
 
 function ToolBtn({
@@ -759,7 +862,7 @@ function ToolBtn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="group/tip relative">
+    <PortalTooltip label={title}>
       <button
         type="button"
         onClick={onClick}
@@ -771,10 +874,7 @@ function ToolBtn({
       >
         {children}
       </button>
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-        {title}
-      </div>
-    </div>
+    </PortalTooltip>
   );
 }
 
@@ -790,7 +890,7 @@ function ActionBtn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="group/tip relative">
+    <PortalTooltip label={title}>
       <button
         type="button"
         onClick={onClick}
@@ -799,10 +899,7 @@ function ActionBtn({
       >
         {children}
       </button>
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-        {title}
-      </div>
-    </div>
+    </PortalTooltip>
   );
 }
 
@@ -818,7 +915,7 @@ function ToggleBtn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="group/tip relative">
+    <PortalTooltip label={title}>
       <button
         type="button"
         onClick={onClick}
@@ -830,37 +927,10 @@ function ToggleBtn({
       >
         {children}
       </button>
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-        {title}
-      </div>
-    </div>
+    </PortalTooltip>
   );
 }
 
-function LayerBtn({
-  onClick,
-  title,
-  children,
-}: {
-  onClick: () => void;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="group/tip relative">
-      <button
-        type="button"
-        onClick={onClick}
-        className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border border-border text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground"
-      >
-        {children}
-      </button>
-      <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
-        {title}
-      </div>
-    </div>
-  );
-}
 
 function Divider() {
   return <div className="mx-1 h-6 w-px shrink-0 bg-border" />;

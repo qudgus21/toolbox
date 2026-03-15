@@ -606,6 +606,7 @@ const ja: Dictionary = {
     sendBackward: "背面へ",
     bringToFront: "最前面へ",
     sendToBack: "最背面へ",
+    pageLabel: "ページ",
     pageOf: "{n} / {total}",
     previousPage: "前のページ",
     nextPage: "次のページ",

@@ -606,6 +606,7 @@ const sl: Dictionary = {
     sendBackward: "Premakni nazaj",
     bringToFront: "Postavi v ospredje",
     sendToBack: "Postavi v ozadje",
+    pageLabel: "Stran",
     pageOf: "{n} / {total}",
     previousPage: "Prejšnja stran",
     nextPage: "Naslednja stran",

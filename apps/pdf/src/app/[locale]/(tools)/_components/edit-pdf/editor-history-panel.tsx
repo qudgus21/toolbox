@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import {
   Type,
   ImagePlus,
@@ -10,6 +11,7 @@ import {
   Smile,
   X,
   Trash2,
+  GripVertical,
 } from "lucide-react";
 import {
   SYMBOL_MAP,
@@ -64,6 +66,12 @@ export function EditorHistoryPanel({
 }: EditorHistoryPanelProps) {
   const multiPage = pages.length > 1;
 
+  // Drag state
+  const dragId = useRef<string | null>(null);
+  const dragPageIdx = useRef<number>(-1);
+  const [dropTargetId, setDropTargetId] = useState<string | null>(null);
+  const [dropPosition, setDropPosition] = useState<"above" | "below">("below");
+
   // Group annotations by page
   const grouped = new Map<number, EditorElement[]>();
   for (const el of annotations) {
@@ -95,15 +103,63 @@ export function EditorHistoryPanel({
     }
   };
 
+  const handleDragStart = (el: EditorElement) => {
+    dragId.current = el.id;
+    dragPageIdx.current = el.pageIndex;
+  };
+
+  const handleDragOver = (e: React.DragEvent, targetEl: EditorElement) => {
+    if (dragPageIdx.current !== targetEl.pageIndex) return;
+    e.preventDefault();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const midY = rect.top + rect.height / 2;
+    setDropPosition(e.clientY < midY ? "above" : "below");
+    setDropTargetId(targetEl.id);
+  };
+
+  const handleDrop = (e: React.DragEvent, targetEl: EditorElement) => {
+    e.preventDefault();
+    const srcId = dragId.current;
+    const pageIdx = dragPageIdx.current;
+    if (!srcId || pageIdx !== targetEl.pageIndex) return;
+
+    const pageEls = grouped.get(pageIdx) ?? [];
+    const ids = pageEls.map((el) => el.id);
+    const srcIdx = ids.indexOf(srcId);
+    if (srcIdx === -1) return;
+
+    // Remove from old position
+    ids.splice(srcIdx, 1);
+
+    // Insert at new position
+    let targetIdx = ids.indexOf(targetEl.id);
+    if (targetIdx === -1) return;
+    if (dropPosition === "below") targetIdx += 1;
+    ids.splice(targetIdx, 0, srcId);
+
+    dispatch({ type: "REORDER_ANNOTATIONS", pageIndex: pageIdx, orderedIds: ids });
+
+    // Cleanup
+    dragId.current = null;
+    dragPageIdx.current = -1;
+    setDropTargetId(null);
+  };
+
+  const handleDragEnd = () => {
+    dragId.current = null;
+    dragPageIdx.current = -1;
+    setDropTargetId(null);
+  };
+
   return (
-    <div className="hidden w-[200px] shrink-0 flex-col overflow-hidden rounded-r-xl border-l border-border bg-background md:flex lg:w-[240px]">
+    <div className="hidden w-[260px] shrink-0 flex-col overflow-hidden rounded-r-xl border-l border-border bg-background md:flex lg:w-[300px]">
       {/* Header */}
-      <div className="flex h-[57px] items-center justify-between border-b border-border px-3">
+      <div className="relative flex h-12 items-center justify-center border-b border-border px-3">
         <div className="flex items-baseline gap-1.5">
-          <h3 className="text-sm font-medium text-foreground">
+          <h3 className="text-base font-medium text-foreground">
             {labels.layerOrder}
           </h3>
-          <span className="text-[11px] text-foreground-muted">
+          <span className="text-xs text-foreground-muted">
             {annotations.length}
           </span>
         </div>
@@ -116,7 +172,7 @@ export function EditorHistoryPanel({
               }
             }}
             title="Clear all"
-            className="flex h-7 items-center gap-1 rounded-md px-2 text-xs text-red-500 transition-colors hover:bg-red-50 dark:hover:bg-red-950"
+            className="absolute right-3 flex h-7 items-center gap-1 rounded-md px-2 text-xs text-red-500 transition-colors hover:bg-red-50 dark:hover:bg-red-950"
           >
             <Trash2 size={12} />
           </button>
@@ -131,17 +187,15 @@ export function EditorHistoryPanel({
             <p className="text-xs text-foreground-muted">{labels.noSelection}</p>
           </div>
         ) : (
-          <div className="flex flex-col gap-0.5">
+          <div className="flex flex-col gap-1">
             {[...grouped.entries()]
               .sort(([a], [b]) => a - b)
               .map(([pageIdx, els]) => (
                 <div key={pageIdx}>
                   {/* Page header (only for multi-page) */}
                   {multiPage && (
-                    <div className="mt-2 px-2 pb-1 text-[10px] font-medium uppercase tracking-wider text-foreground-muted first:mt-0">
-                      {labels.pageOf
-                        .replace("{n}", String(pageIdx + 1))
-                        .replace("{total}", String(pages.length))}
+                    <div className="mt-4 mb-1 border-b border-border px-2 pb-1.5 text-sm font-semibold text-foreground first:mt-0">
+                      {labels.pageLabel} {pageIdx + 1}
                     </div>
                   )}
 
@@ -150,19 +204,34 @@ export function EditorHistoryPanel({
                     const Icon = TYPE_ICON[el.type] ?? Type;
                     const colorCls = TYPE_COLOR[el.type] ?? "text-foreground-muted";
                     const isSelected = el.id === selectedElementId;
+                    const isDropTarget = dropTargetId === el.id;
 
                     return (
                       <div
                         key={el.id}
+                        draggable
+                        onDragStart={() => handleDragStart(el)}
+                        onDragOver={(e) => handleDragOver(e, el)}
+                        onDrop={(e) => handleDrop(e, el)}
+                        onDragEnd={handleDragEnd}
                         onClick={() => onSelectElement(el.id)}
-                        className={`group flex cursor-pointer items-center gap-2 rounded-lg px-2 py-1.5 transition-colors ${
+                        className={`group relative flex cursor-grab items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors active:cursor-grabbing ${
                           isSelected
                             ? "bg-accent/10 ring-1 ring-accent/30"
                             : "hover:bg-background-muted"
                         }`}
                       >
-                        <Icon size={14} className={`shrink-0 ${colorCls}`} />
-                        <span className="flex-1 truncate text-xs text-foreground">
+                        {/* Drop indicator */}
+                        {isDropTarget && (
+                          <div
+                            className={`pointer-events-none absolute left-2 right-2 h-0.5 rounded-full bg-accent ${
+                              dropPosition === "above" ? "-top-0.5" : "-bottom-0.5"
+                            }`}
+                          />
+                        )}
+                        <GripVertical size={14} className="shrink-0 text-foreground-muted/50 transition-colors group-hover:text-foreground-muted" />
+                        <Icon size={16} className={`shrink-0 ${colorCls}`} />
+                        <span className="flex-1 truncate text-sm text-foreground">
                           {getLabel(el)}
                         </span>
                         <button
@@ -172,9 +241,9 @@ export function EditorHistoryPanel({
                             dispatch({ type: "DELETE_ELEMENT", id: el.id });
                           }}
                           title={labels.deleteElement}
-                          className="flex h-5 w-5 shrink-0 items-center justify-center rounded opacity-0 transition-opacity hover:bg-red-100 group-hover:opacity-100 dark:hover:bg-red-900"
+                          className="flex h-6 w-6 shrink-0 items-center justify-center rounded opacity-0 transition-opacity hover:bg-red-100 group-hover:opacity-100 dark:hover:bg-red-900"
                         >
-                          <X size={12} className="text-red-500" />
+                          <X size={14} className="text-red-500" />
                         </button>
                       </div>
                     );

@@ -606,6 +606,7 @@ const th: Dictionary = {
     sendBackward: "เลื่อนลง",
     bringToFront: "นำไปหน้าสุด",
     sendToBack: "ส่งไปหลังสุด",
+    pageLabel: "หน้า",
     pageOf: "{n} / {total}",
     previousPage: "หน้าก่อน",
     nextPage: "หน้าถัดไป",

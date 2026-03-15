@@ -606,6 +606,7 @@ const lt: Dictionary = {
     sendBackward: "Perkelti atgal",
     bringToFront: "Į patį priekį",
     sendToBack: "Į patį galą",
+    pageLabel: "Puslapis",
     pageOf: "{n} / {total}",
     previousPage: "Ankstesnis puslapis",
     nextPage: "Kitas puslapis",

@@ -606,6 +606,7 @@ const lv: Dictionary = {
     sendBackward: "Pārvietot atpakaļ",
     bringToFront: "Novietot priekšplānā",
     sendToBack: "Novietot aizmugurē",
+    pageLabel: "Lapa",
     pageOf: "{n} / {total}",
     previousPage: "Iepriekšējā lapa",
     nextPage: "Nākamā lapa",

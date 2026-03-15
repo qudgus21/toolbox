@@ -606,6 +606,7 @@ const hr: Dictionary = {
     sendBackward: "Pomakni natrag",
     bringToFront: "Stavi u prvi plan",
     sendToBack: "Stavi u pozadinu",
+    pageLabel: "Stranica",
     pageOf: "{n} / {total}",
     previousPage: "Prethodna stranica",
     nextPage: "Sljedeća stranica",

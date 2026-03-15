@@ -606,6 +606,7 @@ const et: Dictionary = {
     sendBackward: "Saada tahapoole",
     bringToFront: "Too esiplaanile",
     sendToBack: "Saada tagaplaanile",
+    pageLabel: "Lehekülg",
     pageOf: "{n} / {total}",
     previousPage: "Eelmine leht",
     nextPage: "Järgmine leht",

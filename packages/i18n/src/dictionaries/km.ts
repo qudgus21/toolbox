@@ -522,6 +522,7 @@ const km: Dictionary = {
     sendBackward: "បញ្ជូនទៅក្រោយ",
     bringToFront: "នាំមកមុខគេ",
     sendToBack: "បញ្ជូនទៅក្រោយគេ",
+    pageLabel: "ទំព័រ",
     pageOf: "{n} / {total}",
     previousPage: "ទំព័រមុន",
     nextPage: "ទំព័របន្ទាប់",

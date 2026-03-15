@@ -606,6 +606,7 @@ const ko: Dictionary = {
     sendBackward: "뒤로",
     bringToFront: "맨 앞으로",
     sendToBack: "맨 뒤로",
+    pageLabel: "페이지",
     pageOf: "{n} / {total}",
     previousPage: "이전 페이지",
     nextPage: "다음 페이지",

@@ -606,6 +606,7 @@ const pl: Dictionary = {
     sendBackward: "Przesuń do tyłu",
     bringToFront: "Na wierzch",
     sendToBack: "Na spód",
+    pageLabel: "Strona",
     pageOf: "{n} / {total}",
     previousPage: "Poprzednia strona",
     nextPage: "Następna strona",

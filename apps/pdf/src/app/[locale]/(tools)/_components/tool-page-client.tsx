@@ -132,6 +132,7 @@ export function ToolPageClient({
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
       hideHeader={isEditPdf && stage === "loaded"}
+      className={isEditPdf && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
           <button

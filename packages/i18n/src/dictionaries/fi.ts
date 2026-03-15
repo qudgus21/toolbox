@@ -606,6 +606,7 @@ const fi: Dictionary = {
     sendBackward: "Vie taaksepäin",
     bringToFront: "Tuo eteen",
     sendToBack: "Vie taakse",
+    pageLabel: "Sivu",
     pageOf: "{n} / {total}",
     previousPage: "Edellinen sivu",
     nextPage: "Seuraava sivu",

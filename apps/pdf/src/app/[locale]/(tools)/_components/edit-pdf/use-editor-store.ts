@@ -281,6 +281,24 @@ function editorReducer(
       };
     }
 
+    case "REORDER_ANNOTATIONS": {
+      const otherAnnotations = state.annotations.filter(
+        (e) => e.pageIndex !== action.pageIndex,
+      );
+      const pageAnnotations = state.annotations.filter(
+        (e) => e.pageIndex === action.pageIndex,
+      );
+      const idMap = new Map(pageAnnotations.map((e) => [e.id, e]));
+      const reordered = action.orderedIds
+        .map((id) => idMap.get(id))
+        .filter(Boolean) as typeof pageAnnotations;
+      return {
+        ...state,
+        annotations: [...otherAnnotations, ...reordered],
+        history: pushHistory(state),
+      };
+    }
+
     case "UPDATE_TEXT_DEFAULTS":
       return {
         ...state,

@@ -606,6 +606,7 @@ const pa: Dictionary = {
     sendBackward: "ਪਿੱਛੇ ਭੇਜੋ",
     bringToFront: "ਸਭ ਤੋਂ ਅੱਗੇ",
     sendToBack: "ਸਭ ਤੋਂ ਪਿੱਛੇ",
+    pageLabel: "ਸਫ਼ਾ",
     pageOf: "{n} / {total}",
     previousPage: "ਪਿਛਲਾ ਪੰਨਾ",
     nextPage: "ਅਗਲਾ ਪੰਨਾ",

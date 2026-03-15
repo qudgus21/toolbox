@@ -606,6 +606,7 @@ const mt: Dictionary = {
     sendBackward: "Ibgħat lura",
     bringToFront: "Ġib quddiem nett",
     sendToBack: "Ibgħat wara nett",
+    pageLabel: "Paġna",
     pageOf: "{n} / {total}",
     previousPage: "Paġna ta' qabel",
     nextPage: "Paġna li jmiss",

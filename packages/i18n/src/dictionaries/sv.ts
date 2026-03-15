@@ -606,6 +606,7 @@ const sv: Dictionary = {
     sendBackward: "Flytta bakåt",
     bringToFront: "Längst fram",
     sendToBack: "Längst bak",
+    pageLabel: "Sida",
     pageOf: "{n} / {total}",
     previousPage: "Föregående sida",
     nextPage: "Nästa sida",

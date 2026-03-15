@@ -606,6 +606,7 @@ const id: Dictionary = {
     sendBackward: "Kirim ke belakang",
     bringToFront: "Bawa ke paling depan",
     sendToBack: "Kirim ke paling belakang",
+    pageLabel: "Halaman",
     pageOf: "{n} / {total}",
     previousPage: "Halaman sebelumnya",
     nextPage: "Halaman berikutnya",

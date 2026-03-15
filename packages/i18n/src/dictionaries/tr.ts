@@ -606,6 +606,7 @@ const tr: Dictionary = {
     sendBackward: "Arkaya gönder",
     bringToFront: "En öne getir",
     sendToBack: "En arkaya gönder",
+    pageLabel: "Sayfa",
     pageOf: "{n} / {total}",
     previousPage: "Önceki sayfa",
     nextPage: "Sonraki sayfa",

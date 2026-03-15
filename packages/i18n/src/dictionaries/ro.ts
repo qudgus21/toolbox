@@ -594,6 +594,7 @@ const ro: Dictionary = {
     sendBackward: "Trimite în spate",
     bringToFront: "Adu în prim-plan",
     sendToBack: "Trimite în fundal",
+    pageLabel: "Pagină",
     pageOf: "{n} / {total}",
     previousPage: "Pagina anterioară",
     nextPage: "Pagina următoare",

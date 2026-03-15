@@ -606,6 +606,7 @@ const ga: Dictionary = {
     sendBackward: "Bog siar",
     bringToFront: "Bog go barr",
     sendToBack: "Bog go bun",
+    pageLabel: "Leathanach",
     pageOf: "{n} / {total}",
     previousPage: "An leathanach roimhe",
     nextPage: "An chéad leathanach eile",

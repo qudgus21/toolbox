@@ -522,6 +522,7 @@ const ms: Dictionary = {
     sendBackward: "Hantar ke belakang",
     bringToFront: "Bawa ke paling hadapan",
     sendToBack: "Hantar ke paling belakang",
+    pageLabel: "Halaman",
     pageOf: "{n} / {total}",
     previousPage: "Halaman sebelumnya",
     nextPage: "Halaman seterusnya",

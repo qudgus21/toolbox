@@ -606,6 +606,7 @@ const vi: Dictionary = {
     sendBackward: "Đưa ra sau",
     bringToFront: "Đưa lên trên cùng",
     sendToBack: "Đưa xuống dưới cùng",
+    pageLabel: "Trang",
     pageOf: "{n} / {total}",
     previousPage: "Trang trước",
     nextPage: "Trang sau",

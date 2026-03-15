@@ -606,6 +606,7 @@ const te: Dictionary = {
     sendBackward: "వెనక్కి పంపు",
     bringToFront: "అగ్రభాగానికి తీసుకురా",
     sendToBack: "వెనుకకు పంపు",
+    pageLabel: "పేజీ",
     pageOf: "{n} / {total}",
     previousPage: "మునుపటి పేజీ",
     nextPage: "తదుపరి పేజీ",

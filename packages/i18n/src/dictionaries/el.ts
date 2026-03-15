@@ -606,6 +606,7 @@ const el: Dictionary = {
     sendBackward: "Πίσω",
     bringToFront: "Στην κορυφή",
     sendToBack: "Στο βάθος",
+    pageLabel: "Σελίδα",
     pageOf: "{n} / {total}",
     previousPage: "Προηγούμενη σελίδα",
     nextPage: "Επόμενη σελίδα",
