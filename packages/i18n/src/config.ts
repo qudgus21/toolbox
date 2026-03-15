@@ -465,6 +465,20 @@ export interface Dictionary {
     protectButton: string;
     privacyNote: string;
   };
+  flattenTool: {
+    flattenButton: string;
+    formFieldsLabel: string;
+    formFieldsDesc: string;
+    annotationsLabel: string;
+    annotationsDesc: string;
+    analysisTitle: string;
+    formFieldsFound: string;
+    annotationsFound: string;
+    noFormFields: string;
+    noAnnotations: string;
+    nothingToFlatten: string;
+    annotationType: Record<string, string>;
+  };
   editPdfTool: {
     dropFile: string;
     toolSelect: string;

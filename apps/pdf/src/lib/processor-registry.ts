@@ -25,6 +25,7 @@ registry.set("resize", () => import("./processors/resize"));
 registry.set("web-optimize", () => import("./processors/web-optimize"));
 registry.set("protect", () => import("./processors/protect"));
 registry.set("edit-pdf", () => import("./processors/edit-pdf"));
+registry.set("flatten", () => import("./processors/flatten"));
 // compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
 // registry.set("compress", () => import("./processors/compress"));
 // registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));

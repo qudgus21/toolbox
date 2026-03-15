@@ -58,6 +58,7 @@ export function ToolPageClient({
   resizeLabels,
   webOptimizeLabels,
   protectLabels,
+  flattenLabels,
   editMetadataLabels,
   editPdfLabels,
   children,
@@ -217,6 +218,7 @@ export function ToolPageClient({
               resizeLabels={resizeLabels}
               webOptimizeLabels={webOptimizeLabels}
               protectLabels={protectLabels}
+              flattenLabels={flattenLabels}
               editMetadataLabels={editMetadataLabels}
               editPdfLabels={editPdfLabels}
               files={files}
@@ -312,6 +314,7 @@ export function ToolPageClient({
                   pdfToJpgLabels,
                   pdfToPngLabels,
                   pdfToTextLabels,
+                  flattenLabels,
                 })}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>

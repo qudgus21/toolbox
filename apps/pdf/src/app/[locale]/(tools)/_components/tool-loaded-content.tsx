@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import { FileList } from "./file-list";
 import { SplitOptions } from "./split-options";
@@ -26,14 +26,18 @@ import { EditMetadataOptions } from "./edit-metadata-options";
 import { ResizeOptions, MARGIN_VALUES } from "./resize-options";
 import { WebOptimizeOptions } from "./web-optimize-options";
 import { ProtectOptions } from "./protect-options";
+import { FlattenOptions } from "./flatten-options";
+import { FlattenPreview } from "./flatten-preview";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
 import { FileInfoBar } from "./file-info-bar";
 import { MultiFileToolbar } from "./multi-file-toolbar";
 import type { ReactNode } from "react";
-import type { ToolPageClientProps } from "./tool-page-types";
+import type { ToolPageClientProps, CommonLabels } from "./tool-page-types";
 import type { UseToolStateReturn } from "./use-tool-state";
+import { analyzePdf, type FlattenAnalysis } from "@/lib/processors/flatten";
+import type { FlattenLabels } from "./flatten-options";
 
 function formatSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -62,6 +66,7 @@ interface ToolLoadedContentProps {
   resizeLabels: ToolPageClientProps["resizeLabels"];
   webOptimizeLabels: ToolPageClientProps["webOptimizeLabels"];
   protectLabels: ToolPageClientProps["protectLabels"];
+  flattenLabels: ToolPageClientProps["flattenLabels"];
   editMetadataLabels: ToolPageClientProps["editMetadataLabels"];
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
   children?: ReactNode;
@@ -107,6 +112,7 @@ export function ToolLoadedContent({
   resizeLabels,
   webOptimizeLabels,
   protectLabels,
+  flattenLabels,
   editMetadataLabels,
   editPdfLabels,
   children,
@@ -149,6 +155,7 @@ export function ToolLoadedContent({
     isGrayscale,
     isEditMetadata,
     isEditPdf,
+    isFlatten,
 
     handleSingleFileChange,
     handleAddMore,
@@ -165,6 +172,8 @@ export function ToolLoadedContent({
     setCompressOptions,
     setWebOptimizeOptions,
     setProtectOptions,
+    setFlattenOptions,
+    flattenOptions,
 
     deletedPages,
     setDeletedPages,
@@ -902,6 +911,17 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isFlatten && flattenLabels && files.length > 0 ? (
+        /* ─── Flatten: single-file preview + options sidebar ─── */
+        <FlattenLoadedContent
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          flattenLabels={flattenLabels}
+          flattenOptions={flattenOptions}
+          setFlattenOptions={setFlattenOptions}
+          onChangeFile={handleSingleFileChange}
+          labels={labels}
+        />
       ) : isWebOptimize && webOptimizeLabels && files.length > 0 ? (
         /* ─── Web Optimize: multi-file + options sidebar ─── */
         <>
@@ -1080,6 +1100,78 @@ export function ToolLoadedContent({
 
       {/* 하단 버튼 여백 확보 */}
       <div className="h-24" />
+    </>
+  );
+}
+
+/* ─── Flatten: 분석 + 미리보기 + 옵션 래퍼 ─── */
+
+function FlattenLoadedContent({
+  file,
+  pageCount,
+  flattenLabels,
+  flattenOptions,
+  setFlattenOptions,
+  onChangeFile,
+  labels,
+}: {
+  file: File;
+  pageCount: number;
+  flattenLabels: FlattenLabels;
+  flattenOptions: Record<string, unknown>;
+  setFlattenOptions: (opts: Record<string, unknown>) => void;
+  onChangeFile: () => void;
+  labels: CommonLabels;
+}) {
+  const [analysis, setAnalysis] = useState<FlattenAnalysis | null>(null);
+  const [analysisLoading, setAnalysisLoading] = useState(true);
+
+  useEffect(() => {
+    if (!file) return;
+    let cancelled = false;
+    setAnalysisLoading(true);
+    setAnalysis(null);
+
+    analyzePdf(file).then((result) => {
+      if (cancelled) return;
+      setAnalysis(result);
+      setAnalysisLoading(false);
+    }).catch(() => {
+      if (cancelled) return;
+      setAnalysisLoading(false);
+    });
+
+    return () => { cancelled = true; };
+  }, [file]);
+
+  return (
+    <>
+      {/* File info */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+        <div className="self-start">
+          <FlattenPreview
+            file={file}
+            pageCount={pageCount}
+            analysis={analysis}
+            flattenForms={(flattenOptions.formFields as boolean) ?? true}
+            flattenAnnotations={(flattenOptions.annotations as boolean) ?? true}
+            labels={{
+              pageOf: labels.process ?? "pages",
+              changeFile: labels.startOver ?? "Change file",
+            }}
+            onChangeFile={onChangeFile}
+          />
+        </div>
+
+        <div className="lg:sticky lg:top-4 lg:self-start">
+          <FlattenOptions
+            onChange={setFlattenOptions}
+            labels={flattenLabels}
+            analysis={analysis}
+            analysisLoading={analysisLoading}
+          />
+        </div>
+      </div>
     </>
   );
 }

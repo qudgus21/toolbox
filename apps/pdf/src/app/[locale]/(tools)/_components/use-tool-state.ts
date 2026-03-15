@@ -71,7 +71,8 @@ export function useToolState({
   const isGrayscale = slug === "grayscale";
   const isEditMetadata = slug === "edit-metadata";
   const isEditPdf = slug === "edit-pdf";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf;
+  const isFlatten = slug === "flatten";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten;
 
   const implemented = hasProcessor(slug);
 
@@ -220,6 +221,9 @@ export function useToolState({
   const [resizeOrientation, setResizeOrientation] = useState<"portrait" | "landscape">("portrait");
   const [resizeScaleMode, setResizeScaleMode] = useState<ScaleMode>("fit");
   const [resizeMarginPreset, setResizeMarginPreset] = useState<MarginPreset>("none");
+
+  // ─── Flatten options ───
+  const [flattenOptions, setFlattenOptions] = useState<Record<string, unknown>>({ formFields: true, annotations: true });
 
   // ─── Edit PDF annotations ───
   const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
@@ -417,6 +421,8 @@ export function useToolState({
       return protectOptions;
     } else if (isGrayscale) {
       return {};
+    } else if (isFlatten) {
+      return flattenOptions;
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -437,8 +443,8 @@ export function useToolState({
     slug, isSplit, isCompress, isWebOptimize, isDeletePages, isExtractPages,
     isOrganizePages, isResize, isRotate, isPdfToJpg, isPdfToPng, isJpgToPdf,
     isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf, isPdfToText,
-    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata,
-    splitOptions, compressOptions, webOptimizeOptions, protectOptions,
+    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten,
+    splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions,
     deletedPages, deletePageOrder, extractedPages, extractPageOrder,
     organizePages, resizePreset, resizeCustomW, resizeCustomH, resizeOrientation,
     resizeScaleMode, resizeMarginPreset, rotations, pageSelections,
@@ -468,7 +474,9 @@ export function useToolState({
     pdfToJpgLabels?: { convertButton: string };
     pdfToPngLabels?: { convertButton: string };
     pdfToTextLabels?: { convertButton: string };
+    flattenLabels?: { flattenButton: string };
   }): string => {
+    if (isFlatten && props.flattenLabels) return props.flattenLabels.flattenButton;
     if (isEditPdf && props.editPdfLabels) return props.editPdfLabels.applyButton;
     if (isProtect && props.protectLabels) return props.protectLabels.protectButton;
     if (isEditMetadata && props.editMetadataLabels) return props.editMetadataLabels.applyButton;
@@ -483,7 +491,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -509,12 +517,12 @@ export function useToolState({
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
     if (isEditPdf && currentStage !== "idle") return "full";
-    if ((isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
+    if ((isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
     isEditPdf, isSplit, isDeletePages, isExtractPages, isOrganizePages,
-    isRotate, isProtect, isEditMetadata, isPdfToJpg, isPdfToPng, isPdfToText,
+    isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
   ]);
@@ -542,6 +550,7 @@ export function useToolState({
     isGrayscale,
     isEditMetadata,
     isEditPdf,
+    isFlatten,
     isSingleFileMode,
     implemented,
 
@@ -670,6 +679,10 @@ export function useToolState({
     setResizeScaleMode,
     resizeMarginPreset,
     setResizeMarginPreset,
+
+    // Flatten
+    flattenOptions,
+    setFlattenOptions,
 
     // Edit PDF
     editPdfAnnotations,

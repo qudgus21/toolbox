@@ -3,7 +3,7 @@ import { resolve } from "path";
 import { PDFDocument } from "pdf-lib";
 import JSZip from "jszip";
 
-const FIXTURES_DIR = resolve(__dirname, "../../../../test-fixtures");
+const FIXTURES_DIR = resolve(__dirname, "../../../../../../test-fixtures/pdf");
 const ROOT_FIXTURES_DIR = resolve(__dirname, "../../../../../../test-fixtures");
 
 /**
