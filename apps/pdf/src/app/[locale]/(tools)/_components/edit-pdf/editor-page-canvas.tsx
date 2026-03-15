@@ -81,8 +81,14 @@ export function PageCanvas({
 
   /* ── Transformer ──────────────────────────────────────── */
 
-  const selectedType = useMemo(
-    () => annotations.find((a) => a.id === selectedElementId)?.type ?? null,
+  const selectedType = useMemo(() => {
+    if (!selectedElementId) return null;
+    return annotations.find((a) => a.id === selectedElementId)?.type ?? null;
+  }, [annotations, selectedElementId]);
+
+  // Track whether there's a selected element on this page (stable boolean)
+  const hasSelectionOnPage = useMemo(
+    () => !!selectedElementId && annotations.some((a) => a.id === selectedElementId),
     [annotations, selectedElementId],
   );
 
@@ -91,11 +97,11 @@ export function PageCanvas({
     const stage = stageRef.current;
     if (!transformer || !stage) return;
 
-    // Only activate for elements on THIS page
-    const selectedOnThisPage =
-      selectedElementId && annotations.some((a) => a.id === selectedElementId);
+    // Skip transformer updates when not in select mode to avoid
+    // re-render loops during drawing (freehand dispatches every mousemove)
+    if (activeTool !== "select") return;
 
-    if (selectedOnThisPage && activeTool === "select") {
+    if (hasSelectionOnPage) {
       const node = stage.findOne(`#${selectedElementId}`);
       if (node) {
         transformer.nodes([node]);
@@ -121,7 +127,7 @@ export function PageCanvas({
     }
     transformer.nodes([]);
     transformer.getLayer()?.batchDraw();
-  }, [selectedElementId, activeTool, annotations, selectedType]);
+  }, [selectedElementId, activeTool, hasSelectionOnPage, selectedType]);
 
   /* ── Coordinate conversion ────────────────────────────── */
 
@@ -277,20 +283,28 @@ export function PageCanvas({
         if (!pos) return;
         const { x, y } = stageToPage(pos.x, pos.y);
         drawingRef.current.points = [...drawingRef.current.points, x, y];
-        dispatch({
-          type: "UPDATE_ELEMENT",
-          id: drawingRef.current.id,
-          changes: { points: [...drawingRef.current.points] },
-        });
+
+        // Update Konva node directly to avoid dispatch → re-render on every mousemove
+        const node = stage.findOne(`#${drawingRef.current.id}`) as Konva.Line | null;
+        if (node) {
+          node.points(drawingRef.current.points.map((p) => p * scale));
+          node.getLayer()?.batchDraw();
+        }
       }
     },
-    [activeTool, stageToPage, dispatch],
+    [activeTool, stageToPage, scale],
   );
 
   /* ── Mouse Up ─────────────────────────────────────────── */
 
   const handleStageMouseUp = useCallback(() => {
     if (activeTool === "freehand" && drawingRef.current) {
+      // Sync final points to state (mousemove only updated Konva node directly)
+      dispatch({
+        type: "UPDATE_ELEMENT",
+        id: drawingRef.current.id,
+        changes: { points: [...drawingRef.current.points] },
+      });
       drawingRef.current = null;
     }
     if (activeTool === "line" && lineStartRef.current) {
