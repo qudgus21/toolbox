@@ -609,6 +609,8 @@ const sk: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Predchádzajúca stránka",
     nextPage: "Ďalšia stránka",
+    singlePage: "Jedna stránka",
+    doublePage: "Dve stránky",
     applyButton: "Použiť úpravy",
     addText: "Pridať text",
     addImage: "Pridať obrázok",

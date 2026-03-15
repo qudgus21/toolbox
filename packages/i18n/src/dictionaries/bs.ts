@@ -609,6 +609,8 @@ const bs: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Prethodna stranica",
     nextPage: "Sljedeća stranica",
+    singlePage: "Jedna stranica",
+    doublePage: "Dvije stranice",
     applyButton: "Primijeni izmjene",
     addText: "Dodaj tekst",
     addImage: "Dodaj sliku",

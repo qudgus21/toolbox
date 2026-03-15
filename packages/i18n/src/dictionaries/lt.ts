@@ -609,6 +609,8 @@ const lt: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Ankstesnis puslapis",
     nextPage: "Kitas puslapis",
+    singlePage: "Vienas puslapis",
+    doublePage: "Du puslapiai",
     applyButton: "Pritaikyti pakeitimus",
     addText: "Pridėti tekstą",
     addImage: "Pridėti vaizdą",

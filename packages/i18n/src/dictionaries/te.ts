@@ -609,6 +609,8 @@ const te: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "మునుపటి పేజీ",
     nextPage: "తదుపరి పేజీ",
+    singlePage: "ఒక పేజీ",
+    doublePage: "రెండు పేజీలు",
     applyButton: "మార్పులు వర్తింపజేయి",
     addText: "టెక్స్ట్ జోడించు",
     addImage: "చిత్రం జోడించు",

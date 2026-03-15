@@ -609,6 +609,8 @@ const fi: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Edellinen sivu",
     nextPage: "Seuraava sivu",
+    singlePage: "Yksi sivu",
+    doublePage: "Kaksi sivua",
     applyButton: "Ota muokkaukset käyttöön",
     addText: "Lisää teksti",
     addImage: "Lisää kuva",

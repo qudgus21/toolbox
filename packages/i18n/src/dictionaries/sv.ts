@@ -609,6 +609,8 @@ const sv: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Föregående sida",
     nextPage: "Nästa sida",
+    singlePage: "En sida",
+    doublePage: "Två sidor",
     applyButton: "Tillämpa ändringar",
     addText: "Lägg till text",
     addImage: "Lägg till bild",

@@ -609,6 +609,8 @@ const is: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Fyrri síða",
     nextPage: "Næsta síða",
+    singlePage: "Ein síða",
+    doublePage: "Tvær síður",
     applyButton: "Beita breytingum",
     addText: "Bæta við texta",
     addImage: "Bæta við mynd",

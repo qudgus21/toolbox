@@ -609,6 +609,8 @@ const el: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Προηγούμενη σελίδα",
     nextPage: "Επόμενη σελίδα",
+    singlePage: "Μία σελίδα",
+    doublePage: "Δύο σελίδες",
     applyButton: "Εφαρμογή αλλαγών",
     addText: "Προσθήκη κειμένου",
     addImage: "Προσθήκη εικόνας",

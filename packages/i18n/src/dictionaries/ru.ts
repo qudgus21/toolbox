@@ -609,6 +609,8 @@ const ru: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Предыдущая страница",
     nextPage: "Следующая страница",
+    singlePage: "Одна страница",
+    doublePage: "Две страницы",
     applyButton: "Применить изменения",
     addText: "Добавить текст",
     addImage: "Добавить изображение",

@@ -597,6 +597,8 @@ const ro: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Pagina anterioară",
     nextPage: "Pagina următoare",
+    singlePage: "O pagină",
+    doublePage: "Două pagini",
     applyButton: "Aplică modificările",
     addText: "Adaugă text",
     addImage: "Adaugă imagine",

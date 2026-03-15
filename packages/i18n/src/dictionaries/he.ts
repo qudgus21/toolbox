@@ -609,6 +609,8 @@ const he: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "עמוד קודם",
     nextPage: "עמוד הבא",
+    singlePage: "עמוד יחיד",
+    doublePage: "שני עמודים",
     applyButton: "החל עריכות",
     addText: "הוסף טקסט",
     addImage: "הוסף תמונה",

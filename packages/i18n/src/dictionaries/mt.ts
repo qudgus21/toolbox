@@ -609,6 +609,8 @@ const mt: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Paġna ta' qabel",
     nextPage: "Paġna li jmiss",
+    singlePage: "Paġna waħda",
+    doublePage: "Żewġ paġni",
     applyButton: "Applika l-bidliet",
     addText: "Żid test",
     addImage: "Żid stampa",

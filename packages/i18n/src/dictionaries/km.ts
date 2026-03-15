@@ -525,6 +525,8 @@ const km: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "ទំព័រមុន",
     nextPage: "ទំព័របន្ទាប់",
+    singlePage: "មួយទំព័រ",
+    doublePage: "ពីរទំព័រ",
     applyButton: "អនុវត្តការកែសម្រួល",
     addText: "បន្ថែមអត្ថបទ",
     addImage: "បន្ថែមរូបភាព",

@@ -40,7 +40,10 @@
       "Bash(grep -A 5 \"setEditPdfAnnotations\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/use-tool-state.ts)",
       "Bash(ls -1 \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/\")",
       "Bash(while read f)",
-      "Bash(do echo \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/$f\")"
+      "Bash(do echo \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/$f\")",
+      "Bash(ls -la /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/)",
+      "Bash(grep -l \"isEditPdf\\\\|edit-pdf\\\\|EditorLayout\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/*.tsx)",
+      "Bash(grep -A 30 \"isEditPdf\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-loaded-content.tsx)"
     ]
   }
 }

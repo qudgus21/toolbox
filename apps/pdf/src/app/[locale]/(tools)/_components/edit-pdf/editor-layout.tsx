@@ -7,15 +7,19 @@ import {
   ChevronDown,
   ZoomIn,
   ZoomOut,
+  MoveHorizontal,
+  Maximize2,
+  Columns2,
 } from "lucide-react";
 import { EditorToolbar } from "./editor-toolbar";
 import { EditorHistoryPanel } from "./editor-history-panel";
 import { useEditorStore } from "./use-editor-store";
 import { usePdfPages } from "./use-pdf-pages";
-import { ZOOM_LEVELS } from "./editor-types";
 import type { EditPdfLabels, EditorElement } from "./editor-types";
 
 export type { EditPdfLabels };
+
+const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300] as const;
 
 /* ── Dynamic import for Konva (SSR-safe) ────────────────────── */
 
@@ -27,7 +31,7 @@ const PageCanvas = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex items-center justify-center bg-white">
+      <div className="flex h-full w-full items-center justify-center bg-white">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-accent border-t-transparent" />
       </div>
     ),
@@ -55,9 +59,16 @@ export function EditorLayout({
   const editorContainerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const pageRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+  const programmaticScroll = useRef(false);
   const [containerWidth, setContainerWidth] = useState(800);
   const [editorHeight, setEditorHeight] = useState("calc(100vh - 140px)");
   const [visiblePages, setVisiblePages] = useState<Set<number>>(new Set([0]));
+  const [viewMode, setViewMode] = useState<"fitWidth" | "fitPage" | null>("fitWidth");
+  const [columns, setColumns] = useState<1 | 2>(1);
+  const [manualScale, setManualScale] = useState(1);
+  const [scrollHeight, setScrollHeight] = useState(600);
+  const [pageInput, setPageInput] = useState("");
+  const [zoomInput, setZoomInput] = useState("");
 
   /* ── Auto-measure available height ───────────────────── */
 
@@ -93,7 +104,10 @@ export function EditorLayout({
   useEffect(() => {
     const el = scrollContainerRef.current;
     if (!el) return;
-    const measure = () => setContainerWidth(el.clientWidth);
+    const measure = () => {
+      setContainerWidth(el.clientWidth);
+      setScrollHeight(el.clientHeight);
+    };
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(el);
@@ -146,8 +160,10 @@ export function EditorLayout({
 
     let rafId = 0;
     const handleScroll = () => {
+      if (programmaticScroll.current) return;
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
+        if (programmaticScroll.current) return;
         const containerRect = container.getBoundingClientRect();
         const centerY = containerRect.top + containerRect.height / 2;
 
@@ -224,39 +240,61 @@ export function EditorLayout({
 
   const maxPageWidth =
     pages.length > 0 ? Math.max(...pages.map((p) => p.width)) : 1;
-  const baseScale = Math.min(1, (containerWidth - 80) / maxPageWidth);
-  const scale = baseScale * state.zoom;
+  const maxPageHeight =
+    pages.length > 0 ? Math.max(...pages.map((p) => p.height)) : 1;
+
+  const fitWidthScale = columns === 2
+    ? (containerWidth - 48 - 24) / (2 * maxPageWidth)
+    : (containerWidth - 80) / maxPageWidth;
+
+  const fitPageScale = Math.min(
+    fitWidthScale,
+    (scrollHeight - 80) / maxPageHeight,
+  );
+
+  const rawScale = viewMode === "fitWidth"
+    ? fitWidthScale
+    : viewMode === "fitPage"
+      ? fitPageScale
+      : manualScale;
+  const scale = pages.length > 0 ? Math.max(0.1, Math.min(5, rawScale)) : 1;
+  const zoomPercent = Math.round(scale * 100);
 
   /* ── Navigation helpers ───────────────────────────────── */
 
   const scrollToPage = useCallback((idx: number) => {
+    programmaticScroll.current = true;
+    dispatch({ type: "SET_PAGE", index: idx });
     const el = pageRefs.current.get(idx);
     const container = scrollContainerRef.current;
-    if (!el || !container) return;
-    const top = el.offsetTop - container.offsetTop - 5;
-    container.scrollTo({ top, behavior: "smooth" });
-  }, []);
+    if (!el || !container) {
+      programmaticScroll.current = false;
+      return;
+    }
+    const top = Math.max(0, el.offsetTop - 5);
+    // dispatch 리렌더 이후 smooth 스크롤 시작
+    requestAnimationFrame(() => {
+      container.scrollTo({ top, behavior: "smooth" });
+    });
+    const unlock = () => { programmaticScroll.current = false; };
+    const fallback = setTimeout(unlock, 1000);
+    container.addEventListener("scrollend", () => {
+      clearTimeout(fallback);
+      unlock();
+    }, { once: true });
+  }, [dispatch]);
 
-  const handleZoom = useCallback(
-    (direction: "in" | "out") => {
-      const currentIdx = ZOOM_LEVELS.findIndex((z) => z >= state.zoom);
-      if (direction === "in") {
-        const next =
-          ZOOM_LEVELS[Math.min(currentIdx + 1, ZOOM_LEVELS.length - 1)];
-        dispatch({ type: "SET_ZOOM", zoom: next ?? 2 });
-      } else {
-        const prev =
-          ZOOM_LEVELS[
-            Math.max(
-              (currentIdx === -1 ? ZOOM_LEVELS.length : currentIdx) - 1,
-              0,
-            )
-          ];
-        dispatch({ type: "SET_ZOOM", zoom: prev ?? 0.5 });
-      }
-    },
-    [state.zoom, dispatch],
-  );
+  const handleZoomIn = useCallback(() => {
+    const next = ZOOM_STEPS.find((s) => s > zoomPercent) ?? 300;
+    setManualScale(next / 100);
+    setViewMode(null);
+  }, [zoomPercent]);
+
+  const handleZoomOut = useCallback(() => {
+    const prev = [...ZOOM_STEPS].reverse().find((s) => s < zoomPercent) ?? 25;
+    setManualScale(prev / 100);
+    setViewMode(null);
+  }, [zoomPercent]);
 
   const handleSelectAnnotation = useCallback(
     (id: string) => {
@@ -354,13 +392,13 @@ export function EditorLayout({
         >
           {/* Tool placement guide */}
           {state.activeTool !== "select" && (
-            <div className="pointer-events-none sticky left-0 top-12 z-30 flex justify-center">
+            <div className="pointer-events-none sticky top-14 z-30 -mb-[28px] flex justify-center" style={{ height: 28 }}>
               <span className="rounded-full border border-blue-300 bg-blue-50 px-4 py-1.5 text-xs font-medium text-blue-600 shadow-sm backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-400">
                 {labels.clickToPlace}
               </span>
             </div>
           )}
-          <div className="flex flex-col items-center gap-6 px-4 py-6 pb-16">
+          <div className={columns === 2 ? "flex flex-wrap justify-center gap-4 px-2 py-6 pb-16" : "flex flex-col items-center gap-6 px-4 py-6 pb-16"}>
             {pages.map((page, idx) => (
               <div
                 key={idx}
@@ -388,41 +426,55 @@ export function EditorLayout({
               </div>
             ))}
           </div>
-        </div>
 
-        {/* ── Floating Bottom Nav Bar ───────────────────── */}
-        <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1 rounded-xl border border-border bg-background/95 px-3 py-1.5 shadow-lg backdrop-blur-sm">
+          {/* ── Sticky Bottom Nav Bar ──────────────────── */}
+          <div className="sticky bottom-[76px] z-50 -mt-12 flex justify-center pb-2" style={{ isolation: "isolate" }}>
+            <div className="relative z-50 flex items-center gap-1 rounded-xl border border-border bg-background/95 px-2 py-1.5 shadow-lg backdrop-blur-sm">
           {/* Page up */}
-          <button
-            type="button"
-            onClick={() =>
-              scrollToPage(Math.max(0, state.activePageIndex - 1))
-            }
-            disabled={state.activePageIndex === 0}
-            className="flex h-7 w-7 items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted disabled:opacity-30"
-          >
-            <ChevronUp size={16} />
-          </button>
+          <NavTip label={labels.previousPage}>
+            <button
+              type="button"
+              onClick={() => scrollToPage(Math.max(0, state.activePageIndex - 1))}
+              disabled={state.activePageIndex === 0}
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted disabled:cursor-default disabled:opacity-30"
+            >
+              <ChevronUp size={16} />
+            </button>
+          </NavTip>
           {/* Page down */}
-          <button
-            type="button"
-            onClick={() =>
-              scrollToPage(
-                Math.min(pages.length - 1, state.activePageIndex + 1),
-              )
-            }
-            disabled={state.activePageIndex >= pages.length - 1}
-            className="flex h-7 w-7 items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted disabled:opacity-30"
-          >
-            <ChevronDown size={16} />
-          </button>
+          <NavTip label={labels.nextPage}>
+            <button
+              type="button"
+              onClick={() => scrollToPage(Math.min(pages.length - 1, state.activePageIndex + 1))}
+              disabled={state.activePageIndex >= pages.length - 1}
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted disabled:cursor-default disabled:opacity-30"
+            >
+              <ChevronDown size={16} />
+            </button>
+          </NavTip>
 
           <div className="mx-1 h-5 w-px bg-border" />
 
-          {/* Page indicator */}
-          <span className="min-w-[28px] text-center text-sm font-medium tabular-nums text-foreground">
-            {state.activePageIndex + 1}
-          </span>
+          {/* Page input */}
+          <input
+            type="text"
+            inputMode="numeric"
+            value={pageInput !== "" ? pageInput : String(state.activePageIndex + 1)}
+            onFocus={(e) => {
+              setPageInput(String(state.activePageIndex + 1));
+              requestAnimationFrame(() => e.target.select());
+            }}
+            onChange={(e) => setPageInput(e.target.value.replace(/\D/g, ""))}
+            onBlur={() => {
+              const num = parseInt(pageInput, 10);
+              if (!isNaN(num) && num >= 1 && num <= pages.length) {
+                scrollToPage(num - 1);
+              }
+              setPageInput("");
+            }}
+            onKeyDown={(e) => { if (e.key === "Enter") e.currentTarget.blur(); }}
+            className="h-7 w-12 cursor-text rounded-md bg-background-muted px-1 text-center text-sm tabular-nums text-foreground outline-none focus:ring-1 focus:ring-accent"
+          />
           <span className="text-sm text-foreground-muted">
             / {pages.length}
           </span>
@@ -430,25 +482,101 @@ export function EditorLayout({
           <div className="mx-1 h-5 w-px bg-border" />
 
           {/* Zoom out */}
-          <button
-            type="button"
-            onClick={() => handleZoom("out")}
-            className="flex h-7 w-7 items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted"
-          >
-            <ZoomOut size={14} />
-          </button>
-          {/* Zoom % */}
-          <span className="min-w-[36px] text-center text-xs tabular-nums text-foreground-muted">
-            {Math.round(state.zoom * 100)}%
-          </span>
+          <NavTip label={labels.zoomOut}>
+            <button
+              type="button"
+              onClick={handleZoomOut}
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted"
+            >
+              <ZoomOut size={14} />
+            </button>
+          </NavTip>
           {/* Zoom in */}
-          <button
-            type="button"
-            onClick={() => handleZoom("in")}
-            className="flex h-7 w-7 items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted"
-          >
-            <ZoomIn size={14} />
-          </button>
+          <NavTip label={labels.zoomIn}>
+            <button
+              type="button"
+              onClick={handleZoomIn}
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted"
+            >
+              <ZoomIn size={14} />
+            </button>
+          </NavTip>
+
+          <div className="mx-1 h-5 w-px bg-border" />
+
+          {/* Zoom % input */}
+          <NavTip label={`${labels.zoomIn} / ${labels.zoomOut}`}>
+            <input
+              type="text"
+              inputMode="numeric"
+              value={zoomInput !== "" ? zoomInput : `${zoomPercent}%`}
+              onFocus={(e) => {
+                setZoomInput(String(zoomPercent));
+                requestAnimationFrame(() => e.target.select());
+              }}
+              onChange={(e) => setZoomInput(e.target.value.replace(/[^\d]/g, ""))}
+              onBlur={() => {
+                const num = parseInt(zoomInput, 10);
+                if (!isNaN(num) && num >= 10 && num <= 500) {
+                  setManualScale(num / 100);
+                  setViewMode(null);
+                }
+                setZoomInput("");
+              }}
+              onKeyDown={(e) => { if (e.key === "Enter") e.currentTarget.blur(); }}
+              className="h-7 w-14 cursor-text rounded-md bg-background-muted px-1 text-center text-sm tabular-nums text-foreground outline-none focus:ring-1 focus:ring-accent"
+            />
+          </NavTip>
+
+          <div className="mx-1 h-5 w-px bg-border" />
+
+          {/* Fit width */}
+          <NavTip label={labels.fitWidth}>
+            <button
+              type="button"
+              onClick={() => setViewMode("fitWidth")}
+              className={`flex h-7 w-7 cursor-pointer items-center justify-center rounded-md transition-colors ${
+                viewMode === "fitWidth"
+                  ? "bg-accent/15 text-accent"
+                  : "text-foreground-muted hover:bg-background-muted"
+              }`}
+            >
+              <MoveHorizontal size={14} />
+            </button>
+          </NavTip>
+          {/* Fit page */}
+          <NavTip label={labels.fitPage}>
+            <button
+              type="button"
+              onClick={() => setViewMode("fitPage")}
+              className={`flex h-7 w-7 cursor-pointer items-center justify-center rounded-md transition-colors ${
+                viewMode === "fitPage"
+                  ? "bg-accent/15 text-accent"
+                  : "text-foreground-muted hover:bg-background-muted"
+              }`}
+            >
+              <Maximize2 size={14} />
+            </button>
+          </NavTip>
+
+          <div className="mx-1 h-5 w-px bg-border" />
+
+          {/* Column toggle */}
+          <NavTip label={columns === 1 ? labels.doublePage : labels.singlePage}>
+            <button
+              type="button"
+              onClick={() => setColumns((c) => (c === 1 ? 2 : 1))}
+              className={`flex h-7 w-7 cursor-pointer items-center justify-center rounded-md transition-colors ${
+                columns === 2
+                  ? "bg-accent/15 text-accent"
+                  : "text-foreground-muted hover:bg-background-muted"
+              }`}
+            >
+              <Columns2 size={14} />
+            </button>
+          </NavTip>
+            </div>
+          </div>
         </div>
         </div>
       </div>
@@ -462,6 +590,19 @@ export function EditorLayout({
         selectedElementId={state.selectedElementId}
         onSelectElement={handleSelectAnnotation}
       />
+    </div>
+  );
+}
+
+/* ── Nav Bar Tooltip ─────────────────────────────────────────── */
+
+function NavTip({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="group/tip relative">
+      {children}
+      <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-1.5 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover/tip:opacity-100">
+        {label}
+      </div>
     </div>
   );
 }

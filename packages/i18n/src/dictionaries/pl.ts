@@ -609,6 +609,8 @@ const pl: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Poprzednia strona",
     nextPage: "Następna strona",
+    singlePage: "Jedna strona",
+    doublePage: "Dwie strony",
     applyButton: "Zastosuj zmiany",
     addText: "Dodaj tekst",
     addImage: "Dodaj obraz",

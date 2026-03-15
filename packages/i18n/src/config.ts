@@ -514,6 +514,8 @@ export interface Dictionary {
     pageOf: string;
     previousPage: string;
     nextPage: string;
+    singlePage: string;
+    doublePage: string;
     applyButton: string;
     addText: string;
     addImage: string;

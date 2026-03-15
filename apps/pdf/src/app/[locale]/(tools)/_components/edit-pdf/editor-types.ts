@@ -227,6 +227,8 @@ export interface EditPdfLabels {
   pageOf: string;
   previousPage: string;
   nextPage: string;
+  singlePage: string;
+  doublePage: string;
   // Export
   applyButton: string;
   // General

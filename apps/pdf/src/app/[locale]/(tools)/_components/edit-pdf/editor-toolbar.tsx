@@ -464,7 +464,7 @@ function ContextBarContent({
             type="button"
             onClick={() => dispatch({ type: "DELETE_ELEMENT", id: selectedElement.id })}
             title={labels.deleteElement}
-            className="flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-red-600 transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-950"
+            className="flex h-8 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-red-600 transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-950"
           >
             <Trash2 size={14} />
             <span className="hidden text-xs sm:inline">{labels.deleteElement}</span>
@@ -763,7 +763,7 @@ function ToolBtn({
       <button
         type="button"
         onClick={onClick}
-        className={`flex h-9 items-center gap-1.5 rounded-lg px-2.5 transition-colors ${
+        className={`flex h-9 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 transition-colors ${
           active
             ? "bg-accent/10 text-accent"
             : "text-foreground-muted hover:bg-background-muted hover:text-foreground"
@@ -795,7 +795,7 @@ function ActionBtn({
         type="button"
         onClick={onClick}
         disabled={disabled}
-        className="flex h-8 w-8 items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground disabled:opacity-30"
+        className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground disabled:cursor-default disabled:opacity-30"
       >
         {children}
       </button>
@@ -822,7 +822,7 @@ function ToggleBtn({
       <button
         type="button"
         onClick={onClick}
-        className={`flex h-7 w-7 items-center justify-center rounded-md transition-colors ${
+        className={`flex h-7 w-7 cursor-pointer items-center justify-center rounded-md transition-colors ${
           active
             ? "bg-accent/10 text-accent"
             : "text-foreground-muted hover:bg-background-muted"
@@ -851,7 +851,7 @@ function LayerBtn({
       <button
         type="button"
         onClick={onClick}
-        className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground"
+        className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border border-border text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground"
       >
         {children}
       </button>

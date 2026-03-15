@@ -609,6 +609,8 @@ const id: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Halaman sebelumnya",
     nextPage: "Halaman berikutnya",
+    singlePage: "Satu halaman",
+    doublePage: "Dua halaman",
     applyButton: "Terapkan perubahan",
     addText: "Tambah teks",
     addImage: "Tambah gambar",

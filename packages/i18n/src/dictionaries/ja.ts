@@ -609,6 +609,8 @@ const ja: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "前のページ",
     nextPage: "次のページ",
+    singlePage: "1ページ表示",
+    doublePage: "2ページ表示",
     applyButton: "編集を適用",
     addText: "テキストを追加",
     addImage: "画像を追加",

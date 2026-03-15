@@ -609,6 +609,8 @@ const uk: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Попередня сторінка",
     nextPage: "Наступна сторінка",
+    singlePage: "Одна сторінка",
+    doublePage: "Дві сторінки",
     applyButton: "Застосувати зміни",
     addText: "Додати текст",
     addImage: "Додати зображення",

@@ -609,6 +609,8 @@ const hu: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Előző oldal",
     nextPage: "Következő oldal",
+    singlePage: "Egy oldal",
+    doublePage: "Két oldal",
     applyButton: "Szerkesztések alkalmazása",
     addText: "Szöveg hozzáadása",
     addImage: "Kép hozzáadása",

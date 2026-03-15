@@ -609,6 +609,8 @@ const lv: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Iepriekšējā lapa",
     nextPage: "Nākamā lapa",
+    singlePage: "Viena lapa",
+    doublePage: "Divas lapas",
     applyButton: "Piemērot labojumus",
     addText: "Pievienot tekstu",
     addImage: "Pievienot attēlu",

@@ -609,6 +609,8 @@ const bg: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Предишна страница",
     nextPage: "Следваща страница",
+    singlePage: "Една страница",
+    doublePage: "Две страници",
     applyButton: "Приложи промените",
     addText: "Добави текст",
     addImage: "Добави изображение",

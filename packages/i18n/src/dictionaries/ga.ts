@@ -609,6 +609,8 @@ const ga: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "An leathanach roimhe",
     nextPage: "An chéad leathanach eile",
+    singlePage: "Leathanach amháin",
+    doublePage: "Dhá leathanach",
     applyButton: "Cuir athruithe i bhfeidhm",
     addText: "Cuir téacs leis",
     addImage: "Cuir íomhá leis",

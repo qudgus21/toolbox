@@ -609,6 +609,8 @@ const pa: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "ਪਿਛਲਾ ਪੰਨਾ",
     nextPage: "ਅਗਲਾ ਪੰਨਾ",
+    singlePage: "ਇੱਕ ਪੰਨਾ",
+    doublePage: "ਦੋ ਪੰਨੇ",
     applyButton: "ਸੋਧਾਂ ਲਾਗੂ ਕਰੋ",
     addText: "ਟੈਕਸਟ ਜੋੜੋ",
     addImage: "ਚਿੱਤਰ ਜੋੜੋ",

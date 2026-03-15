@@ -609,6 +609,8 @@ const ar: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "الصفحة السابقة",
     nextPage: "الصفحة التالية",
+    singlePage: "صفحة واحدة",
+    doublePage: "صفحتان",
     applyButton: "تطبيق التعديلات",
     addText: "إضافة نص",
     addImage: "إضافة صورة",

@@ -609,6 +609,8 @@ const tr: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Önceki sayfa",
     nextPage: "Sonraki sayfa",
+    singlePage: "Tek sayfa",
+    doublePage: "İki sayfa",
     applyButton: "Düzenlemeleri uygula",
     addText: "Metin ekle",
     addImage: "Görsel ekle",

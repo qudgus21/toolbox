@@ -525,6 +525,8 @@ const ms: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Halaman sebelumnya",
     nextPage: "Halaman seterusnya",
+    singlePage: "Satu halaman",
+    doublePage: "Dua halaman",
     applyButton: "Gunakan suntingan",
     addText: "Tambah teks",
     addImage: "Tambah imej",

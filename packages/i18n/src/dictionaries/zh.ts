@@ -609,6 +609,8 @@ const zh: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "上一页",
     nextPage: "下一页",
+    singlePage: "单页视图",
+    doublePage: "双页视图",
     applyButton: "应用编辑",
     addText: "添加文本",
     addImage: "添加图片",

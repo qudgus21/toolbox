@@ -609,6 +609,8 @@ const nl: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Vorige pagina",
     nextPage: "Volgende pagina",
+    singlePage: "Enkele pagina",
+    doublePage: "Twee pagina's",
     applyButton: "Bewerkingen toepassen",
     addText: "Tekst toevoegen",
     addImage: "Afbeelding toevoegen",

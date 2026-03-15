@@ -609,6 +609,8 @@ const vi: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Trang trước",
     nextPage: "Trang sau",
+    singlePage: "Một trang",
+    doublePage: "Hai trang",
     applyButton: "Áp dụng chỉnh sửa",
     addText: "Thêm văn bản",
     addImage: "Thêm hình ảnh",

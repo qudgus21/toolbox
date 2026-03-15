@@ -609,6 +609,8 @@ const ko: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "이전 페이지",
     nextPage: "다음 페이지",
+    singlePage: "한 페이지 보기",
+    doublePage: "두 페이지 보기",
     applyButton: "편집 적용",
     addText: "텍스트 추가",
     addImage: "이미지 추가",

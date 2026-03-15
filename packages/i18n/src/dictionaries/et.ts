@@ -609,6 +609,8 @@ const et: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Eelmine leht",
     nextPage: "Järgmine leht",
+    singlePage: "Üks lehekülg",
+    doublePage: "Kaks lehekülge",
     applyButton: "Rakenda muudatused",
     addText: "Lisa tekst",
     addImage: "Lisa pilt",

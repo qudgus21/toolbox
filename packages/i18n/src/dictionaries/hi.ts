@@ -609,6 +609,8 @@ const hi: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "पिछला पृष्ठ",
     nextPage: "अगला पृष्ठ",
+    singlePage: "एक पृष्ठ",
+    doublePage: "दो पृष्ठ",
     applyButton: "संपादन लागू करें",
     addText: "टेक्स्ट जोड़ें",
     addImage: "छवि जोड़ें",

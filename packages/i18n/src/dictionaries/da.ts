@@ -609,6 +609,8 @@ const da: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "Forrige side",
     nextPage: "Næste side",
+    singlePage: "Én side",
+    doublePage: "To sider",
     applyButton: "Anvend ændringer",
     addText: "Tilføj tekst",
     addImage: "Tilføj billede",

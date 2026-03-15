@@ -609,6 +609,8 @@ const th: Dictionary = {
     pageOf: "{n} / {total}",
     previousPage: "หน้าก่อน",
     nextPage: "หน้าถัดไป",
+    singlePage: "หน้าเดียว",
+    doublePage: "สองหน้า",
     applyButton: "บันทึกการแก้ไข",
     addText: "เพิ่มข้อความ",
     addImage: "เพิ่มรูปภาพ",
