@@ -14,12 +14,18 @@ export type TextAlign = "left" | "center" | "right";
 export type SymbolKind =
   | "check"
   | "cross"
+  | "circle"
+  | "star"
+  | "thumbsUp"
+  | "thumbsDown"
   | "heart"
   | "smile"
   | "neutral"
   | "sad"
   | "exclamation"
-  | "question";
+  | "question"
+  | "arrow"
+  | "dash";
 
 // ─── Element Types ────────────────────────────────────────────
 interface BaseElement {
@@ -143,6 +149,7 @@ export interface EditorState {
     past: EditorElement[][];
     future: EditorElement[][];
   };
+  pendingSymbol: SymbolKind | null;
   textDefaults: TextDefaults;
   shapeDefaults: ShapeDefaults;
   drawDefaults: DrawDefaults;
@@ -156,6 +163,7 @@ export type EditorAction =
   | { type: "DELETE_ELEMENT"; id: string }
   | { type: "SELECT_ELEMENT"; id: string | null }
   | { type: "SET_TOOL"; tool: ToolType }
+  | { type: "SET_PENDING_SYMBOL"; symbol: SymbolKind }
   | { type: "SET_PAGE"; index: number }
   | { type: "SET_ZOOM"; zoom: number }
   | { type: "UNDO" }
@@ -206,12 +214,18 @@ export interface EditPdfLabels {
   // Symbols
   symbolCheck: string;
   symbolCross: string;
+  symbolCircle: string;
+  symbolStar: string;
+  symbolThumbsUp: string;
+  symbolThumbsDown: string;
   symbolHeart: string;
   symbolSmile: string;
   symbolNeutral: string;
   symbolSad: string;
   symbolExclamation: string;
   symbolQuestion: string;
+  symbolArrow: string;
+  symbolDash: string;
   // Actions
   undo: string;
   redo: string;
@@ -380,10 +394,16 @@ export function measureTextSize(
 export const SYMBOL_MAP: Record<SymbolKind, string> = {
   check: "✓",
   cross: "✗",
+  circle: "●",
+  star: "★",
+  thumbsUp: "👍",
+  thumbsDown: "👎",
   heart: "❤",
   smile: "😊",
   neutral: "😐",
   sad: "😢",
   exclamation: "❗",
   question: "❓",
+  arrow: "➜",
+  dash: "—",
 };

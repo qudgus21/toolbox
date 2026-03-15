@@ -54,6 +54,7 @@ export function PageCanvas({
   const transformerRef = useRef<Konva.Transformer>(null);
   const drawingRef = useRef<FreehandElement | null>(null);
   const lineStartRef = useRef<{ x: number; y: number } | null>(null);
+  const linePreviewRef = useRef<Konva.Line>(null);
 
   const [pageImg, setPageImg] = useState<HTMLImageElement | null>(null);
   const [editingTextId, setEditingTextId] = useState<string | null>(null);
@@ -245,6 +246,28 @@ export function PageCanvas({
           lineStartRef.current = { x, y };
           break;
 
+        case "symbol": {
+          if (!state.pendingSymbol) break;
+          dispatch({
+            type: "ADD_ELEMENT",
+            element: {
+              id: generateId(),
+              type: "symbol",
+              pageIndex,
+              x,
+              y,
+              width: 40,
+              height: 40,
+              rotation: 0,
+              opacity: 1,
+              symbol: state.pendingSymbol,
+              color: "#000000",
+            },
+          });
+          dispatch({ type: "SET_TOOL", tool: "select" });
+          break;
+        }
+
         case "freehand": {
           const el: FreehandElement = {
             id: generateId(),
@@ -276,6 +299,24 @@ export function PageCanvas({
 
   const handleStageMouseMove = useCallback(
     () => {
+      // Line preview: update Konva node directly (no dispatch)
+      if (activeTool === "line" && lineStartRef.current) {
+        const stage = stageRef.current;
+        if (stage) {
+          const pos = stage.getPointerPosition();
+          if (pos) {
+            const { x, y } = stageToPage(pos.x, pos.y);
+            const s = lineStartRef.current;
+            const node = linePreviewRef.current;
+            if (node) {
+              node.points([s.x * scale, s.y * scale, x * scale, y * scale]);
+              node.visible(true);
+              node.getLayer()?.batchDraw();
+            }
+          }
+        }
+      }
+
       if (activeTool === "freehand" && drawingRef.current) {
         const stage = stageRef.current;
         if (!stage) return;
@@ -308,6 +349,12 @@ export function PageCanvas({
       drawingRef.current = null;
     }
     if (activeTool === "line" && lineStartRef.current) {
+      // Hide preview line
+      if (linePreviewRef.current) {
+        linePreviewRef.current.visible(false);
+        linePreviewRef.current.getLayer()?.batchDraw();
+      }
+
       const stage = stageRef.current;
       if (!stage) return;
       const pos = stage.getPointerPosition();
@@ -705,6 +752,16 @@ export function PageCanvas({
         {/* Annotations */}
         <Layer>
           {annotations.map(renderElement)}
+          {/* Line drawing preview */}
+          <Line
+            ref={linePreviewRef}
+            points={[0, 0, 0, 0]}
+            stroke={state.shapeDefaults.borderColor}
+            strokeWidth={state.shapeDefaults.strokeWidth}
+            opacity={0.6}
+            visible={false}
+            listening={false}
+          />
           <Transformer
             ref={transformerRef}
             boundBoxFunc={(_, newBox) => {

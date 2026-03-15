@@ -76,9 +76,10 @@ export function EditorToolbar({
   useEffect(() => {
     if (!showSymbolPicker) return;
     const handleClick = (e: MouseEvent) => {
-      if (symbolBtnRef.current && !symbolBtnRef.current.contains(e.target as Node)) {
-        setShowSymbolPicker(false);
-      }
+      const target = e.target as HTMLElement;
+      if (symbolBtnRef.current?.contains(target)) return;
+      if (target.closest?.("[data-symbol-picker]")) return;
+      setShowSymbolPicker(false);
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
@@ -146,24 +147,8 @@ export function EditorToolbar({
   };
 
   const handleSymbolSelect = (symbol: SymbolKind) => {
-    dispatch({
-      type: "ADD_ELEMENT",
-      element: {
-        id: generateId(),
-        type: "symbol",
-        pageIndex: state.activePageIndex,
-        x: 100,
-        y: 100,
-        width: 40,
-        height: 40,
-        rotation: 0,
-        opacity: 1,
-        symbol,
-        color: "#000000",
-      },
-    });
+    dispatch({ type: "SET_PENDING_SYMBOL", symbol });
     setShowSymbolPicker(false);
-    dispatch({ type: "SET_TOOL", tool: "select" });
   };
 
   /* ── Context Bar Logic ──────────────────────────────────── */
@@ -802,6 +787,7 @@ function SymbolPickerDropdown({
 
   return (
     <div
+      data-symbol-picker
       className="fixed z-[200] rounded-lg border border-border bg-background-elevated p-2 shadow-lg"
       style={{ top: pos.top, left: pos.left }}
     >

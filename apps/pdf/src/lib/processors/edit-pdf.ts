@@ -198,9 +198,13 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
 const SYMBOL_UNICODE: Record<string, string> = {
   check: "\u2713",
   cross: "\u2717",
+  circle: "\u25CF",
+  star: "\u2605",
   heart: "\u2764",
   exclamation: "!",
   question: "?",
+  arrow: "\u279C",
+  dash: "\u2014",
 };
 
 // ─── Processor ────────────────────────────────────────────────
@@ -415,6 +419,8 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
             ctx.textBaseline = "top";
 
             const emojiMap: Record<string, string> = {
+              thumbsUp: "\u{1F44D}",
+              thumbsDown: "\u{1F44E}",
               smile: "\u{1F60A}",
               neutral: "\u{1F610}",
               sad: "\u{1F622}",

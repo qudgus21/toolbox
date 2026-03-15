@@ -494,12 +494,18 @@ export interface Dictionary {
     drawThickness: string;
     symbolCheck: string;
     symbolCross: string;
+    symbolCircle: string;
+    symbolStar: string;
+    symbolThumbsUp: string;
+    symbolThumbsDown: string;
     symbolHeart: string;
     symbolSmile: string;
     symbolNeutral: string;
     symbolSad: string;
     symbolExclamation: string;
     symbolQuestion: string;
+    symbolArrow: string;
+    symbolDash: string;
     undo: string;
     redo: string;
     zoomIn: string;

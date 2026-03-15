@@ -43,7 +43,11 @@
       "Bash(do echo \"/Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\(tools\\)/_components/edit-pdf/$f\")",
       "Bash(ls -la /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/)",
       "Bash(grep -l \"isEditPdf\\\\|edit-pdf\\\\|EditorLayout\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/*.tsx)",
-      "Bash(grep -A 30 \"isEditPdf\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-loaded-content.tsx)"
+      "Bash(grep -A 30 \"isEditPdf\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-loaded-content.tsx)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(./node_modules/.bin/tsc --noEmit --project apps/pdf/tsconfig.json)",
+      "Bash(/Applications/hbh/dev/tools/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc --noEmit --project apps/pdf/tsconfig.json)"
     ]
   }
 }

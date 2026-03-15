@@ -69,6 +69,7 @@ const INITIAL_STATE: EditorState = {
   activePageIndex: 0,
   zoom: 1,
   history: { past: [], future: [] },
+  pendingSymbol: null,
   textDefaults: INITIAL_TEXT_DEFAULTS,
   shapeDefaults: INITIAL_SHAPE_DEFAULTS,
   drawDefaults: INITIAL_DRAW_DEFAULTS,
@@ -298,6 +299,14 @@ function editorReducer(
         history: pushHistory(state),
       };
     }
+
+    case "SET_PENDING_SYMBOL":
+      return {
+        ...state,
+        pendingSymbol: action.symbol,
+        activeTool: "symbol",
+        selectedElementId: null,
+      };
 
     case "UPDATE_TEXT_DEFAULTS":
       return {
