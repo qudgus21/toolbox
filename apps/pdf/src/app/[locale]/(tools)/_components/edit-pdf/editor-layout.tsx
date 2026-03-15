@@ -15,7 +15,7 @@ import { EditorToolbar } from "./editor-toolbar";
 import { EditorHistoryPanel } from "./editor-history-panel";
 import { useEditorStore } from "./use-editor-store";
 import { usePdfPages } from "./use-pdf-pages";
-import type { EditPdfLabels, EditorElement } from "./editor-types";
+import { generateId, type EditPdfLabels, type EditorElement } from "./editor-types";
 
 export type { EditPdfLabels };
 
@@ -60,6 +60,7 @@ export function EditorLayout({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const pageRefs = useRef<Map<number, HTMLDivElement>>(new Map());
   const programmaticScroll = useRef(false);
+  const clipboardRef = useRef<EditorElement | null>(null);
   const [containerWidth, setContainerWidth] = useState(800);
   const [containerRect, setContainerRect] = useState({ left: 0, right: 0 });
   const [visiblePages, setVisiblePages] = useState<Set<number>>(new Set([0]));
@@ -220,6 +221,25 @@ export function EditorLayout({
         e.preventDefault();
         dispatch({ type: "DELETE_ELEMENT", id: state.selectedElementId });
       }
+      // Copy
+      if ((e.ctrlKey || e.metaKey) && e.key === "c" && state.selectedElementId) {
+        const el = state.annotations.find((a) => a.id === state.selectedElementId);
+        if (el) clipboardRef.current = el;
+      }
+      // Paste
+      if ((e.ctrlKey || e.metaKey) && e.key === "v" && clipboardRef.current) {
+        e.preventDefault();
+        const src = clipboardRef.current;
+        const clone = {
+          ...src,
+          id: generateId(),
+          x: src.x + 20,
+          y: src.y + 20,
+          pageIndex: state.activePageIndex,
+        } as EditorElement;
+        dispatch({ type: "ADD_ELEMENT", element: clone });
+        clipboardRef.current = clone;
+      }
       if (e.key === "Escape") {
         dispatch({ type: "SET_TOOL", tool: "select" });
         dispatch({ type: "SELECT_ELEMENT", id: null });
@@ -228,7 +248,7 @@ export function EditorLayout({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [undo, redo, state.selectedElementId, dispatch]);
+  }, [undo, redo, state.selectedElementId, state.annotations, state.activePageIndex, dispatch]);
 
   /* ── Derived values ───────────────────────────────────── */
 

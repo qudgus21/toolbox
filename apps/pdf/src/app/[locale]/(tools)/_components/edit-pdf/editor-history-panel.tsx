@@ -1,6 +1,20 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+  useSortable,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import {
   Type,
   ImagePlus,
@@ -12,6 +26,7 @@ import {
   X,
   Trash2,
   GripVertical,
+  PencilLine,
 } from "lucide-react";
 import {
   SYMBOL_MAP,
@@ -54,7 +69,171 @@ const TYPE_COLOR: Record<string, string> = {
   symbol: "text-yellow-600",
 };
 
-/* ── Component ──────────────────────────────────────────────── */
+/* ── Helpers ─────────────────────────────────────────────────── */
+
+function getLabel(el: EditorElement, labels: EditPdfLabels): string {
+  switch (el.type) {
+    case "text":
+      return el.content.length > 18
+        ? el.content.slice(0, 18) + "…"
+        : el.content || "…";
+    case "symbol":
+      return SYMBOL_MAP[el.symbol];
+    case "image":
+      return labels.addImage;
+    case "rectangle":
+      return labels.toolRectangle;
+    case "ellipse":
+      return labels.toolEllipse;
+    case "line":
+      return labels.toolLine;
+    case "freehand":
+      return labels.toolDraw;
+    default:
+      return "element";
+  }
+}
+
+/* ── Sortable Item ───────────────────────────────────────────── */
+
+function SortableItem({
+  el,
+  labels,
+  dispatch,
+  isSelected,
+  onSelect,
+}: {
+  el: EditorElement;
+  labels: EditPdfLabels;
+  dispatch: EditorDispatch;
+  isSelected: boolean;
+  onSelect: () => void;
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: el.id });
+
+  const [editing, setEditing] = useState(false);
+  const [editValue, setEditValue] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const isText = el.type === "text";
+
+  const startEdit = () => {
+    if (!isText) return;
+    setEditValue((el as Extract<EditorElement, { type: "text" }>).content);
+    setEditing(true);
+  };
+
+  const commitEdit = () => {
+    setEditing(false);
+    if (isText && editValue !== (el as Extract<EditorElement, { type: "text" }>).content) {
+      dispatch({ type: "UPDATE_ELEMENT", id: el.id, changes: { content: editValue } });
+    }
+  };
+
+  useEffect(() => {
+    if (editing) {
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [editing]);
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    zIndex: isDragging ? 50 : undefined,
+  };
+
+  const Icon = TYPE_ICON[el.type] ?? Type;
+  const colorCls = TYPE_COLOR[el.type] ?? "text-foreground-muted";
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      onClick={onSelect}
+      className={`group relative flex items-center gap-2.5 rounded-lg px-2.5 py-2 ${
+        isDragging
+          ? "z-50 bg-background shadow-lg opacity-90"
+          : isSelected
+            ? "bg-accent/10 ring-1 ring-accent/30"
+            : "hover:bg-background-muted"
+      }`}
+    >
+      {/* Drag handle */}
+      <button
+        type="button"
+        className="flex shrink-0 cursor-grab touch-none items-center active:cursor-grabbing"
+        {...attributes}
+        {...listeners}
+      >
+        <GripVertical size={14} className="text-foreground-muted/50 transition-colors group-hover:text-foreground-muted" />
+      </button>
+
+      <Icon size={16} className={`shrink-0 ${colorCls}`} />
+
+      {editing ? (
+        <input
+          ref={inputRef}
+          type="text"
+          value={editValue}
+          onChange={(e) => setEditValue(e.target.value)}
+          onBlur={commitEdit}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") commitEdit();
+            if (e.key === "Escape") setEditing(false);
+          }}
+          onClick={(e) => e.stopPropagation()}
+          className="flex-1 rounded border border-accent bg-background px-1 py-0.5 text-sm text-foreground outline-none"
+        />
+      ) : (
+        <span
+          className="flex-1 truncate text-sm text-foreground"
+          onDoubleClick={(e) => {
+            e.stopPropagation();
+            startEdit();
+          }}
+        >
+          {getLabel(el, labels)}
+        </span>
+      )}
+
+      {/* Edit button (text only) */}
+      {isText && !editing && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            startEdit();
+          }}
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded opacity-0 transition-opacity hover:bg-accent/10 group-hover:opacity-100"
+        >
+          <PencilLine size={13} className="text-foreground-muted" />
+        </button>
+      )}
+
+      {/* Delete button */}
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch({ type: "DELETE_ELEMENT", id: el.id });
+        }}
+        title={labels.deleteElement}
+        className="flex h-6 w-6 shrink-0 items-center justify-center rounded opacity-0 transition-opacity hover:bg-red-100 group-hover:opacity-100 dark:hover:bg-red-900"
+      >
+        <X size={14} className="text-red-500" />
+      </button>
+    </div>
+  );
+}
+
+/* ── Main Component ──────────────────────────────────────────── */
 
 export function EditorHistoryPanel({
   annotations,
@@ -66,89 +245,47 @@ export function EditorHistoryPanel({
 }: EditorHistoryPanelProps) {
   const multiPage = pages.length > 1;
 
-  // Drag state
-  const dragId = useRef<string | null>(null);
-  const dragPageIdx = useRef<number>(-1);
-  const [dropTargetId, setDropTargetId] = useState<string | null>(null);
-  const [dropPosition, setDropPosition] = useState<"above" | "below">("below");
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
+  );
 
   // Group annotations by page
-  const grouped = new Map<number, EditorElement[]>();
-  for (const el of annotations) {
-    const arr = grouped.get(el.pageIndex) ?? [];
-    arr.push(el);
-    grouped.set(el.pageIndex, arr);
-  }
-
-  const getLabel = (el: EditorElement): string => {
-    switch (el.type) {
-      case "text":
-        return el.content.length > 18
-          ? el.content.slice(0, 18) + "…"
-          : el.content;
-      case "symbol":
-        return SYMBOL_MAP[el.symbol];
-      case "image":
-        return labels.addImage;
-      case "rectangle":
-        return labels.toolRectangle;
-      case "ellipse":
-        return labels.toolEllipse;
-      case "line":
-        return labels.toolLine;
-      case "freehand":
-        return labels.toolDraw;
-      default:
-        return "element";
+  const grouped = useMemo(() => {
+    const map = new Map<number, EditorElement[]>();
+    for (const el of annotations) {
+      const arr = map.get(el.pageIndex) ?? [];
+      arr.push(el);
+      map.set(el.pageIndex, arr);
     }
-  };
+    return map;
+  }, [annotations]);
 
-  const handleDragStart = (el: EditorElement) => {
-    dragId.current = el.id;
-    dragPageIdx.current = el.pageIndex;
-  };
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
 
-  const handleDragOver = (e: React.DragEvent, targetEl: EditorElement) => {
-    if (dragPageIdx.current !== targetEl.pageIndex) return;
-    e.preventDefault();
-    const rect = e.currentTarget.getBoundingClientRect();
-    const midY = rect.top + rect.height / 2;
-    setDropPosition(e.clientY < midY ? "above" : "below");
-    setDropTargetId(targetEl.id);
-  };
+    // Find which page these belong to
+    const srcEl = annotations.find((a) => a.id === active.id);
+    const dstEl = annotations.find((a) => a.id === over.id);
+    if (!srcEl || !dstEl || srcEl.pageIndex !== dstEl.pageIndex) return;
 
-  const handleDrop = (e: React.DragEvent, targetEl: EditorElement) => {
-    e.preventDefault();
-    const srcId = dragId.current;
-    const pageIdx = dragPageIdx.current;
-    if (!srcId || pageIdx !== targetEl.pageIndex) return;
-
+    const pageIdx = srcEl.pageIndex;
     const pageEls = grouped.get(pageIdx) ?? [];
-    const ids = pageEls.map((el) => el.id);
-    const srcIdx = ids.indexOf(srcId);
-    if (srcIdx === -1) return;
+    // Panel shows reversed order (top = highest z = last in array)
+    // So we work with reversed ids, reorder, then reverse back
+    const reversedIds = [...pageEls].reverse().map((el) => el.id);
 
-    // Remove from old position
-    ids.splice(srcIdx, 1);
+    const oldIdx = reversedIds.indexOf(String(active.id));
+    const newIdx = reversedIds.indexOf(String(over.id));
+    if (oldIdx === -1 || newIdx === -1) return;
 
-    // Insert at new position
-    let targetIdx = ids.indexOf(targetEl.id);
-    if (targetIdx === -1) return;
-    if (dropPosition === "below") targetIdx += 1;
-    ids.splice(targetIdx, 0, srcId);
+    // Move in reversed array
+    const [moved] = reversedIds.splice(oldIdx, 1);
+    reversedIds.splice(newIdx, 0, moved);
 
-    dispatch({ type: "REORDER_ANNOTATIONS", pageIndex: pageIdx, orderedIds: ids });
-
-    // Cleanup
-    dragId.current = null;
-    dragPageIdx.current = -1;
-    setDropTargetId(null);
-  };
-
-  const handleDragEnd = () => {
-    dragId.current = null;
-    dragPageIdx.current = -1;
-    setDropTargetId(null);
+    // Reverse back to get original array order
+    const finalIds = [...reversedIds].reverse();
+    dispatch({ type: "REORDER_ANNOTATIONS", pageIndex: pageIdx, orderedIds: finalIds });
   };
 
   return (
@@ -187,70 +324,43 @@ export function EditorHistoryPanel({
             <p className="text-xs text-foreground-muted">{labels.noSelection}</p>
           </div>
         ) : (
-          <div className="flex flex-col gap-1">
-            {[...grouped.entries()]
-              .sort(([a], [b]) => a - b)
-              .map(([pageIdx, els]) => (
-                <div key={pageIdx}>
-                  {/* Page header (only for multi-page) */}
-                  {multiPage && (
-                    <div className="mt-4 mb-1 border-b border-border px-2 pb-1.5 text-sm font-semibold text-foreground first:mt-0">
-                      {labels.pageLabel} {pageIdx + 1}
-                    </div>
-                  )}
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragEnd={handleDragEnd}
+          >
+            <div className="flex flex-col gap-0.5">
+              {[...grouped.entries()]
+                .sort(([a], [b]) => a - b)
+                .map(([pageIdx, els]) => {
+                  const reversedEls = [...els].reverse();
+                  const ids = reversedEls.map((el) => el.id);
 
-                  {/* Annotation items */}
-                  {els.map((el) => {
-                    const Icon = TYPE_ICON[el.type] ?? Type;
-                    const colorCls = TYPE_COLOR[el.type] ?? "text-foreground-muted";
-                    const isSelected = el.id === selectedElementId;
-                    const isDropTarget = dropTargetId === el.id;
+                  return (
+                    <div key={pageIdx}>
+                      {multiPage && (
+                        <div className="mt-4 mb-1 border-b border-border px-2 pb-1.5 text-sm font-semibold text-foreground first:mt-0">
+                          {labels.pageLabel} {pageIdx + 1}
+                        </div>
+                      )}
 
-                    return (
-                      <div
-                        key={el.id}
-                        draggable
-                        onDragStart={() => handleDragStart(el)}
-                        onDragOver={(e) => handleDragOver(e, el)}
-                        onDrop={(e) => handleDrop(e, el)}
-                        onDragEnd={handleDragEnd}
-                        onClick={() => onSelectElement(el.id)}
-                        className={`group relative flex cursor-grab items-center gap-2.5 rounded-lg px-2.5 py-2 transition-colors active:cursor-grabbing ${
-                          isSelected
-                            ? "bg-accent/10 ring-1 ring-accent/30"
-                            : "hover:bg-background-muted"
-                        }`}
-                      >
-                        {/* Drop indicator */}
-                        {isDropTarget && (
-                          <div
-                            className={`pointer-events-none absolute left-2 right-2 h-0.5 rounded-full bg-accent ${
-                              dropPosition === "above" ? "-top-0.5" : "-bottom-0.5"
-                            }`}
+                      <SortableContext items={ids} strategy={verticalListSortingStrategy}>
+                        {reversedEls.map((el) => (
+                          <SortableItem
+                            key={el.id}
+                            el={el}
+                            labels={labels}
+                            dispatch={dispatch}
+                            isSelected={el.id === selectedElementId}
+                            onSelect={() => onSelectElement(el.id)}
                           />
-                        )}
-                        <GripVertical size={14} className="shrink-0 text-foreground-muted/50 transition-colors group-hover:text-foreground-muted" />
-                        <Icon size={16} className={`shrink-0 ${colorCls}`} />
-                        <span className="flex-1 truncate text-sm text-foreground">
-                          {getLabel(el)}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            dispatch({ type: "DELETE_ELEMENT", id: el.id });
-                          }}
-                          title={labels.deleteElement}
-                          className="flex h-6 w-6 shrink-0 items-center justify-center rounded opacity-0 transition-opacity hover:bg-red-100 group-hover:opacity-100 dark:hover:bg-red-900"
-                        >
-                          <X size={14} className="text-red-500" />
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-          </div>
+                        ))}
+                      </SortableContext>
+                    </div>
+                  );
+                })}
+            </div>
+          </DndContext>
         )}
       </div>
     </div>
