@@ -138,9 +138,10 @@ export function WebOptimizeOptions({ onChange, labels }: WebOptimizeOptionsProps
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 rounded-2xl border border-border bg-background-elevated p-4">
       {/* 프리셋 선택 */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <p className="text-xs font-bold text-foreground-muted uppercase tracking-wide">{labels.presetLabel}</p>
+      <div className="grid grid-cols-1 gap-2">
         {presets.map((p) => {
           const Icon = p.icon;
           const isSelected = preset === p.value;
@@ -150,44 +151,48 @@ export function WebOptimizeOptions({ onChange, labels }: WebOptimizeOptionsProps
               type="button"
               onClick={() => handlePreset(p.value)}
               className={cn(
-                "relative flex flex-col items-center gap-2 rounded-xl border-2 px-4 py-5 transition-all duration-200 cursor-pointer",
+                "relative flex items-center gap-3 rounded-xl border-2 px-3 py-3 transition-all duration-200 cursor-pointer text-left",
                 isSelected
                   ? cn(p.selectedBg, p.selectedBorder, "shadow-sm")
                   : "border-border bg-background-elevated hover:border-foreground-subtle/30",
               )}
             >
               {p.value === "screen" && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-bold text-accent-foreground">
+                <span className="absolute -top-2 right-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold text-accent-foreground">
                   ★
                 </span>
               )}
               <Icon
                 className={cn(
-                  "h-6 w-6 transition-colors",
+                  "h-5 w-5 shrink-0 transition-colors",
                   isSelected ? p.iconColor : "text-foreground-subtle",
                 )}
               />
-              <span
-                className={cn(
-                  "text-sm font-bold transition-colors",
-                  isSelected ? "text-foreground" : "text-foreground-muted",
-                )}
-              >
-                {labelMap[p.value].title}
-              </span>
-              <span className="text-xs text-foreground-subtle text-center leading-tight">
-                {labelMap[p.value].desc}
-              </span>
-              <span
-                className={cn(
-                  "mt-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold",
-                  isSelected
-                    ? "bg-white/60 dark:bg-white/10 text-foreground"
-                    : "bg-background-muted text-foreground-subtle",
-                )}
-              >
-                {p.dpi}
-              </span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <span
+                    className={cn(
+                      "text-sm font-bold transition-colors",
+                      isSelected ? "text-foreground" : "text-foreground-muted",
+                    )}
+                  >
+                    {labelMap[p.value].title}
+                  </span>
+                  <span
+                    className={cn(
+                      "rounded-full px-1.5 py-0.5 text-[10px] font-bold",
+                      isSelected
+                        ? "bg-white/60 dark:bg-white/10 text-foreground"
+                        : "bg-background-muted text-foreground-subtle",
+                    )}
+                  >
+                    {p.dpi}
+                  </span>
+                </div>
+                <p className="text-xs text-foreground-subtle leading-tight mt-0.5">
+                  {labelMap[p.value].desc}
+                </p>
+              </div>
             </button>
           );
         })}

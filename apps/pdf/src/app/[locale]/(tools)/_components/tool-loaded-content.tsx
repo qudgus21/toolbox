@@ -902,6 +902,44 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isWebOptimize && webOptimizeLabels && files.length > 0 ? (
+        /* ─── Web Optimize: multi-file + options sidebar ─── */
+        <>
+          {/* Toolbar */}
+          <MultiFileToolbar
+            files={files}
+            sortMenuOpen={sortMenuOpen}
+            onSortMenuOpenChange={setSortMenuOpen}
+            onSort={sortFiles}
+            onAddMore={handleAddMore}
+            labels={{ filesSelected: labels.filesSelected, addMoreFiles: labels.addMoreFiles, sortByName: labels.sortByName }}
+          />
+
+          {/* Cards + Options */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
+            <div className="self-start">
+              <FileList
+                files={files}
+                rotations={rotations}
+                pageCounts={pageCounts}
+                encryptedFiles={encryptedFiles}
+                encryptedLabel={labels.encryptedFile}
+                pageOrientation="portrait"
+                pageSize="a4"
+                pageMargin={0}
+                onRemove={removeFile}
+                onReorder={reorderFiles}
+              />
+            </div>
+
+            <div className="lg:sticky lg:top-4 lg:self-start">
+              <WebOptimizeOptions
+                onChange={setWebOptimizeOptions}
+                labels={webOptimizeLabels}
+              />
+            </div>
+          </div>
+        </>
       ) : isScanToPdf && scanToPdfLabels && files.length > 0 ? (
         /* ─── Scan to PDF: multi-file + options sidebar ─── */
         <>
@@ -1021,8 +1059,8 @@ export function ToolLoadedContent({
             colorFilter={isGrayscale ? "grayscale(100%)" : undefined}
             onRemove={removeFile}
             onReorder={reorderFiles}
-            onRotate={isCompress || isGrayscale || isWebOptimize || isProtect ? undefined : rotateFile}
-            onCardClick={isCompress || isGrayscale || isWebOptimize || isProtect ? undefined : (file) => setPageSelectorFile(file)}
+            onRotate={isCompress || isGrayscale || isProtect ? undefined : rotateFile}
+            onCardClick={isCompress || isGrayscale || isProtect ? undefined : (file) => setPageSelectorFile(file)}
           />
         </>
       )}
@@ -1035,12 +1073,7 @@ export function ToolLoadedContent({
         />
       )}
 
-      {isWebOptimize && webOptimizeLabels && (
-        <WebOptimizeOptions
-          onChange={setWebOptimizeOptions}
-          labels={webOptimizeLabels}
-        />
-      )}
+
 
       {/* 도구별 옵션 UI 슬롯 */}
       {children}
