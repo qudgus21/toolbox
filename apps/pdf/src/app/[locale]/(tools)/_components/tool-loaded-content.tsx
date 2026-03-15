@@ -29,6 +29,7 @@ import { ProtectOptions } from "./protect-options";
 import { FlattenOptions } from "./flatten-options";
 import { FlattenPreview } from "./flatten-preview";
 import { CropLayout } from "./crop-layout";
+import { RedactLayout } from "./redact-pdf/redact-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
@@ -71,6 +72,7 @@ interface ToolLoadedContentProps {
   cropLabels: ToolPageClientProps["cropLabels"];
   editMetadataLabels: ToolPageClientProps["editMetadataLabels"];
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
+  redactLabels: ToolPageClientProps["redactLabels"];
   children?: ReactNode;
 
   // From useToolProcessor
@@ -118,6 +120,7 @@ export function ToolLoadedContent({
   cropLabels,
   editMetadataLabels,
   editPdfLabels,
+  redactLabels,
   children,
   files,
   rotations,
@@ -160,6 +163,7 @@ export function ToolLoadedContent({
     isEditPdf,
     isFlatten,
     isCrop,
+    isRedact,
 
     handleSingleFileChange,
     handleAddMore,
@@ -277,6 +281,8 @@ export function ToolLoadedContent({
     setCropCurrentPage,
     cropPageRange,
     setCropPageRange,
+
+    setRedactAreas,
 
     setEditPdfAnnotations,
 
@@ -581,6 +587,14 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isRedact && redactLabels && files.length > 0 ? (
+        /* ─── Redact PDF: full-screen editor ─── */
+        <RedactLayout
+          file={files[0]}
+          labels={redactLabels}
+          onRedactionsChange={setRedactAreas}
+          onChangeFile={handleSingleFileChange}
+        />
       ) : isEditPdf && editPdfLabels && files.length > 0 ? (
         /* ─── Edit PDF: full-screen editor ─── */
         <EditorLayout

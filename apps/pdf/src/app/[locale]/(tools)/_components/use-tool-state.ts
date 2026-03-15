@@ -74,7 +74,8 @@ export function useToolState({
   const isEditPdf = slug === "edit-pdf";
   const isFlatten = slug === "flatten";
   const isCrop = slug === "crop";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop;
+  const isRedact = slug === "redact";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact;
 
   const implemented = hasProcessor(slug);
 
@@ -234,6 +235,9 @@ export function useToolState({
   const [cropPageMode, setCropPageMode] = useState<CropPageMode>("all");
   const [cropCurrentPage, setCropCurrentPage] = useState(0);
   const [cropPageRange, setCropPageRange] = useState("");
+
+  // ─── Redact areas ───
+  const [redactAreas, setRedactAreas] = useState<unknown[]>([]);
 
   // ─── Edit PDF annotations ───
   const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
@@ -455,6 +459,8 @@ export function useToolState({
         currentPage: cropCurrentPage,
         pageRange: parsedRange.length > 0 ? parsedRange : undefined,
       };
+    } else if (isRedact) {
+      return { redactions: redactAreas };
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -475,7 +481,7 @@ export function useToolState({
     slug, isSplit, isCompress, isWebOptimize, isDeletePages, isExtractPages,
     isOrganizePages, isResize, isRotate, isPdfToJpg, isPdfToPng, isJpgToPdf,
     isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf, isPdfToText,
-    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop,
+    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop, isRedact,
     splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions,
     deletedPages, deletePageOrder, extractedPages, extractPageOrder,
     organizePages, resizePreset, resizeCustomW, resizeCustomH, resizeOrientation,
@@ -488,13 +494,14 @@ export function useToolState({
     htmlToPdfFileBreak, htmlToPdfFileGapMm,
     scanToPdfOrientation, scanToPdfPageSize, scanToPdfMarginMm, scanToPdfMergeAll,
     scanToPdfAutoEnhance, scanToPdfColorMode,
-    editPdfAnnotations, editedMetadata,
+    editPdfAnnotations, editedMetadata, redactAreas,
     cropArea, cropMargins, cropMode, cropPageMode, cropCurrentPage, cropPageRange,
   ]);
 
   // ─── getButtonLabel ───
   const getButtonLabel = useCallback((props: {
     title: string;
+    redactLabels?: { applyButton: string };
     editPdfLabels?: { applyButton: string };
     protectLabels?: { protectButton: string };
     editMetadataLabels?: { applyButton: string };
@@ -510,6 +517,7 @@ export function useToolState({
     flattenLabels?: { flattenButton: string };
     cropLabels?: { cropButton: string };
   }): string => {
+    if (isRedact && props.redactLabels) return props.redactLabels.applyButton;
     if (isCrop && props.cropLabels) return props.cropLabels.cropButton;
     if (isFlatten && props.flattenLabels) return props.flattenLabels.flattenButton;
     if (isEditPdf && props.editPdfLabels) return props.editPdfLabels.applyButton;
@@ -526,7 +534,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -540,26 +548,27 @@ export function useToolState({
     if (isRotate && Object.values(rotations).filter(r => r > 0).length === 0) return true;
     if (isEditMetadata && !editedMetadata) return true;
     if (isProtect && !protectOptions._valid) return true;
+    if (isRedact && redactAreas.length === 0) return true;
     if (isEditPdf && editPdfAnnotations.length === 0) return true;
     if (isCrop && cropMode === "area" && !cropArea) return true;
     if (isCrop && cropMode === "margins" && cropMargins.top === 0 && cropMargins.right === 0 && cropMargins.bottom === 0 && cropMargins.left === 0) return true;
     return false;
   }, [
     implemented, isDeletePages, isExtractPages, isOrganizePages, isRotate,
-    isEditMetadata, isProtect, isEditPdf, isCrop, deletedPages, extractedPages,
+    isEditMetadata, isProtect, isEditPdf, isCrop, isRedact, deletedPages, extractedPages,
     cropArea, cropMode, cropMargins,
-    organizePages, rotations, editedMetadata, protectOptions, editPdfAnnotations,
+    organizePages, rotations, editedMetadata, protectOptions, editPdfAnnotations, redactAreas,
     pageCounts, files,
   ]);
 
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
-    if (isEditPdf && currentStage !== "idle") return "full";
+    if ((isEditPdf || isRedact) && currentStage !== "idle") return "full";
     if ((isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
-    isEditPdf, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
+    isEditPdf, isRedact, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
     isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
@@ -590,6 +599,7 @@ export function useToolState({
     isEditPdf,
     isFlatten,
     isCrop,
+    isRedact,
     isSingleFileMode,
     implemented,
 
@@ -736,6 +746,10 @@ export function useToolState({
     // Flatten
     flattenOptions,
     setFlattenOptions,
+
+    // Redact
+    redactAreas,
+    setRedactAreas,
 
     // Edit PDF
     editPdfAnnotations,

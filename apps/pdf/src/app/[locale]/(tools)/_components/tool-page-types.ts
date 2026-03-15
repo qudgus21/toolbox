@@ -17,6 +17,7 @@ import type { ProtectLabels } from "./protect-options";
 import type { FlattenLabels } from "./flatten-options";
 import type { CropLabels } from "./crop-options";
 import type { EditPdfLabels } from "./edit-pdf/editor-layout";
+import type { RedactPdfLabels } from "./redact-pdf/redact-layout";
 
 export interface CommonLabels {
   backToAll: string;
@@ -154,6 +155,7 @@ export interface ToolPageClientProps {
   cropLabels?: CropLabels;
   editMetadataLabels?: EditMetadataLabels;
   editPdfLabels?: EditPdfLabels;
+  redactLabels?: RedactPdfLabels;
   children?: ReactNode;
 }
 
@@ -161,5 +163,5 @@ export type {
   PdfToJpgLabels, PdfToPngLabels, PdfToTextLabels, ExtractImagesLabels,
   JpgToPdfLabels, PngToPdfLabels, ImageToPdfLabels, HtmlToPdfLabels,
   ScanToPdfLabels, OrganizePagesLabels, RotateLabels, EditMetadataLabels,
-  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels,
+  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels,
 };

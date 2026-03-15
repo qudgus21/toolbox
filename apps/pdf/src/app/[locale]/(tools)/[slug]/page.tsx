@@ -109,6 +109,7 @@ export default async function ToolPage({
         cropLabels={slug === "crop" ? dict.cropTool : undefined}
         editMetadataLabels={slug === "edit-metadata" ? dict.editMetadataTool : undefined}
         editPdfLabels={slug === "edit-pdf" ? dict.editPdfTool : undefined}
+        redactLabels={slug === "redact" ? dict.redactTool : undefined}
       />
     </>
   );

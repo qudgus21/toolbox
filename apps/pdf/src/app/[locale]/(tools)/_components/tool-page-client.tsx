@@ -62,6 +62,7 @@ export function ToolPageClient({
   cropLabels,
   editMetadataLabels,
   editPdfLabels,
+  redactLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -113,6 +114,7 @@ export function ToolPageClient({
     isExtractImages,
     isEditPdf,
     isCrop,
+    isRedact,
     implemented,
     fav,
     showFavHint,
@@ -134,8 +136,8 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
-      hideHeader={(isEditPdf || isCrop) && stage === "loaded"}
-      className={(isEditPdf || isCrop) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
+      hideHeader={(isEditPdf || isCrop || isRedact) && stage === "loaded"}
+      className={(isEditPdf || isCrop || isRedact) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -180,7 +182,7 @@ export function ToolPageClient({
             <FileUploadZone
               accept={acceptedTypes}
               onFiles={(f) => isSingleFileMode ? addFiles([f[0]]) : addFiles(f)}
-              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : isEditPdf && editPdfLabels ? editPdfLabels.dropFile : labels.dropFiles}
+              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : isEditPdf && editPdfLabels ? editPdfLabels.dropFile : isRedact && redactLabels ? redactLabels.dropFile : labels.dropFiles}
               description={`${labels.acceptedFormats}: ${acceptedTypes}`}
             />
             {labels.privacyBadge && (
@@ -224,6 +226,7 @@ export function ToolPageClient({
               cropLabels={cropLabels}
               editMetadataLabels={editMetadataLabels}
               editPdfLabels={editPdfLabels}
+              redactLabels={redactLabels}
               files={files}
               rotations={rotations}
               pageSelections={pageSelections}
@@ -305,6 +308,7 @@ export function ToolPageClient({
               <span className="flex items-center justify-center gap-2">
                 {getButtonLabel({
                   title,
+                  redactLabels,
                   editPdfLabels,
                   protectLabels,
                   editMetadataLabels,
