@@ -48,7 +48,20 @@
       "Read(//private/tmp/**)",
       "Bash(./node_modules/.bin/tsc --noEmit --project apps/pdf/tsconfig.json)",
       "Bash(/Applications/hbh/dev/tools/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc --noEmit --project apps/pdf/tsconfig.json)",
-      "Bash(grep -n \"labels\\\\.\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/editor-toolbar.tsx)"
+      "Bash(grep -n \"labels\\\\.\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/editor-toolbar.tsx)",
+      "Bash(find /Applications/hbh/dev/tools/apps/pdf/src/app -name \"*.tsx\" -path \"*/\\\\[locale\\\\]/\\(tools\\)/*\" -type f)",
+      "Bash(find /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\) -type d)",
+      "Bash(find /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components -name \"*.tsx\")",
+      "Bash(grep -n \"isWebOptimize\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/tool-loaded-content.tsx)",
+      "Bash(ls /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/)",
+      "Bash(cat /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/page.tsx)",
+      "Bash(tree -L 3 /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\) -I node_modules)",
+      "WebFetch(domain:avepdf.com)",
+      "Bash(find /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\) -name \"_components\" -type d)",
+      "Bash(ls -laR /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }

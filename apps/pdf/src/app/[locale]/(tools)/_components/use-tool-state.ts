@@ -11,6 +11,7 @@ import type { PageSizeKey, Orientation } from "@/lib/processors/jpg-to-pdf";
 import type { FileBreak } from "@/lib/processors/html-to-pdf";
 import type { ScanColorMode } from "@/lib/processors/scan-to-pdf";
 import type { MarginPreset } from "./tool-page-types";
+import type { CropArea, CropPageMode, CropMargins } from "@/lib/processors/crop";
 
 interface UseToolStateParams {
   slug: string;
@@ -72,7 +73,8 @@ export function useToolState({
   const isEditMetadata = slug === "edit-metadata";
   const isEditPdf = slug === "edit-pdf";
   const isFlatten = slug === "flatten";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten;
+  const isCrop = slug === "crop";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop;
 
   const implemented = hasProcessor(slug);
 
@@ -225,6 +227,14 @@ export function useToolState({
   // ─── Flatten options ───
   const [flattenOptions, setFlattenOptions] = useState<Record<string, unknown>>({ formFields: true, annotations: true });
 
+  // ─── Crop ───
+  const [cropArea, setCropArea] = useState<CropArea | null>(null);
+  const [cropMargins, setCropMargins] = useState<CropMargins>({ top: 10, right: 10, bottom: 10, left: 10 });
+  const [cropMode, setCropMode] = useState<"area" | "margins">("area");
+  const [cropPageMode, setCropPageMode] = useState<CropPageMode>("all");
+  const [cropCurrentPage, setCropCurrentPage] = useState(0);
+  const [cropPageRange, setCropPageRange] = useState("");
+
   // ─── Edit PDF annotations ───
   const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
 
@@ -276,6 +286,7 @@ export function useToolState({
         if (isDeletePages) { setDeletedPages(new Set()); setDeletePageOrder([]); }
         if (isExtractPages) { setExtractedPages(new Set()); setExtractPageOrder([]); }
         if (isOrganizePages) { setOrganizePages([]); }
+        if (isCrop) { setCropArea(null); setCropCurrentPage(0); }
         setTimeout(() => addFiles([target.files![0]]), 0);
       }
     };
@@ -423,6 +434,27 @@ export function useToolState({
       return {};
     } else if (isFlatten) {
       return flattenOptions;
+    } else if (isCrop) {
+      const parsedRange = cropPageRange
+        .split(",")
+        .flatMap((part) => {
+          const m = part.trim().match(/^(\d+)\s*-\s*(\d+)$/);
+          if (m) {
+            const from = parseInt(m[1], 10);
+            const to = parseInt(m[2], 10);
+            return Array.from({ length: to - from + 1 }, (_, i) => from + i);
+          }
+          const n = parseInt(part.trim(), 10);
+          return isNaN(n) ? [] : [n];
+        });
+      return {
+        mode: cropMode,
+        cropArea: cropMode === "area" ? cropArea : undefined,
+        margins: cropMode === "margins" ? cropMargins : undefined,
+        pageMode: cropPageMode,
+        currentPage: cropCurrentPage,
+        pageRange: parsedRange.length > 0 ? parsedRange : undefined,
+      };
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -443,7 +475,7 @@ export function useToolState({
     slug, isSplit, isCompress, isWebOptimize, isDeletePages, isExtractPages,
     isOrganizePages, isResize, isRotate, isPdfToJpg, isPdfToPng, isJpgToPdf,
     isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf, isPdfToText,
-    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten,
+    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop,
     splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions,
     deletedPages, deletePageOrder, extractedPages, extractPageOrder,
     organizePages, resizePreset, resizeCustomW, resizeCustomH, resizeOrientation,
@@ -457,6 +489,7 @@ export function useToolState({
     scanToPdfOrientation, scanToPdfPageSize, scanToPdfMarginMm, scanToPdfMergeAll,
     scanToPdfAutoEnhance, scanToPdfColorMode,
     editPdfAnnotations, editedMetadata,
+    cropArea, cropMargins, cropMode, cropPageMode, cropCurrentPage, cropPageRange,
   ]);
 
   // ─── getButtonLabel ───
@@ -475,7 +508,9 @@ export function useToolState({
     pdfToPngLabels?: { convertButton: string };
     pdfToTextLabels?: { convertButton: string };
     flattenLabels?: { flattenButton: string };
+    cropLabels?: { cropButton: string };
   }): string => {
+    if (isCrop && props.cropLabels) return props.cropLabels.cropButton;
     if (isFlatten && props.flattenLabels) return props.flattenLabels.flattenButton;
     if (isEditPdf && props.editPdfLabels) return props.editPdfLabels.applyButton;
     if (isProtect && props.protectLabels) return props.protectLabels.protectButton;
@@ -491,7 +526,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -506,10 +541,13 @@ export function useToolState({
     if (isEditMetadata && !editedMetadata) return true;
     if (isProtect && !protectOptions._valid) return true;
     if (isEditPdf && editPdfAnnotations.length === 0) return true;
+    if (isCrop && cropMode === "area" && !cropArea) return true;
+    if (isCrop && cropMode === "margins" && cropMargins.top === 0 && cropMargins.right === 0 && cropMargins.bottom === 0 && cropMargins.left === 0) return true;
     return false;
   }, [
     implemented, isDeletePages, isExtractPages, isOrganizePages, isRotate,
-    isEditMetadata, isProtect, isEditPdf, deletedPages, extractedPages,
+    isEditMetadata, isProtect, isEditPdf, isCrop, deletedPages, extractedPages,
+    cropArea, cropMode, cropMargins,
     organizePages, rotations, editedMetadata, protectOptions, editPdfAnnotations,
     pageCounts, files,
   ]);
@@ -517,11 +555,11 @@ export function useToolState({
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
     if (isEditPdf && currentStage !== "idle") return "full";
-    if ((isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
+    if ((isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
-    isEditPdf, isSplit, isDeletePages, isExtractPages, isOrganizePages,
+    isEditPdf, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
     isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
@@ -551,6 +589,7 @@ export function useToolState({
     isEditMetadata,
     isEditPdf,
     isFlatten,
+    isCrop,
     isSingleFileMode,
     implemented,
 
@@ -679,6 +718,20 @@ export function useToolState({
     setResizeScaleMode,
     resizeMarginPreset,
     setResizeMarginPreset,
+
+    // Crop
+    cropArea,
+    setCropArea,
+    cropMargins,
+    setCropMargins,
+    cropMode,
+    setCropMode,
+    cropPageMode,
+    setCropPageMode,
+    cropCurrentPage,
+    setCropCurrentPage,
+    cropPageRange,
+    setCropPageRange,
 
     // Flatten
     flattenOptions,

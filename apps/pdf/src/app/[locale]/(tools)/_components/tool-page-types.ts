@@ -15,6 +15,7 @@ import type { ResizeLabels, MarginPreset } from "./resize-options";
 import type { WebOptimizeLabels } from "./web-optimize-options";
 import type { ProtectLabels } from "./protect-options";
 import type { FlattenLabels } from "./flatten-options";
+import type { CropLabels } from "./crop-options";
 import type { EditPdfLabels } from "./edit-pdf/editor-layout";
 
 export interface CommonLabels {
@@ -150,6 +151,7 @@ export interface ToolPageClientProps {
   webOptimizeLabels?: WebOptimizeLabels;
   protectLabels?: ProtectLabels;
   flattenLabels?: FlattenLabels;
+  cropLabels?: CropLabels;
   editMetadataLabels?: EditMetadataLabels;
   editPdfLabels?: EditPdfLabels;
   children?: ReactNode;
@@ -159,5 +161,5 @@ export type {
   PdfToJpgLabels, PdfToPngLabels, PdfToTextLabels, ExtractImagesLabels,
   JpgToPdfLabels, PngToPdfLabels, ImageToPdfLabels, HtmlToPdfLabels,
   ScanToPdfLabels, OrganizePagesLabels, RotateLabels, EditMetadataLabels,
-  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, EditPdfLabels,
+  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels,
 };

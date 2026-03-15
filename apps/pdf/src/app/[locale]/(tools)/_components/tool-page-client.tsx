@@ -59,6 +59,7 @@ export function ToolPageClient({
   webOptimizeLabels,
   protectLabels,
   flattenLabels,
+  cropLabels,
   editMetadataLabels,
   editPdfLabels,
   children,
@@ -111,6 +112,7 @@ export function ToolPageClient({
     isExtractPages,
     isExtractImages,
     isEditPdf,
+    isCrop,
     implemented,
     fav,
     showFavHint,
@@ -132,8 +134,8 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
-      hideHeader={isEditPdf && stage === "loaded"}
-      className={isEditPdf && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
+      hideHeader={(isEditPdf || isCrop) && stage === "loaded"}
+      className={(isEditPdf || isCrop) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -219,6 +221,7 @@ export function ToolPageClient({
               webOptimizeLabels={webOptimizeLabels}
               protectLabels={protectLabels}
               flattenLabels={flattenLabels}
+              cropLabels={cropLabels}
               editMetadataLabels={editMetadataLabels}
               editPdfLabels={editPdfLabels}
               files={files}
@@ -315,6 +318,7 @@ export function ToolPageClient({
                   pdfToPngLabels,
                   pdfToTextLabels,
                   flattenLabels,
+                  cropLabels,
                 })}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>

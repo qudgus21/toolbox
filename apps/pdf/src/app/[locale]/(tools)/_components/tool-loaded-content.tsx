@@ -28,6 +28,7 @@ import { WebOptimizeOptions } from "./web-optimize-options";
 import { ProtectOptions } from "./protect-options";
 import { FlattenOptions } from "./flatten-options";
 import { FlattenPreview } from "./flatten-preview";
+import { CropLayout } from "./crop-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
@@ -67,6 +68,7 @@ interface ToolLoadedContentProps {
   webOptimizeLabels: ToolPageClientProps["webOptimizeLabels"];
   protectLabels: ToolPageClientProps["protectLabels"];
   flattenLabels: ToolPageClientProps["flattenLabels"];
+  cropLabels: ToolPageClientProps["cropLabels"];
   editMetadataLabels: ToolPageClientProps["editMetadataLabels"];
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
   children?: ReactNode;
@@ -113,6 +115,7 @@ export function ToolLoadedContent({
   webOptimizeLabels,
   protectLabels,
   flattenLabels,
+  cropLabels,
   editMetadataLabels,
   editPdfLabels,
   children,
@@ -156,6 +159,7 @@ export function ToolLoadedContent({
     isEditMetadata,
     isEditPdf,
     isFlatten,
+    isCrop,
 
     handleSingleFileChange,
     handleAddMore,
@@ -260,6 +264,19 @@ export function ToolLoadedContent({
     setResizeScaleMode,
     resizeMarginPreset,
     setResizeMarginPreset,
+
+    cropArea,
+    setCropArea,
+    cropMargins,
+    setCropMargins,
+    cropMode,
+    setCropMode,
+    cropPageMode,
+    setCropPageMode,
+    cropCurrentPage,
+    setCropCurrentPage,
+    cropPageRange,
+    setCropPageRange,
 
     setEditPdfAnnotations,
 
@@ -911,6 +928,30 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isCrop && cropLabels && files.length > 0 ? (
+        /* ─── Crop: full-screen editor-style layout ─── */
+        <CropLayout
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          cropArea={cropArea}
+          onCropAreaChange={setCropArea}
+          cropMargins={cropMargins}
+          onCropMarginsChange={setCropMargins}
+          cropMode={cropMode}
+          onCropModeChange={setCropMode}
+          cropPageMode={cropPageMode}
+          onCropPageModeChange={setCropPageMode}
+          cropCurrentPage={cropCurrentPage}
+          onCropCurrentPageChange={setCropCurrentPage}
+          cropPageRange={cropPageRange}
+          onCropPageRangeChange={setCropPageRange}
+          onResetAll={() => {
+            setCropArea(null);
+            setCropMargins({ top: 10, right: 10, bottom: 10, left: 10 });
+          }}
+          onChangeFile={handleSingleFileChange}
+          labels={cropLabels}
+        />
       ) : isFlatten && flattenLabels && files.length > 0 ? (
         /* ─── Flatten: single-file preview + options sidebar ─── */
         <FlattenLoadedContent

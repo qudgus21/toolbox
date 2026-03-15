@@ -106,6 +106,7 @@ export default async function ToolPage({
         webOptimizeLabels={slug === "web-optimize" ? dict.webOptimizeTool : undefined}
         protectLabels={slug === "protect" ? dict.protectTool : undefined}
         flattenLabels={slug === "flatten" ? dict.flattenTool : undefined}
+        cropLabels={slug === "crop" ? dict.cropTool : undefined}
         editMetadataLabels={slug === "edit-metadata" ? dict.editMetadataTool : undefined}
         editPdfLabels={slug === "edit-pdf" ? dict.editPdfTool : undefined}
       />

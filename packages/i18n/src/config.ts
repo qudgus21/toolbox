@@ -465,6 +465,30 @@ export interface Dictionary {
     protectButton: string;
     privacyNote: string;
   };
+  cropTool: {
+    title: string;
+    dragHint: string;
+    resetCrop: string;
+    changeFile: string;
+    cropButton: string;
+    modeArea: string;
+    modeAreaDesc: string;
+    modeMargins: string;
+    modeMarginsDesc: string;
+    marginTop: string;
+    marginRight: string;
+    marginBottom: string;
+    marginLeft: string;
+    marginUnit: string;
+    pageModeLabel: string;
+    pageModeAll: string;
+    pageModeCurrent: string;
+    pageModeRange: string;
+    pageRangePlaceholder: string;
+    pageOf: string;
+    resetAll: string;
+    noCropArea: string;
+  };
   flattenTool: {
     flattenButton: string;
     formFieldsLabel: string;
