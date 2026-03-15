@@ -527,5 +527,6 @@ export interface Dictionary {
     size: string;
     rotation: string;
     layerOrder: string;
+    changeFile: string;
   };
 }

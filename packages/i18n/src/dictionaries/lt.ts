@@ -566,7 +566,7 @@ const lt: Dictionary = {
     toolText: "Tekstas",
     toolImage: "Vaizdas",
     toolRectangle: "Stačiakampis",
-    toolEllipse: "Elipsė",
+    toolEllipse: "Apskritimas",
     toolLine: "Linija",
     toolDraw: "Piešti",
     toolSymbol: "Simbolis",
@@ -622,6 +622,7 @@ const lt: Dictionary = {
     size: "Dydis",
     rotation: "Pasukimas",
     layerOrder: "Sluoksnis",
+    changeFile: "Keisti failą",
   },
 };
 

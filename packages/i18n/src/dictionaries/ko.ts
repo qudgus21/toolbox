@@ -566,7 +566,7 @@ const ko: Dictionary = {
     toolText: "텍스트",
     toolImage: "이미지",
     toolRectangle: "사각형",
-    toolEllipse: "타원",
+    toolEllipse: "원",
     toolLine: "직선",
     toolDraw: "그리기",
     toolSymbol: "기호",
@@ -622,6 +622,7 @@ const ko: Dictionary = {
     size: "크기",
     rotation: "회전",
     layerOrder: "레이어",
+    changeFile: "파일 변경",
   },
 };
 

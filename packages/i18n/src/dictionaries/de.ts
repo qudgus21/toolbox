@@ -566,7 +566,7 @@ const de: Dictionary = {
     toolText: "Text",
     toolImage: "Bild",
     toolRectangle: "Rechteck",
-    toolEllipse: "Ellipse",
+    toolEllipse: "Kreis",
     toolLine: "Linie",
     toolDraw: "Zeichnen",
     toolSymbol: "Symbol",
@@ -622,6 +622,7 @@ const de: Dictionary = {
     size: "Größe",
     rotation: "Drehung",
     layerOrder: "Ebene",
+    changeFile: "Datei ändern",
   },
 };
 

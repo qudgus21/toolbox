@@ -566,7 +566,7 @@ const hi: Dictionary = {
     toolText: "टेक्स्ट",
     toolImage: "छवि",
     toolRectangle: "आयत",
-    toolEllipse: "दीर्घवृत्त",
+    toolEllipse: "वृत्त",
     toolLine: "रेखा",
     toolDraw: "ड्रॉ",
     toolSymbol: "प्रतीक",
@@ -622,6 +622,7 @@ const hi: Dictionary = {
     size: "आकार",
     rotation: "घुमाव",
     layerOrder: "परत",
+    changeFile: "फ़ाइल बदलें",
   },
 };
 

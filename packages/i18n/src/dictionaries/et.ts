@@ -566,7 +566,7 @@ const et: Dictionary = {
     toolText: "Tekst",
     toolImage: "Pilt",
     toolRectangle: "Ristkülik",
-    toolEllipse: "Ellips",
+    toolEllipse: "Ring",
     toolLine: "Joon",
     toolDraw: "Joonista",
     toolSymbol: "Sümbol",
@@ -622,6 +622,7 @@ const et: Dictionary = {
     size: "Suurus",
     rotation: "Pööramine",
     layerOrder: "Kiht",
+    changeFile: "Muuda faili",
   },
 };
 

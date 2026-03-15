@@ -566,7 +566,7 @@ const es: Dictionary = {
     toolText: "Texto",
     toolImage: "Imagen",
     toolRectangle: "Rectángulo",
-    toolEllipse: "Elipse",
+    toolEllipse: "Círculo",
     toolLine: "Línea",
     toolDraw: "Dibujar",
     toolSymbol: "Símbolo",
@@ -622,6 +622,7 @@ const es: Dictionary = {
     size: "Tamaño",
     rotation: "Rotación",
     layerOrder: "Capa",
+    changeFile: "Cambiar archivo",
   },
 };
 

@@ -482,7 +482,7 @@ const km: Dictionary = {
     toolText: "អត្ថបទ",
     toolImage: "រូបភាព",
     toolRectangle: "ចតុកោណ",
-    toolEllipse: "ពងក្រពើ",
+    toolEllipse: "រង្វង់",
     toolLine: "បន្ទាត់",
     toolDraw: "គូរ",
     toolSymbol: "និមិត្តសញ្ញា",
@@ -538,6 +538,7 @@ const km: Dictionary = {
     size: "ទំហំ",
     rotation: "បង្វិល",
     layerOrder: "ស្រទាប់",
+    changeFile: "ប្តូរឯកសារ",
   },
 };
 

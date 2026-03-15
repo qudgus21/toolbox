@@ -566,7 +566,7 @@ const nl: Dictionary = {
     toolText: "Tekst",
     toolImage: "Afbeelding",
     toolRectangle: "Rechthoek",
-    toolEllipse: "Ellips",
+    toolEllipse: "Cirkel",
     toolLine: "Lijn",
     toolDraw: "Tekenen",
     toolSymbol: "Symbool",
@@ -622,6 +622,7 @@ const nl: Dictionary = {
     size: "Grootte",
     rotation: "Rotatie",
     layerOrder: "Laag",
+    changeFile: "Bestand wijzigen",
   },
 };
 

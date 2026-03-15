@@ -566,7 +566,7 @@ const vi: Dictionary = {
     toolText: "Văn bản",
     toolImage: "Hình ảnh",
     toolRectangle: "Hình chữ nhật",
-    toolEllipse: "Hình elip",
+    toolEllipse: "Hình tròn",
     toolLine: "Đường thẳng",
     toolDraw: "Vẽ",
     toolSymbol: "Ký hiệu",
@@ -622,6 +622,7 @@ const vi: Dictionary = {
     size: "Kích thước",
     rotation: "Xoay",
     layerOrder: "Lớp",
+    changeFile: "Đổi tệp",
   },
 };
 

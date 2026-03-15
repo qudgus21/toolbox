@@ -566,7 +566,7 @@ const ja: Dictionary = {
     toolText: "テキスト",
     toolImage: "画像",
     toolRectangle: "長方形",
-    toolEllipse: "楕円",
+    toolEllipse: "円",
     toolLine: "線",
     toolDraw: "手描き",
     toolSymbol: "記号",
@@ -622,6 +622,7 @@ const ja: Dictionary = {
     size: "サイズ",
     rotation: "回転",
     layerOrder: "レイヤー",
+    changeFile: "ファイルを変更",
   },
 };
 

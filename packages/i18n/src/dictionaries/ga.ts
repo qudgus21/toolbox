@@ -566,7 +566,7 @@ const ga: Dictionary = {
     toolText: "Téacs",
     toolImage: "Íomhá",
     toolRectangle: "Dronuilleog",
-    toolEllipse: "Éilips",
+    toolEllipse: "Ciorcal",
     toolLine: "Líne",
     toolDraw: "Tarraing",
     toolSymbol: "Siombail",
@@ -622,6 +622,7 @@ const ga: Dictionary = {
     size: "Méid",
     rotation: "Rothlú",
     layerOrder: "Ciseal",
+    changeFile: "Athraigh comhad",
   },
 };
 

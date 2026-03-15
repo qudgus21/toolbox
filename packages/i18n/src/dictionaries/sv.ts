@@ -566,7 +566,7 @@ const sv: Dictionary = {
     toolText: "Text",
     toolImage: "Bild",
     toolRectangle: "Rektangel",
-    toolEllipse: "Ellips",
+    toolEllipse: "Cirkel",
     toolLine: "Linje",
     toolDraw: "Rita",
     toolSymbol: "Symbol",
@@ -622,6 +622,7 @@ const sv: Dictionary = {
     size: "Storlek",
     rotation: "Rotation",
     layerOrder: "Lager",
+    changeFile: "Byt fil",
   },
 };
 

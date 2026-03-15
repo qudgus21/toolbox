@@ -566,7 +566,7 @@ const tr: Dictionary = {
     toolText: "Metin",
     toolImage: "Görsel",
     toolRectangle: "Dikdörtgen",
-    toolEllipse: "Elips",
+    toolEllipse: "Daire",
     toolLine: "Çizgi",
     toolDraw: "Çiz",
     toolSymbol: "Simge",
@@ -622,6 +622,7 @@ const tr: Dictionary = {
     size: "Boyut",
     rotation: "Döndürme",
     layerOrder: "Katman",
+    changeFile: "Dosyayı değiştir",
   },
 };
 

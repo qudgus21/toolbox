@@ -566,7 +566,7 @@ const fi: Dictionary = {
     toolText: "Teksti",
     toolImage: "Kuva",
     toolRectangle: "Suorakulmio",
-    toolEllipse: "Ellipsi",
+    toolEllipse: "Ympyrä",
     toolLine: "Viiva",
     toolDraw: "Piirrä",
     toolSymbol: "Symboli",
@@ -622,6 +622,7 @@ const fi: Dictionary = {
     size: "Koko",
     rotation: "Kierto",
     layerOrder: "Taso",
+    changeFile: "Vaihda tiedosto",
   },
 };
 

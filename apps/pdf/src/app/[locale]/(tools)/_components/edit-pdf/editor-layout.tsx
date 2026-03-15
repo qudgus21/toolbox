@@ -44,6 +44,7 @@ interface EditorLayoutProps {
   file: File;
   labels: EditPdfLabels;
   onAnnotationsChange: (annotations: EditorElement[]) => void;
+  onChangeFile: () => void;
 }
 
 /* ── Component ──────────────────────────────────────────────── */
@@ -52,6 +53,7 @@ export function EditorLayout({
   file,
   labels,
   onAnnotationsChange,
+  onChangeFile,
 }: EditorLayoutProps) {
   const { state, dispatch, undo, redo } = useEditorStore();
   const { pages, loading } = usePdfPages(file);
@@ -410,6 +412,7 @@ export function EditorLayout({
             onRedo={redo}
             labels={labels}
             selectedElement={selectedElement}
+            onChangeFile={onChangeFile}
           />
 
           {/* All Pages Stacked Vertically */}

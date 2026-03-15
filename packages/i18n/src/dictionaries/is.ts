@@ -566,7 +566,7 @@ const is: Dictionary = {
     toolText: "Texti",
     toolImage: "Mynd",
     toolRectangle: "Rétthyrningur",
-    toolEllipse: "Sporbaugur",
+    toolEllipse: "Hringur",
     toolLine: "Lína",
     toolDraw: "Teikna",
     toolSymbol: "Tákn",
@@ -622,6 +622,7 @@ const is: Dictionary = {
     size: "Stærð",
     rotation: "Snúningur",
     layerOrder: "Lag",
+    changeFile: "Breyta skrá",
   },
 };
 

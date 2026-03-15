@@ -5,7 +5,7 @@ import {
   Stage,
   Layer,
   Rect,
-  Ellipse,
+  Circle as KCircle,
   Line,
   Text,
   Image as KImage,
@@ -200,10 +200,10 @@ export function PageCanvas({
               id: generateId(),
               type: "ellipse",
               pageIndex,
-              x: x - 60,
-              y: y - 40,
-              width: 120,
-              height: 80,
+              x: x - 50,
+              y: y - 50,
+              width: 100,
+              height: 100,
               rotation: 0,
               opacity: state.shapeDefaults.opacity,
               borderColor: state.shapeDefaults.borderColor,
@@ -364,8 +364,16 @@ export function PageCanvas({
           },
         });
       } else {
-        const newWidth = Math.max(5, (el.width || 1) * scaleX);
-        const newHeight = Math.max(5, (el.height || 1) * scaleY);
+        let newWidth = Math.max(5, (el.width || 1) * scaleX);
+        let newHeight = Math.max(5, (el.height || 1) * scaleY);
+
+        // Circle: enforce equal width/height
+        if (el.type === "ellipse") {
+          const size = Math.max(newWidth, newHeight);
+          newWidth = size;
+          newHeight = size;
+        }
+
         dispatch({
           type: "UPDATE_ELEMENT",
           id: el.id,
@@ -480,20 +488,21 @@ export function PageCanvas({
             />
           );
 
-        case "ellipse":
+        case "ellipse": {
+          const r = (el.width / 2) * scale;
           return (
-            <Ellipse
+            <KCircle
               key={el.id}
               {...commonProps}
-              x={(el.x + el.width / 2) * scale}
-              y={(el.y + el.height / 2) * scale}
-              radiusX={(el.width / 2) * scale}
-              radiusY={(el.height / 2) * scale}
+              offsetX={-r}
+              offsetY={-r}
+              radius={r}
               fill={el.fillColor === "transparent" ? undefined : el.fillColor}
               stroke={el.borderColor}
               strokeWidth={el.strokeWidth}
             />
           );
+        }
 
         case "line":
           return (
@@ -692,19 +701,17 @@ export function PageCanvas({
               };
             }}
             rotateEnabled
+            keepRatio={annotations.find((a) => a.id === selectedElementId)?.type === "ellipse"}
             enabledAnchors={
-              annotations.find((a) => a.id === selectedElementId)?.type === "text"
-                ? ["middle-left", "middle-right"]
-                : [
-                    "top-left",
-                    "top-right",
-                    "bottom-left",
-                    "bottom-right",
-                    "middle-left",
-                    "middle-right",
-                    "top-center",
-                    "bottom-center",
-                  ]
+              (() => {
+                const selType = annotations.find((a) => a.id === selectedElementId)?.type;
+                if (selType === "text") return ["middle-left", "middle-right"];
+                if (selType === "ellipse") return ["top-left", "top-right", "bottom-left", "bottom-right"];
+                return [
+                  "top-left", "top-right", "bottom-left", "bottom-right",
+                  "middle-left", "middle-right", "top-center", "bottom-center",
+                ];
+              })()
             }
             anchorFill="#3b82f6"
             anchorStroke="#2563eb"

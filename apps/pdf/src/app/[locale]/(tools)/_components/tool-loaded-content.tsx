@@ -561,6 +561,7 @@ export function ToolLoadedContent({
           file={files[0]}
           labels={editPdfLabels}
           onAnnotationsChange={setEditPdfAnnotations}
+          onChangeFile={handleSingleFileChange}
         />
       ) : isEditMetadata && editMetadataLabels && files.length > 0 ? (
         /* ─── Edit Metadata: single-file + form sidebar ─── */

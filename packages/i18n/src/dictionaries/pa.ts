@@ -566,7 +566,7 @@ const pa: Dictionary = {
     toolText: "ਟੈਕਸਟ",
     toolImage: "ਚਿੱਤਰ",
     toolRectangle: "ਆਇਤ",
-    toolEllipse: "ਅੰਡਾਕਾਰ",
+    toolEllipse: "ਚੱਕਰ",
     toolLine: "ਲਾਈਨ",
     toolDraw: "ਡਰਾਅ",
     toolSymbol: "ਚਿੰਨ੍ਹ",
@@ -622,6 +622,7 @@ const pa: Dictionary = {
     size: "ਆਕਾਰ",
     rotation: "ਘੁੰਮਾਉਣਾ",
     layerOrder: "ਪਰਤ",
+    changeFile: "ਫਾਈਲ ਬਦਲੋ",
   },
 };
 

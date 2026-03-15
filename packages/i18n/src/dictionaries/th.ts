@@ -566,7 +566,7 @@ const th: Dictionary = {
     toolText: "ข้อความ",
     toolImage: "รูปภาพ",
     toolRectangle: "สี่เหลี่ยม",
-    toolEllipse: "วงรี",
+    toolEllipse: "วงกลม",
     toolLine: "เส้น",
     toolDraw: "วาด",
     toolSymbol: "สัญลักษณ์",
@@ -622,6 +622,7 @@ const th: Dictionary = {
     size: "ขนาด",
     rotation: "การหมุน",
     layerOrder: "เลเยอร์",
+    changeFile: "เปลี่ยนไฟล์",
   },
 };
 

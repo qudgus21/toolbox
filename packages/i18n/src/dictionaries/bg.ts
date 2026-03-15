@@ -566,7 +566,7 @@ const bg: Dictionary = {
     toolText: "Текст",
     toolImage: "Изображение",
     toolRectangle: "Правоъгълник",
-    toolEllipse: "Елипса",
+    toolEllipse: "Кръг",
     toolLine: "Линия",
     toolDraw: "Рисуване",
     toolSymbol: "Символ",
@@ -622,6 +622,7 @@ const bg: Dictionary = {
     size: "Размер",
     rotation: "Завъртане",
     layerOrder: "Слой",
+    changeFile: "Промяна на файл",
   },
 };
 

@@ -566,7 +566,7 @@ const ru: Dictionary = {
     toolText: "Текст",
     toolImage: "Изображение",
     toolRectangle: "Прямоугольник",
-    toolEllipse: "Эллипс",
+    toolEllipse: "Круг",
     toolLine: "Линия",
     toolDraw: "Рисование",
     toolSymbol: "Символ",
@@ -622,6 +622,7 @@ const ru: Dictionary = {
     size: "Размер",
     rotation: "Поворот",
     layerOrder: "Слой",
+    changeFile: "Сменить файл",
   },
 };
 

@@ -482,7 +482,7 @@ const ms: Dictionary = {
     toolText: "Teks",
     toolImage: "Imej",
     toolRectangle: "Segi empat tepat",
-    toolEllipse: "Elips",
+    toolEllipse: "Bulatan",
     toolLine: "Garisan",
     toolDraw: "Lukis",
     toolSymbol: "Simbol",
@@ -538,6 +538,7 @@ const ms: Dictionary = {
     size: "Saiz",
     rotation: "Putaran",
     layerOrder: "Lapisan",
+    changeFile: "Tukar fail",
   },
 };
 

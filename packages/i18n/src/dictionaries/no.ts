@@ -554,7 +554,7 @@ const no: Dictionary = {
     toolText: "Tekst",
     toolImage: "Bilde",
     toolRectangle: "Rektangel",
-    toolEllipse: "Ellipse",
+    toolEllipse: "Sirkel",
     toolLine: "Linje",
     toolDraw: "Tegn",
     toolSymbol: "Symbol",
@@ -610,6 +610,7 @@ const no: Dictionary = {
     size: "Størrelse",
     rotation: "Rotasjon",
     layerOrder: "Lag",
+    changeFile: "Bytt fil",
   },
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
-import { Stage, Layer, Rect, Ellipse, Line, Text, Image as KImage, Transformer, Group } from "react-konva";
+import { Stage, Layer, Rect, Circle as KCircle, Line, Text, Image as KImage, Transformer, Group } from "react-konva";
 import type Konva from "konva";
 import {
   generateId,
@@ -87,6 +87,12 @@ export function EditorCanvas({
     [annotations, activePageIndex],
   );
 
+  const selectedElement = useMemo(
+    () => annotations.find((a) => a.id === selectedElementId) ?? null,
+    [annotations, selectedElementId],
+  );
+  const isCircle = selectedElement?.type === "ellipse";
+
   // Update transformer when selection changes
   useEffect(() => {
     const transformer = transformerRef.current;
@@ -97,13 +103,24 @@ export function EditorCanvas({
       const node = stage.findOne(`#${selectedElementId}`);
       if (node) {
         transformer.nodes([node]);
+        // Circle: corner-only anchors + keep aspect ratio
+        if (isCircle) {
+          transformer.enabledAnchors(["top-left", "top-right", "bottom-left", "bottom-right"]);
+          transformer.keepRatio(true);
+        } else {
+          transformer.enabledAnchors([
+            "top-left", "top-right", "bottom-left", "bottom-right",
+            "middle-left", "middle-right", "top-center", "bottom-center",
+          ]);
+          transformer.keepRatio(false);
+        }
         transformer.getLayer()?.batchDraw();
         return;
       }
     }
     transformer.nodes([]);
     transformer.getLayer()?.batchDraw();
-  }, [selectedElementId, activeTool, currentAnnotations]);
+  }, [selectedElementId, activeTool, currentAnnotations, isCircle]);
 
   // Convert stage coordinates to page-relative coordinates
   const stageToPage = useCallback(
@@ -157,6 +174,7 @@ export function EditorCanvas({
               italic: state.textDefaults.italic,
               underline: state.textDefaults.underline,
               align: state.textDefaults.align,
+              lineHeight: state.textDefaults.lineHeight,
             },
           });
           dispatch({ type: "SET_TOOL", tool: "select" });
@@ -190,10 +208,10 @@ export function EditorCanvas({
               id: generateId(),
               type: "ellipse",
               pageIndex: activePageIndex,
-              x: x - 60,
-              y: y - 40,
-              width: 120,
-              height: 80,
+              x: x - 50,
+              y: y - 50,
+              width: 100,
+              height: 100,
               rotation: 0,
               opacity: state.shapeDefaults.opacity,
               borderColor: state.shapeDefaults.borderColor,
@@ -311,14 +329,24 @@ export function EditorCanvas({
       node.scaleX(1);
       node.scaleY(1);
 
+      let newW = Math.max(5, (el.width || 1) * scaleX);
+      let newH = Math.max(5, (el.height || 1) * scaleY);
+
+      // Circle: enforce equal width/height
+      if (el.type === "ellipse") {
+        const size = Math.max(newW, newH);
+        newW = size;
+        newH = size;
+      }
+
       dispatch({
         type: "UPDATE_ELEMENT",
         id: el.id,
         changes: {
           x: nodeX,
           y: nodeY,
-          width: Math.max(5, (el.width || 1) * scaleX),
-          height: Math.max(5, (el.height || 1) * scaleY),
+          width: newW,
+          height: newH,
           rotation: node.rotation(),
         },
       });
@@ -372,20 +400,21 @@ export function EditorCanvas({
             />
           );
 
-        case "ellipse":
+        case "ellipse": {
+          const r = (el.width / 2) * stageSize.scale;
           return (
-            <Ellipse
+            <KCircle
               key={el.id}
               {...commonProps}
-              x={(el.x + el.width / 2) * stageSize.scale + pageOffset.x}
-              y={(el.y + el.height / 2) * stageSize.scale + pageOffset.y}
-              radiusX={(el.width / 2) * stageSize.scale}
-              radiusY={(el.height / 2) * stageSize.scale}
+              offsetX={-r}
+              offsetY={-r}
+              radius={r}
               fill={el.fillColor === "transparent" ? undefined : el.fillColor}
               stroke={el.borderColor}
               strokeWidth={el.strokeWidth}
             />
           );
+        }
 
         case "line":
           return (
@@ -566,16 +595,6 @@ export function EditorCanvas({
               height: Math.max(10, newBox.height),
             })}
             rotateEnabled
-            enabledAnchors={[
-              "top-left",
-              "top-right",
-              "bottom-left",
-              "bottom-right",
-              "middle-left",
-              "middle-right",
-              "top-center",
-              "bottom-center",
-            ]}
           />
         </Layer>
       </Stage>

@@ -566,7 +566,7 @@ const id: Dictionary = {
     toolText: "Teks",
     toolImage: "Gambar",
     toolRectangle: "Persegi panjang",
-    toolEllipse: "Elips",
+    toolEllipse: "Lingkaran",
     toolLine: "Garis",
     toolDraw: "Gambar bebas",
     toolSymbol: "Simbol",
@@ -622,6 +622,7 @@ const id: Dictionary = {
     size: "Ukuran",
     rotation: "Rotasi",
     layerOrder: "Lapisan",
+    changeFile: "Ganti file",
   },
 };
 

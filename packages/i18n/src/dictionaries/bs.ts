@@ -566,7 +566,7 @@ const bs: Dictionary = {
     toolText: "Tekst",
     toolImage: "Slika",
     toolRectangle: "Pravougaonik",
-    toolEllipse: "Elipsa",
+    toolEllipse: "Krug",
     toolLine: "Linija",
     toolDraw: "Crtanje",
     toolSymbol: "Simbol",
@@ -622,6 +622,7 @@ const bs: Dictionary = {
     size: "Veličina",
     rotation: "Rotacija",
     layerOrder: "Sloj",
+    changeFile: "Promijeni datoteku",
   },
 };
 

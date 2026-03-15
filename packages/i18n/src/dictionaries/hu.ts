@@ -566,7 +566,7 @@ const hu: Dictionary = {
     toolText: "Szöveg",
     toolImage: "Kép",
     toolRectangle: "Téglalap",
-    toolEllipse: "Ellipszis",
+    toolEllipse: "Kör",
     toolLine: "Vonal",
     toolDraw: "Rajzolás",
     toolSymbol: "Szimbólum",
@@ -622,6 +622,7 @@ const hu: Dictionary = {
     size: "Méret",
     rotation: "Forgatás",
     layerOrder: "Réteg",
+    changeFile: "Fájl módosítása",
   },
 };
 

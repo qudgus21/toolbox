@@ -566,7 +566,7 @@ const he: Dictionary = {
     toolText: "טקסט",
     toolImage: "תמונה",
     toolRectangle: "מלבן",
-    toolEllipse: "אליפסה",
+    toolEllipse: "עיגול",
     toolLine: "קו",
     toolDraw: "ציור",
     toolSymbol: "סמל",
@@ -622,6 +622,7 @@ const he: Dictionary = {
     size: "גודל",
     rotation: "סיבוב",
     layerOrder: "שכבה",
+    changeFile: "שנה קובץ",
   },
 };
 

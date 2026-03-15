@@ -566,7 +566,7 @@ const te: Dictionary = {
     toolText: "టెక్స్ట్",
     toolImage: "చిత్రం",
     toolRectangle: "దీర్ఘచతురస్రం",
-    toolEllipse: "దీర్ఘవృత్తం",
+    toolEllipse: "వృత్తం",
     toolLine: "రేఖ",
     toolDraw: "గీయండి",
     toolSymbol: "చిహ్నం",
@@ -622,6 +622,7 @@ const te: Dictionary = {
     size: "పరిమాణం",
     rotation: "భ్రమణం",
     layerOrder: "లేయర్",
+    changeFile: "ఫైల్ మార్చు",
   },
 };
 

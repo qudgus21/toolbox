@@ -566,7 +566,7 @@ const lv: Dictionary = {
     toolText: "Teksts",
     toolImage: "Attēls",
     toolRectangle: "Taisnstūris",
-    toolEllipse: "Elipse",
+    toolEllipse: "Aplis",
     toolLine: "Līnija",
     toolDraw: "Zīmēt",
     toolSymbol: "Simbols",
@@ -622,6 +622,7 @@ const lv: Dictionary = {
     size: "Izmērs",
     rotation: "Rotācija",
     layerOrder: "Slānis",
+    changeFile: "Mainīt failu",
   },
 };
 

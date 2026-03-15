@@ -566,7 +566,7 @@ const mt: Dictionary = {
     toolText: "Test",
     toolImage: "Stampa",
     toolRectangle: "Rettangolu",
-    toolEllipse: "Ellissi",
+    toolEllipse: "Ċirku",
     toolLine: "Linja",
     toolDraw: "Pinġi",
     toolSymbol: "Simbolu",
@@ -622,6 +622,7 @@ const mt: Dictionary = {
     size: "Daqs",
     rotation: "Rotazzjoni",
     layerOrder: "Saffa",
+    changeFile: "Ibdel il-fajl",
   },
 };
 

@@ -23,6 +23,7 @@ import {
   Paintbrush,
   PaintBucket,
   Pen,
+  FileInput,
 } from "lucide-react";
 import {
   type ToolType,
@@ -51,6 +52,7 @@ interface EditorToolbarProps {
   onRedo: () => void;
   labels: EditPdfLabels;
   selectedElement: EditorElement | null;
+  onChangeFile: () => void;
 }
 
 /* ── Main Component ─────────────────────────────────────────── */
@@ -62,6 +64,7 @@ export function EditorToolbar({
   onRedo,
   labels,
   selectedElement,
+  onChangeFile,
 }: EditorToolbarProps) {
   const [showSymbolPicker, setShowSymbolPicker] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -187,7 +190,7 @@ export function EditorToolbar({
   return (
     <div className="relative z-20 shrink-0 rounded-t-xl border-b border-border bg-background">
       {/* ── Row 1: Main Tools ────────────────────────────── */}
-      <div className="flex h-12 items-center px-2">
+      <div className="flex h-[47px] items-center px-2">
         <div className="flex items-center gap-0.5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {/* Select */}
           <ToolBtn
@@ -301,6 +304,19 @@ export function EditorToolbar({
           </ActionBtn>
         </div>
 
+        {/* Right: Change PDF */}
+        <div className="ml-auto shrink-0 pr-1">
+          <PortalTooltip label={labels.changeFile}>
+            <button
+              type="button"
+              onClick={onChangeFile}
+              className="flex h-9 cursor-pointer items-center gap-1.5 rounded-lg px-2.5 text-foreground-muted transition-colors hover:bg-background-muted hover:text-foreground"
+            >
+              <FileInput size={16} />
+              <span className="hidden text-xs sm:inline">{labels.changeFile}</span>
+            </button>
+          </PortalTooltip>
+        </div>
       </div>
 
       {/* ── Row 2: Context Bar (overlay) ── */}

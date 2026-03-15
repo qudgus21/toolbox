@@ -566,7 +566,7 @@ const el: Dictionary = {
     toolText: "Κείμενο",
     toolImage: "Εικόνα",
     toolRectangle: "Ορθογώνιο",
-    toolEllipse: "Έλλειψη",
+    toolEllipse: "Κύκλος",
     toolLine: "Γραμμή",
     toolDraw: "Σχεδίαση",
     toolSymbol: "Σύμβολο",
@@ -622,6 +622,7 @@ const el: Dictionary = {
     size: "Μέγεθος",
     rotation: "Περιστροφή",
     layerOrder: "Επίπεδο",
+    changeFile: "Αλλαγή αρχείου",
   },
 };
 

@@ -554,7 +554,7 @@ const ro: Dictionary = {
     toolText: "Text",
     toolImage: "Imagine",
     toolRectangle: "Dreptunghi",
-    toolEllipse: "Elipsă",
+    toolEllipse: "Cerc",
     toolLine: "Linie",
     toolDraw: "Desenare",
     toolSymbol: "Simbol",
@@ -610,6 +610,7 @@ const ro: Dictionary = {
     size: "Dimensiune",
     rotation: "Rotație",
     layerOrder: "Strat",
+    changeFile: "Schimbă fișierul",
   },
 };
 

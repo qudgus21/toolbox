@@ -566,7 +566,7 @@ const mr: Dictionary = {
     toolText: "मजकूर",
     toolImage: "प्रतिमा",
     toolRectangle: "आयत",
-    toolEllipse: "लंबवर्तुळ",
+    toolEllipse: "वर्तुळ",
     toolLine: "रेषा",
     toolDraw: "रेखाटन",
     toolSymbol: "चिन्ह",
@@ -622,6 +622,7 @@ const mr: Dictionary = {
     size: "आकार",
     rotation: "फिरवणे",
     layerOrder: "स्तर",
+    changeFile: "फाइल बदला",
   },
 };
 

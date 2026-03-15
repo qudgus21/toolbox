@@ -566,7 +566,7 @@ const uk: Dictionary = {
     toolText: "Текст",
     toolImage: "Зображення",
     toolRectangle: "Прямокутник",
-    toolEllipse: "Еліпс",
+    toolEllipse: "Коло",
     toolLine: "Лінія",
     toolDraw: "Малювання",
     toolSymbol: "Символ",
@@ -622,6 +622,7 @@ const uk: Dictionary = {
     size: "Розмір",
     rotation: "Обертання",
     layerOrder: "Шар",
+    changeFile: "Змінити файл",
   },
 };
 

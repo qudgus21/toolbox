@@ -566,7 +566,7 @@ const zh: Dictionary = {
     toolText: "文本",
     toolImage: "图片",
     toolRectangle: "矩形",
-    toolEllipse: "椭圆",
+    toolEllipse: "圆形",
     toolLine: "直线",
     toolDraw: "画笔",
     toolSymbol: "符号",
@@ -622,6 +622,7 @@ const zh: Dictionary = {
     size: "大小",
     rotation: "旋转",
     layerOrder: "图层",
+    changeFile: "更换文件",
   },
 };
 

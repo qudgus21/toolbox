@@ -566,7 +566,7 @@ const cs: Dictionary = {
     toolText: "Text",
     toolImage: "Obrázek",
     toolRectangle: "Obdélník",
-    toolEllipse: "Elipsa",
+    toolEllipse: "Kruh",
     toolLine: "Čára",
     toolDraw: "Kreslit",
     toolSymbol: "Symbol",
@@ -622,6 +622,7 @@ const cs: Dictionary = {
     size: "Velikost",
     rotation: "Otočení",
     layerOrder: "Vrstva",
+    changeFile: "Změnit soubor",
   },
 };
 

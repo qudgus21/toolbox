@@ -566,7 +566,7 @@ const ar: Dictionary = {
     toolText: "نص",
     toolImage: "صورة",
     toolRectangle: "مستطيل",
-    toolEllipse: "شكل بيضاوي",
+    toolEllipse: "دائرة",
     toolLine: "خط",
     toolDraw: "رسم",
     toolSymbol: "رمز",
@@ -622,6 +622,7 @@ const ar: Dictionary = {
     size: "الحجم",
     rotation: "الدوران",
     layerOrder: "الطبقة",
+    changeFile: "تغيير الملف",
   },
 };
 

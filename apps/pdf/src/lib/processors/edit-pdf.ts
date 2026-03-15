@@ -30,6 +30,7 @@ interface TextAnnotation extends BaseAnnotation {
   bold: boolean;
   italic: boolean;
   align: string;
+  lineHeight: number;
 }
 
 interface RectangleAnnotation extends BaseAnnotation {
@@ -116,6 +117,84 @@ function toPdfY(konvaY: number, elementHeight: number, pageHeight: number): numb
   return pageHeight - konvaY - elementHeight;
 }
 
+/** Check if text contains characters outside WinAnsi range */
+function hasNonLatinChars(text: string): boolean {
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    // WinAnsi covers basic Latin + Latin-1 Supplement (roughly 0x20-0xFF)
+    if (code > 0xFF) return true;
+  }
+  return false;
+}
+
+/** Render text to canvas and return PNG bytes */
+async function textToImage(
+  content: string,
+  width: number,
+  height: number,
+  fontSize: number,
+  fontFamily: string,
+  fontColor: string,
+  bold: boolean,
+  italic: boolean,
+  align: string,
+  lineHeight: number,
+): Promise<Uint8Array> {
+  const scale = 3; // High-res for clarity
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.ceil(width * scale);
+  canvas.height = Math.ceil(height * scale);
+  const ctx = canvas.getContext("2d")!;
+
+  ctx.scale(scale, scale);
+  ctx.clearRect(0, 0, width, height);
+
+  const fontStyle = `${italic ? "italic " : ""}${bold ? "bold " : ""}${fontSize}px ${fontFamily}, sans-serif`;
+  ctx.font = fontStyle;
+  ctx.fillStyle = fontColor;
+  ctx.textBaseline = "top";
+
+  const lh = fontSize * lineHeight;
+  const lines = wrapText(ctx, content, width);
+
+  for (let i = 0; i < lines.length; i++) {
+    let x = 0;
+    if (align === "center") {
+      x = (width - ctx.measureText(lines[i]).width) / 2;
+    } else if (align === "right") {
+      x = width - ctx.measureText(lines[i]).width;
+    }
+    ctx.fillText(lines[i], x, i * lh);
+  }
+
+  const blob = await new Promise<Blob>((res) =>
+    canvas.toBlob((b) => res(b!), "image/png"),
+  );
+  return new Uint8Array(await blob.arrayBuffer());
+}
+
+/** Simple word-wrap for canvas text */
+function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
+  const lines: string[] = [];
+  for (const paragraph of text.split("\n")) {
+    if (paragraph === "") { lines.push(""); continue; }
+    let current = "";
+    // For CJK, break per-character; for others, break per-word
+    const chars = Array.from(paragraph);
+    for (const ch of chars) {
+      const test = current + ch;
+      if (ctx.measureText(test).width > maxWidth && current) {
+        lines.push(current);
+        current = ch;
+      } else {
+        current = test;
+      }
+    }
+    if (current) lines.push(current);
+  }
+  return lines.length ? lines : [""];
+}
+
 const SYMBOL_UNICODE: Record<string, string> = {
   check: "\u2713",
   cross: "\u2717",
@@ -169,7 +248,6 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
     for (const ann of pageAnnotations) {
       switch (ann.type) {
         case "text": {
-          const font = await getFont(ann.fontFamily, ann.bold, ann.italic);
           const pdfY = toPdfY(ann.y, ann.height, ph);
 
           // Draw background rectangle if backgroundColor is set
@@ -185,15 +263,42 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
             });
           }
 
-          page.drawText(ann.content, {
-            x: ann.x,
-            y: pdfY + ann.height - ann.fontSize,
-            size: ann.fontSize,
-            font,
-            color: hexToRgb(ann.fontColor),
-            opacity: ann.opacity,
-            rotate: degrees(-ann.rotation),
-          });
+          if (hasNonLatinChars(ann.content)) {
+            // Non-Latin text (Korean, CJK, etc.) → render via canvas image
+            const imgBytes = await textToImage(
+              ann.content,
+              ann.width,
+              ann.height,
+              ann.fontSize,
+              ann.fontFamily,
+              ann.fontColor,
+              ann.bold,
+              ann.italic,
+              ann.align,
+              ann.lineHeight ?? 1.2,
+            );
+            const textImage = await doc.embedPng(imgBytes);
+            page.drawImage(textImage, {
+              x: ann.x,
+              y: pdfY,
+              width: ann.width,
+              height: ann.height,
+              opacity: ann.opacity,
+              rotate: degrees(-ann.rotation),
+            });
+          } else {
+            // Latin text → use standard PDF fonts (vector, smaller file size)
+            const font = await getFont(ann.fontFamily, ann.bold, ann.italic);
+            page.drawText(ann.content, {
+              x: ann.x,
+              y: pdfY + ann.height - ann.fontSize,
+              size: ann.fontSize,
+              font,
+              color: hexToRgb(ann.fontColor),
+              opacity: ann.opacity,
+              rotate: degrees(-ann.rotation),
+            });
+          }
           break;
         }
 

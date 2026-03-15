@@ -566,7 +566,7 @@ const bn: Dictionary = {
     toolText: "টেক্সট",
     toolImage: "ছবি",
     toolRectangle: "আয়তক্ষেত্র",
-    toolEllipse: "উপবৃত্ত",
+    toolEllipse: "বৃত্ত",
     toolLine: "রেখা",
     toolDraw: "আঁকা",
     toolSymbol: "প্রতীক",
@@ -622,6 +622,7 @@ const bn: Dictionary = {
     size: "আকার",
     rotation: "ঘূর্ণন",
     layerOrder: "স্তর",
+    changeFile: "ফাইল পরিবর্তন",
   },
 };
 
