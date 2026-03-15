@@ -629,6 +629,8 @@ const te: Dictionary = {
     rotation: "భ్రమణం",
     layerOrder: "లేయర్",
     changeFile: "ఫైల్ మార్చు",
+    imageUploadError: "చిత్రం లోడ్ చేయడం సాధ్యం కాలేదు",
+    confirmClearAll: "అన్ని అంశాలను తొలగించాలా?",
   },
 };
 

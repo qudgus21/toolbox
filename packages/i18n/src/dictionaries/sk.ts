@@ -629,6 +629,8 @@ const sk: Dictionary = {
     rotation: "Otočenie",
     layerOrder: "Vrstva",
     changeFile: "Zmeniť súbor",
+    imageUploadError: "Obrázok sa nepodarilo načítať",
+    confirmClearAll: "Odstrániť všetky prvky?",
   },
 };
 

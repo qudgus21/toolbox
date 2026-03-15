@@ -629,6 +629,8 @@ const pa: Dictionary = {
     rotation: "ਘੁੰਮਾਉਣਾ",
     layerOrder: "ਪਰਤ",
     changeFile: "ਫਾਈਲ ਬਦਲੋ",
+    imageUploadError: "ਚਿੱਤਰ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕੀ",
+    confirmClearAll: "ਸਾਰੇ ਤੱਤ ਮਿਟਾਉਣੇ ਹਨ?",
   },
 };
 

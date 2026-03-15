@@ -629,6 +629,8 @@ const uk: Dictionary = {
     rotation: "Обертання",
     layerOrder: "Шар",
     changeFile: "Змінити файл",
+    imageUploadError: "Не вдалося завантажити зображення",
+    confirmClearAll: "Видалити всі елементи?",
   },
 };
 

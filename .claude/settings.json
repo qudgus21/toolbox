@@ -47,7 +47,8 @@
       "Read(//tmp/**)",
       "Read(//private/tmp/**)",
       "Bash(./node_modules/.bin/tsc --noEmit --project apps/pdf/tsconfig.json)",
-      "Bash(/Applications/hbh/dev/tools/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc --noEmit --project apps/pdf/tsconfig.json)"
+      "Bash(/Applications/hbh/dev/tools/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc --noEmit --project apps/pdf/tsconfig.json)",
+      "Bash(grep -n \"labels\\\\.\" /Applications/hbh/dev/tools/apps/pdf/src/app/[locale]/\\\\\\(tools\\\\\\)/_components/edit-pdf/editor-toolbar.tsx)"
     ]
   }
 }

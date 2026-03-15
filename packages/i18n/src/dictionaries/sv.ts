@@ -629,6 +629,8 @@ const sv: Dictionary = {
     rotation: "Rotation",
     layerOrder: "Lager",
     changeFile: "Byt fil",
+    imageUploadError: "Bilden kunde inte laddas",
+    confirmClearAll: "Ta bort alla element?",
   },
 };
 

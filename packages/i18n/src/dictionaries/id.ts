@@ -629,6 +629,8 @@ const id: Dictionary = {
     rotation: "Rotasi",
     layerOrder: "Lapisan",
     changeFile: "Ganti file",
+    imageUploadError: "Gambar tidak dapat dimuat",
+    confirmClearAll: "Hapus semua elemen?",
   },
 };
 

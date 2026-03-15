@@ -29,6 +29,7 @@ interface TextAnnotation extends BaseAnnotation {
   backgroundColor: string;
   bold: boolean;
   italic: boolean;
+  underline: boolean;
   align: string;
   lineHeight: number;
 }
@@ -137,6 +138,7 @@ async function textToImage(
   fontColor: string,
   bold: boolean,
   italic: boolean,
+  underline: boolean,
   align: string,
   lineHeight: number,
 ): Promise<Uint8Array> {
@@ -159,12 +161,24 @@ async function textToImage(
 
   for (let i = 0; i < lines.length; i++) {
     let x = 0;
+    const tw = ctx.measureText(lines[i]).width;
     if (align === "center") {
-      x = (width - ctx.measureText(lines[i]).width) / 2;
+      x = (width - tw) / 2;
     } else if (align === "right") {
-      x = width - ctx.measureText(lines[i]).width;
+      x = width - tw;
     }
     ctx.fillText(lines[i], x, i * lh);
+
+    // Underline
+    if (underline) {
+      const y = i * lh + fontSize * 1.1;
+      ctx.strokeStyle = fontColor;
+      ctx.lineWidth = Math.max(1, fontSize / 14);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + tw, y);
+      ctx.stroke();
+    }
   }
 
   const blob = await new Promise<Blob>((res) =>
@@ -278,6 +292,7 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
               ann.fontColor,
               ann.bold,
               ann.italic,
+              ann.underline,
               ann.align,
               ann.lineHeight ?? 1.2,
             );
@@ -291,17 +306,36 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
               rotate: degrees(-ann.rotation),
             });
           } else {
-            // Latin text → use standard PDF fonts (vector, smaller file size)
+            // Latin text → render line-by-line with lineHeight + underline
             const font = await getFont(ann.fontFamily, ann.bold, ann.italic);
-            page.drawText(ann.content, {
-              x: ann.x,
-              y: pdfY + ann.height - ann.fontSize,
-              size: ann.fontSize,
-              font,
-              color: hexToRgb(ann.fontColor),
-              opacity: ann.opacity,
-              rotate: degrees(-ann.rotation),
-            });
+            const lh = ann.fontSize * (ann.lineHeight ?? 1.2);
+            const textColor = hexToRgb(ann.fontColor);
+            const lines = ann.content.split("\n");
+
+            for (let i = 0; i < lines.length; i++) {
+              const lineY = pdfY + ann.height - ann.fontSize - i * lh;
+              page.drawText(lines[i], {
+                x: ann.x,
+                y: lineY,
+                size: ann.fontSize,
+                font,
+                color: textColor,
+                opacity: ann.opacity,
+                rotate: degrees(-ann.rotation),
+              });
+
+              // Underline
+              if (ann.underline) {
+                const tw = font.widthOfTextAtSize(lines[i], ann.fontSize);
+                page.drawLine({
+                  start: { x: ann.x, y: lineY - 2 },
+                  end: { x: ann.x + tw, y: lineY - 2 },
+                  thickness: Math.max(0.5, ann.fontSize / 14),
+                  color: textColor,
+                  opacity: ann.opacity,
+                });
+              }
+            }
           }
           break;
         }

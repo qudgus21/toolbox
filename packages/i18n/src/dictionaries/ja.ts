@@ -629,6 +629,8 @@ const ja: Dictionary = {
     rotation: "回転",
     layerOrder: "レイヤー",
     changeFile: "ファイルを変更",
+    imageUploadError: "画像を読み込めません",
+    confirmClearAll: "すべての要素を削除しますか？",
   },
 };
 

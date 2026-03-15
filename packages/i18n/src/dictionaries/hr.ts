@@ -629,6 +629,8 @@ const hr: Dictionary = {
     rotation: "Rotacija",
     layerOrder: "Sloj",
     changeFile: "Promijeni datoteku",
+    imageUploadError: "Slika se ne može učitati",
+    confirmClearAll: "Obrisati sve elemente?",
   },
 };
 

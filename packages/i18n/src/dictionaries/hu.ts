@@ -629,6 +629,8 @@ const hu: Dictionary = {
     rotation: "Forgatás",
     layerOrder: "Réteg",
     changeFile: "Fájl módosítása",
+    imageUploadError: "A kép nem tölthető be",
+    confirmClearAll: "Minden elem törlése?",
   },
 };
 

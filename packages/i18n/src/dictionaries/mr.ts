@@ -629,6 +629,8 @@ const mr: Dictionary = {
     rotation: "फिरवणे",
     layerOrder: "स्तर",
     changeFile: "फाइल बदला",
+    imageUploadError: "प्रतिमा लोड होऊ शकली नाही",
+    confirmClearAll: "सर्व घटक हटवायचे?",
   },
 };
 

@@ -545,6 +545,8 @@ const ms: Dictionary = {
     rotation: "Putaran",
     layerOrder: "Lapisan",
     changeFile: "Tukar fail",
+    imageUploadError: "Imej tidak dapat dimuatkan",
+    confirmClearAll: "Padam semua elemen?",
   },
 };
 

@@ -629,6 +629,8 @@ const vi: Dictionary = {
     rotation: "Xoay",
     layerOrder: "Lớp",
     changeFile: "Đổi tệp",
+    imageUploadError: "Không thể tải ảnh",
+    confirmClearAll: "Xóa tất cả phần tử?",
   },
 };
 

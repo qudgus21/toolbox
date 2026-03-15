@@ -629,6 +629,8 @@ const lt: Dictionary = {
     rotation: "Pasukimas",
     layerOrder: "Sluoksnis",
     changeFile: "Keisti failą",
+    imageUploadError: "Nepavyko įkelti vaizdo",
+    confirmClearAll: "Ištrinti visus elementus?",
   },
 };
 

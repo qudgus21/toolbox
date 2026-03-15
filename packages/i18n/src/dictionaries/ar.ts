@@ -629,6 +629,8 @@ const ar: Dictionary = {
     rotation: "الدوران",
     layerOrder: "الطبقة",
     changeFile: "تغيير الملف",
+    imageUploadError: "تعذّر تحميل الصورة",
+    confirmClearAll: "حذف جميع العناصر؟",
   },
 };
 

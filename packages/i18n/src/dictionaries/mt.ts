@@ -629,6 +629,8 @@ const mt: Dictionary = {
     rotation: "Rotazzjoni",
     layerOrder: "Saffa",
     changeFile: "Ibdel il-fajl",
+    imageUploadError: "Ma setax jillowdja l-immaġni",
+    confirmClearAll: "Ħassar l-elementi kollha?",
   },
 };
 

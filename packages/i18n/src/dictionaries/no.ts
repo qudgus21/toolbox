@@ -617,6 +617,8 @@ const no: Dictionary = {
     rotation: "Rotasjon",
     layerOrder: "Lag",
     changeFile: "Bytt fil",
+    imageUploadError: "Kunne ikke laste bildet",
+    confirmClearAll: "Slette alle elementer?",
   },
 };
 

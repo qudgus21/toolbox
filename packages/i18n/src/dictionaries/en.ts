@@ -629,6 +629,8 @@ const en: Dictionary = {
     rotation: "Rotation",
     layerOrder: "Layer",
     changeFile: "Change file",
+    imageUploadError: "Could not load image",
+    confirmClearAll: "Delete all elements?",
   },
 };
 

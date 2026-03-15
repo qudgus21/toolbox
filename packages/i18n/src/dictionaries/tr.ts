@@ -629,6 +629,8 @@ const tr: Dictionary = {
     rotation: "Döndürme",
     layerOrder: "Katman",
     changeFile: "Dosyayı değiştir",
+    imageUploadError: "Görsel yüklenemedi",
+    confirmClearAll: "Tüm öğeler silinsin mi?",
   },
 };
 

@@ -629,6 +629,8 @@ const bn: Dictionary = {
     rotation: "ঘূর্ণন",
     layerOrder: "স্তর",
     changeFile: "ফাইল পরিবর্তন",
+    imageUploadError: "ছবি লোড করা যায়নি",
+    confirmClearAll: "সব উপাদান মুছে ফেলবেন?",
   },
 };
 

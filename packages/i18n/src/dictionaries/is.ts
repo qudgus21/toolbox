@@ -629,6 +629,8 @@ const is: Dictionary = {
     rotation: "Snúningur",
     layerOrder: "Lag",
     changeFile: "Breyta skrá",
+    imageUploadError: "Ekki tókst að hlaða mynd",
+    confirmClearAll: "Eyða öllum einingum?",
   },
 };
 

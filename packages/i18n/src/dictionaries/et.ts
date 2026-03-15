@@ -629,6 +629,8 @@ const et: Dictionary = {
     rotation: "Pööramine",
     layerOrder: "Kiht",
     changeFile: "Muuda faili",
+    imageUploadError: "Pildi laadimine ebaõnnestus",
+    confirmClearAll: "Kustuta kõik elemendid?",
   },
 };
 

@@ -629,6 +629,8 @@ const th: Dictionary = {
     rotation: "การหมุน",
     layerOrder: "เลเยอร์",
     changeFile: "เปลี่ยนไฟล์",
+    imageUploadError: "ไม่สามารถโหลดรูปภาพได้",
+    confirmClearAll: "ลบองค์ประกอบทั้งหมด?",
   },
 };
 

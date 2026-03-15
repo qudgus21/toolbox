@@ -258,6 +258,8 @@ export interface EditPdfLabels {
   rotation: string;
   layerOrder: string;
   changeFile: string;
+  imageUploadError: string;
+  confirmClearAll: string;
 }
 
 // ─── Helpers ──────────────────────────────────────────────────

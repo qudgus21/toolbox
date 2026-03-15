@@ -629,6 +629,8 @@ const pl: Dictionary = {
     rotation: "Obrót",
     layerOrder: "Warstwa",
     changeFile: "Zmień plik",
+    imageUploadError: "Nie udało się wczytać obrazu",
+    confirmClearAll: "Usunąć wszystkie elementy?",
   },
 };
 

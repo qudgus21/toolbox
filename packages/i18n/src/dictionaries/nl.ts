@@ -629,6 +629,8 @@ const nl: Dictionary = {
     rotation: "Rotatie",
     layerOrder: "Laag",
     changeFile: "Bestand wijzigen",
+    imageUploadError: "Afbeelding kan niet worden geladen",
+    confirmClearAll: "Alle elementen verwijderen?",
   },
 };
 

@@ -629,6 +629,8 @@ const bg: Dictionary = {
     rotation: "Завъртане",
     layerOrder: "Слой",
     changeFile: "Промяна на файл",
+    imageUploadError: "Неуспешно зареждане на изображението",
+    confirmClearAll: "Изтриване на всички елементи?",
   },
 };
 

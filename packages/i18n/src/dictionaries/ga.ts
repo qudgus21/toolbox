@@ -629,6 +629,8 @@ const ga: Dictionary = {
     rotation: "Rothlú",
     layerOrder: "Ciseal",
     changeFile: "Athraigh comhad",
+    imageUploadError: "Níorbh fhéidir an íomhá a lódáil",
+    confirmClearAll: "Scrios gach eilimint?",
   },
 };
 

@@ -629,6 +629,8 @@ const el: Dictionary = {
     rotation: "Περιστροφή",
     layerOrder: "Επίπεδο",
     changeFile: "Αλλαγή αρχείου",
+    imageUploadError: "Αδυναμία φόρτωσης εικόνας",
+    confirmClearAll: "Διαγραφή όλων των στοιχείων;",
   },
 };
 

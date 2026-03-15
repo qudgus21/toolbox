@@ -629,6 +629,8 @@ const fi: Dictionary = {
     rotation: "Kierto",
     layerOrder: "Taso",
     changeFile: "Vaihda tiedosto",
+    imageUploadError: "Kuvaa ei voitu ladata",
+    confirmClearAll: "Poista kaikki elementit?",
   },
 };
 

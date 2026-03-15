@@ -108,10 +108,25 @@ export function EditorToolbar({
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    // Validate file type
+    if (!file.type.startsWith("image/")) {
+      alert(labels.imageUploadError ?? "Unsupported image format");
+      e.target.value = "";
+      return;
+    }
+
     const reader = new FileReader();
+    reader.onerror = () => {
+      alert(labels.imageUploadError ?? "Failed to read image");
+      e.target.value = "";
+    };
     reader.onload = () => {
       const dataUrl = reader.result as string;
       const img = new window.Image();
+      img.onerror = () => {
+        alert(labels.imageUploadError ?? "Failed to load image");
+      };
       img.onload = () => {
         let w = img.width;
         let h = img.height;

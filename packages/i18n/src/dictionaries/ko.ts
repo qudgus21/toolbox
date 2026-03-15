@@ -629,6 +629,8 @@ const ko: Dictionary = {
     rotation: "회전",
     layerOrder: "레이어",
     changeFile: "파일 변경",
+    imageUploadError: "이미지를 불러올 수 없습니다",
+    confirmClearAll: "모든 요소를 삭제할까요?",
   },
 };
 

@@ -629,6 +629,8 @@ const ru: Dictionary = {
     rotation: "Поворот",
     layerOrder: "Слой",
     changeFile: "Сменить файл",
+    imageUploadError: "Не удалось загрузить изображение",
+    confirmClearAll: "Удалить все элементы?",
   },
 };
 

@@ -629,6 +629,8 @@ const lv: Dictionary = {
     rotation: "Rotācija",
     layerOrder: "Slānis",
     changeFile: "Mainīt failu",
+    imageUploadError: "Neizdevās ielādēt attēlu",
+    confirmClearAll: "Dzēst visus elementus?",
   },
 };
 

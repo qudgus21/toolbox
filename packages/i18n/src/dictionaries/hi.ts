@@ -629,6 +629,8 @@ const hi: Dictionary = {
     rotation: "घुमाव",
     layerOrder: "परत",
     changeFile: "फ़ाइल बदलें",
+    imageUploadError: "छवि लोड नहीं हो सकी",
+    confirmClearAll: "सभी तत्व हटाएँ?",
   },
 };
 

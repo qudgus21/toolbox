@@ -629,6 +629,8 @@ const zh: Dictionary = {
     rotation: "旋转",
     layerOrder: "图层",
     changeFile: "更换文件",
+    imageUploadError: "无法加载图片",
+    confirmClearAll: "删除所有元素？",
   },
 };
 

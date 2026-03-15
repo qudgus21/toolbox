@@ -617,6 +617,8 @@ const ro: Dictionary = {
     rotation: "Rotație",
     layerOrder: "Strat",
     changeFile: "Schimbă fișierul",
+    imageUploadError: "Imaginea nu a putut fi încărcată",
+    confirmClearAll: "Ștergeți toate elementele?",
   },
 };
 

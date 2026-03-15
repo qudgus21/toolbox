@@ -545,6 +545,8 @@ const km: Dictionary = {
     rotation: "បង្វិល",
     layerOrder: "ស្រទាប់",
     changeFile: "ប្តូរឯកសារ",
+    imageUploadError: "មិនអាចផ្ទុករូបភាពបានទេ",
+    confirmClearAll: "លុបធាតុទាំងអស់?",
   },
 };
 

@@ -629,6 +629,8 @@ const da: Dictionary = {
     rotation: "Rotation",
     layerOrder: "Lag",
     changeFile: "Skift fil",
+    imageUploadError: "Billedet kunne ikke indlæses",
+    confirmClearAll: "Slet alle elementer?",
   },
 };
 

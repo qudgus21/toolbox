@@ -629,6 +629,8 @@ const sl: Dictionary = {
     rotation: "Vrtenje",
     layerOrder: "Plast",
     changeFile: "Spremeni datoteko",
+    imageUploadError: "Slike ni mogoče naložiti",
+    confirmClearAll: "Izbrisati vse elemente?",
   },
 };
 

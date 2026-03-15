@@ -629,6 +629,8 @@ const pt: Dictionary = {
     rotation: "Rotação",
     layerOrder: "Camada",
     changeFile: "Alterar arquivo",
+    imageUploadError: "Não foi possível carregar a imagem",
+    confirmClearAll: "Excluir todos os elementos?",
   },
 };
 

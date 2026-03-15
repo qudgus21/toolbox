@@ -534,5 +534,7 @@ export interface Dictionary {
     rotation: string;
     layerOrder: string;
     changeFile: string;
+    imageUploadError: string;
+    confirmClearAll: string;
   };
 }

@@ -629,6 +629,8 @@ const he: Dictionary = {
     rotation: "סיבוב",
     layerOrder: "שכבה",
     changeFile: "שנה קובץ",
+    imageUploadError: "לא ניתן לטעון את התמונה",
+    confirmClearAll: "למחוק את כל הרכיבים?",
   },
 };
 
