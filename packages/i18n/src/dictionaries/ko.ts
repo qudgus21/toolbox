@@ -674,6 +674,7 @@ const ko: Dictionary = {
     customPagesPlaceholder: "예: 1, 3-5, 8",
     addPageRedaction: "페이지 검열 추가",
     pageRedaction: "페이지 검열",
+    toolsPanelTitle: "검열 도구",
   },
   editPdfTool: {
     dropFile: "PDF 파일을 선택하세요",

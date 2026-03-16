@@ -561,6 +561,7 @@ export interface Dictionary {
     customPagesPlaceholder: string;
     addPageRedaction: string;
     pageRedaction: string;
+    toolsPanelTitle: string;
   };
   editPdfTool: {
     dropFile: string;

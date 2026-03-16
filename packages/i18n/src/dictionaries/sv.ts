@@ -674,6 +674,7 @@ const sv: Dictionary = {
     customPagesPlaceholder: "e.g. 1, 3-5, 8",
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
+    toolsPanelTitle: "Verktyg",
   },
   editPdfTool: {
     dropFile: "Välj en PDF-fil",

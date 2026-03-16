@@ -133,6 +133,7 @@ export interface RedactPdfLabels {
   customPagesPlaceholder: string;
   addPageRedaction: string;
   pageRedaction: string;
+  toolsPanelTitle: string;
 }
 
 // ─── Helpers ─────────────────────────────────────────────────

@@ -674,6 +674,7 @@ const tr: Dictionary = {
     customPagesPlaceholder: "e.g. 1, 3-5, 8",
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
+    toolsPanelTitle: "Araçlar",
   },
   editPdfTool: {
     dropFile: "PDF dosyası seçin",

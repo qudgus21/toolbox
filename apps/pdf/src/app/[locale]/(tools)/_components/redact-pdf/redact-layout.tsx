@@ -290,6 +290,10 @@ export function RedactLayout({
 
   /* ── Drawing handlers ─────────────────────────── */
   const handlePageMouseDown = useCallback((e: React.MouseEvent, pageIndex: number, page: { width: number; height: number }) => {
+    // Deselect when clicking empty area on the page
+    if (state.selectedRedactionId) {
+      dispatch({ type: "SELECT_REDACTION", id: null });
+    }
     if (state.activeTool !== "redactArea") return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - rect.left) / scale;
@@ -299,7 +303,7 @@ export function RedactLayout({
     setIsDrawing(true);
     setDrawStart({ x: cx, y: cy, pageIndex });
     setDrawCurrent({ x: cx, y: cy });
-  }, [state.activeTool, scale]);
+  }, [state.activeTool, state.selectedRedactionId, scale, dispatch]);
 
   const handlePageMouseMove = useCallback((e: React.MouseEvent, page: { width: number; height: number }) => {
     // Resize selected redaction
@@ -861,9 +865,10 @@ export function RedactLayout({
                           e.stopPropagation();
                           dispatch({ type: "DELETE_REDACTION", id: r.id });
                         }}
-                        className={`absolute -top-3.5 -right-3.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-red-600 text-white shadow-lg ring-2 ring-white transition-all cursor-pointer hover:bg-red-700 hover:scale-110 ${
+                        className={`absolute left-1/2 -translate-x-1/2 z-30 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white shadow-lg ring-2 ring-white transition-all cursor-pointer hover:bg-red-700 hover:scale-110 ${
                           isSelected ? "opacity-100 scale-100" : "opacity-0 scale-75 group-hover/redact:opacity-100 group-hover/redact:scale-100"
                         }`}
+                        style={{ bottom: -36 }}
                         title={labels.deleteRedaction}
                       >
                         <X size={12} />
@@ -871,7 +876,7 @@ export function RedactLayout({
                       {/* Resize anchors — 8 directions, only when selected */}
                       {isSelected && (
                         <>
-                          {(["nw","n","e","se","s","sw","w"] as AnchorDir[]).map((dir) => (
+                          {(["nw","n","ne","e","se","s","sw","w"] as AnchorDir[]).map((dir) => (
                             <div
                               key={dir}
                               onMouseDown={(e) => handleResizeStart(e, dir, r)}
@@ -923,6 +928,9 @@ export function RedactLayout({
 
       {/* ── Right: Tools & Options Panel ───────── */}
       <div className="hidden w-[280px] shrink-0 flex-col border-l border-border bg-background sm:flex lg:w-[320px]">
+        <div className="flex h-12 items-center justify-center border-b border-border px-3">
+          <span className="text-base font-medium text-foreground">{labels.toolsPanelTitle}</span>
+        </div>
         <div className="flex-1 overflow-y-auto">
 
           {/* ─ Section: 도구 선택 ─ */}
@@ -1303,7 +1311,7 @@ function PanelSection({ title, icon, collapsed, onToggle, children }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="border-t border-border">
+    <div className="border-t border-border first:border-t-0">
       <button
         type="button"
         onClick={onToggle}

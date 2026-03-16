@@ -662,6 +662,7 @@ const no: Dictionary = {
     customPagesPlaceholder: "e.g. 1, 3-5, 8",
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
+    toolsPanelTitle: "Verktøy",
   },
   editPdfTool: {
     dropFile: "Velg en PDF-fil",

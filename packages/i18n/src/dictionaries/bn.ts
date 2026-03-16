@@ -674,6 +674,7 @@ const bn: Dictionary = {
     customPagesPlaceholder: "e.g. 1, 3-5, 8",
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
+    toolsPanelTitle: "Tools",
   },
   editPdfTool: {
     dropFile: "PDF ফাইল নির্বাচন করুন",

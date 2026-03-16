@@ -674,6 +674,7 @@ const th: Dictionary = {
     customPagesPlaceholder: "e.g. 1, 3-5, 8",
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
+    toolsPanelTitle: "เครื่องมือ",
   },
   editPdfTool: {
     dropFile: "เลือกไฟล์ PDF",
