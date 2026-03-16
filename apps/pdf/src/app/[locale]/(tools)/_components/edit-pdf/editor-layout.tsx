@@ -191,7 +191,7 @@ export function EditorLayout({
       container.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(rafId);
     };
-  }, [state.activePageIndex, dispatch]);
+  }, [state.activePageIndex, dispatch, loading]);
 
   /* ── Keyboard shortcuts ───────────────────────────────── */
 

@@ -232,7 +232,7 @@ export function RedactLayout({
     };
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => { container.removeEventListener("scroll", handleScroll); cancelAnimationFrame(rafId); };
-  }, [dispatch]);
+  }, [dispatch, loading]);
 
   /* ── Keyboard shortcuts ───────────────────────── */
   useEffect(() => {
@@ -871,7 +871,7 @@ export function RedactLayout({
                       {/* Resize anchors — 8 directions, only when selected */}
                       {isSelected && (
                         <>
-                          {(["nw","n","ne","e","se","s","sw","w"] as AnchorDir[]).map((dir) => (
+                          {(["nw","n","e","se","s","sw","w"] as AnchorDir[]).map((dir) => (
                             <div
                               key={dir}
                               onMouseDown={(e) => handleResizeStart(e, dir, r)}

@@ -298,7 +298,7 @@ export function CropLayout({
 
     container.addEventListener("scroll", handleScroll, { passive: true });
     return () => { container.removeEventListener("scroll", handleScroll); cancelAnimationFrame(rafId); };
-  }, [cropCurrentPage, onCropCurrentPageChange]);
+  }, [cropCurrentPage, onCropCurrentPageChange, loading]);
 
   /* ── Scale calculation ────────────────────────────────────── */
 
