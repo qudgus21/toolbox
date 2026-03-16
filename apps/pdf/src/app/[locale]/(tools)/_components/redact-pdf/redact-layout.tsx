@@ -15,7 +15,6 @@ import {
   Square,
   Search,
   Trash2,
-  AlertTriangle,
   CreditCard,
   Phone,
   Mail,
@@ -25,12 +24,15 @@ import {
   Check,
   Loader2,
   ChevronRight,
+  Pipette,
 } from "lucide-react";
 import { useRedactStore } from "./use-redact-store";
 import { usePdfPages } from "../edit-pdf/use-pdf-pages";
 import {
   generateRedactId,
   REDACT_COLORS,
+  CREDIT_CARD_REGEX,
+  PHONE_REGEXES,
   PATTERN_REGEXES,
   isValidCreditCard,
   parsePageRange,
@@ -128,17 +130,22 @@ export function RedactLayout({
   const [expandedPattern, setExpandedPattern] = useState<"text" | PatternType | null>(null);
 
   // Page redaction state
-  const [showPageRedact, setShowPageRedact] = useState(false);
   const [pageRedactMode, setPageRedactMode] = useState<"current" | "all" | "odd" | "even" | "custom">("current");
   const [customPageInput, setCustomPageInput] = useState("");
 
   // Right panel section collapse
-  const [collapsedSections, setCollapsedSections] = useState<Set<string>>(new Set());
+  const [collapsedSections, setCollapsedSections] = useState<Set<string>>(new Set(["page"]));
+  const rightPanelRef = useRef<HTMLDivElement>(null);
   const toggleSection = useCallback((id: string) => {
     setCollapsedSections((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id); else next.add(id);
       return next;
+    });
+  }, []);
+  const scrollRightPanelToBottom = useCallback(() => {
+    requestAnimationFrame(() => {
+      rightPanelRef.current?.scrollTo({ top: rightPanelRef.current.scrollHeight, behavior: "smooth" });
     });
   }, []);
 
@@ -434,12 +441,17 @@ export function RedactLayout({
 
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-    const allItems: { pageIndex: number; text: string; x: number; y: number; width: number; height: number }[] = [];
+    // fontName → CSS font string cache
+    const fontCache = new Map<string, string>();
+    const measureCanvas = document.createElement("canvas").getContext("2d");
+    const allItems: { pageIndex: number; text: string; x: number; y: number; width: number; height: number; fontName: string; fontSize: number }[] = [];
 
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i);
       const textContent = await page.getTextContent();
       const viewport = page.getViewport({ scale: 1 });
+      // Build font family lookup from commonObjs
+      const styles = (textContent as { styles?: Record<string, { fontFamily?: string }> }).styles ?? {};
 
       for (const item of textContent.items) {
         if (!("str" in item) || !item.str.trim()) continue;
@@ -449,6 +461,14 @@ export function RedactLayout({
         const w = item.width ?? fontSize * item.str.length * 0.6;
         const h = item.height ?? fontSize * 1.2;
         const konvaY = viewport.height - ty - h;
+        const fontName = ("fontName" in item ? (item as { fontName: string }).fontName : "") ?? "";
+
+        // Resolve CSS font string
+        if (fontName && !fontCache.has(fontName)) {
+          const style = styles[fontName];
+          const family = style?.fontFamily ?? "sans-serif";
+          fontCache.set(fontName, `${fontSize}px ${family}`);
+        }
 
         allItems.push({
           pageIndex: i - 1,
@@ -457,10 +477,12 @@ export function RedactLayout({
           y: konvaY,
           width: w,
           height: h,
+          fontName,
+          fontSize,
         });
       }
     }
-    return allItems;
+    return { allItems, fontCache, measureCanvas };
   }, [file]);
 
   /* ── Run scan for selected categories ──────── */
@@ -469,34 +491,82 @@ export function RedactLayout({
     setScanPhase("scanning");
 
     try {
-      const allItems = await extractAllText();
+      const { allItems, fontCache, measureCanvas } = await extractAllText();
+
+      type TextItem = typeof allItems[number];
       const newPatternResults: Record<PatternType, TextSearchResult[]> = {
         creditCard: [], phone: [], email: [],
       };
       let newTextResults: TextSearchResult[] = [];
 
-      // Text search
-      if (selectedCategories.has("text") && searchInput.trim()) {
-        const query = searchInput.trim().toLowerCase();
-        newTextResults = allItems
-          .filter((item) => item.text.toLowerCase().includes(query))
-          .map(({ pageIndex, x, y, width, height, text }) => ({
-            pageIndex, x, y, width, height, text,
-          }));
+      // Helper: find items spanning a match in joined text and compute bounding box
+      // Build per-page index for positional lookup
+      const itemsByPage = new Map<number, TextItem[]>();
+      for (const it of allItems) {
+        let arr = itemsByPage.get(it.pageIndex);
+        if (!arr) { arr = []; itemsByPage.set(it.pageIndex, arr); }
+        arr.push(it);
       }
 
-      // Pattern detection
+      // Helper: measure substring width using canvas + font info for accuracy
+      function measureSubstring(item: TextItem, start: number, len: number): { offsetX: number; width: number } {
+        if (!measureCanvas || item.text.length === 0) {
+          // fallback to average char width
+          const charW = item.width / item.text.length;
+          return { offsetX: start * charW, width: len * charW };
+        }
+        const font = fontCache.get(item.fontName);
+        if (font) {
+          measureCanvas.font = font;
+        } else {
+          measureCanvas.font = `${item.fontSize}px sans-serif`;
+        }
+        // Scale factor: actual item width vs measured full string width
+        const measuredFull = measureCanvas.measureText(item.text).width;
+        const scaleFactor = measuredFull > 0 ? item.width / measuredFull : 1;
+        const prefix = item.text.substring(0, start);
+        const sub = item.text.substring(start, start + len);
+        const offsetX = measureCanvas.measureText(prefix).width * scaleFactor;
+        const subW = measureCanvas.measureText(sub).width * scaleFactor;
+        return { offsetX, width: subW };
+      }
+
+      // Helper: given a substring match inside an item's text, compute the sub-region
+      function subRegion(item: TextItem, matchStart: number, matchLen: number): TextSearchResult {
+        const { offsetX, width } = measureSubstring(item, matchStart, matchLen);
+        return {
+          pageIndex: item.pageIndex,
+          x: item.x + offsetX,
+          y: item.y,
+          width,
+          height: item.height,
+          text: item.text.substring(matchStart, matchStart + matchLen),
+        };
+      }
+
+      // Text search — per-word substring matching with precise bounds
+      if (selectedCategories.has("text") && searchInput.trim()) {
+        const query = searchInput.trim().toLowerCase();
+        for (const item of allItems) {
+          const lower = item.text.toLowerCase();
+          let idx = 0;
+          while ((idx = lower.indexOf(query, idx)) !== -1) {
+            newTextResults.push(subRegion(item, idx, query.length));
+            idx += query.length;
+          }
+        }
+      }
+
+      // Pattern detection — per-item matching to avoid cross-boundary issues
       const patternTypes = (["creditCard", "phone", "email"] as PatternType[])
         .filter((t) => selectedCategories.has(t));
 
       if (patternTypes.length > 0) {
-        const fullText = allItems.map((it) => it.text).join(" ");
-
-        for (const type of patternTypes) {
-          const regex = PATTERN_REGEXES[type];
+        // Helper: run a single regex against item text and collect sub-region results
+        function matchInItem(item: TextItem, regex: RegExp, type: PatternType) {
           const freshRegex = new RegExp(regex.source, regex.flags);
           let match;
-          while ((match = freshRegex.exec(fullText)) !== null) {
+          while ((match = freshRegex.exec(item.text)) !== null) {
             const matchText = match[0].trim();
             if (!matchText) continue;
             if (type === "creditCard" && !isValidCreditCard(matchText)) continue;
@@ -504,23 +574,32 @@ export function RedactLayout({
               const digitsOnly = matchText.replace(/\D/g, "");
               if (digitsOnly.length < 7 || digitsOnly.length > 15) continue;
             }
-            for (const item of allItems) {
-              if (item.text.includes(matchText)) {
-                newPatternResults[type].push({
-                  pageIndex: item.pageIndex, x: item.x, y: item.y,
-                  width: item.width, height: item.height, text: matchText,
-                });
-                break;
-              }
-            }
+            newPatternResults[type].push(subRegion(item, match.index, match[0].length));
           }
         }
 
-        // De-duplicate by position
+        for (const item of allItems) {
+          // Credit card — per-item to prevent cross-boundary matching
+          if (selectedCategories.has("creditCard")) {
+            matchInItem(item, CREDIT_CARD_REGEX, "creditCard");
+          }
+          // Phone — try each specific phone regex
+          if (selectedCategories.has("phone")) {
+            for (const phoneRegex of PHONE_REGEXES) {
+              matchInItem(item, phoneRegex, "phone");
+            }
+          }
+          // Email
+          if (selectedCategories.has("email")) {
+            matchInItem(item, PATTERN_REGEXES.email, "email");
+          }
+        }
+
+        // De-duplicate by position + text
         for (const type of patternTypes) {
           const seen = new Set<string>();
           newPatternResults[type] = newPatternResults[type].filter((r) => {
-            const key = `${r.pageIndex}-${Math.round(r.x)}-${Math.round(r.y)}`;
+            const key = `${r.pageIndex}-${Math.round(r.x)}-${Math.round(r.y)}-${r.text}`;
             if (seen.has(key)) return false;
             seen.add(key);
             return true;
@@ -681,7 +760,7 @@ export function RedactLayout({
   const CATEGORY_CARDS: { type: "text" | PatternType; icon: typeof Search; labelKey: keyof RedactPdfLabels; desc: string }[] = [
     { type: "text", icon: Search, labelKey: "toolRedactText", desc: labels.searchPlaceholder },
     { type: "creditCard", icon: CreditCard, labelKey: "patternCreditCard", desc: "4111-XXXX-XXXX-XXXX" },
-    { type: "phone", icon: Phone, labelKey: "patternPhone", desc: "010-XXXX-XXXX" },
+    { type: "phone", icon: Phone, labelKey: "patternPhone", desc: "+1 (555) 123-4567" },
     { type: "email", icon: Mail, labelKey: "patternEmail", desc: "user@example.com" },
   ];
 
@@ -704,7 +783,12 @@ export function RedactLayout({
         <div className="flex flex-1 flex-col items-center gap-2 overflow-y-auto px-2 py-4">
           {pages.map((page, idx) => {
             const isActive = idx === state.activePageIndex;
-            const count = state.redactions.filter((r) => r.pageIndex === idx).length;
+            const redactCount = state.redactions.filter((r) => r.pageIndex === idx).length;
+            const detectCount = textSearchResults.filter((r) => r.pageIndex === idx).length
+              + patternResults.creditCard.filter((r) => r.pageIndex === idx).length
+              + patternResults.phone.filter((r) => r.pageIndex === idx).length
+              + patternResults.email.filter((r) => r.pageIndex === idx).length;
+            const count = redactCount + detectCount;
             const thumbAspect = page.height / page.width;
             return (
               <div key={idx} className="flex w-[110px] shrink-0 flex-col items-center">
@@ -866,7 +950,7 @@ export function RedactLayout({
                           dispatch({ type: "DELETE_REDACTION", id: r.id });
                         }}
                         className={`absolute left-1/2 -translate-x-1/2 z-30 flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white shadow-lg ring-2 ring-white transition-all cursor-pointer hover:bg-red-700 hover:scale-110 ${
-                          isSelected ? "opacity-100 scale-100" : "opacity-0 scale-75 group-hover/redact:opacity-100 group-hover/redact:scale-100"
+                          isSelected ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
                         }`}
                         style={{ bottom: -36 }}
                         title={labels.deleteRedaction}
@@ -897,12 +981,12 @@ export function RedactLayout({
                 {state.searchResults.filter((r) => r.pageIndex === idx).map((r, i) => (
                   <div
                     key={`sr-${i}`}
-                    className="absolute border-2 border-yellow-400 bg-yellow-200/40"
+                    className="absolute border-2 border-yellow-400 bg-yellow-200/40 rounded-sm"
                     style={{
-                      left: r.x * scale,
+                      left: (r.x - 2) * scale,
                       top: r.y * scale,
-                      width: r.width * scale,
-                      height: r.height * scale,
+                      width: (r.width + 6) * scale,
+                      height: (r.height + 5) * scale,
                     }}
                   />
                 ))}
@@ -931,7 +1015,7 @@ export function RedactLayout({
         <div className="flex h-12 items-center justify-center border-b border-border px-3">
           <span className="text-base font-medium text-foreground">{labels.toolsPanelTitle}</span>
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div ref={rightPanelRef} className="flex-1 overflow-y-auto pb-5">
 
           {/* ─ Section: 도구 선택 ─ */}
           <PanelSection title={labels.toolSelect} icon={<MousePointer2 size={14} />} collapsed={collapsedSections.has("tools")} onToggle={() => toggleSection("tools")}>
@@ -966,7 +1050,12 @@ export function RedactLayout({
                 <button
                   key={value}
                   type="button"
-                  onClick={() => dispatch({ type: "SET_COLOR", color: value })}
+                  onClick={() => {
+                    dispatch({ type: "SET_COLOR", color: value });
+                    if (state.selectedRedactionId) {
+                      dispatch({ type: "UPDATE_REDACTION", id: state.selectedRedactionId, changes: { color: value } });
+                    }
+                  }}
                   title={labels[label]}
                   className={`h-7 w-7 rounded-full border-2 cursor-pointer transition-all ${
                     state.redactColor === value
@@ -976,37 +1065,66 @@ export function RedactLayout({
                   style={{ backgroundColor: value }}
                 />
               ))}
+              {/* Custom color picker */}
+              <label
+                className={`relative h-7 w-7 rounded-full border-2 cursor-pointer transition-all flex items-center justify-center ${
+                  !REDACT_COLORS.some(({ value }) => value === state.redactColor)
+                    ? "border-accent scale-110 ring-2 ring-accent/30"
+                    : "border-border hover:border-foreground-muted"
+                }`}
+                style={{
+                  backgroundColor: !REDACT_COLORS.some(({ value }) => value === state.redactColor)
+                    ? state.redactColor
+                    : "transparent",
+                }}
+              >
+                <Pipette size={14} className="text-foreground-muted" />
+                <input
+                  type="color"
+                  value={state.redactColor}
+                  onChange={(e) => {
+                    dispatch({ type: "SET_COLOR", color: e.target.value });
+                    if (state.selectedRedactionId) {
+                      dispatch({ type: "UPDATE_REDACTION", id: state.selectedRedactionId, changes: { color: e.target.value } });
+                    }
+                  }}
+                  className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                />
+              </label>
             </div>
           </PanelSection>
 
           {/* ─ Section: 자동 감지 & 검색 ─ */}
           <PanelSection title={labels.patternDetect} icon={<ScanSearch size={14} />} collapsed={collapsedSections.has("detect")} onToggle={() => toggleSection("detect")}>
-            <div className="px-4 pb-3 space-y-2.5">
+            <div className="px-4 pb-4 space-y-3">
               {/* Category cards */}
-              <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-1.5">
                 {CATEGORY_CARDS.map(({ type, icon: Icon, labelKey, desc }) => {
                   const isSelected = selectedCategories.has(type);
                   return (
                     <button
                       key={type}
                       type="button"
+                      data-testid={`category-${type}`}
                       onClick={() => toggleCategory(type)}
-                      className={`flex flex-col items-start gap-1 rounded-lg border p-2.5 text-left transition-all cursor-pointer ${
+                      className={`flex w-full items-center gap-3 rounded-lg border px-3 py-2.5 text-left transition-all cursor-pointer ${
                         isSelected
                           ? "border-accent bg-accent/10 shadow-sm"
                           : "border-border hover:bg-background-muted hover:border-foreground-muted"
                       }`}
                     >
-                      <div className="flex w-full items-center gap-1.5">
-                        <Icon size={14} className={isSelected ? "text-accent" : "text-foreground-muted"} />
-                        <span className={`text-xs font-medium ${isSelected ? "text-accent" : "text-foreground"}`}>
+                      <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md ${isSelected ? "bg-accent/20" : "bg-background-muted"}`}>
+                        <Icon size={16} className={isSelected ? "text-accent" : "text-foreground-muted"} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className={`text-xs font-medium block ${isSelected ? "text-accent" : "text-foreground"}`}>
                           {labels[labelKey]}
                         </span>
-                        {isSelected && (
-                          <Check size={12} className="ml-auto text-accent" />
-                        )}
+                        <span className="text-[10px] text-foreground-subtle truncate block">{desc}</span>
                       </div>
-                      <span className="text-[10px] text-foreground-subtle truncate w-full">{desc}</span>
+                      {isSelected && (
+                        <Check size={14} className="text-accent shrink-0" />
+                      )}
                     </button>
                   );
                 })}
@@ -1014,8 +1132,8 @@ export function RedactLayout({
 
               {/* Text search input — shown when text category is selected */}
               {selectedCategories.has("text") && (
-                <div className="flex items-center gap-2 rounded-lg border border-border bg-background-muted/50 px-2.5 py-1.5">
-                  <Search size={13} className="text-foreground-muted shrink-0" />
+                <div className="flex items-center gap-2 rounded-lg border border-border bg-background-muted/50 px-3 py-2">
+                  <Search size={14} className="text-foreground-muted shrink-0" />
                   <input
                     type="text"
                     value={searchInput}
@@ -1032,9 +1150,10 @@ export function RedactLayout({
               {selectedCategories.size > 0 && scanPhase !== "results" && (
                 <button
                   type="button"
+                  data-testid="scan-button"
                   onClick={handleRunScan}
                   disabled={scanPhase === "scanning" || (selectedCategories.has("text") && !selectedCategories.has("creditCard") && !selectedCategories.has("phone") && !selectedCategories.has("email") && !searchInput.trim())}
-                  className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent px-3 py-2 text-xs font-medium text-accent-foreground hover:brightness-110 disabled:opacity-50 cursor-pointer transition-all"
+                  className="w-full flex items-center justify-center gap-2 rounded-lg bg-accent px-3 py-2.5 text-xs font-medium text-accent-foreground hover:brightness-110 disabled:opacity-50 cursor-pointer transition-all"
                 >
                   {scanPhase === "scanning" ? (
                     <><Loader2 size={14} className="animate-spin" /> {labels.patternScanning}</>
@@ -1046,7 +1165,7 @@ export function RedactLayout({
 
               {/* Results */}
               {scanPhase === "results" && (
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-medium text-foreground">
                       {labels.patternFound.replace("{count}", String(totalResultCount))}
@@ -1057,14 +1176,14 @@ export function RedactLayout({
                         setScanPhase("select");
                         dispatch({ type: "SET_SEARCH_RESULTS", results: [] });
                       }}
-                      className="text-[10px] text-foreground-muted hover:text-foreground cursor-pointer"
+                      className="text-foreground-muted hover:text-foreground cursor-pointer"
                     >
-                      <X size={12} />
+                      <X size={14} />
                     </button>
                   </div>
 
                   {totalResultCount === 0 && (
-                    <p className="text-xs text-foreground-subtle text-center py-2">{labels.patternNone}</p>
+                    <p className="text-xs text-foreground-subtle text-center py-3">{labels.patternNone}</p>
                   )}
 
                   {/* Text results */}
@@ -1106,9 +1225,10 @@ export function RedactLayout({
                   {totalResultCount > 0 && (
                     <button
                       type="button"
+                      data-testid="redact-selected-button"
                       onClick={handleRedactSelectedPatterns}
                       disabled={selectedPatterns.size === 0}
-                      className="w-full rounded-lg bg-red-500 px-3 py-2 text-xs font-medium text-white hover:bg-red-600 disabled:opacity-50 cursor-pointer transition-colors"
+                      className="w-full rounded-lg bg-red-500 px-3 py-2.5 text-xs font-medium text-white hover:bg-red-600 disabled:opacity-50 cursor-pointer transition-colors"
                     >
                       {labels.redactSelected} ({selectedPatterns.size})
                     </button>
@@ -1118,8 +1238,8 @@ export function RedactLayout({
             </div>
           </PanelSection>
 
-          {/* ─ Section: 페이지 검열 ─ */}
-          <PanelSection title={labels.redactFullPage} icon={<FileText size={14} />} collapsed={!showPageRedact && collapsedSections.has("page")} onToggle={() => { setShowPageRedact((p) => !p); if (collapsedSections.has("page")) toggleSection("page"); }}>
+          {/* ─ Section: 페이지 검열 (옵션만, 버튼은 하단 고정) ─ */}
+          <PanelSection title={labels.redactFullPage} icon={<FileText size={14} />} collapsed={collapsedSections.has("page")} onToggle={() => { toggleSection("page"); if (collapsedSections.has("page")) scrollRightPanelToBottom(); }}>
             <div className="px-4 pb-3 space-y-2">
               <p className="text-[11px] text-foreground-muted">{labels.redactFullPageDesc}</p>
 
@@ -1170,60 +1290,23 @@ export function RedactLayout({
             </div>
           </PanelSection>
 
-          {/* ─ Section: 선택된 영역 속성 ─ */}
+          {/* ─ Section: 선택된 영역 — 삭제만 ─ */}
           {selectedRedaction && (
-            <div className="border-t border-border">
-              <div className="px-4 py-3 space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-foreground">
-                    {selectedRedaction.type === "area" ? labels.areaRedaction : labels.textRedaction}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => dispatch({ type: "DELETE_REDACTION", id: selectedRedaction.id })}
-                    className="text-red-500 hover:text-red-600 cursor-pointer"
-                  >
-                    <Trash2 size={14} />
-                  </button>
-                </div>
-                {selectedRedaction.label && (
-                  <p className="text-xs text-foreground-muted truncate">&ldquo;{selectedRedaction.label}&rdquo;</p>
-                )}
-                <div className="grid grid-cols-2 gap-2 text-[11px]">
-                  <div>
-                    <span className="text-foreground-subtle">{labels.position}</span>
-                    <span className="ml-1 text-foreground">{Math.round(selectedRedaction.x)}, {Math.round(selectedRedaction.y)}</span>
-                  </div>
-                  <div>
-                    <span className="text-foreground-subtle">{labels.size}</span>
-                    <span className="ml-1 text-foreground">{Math.round(selectedRedaction.width)} × {Math.round(selectedRedaction.height)}</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1">
-                  {REDACT_COLORS.map(({ value }) => (
-                    <button
-                      key={value}
-                      type="button"
-                      onClick={() => dispatch({ type: "UPDATE_REDACTION", id: selectedRedaction.id, changes: { color: value } })}
-                      className={`h-5 w-5 rounded-full border-2 cursor-pointer transition-all ${
-                        selectedRedaction.color === value ? "border-accent scale-110" : "border-border"
-                      }`}
-                      style={{ backgroundColor: value }}
-                    />
-                  ))}
-                </div>
-              </div>
+            <div className="border-t border-border px-4 py-2.5 flex items-center justify-between">
+              <span className="text-xs text-foreground-muted truncate">
+                {selectedRedaction.label ? `"${selectedRedaction.label}"` : (selectedRedaction.type === "area" ? labels.areaRedaction : labels.textRedaction)}
+              </span>
+              <button
+                type="button"
+                onClick={() => dispatch({ type: "DELETE_REDACTION", id: selectedRedaction.id })}
+                className="flex items-center gap-1 text-xs text-red-500 hover:text-red-600 cursor-pointer shrink-0"
+              >
+                <Trash2 size={13} />
+              </button>
             </div>
           )}
         </div>
 
-        {/* Bottom warning */}
-        <div className="flex items-start gap-2 border-t border-border bg-amber-50 px-3 py-2 dark:bg-amber-950/30">
-          <AlertTriangle size={14} className="mt-0.5 shrink-0 text-amber-500" />
-          <p className="text-[11px] leading-relaxed text-amber-700 dark:text-amber-400">
-            {labels.applyWarning}
-          </p>
-        </div>
       </div>
     </div>
 

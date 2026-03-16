@@ -664,7 +664,7 @@ const en: Dictionary = {
     patternFound: "{count} detected",
     patternNone: "None detected",
     redactSelected: "Redact selected",
-    redactFullPage: "Page Redaction",
+    redactFullPage: "Page Selection",
     redactFullPageDesc: "Redact entire selected pages",
     currentPage: "Current page",
     allPages: "All pages",

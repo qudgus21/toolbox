@@ -89,10 +89,10 @@ function redactReducer(state: RedactState, action: RedactAction): RedactState {
       const newRedactions = action.results.map((r) => ({
         id: generateRedactId(),
         pageIndex: r.pageIndex,
-        x: r.x,
+        x: r.x - 2,
         y: r.y,
-        width: r.width,
-        height: r.height,
+        width: r.width + 6,
+        height: r.height + 5,
         color: state.redactColor,
         type: "text" as const,
         label: r.text,

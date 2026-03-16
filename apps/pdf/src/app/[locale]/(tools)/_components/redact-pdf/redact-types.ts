@@ -152,9 +152,23 @@ export const REDACT_COLORS = [
 
 // ─── Pattern Detection Regexes ──────────────────────────────
 
+// Credit card: 13-19 digits with optional spaces/dashes, must not be surrounded by more digits
+// Matches: 4111111111111111, 4111-1111-1111-1111, 4111 1111 1111 1111
+export const CREDIT_CARD_REGEX = /(?<!\d[- ]?)(\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{1,7}|\d{13,19})(?![- ]?\d)/g;
+
+// Phone: specific patterns to reduce false positives
+// Global phone patterns — covers international, regional, and local formats
+export const PHONE_REGEXES = [
+  /\+\d{1,3}[-.\s]\d{1,4}[-.\s]\d{2,4}[-.\s]\d{2,4}(?:[-.\s]\d{2,4})?/g,     // International segmented: +CC-XX-XXXX-XXXX
+  /\+\d{1,3}[-.\s]?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{4}/g,                  // International compact: +CC (XX) XXXX-XXXX
+  /\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}/g,                                          // US/CA: (XXX) XXX-XXXX
+  /0\d{1,2}[-.\s]?\d{3,4}[-.\s]?\d{4}/g,                                        // Regional: 0XX-XXX-XXXX (KR, JP, DE, FR, etc.)
+  /\d{3,5}[-.\s]\d{3,4}[-.\s]\d{3,4}/g,                                          // Generic local: XXX-XXXX-XXXX
+];
+
 export const PATTERN_REGEXES: Record<PatternType, RegExp> = {
-  creditCard: /\b(?:\d[ -]*?){13,19}\b/g,
-  phone: /(?:\+?\d{1,4}[\s.-]?)?(?:\(?\d{2,4}\)?[\s.-]?)?\d{3,4}[\s.-]?\d{3,4}\b/g,
+  creditCard: CREDIT_CARD_REGEX,
+  phone: PHONE_REGEXES[0], // placeholder — phone uses PHONE_REGEXES array directly
   email: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,
 };
 
