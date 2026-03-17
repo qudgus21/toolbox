@@ -30,6 +30,7 @@ import { FlattenOptions } from "./flatten-options";
 import { FlattenPreview } from "./flatten-preview";
 import { CropLayout } from "./crop-layout";
 import { RedactLayout } from "./redact-pdf/redact-layout";
+import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
@@ -73,6 +74,7 @@ interface ToolLoadedContentProps {
   editMetadataLabels: ToolPageClientProps["editMetadataLabels"];
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
   redactLabels: ToolPageClientProps["redactLabels"];
+  pageNumbersLabels: ToolPageClientProps["pageNumbersLabels"];
   children?: ReactNode;
 
   // From useToolProcessor
@@ -94,6 +96,7 @@ interface ToolLoadedContentProps {
 
   // Page selector
   setPageSelectorFile: (file: File | null) => void;
+
 }
 
 export function ToolLoadedContent({
@@ -121,6 +124,7 @@ export function ToolLoadedContent({
   editMetadataLabels,
   editPdfLabels,
   redactLabels,
+  pageNumbersLabels,
   children,
   files,
   rotations,
@@ -164,6 +168,7 @@ export function ToolLoadedContent({
     isFlatten,
     isCrop,
     isRedact,
+    isPageNumbers,
 
     handleSingleFileChange,
     handleAddMore,
@@ -281,6 +286,9 @@ export function ToolLoadedContent({
     setCropCurrentPage,
     cropPageRange,
     setCropPageRange,
+
+    pageNumberOptions,
+    setPageNumberOptions,
 
     setRedactAreas,
 
@@ -942,6 +950,16 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isPageNumbers && pageNumbersLabels && files.length > 0 ? (
+        /* ─── Page Numbers: single-file + options sidebar ─── */
+        <PageNumbersLayout
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          options={pageNumberOptions}
+          onOptionsChange={setPageNumberOptions}
+          onChangeFile={handleSingleFileChange}
+          labels={pageNumbersLabels}
+        />
       ) : isCrop && cropLabels && files.length > 0 ? (
         /* ─── Crop: full-screen editor-style layout ─── */
         <CropLayout

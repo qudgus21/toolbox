@@ -63,6 +63,7 @@ export function ToolPageClient({
   editMetadataLabels,
   editPdfLabels,
   redactLabels,
+  pageNumbersLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -200,7 +201,7 @@ export function ToolPageClient({
             key="loaded"
             {...fadeSlide}
             transition={transition}
-            className="space-y-4"
+            className={(isEditPdf || isCrop || isRedact) ? "h-full" : "space-y-4"}
           >
             <ToolLoadedContent
               labels={labels}
@@ -227,6 +228,7 @@ export function ToolPageClient({
               editMetadataLabels={editMetadataLabels}
               editPdfLabels={editPdfLabels}
               redactLabels={redactLabels}
+              pageNumbersLabels={pageNumbersLabels}
               files={files}
               rotations={rotations}
               pageSelections={pageSelections}
@@ -323,6 +325,7 @@ export function ToolPageClient({
                   pdfToTextLabels,
                   flattenLabels,
                   cropLabels,
+                  pageNumbersLabels,
                 })}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>

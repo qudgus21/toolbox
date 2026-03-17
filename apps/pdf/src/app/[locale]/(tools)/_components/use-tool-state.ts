@@ -75,7 +75,8 @@ export function useToolState({
   const isFlatten = slug === "flatten";
   const isCrop = slug === "crop";
   const isRedact = slug === "redact";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact;
+  const isPageNumbers = slug === "page-numbers";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers;
 
   const implemented = hasProcessor(slug);
 
@@ -235,6 +236,22 @@ export function useToolState({
   const [cropPageMode, setCropPageMode] = useState<CropPageMode>("all");
   const [cropCurrentPage, setCropCurrentPage] = useState(0);
   const [cropPageRange, setCropPageRange] = useState("");
+
+  // ─── Page Numbers ───
+  const [pageNumberOptions, setPageNumberOptions] = useState<import("@/lib/processors/page-numbers-types").PageNumberOptions>({
+    position: "bottom-center",
+    format: "{n}",
+    customTemplate: "{n}",
+    font: "Helvetica",
+    fontSize: 12,
+    color: "#000000",
+    marginMm: 10,
+    pageRange: "all",
+    customRange: "",
+    skipFirstN: 0,
+    startNumber: 1,
+    facingMode: "single",
+  });
 
   // ─── Redact areas ───
   const [redactAreas, setRedactAreas] = useState<unknown[]>([]);
@@ -461,6 +478,8 @@ export function useToolState({
       };
     } else if (isRedact) {
       return { redactions: redactAreas };
+    } else if (isPageNumbers) {
+      return { ...pageNumberOptions } as unknown as Record<string, unknown>;
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -494,8 +513,9 @@ export function useToolState({
     htmlToPdfFileBreak, htmlToPdfFileGapMm,
     scanToPdfOrientation, scanToPdfPageSize, scanToPdfMarginMm, scanToPdfMergeAll,
     scanToPdfAutoEnhance, scanToPdfColorMode,
-    editPdfAnnotations, editedMetadata, redactAreas,
+    editPdfAnnotations, editedMetadata, redactAreas, pageNumberOptions,
     cropArea, cropMargins, cropMode, cropPageMode, cropCurrentPage, cropPageRange,
+    isPageNumbers,
   ]);
 
   // ─── getButtonLabel ───
@@ -516,7 +536,9 @@ export function useToolState({
     pdfToTextLabels?: { convertButton: string };
     flattenLabels?: { flattenButton: string };
     cropLabels?: { cropButton: string };
+    pageNumbersLabels?: { applyButton: string };
   }): string => {
+    if (isPageNumbers && props.pageNumbersLabels) return props.pageNumbersLabels.applyButton;
     if (isRedact && props.redactLabels) return props.redactLabels.applyButton;
     if (isCrop && props.cropLabels) return props.cropLabels.cropButton;
     if (isFlatten && props.flattenLabels) return props.flattenLabels.flattenButton;
@@ -534,7 +556,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isPageNumbers, isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -564,11 +586,11 @@ export function useToolState({
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
     if ((isEditPdf || isRedact) && currentStage !== "idle") return "full";
-    if ((isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
+    if ((isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
-    isEditPdf, isRedact, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
+    isEditPdf, isRedact, isPageNumbers, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
     isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
@@ -600,6 +622,7 @@ export function useToolState({
     isFlatten,
     isCrop,
     isRedact,
+    isPageNumbers,
     isSingleFileMode,
     implemented,
 
@@ -746,6 +769,10 @@ export function useToolState({
     // Flatten
     flattenOptions,
     setFlattenOptions,
+
+    // Page Numbers
+    pageNumberOptions,
+    setPageNumberOptions,
 
     // Redact
     redactAreas,

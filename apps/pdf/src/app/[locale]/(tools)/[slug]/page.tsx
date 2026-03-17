@@ -110,6 +110,7 @@ export default async function ToolPage({
         editMetadataLabels={slug === "edit-metadata" ? dict.editMetadataTool : undefined}
         editPdfLabels={slug === "edit-pdf" ? dict.editPdfTool : undefined}
         redactLabels={slug === "redact" ? dict.redactTool : undefined}
+        pageNumbersLabels={slug === "page-numbers" ? dict.pageNumbersTool : undefined}
       />
     </>
   );
