@@ -30,6 +30,7 @@ import { FlattenOptions } from "./flatten-options";
 import { FlattenPreview } from "./flatten-preview";
 import { CropLayout } from "./crop-layout";
 import { RedactLayout } from "./redact-pdf/redact-layout";
+import { AnnotateLayout } from "./annotate-pdf/annotate-layout";
 import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
@@ -74,6 +75,7 @@ interface ToolLoadedContentProps {
   editMetadataLabels: ToolPageClientProps["editMetadataLabels"];
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
   redactLabels: ToolPageClientProps["redactLabels"];
+  annotateLabels: ToolPageClientProps["annotateLabels"];
   pageNumbersLabels: ToolPageClientProps["pageNumbersLabels"];
   children?: ReactNode;
 
@@ -124,6 +126,7 @@ export function ToolLoadedContent({
   editMetadataLabels,
   editPdfLabels,
   redactLabels,
+  annotateLabels,
   pageNumbersLabels,
   children,
   files,
@@ -169,6 +172,7 @@ export function ToolLoadedContent({
     isCrop,
     isRedact,
     isPageNumbers,
+    isAnnotate,
 
     handleSingleFileChange,
     handleAddMore,
@@ -291,6 +295,8 @@ export function ToolLoadedContent({
     setPageNumberOptions,
 
     setRedactAreas,
+
+    setAnnotateAnnotations,
 
     setEditPdfAnnotations,
 
@@ -595,6 +601,14 @@ export function ToolLoadedContent({
             </div>
           </div>
         </>
+      ) : isAnnotate && annotateLabels && files.length > 0 ? (
+        /* ─── Annotate PDF: full-screen editor ─── */
+        <AnnotateLayout
+          file={files[0]}
+          labels={annotateLabels}
+          onAnnotationsChange={setAnnotateAnnotations}
+          onChangeFile={handleSingleFileChange}
+        />
       ) : isRedact && redactLabels && files.length > 0 ? (
         /* ─── Redact PDF: full-screen editor ─── */
         <RedactLayout

@@ -19,6 +19,7 @@ import type { CropLabels } from "./crop-options";
 import type { EditPdfLabels } from "./edit-pdf/editor-layout";
 import type { RedactPdfLabels } from "./redact-pdf/redact-layout";
 import type { PageNumbersLabels } from "./page-numbers/page-numbers-options";
+import type { AnnotatePdfLabels } from "./annotate-pdf/annotate-layout";
 
 export interface CommonLabels {
   backToAll: string;
@@ -158,6 +159,7 @@ export interface ToolPageClientProps {
   editPdfLabels?: EditPdfLabels;
   redactLabels?: RedactPdfLabels;
   pageNumbersLabels?: PageNumbersLabels;
+  annotateLabels?: AnnotatePdfLabels;
   children?: ReactNode;
 }
 
@@ -165,5 +167,5 @@ export type {
   PdfToJpgLabels, PdfToPngLabels, PdfToTextLabels, ExtractImagesLabels,
   JpgToPdfLabels, PngToPdfLabels, ImageToPdfLabels, HtmlToPdfLabels,
   ScanToPdfLabels, OrganizePagesLabels, RotateLabels, EditMetadataLabels,
-  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels,
+  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels, AnnotatePdfLabels,
 };

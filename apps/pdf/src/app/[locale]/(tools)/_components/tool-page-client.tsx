@@ -63,6 +63,7 @@ export function ToolPageClient({
   editMetadataLabels,
   editPdfLabels,
   redactLabels,
+  annotateLabels,
   pageNumbersLabels,
   children,
 }: ToolPageClientProps) {
@@ -228,6 +229,7 @@ export function ToolPageClient({
               editMetadataLabels={editMetadataLabels}
               editPdfLabels={editPdfLabels}
               redactLabels={redactLabels}
+              annotateLabels={annotateLabels}
               pageNumbersLabels={pageNumbersLabels}
               files={files}
               rotations={rotations}
@@ -326,6 +328,7 @@ export function ToolPageClient({
                   flattenLabels,
                   cropLabels,
                   pageNumbersLabels,
+                  annotateLabels,
                 })}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
