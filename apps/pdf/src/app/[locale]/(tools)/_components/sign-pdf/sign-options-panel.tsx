@@ -201,7 +201,7 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             <button
               onClick={addName}
               disabled={!userName.trim()}
-              className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
               title={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
@@ -226,7 +226,7 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             </div>
             <button
               onClick={addDate}
-              className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
               title={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
@@ -259,7 +259,7 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             <button
               onClick={addText}
               disabled={!customText.trim()}
-              className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
               title={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
@@ -317,14 +317,14 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
           <div className="flex gap-2">
             <button
               onClick={() => dispatch({ type: "DUPLICATE_ELEMENT", id: selectedElement.id })}
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
+              className="cursor-pointer flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-zinc-200 px-3 py-2 text-sm text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
             >
               <Copy className="h-4 w-4" />
               {labels.duplicate}
             </button>
             <button
               onClick={() => dispatch({ type: "DELETE_ELEMENT", id: selectedElement.id })}
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-red-200 px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:border-red-900 dark:text-red-400 dark:hover:bg-red-950/30"
+              className="cursor-pointer flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-red-200 px-3 py-2 text-sm text-red-600 hover:bg-red-50 dark:border-red-900 dark:text-red-400 dark:hover:bg-red-950/30"
             >
               <Trash2 className="h-4 w-4" />
               {labels.deleteElement}
@@ -370,14 +370,14 @@ function FieldCard({
           {preview && (
             <button
               onClick={onEdit}
-              className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
             >
               <Pencil className="h-3.5 w-3.5" />
             </button>
           )}
           <button
             onClick={onAdd}
-            className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+            className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
             aria-label="add to document"
           >
             <Plus className="h-4 w-4" />
@@ -397,7 +397,7 @@ function FieldCard({
       ) : (
         <button
           onClick={onEdit}
-          className="flex w-full items-center justify-center rounded border-2 border-dashed border-zinc-200 py-4 text-sm text-zinc-400 transition-colors hover:border-red-300 hover:text-red-500 dark:border-zinc-700 dark:hover:border-red-600 dark:hover:text-red-400"
+          className="cursor-pointer flex w-full items-center justify-center rounded border-2 border-dashed border-zinc-200 py-4 text-sm text-zinc-400 transition-colors hover:border-red-300 hover:text-red-500 dark:border-zinc-700 dark:hover:border-red-600 dark:hover:text-red-400"
         >
           <span>{emptyText} — {emptyAction}</span>
         </button>

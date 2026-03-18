@@ -120,6 +120,7 @@ export function ToolPageClient({
     isCrop,
     isRedact,
     isAnnotate,
+    isSign,
     implemented,
     fav,
     showFavHint,
@@ -141,8 +142,8 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
-      hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate) && stage === "loaded"}
-      className={(isEditPdf || isCrop || isRedact || isAnnotate) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
+      hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) && stage === "loaded"}
+      className={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -205,7 +206,7 @@ export function ToolPageClient({
             key="loaded"
             {...fadeSlide}
             transition={transition}
-            className={(isEditPdf || isCrop || isRedact || isAnnotate) ? "h-full" : "space-y-4"}
+            className={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) ? "h-full" : "space-y-4"}
           >
             <ToolLoadedContent
               labels={labels}

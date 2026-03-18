@@ -348,7 +348,7 @@ export const SignPageCanvas = memo(function SignPageCanvas({
             onClick={() =>
               dispatch({ type: "DUPLICATE_ELEMENT", id: selectedEl.id })
             }
-            className="rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-700"
+            className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-700"
             title={labels.duplicate}
           >
             <Copy className="h-4 w-4" />
@@ -357,7 +357,7 @@ export const SignPageCanvas = memo(function SignPageCanvas({
             onClick={() =>
               dispatch({ type: "DELETE_ELEMENT", id: selectedEl.id })
             }
-            className="rounded p-1 text-zinc-500 hover:bg-red-50 hover:text-red-600 dark:text-zinc-400 dark:hover:bg-red-950/30 dark:hover:text-red-400"
+            className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-red-50 hover:text-red-600 dark:text-zinc-400 dark:hover:bg-red-950/30 dark:hover:text-red-400"
             title={labels.deleteElement}
           >
             <Trash2 className="h-4 w-4" />

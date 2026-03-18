@@ -335,7 +335,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
               <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{title}</h3>
               <button
                 onClick={onClose}
-                className="rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+                className="cursor-pointer rounded-lg p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -347,7 +347,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
                 <button
                   key={t.key}
                   onClick={() => setTab(t.key)}
-                  className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                  className={`cursor-pointer flex-1 px-4 py-3 text-sm font-medium transition-colors ${
                     tab === t.key
                       ? "border-b-2 border-red-500 text-red-600 dark:text-red-400"
                       : "text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
@@ -381,7 +381,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
                     <ColorPicker colors={SIGNATURE_COLORS} value={color} onChange={setColor} label={labels.colorLabel} />
                     <button
                       onClick={clearCanvas}
-                      className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                      className="cursor-pointer flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     >
                       <Eraser className="h-4 w-4" />
                       {labels.clearCanvas}
@@ -413,7 +413,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
                       <button
                         key={font.name}
                         onClick={() => setSelectedFont(i)}
-                        className={`flex w-full items-center rounded-lg border px-4 py-3 transition-colors ${
+                        className={`cursor-pointer flex w-full items-center rounded-lg border px-4 py-3 transition-colors ${
                           selectedFont === i
                             ? "border-red-400 bg-red-50 dark:border-red-600 dark:bg-red-950/30"
                             : "border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600"
@@ -481,7 +481,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
                           setUploadedImage(null);
                           fileInputRef.current?.click();
                         }}
-                        className="text-sm text-red-500 hover:text-red-600"
+                        className="cursor-pointer text-sm text-red-500 hover:text-red-600"
                       >
                         {labels.uploadButton}
                       </button>
@@ -502,14 +502,14 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
             <div className="flex justify-end gap-3 border-t border-zinc-200 px-6 py-4 dark:border-zinc-700">
               <button
                 onClick={onClose}
-                className="rounded-lg px-4 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+                className="cursor-pointer rounded-lg px-4 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
               >
                 {labels.cancelButton}
               </button>
               <button
                 onClick={handleSave}
                 disabled={!canSave}
-                className="rounded-lg bg-red-500 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-40"
+                className="cursor-pointer rounded-lg bg-red-500 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {labels.saveButton}
               </button>
@@ -541,7 +541,7 @@ function ColorPicker({
         <button
           key={c}
           onClick={() => onChange(c as SignatureColor)}
-          className={`h-7 w-7 rounded-full border-2 transition-transform ${
+          className={`cursor-pointer h-7 w-7 rounded-full border-2 transition-transform ${
             value === c
               ? "scale-110 border-zinc-400 dark:border-zinc-300"
               : "border-transparent hover:scale-105"
