@@ -77,7 +77,6 @@ const tr: Dictionary = {
     protect: { title: "PDF Koru", description: "PDF'nize şifre koruması ekleyin ve şifreleyin." },
     unlock: { title: "PDF Kilidini Aç", description: "PDF dosyalarından şifre korumasını kaldırın." },
     redact: { title: "PDF Redakte Et", description: "PDF'lerden hassas bilgileri kalıcı olarak kaldırın." },
-    compare: { title: "PDF Karşılaştır", description: "İki PDF'yi yan yana karşılaştırın ve farkları bulun." },
     translate: { title: "PDF Çevir", description: "PDF içeriğini yapay zeka ile başka bir dile çevirin." },
   },
   nav: {

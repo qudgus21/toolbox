@@ -77,7 +77,6 @@ const pa: Dictionary = {
     protect: { title: "PDF ਸੁਰੱਖਿਅਤ ਕਰੋ", description: "ਆਪਣੇ PDF ਵਿੱਚ ਪਾਸਵਰਡ ਸੁਰੱਖਿਆ ਅਤੇ ਐਨਕ੍ਰਿਪਸ਼ਨ ਜੋੜੋ।" },
     unlock: { title: "PDF ਅਨਲੌਕ ਕਰੋ", description: "PDF ਫਾਈਲਾਂ ਵਿੱਚੋਂ ਪਾਸਵਰਡ ਸੁਰੱਖਿਆ ਹਟਾਓ।" },
     redact: { title: "PDF ਰਿਡੈਕਟ ਕਰੋ", description: "PDF ਵਿੱਚੋਂ ਸੰਵੇਦਨਸ਼ੀਲ ਜਾਣਕਾਰੀ ਸਥਾਈ ਤੌਰ ਤੇ ਹਟਾਓ।" },
-    compare: { title: "PDF ਤੁਲਨਾ ਕਰੋ", description: "ਦੋ PDF ਨੂੰ ਨਾਲ-ਨਾਲ ਤੁਲਨਾ ਕਰੋ ਅਤੇ ਫਰਕ ਲੱਭੋ।" },
     translate: { title: "PDF ਅਨੁਵਾਦ ਕਰੋ", description: "AI ਨਾਲ PDF ਸਮੱਗਰੀ ਨੂੰ ਹੋਰ ਭਾਸ਼ਾ ਵਿੱਚ ਅਨੁਵਾਦ ਕਰੋ।" },
   },
   nav: {

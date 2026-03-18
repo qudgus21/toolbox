@@ -77,7 +77,6 @@ const mt: Dictionary = {
     protect: { title: "Ipproteġi PDF", description: "Żid protezzjoni b'password u kkriptja l-PDF tiegħek." },
     unlock: { title: "Iftaħ PDF", description: "Neħħi l-protezzjoni b'password minn fajls PDF." },
     redact: { title: "Irredatta PDF", description: "Neħħi b'mod permanenti informazzjoni sensittiva minn PDFs." },
-    compare: { title: "Qabbel PDF", description: "Qabbel żewġ PDFs maġenb xulxin u sib id-differenzi." },
     translate: { title: "Ittraduċi PDF", description: "Ittraduċi l-kontenut PDF għal lingwa oħra bl-AI." },
   },
   nav: {

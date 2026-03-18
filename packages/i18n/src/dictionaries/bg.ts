@@ -77,7 +77,6 @@ const bg: Dictionary = {
     protect: { title: "Защита на PDF", description: "Добавете защита с парола и криптирайте вашия PDF." },
     unlock: { title: "Отключване на PDF", description: "Премахнете защитата с парола от PDF файлове." },
     redact: { title: "Редактиране на Чувствителни Данни", description: "Премахнете завинаги чувствителна информация от PDF файлове." },
-    compare: { title: "Сравняване на PDF", description: "Сравнете два PDF файла един до друг и открийте разликите." },
     translate: { title: "Превод на PDF", description: "Преведете съдържанието на PDF на друг език с AI." },
   },
   nav: {

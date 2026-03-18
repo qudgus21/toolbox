@@ -77,7 +77,6 @@ const he: Dictionary = {
     protect: { title: "הגנה על PDF", description: "הוסף הגנת סיסמה והצפן את ה-PDF שלך." },
     unlock: { title: "ביטול נעילת PDF", description: "הסר הגנת סיסמה מקובצי PDF." },
     redact: { title: "השחרת מידע רגיש", description: "הסר לצמיתות מידע רגיש מקובצי PDF." },
-    compare: { title: "השוואת PDF", description: "השווה שני קובצי PDF זה לצד זה ומצא הבדלים." },
     translate: { title: "תרגום PDF", description: "תרגם תוכן PDF לשפה אחרת באמצעות AI." },
   },
   nav: {

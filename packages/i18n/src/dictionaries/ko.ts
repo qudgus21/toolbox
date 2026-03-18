@@ -77,7 +77,6 @@ const ko: Dictionary = {
     protect: { title: "PDF 보호", description: "비밀번호와 암호화로 PDF를 보호합니다." },
     unlock: { title: "PDF 잠금 해제", description: "PDF의 비밀번호 보호를 제거합니다." },
     redact: { title: "PDF 검열", description: "PDF에서 민감한 정보를 영구적으로 제거합니다." },
-    compare: { title: "PDF 비교", description: "두 PDF를 나란히 비교하고 차이점을 확인합니다." },
     translate: { title: "PDF 번역", description: "AI로 PDF 콘텐츠를 다른 언어로 번역합니다." },
   },
   nav: {

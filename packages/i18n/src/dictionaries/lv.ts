@@ -77,7 +77,6 @@ const lv: Dictionary = {
     protect: { title: "Aizsargāt PDF", description: "Pievienojiet paroles aizsardzību un šifrējiet savu PDF." },
     unlock: { title: "Atbloķēt PDF", description: "Noņemiet paroles aizsardzību no PDF failiem." },
     redact: { title: "Rediģēt PDF", description: "Neatgriezeniski noņemiet sensitīvu informāciju no PDF failiem." },
-    compare: { title: "Salīdzināt PDF", description: "Salīdziniet divus PDF failus blakus un atrodiet atšķirības." },
     translate: { title: "Tulkot PDF", description: "Tulkojiet PDF saturu citā valodā ar MI palīdzību." },
   },
   nav: {

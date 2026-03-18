@@ -77,7 +77,6 @@ const ga: Dictionary = {
     protect: { title: "Cosain PDF", description: "Cuir cosaint pasfhocail agus criptiú le do PDF." },
     unlock: { title: "Díghlasáil PDF", description: "Bain cosaint pasfhocail de chomhaid PDF." },
     redact: { title: "Cealaigh PDF", description: "Bain faisnéis íogair de chomhaid PDF go buan." },
-    compare: { title: "Cuir PDF i gcomparáid", description: "Cuir dhá PDF i gcomparáid taobh le taobh agus aimsigh difríochtaí." },
     translate: { title: "Aistrigh PDF", description: "Aistrigh ábhar PDF go teanga eile le AI." },
   },
   nav: {

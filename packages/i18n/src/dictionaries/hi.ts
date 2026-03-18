@@ -77,7 +77,6 @@ const hi: Dictionary = {
     protect: { title: "PDF सुरक्षित करें", description: "पासवर्ड सुरक्षा जोड़ें और अपने PDF को एन्क्रिप्ट करें।" },
     unlock: { title: "PDF अनलॉक करें", description: "PDF फ़ाइलों से पासवर्ड सुरक्षा हटाएं।" },
     redact: { title: "PDF रिडैक्ट करें", description: "PDF से संवेदनशील जानकारी स्थायी रूप से हटाएं।" },
-    compare: { title: "PDF तुलना करें", description: "दो PDF की साथ-साथ तुलना करें और अंतर खोजें।" },
     translate: { title: "PDF अनुवाद करें", description: "AI की मदद से PDF सामग्री का दूसरी भाषा में अनुवाद करें।" },
   },
   nav: {

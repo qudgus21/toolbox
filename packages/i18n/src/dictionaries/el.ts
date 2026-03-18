@@ -77,7 +77,6 @@ const el: Dictionary = {
     protect: { title: "Προστασία PDF", description: "Προσθέστε προστασία με κωδικό πρόσβασης και κρυπτογραφήστε το PDF σας." },
     unlock: { title: "Ξεκλείδωμα PDF", description: "Αφαιρέστε την προστασία με κωδικό πρόσβασης από αρχεία PDF." },
     redact: { title: "Επεξεργασία Ευαίσθητων Δεδομένων", description: "Αφαιρέστε μόνιμα ευαίσθητες πληροφορίες από PDF." },
-    compare: { title: "Σύγκριση PDF", description: "Συγκρίνετε δύο PDF δίπλα-δίπλα και εντοπίστε διαφορές." },
     translate: { title: "Μετάφραση PDF", description: "Μεταφράστε το περιεχόμενο PDF σε άλλη γλώσσα με AI." },
   },
   nav: {

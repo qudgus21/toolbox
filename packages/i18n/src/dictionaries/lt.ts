@@ -77,7 +77,6 @@ const lt: Dictionary = {
     protect: { title: "Apsaugoti PDF", description: "Pridėkite slaptažodžio apsaugą ir užšifruokite PDF." },
     unlock: { title: "Atrakinti PDF", description: "Pašalinkite slaptažodžio apsaugą iš PDF failų." },
     redact: { title: "Redaguoti PDF turinį", description: "Visam laikui pašalinkite slaptą informaciją iš PDF." },
-    compare: { title: "Palyginti PDF", description: "Palyginkite du PDF greta ir raskite skirtumus." },
     translate: { title: "Versti PDF", description: "Išverskite PDF turinį į kitą kalbą naudojant AI." },
   },
   nav: {

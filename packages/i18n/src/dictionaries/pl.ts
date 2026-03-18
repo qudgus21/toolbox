@@ -77,7 +77,6 @@ const pl: Dictionary = {
     protect: { title: "Chroń PDF", description: "Dodaj ochronę hasłem i zaszyfruj swój plik PDF." },
     unlock: { title: "Odblokuj PDF", description: "Usuń ochronę hasłem z plików PDF." },
     redact: { title: "Redaguj PDF", description: "Trwale usuń poufne informacje z plików PDF." },
-    compare: { title: "Porównaj PDF", description: "Porównaj dwa pliki PDF obok siebie i znajdź różnice." },
     translate: { title: "Przetłumacz PDF", description: "Przetłumacz zawartość PDF na inny język za pomocą AI." },
   },
   nav: {

@@ -68,7 +68,6 @@ const no: Dictionary = {
     protect: { title: "Beskytt PDF", description: "Legg til passordbeskyttelse og krypter PDF-en din." },
     unlock: { title: "Lås opp PDF", description: "Fjern passordbeskyttelse fra PDF-filer." },
     redact: { title: "Sensurer PDF", description: "Fjern permanent sensitiv informasjon fra PDF-er." },
-    compare: { title: "Sammenlign PDF", description: "Sammenlign to PDF-er side ved side og finn forskjeller." },
     translate: { title: "Oversett PDF", description: "Oversett PDF-innhold til et annet språk med AI." },
   },
   nav: { allTools: "Alle verktøy", language: "Språk" },

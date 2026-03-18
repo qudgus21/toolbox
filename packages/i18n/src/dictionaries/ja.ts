@@ -77,7 +77,6 @@ const ja: Dictionary = {
     protect: { title: "PDF 保護", description: "PDFにパスワード保護と暗号化を追加します。" },
     unlock: { title: "PDF ロック解除", description: "PDFファイルからパスワード保護を解除します。" },
     redact: { title: "PDF 墨消し", description: "PDFから機密情報を完全に削除します。" },
-    compare: { title: "PDF 比較", description: "2つのPDFを並べて比較し、差異を見つけます。" },
     translate: { title: "PDF 翻訳", description: "AIを使ってPDFの内容を別の言語に翻訳します。" },
   },
   nav: {

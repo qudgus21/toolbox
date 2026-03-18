@@ -77,7 +77,6 @@ const th: Dictionary = {
     protect: { title: "ป้องกัน PDF", description: "เพิ่มการป้องกันด้วยรหัสผ่านและเข้ารหัส PDF ของคุณ" },
     unlock: { title: "ปลดล็อก PDF", description: "ลบการป้องกันด้วยรหัสผ่านออกจากไฟล์ PDF" },
     redact: { title: "ปกปิดข้อมูล PDF", description: "ลบข้อมูลที่ละเอียดอ่อนออกจาก PDF อย่างถาวร" },
-    compare: { title: "เปรียบเทียบ PDF", description: "เปรียบเทียบ PDF สองไฟล์เคียงข้างกันและค้นหาความแตกต่าง" },
     translate: { title: "แปลภาษา PDF", description: "แปลเนื้อหา PDF เป็นภาษาอื่นด้วย AI" },
   },
   nav: {

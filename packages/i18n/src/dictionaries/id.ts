@@ -77,7 +77,6 @@ const id: Dictionary = {
     protect: { title: "Lindungi PDF", description: "Tambahkan perlindungan kata sandi dan enkripsi PDF Anda." },
     unlock: { title: "Buka Kunci PDF", description: "Hapus perlindungan kata sandi dari file PDF." },
     redact: { title: "Redaksi PDF", description: "Hapus informasi sensitif dari PDF secara permanen." },
-    compare: { title: "Bandingkan PDF", description: "Bandingkan dua PDF secara berdampingan dan temukan perbedaannya." },
     translate: { title: "Terjemahkan PDF", description: "Terjemahkan konten PDF ke bahasa lain dengan AI." },
   },
   nav: {

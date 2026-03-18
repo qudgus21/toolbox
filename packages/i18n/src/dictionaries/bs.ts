@@ -77,7 +77,6 @@ const bs: Dictionary = {
     protect: { title: "Zaštiti PDF", description: "Dodajte zaštitu lozinkom i enkriptirajte vaš PDF." },
     unlock: { title: "Otključaj PDF", description: "Uklonite zaštitu lozinkom iz PDF datoteka." },
     redact: { title: "Redigiraj PDF", description: "Trajno uklonite osjetljive informacije iz PDF-ova." },
-    compare: { title: "Uporedi PDF", description: "Uporedite dva PDF-a jedan pored drugog i uočite razlike." },
     translate: { title: "Prevedi PDF", description: "Prevedite sadržaj PDF-a na drugi jezik pomoću AI-a." },
   },
   nav: {

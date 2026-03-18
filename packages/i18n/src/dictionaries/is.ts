@@ -77,7 +77,6 @@ const is: Dictionary = {
     protect: { title: "Vernda PDF", description: "Bæta lykilorðsvörn og dulkóðun við PDF skjalið þitt." },
     unlock: { title: "Opna PDF", description: "Fjarlægja lykilorðsvörn af PDF skrám." },
     redact: { title: "Afmá PDF", description: "Fjarlægja varanlega viðkvæmar upplýsingar úr PDF." },
-    compare: { title: "Bera saman PDF", description: "Bera saman tvö PDF hlið við hlið og finna mun." },
     translate: { title: "Þýða PDF", description: "Þýða PDF efni á annað tungumál með gervigreind." },
   },
   nav: {

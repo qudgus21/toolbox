@@ -77,7 +77,6 @@ const hu: Dictionary = {
     protect: { title: "PDF védelem", description: "Jelszavas védelem és titkosítás hozzáadása a PDF-hez." },
     unlock: { title: "PDF feloldása", description: "Jelszavas védelem eltávolítása PDF fájlokból." },
     redact: { title: "PDF kitakarása", description: "Bizalmas információk végleges eltávolítása PDF-ekből." },
-    compare: { title: "PDF összehasonlítása", description: "Két PDF összehasonlítása egymás mellett és a különbségek feltárása." },
     translate: { title: "PDF fordítása", description: "PDF tartalom fordítása másik nyelvre mesterséges intelligenciával." },
   },
   nav: {

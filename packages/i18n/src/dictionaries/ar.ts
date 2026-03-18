@@ -77,7 +77,6 @@ const ar: Dictionary = {
     protect: { title: "حماية PDF", description: "إضافة حماية بكلمة مرور وتشفير ملف PDF الخاص بك." },
     unlock: { title: "فتح قفل PDF", description: "إزالة حماية كلمة المرور من ملفات PDF." },
     redact: { title: "تنقيح PDF", description: "إزالة المعلومات الحساسة نهائياً من ملفات PDF." },
-    compare: { title: "مقارنة PDF", description: "مقارنة ملفي PDF جنباً إلى جنب واكتشاف الاختلافات." },
     translate: { title: "ترجمة PDF", description: "ترجمة محتوى PDF إلى لغة أخرى باستخدام الذكاء الاصطناعي." },
   },
   nav: {

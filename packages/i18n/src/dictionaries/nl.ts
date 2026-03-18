@@ -77,7 +77,6 @@ const nl: Dictionary = {
     protect: { title: "PDF beveiligen", description: "Voeg wachtwoordbeveiliging toe en versleutel je PDF." },
     unlock: { title: "PDF ontgrendelen", description: "Verwijder wachtwoordbeveiliging van PDF-bestanden." },
     redact: { title: "PDF redigeren", description: "Verwijder gevoelige informatie permanent uit PDF's." },
-    compare: { title: "PDF vergelijken", description: "Vergelijk twee PDF's naast elkaar en ontdek verschillen." },
     translate: { title: "PDF vertalen", description: "Vertaal PDF-inhoud naar een andere taal met AI." },
   },
   nav: {

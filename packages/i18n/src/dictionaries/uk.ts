@@ -77,7 +77,6 @@ const uk: Dictionary = {
     protect: { title: "Захистити PDF", description: "Додайте захист паролем та зашифруйте ваш PDF." },
     unlock: { title: "Розблокувати PDF", description: "Видаліть захист паролем з PDF-файлів." },
     redact: { title: "Редагувати Конфіденційні Дані", description: "Безповоротно видаліть конфіденційну інформацію з PDF." },
-    compare: { title: "Порівняти PDF", description: "Порівняйте два PDF поруч та знайдіть відмінності." },
     translate: { title: "Перекласти PDF", description: "Перекладіть вміст PDF іншою мовою за допомогою AI." },
   },
   nav: {

@@ -75,7 +75,6 @@ const km: Dictionary = {
     protect: { title: "ការពារ PDF", description: "បន្ថែមការការពារពាក្យសម្ងាត់ និងអ៊ិនគ្រីប PDF របស់អ្នក។" },
     unlock: { title: "ដោះសោ PDF", description: "ដកការការពារពាក្យសម្ងាត់ចេញពីឯកសារ PDF។" },
     redact: { title: "កែសម្រួលសម្ងាត់ PDF", description: "ដកព័ត៌មានរសើបចេញជាអចិន្ត្រៃយ៍ពី PDF។" },
-    compare: { title: "ប្រៀបធៀប PDF", description: "ប្រៀបធៀប PDF ពីរដាក់ជាប់គ្នា និងស្វែងរកភាពខុសគ្នា។" },
     translate: { title: "បកប្រែ PDF", description: "បកប្រែមាតិកា PDF ទៅភាសាផ្សេងដោយ AI។" },
   },
   nav: {

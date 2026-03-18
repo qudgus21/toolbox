@@ -77,7 +77,6 @@ const en: Dictionary = {
     protect: { title: "Protect PDF", description: "Add password protection and encrypt your PDF." },
     unlock: { title: "Unlock PDF", description: "Remove password protection from PDF files." },
     redact: { title: "Redact PDF", description: "Permanently remove sensitive information from PDFs." },
-    compare: { title: "Compare PDF", description: "Compare two PDFs side by side and spot differences." },
     translate: { title: "Translate PDF", description: "Translate PDF content to another language with AI." },
   },
   nav: {

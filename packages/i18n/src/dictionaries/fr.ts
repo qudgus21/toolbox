@@ -77,7 +77,6 @@ const fr: Dictionary = {
     protect: { title: "Protéger PDF", description: "Ajoutez une protection par mot de passe et chiffrez votre PDF." },
     unlock: { title: "Déverrouiller PDF", description: "Supprimez la protection par mot de passe des fichiers PDF." },
     redact: { title: "Caviarder PDF", description: "Supprimez définitivement les informations sensibles des PDFs." },
-    compare: { title: "Comparer PDF", description: "Comparez deux PDFs côte à côte et repérez les différences." },
     translate: { title: "Traduire PDF", description: "Traduisez le contenu du PDF dans une autre langue avec l'IA." },
   },
   nav: {

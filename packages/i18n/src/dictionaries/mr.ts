@@ -77,7 +77,6 @@ const mr: Dictionary = {
     protect: { title: "PDF संरक्षित करा", description: "तुमच्या PDF ला पासवर्ड संरक्षण आणि एन्क्रिप्शन जोडा." },
     unlock: { title: "PDF अनलॉक करा", description: "PDF फाइल्समधून पासवर्ड संरक्षण काढून टाका." },
     redact: { title: "PDF रिडॅक्ट करा", description: "PDF मधून संवेदनशील माहिती कायमस्वरूपी काढून टाका." },
-    compare: { title: "PDF तुलना करा", description: "दोन PDF शेजारी शेजारी तुलना करा आणि फरक शोधा." },
     translate: { title: "PDF अनुवाद करा", description: "AI सह PDF सामग्री दुसऱ्या भाषेत अनुवादित करा." },
   },
   nav: {

@@ -77,7 +77,6 @@ const te: Dictionary = {
     protect: { title: "PDF రక్షించు", description: "మీ PDF కి పాస్‌వర్డ్ రక్షణ మరియు ఎన్‌క్రిప్షన్ జోడించండి." },
     unlock: { title: "PDF అన్‌లాక్ చేయి", description: "PDF ఫైల్‌ల నుండి పాస్‌వర్డ్ రక్షణను తీసివేయండి." },
     redact: { title: "PDF రిడాక్ట్ చేయి", description: "PDF ల నుండి సున్నితమైన సమాచారాన్ని శాశ్వతంగా తీసివేయండి." },
-    compare: { title: "PDF పోల్చు", description: "రెండు PDF లను పక్కపక్కన పోల్చి తేడాలను గుర్తించండి." },
     translate: { title: "PDF అనువాదం", description: "AI తో PDF కంటెంట్‌ను మరొక భాషలోకి అనువదించండి." },
   },
   nav: {

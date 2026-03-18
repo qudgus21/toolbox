@@ -77,7 +77,6 @@ const et: Dictionary = {
     protect: { title: "Kaitse PDF-i", description: "Lisage paroolikaitse ja krüpteerige oma PDF." },
     unlock: { title: "Ava PDF lukust", description: "Eemaldage PDF-failidest paroolikaitse." },
     redact: { title: "Redigeeri PDF-i", description: "Eemaldage PDF-idest jäädavalt tundlik teave." },
-    compare: { title: "Võrdle PDF-e", description: "Võrrelge kahte PDF-i kõrvuti ja leidke erinevused." },
     translate: { title: "Tõlgi PDF", description: "Tõlkige PDF-i sisu teise keelde tehisintellekti abil." },
   },
   nav: {

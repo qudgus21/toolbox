@@ -77,7 +77,6 @@ const fi: Dictionary = {
     protect: { title: "Suojaa PDF", description: "Lisää salasanasuojaus ja salaa PDF-tiedostosi." },
     unlock: { title: "Avaa PDF", description: "Poista salasanasuojaus PDF-tiedostoista." },
     redact: { title: "Peitä PDF", description: "Poista arkaluonteiset tiedot pysyvästi PDF:stä." },
-    compare: { title: "Vertaa PDF", description: "Vertaa kahta PDF:ää rinnakkain ja löydä erot." },
     translate: { title: "Käännä PDF", description: "Käännä PDF:n sisältö toiselle kielelle tekoälyllä." },
   },
   nav: {

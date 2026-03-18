@@ -75,7 +75,6 @@ const ms: Dictionary = {
     protect: { title: "Lindung PDF", description: "Tambah perlindungan kata laluan dan sulitkan PDF anda." },
     unlock: { title: "Buka Kunci PDF", description: "Buang perlindungan kata laluan daripada fail PDF." },
     redact: { title: "Sunting Hitam PDF", description: "Buang maklumat sensitif secara kekal daripada PDF." },
-    compare: { title: "Banding PDF", description: "Bandingkan dua PDF secara bersebelahan dan kesan perbezaan." },
     translate: { title: "Terjemah PDF", description: "Terjemah kandungan PDF ke bahasa lain dengan AI." },
   },
   nav: {

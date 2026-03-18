@@ -77,7 +77,6 @@ const vi: Dictionary = {
     protect: { title: "Bảo vệ PDF", description: "Thêm mật khẩu bảo vệ và mã hóa PDF của bạn." },
     unlock: { title: "Mở khóa PDF", description: "Xóa bảo vệ bằng mật khẩu khỏi tệp PDF." },
     redact: { title: "Biên tập PDF", description: "Xóa vĩnh viễn thông tin nhạy cảm khỏi PDF." },
-    compare: { title: "So sánh PDF", description: "So sánh hai PDF cạnh nhau và tìm sự khác biệt." },
     translate: { title: "Dịch PDF", description: "Dịch nội dung PDF sang ngôn ngữ khác bằng AI." },
   },
   nav: {

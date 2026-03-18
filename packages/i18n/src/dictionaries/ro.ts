@@ -68,7 +68,6 @@ const ro: Dictionary = {
     protect: { title: "Protejare PDF", description: "Adaugă protecție cu parolă și criptează PDF-ul tău." },
     unlock: { title: "Deblocare PDF", description: "Elimină protecția cu parolă din fișierele PDF." },
     redact: { title: "Redactare PDF", description: "Elimină permanent informațiile sensibile din PDF-uri." },
-    compare: { title: "Comparare PDF", description: "Compară două PDF-uri una lângă alta și identifică diferențele." },
     translate: { title: "Traducere PDF", description: "Traduce conținutul PDF într-o altă limbă cu AI." },
   },
   nav: { allTools: "Toate instrumentele", language: "Limbă" },

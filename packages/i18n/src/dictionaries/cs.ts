@@ -77,7 +77,6 @@ const cs: Dictionary = {
     protect: { title: "Chránit PDF", description: "Přidejte ochranu heslem a zašifrujte svůj PDF." },
     unlock: { title: "Odemknout PDF", description: "Odstraňte ochranu heslem z PDF souborů." },
     redact: { title: "Redigovat PDF", description: "Trvale odstraňte citlivé informace z PDF." },
-    compare: { title: "Porovnat PDF", description: "Porovnejte dva PDF vedle sebe a najděte rozdíly." },
     translate: { title: "Přeložit PDF", description: "Přeložte obsah PDF do jiného jazyka pomocí AI." },
   },
   nav: {

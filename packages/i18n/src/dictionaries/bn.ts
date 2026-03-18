@@ -77,7 +77,6 @@ const bn: Dictionary = {
     protect: { title: "PDF সুরক্ষিত করুন", description: "আপনার PDF এ পাসওয়ার্ড সুরক্ষা এবং এনক্রিপশন যোগ করুন।" },
     unlock: { title: "PDF আনলক করুন", description: "PDF ফাইল থেকে পাসওয়ার্ড সুরক্ষা সরান।" },
     redact: { title: "PDF রিড্যাক্ট করুন", description: "PDF থেকে সংবেদনশীল তথ্য স্থায়ীভাবে সরান।" },
-    compare: { title: "PDF তুলনা করুন", description: "দুটি PDF পাশাপাশি তুলনা করুন এবং পার্থক্য খুঁজুন।" },
     translate: { title: "PDF অনুবাদ করুন", description: "AI দিয়ে PDF বিষয়বস্তু অন্য ভাষায় অনুবাদ করুন।" },
   },
   nav: {

@@ -77,7 +77,6 @@ const zh: Dictionary = {
     protect: { title: "保护 PDF", description: "为PDF添加密码保护和加密。" },
     unlock: { title: "解锁 PDF", description: "移除PDF文件的密码保护。" },
     redact: { title: "涂黑 PDF", description: "永久删除PDF中的敏感信息。" },
-    compare: { title: "比较 PDF", description: "并排比较两个PDF并找出差异。" },
     translate: { title: "翻译 PDF", description: "使用AI将PDF内容翻译成其他语言。" },
   },
   nav: {

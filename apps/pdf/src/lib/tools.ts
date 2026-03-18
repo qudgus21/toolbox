@@ -37,7 +37,6 @@ import {
   Lock,
   LockOpen,
   EyeOff,
-  ArrowLeftRight,
   Languages,
   BookOpen,
   Shield,
@@ -320,16 +319,6 @@ export const tools: ToolDefinition[] = [
     category: "security",
     acceptedTypes: ".pdf",
   },
-  {
-    slug: "compare",
-    title: "Compare PDF",
-    description: "Compare two PDFs side by side and spot differences.",
-    icon: ArrowLeftRight,
-    emoji: "🔍",
-    category: "security",
-    acceptedTypes: ".pdf",
-  },
-
   // ── Coming Soon (server required) ─────────────────────
   {
     slug: "pdf-to-pdfa",

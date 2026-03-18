@@ -77,7 +77,6 @@ const sk: Dictionary = {
     protect: { title: "Ochrániť PDF", description: "Pridajte ochranu heslom a zašifrujte váš PDF." },
     unlock: { title: "Odomknúť PDF", description: "Odstráňte ochranu heslom z PDF súborov." },
     redact: { title: "Redigovať PDF", description: "Natrvalo odstráňte citlivé informácie z PDF." },
-    compare: { title: "Porovnať PDF", description: "Porovnajte dva PDF vedľa seba a nájdite rozdiely." },
     translate: { title: "Preložiť PDF", description: "Preložte obsah PDF do iného jazyka pomocou AI." },
   },
   nav: {
