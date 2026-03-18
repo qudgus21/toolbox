@@ -33,6 +33,7 @@ import { RedactLayout } from "./redact-pdf/redact-layout";
 import { AnnotateLayout } from "./annotate-pdf/annotate-layout";
 import { SignLayout } from "./sign-pdf/sign-layout";
 import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
+import { WatermarkLayout } from "./watermark/watermark-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
@@ -79,6 +80,7 @@ interface ToolLoadedContentProps {
   annotateLabels: ToolPageClientProps["annotateLabels"];
   signLabels: ToolPageClientProps["signLabels"];
   pageNumbersLabels: ToolPageClientProps["pageNumbersLabels"];
+  watermarkLabels: ToolPageClientProps["watermarkLabels"];
   children?: ReactNode;
 
   // From useToolProcessor
@@ -131,6 +133,7 @@ export function ToolLoadedContent({
   annotateLabels,
   signLabels,
   pageNumbersLabels,
+  watermarkLabels,
   children,
   files,
   rotations,
@@ -177,6 +180,7 @@ export function ToolLoadedContent({
     isPageNumbers,
     isAnnotate,
     isSign,
+    isWatermark,
 
     handleSingleFileChange,
     handleAddMore,
@@ -297,6 +301,9 @@ export function ToolLoadedContent({
 
     pageNumberOptions,
     setPageNumberOptions,
+
+    watermarkOptions,
+    setWatermarkOptions,
 
     setRedactAreas,
 
@@ -987,6 +994,16 @@ export function ToolLoadedContent({
           onOptionsChange={setPageNumberOptions}
           onChangeFile={handleSingleFileChange}
           labels={pageNumbersLabels}
+        />
+      ) : isWatermark && watermarkLabels && files.length > 0 ? (
+        /* ─── Watermark: single-file + options sidebar ─── */
+        <WatermarkLayout
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          options={watermarkOptions}
+          onOptionsChange={setWatermarkOptions}
+          onChangeFile={handleSingleFileChange}
+          labels={watermarkLabels}
         />
       ) : isCrop && cropLabels && files.length > 0 ? (
         /* ─── Crop: full-screen editor-style layout ─── */

@@ -78,7 +78,8 @@ export function useToolState({
   const isPageNumbers = slug === "page-numbers";
   const isAnnotate = slug === "annotate";
   const isSign = slug === "sign";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate || isSign;
+  const isWatermark = slug === "watermark";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate || isSign || isWatermark;
 
   const implemented = hasProcessor(slug);
 
@@ -263,6 +264,20 @@ export function useToolState({
 
   // ─── Sign elements ───
   const [signElements, setSignElements] = useState<unknown[]>([]);
+
+  // ─── Watermark ───
+  const [watermarkOptions, setWatermarkOptions] = useState<import("@/lib/processors/watermark-types").WatermarkOptions>({
+    mode: "text",
+    text: { text: "CONFIDENTIAL", font: "Helvetica", fontSize: 48, color: "#FF0000", opacity: 0.3, shadow: false },
+    image: { imageFile: null, imageDataUrl: "", scale: 1.0, opacity: 0.3, mosaic: false },
+    position: "center",
+    rotation: -45,
+    layer: "over",
+    offsetX: 0,
+    offsetY: 0,
+    pageRange: "all",
+    customRange: "",
+  });
 
   // ─── Edit PDF annotations ───
   const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
@@ -492,6 +507,8 @@ export function useToolState({
       return { annotations: annotateAnnotations };
     } else if (isSign) {
       return { signElements };
+    } else if (isWatermark) {
+      return { ...watermarkOptions, imageFile: watermarkOptions.image.imageFile } as unknown as Record<string, unknown>;
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -512,8 +529,8 @@ export function useToolState({
     slug, isSplit, isCompress, isWebOptimize, isDeletePages, isExtractPages,
     isOrganizePages, isResize, isRotate, isPdfToJpg, isPdfToPng, isJpgToPdf,
     isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf, isPdfToText,
-    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop, isRedact, isAnnotate, isSign,
-    splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions,
+    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop, isRedact, isAnnotate, isSign, isWatermark,
+    splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions, watermarkOptions,
     deletedPages, deletePageOrder, extractedPages, extractPageOrder,
     organizePages, resizePreset, resizeCustomW, resizeCustomH, resizeOrientation,
     resizeScaleMode, resizeMarginPreset, rotations, pageSelections,
@@ -551,7 +568,9 @@ export function useToolState({
     pageNumbersLabels?: { applyButton: string };
     annotateLabels?: { applyButton: string };
     signLabels?: { applyButton: string };
+    watermarkLabels?: { applyButton: string };
   }): string => {
+    if (isWatermark && props.watermarkLabels) return props.watermarkLabels.applyButton;
     if (isSign && props.signLabels) return props.signLabels.applyButton;
     if (isAnnotate && props.annotateLabels) return props.annotateLabels.applyButton;
     if (isPageNumbers && props.pageNumbersLabels) return props.pageNumbersLabels.applyButton;
@@ -572,7 +591,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isSign, isAnnotate, isPageNumbers, isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isWatermark, isSign, isAnnotate, isPageNumbers, isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -604,11 +623,11 @@ export function useToolState({
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
     if ((isEditPdf || isRedact || isAnnotate || isSign) && currentStage !== "idle") return "full";
-    if ((isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
+    if ((isWatermark || isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
-    isEditPdf, isRedact, isAnnotate, isSign, isPageNumbers, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
+    isEditPdf, isRedact, isAnnotate, isSign, isWatermark, isPageNumbers, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
     isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
@@ -643,6 +662,7 @@ export function useToolState({
     isPageNumbers,
     isAnnotate,
     isSign,
+    isWatermark,
     isSingleFileMode,
     implemented,
 
@@ -793,6 +813,10 @@ export function useToolState({
     // Page Numbers
     pageNumberOptions,
     setPageNumberOptions,
+
+    // Watermark
+    watermarkOptions,
+    setWatermarkOptions,
 
     // Redact
     redactAreas,

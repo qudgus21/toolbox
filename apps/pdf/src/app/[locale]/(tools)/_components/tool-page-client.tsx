@@ -66,6 +66,7 @@ export function ToolPageClient({
   annotateLabels,
   signLabels,
   pageNumbersLabels,
+  watermarkLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -118,6 +119,7 @@ export function ToolPageClient({
     isEditPdf,
     isCrop,
     isRedact,
+    isAnnotate,
     implemented,
     fav,
     showFavHint,
@@ -139,8 +141,8 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
-      hideHeader={(isEditPdf || isCrop || isRedact) && stage === "loaded"}
-      className={(isEditPdf || isCrop || isRedact) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
+      hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate) && stage === "loaded"}
+      className={(isEditPdf || isCrop || isRedact || isAnnotate) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
           <button
@@ -233,6 +235,7 @@ export function ToolPageClient({
               annotateLabels={annotateLabels}
               signLabels={signLabels}
               pageNumbersLabels={pageNumbersLabels}
+              watermarkLabels={watermarkLabels}
               files={files}
               rotations={rotations}
               pageSelections={pageSelections}
@@ -332,6 +335,7 @@ export function ToolPageClient({
                   pageNumbersLabels,
                   annotateLabels,
                   signLabels,
+                  watermarkLabels,
                 })}
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </span>
