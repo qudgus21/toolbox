@@ -227,21 +227,21 @@ const DeletePagesIcon: FC<IconProps> = (props) => (
 const ExtractPagesIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 48 48" fill="none" {...props}>
     {/* Source stack */}
-    <rect x="4" y="6" width="20" height="28" rx="2.5" fill="#DBEAFE" stroke="#3B82F6" strokeWidth="1.5" opacity="0.4" />
-    <rect x="7" y="9" width="20" height="28" rx="2.5" fill="#DBEAFE" stroke="#3B82F6" strokeWidth="1.5" />
-    <line x1="11" y1="16" x2="23" y2="16" stroke="#3B82F6" strokeWidth="1" opacity="0.3" strokeLinecap="round" />
-    <line x1="11" y1="20" x2="21" y2="20" stroke="#3B82F6" strokeWidth="1" opacity="0.3" strokeLinecap="round" />
-    <line x1="11" y1="24" x2="23" y2="24" stroke="#3B82F6" strokeWidth="1" opacity="0.3" strokeLinecap="round" />
+    <rect x="4" y="6" width="20" height="28" rx="2.5" fill="#FEF9C3" stroke={C.amber} strokeWidth="1.5" opacity="0.4" />
+    <rect x="7" y="9" width="20" height="28" rx="2.5" fill="#FEF9C3" stroke={C.amber} strokeWidth="1.5" />
+    <line x1="11" y1="16" x2="23" y2="16" stroke={C.amber} strokeWidth="1" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="20" x2="21" y2="20" stroke={C.amber} strokeWidth="1" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="24" x2="23" y2="24" stroke={C.amber} strokeWidth="1" opacity="0.3" strokeLinecap="round" />
     {/* Extracted page flying out */}
     <g transform="translate(30, 4) rotate(5)">
-      <rect x="0" y="0" width="16" height="22" rx="2" fill="#DBEAFE" stroke="#3B82F6" strokeWidth="1.5" />
-      <line x1="4" y1="6" x2="12" y2="6" stroke="#3B82F6" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
-      <line x1="4" y1="9.5" x2="10" y2="9.5" stroke="#3B82F6" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
-      <line x1="4" y1="13" x2="12" y2="13" stroke="#3B82F6" strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+      <rect x="0" y="0" width="16" height="22" rx="2" fill="#FEF9C3" stroke={C.amber} strokeWidth="1.5" />
+      <line x1="4" y1="6" x2="12" y2="6" stroke={C.amber} strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+      <line x1="4" y1="9.5" x2="10" y2="9.5" stroke={C.amber} strokeWidth="1" opacity="0.4" strokeLinecap="round" />
+      <line x1="4" y1="13" x2="12" y2="13" stroke={C.amber} strokeWidth="1" opacity="0.4" strokeLinecap="round" />
     </g>
     {/* Arrow */}
-    <path d="M28,30 l6,-4" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
-    <path d="M32.5,24 l2,1.5 -1,2.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M28,30 l6,-4" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
+    <path d="M32.5,24 l2,1.5 -1,2.5" stroke={C.amber} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -274,17 +274,17 @@ const OrganizePagesIcon: FC<IconProps> = (props) => (
 const ScanToPdfIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 48 48" fill="none" {...props}>
     {/* Camera/scanner body */}
-    <rect x="4" y="10" width="24" height="28" rx="3" fill="#E0F2FE" stroke="#0EA5E9" strokeWidth="1.5" />
+    <rect x="4" y="10" width="24" height="28" rx="3" fill="#FEF9C3" stroke={C.amber} strokeWidth="1.5" />
     {/* Scan line sweeping */}
-    <line x1="8" y1="24" x2="24" y2="24" stroke="#0EA5E9" strokeWidth="2.5" strokeLinecap="round" opacity="0.7" />
+    <line x1="8" y1="24" x2="24" y2="24" stroke={C.amber} strokeWidth="2.5" strokeLinecap="round" opacity="0.7" />
     {/* Corner brackets (scan target) */}
-    <path d="M8,14 h4 M8,14 v4" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
-    <path d="M24,14 h-4 M24,14 v4" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
-    <path d="M8,34 h4 M8,34 v-4" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
-    <path d="M24,34 h-4 M24,34 v-4" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
+    <path d="M8,14 h4 M8,14 v4" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
+    <path d="M24,14 h-4 M24,14 v4" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
+    <path d="M8,34 h4 M8,34 v-4" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
+    <path d="M24,34 h-4 M24,34 v-4" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
     {/* Arrow to result */}
-    <path d="M30,24 h6" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" />
-    <path d="M34,21 l3,3 -3,3" stroke="#0EA5E9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M30,24 h6" stroke={C.amber} strokeWidth="2" strokeLinecap="round" />
+    <path d="M34,21 l3,3 -3,3" stroke={C.amber} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     {/* Small result doc */}
     <Doc x={38} y={14} w={8} h={12} color={C.pdf} foldSize={2} />
   </svg>
@@ -591,18 +591,18 @@ const PagesPerSheetIcon: FC<IconProps> = (props) => (
 const HeaderFooterIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 48 48" fill="none" {...props}>
     {/* Page */}
-    <rect x="8" y="4" width="32" height="40" rx="3" fill="#F0FDF4" stroke={C.green} strokeWidth="1.5" />
+    <rect x="8" y="4" width="32" height="40" rx="3" fill="#EDE9FE" stroke={C.purple} strokeWidth="1.5" />
     {/* Header band */}
-    <rect x="8" y="4" width="32" height="9" rx="3" fill="#BBF7D0" stroke={C.green} strokeWidth="1.2" />
-    <line x1="14" y1="8.5" x2="34" y2="8.5" stroke={C.green} strokeWidth="1.2" strokeLinecap="round" />
+    <rect x="8" y="4" width="32" height="9" rx="3" fill="#DDD6FE" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="14" y1="8.5" x2="34" y2="8.5" stroke={C.purple} strokeWidth="1.2" strokeLinecap="round" />
     {/* Body lines */}
-    <line x1="14" y1="18" x2="34" y2="18" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
-    <line x1="14" y1="22" x2="30" y2="22" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
-    <line x1="14" y1="26" x2="32" y2="26" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
-    <line x1="14" y1="30" x2="28" y2="30" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="18" x2="34" y2="18" stroke={C.purple} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="22" x2="30" y2="22" stroke={C.purple} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="26" x2="32" y2="26" stroke={C.purple} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="30" x2="28" y2="30" stroke={C.purple} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
     {/* Footer band */}
-    <rect x="8" y="35" width="32" height="9" rx="3" fill="#BBF7D0" stroke={C.green} strokeWidth="1.2" />
-    <line x1="18" y1="39.5" x2="30" y2="39.5" stroke={C.green} strokeWidth="1.2" strokeLinecap="round" />
+    <rect x="8" y="35" width="32" height="9" rx="3" fill="#DDD6FE" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="18" y1="39.5" x2="30" y2="39.5" stroke={C.purple} strokeWidth="1.2" strokeLinecap="round" />
   </svg>
 );
 
@@ -729,10 +729,10 @@ const ProtectIcon: FC<IconProps> = (props) => (
 const UnlockIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 48 48" fill="none" {...props}>
     {/* Shield outline with open feel */}
-    <path d="M24,4 L8,12 v10 c0,12 7,22 16,24 9,-2 16,-12 16,-24 V12Z" fill="#DCFCE7" stroke={C.green} strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M24,4 L8,12 v10 c0,12 7,22 16,24 9,-2 16,-12 16,-24 V12Z" fill="#F3F4F6" stroke={C.zinc} strokeWidth="1.8" strokeLinejoin="round" />
     {/* Open lock */}
-    <rect x="18" y="24" width="12" height="9" rx="2" fill={C.green} />
-    <path d="M21,24 v-4 a3,3 0 0,1 6,0" fill="none" stroke={C.green} strokeWidth="2" />
+    <rect x="18" y="24" width="12" height="9" rx="2" fill={C.zinc} />
+    <path d="M21,24 v-4 a3,3 0 0,1 6,0" fill="none" stroke={C.zinc} strokeWidth="2" />
     <circle cx="24" cy="28.5" r="1.5" fill="white" />
   </svg>
 );
