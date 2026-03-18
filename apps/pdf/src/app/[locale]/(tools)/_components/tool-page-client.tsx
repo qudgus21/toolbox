@@ -67,6 +67,10 @@ export function ToolPageClient({
   signLabels,
   pageNumbersLabels,
   watermarkLabels,
+  pagesPerSheetLabels,
+  headerFooterLabels,
+  overlayLabels,
+  bookletLabels,
   children,
 }: ToolPageClientProps) {
   const {
@@ -237,6 +241,10 @@ export function ToolPageClient({
               signLabels={signLabels}
               pageNumbersLabels={pageNumbersLabels}
               watermarkLabels={watermarkLabels}
+              pagesPerSheetLabels={pagesPerSheetLabels}
+              headerFooterLabels={headerFooterLabels}
+              overlayLabels={overlayLabels}
+              bookletLabels={bookletLabels}
               files={files}
               rotations={rotations}
               pageSelections={pageSelections}

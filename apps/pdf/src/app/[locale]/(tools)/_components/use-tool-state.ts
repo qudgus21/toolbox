@@ -79,7 +79,11 @@ export function useToolState({
   const isAnnotate = slug === "annotate";
   const isSign = slug === "sign";
   const isWatermark = slug === "watermark";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate || isSign || isWatermark;
+  const isPagesPerSheet = slug === "pages-per-sheet";
+  const isHeaderFooter = slug === "header-footer";
+  const isOverlay = slug === "overlay";
+  const isBooklet = slug === "booklet";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate || isSign || isWatermark || isHeaderFooter || isBooklet;
 
   const implemented = hasProcessor(slug);
 
@@ -228,6 +232,44 @@ export function useToolState({
   const [resizeOrientation, setResizeOrientation] = useState<"portrait" | "landscape">("portrait");
   const [resizeScaleMode, setResizeScaleMode] = useState<ScaleMode>("fit");
   const [resizeMarginPreset, setResizeMarginPreset] = useState<MarginPreset>("none");
+
+  // ─── Pages Per Sheet ───
+  const [nupCount, setNupCount] = useState<2 | 4 | 6 | 9 | 16>(4);
+  const [nupSheetSize, setNupSheetSize] = useState<PageSizePreset>("a4");
+  const [nupOrientation, setNupOrientation] = useState<"portrait" | "landscape" | "auto">("auto");
+  const [nupPageOrder, setNupPageOrder] = useState<"left-to-right" | "right-to-left" | "top-to-bottom">("left-to-right");
+  const [nupGap, setNupGap] = useState(2);
+  const [nupBorder, setNupBorder] = useState(false);
+
+  // ─── Header/Footer ───
+  const [hfOptions, setHfOptions] = useState({
+    headerEnabled: true,
+    footerEnabled: false,
+    headerText: "{filename}",
+    footerText: "Page {page} of {total}",
+    headerAlign: "center" as "left" | "center" | "right",
+    footerAlign: "center" as "left" | "center" | "right",
+    font: "Helvetica" as import("@/lib/processors/page-numbers-types").PageNumberFont,
+    fontSize: 10,
+    color: "#666666",
+    marginMm: 10,
+    pageRange: "all" as "all" | "custom",
+    customRange: "",
+    facingMode: "single" as import("@/lib/processors/page-numbers-types").FacingPageMode,
+  });
+
+  // ─── Booklet ───
+  const [bookletOptions, setBookletOptions] = useState({
+    sheetSize: "a4" as "a4" | "a3" | "letter" | "legal" | "ledger",
+    binding: "left" as "left" | "right",
+  });
+
+  // ─── Overlay ───
+  const [overlayOptions, setOverlayOptions] = useState({
+    layer: "above" as "above" | "below",
+    overlayMode: "repeat-first" as "repeat-first" | "match",
+    scaleMode: "fit" as "fit" | "original" | "stretch",
+  });
 
   // ─── Flatten options ───
   const [flattenOptions, setFlattenOptions] = useState<Record<string, unknown>>({ formFields: true, annotations: true });
@@ -413,6 +455,21 @@ export function useToolState({
         marginLeft: margin,
         marginRight: margin,
       };
+    } else if (isPagesPerSheet) {
+      return {
+        pagesPerSheet: nupCount,
+        sheetSize: nupSheetSize,
+        orientation: nupOrientation,
+        pageOrder: nupPageOrder,
+        gap: nupGap,
+        border: nupBorder,
+      };
+    } else if (isHeaderFooter) {
+      return hfOptions;
+    } else if (isOverlay) {
+      return overlayOptions;
+    } else if (isBooklet) {
+      return bookletOptions;
     } else if (isRotate) {
       return { rotations };
     } else if (isPdfToJpg) {
@@ -611,6 +668,7 @@ export function useToolState({
     if (isEditPdf && editPdfAnnotations.length === 0) return true;
     if (isCrop && cropMode === "area" && !cropArea) return true;
     if (isCrop && cropMode === "margins" && cropMargins.top === 0 && cropMargins.right === 0 && cropMargins.bottom === 0 && cropMargins.left === 0) return true;
+    if (isOverlay && files.length < 2) return true;
     return false;
   }, [
     implemented, isDeletePages, isExtractPages, isOrganizePages, isRotate,
@@ -623,7 +681,7 @@ export function useToolState({
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
     if ((isEditPdf || isRedact || isAnnotate || isSign) && currentStage !== "idle") return "full";
-    if ((isWatermark || isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
+    if ((isWatermark || isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf || isPagesPerSheet || isHeaderFooter || isOverlay || isBooklet) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
@@ -663,6 +721,10 @@ export function useToolState({
     isAnnotate,
     isSign,
     isWatermark,
+    isPagesPerSheet,
+    isHeaderFooter,
+    isOverlay,
+    isBooklet,
     isSingleFileMode,
     implemented,
 
@@ -791,6 +853,32 @@ export function useToolState({
     setResizeScaleMode,
     resizeMarginPreset,
     setResizeMarginPreset,
+
+    // Pages Per Sheet
+    nupCount,
+    setNupCount,
+    nupSheetSize,
+    setNupSheetSize,
+    nupOrientation,
+    setNupOrientation,
+    nupPageOrder,
+    setNupPageOrder,
+    nupGap,
+    setNupGap,
+    nupBorder,
+    setNupBorder,
+
+    // Header/Footer
+    hfOptions,
+    setHfOptions,
+
+    // Booklet
+    bookletOptions,
+    setBookletOptions,
+
+    // Overlay
+    overlayOptions,
+    setOverlayOptions,
 
     // Crop
     cropArea,

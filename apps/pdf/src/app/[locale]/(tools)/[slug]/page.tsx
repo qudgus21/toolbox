@@ -114,6 +114,10 @@ export default async function ToolPage({
         annotateLabels={slug === "annotate" ? dict.annotateTool : undefined}
         signLabels={slug === "sign" ? dict.signTool : undefined}
         watermarkLabels={slug === "watermark" ? dict.watermarkTool : undefined}
+        pagesPerSheetLabels={slug === "pages-per-sheet" ? dict.pagesPerSheetTool : undefined}
+        headerFooterLabels={slug === "header-footer" ? dict.headerFooterTool : undefined}
+        overlayLabels={slug === "overlay" ? dict.overlayTool : undefined}
+        bookletLabels={slug === "booklet" ? dict.bookletTool : undefined}
       />
     </>
   );

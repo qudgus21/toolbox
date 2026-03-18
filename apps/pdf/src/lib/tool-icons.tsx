@@ -561,6 +561,90 @@ const EditMetadataIcon: FC<IconProps> = (props) => (
   </svg>
 );
 
+const PagesPerSheetIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Large sheet outline */}
+    <rect x="4" y="4" width="40" height="40" rx="3" fill="#EDE9FE" stroke={C.purple} strokeWidth="1.5" />
+    {/* 4 mini pages inside (2x2 grid) */}
+    <rect x="8" y="8" width="14" height="16" rx="1.5" fill="white" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="11" y1="12" x2="19" y2="12" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="15" x2="17" y2="15" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="18" x2="19" y2="18" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+
+    <rect x="26" y="8" width="14" height="16" rx="1.5" fill="white" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="29" y1="12" x2="37" y2="12" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="29" y1="15" x2="35" y2="15" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="29" y1="18" x2="37" y2="18" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+
+    <rect x="8" y="28" width="14" height="16" rx="1.5" fill="white" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="11" y1="32" x2="19" y2="32" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="35" x2="17" y2="35" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="11" y1="38" x2="19" y2="38" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+
+    <rect x="26" y="28" width="14" height="16" rx="1.5" fill="white" stroke={C.purple} strokeWidth="1.2" />
+    <line x1="29" y1="32" x2="37" y2="32" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="29" y1="35" x2="35" y2="35" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="29" y1="38" x2="37" y2="38" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+  </svg>
+);
+
+const HeaderFooterIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Page */}
+    <rect x="8" y="4" width="32" height="40" rx="3" fill="#F0FDF4" stroke={C.green} strokeWidth="1.5" />
+    {/* Header band */}
+    <rect x="8" y="4" width="32" height="9" rx="3" fill="#BBF7D0" stroke={C.green} strokeWidth="1.2" />
+    <line x1="14" y1="8.5" x2="34" y2="8.5" stroke={C.green} strokeWidth="1.2" strokeLinecap="round" />
+    {/* Body lines */}
+    <line x1="14" y1="18" x2="34" y2="18" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="22" x2="30" y2="22" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="26" x2="32" y2="26" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    <line x1="14" y1="30" x2="28" y2="30" stroke={C.green} strokeWidth="0.8" opacity="0.25" strokeLinecap="round" />
+    {/* Footer band */}
+    <rect x="8" y="35" width="32" height="9" rx="3" fill="#BBF7D0" stroke={C.green} strokeWidth="1.2" />
+    <line x1="18" y1="39.5" x2="30" y2="39.5" stroke={C.green} strokeWidth="1.2" strokeLinecap="round" />
+  </svg>
+);
+
+const BookletIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Open book shape */}
+    <path d="M24,8 C20,8 12,6 6,6 V38 C12,38 20,36 24,36" fill="#EDE9FE" stroke={C.purple} strokeWidth="1.5" strokeLinejoin="round" />
+    <path d="M24,8 C28,8 36,6 42,6 V38 C36,38 28,36 24,36" fill="#F3E8FF" stroke={C.purple} strokeWidth="1.5" strokeLinejoin="round" />
+    {/* Spine */}
+    <line x1="24" y1="8" x2="24" y2="36" stroke={C.purple} strokeWidth="1.5" />
+    {/* Left page lines */}
+    <line x1="10" y1="14" x2="20" y2="13" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="10" y1="18" x2="20" y2="17" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="10" y1="22" x2="18" y2="21" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    {/* Right page lines */}
+    <line x1="28" y1="13" x2="38" y2="14" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="28" y1="17" x2="38" y2="18" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="28" y1="21" x2="36" y2="22" stroke={C.purple} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    {/* Fold arrow */}
+    <path d="M18,42 Q24,39 30,42" stroke={C.purple} strokeWidth="1.5" fill="none" strokeLinecap="round" />
+    <path d="M28,40.5 L30,42 L27.5,43" stroke={C.purple} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const OverlayIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Back page (overlay) */}
+    <rect x="10" y="6" width="28" height="36" rx="3" fill={C.word.light} stroke={C.word.fill} strokeWidth="1.2" opacity="0.6" />
+    <line x1="16" y1="14" x2="32" y2="14" stroke={C.word.fill} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    <line x1="16" y1="18" x2="28" y2="18" stroke={C.word.fill} strokeWidth="0.8" opacity="0.3" strokeLinecap="round" />
+    {/* Front page (content) */}
+    <rect x="6" y="8" width="28" height="36" rx="3" fill="#EDE9FE" stroke={C.purple} strokeWidth="1.5" />
+    <line x1="12" y1="16" x2="28" y2="16" stroke={C.purple} strokeWidth="0.8" opacity="0.4" strokeLinecap="round" />
+    <line x1="12" y1="20" x2="26" y2="20" stroke={C.purple} strokeWidth="0.8" opacity="0.4" strokeLinecap="round" />
+    <line x1="12" y1="24" x2="24" y2="24" stroke={C.purple} strokeWidth="0.8" opacity="0.4" strokeLinecap="round" />
+    <line x1="12" y1="28" x2="27" y2="28" stroke={C.purple} strokeWidth="0.8" opacity="0.4" strokeLinecap="round" />
+    {/* Merge arrow */}
+    <circle cx="36" cy="36" r="9" fill={C.purple} opacity="0.15" />
+    <path d="M32,36 L40,36 M37,32 L40,36 L37,40" stroke={C.purple} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 const GrayscaleIcon: FC<IconProps> = (props) => (
   <svg viewBox="0 0 48 48" fill="none" {...props}>
     {/* Half-circle: color side vs gray side */}
@@ -751,6 +835,10 @@ export const toolIconMap: Record<string, FC<IconProps>> = {
   "resize": ResizeIcon,
   "edit-metadata": EditMetadataIcon,
   "grayscale": GrayscaleIcon,
+  "pages-per-sheet": PagesPerSheetIcon,
+  "header-footer": HeaderFooterIcon,
+  "overlay": OverlayIcon,
+  "booklet": BookletIcon,
   // Optimize
   "repair": RepairIcon,
   "ocr": OcrIcon,

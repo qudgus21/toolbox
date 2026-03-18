@@ -22,6 +22,10 @@ import type { PageNumbersLabels } from "./page-numbers/page-numbers-options";
 import type { AnnotatePdfLabels } from "./annotate-pdf/annotate-layout";
 import type { SignPdfLabels } from "./sign-pdf/sign-layout";
 import type { WatermarkLabels } from "./watermark/watermark-options";
+import type { PagesPerSheetLabels } from "./pages-per-sheet-options";
+import type { HeaderFooterLabels } from "./header-footer-options";
+import type { OverlayLabels } from "./overlay-options";
+import type { BookletLabels } from "./booklet-options";
 
 export interface CommonLabels {
   backToAll: string;
@@ -164,6 +168,10 @@ export interface ToolPageClientProps {
   annotateLabels?: AnnotatePdfLabels;
   signLabels?: SignPdfLabels;
   watermarkLabels?: WatermarkLabels;
+  pagesPerSheetLabels?: PagesPerSheetLabels;
+  headerFooterLabels?: HeaderFooterLabels;
+  overlayLabels?: OverlayLabels;
+  bookletLabels?: BookletLabels;
   children?: ReactNode;
 }
 
@@ -171,5 +179,5 @@ export type {
   PdfToJpgLabels, PdfToPngLabels, PdfToTextLabels, ExtractImagesLabels,
   JpgToPdfLabels, PngToPdfLabels, ImageToPdfLabels, HtmlToPdfLabels,
   ScanToPdfLabels, OrganizePagesLabels, RotateLabels, EditMetadataLabels,
-  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels, AnnotatePdfLabels, SignPdfLabels, WatermarkLabels,
+  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels, AnnotatePdfLabels, SignPdfLabels, WatermarkLabels, PagesPerSheetLabels, HeaderFooterLabels, OverlayLabels, BookletLabels,
 };
