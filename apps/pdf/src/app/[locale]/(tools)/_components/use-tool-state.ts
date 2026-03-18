@@ -77,7 +77,8 @@ export function useToolState({
   const isRedact = slug === "redact";
   const isPageNumbers = slug === "page-numbers";
   const isAnnotate = slug === "annotate";
-  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate;
+  const isSign = slug === "sign";
+  const isSingleFileMode = isSplit || isDeletePages || isExtractPages || isExtractImages || isPdfToText || isOrganizePages || isEditMetadata || isEditPdf || isFlatten || isCrop || isRedact || isPageNumbers || isAnnotate || isSign;
 
   const implemented = hasProcessor(slug);
 
@@ -259,6 +260,9 @@ export function useToolState({
 
   // ─── Annotate annotations ───
   const [annotateAnnotations, setAnnotateAnnotations] = useState<unknown[]>([]);
+
+  // ─── Sign elements ───
+  const [signElements, setSignElements] = useState<unknown[]>([]);
 
   // ─── Edit PDF annotations ───
   const [editPdfAnnotations, setEditPdfAnnotations] = useState<unknown[]>([]);
@@ -486,6 +490,8 @@ export function useToolState({
       return { ...pageNumberOptions } as unknown as Record<string, unknown>;
     } else if (isAnnotate) {
       return { annotations: annotateAnnotations };
+    } else if (isSign) {
+      return { signElements };
     } else if (isEditPdf) {
       return { annotations: editPdfAnnotations };
     } else if (isEditMetadata && editedMetadata) {
@@ -506,7 +512,7 @@ export function useToolState({
     slug, isSplit, isCompress, isWebOptimize, isDeletePages, isExtractPages,
     isOrganizePages, isResize, isRotate, isPdfToJpg, isPdfToPng, isJpgToPdf,
     isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf, isPdfToText,
-    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop, isRedact, isAnnotate,
+    isExtractImages, isProtect, isGrayscale, isEditPdf, isEditMetadata, isFlatten, isCrop, isRedact, isAnnotate, isSign,
     splitOptions, compressOptions, webOptimizeOptions, protectOptions, flattenOptions,
     deletedPages, deletePageOrder, extractedPages, extractPageOrder,
     organizePages, resizePreset, resizeCustomW, resizeCustomH, resizeOrientation,
@@ -519,7 +525,7 @@ export function useToolState({
     htmlToPdfFileBreak, htmlToPdfFileGapMm,
     scanToPdfOrientation, scanToPdfPageSize, scanToPdfMarginMm, scanToPdfMergeAll,
     scanToPdfAutoEnhance, scanToPdfColorMode,
-    editPdfAnnotations, editedMetadata, redactAreas, annotateAnnotations, pageNumberOptions,
+    editPdfAnnotations, editedMetadata, redactAreas, annotateAnnotations, signElements, pageNumberOptions,
     cropArea, cropMargins, cropMode, cropPageMode, cropCurrentPage, cropPageRange,
     isPageNumbers,
   ]);
@@ -544,7 +550,9 @@ export function useToolState({
     cropLabels?: { cropButton: string };
     pageNumbersLabels?: { applyButton: string };
     annotateLabels?: { applyButton: string };
+    signLabels?: { applyButton: string };
   }): string => {
+    if (isSign && props.signLabels) return props.signLabels.applyButton;
     if (isAnnotate && props.annotateLabels) return props.annotateLabels.applyButton;
     if (isPageNumbers && props.pageNumbersLabels) return props.pageNumbersLabels.applyButton;
     if (isRedact && props.redactLabels) return props.redactLabels.applyButton;
@@ -564,7 +572,7 @@ export function useToolState({
     if (isPdfToText && props.pdfToTextLabels) return props.pdfToTextLabels.convertButton;
     return props.title;
   }, [
-    isAnnotate, isPageNumbers, isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
+    isSign, isAnnotate, isPageNumbers, isRedact, isCrop, isFlatten, isEditPdf, isProtect, isEditMetadata, isWebOptimize,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isPdfToJpg, isPdfToPng, isPdfToText,
   ]);
@@ -580,26 +588,27 @@ export function useToolState({
     if (isProtect && !protectOptions._valid) return true;
     if (isRedact && redactAreas.length === 0) return true;
     if (isAnnotate && annotateAnnotations.length === 0) return true;
+    if (isSign && signElements.length === 0) return true;
     if (isEditPdf && editPdfAnnotations.length === 0) return true;
     if (isCrop && cropMode === "area" && !cropArea) return true;
     if (isCrop && cropMode === "margins" && cropMargins.top === 0 && cropMargins.right === 0 && cropMargins.bottom === 0 && cropMargins.left === 0) return true;
     return false;
   }, [
     implemented, isDeletePages, isExtractPages, isOrganizePages, isRotate,
-    isEditMetadata, isProtect, isEditPdf, isCrop, isRedact, isAnnotate, deletedPages, extractedPages,
+    isEditMetadata, isProtect, isEditPdf, isCrop, isRedact, isAnnotate, isSign, deletedPages, extractedPages,
     cropArea, cropMode, cropMargins,
-    organizePages, rotations, editedMetadata, protectOptions, editPdfAnnotations, redactAreas, annotateAnnotations,
+    organizePages, rotations, editedMetadata, protectOptions, editPdfAnnotations, redactAreas, annotateAnnotations, signElements,
     pageCounts, files,
   ]);
 
   // ─── getLayoutSize ───
   const getLayoutSize = useCallback((currentStage: string): "sm" | "md" | "lg" | "xl" | "full" => {
-    if ((isEditPdf || isRedact || isAnnotate) && currentStage !== "idle") return "full";
+    if ((isEditPdf || isRedact || isAnnotate || isSign) && currentStage !== "idle") return "full";
     if ((isPageNumbers || isCrop || isSplit || isDeletePages || isExtractPages || isOrganizePages || isRotate || isProtect || isEditMetadata || isFlatten || isPdfToJpg || isPdfToPng || isPdfToText || isJpgToPdf || isPngToPdf || isImageToPdf || isHtmlToPdf || isScanToPdf) && currentStage !== "idle") return "xl";
     if (isExtractImages && currentStage !== "idle") return "md";
     return "lg";
   }, [
-    isEditPdf, isRedact, isAnnotate, isPageNumbers, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
+    isEditPdf, isRedact, isAnnotate, isSign, isPageNumbers, isCrop, isSplit, isDeletePages, isExtractPages, isOrganizePages,
     isRotate, isProtect, isEditMetadata, isFlatten, isPdfToJpg, isPdfToPng, isPdfToText,
     isJpgToPdf, isPngToPdf, isImageToPdf, isHtmlToPdf, isScanToPdf,
     isExtractImages,
@@ -633,6 +642,7 @@ export function useToolState({
     isRedact,
     isPageNumbers,
     isAnnotate,
+    isSign,
     isSingleFileMode,
     implemented,
 
@@ -791,6 +801,10 @@ export function useToolState({
     // Annotate
     annotateAnnotations,
     setAnnotateAnnotations,
+
+    // Sign
+    signElements,
+    setSignElements,
 
     // Edit PDF
     editPdfAnnotations,

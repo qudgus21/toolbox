@@ -20,6 +20,7 @@ import type { EditPdfLabels } from "./edit-pdf/editor-layout";
 import type { RedactPdfLabels } from "./redact-pdf/redact-layout";
 import type { PageNumbersLabels } from "./page-numbers/page-numbers-options";
 import type { AnnotatePdfLabels } from "./annotate-pdf/annotate-layout";
+import type { SignPdfLabels } from "./sign-pdf/sign-layout";
 
 export interface CommonLabels {
   backToAll: string;
@@ -160,6 +161,7 @@ export interface ToolPageClientProps {
   redactLabels?: RedactPdfLabels;
   pageNumbersLabels?: PageNumbersLabels;
   annotateLabels?: AnnotatePdfLabels;
+  signLabels?: SignPdfLabels;
   children?: ReactNode;
 }
 
@@ -167,5 +169,5 @@ export type {
   PdfToJpgLabels, PdfToPngLabels, PdfToTextLabels, ExtractImagesLabels,
   JpgToPdfLabels, PngToPdfLabels, ImageToPdfLabels, HtmlToPdfLabels,
   ScanToPdfLabels, OrganizePagesLabels, RotateLabels, EditMetadataLabels,
-  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels, AnnotatePdfLabels,
+  ResizeLabels, MarginPreset, WebOptimizeLabels, ProtectLabels, FlattenLabels, CropLabels, EditPdfLabels, RedactPdfLabels, PageNumbersLabels, AnnotatePdfLabels, SignPdfLabels,
 };

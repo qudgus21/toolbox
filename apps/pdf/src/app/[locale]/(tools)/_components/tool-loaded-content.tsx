@@ -31,6 +31,7 @@ import { FlattenPreview } from "./flatten-preview";
 import { CropLayout } from "./crop-layout";
 import { RedactLayout } from "./redact-pdf/redact-layout";
 import { AnnotateLayout } from "./annotate-pdf/annotate-layout";
+import { SignLayout } from "./sign-pdf/sign-layout";
 import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
@@ -76,6 +77,7 @@ interface ToolLoadedContentProps {
   editPdfLabels: ToolPageClientProps["editPdfLabels"];
   redactLabels: ToolPageClientProps["redactLabels"];
   annotateLabels: ToolPageClientProps["annotateLabels"];
+  signLabels: ToolPageClientProps["signLabels"];
   pageNumbersLabels: ToolPageClientProps["pageNumbersLabels"];
   children?: ReactNode;
 
@@ -127,6 +129,7 @@ export function ToolLoadedContent({
   editPdfLabels,
   redactLabels,
   annotateLabels,
+  signLabels,
   pageNumbersLabels,
   children,
   files,
@@ -173,6 +176,7 @@ export function ToolLoadedContent({
     isRedact,
     isPageNumbers,
     isAnnotate,
+    isSign,
 
     handleSingleFileChange,
     handleAddMore,
@@ -297,6 +301,8 @@ export function ToolLoadedContent({
     setRedactAreas,
 
     setAnnotateAnnotations,
+
+    setSignElements,
 
     setEditPdfAnnotations,
 
@@ -607,6 +613,14 @@ export function ToolLoadedContent({
           file={files[0]}
           labels={annotateLabels}
           onAnnotationsChange={setAnnotateAnnotations}
+          onChangeFile={handleSingleFileChange}
+        />
+      ) : isSign && signLabels && files.length > 0 ? (
+        /* ─── Sign PDF: full-screen editor ─── */
+        <SignLayout
+          file={files[0]}
+          labels={signLabels}
+          onElementsChange={setSignElements}
           onChangeFile={handleSingleFileChange}
         />
       ) : isRedact && redactLabels && files.length > 0 ? (

@@ -112,6 +112,7 @@ export default async function ToolPage({
         redactLabels={slug === "redact" ? dict.redactTool : undefined}
         pageNumbersLabels={slug === "page-numbers" ? dict.pageNumbersTool : undefined}
         annotateLabels={slug === "annotate" ? dict.annotateTool : undefined}
+        signLabels={slug === "sign" ? dict.signTool : undefined}
       />
     </>
   );
