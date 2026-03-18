@@ -4,7 +4,6 @@ export type AnnotateToolType =
   | "highlight"
   | "underline"
   | "strikethrough"
-  | "sticky-note"
   | "freehand"
   | "rectangle"
   | "ellipse"
@@ -96,12 +95,6 @@ export interface StrikethroughElement extends AnnotateBaseElement {
   strokeWidth: number;
 }
 
-export interface StickyNoteElement extends AnnotateBaseElement {
-  type: "sticky-note";
-  noteContent: string;
-  noteColor: string;
-}
-
 export interface FreehandElement extends AnnotateBaseElement {
   type: "freehand";
   points: number[];
@@ -156,7 +149,6 @@ export type AnnotateElement =
   | HighlightElement
   | UnderlineElement
   | StrikethroughElement
-  | StickyNoteElement
   | FreehandElement
   | RectangleElement
   | EllipseElement
@@ -173,10 +165,6 @@ export interface HighlightDefaults {
 export interface MarkupDefaults {
   color: string;
   strokeWidth: number;
-}
-
-export interface StickyDefaults {
-  noteColor: string;
 }
 
 export interface DrawDefaults {
@@ -226,11 +214,9 @@ export interface AnnotateState {
     past: AnnotateElement[][];
     future: AnnotateElement[][];
   };
-  expandedNoteId: string | null;
   pendingStamp: StampKind | null;
   highlightDefaults: HighlightDefaults;
   markupDefaults: MarkupDefaults;
-  stickyDefaults: StickyDefaults;
   drawDefaults: DrawDefaults;
   shapeDefaults: ShapeDefaults;
   textBoxDefaults: TextBoxDefaults;
@@ -252,11 +238,9 @@ export type AnnotateAction =
   | { type: "REDO" }
   | { type: "MOVE_LAYER"; id: string; direction: "up" | "down" | "top" | "bottom" }
   | { type: "REORDER_ANNOTATIONS"; pageIndex: number; orderedIds: string[] }
-  | { type: "TOGGLE_NOTE"; id: string }
   | { type: "SET_PENDING_STAMP"; stamp: StampKind }
   | { type: "UPDATE_HIGHLIGHT_DEFAULTS"; changes: Partial<HighlightDefaults> }
   | { type: "UPDATE_MARKUP_DEFAULTS"; changes: Partial<MarkupDefaults> }
-  | { type: "UPDATE_STICKY_DEFAULTS"; changes: Partial<StickyDefaults> }
   | { type: "UPDATE_DRAW_DEFAULTS"; changes: Partial<DrawDefaults> }
   | { type: "UPDATE_SHAPE_DEFAULTS"; changes: Partial<ShapeDefaults> }
   | { type: "UPDATE_TEXT_BOX_DEFAULTS"; changes: Partial<TextBoxDefaults> }
@@ -277,7 +261,6 @@ export interface AnnotatePdfLabels {
   toolHighlight: string;
   toolUnderline: string;
   toolStrikethrough: string;
-  toolStickyNote: string;
   toolFreehand: string;
   toolRectangle: string;
   toolEllipse: string;
@@ -321,8 +304,6 @@ export interface AnnotatePdfLabels {
   drawThickness: string;
   // Arrow
   arrowSize: string;
-  // Sticky note
-  noteContent: string;
   commentPlaceholder: string;
   // Actions
   undo: string;

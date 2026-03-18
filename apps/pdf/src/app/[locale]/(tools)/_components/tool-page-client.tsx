@@ -205,7 +205,7 @@ export function ToolPageClient({
             key="loaded"
             {...fadeSlide}
             transition={transition}
-            className={(isEditPdf || isCrop || isRedact) ? "h-full" : "space-y-4"}
+            className={(isEditPdf || isCrop || isRedact || isAnnotate) ? "h-full" : "space-y-4"}
           >
             <ToolLoadedContent
               labels={labels}

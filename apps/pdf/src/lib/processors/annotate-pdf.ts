@@ -12,7 +12,6 @@ import type {
   HighlightElement,
   UnderlineElement,
   StrikethroughElement,
-  StickyNoteElement,
   FreehandElement,
   RectangleElement,
   EllipseElement,
@@ -137,58 +136,6 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
     if (current) lines.push(current);
   }
   return lines.length ? lines : [""];
-}
-
-/** Render a sticky note icon via canvas and return PNG bytes */
-async function stickyNoteToImage(
-  size: number,
-  noteColor: string,
-): Promise<Uint8Array> {
-  const scale = 3;
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.ceil(size * scale);
-  canvas.height = Math.ceil(size * scale);
-  const ctx = canvas.getContext("2d")!;
-  ctx.scale(scale, scale);
-
-  // Folded corner note
-  const fold = size * 0.25;
-
-  ctx.fillStyle = noteColor;
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(size - fold, 0);
-  ctx.lineTo(size, fold);
-  ctx.lineTo(size, size);
-  ctx.lineTo(0, size);
-  ctx.closePath();
-  ctx.fill();
-
-  // Fold triangle
-  ctx.fillStyle = "rgba(0,0,0,0.15)";
-  ctx.beginPath();
-  ctx.moveTo(size - fold, 0);
-  ctx.lineTo(size, fold);
-  ctx.lineTo(size - fold, fold);
-  ctx.closePath();
-  ctx.fill();
-
-  // Border
-  ctx.strokeStyle = "rgba(0,0,0,0.3)";
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(0, 0);
-  ctx.lineTo(size - fold, 0);
-  ctx.lineTo(size, fold);
-  ctx.lineTo(size, size);
-  ctx.lineTo(0, size);
-  ctx.closePath();
-  ctx.stroke();
-
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
-  );
-  return new Uint8Array(await blob.arrayBuffer());
 }
 
 /** Render a stamp via canvas and return PNG bytes */
@@ -323,71 +270,6 @@ const annotatePdf: ProcessorFn = async (files, options, onProgress) => {
             color: hexToRgb(st.color),
             opacity: st.opacity,
           });
-          break;
-        }
-
-        // ─── Sticky Note ──────────────────────────────
-        case "sticky-note": {
-          const sn = ann as StickyNoteElement;
-          const noteSize = Math.min(sn.width, sn.height);
-          const pdfY = toPdfY(sn.y, noteSize, ph);
-
-          // Render note icon
-          const iconBytes = await stickyNoteToImage(noteSize, sn.noteColor);
-          const iconImage = await doc.embedPng(iconBytes);
-          page.drawImage(iconImage, {
-            x: sn.x,
-            y: pdfY,
-            width: noteSize,
-            height: noteSize,
-            opacity: sn.opacity,
-          });
-
-          // If there's note content, render small text beside the icon
-          if (sn.noteContent && sn.noteContent.trim()) {
-            const font = await getFont("Helvetica", false, false);
-            const textFontSize = Math.max(8, noteSize * 0.3);
-            const textX = sn.x + noteSize + 4;
-            const textY = pdfY + noteSize - textFontSize;
-
-            if (hasNonLatinChars(sn.noteContent)) {
-              const maxTextWidth = 150;
-              const textHeight = textFontSize * 1.3 * Math.ceil(sn.noteContent.length / 20);
-              const imgBytes = await textToImage(
-                sn.noteContent,
-                maxTextWidth,
-                Math.max(textFontSize * 2, textHeight),
-                textFontSize,
-                "Helvetica",
-                "#333333",
-                false,
-                false,
-                "left",
-                1.3,
-              );
-              const textImage = await doc.embedPng(imgBytes);
-              page.drawImage(textImage, {
-                x: textX,
-                y: pdfY,
-                width: maxTextWidth,
-                height: Math.max(textFontSize * 2, textHeight),
-                opacity: sn.opacity,
-              });
-            } else {
-              // Truncate long content for inline display
-              const displayText = sn.noteContent.length > 40
-                ? sn.noteContent.substring(0, 40) + "..."
-                : sn.noteContent;
-              page.drawText(displayText, {
-                x: textX,
-                y: textY,
-                size: textFontSize,
-                font,
-                color: rgb(0.2, 0.2, 0.2),
-                opacity: sn.opacity,
-              });
-            }
-          }
           break;
         }
 

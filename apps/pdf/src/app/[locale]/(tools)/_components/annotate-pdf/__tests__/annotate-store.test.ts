@@ -5,7 +5,6 @@ import type {
   HighlightElement,
   RectangleElement,
   TextBoxElement,
-  StickyNoteElement,
   FreehandElement,
   EllipseElement,
   ArrowElement,
@@ -111,23 +110,6 @@ function makeTextBox(overrides: Partial<TextBoxElement> = {}): TextBoxElement {
     italic: false,
     align: "left",
     lineHeight: 1.2,
-    ...overrides,
-  };
-}
-
-function makeStickyNote(overrides: Partial<StickyNoteElement> = {}): StickyNoteElement {
-  return {
-    id: testId(),
-    type: "sticky-note",
-    pageIndex: 0,
-    x: 10,
-    y: 10,
-    width: 40,
-    height: 40,
-    rotation: 0,
-    opacity: 1,
-    noteContent: "Note",
-    noteColor: "#FEF08A",
     ...overrides,
   };
 }
@@ -404,13 +386,6 @@ describe("DELETE_ELEMENT", () => {
     const state = stateWith([el1, el2], { selectedElementId: "r1" });
     const next = annotateReducer(state, { type: "DELETE_ELEMENT", id: "h1" });
     expect(next.selectedElementId).toBe("r1");
-  });
-
-  it("clears expandedNoteId if the deleted element was expanded", () => {
-    const note = makeStickyNote({ id: "n1" });
-    const state = stateWith([note], { expandedNoteId: "n1" });
-    const next = annotateReducer(state, { type: "DELETE_ELEMENT", id: "n1" });
-    expect(next.expandedNoteId).toBeNull();
   });
 
   it("pushes history", () => {
@@ -738,29 +713,7 @@ describe("REORDER_ANNOTATIONS", () => {
 });
 
 // ──────────────────────────────────────────────────────────────
-// 13. TOGGLE_NOTE
-// ──────────────────────────────────────────────────────────────
-describe("TOGGLE_NOTE", () => {
-  it("sets expandedNoteId when currently null", () => {
-    const next = annotateReducer(FRESH, { type: "TOGGLE_NOTE", id: "n1" });
-    expect(next.expandedNoteId).toBe("n1");
-  });
-
-  it("clears expandedNoteId when toggling the same id", () => {
-    const state = { ...FRESH, expandedNoteId: "n1" };
-    const next = annotateReducer(state, { type: "TOGGLE_NOTE", id: "n1" });
-    expect(next.expandedNoteId).toBeNull();
-  });
-
-  it("switches to a different note", () => {
-    const state = { ...FRESH, expandedNoteId: "n1" };
-    const next = annotateReducer(state, { type: "TOGGLE_NOTE", id: "n2" });
-    expect(next.expandedNoteId).toBe("n2");
-  });
-});
-
-// ──────────────────────────────────────────────────────────────
-// 14. SET_PENDING_STAMP
+// 13. SET_PENDING_STAMP
 // ──────────────────────────────────────────────────────────────
 describe("SET_PENDING_STAMP", () => {
   it("sets the pending stamp kind", () => {
@@ -817,14 +770,6 @@ describe("UPDATE_*_DEFAULTS", () => {
     });
     expect(next.markupDefaults.color).toBe("#00FF00");
     expect(next.markupDefaults.strokeWidth).toBe(4);
-  });
-
-  it("UPDATE_STICKY_DEFAULTS merges changes", () => {
-    const next = annotateReducer(FRESH, {
-      type: "UPDATE_STICKY_DEFAULTS",
-      changes: { noteColor: "#FF0000" },
-    });
-    expect(next.stickyDefaults.noteColor).toBe("#FF0000");
   });
 
   it("UPDATE_DRAW_DEFAULTS merges changes", () => {
@@ -904,7 +849,6 @@ describe("INITIAL_STATE defaults", () => {
     expect(FRESH.activePageIndex).toBe(0);
     expect(FRESH.zoom).toBe(1);
     expect(FRESH.history).toEqual({ past: [], future: [] });
-    expect(FRESH.expandedNoteId).toBeNull();
     expect(FRESH.pendingStamp).toBeNull();
   });
 

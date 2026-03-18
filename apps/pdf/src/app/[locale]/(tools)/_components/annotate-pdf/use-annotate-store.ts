@@ -8,7 +8,6 @@ import type {
   AnnotateElement,
   HighlightDefaults,
   MarkupDefaults,
-  StickyDefaults,
   DrawDefaults,
   ShapeDefaults,
   TextBoxDefaults,
@@ -27,10 +26,6 @@ const INITIAL_HIGHLIGHT_DEFAULTS: HighlightDefaults = {
 const INITIAL_MARKUP_DEFAULTS: MarkupDefaults = {
   color: "#EF4444",
   strokeWidth: 2,
-};
-
-const INITIAL_STICKY_DEFAULTS: StickyDefaults = {
-  noteColor: "#FEF08A",
 };
 
 const INITIAL_DRAW_DEFAULTS: DrawDefaults = {
@@ -76,11 +71,9 @@ const INITIAL_STATE: AnnotateState = {
   activePageIndex: 0,
   zoom: 1,
   history: { past: [], future: [] },
-  expandedNoteId: null,
   pendingStamp: null,
   highlightDefaults: INITIAL_HIGHLIGHT_DEFAULTS,
   markupDefaults: INITIAL_MARKUP_DEFAULTS,
-  stickyDefaults: INITIAL_STICKY_DEFAULTS,
   drawDefaults: INITIAL_DRAW_DEFAULTS,
   shapeDefaults: INITIAL_SHAPE_DEFAULTS,
   textBoxDefaults: INITIAL_TEXT_BOX_DEFAULTS,
@@ -199,8 +192,6 @@ function annotateReducer(
         annotations: state.annotations.filter((e) => e.id !== action.id),
         selectedElementId:
           state.selectedElementId === action.id ? null : state.selectedElementId,
-        expandedNoteId:
-          state.expandedNoteId === action.id ? null : state.expandedNoteId,
         history: pushHistory(state),
       };
 
@@ -305,12 +296,6 @@ function annotateReducer(
       };
     }
 
-    case "TOGGLE_NOTE":
-      return {
-        ...state,
-        expandedNoteId: state.expandedNoteId === action.id ? null : action.id,
-      };
-
     case "SET_PENDING_STAMP":
       return {
         ...state,
@@ -329,12 +314,6 @@ function annotateReducer(
       return {
         ...state,
         markupDefaults: { ...state.markupDefaults, ...action.changes },
-      };
-
-    case "UPDATE_STICKY_DEFAULTS":
-      return {
-        ...state,
-        stickyDefaults: { ...state.stickyDefaults, ...action.changes },
       };
 
     case "UPDATE_DRAW_DEFAULTS":

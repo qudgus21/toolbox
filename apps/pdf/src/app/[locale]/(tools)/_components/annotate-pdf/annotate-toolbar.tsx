@@ -7,7 +7,6 @@ import {
   Highlighter,
   UnderlineIcon,
   Strikethrough,
-  StickyNote,
   Pencil,
   Square,
   Circle,
@@ -77,58 +76,46 @@ export function AnnotateToolbar({
   selectedElement,
   onChangeFile,
 }: AnnotateToolbarProps) {
-  const [showHighlightPicker, setShowHighlightPicker] = useState(false);
   const [showStampPicker, setShowStampPicker] = useState(false);
-  const highlightBtnRef = useRef<HTMLDivElement>(null);
   const stampBtnRef = useRef<HTMLDivElement>(null);
 
   const { activeTool, history } = state;
 
-  // Close pickers on outside click
+  // Close stamp picker on outside click
   useEffect(() => {
-    if (!showHighlightPicker && !showStampPicker) return;
+    if (!showStampPicker) return;
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (showHighlightPicker && !highlightBtnRef.current?.contains(target) && !target.closest?.("[data-highlight-picker]")) {
-        setShowHighlightPicker(false);
-      }
       if (showStampPicker && !stampBtnRef.current?.contains(target) && !target.closest?.("[data-stamp-picker]")) {
         setShowStampPicker(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
-  }, [showHighlightPicker, showStampPicker]);
+  }, [showStampPicker]);
 
   /* ── Handlers ───────────────────────────────────────────── */
 
   const handleToolClick = (tool: AnnotateToolType) => {
     if (tool === "highlight") {
-      setShowHighlightPicker(!showHighlightPicker);
       setShowStampPicker(false);
-      if (activeTool !== "highlight") {
+      if (activeTool === "highlight") {
+        dispatch({ type: "SET_TOOL", tool: "select" });
+      } else {
         dispatch({ type: "SET_TOOL", tool: "highlight" });
       }
       return;
     }
     if (tool === "stamp") {
       setShowStampPicker(!showStampPicker);
-      setShowHighlightPicker(false);
       return;
     }
-    setShowHighlightPicker(false);
     setShowStampPicker(false);
     if (activeTool === tool) {
       dispatch({ type: "SET_TOOL", tool: "select" });
     } else {
       dispatch({ type: "SET_TOOL", tool });
     }
-  };
-
-  const handleHighlightColorSelect = (color: HighlightColor) => {
-    dispatch({ type: "UPDATE_HIGHLIGHT_DEFAULTS", changes: { color } });
-    dispatch({ type: "SET_TOOL", tool: "highlight" });
-    setShowHighlightPicker(false);
   };
 
   const handleStampSelect = (stamp: StampKind) => {
@@ -182,29 +169,17 @@ export function AnnotateToolbar({
           <Divider />
 
           {/* Markup Tools */}
-          <div ref={highlightBtnRef}>
-            <ToolBtn
-              active={activeTool === "highlight"}
-              onClick={() => handleToolClick("highlight")}
-              title={labels.toolHighlight}
-            >
-              <Highlighter size={18} />
-              <div
-                className="h-1 w-4 rounded-full"
-                style={{ backgroundColor: HIGHLIGHT_COLORS[state.highlightDefaults.color] }}
-              />
-            </ToolBtn>
-            {showHighlightPicker &&
-              createPortal(
-                <HighlightPickerDropdown
-                  btnRef={highlightBtnRef}
-                  selectedColor={state.highlightDefaults.color}
-                  onSelect={handleHighlightColorSelect}
-                  labels={labels}
-                />,
-                document.body,
-              )}
-          </div>
+          <ToolBtn
+            active={activeTool === "highlight"}
+            onClick={() => handleToolClick("highlight")}
+            title={labels.toolHighlight}
+          >
+            <Highlighter size={18} />
+            <div
+              className="h-1 w-4 rounded-full"
+              style={{ backgroundColor: HIGHLIGHT_COLORS[state.highlightDefaults.color] }}
+            />
+          </ToolBtn>
 
           <ToolBtn
             active={activeTool === "underline"}
@@ -220,17 +195,6 @@ export function AnnotateToolbar({
             title={labels.toolStrikethrough}
           >
             <Strikethrough size={18} />
-          </ToolBtn>
-
-          <Divider />
-
-          {/* Sticky Note */}
-          <ToolBtn
-            active={activeTool === "sticky-note"}
-            onClick={() => handleToolClick("sticky-note")}
-            title={labels.toolStickyNote}
-          >
-            <StickyNote size={18} />
           </ToolBtn>
 
           <Divider />
@@ -415,7 +379,6 @@ function ContextBarContent({
   const isUnderline = contextType === "underline";
   const isStrikethrough = contextType === "strikethrough";
   const isMarkup = isUnderline || isStrikethrough;
-  const isStickyNote = contextType === "sticky-note";
   const isFreehand = contextType === "freehand";
   const isShape = contextType === "rectangle" || contextType === "ellipse";
   const isArrow = contextType === "arrow";
@@ -440,13 +403,6 @@ function ContextBarContent({
               : null
           }
           defaults={state.markupDefaults}
-          dispatch={dispatch}
-          labels={labels}
-        />
-      )}
-      {isStickyNote && selectedElement?.type === "sticky-note" && (
-        <StickyNoteContextControls
-          element={selectedElement}
           dispatch={dispatch}
           labels={labels}
         />
@@ -631,29 +587,6 @@ function MarkupContextControls({
         <span className="w-8 text-right text-xs tabular-nums text-foreground-muted">{strokeWidth}px</span>
       </div>
     </>
-  );
-}
-
-/* ── Sticky Note Controls ────────────────────────────────────── */
-
-function StickyNoteContextControls({
-  element,
-  dispatch,
-  labels,
-}: {
-  element: Extract<AnnotateElement, { type: "sticky-note" }>;
-  dispatch: AnnotateDispatch;
-  labels: AnnotatePdfLabels;
-}) {
-  return (
-    <ColorPicker
-      value={element.noteColor}
-      onChange={(c) =>
-        dispatch({ type: "UPDATE_ELEMENT", id: element.id, changes: { noteColor: c } })
-      }
-      label={labels.noteContent}
-      icon={<StickyNote size={14} />}
-    />
   );
 }
 
@@ -918,74 +851,6 @@ function TextBoxContextControls({
         </ToggleBtn>
       </div>
     </>
-  );
-}
-
-/* ── Highlight Picker Dropdown ───────────────────────────────── */
-
-function HighlightPickerDropdown({
-  btnRef,
-  selectedColor,
-  onSelect,
-  labels,
-}: {
-  btnRef: React.RefObject<HTMLDivElement | null>;
-  selectedColor: HighlightColor;
-  onSelect: (color: HighlightColor) => void;
-  labels: AnnotatePdfLabels;
-}) {
-  const [pos, setPos] = useState({ top: 0, left: 0 });
-
-  const updatePos = useCallback(() => {
-    if (!btnRef.current) return;
-    const rect = btnRef.current.getBoundingClientRect();
-    setPos({ top: rect.bottom + 4, left: rect.left });
-  }, [btnRef]);
-
-  useEffect(() => {
-    updatePos();
-    window.addEventListener("scroll", updatePos, true);
-    window.addEventListener("resize", updatePos);
-    return () => {
-      window.removeEventListener("scroll", updatePos, true);
-      window.removeEventListener("resize", updatePos);
-    };
-  }, [updatePos]);
-
-  const colorLabelMap: Record<HighlightColor, string> = {
-    yellow: labels.colorYellow,
-    green: labels.colorGreen,
-    pink: labels.colorPink,
-    blue: labels.colorBlue,
-    orange: labels.colorOrange,
-    purple: labels.colorPurple,
-  };
-
-  return (
-    <div
-      data-highlight-picker
-      className="fixed z-[200] rounded-lg border border-border bg-background-elevated p-3 shadow-lg"
-      style={{ top: pos.top, left: pos.left }}
-    >
-      <div className="grid grid-cols-3 gap-2">
-        {HIGHLIGHT_COLOR_KEYS.map((c) => (
-          <button
-            key={c}
-            type="button"
-            onClick={() => onSelect(c)}
-            className={`flex h-8 items-center gap-2 rounded-md px-2 transition-colors hover:bg-background-muted ${
-              selectedColor === c ? "ring-2 ring-accent" : ""
-            }`}
-          >
-            <div
-              className="h-4 w-4 rounded-sm"
-              style={{ backgroundColor: HIGHLIGHT_COLORS[c], opacity: 0.7 }}
-            />
-            <span className="text-xs text-foreground">{colorLabelMap[c]}</span>
-          </button>
-        ))}
-      </div>
-    </div>
   );
 }
 

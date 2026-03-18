@@ -73,7 +73,6 @@ export function AnnotateLayout({
   const [scrollHeight, setScrollHeight] = useState(600);
   const [pageInput, setPageInput] = useState("");
   const [zoomInput, setZoomInput] = useState("");
-  const [rightTab, setRightTab] = useState<"list" | "properties">("list");
 
   /* ── Lock body scroll ────────────────────────────────── */
 
@@ -310,16 +309,6 @@ export function AnnotateLayout({
     setViewMode(null);
   }, [zoomPercent]);
 
-  const handleSelectAnnotation = useCallback(
-    (id: string) => {
-      dispatch({ type: "SELECT_ELEMENT", id });
-      dispatch({ type: "SET_TOOL", tool: "select" });
-      setRightTab("properties");
-      const el = state.annotations.find((a) => a.id === id);
-      if (el) scrollToPage(el.pageIndex);
-    },
-    [dispatch, state.annotations, scrollToPage],
-  );
 
   /* ── Loading state ────────────────────────────────────── */
 
@@ -445,106 +434,23 @@ export function AnnotateLayout({
           </div>
         </div>
 
-        {/* Right: Tabs (List / Properties) */}
+        {/* Right: Annotation List + Properties */}
         <div className="hidden w-[280px] shrink-0 flex-col border-l border-border bg-background md:flex lg:w-[300px]">
-          {/* Tab Header */}
-          <div className="flex h-12 border-b border-border">
-            <button
-              type="button"
-              onClick={() => setRightTab("list")}
-              className={`flex flex-1 cursor-pointer items-center justify-center text-sm font-medium transition-colors ${
-                rightTab === "list"
-                  ? "border-b-2 border-accent text-accent"
-                  : "text-foreground-muted hover:text-foreground"
-              }`}
-            >
-              {labels.annotationList}
-            </button>
-            <button
-              type="button"
-              onClick={() => setRightTab("properties")}
-              className={`flex flex-1 cursor-pointer items-center justify-center text-sm font-medium transition-colors ${
-                rightTab === "properties"
-                  ? "border-b-2 border-accent text-accent"
-                  : "text-foreground-muted hover:text-foreground"
-              }`}
-            >
-              {labels.noSelection.split(" ")[0] || "Properties"}
-            </button>
+          <div className="flex h-12 items-center border-b border-border px-4">
+            <span className="text-sm font-medium text-foreground">{labels.annotationList}</span>
           </div>
-
-          {/* Tab Content */}
           <div className="flex-1 overflow-y-auto">
-            {rightTab === "list" ? (
-              <AnnotateListPanel
-                annotations={state.annotations}
-                activePageIndex={state.activePageIndex}
-                selectedElementId={state.selectedElementId}
-                dispatch={dispatch}
-                labels={labels}
-                onScrollToPage={(pageIdx) => {
-                  scrollToPage(pageIdx);
-                }}
-              />
-            ) : (
-              <AnnotatePropertiesPanel
-                selectedElement={selectedElement}
-                dispatch={dispatch}
-                labels={labels}
-              />
-            )}
+            <AnnotateListPanel
+              annotations={state.annotations}
+              activePageIndex={state.activePageIndex}
+              selectedElementId={state.selectedElementId}
+              dispatch={dispatch}
+              labels={labels}
+              onScrollToPage={(pageIdx) => scrollToPage(pageIdx)}
+            />
           </div>
         </div>
       </div>
-
-      {/* ── Sticky Note Popovers ──────────────────────────── */}
-      {state.expandedNoteId && (() => {
-        const noteEl = state.annotations.find((a) => a.id === state.expandedNoteId);
-        if (!noteEl || noteEl.type !== "sticky-note") return null;
-        const pageEl = pageRefs.current.get(noteEl.pageIndex);
-        if (!pageEl) return null;
-
-        const pageRect = pageEl.getBoundingClientRect();
-        const noteX = pageRect.left + noteEl.x * scale + noteEl.width * scale + 8;
-        const noteY = pageRect.top + noteEl.y * scale;
-
-        return (
-          <div
-            className="fixed z-[100] w-[220px] rounded-lg border border-border bg-background-elevated p-3 shadow-xl"
-            style={{ left: noteX, top: noteY }}
-          >
-            <textarea
-              autoFocus
-              value={noteEl.noteContent}
-              onChange={(e) =>
-                dispatch({
-                  type: "UPDATE_ELEMENT",
-                  id: noteEl.id,
-                  changes: { noteContent: e.target.value },
-                  skipHistory: true,
-                })
-              }
-              onBlur={() => {
-                // Commit to history on blur
-                dispatch({
-                  type: "UPDATE_ELEMENT",
-                  id: noteEl.id,
-                  changes: { noteContent: noteEl.noteContent },
-                });
-              }}
-              placeholder={labels.commentPlaceholder}
-              className="h-24 w-full resize-none rounded-md border border-border bg-background p-2 text-sm text-foreground outline-none focus:ring-1 focus:ring-accent"
-            />
-            <button
-              type="button"
-              onClick={() => dispatch({ type: "TOGGLE_NOTE", id: noteEl.id })}
-              className="mt-2 w-full cursor-pointer rounded-md bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent/20"
-            >
-              OK
-            </button>
-          </div>
-        );
-      })()}
 
       {/* ── Fixed Bottom Nav Bar ──────────────────── */}
       <div

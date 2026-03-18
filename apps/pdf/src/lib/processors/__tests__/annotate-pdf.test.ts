@@ -12,7 +12,6 @@ import type {
   FreehandElement,
   TextBoxElement,
   StampElement,
-  StickyNoteElement,
 } from "../../../app/[locale]/(tools)/_components/annotate-pdf/annotate-types";
 import {
   createMarkedPdf,
@@ -204,17 +203,6 @@ function makeStamp(overrides: Partial<StampElement> = {}): StampElement {
     color: "#22C55E",
     ...overrides,
   } as StampElement;
-}
-
-function makeStickyNote(overrides: Partial<StickyNoteElement> = {}): StickyNoteElement {
-  return {
-    ...baseProps("sticky-note"),
-    width: 40,
-    height: 40,
-    noteContent: "This is a note",
-    noteColor: "#FFEB3B",
-    ...overrides,
-  } as StickyNoteElement;
 }
 
 /** Compare byte length of result to original — annotations should add content */
@@ -748,80 +736,6 @@ describe("annotate-pdf — 스탬프 (stamp)", () => {
     );
 
     const result = await annotatePdf([file], { annotations }, onProgress);
-
-    const pdf = await resultToPdf(result.blob);
-    expect(pdf.getPageCount()).toBe(1);
-  });
-});
-
-describe("annotate-pdf — 스티키 노트 (sticky-note)", () => {
-  it("스티키 노트가 PDF에 이미지로 렌더링된다", async () => {
-    const file = await createMarkedPdf(1);
-    const origLen = await getOriginalByteLength(file);
-    const { onProgress } = createProgressTracker();
-
-    const result = await annotatePdf(
-      [file],
-      { annotations: [makeStickyNote()] },
-      onProgress,
-    );
-
-    const resultLen = (await result.blob.arrayBuffer()).byteLength;
-    expect(resultLen).toBeGreaterThan(origLen);
-  });
-
-  it("noteContent가 비어 있으면 아이콘만 렌더링된다", async () => {
-    const file = await createMarkedPdf(1);
-    const { onProgress } = createProgressTracker();
-
-    const result = await annotatePdf(
-      [file],
-      { annotations: [makeStickyNote({ noteContent: "" })] },
-      onProgress,
-    );
-
-    const pdf = await resultToPdf(result.blob);
-    expect(pdf.getPageCount()).toBe(1);
-  });
-
-  it("Latin noteContent는 drawText로 렌더링된다", async () => {
-    const file = await createMarkedPdf(1);
-    const { onProgress } = createProgressTracker();
-
-    const result = await annotatePdf(
-      [file],
-      { annotations: [makeStickyNote({ noteContent: "A short note" })] },
-      onProgress,
-    );
-
-    const pdf = await resultToPdf(result.blob);
-    expect(pdf.getPageCount()).toBe(1);
-  });
-
-  it("40자 초과 Latin noteContent는 잘린다", async () => {
-    const file = await createMarkedPdf(1);
-    const { onProgress } = createProgressTracker();
-
-    const longNote = "A".repeat(60);
-    const result = await annotatePdf(
-      [file],
-      { annotations: [makeStickyNote({ noteContent: longNote })] },
-      onProgress,
-    );
-
-    const pdf = await resultToPdf(result.blob);
-    expect(pdf.getPageCount()).toBe(1);
-  });
-
-  it("CJK noteContent는 canvas→image 폴백을 사용한다", async () => {
-    const file = await createMarkedPdf(1);
-    const { onProgress } = createProgressTracker();
-
-    const result = await annotatePdf(
-      [file],
-      { annotations: [makeStickyNote({ noteContent: "메모입니다" })] },
-      onProgress,
-    );
 
     const pdf = await resultToPdf(result.blob);
     expect(pdf.getPageCount()).toBe(1);

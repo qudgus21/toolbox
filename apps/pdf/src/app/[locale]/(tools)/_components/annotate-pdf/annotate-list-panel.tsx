@@ -20,7 +20,6 @@ import {
   Highlighter,
   UnderlineIcon,
   Strikethrough,
-  StickyNote,
   Pencil,
   Square,
   Circle,
@@ -52,7 +51,6 @@ const TYPE_ICON: Record<string, React.ElementType> = {
   highlight: Highlighter,
   underline: UnderlineIcon,
   strikethrough: Strikethrough,
-  "sticky-note": StickyNote,
   freehand: Pencil,
   rectangle: Square,
   ellipse: Circle,
@@ -65,7 +63,6 @@ const TYPE_COLOR: Record<string, string> = {
   highlight: "text-yellow-500",
   underline: "text-blue-500",
   strikethrough: "text-red-500",
-  "sticky-note": "text-amber-500",
   freehand: "text-pink-500",
   rectangle: "text-orange-500",
   ellipse: "text-purple-500",
@@ -84,10 +81,6 @@ function getLabel(el: AnnotateElement, labels: AnnotatePdfLabels): string {
       return labels.toolUnderline;
     case "strikethrough":
       return labels.toolStrikethrough;
-    case "sticky-note":
-      return el.noteContent.length > 20
-        ? el.noteContent.slice(0, 20) + "..."
-        : el.noteContent || labels.toolStickyNote;
     case "freehand":
       return labels.toolFreehand;
     case "rectangle":

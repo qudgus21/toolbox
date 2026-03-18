@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo, memo, startTransition } from "react";
+import { useRef, useEffect, useLayoutEffect, useState, useCallback, useMemo, memo } from "react";
 import {
   Stage,
   Layer,
@@ -27,6 +27,7 @@ import {
   STAMP_TEXT,
   STAMP_DEFAULT_COLORS,
   measureTextSize,
+  measureTextWidth,
 } from "./annotate-types";
 import type { AnnotateDispatch } from "./use-annotate-store";
 
@@ -100,6 +101,14 @@ export function AnnotatePageCanvas({
     [annotations, selectedElementId],
   );
 
+  /* Track selected element dimensions to force transformer redraw on resize */
+  const selectedDims = useMemo(() => {
+    if (!selectedElementId) return "";
+    const el = annotations.find((a) => a.id === selectedElementId);
+    if (!el) return "";
+    return `${el.width}:${el.height}`;
+  }, [annotations, selectedElementId]);
+
   useEffect(() => {
     const transformer = transformerRef.current;
     const stage = stageRef.current;
@@ -139,7 +148,7 @@ export function AnnotatePageCanvas({
     }
     transformer.nodes([]);
     transformer.getLayer()?.batchDraw();
-  }, [selectedElementId, activeTool, hasSelectionOnPage, selectedType]);
+  }, [selectedElementId, activeTool, hasSelectionOnPage, selectedType, selectedDims]);
 
   /* ── Coordinate conversion ────────────────────────────── */
 
@@ -186,27 +195,6 @@ export function AnnotatePageCanvas({
           arrowStartRef.current = { x, y };
           break;
 
-        case "sticky-note": {
-          dispatch({
-            type: "ADD_ELEMENT",
-            element: {
-              id: generateId(),
-              type: "sticky-note",
-              pageIndex,
-              x,
-              y,
-              width: 30,
-              height: 30,
-              rotation: 0,
-              opacity: 1,
-              noteContent: "",
-              noteColor: state.stickyDefaults.noteColor,
-            },
-          });
-          dispatch({ type: "SET_TOOL", tool: "select" });
-          break;
-        }
-
         case "freehand": {
           const el: AnnotateFreehandElement = {
             id: generateId(),
@@ -229,6 +217,13 @@ export function AnnotatePageCanvas({
 
         case "text-box": {
           const defaults = state.textBoxDefaults;
+          const measuredWidth = measureTextWidth(
+            "Text",
+            defaults.fontSize,
+            defaults.fontFamily,
+            defaults.bold,
+            defaults.italic,
+          );
           dispatch({
             type: "ADD_ELEMENT",
             element: {
@@ -237,7 +232,7 @@ export function AnnotatePageCanvas({
               pageIndex,
               x,
               y,
-              width: 150,
+              width: measuredWidth,
               height: defaults.fontSize * defaults.lineHeight,
               rotation: 0,
               opacity: 1,
@@ -765,32 +760,6 @@ export function AnnotatePageCanvas({
             />
           );
 
-        case "sticky-note":
-          return (
-            <Group
-              key={el.id}
-              {...commonProps}
-            >
-              <Rect
-                width={el.width * scale}
-                height={el.height * scale}
-                fill={el.noteColor}
-                cornerRadius={4}
-                shadowColor="rgba(0,0,0,0.15)"
-                shadowBlur={4}
-                shadowOffsetY={2}
-              />
-              <Text
-                text="\uD83D\uDCDD"
-                fontSize={20 * scale}
-                width={el.width * scale}
-                height={el.height * scale}
-                align="center"
-                verticalAlign="middle"
-              />
-            </Group>
-          );
-
         case "freehand":
           return (
             <Line
@@ -900,12 +869,10 @@ export function AnnotatePageCanvas({
                 dispatch({ type: "SELECT_ELEMENT", id: el.id });
               }}
             >
-              {/* Border rect */}
+              {/* Invisible hit area — includes padding */}
               <Rect
                 width={el.width * scale + textPad * 2}
                 height={el.height * scale + textPad * 2}
-                stroke={el.borderColor}
-                strokeWidth={1}
                 fill="rgba(0,0,0,0.001)"
               />
             </Group>
@@ -946,7 +913,7 @@ export function AnnotatePageCanvas({
           return null;
       }
     },
-    [scale, activeTool, dispatch, handleDragEnd, handleTransformEnd, handleTextBoxTransform, tickOverlay],
+    [scale, activeTool, dispatch, handleDragEnd, handleTransformEnd, handleTextBoxTransform, editingTextId, tickOverlay],
   );
 
   /* ── Cursor ───────────────────────────────────────────── */
@@ -1244,14 +1211,12 @@ const TextBoxOverlayDiv = memo(function TextBoxOverlayDiv({
         const val = div.innerText ?? "";
         contentRef.current = val;
         const h = div.scrollHeight / scale;
-        startTransition(() => {
-          if (blurredRef.current) return;
-          dispatch({
-            type: "UPDATE_ELEMENT",
-            id: el.id,
-            changes: { content: val, height: h },
-            skipHistory: true,
-          });
+        if (blurredRef.current) return;
+        dispatch({
+          type: "UPDATE_ELEMENT",
+          id: el.id,
+          changes: { content: val, height: h },
+          skipHistory: true,
         });
       }}
       onKeyDown={(e) => {

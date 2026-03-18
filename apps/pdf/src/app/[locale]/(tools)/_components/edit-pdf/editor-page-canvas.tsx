@@ -93,6 +93,14 @@ export function PageCanvas({
     [annotations, selectedElementId],
   );
 
+  /* Track selected element dimensions to force transformer redraw on resize */
+  const selectedDims = useMemo(() => {
+    if (!selectedElementId) return "";
+    const el = annotations.find((a) => a.id === selectedElementId);
+    if (!el) return "";
+    return `${el.width}:${el.height}`;
+  }, [annotations, selectedElementId]);
+
   useEffect(() => {
     const transformer = transformerRef.current;
     const stage = stageRef.current;
@@ -128,7 +136,7 @@ export function PageCanvas({
     }
     transformer.nodes([]);
     transformer.getLayer()?.batchDraw();
-  }, [selectedElementId, activeTool, hasSelectionOnPage, selectedType]);
+  }, [selectedElementId, activeTool, hasSelectionOnPage, selectedType, selectedDims]);
 
   /* ── Coordinate conversion ────────────────────────────── */
 

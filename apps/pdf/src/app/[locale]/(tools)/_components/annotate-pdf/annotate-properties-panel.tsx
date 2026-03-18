@@ -129,26 +129,6 @@ export function AnnotatePropertiesPanel({
         </>
       )}
 
-      {/* ── Sticky Note Properties ────────────────────── */}
-      {el.type === "sticky-note" && (
-        <>
-          <ColorPicker
-            value={el.noteColor}
-            onChange={(c) => update({ noteColor: c })}
-            label={labels.backgroundColor}
-          />
-          <Section title={labels.noteContent}>
-            <textarea
-              value={el.noteContent}
-              onChange={(e) => update({ noteContent: e.target.value })}
-              rows={4}
-              className="w-full resize-y rounded-md border border-border bg-background px-2 py-1.5 text-sm text-foreground placeholder:text-foreground-muted/50 focus:border-accent focus:outline-none"
-              placeholder={labels.noteContent}
-            />
-          </Section>
-        </>
-      )}
-
       {/* ── Freehand Properties ───────────────────────── */}
       {el.type === "freehand" && (
         <>
