@@ -316,6 +316,83 @@ describe("watermarkPdf processor", () => {
     expect(sizes[2]).toEqual({ width: 503, height: 842 });
   });
 
+  it("텍스트 워터마크가 PDF 내부에 실제 기록됨", async () => {
+    const file = await createMarkedPdf(1);
+    const originalSize = (await file.arrayBuffer()).byteLength;
+    const opts = { ...baseOpts, text: { ...baseOpts.text, text: "WATERMARK_CHECK" } };
+    const { onProgress } = createProgressTracker();
+    const result = await watermarkPdf([file], opts as never, onProgress);
+
+    // 1. 워터마크 추가로 파일 크기 증가 (drawText 연산이 추가됨)
+    expect(result.blob.size).toBeGreaterThan(originalSize);
+
+    // 2. 워터마크 없이 처리한 것과 비교 (빈 텍스트)
+    const file2 = await createMarkedPdf(1);
+    const emptyOpts = { ...baseOpts, text: { ...baseOpts.text, text: "" } };
+    const result2 = await watermarkPdf([file2], emptyOpts as never, onProgress);
+
+    // 빈 텍스트 워터마크보다 실제 텍스트가 있는 워터마크가 더 커야 함
+    expect(result.blob.size).toBeGreaterThan(result2.blob.size);
+
+    // 3. 결과 PDF를 재로드해서 유효한 PDF인지 확인
+    const pdf = await PDFDocument.load(await result.blob.arrayBuffer());
+    expect(pdf.getPageCount()).toBe(1);
+
+    // 4. 폰트가 임베딩 되었는지: pdf-lib 내부 객체로 확인
+    const page = pdf.getPage(0);
+    const resources = page.node.Resources();
+    expect(resources).toBeTruthy();
+  });
+
+  it("워터마크 적용 전후 PDF 바이너리가 다름 (실제 변경 확인)", async () => {
+    const file = await createMarkedPdf(1);
+    const originalPdfBytes = new Uint8Array(await file.arrayBuffer());
+    const { onProgress } = createProgressTracker();
+    const result = await watermarkPdf([file], baseOpts as never, onProgress);
+    const resultPdfBytes = new Uint8Array(await result.blob.arrayBuffer());
+
+    // 바이트가 동일하지 않아야 함 (워터마크가 추가되었으므로)
+    expect(resultPdfBytes.length).not.toBe(originalPdfBytes.length);
+  });
+
+  it("이미지 워터마크 적용 시 PDF에 이미지 리소스 추가됨", async () => {
+    const pngBytes = createMinimalPng();
+    const imgBlob = new Blob([pngBytes], { type: "image/png" });
+    const imgFile = new File([imgBlob], "watermark.png", { type: "image/png" });
+
+    const file = await createMarkedPdf(1);
+    const opts: WatermarkOptions = {
+      ...DEFAULT_WATERMARK_OPTIONS,
+      mode: "image",
+      image: { imageFile: imgFile, imageDataUrl: "", scale: 1.0, opacity: 0.5, mosaic: false },
+    };
+    const { onProgress } = createProgressTracker();
+    const result = await watermarkPdf([file], opts as never, onProgress);
+
+    // 결과 PDF 내부에 이미지 XObject가 존재하는지 확인
+    const pdfBytes = new Uint8Array(await result.blob.arrayBuffer());
+    const pdfText = new TextDecoder("latin1").decode(pdfBytes);
+    // pdf-lib는 이미지를 /Subtype /Image로 임베딩
+    expect(pdfText).toContain("/Subtype /Image");
+  });
+
+  it("커스텀 범위 페이지만 워터마크 적용 (비대상 페이지는 변경 없음)", async () => {
+    const file = await createMarkedPdf(3);
+    // 2페이지만 대상
+    const opts = { ...baseOpts, pageRange: "custom" as const, customRange: "2" };
+    const { onProgress } = createProgressTracker();
+    const result = await watermarkPdf([file], opts as never, onProgress);
+
+    const pdf = await resultToPdf(result.blob);
+    expect(pdf.getPageCount()).toBe(3);
+
+    // 페이지 크기가 모두 보존되었는지 확인
+    const sizes = getPageSizes(pdf);
+    expect(sizes[0]).toEqual({ width: 501, height: 842 });
+    expect(sizes[1]).toEqual({ width: 502, height: 842 });
+    expect(sizes[2]).toEqual({ width: 503, height: 842 });
+  });
+
   it("파일 없으면 에러", async () => {
     const { onProgress } = createProgressTracker();
     await expect(

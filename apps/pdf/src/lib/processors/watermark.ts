@@ -118,6 +118,25 @@ function getTargetPageIndices(
 
 // ─── 위치 계산 (9그리드) ───
 
+/**
+ * 회전 후 바운딩 박스 크기 계산
+ * pdf-lib의 rotate는 (x,y) 기준점을 중심으로 회전하므로,
+ * 위치 계산에는 회전 후의 바운딩 박스를 사용해야 함
+ */
+function getRotatedBounds(
+  w: number,
+  h: number,
+  angleDeg: number,
+): { width: number; height: number } {
+  const rad = (Math.abs(angleDeg) * Math.PI) / 180;
+  const cos = Math.abs(Math.cos(rad));
+  const sin = Math.abs(Math.sin(rad));
+  return {
+    width: w * cos + h * sin,
+    height: w * sin + h * cos,
+  };
+}
+
 function calculateWatermarkPosition(
   position: WatermarkPosition,
   pageWidth: number,
@@ -150,6 +169,56 @@ function calculateWatermarkPosition(
   }
 
   return { x, y };
+}
+
+/**
+ * 회전을 고려한 최종 드로우 좌표 계산
+ *
+ * pdf-lib의 drawText/drawImage rotate는 (x, y) 좌표를 기준으로 회전합니다.
+ * 즉 (x, y)는 회전 전 콘텐츠의 좌하단이고, 그 점을 중심으로 콘텐츠가 회전합니다.
+ *
+ * 전략:
+ * 1. 회전 후 바운딩 박스 크기로 9그리드 위치 계산 (바운딩 박스가 원하는 위치에 맞춤)
+ * 2. 바운딩 박스의 중심점(targetCx, targetCy) 도출
+ * 3. 회전된 콘텐츠의 좌하단 꼭짓점에서 중심까지의 오프셋을 역산
+ * 4. 최종 (x, y) = 중심 - 오프셋
+ */
+function getRotatedDrawPosition(
+  position: WatermarkPosition,
+  pw: number, ph: number,
+  contentW: number, contentH: number,
+  offsetXPt: number, offsetYPt: number,
+  angleDeg: number,
+): { x: number; y: number } {
+  // 1. 회전 후 바운딩 박스
+  const bounds = getRotatedBounds(contentW, contentH, angleDeg);
+
+  // 2. 바운딩 박스 위치
+  const { x: bx, y: by } = calculateWatermarkPosition(
+    position, pw, ph, bounds.width, bounds.height, offsetXPt, offsetYPt,
+  );
+
+  // 바운딩 박스 중심
+  const cx = bx + bounds.width / 2;
+  const cy = by + bounds.height / 2;
+
+  // 3. 회전 전 콘텐츠의 좌하단(0,0)에서 중심까지 = (w/2, h/2)
+  //    이를 angleDeg만큼 회전: R(angle) * (w/2, h/2)
+  const rad = (angleDeg * Math.PI) / 180;
+  const cos = Math.cos(rad);
+  const sin = Math.sin(rad);
+  const halfW = contentW / 2;
+  const halfH = contentH / 2;
+
+  // 회전된 중심 오프셋 (기준점 → 회전된 콘텐츠 중심)
+  const rotCx = halfW * cos - halfH * sin;
+  const rotCy = halfW * sin + halfH * cos;
+
+  // 4. 기준점(x, y) = 원하는 중심 - 회전된 중심 오프셋
+  return {
+    x: cx - rotCx,
+    y: cy - rotCy,
+  };
 }
 
 // ─── 폰트 매핑 ───
@@ -230,8 +299,8 @@ async function drawTextWatermark(
       textOpts.shadow,
     );
     const pngImage = await doc.embedPng(pngBytes);
-    const { x, y } = calculateWatermarkPosition(
-      opts.position, pw, ph, imgW, imgH, offsetXPt, offsetYPt,
+    const { x, y } = getRotatedDrawPosition(
+      opts.position, pw, ph, imgW, imgH, offsetXPt, offsetYPt, rotation,
     );
     page.drawImage(pngImage, {
       x, y, width: imgW, height: imgH,
@@ -240,8 +309,9 @@ async function drawTextWatermark(
     });
   } else {
     const textWidth = font!.widthOfTextAtSize(textOpts.text, textOpts.fontSize);
-    const { x, y } = calculateWatermarkPosition(
-      opts.position, pw, ph, textWidth, textOpts.fontSize, offsetXPt, offsetYPt,
+    const textHeight = textOpts.fontSize;
+    const { x, y } = getRotatedDrawPosition(
+      opts.position, pw, ph, textWidth, textHeight, offsetXPt, offsetYPt, rotation,
     );
     page.drawText(textOpts.text, {
       x, y,
@@ -286,8 +356,8 @@ function drawImageWatermark(
       }
     }
   } else {
-    const { x, y } = calculateWatermarkPosition(
-      opts.position, pw, ph, scaledW, scaledH, offsetXPt, offsetYPt,
+    const { x, y } = getRotatedDrawPosition(
+      opts.position, pw, ph, scaledW, scaledH, offsetXPt, offsetYPt, rotation,
     );
     page.drawImage(image, {
       x, y,
