@@ -53,6 +53,9 @@ const fr: Dictionary = {
     "html-to-pdf": { title: "HTML en PDF", description: "Convertissez des pages web et fichiers HTML en PDF." },
     "png-to-pdf": { title: "PNG en PDF", description: "Convertissez des images PNG en document PDF." },
     "image-to-pdf": { title: "Image en PDF", description: "Combinez plusieurs images de tout format en un seul PDF." },
+    "webp-to-pdf": { title: "WEBP en PDF", description: "Convertissez des images WEBP en document PDF." },
+    "tiff-to-pdf": { title: "TIFF en PDF", description: "Convertissez des images TIFF en document PDF." },
+    "heic-to-pdf": { title: "HEIC en PDF", description: "Convertissez les photos HEIC de votre iPhone ou appareil Apple en document PDF." },
 
     // Modifier
     "edit-pdf": { title: "Modifier PDF", description: "Ajoutez du texte, des images, des formes et des annotations à un PDF." },

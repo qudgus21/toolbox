@@ -53,6 +53,9 @@ const he: Dictionary = {
     "html-to-pdf": { title: "HTML ל-PDF", description: "המר דפי אינטרנט וקובצי HTML ל-PDF." },
     "png-to-pdf": { title: "PNG ל-PDF", description: "המר תמונות PNG למסמך PDF." },
     "image-to-pdf": { title: "תמונה ל-PDF", description: "שלב מספר תמונות מכל פורמט ל-PDF אחד." },
+    "webp-to-pdf": { title: "WEBP ל-PDF", description: "המר תמונות WEBP למסמך PDF." },
+    "tiff-to-pdf": { title: "TIFF ל-PDF", description: "המר תמונות TIFF למסמך PDF." },
+    "heic-to-pdf": { title: "HEIC ל-PDF", description: "המר תמונות HEIC מ-iPhone למסמך PDF." },
 
     // עריכה
     "edit-pdf": { title: "עריכת PDF", description: "הוסף טקסט, תמונות, צורות והערות ל-PDF." },

@@ -53,6 +53,9 @@ const da: Dictionary = {
     "html-to-pdf": { title: "HTML til PDF", description: "Konverter websider og HTML-filer til PDF." },
     "png-to-pdf": { title: "PNG til PDF", description: "Konverter PNG-billeder til et PDF-dokument." },
     "image-to-pdf": { title: "Billede til PDF", description: "Kombiner flere billeder i ethvert format til en enkelt PDF." },
+    "webp-to-pdf": { title: "WEBP til PDF", description: "Konverter WEBP-billeder til et PDF-dokument." },
+    "tiff-to-pdf": { title: "TIFF til PDF", description: "Konverter TIFF-billeder til et PDF-dokument." },
+    "heic-to-pdf": { title: "HEIC til PDF", description: "Konverter HEIC-billeder fra iPhone til et PDF-dokument." },
 
     // Rediger
     "edit-pdf": { title: "Rediger PDF", description: "Tilføj tekst, billeder, figurer og noter til en PDF." },

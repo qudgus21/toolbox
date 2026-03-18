@@ -53,6 +53,9 @@ const sk: Dictionary = {
     "html-to-pdf": { title: "HTML do PDF", description: "Konvertujte webové stránky a HTML súbory do PDF." },
     "png-to-pdf": { title: "PNG do PDF", description: "Konvertujte PNG obrázky do PDF dokumentu." },
     "image-to-pdf": { title: "Obrázok do PDF", description: "Spojte viacero obrázkov akéhokoľvek formátu do jedného PDF." },
+    "webp-to-pdf": { title: "WEBP do PDF", description: "Konvertujte WEBP obrázky do PDF dokumentu." },
+    "tiff-to-pdf": { title: "TIFF do PDF", description: "Konvertujte TIFF obrázky do PDF dokumentu." },
+    "heic-to-pdf": { title: "HEIC do PDF", description: "Konvertujte HEIC obrázky z iPhonu do PDF dokumentu." },
 
     // Upraviť
     "edit-pdf": { title: "Upraviť PDF", description: "Pridajte text, obrázky, tvary a anotácie do PDF." },

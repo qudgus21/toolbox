@@ -53,6 +53,9 @@ const lt: Dictionary = {
     "html-to-pdf": { title: "HTML į PDF", description: "Konvertuokite tinklalapius ir HTML failus į PDF." },
     "png-to-pdf": { title: "PNG į PDF", description: "Konvertuokite PNG vaizdus į PDF dokumentą." },
     "image-to-pdf": { title: "Vaizdas į PDF", description: "Sujunkite kelis bet kokio formato vaizdus į vieną PDF." },
+    "webp-to-pdf": { title: "WEBP į PDF", description: "Konvertuokite WEBP vaizdus į PDF dokumentą." },
+    "tiff-to-pdf": { title: "TIFF į PDF", description: "Konvertuokite TIFF vaizdus į PDF dokumentą." },
+    "heic-to-pdf": { title: "HEIC į PDF", description: "Konvertuokite iPhone HEIC nuotraukas į PDF dokumentą." },
 
     // Redaguoti
     "edit-pdf": { title: "Redaguoti PDF", description: "Pridėkite tekstą, vaizdus, figūras ir anotacijas prie PDF." },

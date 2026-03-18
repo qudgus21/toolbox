@@ -51,6 +51,9 @@ const km: Dictionary = {
     "html-to-pdf": { title: "HTML ទៅ PDF", description: "បំលែងទំព័រវេប និងឯកសារ HTML ទៅ PDF។" },
     "png-to-pdf": { title: "PNG ទៅ PDF", description: "បំលែងរូបភាព PNG ទៅជាឯកសារ PDF។" },
     "image-to-pdf": { title: "រូបភាពទៅ PDF", description: "បញ្ចូលរួមរូបភាពច្រើនក្នុងទម្រង់ណាមួយទៅជា PDF តែមួយ។" },
+    "webp-to-pdf": { title: "WEBP ទៅ PDF", description: "បំលែងរូបភាព WEBP ទៅជាឯកសារ PDF។" },
+    "tiff-to-pdf": { title: "TIFF ទៅ PDF", description: "បំលែងរូបភាព TIFF ទៅជាឯកសារ PDF។" },
+    "heic-to-pdf": { title: "HEIC ទៅ PDF", description: "បំលែងរូបថត HEIC ពី iPhone ទៅជាឯកសារ PDF។" },
 
     // កែសម្រួល
     "edit-pdf": { title: "កែសម្រួល PDF", description: "បន្ថែមអត្ថបទ រូបភាព រូបរាង និងចំណាំទៅ PDF។" },

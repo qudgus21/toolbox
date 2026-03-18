@@ -61,7 +61,7 @@ export function useToolState({
   const isExtractImages = slug === "extract-images";
   const isJpgToPdf = slug === "jpg-to-pdf";
   const isPngToPdf = slug === "png-to-pdf";
-  const isImageToPdf = slug === "image-to-pdf";
+  const isImageToPdf = slug === "image-to-pdf" || slug === "webp-to-pdf" || slug === "tiff-to-pdf" || slug === "heic-to-pdf";
   const isHtmlToPdf = slug === "html-to-pdf";
   const isScanToPdf = slug === "scan-to-pdf";
   const isOrganizePages = slug === "organize-pages";

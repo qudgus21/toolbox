@@ -53,6 +53,9 @@ const el: Dictionary = {
     "html-to-pdf": { title: "HTML σε PDF", description: "Μετατρέψτε ιστοσελίδες και αρχεία HTML σε PDF." },
     "png-to-pdf": { title: "PNG σε PDF", description: "Μετατρέψτε εικόνες PNG σε έγγραφο PDF." },
     "image-to-pdf": { title: "Εικόνα σε PDF", description: "Συνδυάστε πολλαπλές εικόνες οποιασδήποτε μορφής σε ένα PDF." },
+    "webp-to-pdf": { title: "WEBP σε PDF", description: "Μετατρέψτε εικόνες WEBP σε έγγραφο PDF." },
+    "tiff-to-pdf": { title: "TIFF σε PDF", description: "Μετατρέψτε εικόνες TIFF σε έγγραφο PDF." },
+    "heic-to-pdf": { title: "HEIC σε PDF", description: "Μετατρέψτε εικόνες HEIC από iPhone σε έγγραφο PDF." },
 
     // Επεξεργασία
     "edit-pdf": { title: "Επεξεργασία PDF", description: "Προσθέστε κείμενο, εικόνες, σχήματα και σχολιασμούς σε ένα PDF." },

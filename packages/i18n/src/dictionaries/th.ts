@@ -53,6 +53,9 @@ const th: Dictionary = {
     "html-to-pdf": { title: "HTML เป็น PDF", description: "แปลงหน้าเว็บและไฟล์ HTML เป็น PDF" },
     "png-to-pdf": { title: "PNG เป็น PDF", description: "แปลงภาพ PNG เป็นเอกสาร PDF" },
     "image-to-pdf": { title: "รูปภาพเป็น PDF", description: "รวมภาพหลายภาพทุกรูปแบบเป็น PDF เดียว" },
+    "webp-to-pdf": { title: "WEBP เป็น PDF", description: "แปลงภาพ WEBP เป็นเอกสาร PDF" },
+    "tiff-to-pdf": { title: "TIFF เป็น PDF", description: "แปลงภาพ TIFF เป็นเอกสาร PDF" },
+    "heic-to-pdf": { title: "HEIC เป็น PDF", description: "แปลงภาพ HEIC จาก iPhone เป็นเอกสาร PDF" },
 
     // แก้ไข
     "edit-pdf": { title: "แก้ไข PDF", description: "เพิ่มข้อความ รูปภาพ รูปร่าง และคำอธิบายประกอบใน PDF" },

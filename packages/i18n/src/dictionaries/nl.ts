@@ -53,6 +53,9 @@ const nl: Dictionary = {
     "html-to-pdf": { title: "HTML naar PDF", description: "Converteer webpagina's en HTML-bestanden naar PDF." },
     "png-to-pdf": { title: "PNG naar PDF", description: "Converteer PNG-afbeeldingen naar een PDF-document." },
     "image-to-pdf": { title: "Afbeelding naar PDF", description: "Combineer meerdere afbeeldingen van elk formaat in één PDF." },
+    "webp-to-pdf": { title: "WEBP naar PDF", description: "Converteer WEBP-afbeeldingen naar een PDF-document." },
+    "tiff-to-pdf": { title: "TIFF naar PDF", description: "Converteer TIFF-afbeeldingen naar een PDF-document." },
+    "heic-to-pdf": { title: "HEIC naar PDF", description: "Converteer HEIC-foto's van iPhone en Apple-apparaten naar een PDF-document." },
 
     // Bewerken
     "edit-pdf": { title: "PDF bewerken", description: "Voeg tekst, afbeeldingen, vormen en annotaties toe aan een PDF." },

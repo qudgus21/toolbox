@@ -53,6 +53,9 @@ const mr: Dictionary = {
     "html-to-pdf": { title: "HTML ते PDF", description: "वेब पृष्ठे आणि HTML फाइल्स PDF मध्ये रूपांतरित करा." },
     "png-to-pdf": { title: "PNG ते PDF", description: "PNG प्रतिमा PDF दस्तऐवजात रूपांतरित करा." },
     "image-to-pdf": { title: "Image ते PDF", description: "कोणत्याही स्वरूपातील अनेक प्रतिमा एकाच PDF मध्ये एकत्रित करा." },
+    "webp-to-pdf": { title: "WEBP ते PDF", description: "WEBP प्रतिमा PDF दस्तऐवजात रूपांतरित करा." },
+    "tiff-to-pdf": { title: "TIFF ते PDF", description: "TIFF प्रतिमा PDF दस्तऐवजात रूपांतरित करा." },
+    "heic-to-pdf": { title: "HEIC ते PDF", description: "iPhone वरील HEIC फोटो PDF दस्तऐवजात रूपांतरित करा." },
 
     // संपादित करा
     "edit-pdf": { title: "PDF संपादित करा", description: "PDF मध्ये मजकूर, प्रतिमा, आकार आणि टिप्पण्या जोडा." },

@@ -53,6 +53,9 @@ const bg: Dictionary = {
     "html-to-pdf": { title: "HTML в PDF", description: "Конвертирайте уеб страници и HTML файлове в PDF." },
     "png-to-pdf": { title: "PNG в PDF", description: "Конвертирайте PNG изображения в PDF документ." },
     "image-to-pdf": { title: "Изображение в PDF", description: "Комбинирайте няколко изображения от всякакъв формат в един PDF." },
+    "webp-to-pdf": { title: "WEBP в PDF", description: "Конвертирайте WEBP изображения в PDF документ." },
+    "tiff-to-pdf": { title: "TIFF в PDF", description: "Конвертирайте TIFF изображения в PDF документ." },
+    "heic-to-pdf": { title: "HEIC в PDF", description: "Конвертирайте HEIC изображения от iPhone в PDF документ." },
 
     // Редактиране
     "edit-pdf": { title: "Редактиране на PDF", description: "Добавете текст, изображения, фигури и анотации към PDF." },

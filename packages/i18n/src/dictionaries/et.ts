@@ -53,6 +53,9 @@ const et: Dictionary = {
     "html-to-pdf": { title: "HTML PDF-iks", description: "Teisendage veebilehed ja HTML-failid PDF-iks." },
     "png-to-pdf": { title: "PNG PDF-iks", description: "Teisendage PNG-pildid PDF-dokumendiks." },
     "image-to-pdf": { title: "Pilt PDF-iks", description: "Kombineerige mitu pilti mis tahes formaadis üheks PDF-iks." },
+    "webp-to-pdf": { title: "WEBP PDF-iks", description: "Teisendage WEBP-pildid PDF-dokumendiks." },
+    "tiff-to-pdf": { title: "TIFF PDF-iks", description: "Teisendage TIFF-pildid PDF-dokumendiks." },
+    "heic-to-pdf": { title: "HEIC PDF-iks", description: "Teisendage iPhone'i HEIC-fotod PDF-dokumendiks." },
 
     // Muuda
     "edit-pdf": { title: "Muuda PDF-i", description: "Lisage PDF-ile teksti, pilte, kujundeid ja märkusi." },

@@ -53,6 +53,9 @@ const sl: Dictionary = {
     "html-to-pdf": { title: "HTML v PDF", description: "Pretvorite spletne strani in HTML datoteke v PDF." },
     "png-to-pdf": { title: "PNG v PDF", description: "Pretvorite PNG slike v PDF dokument." },
     "image-to-pdf": { title: "Slika v PDF", description: "Združite več slik kateregakoli formata v en PDF." },
+    "webp-to-pdf": { title: "WEBP v PDF", description: "Pretvorite WEBP slike v PDF dokument." },
+    "tiff-to-pdf": { title: "TIFF v PDF", description: "Pretvorite TIFF slike v PDF dokument." },
+    "heic-to-pdf": { title: "HEIC v PDF", description: "Pretvorite HEIC slike z iPhona v PDF dokument." },
 
     // Uredi
     "edit-pdf": { title: "Uredi PDF", description: "Dodajte besedilo, slike, oblike in opombe v PDF." },

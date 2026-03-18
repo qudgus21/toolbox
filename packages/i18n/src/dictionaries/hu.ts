@@ -53,6 +53,9 @@ const hu: Dictionary = {
     "html-to-pdf": { title: "HTML-ből PDF", description: "Weboldalak és HTML fájlok konvertálása PDF-be." },
     "png-to-pdf": { title: "PNG-ből PDF", description: "PNG képek konvertálása PDF dokumentummá." },
     "image-to-pdf": { title: "Kép PDF-be", description: "Több különböző formátumú kép egyesítése egyetlen PDF-be." },
+    "webp-to-pdf": { title: "WEBP-ből PDF", description: "WEBP képek konvertálása PDF dokumentummá." },
+    "tiff-to-pdf": { title: "TIFF-ből PDF", description: "TIFF képek konvertálása PDF dokumentummá." },
+    "heic-to-pdf": { title: "HEIC-ből PDF", description: "iPhone HEIC képek konvertálása PDF dokumentummá." },
 
     // Szerkesztés
     "edit-pdf": { title: "PDF szerkesztése", description: "Szöveg, képek, alakzatok és megjegyzések hozzáadása PDF-hez." },

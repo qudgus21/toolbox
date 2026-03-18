@@ -53,6 +53,9 @@ const cs: Dictionary = {
     "html-to-pdf": { title: "HTML do PDF", description: "Převeďte webové stránky a HTML soubory do PDF." },
     "png-to-pdf": { title: "PNG do PDF", description: "Převeďte PNG obrázky do PDF dokumentu." },
     "image-to-pdf": { title: "Obrázek do PDF", description: "Spojte více obrázků jakéhokoli formátu do jednoho PDF." },
+    "webp-to-pdf": { title: "WEBP do PDF", description: "Převeďte WEBP obrázky do PDF dokumentu." },
+    "tiff-to-pdf": { title: "TIFF do PDF", description: "Převeďte TIFF obrázky do PDF dokumentu." },
+    "heic-to-pdf": { title: "HEIC do PDF", description: "Převeďte HEIC obrázky z iPhonu do PDF dokumentu." },
 
     // Upravit
     "edit-pdf": { title: "Upravit PDF", description: "Přidejte text, obrázky, tvary a anotace do PDF." },

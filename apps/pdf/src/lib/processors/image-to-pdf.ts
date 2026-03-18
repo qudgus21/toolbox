@@ -48,10 +48,50 @@ function isJpeg(bytes: Uint8Array): boolean {
 }
 
 /**
+ * Decode TIFF bytes to PNG via UTIF2 (lazy-loaded).
+ * Browsers cannot decode TIFF natively, so we use a JS decoder.
+ */
+async function decodeTiffToPng(bytes: Uint8Array): Promise<Uint8Array> {
+  const UTIF = await import("utif2");
+  const buf = bytes.buffer as ArrayBuffer;
+  const ifds = UTIF.decode(buf);
+  if (ifds.length === 0) throw new Error("Invalid TIFF: no pages found");
+
+  UTIF.decodeImage(buf, ifds[0]);
+  const rgba = UTIF.toRGBA8(ifds[0]);
+  const w = ifds[0].width;
+  const h = ifds[0].height;
+
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d")!;
+  const imgData = ctx.createImageData(w, h);
+  imgData.data.set(new Uint8Array(rgba.buffer));
+  ctx.putImageData(imgData, 0, 0);
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
+      blob.arrayBuffer().then(
+        (b) => resolve(new Uint8Array(b)),
+        reject,
+      );
+    }, "image/png");
+  });
+}
+
+/**
  * Convert any browser-supported image to PNG bytes via HTMLImageElement + Canvas.
- * Used for formats pdf-lib doesn't support natively (GIF, BMP, TIFF, WebP).
+ * Used for formats pdf-lib doesn't support natively (GIF, BMP, WebP).
+ * TIFF is handled separately via UTIF2 since browsers can't decode it.
  */
 function convertToPngViaCanvas(bytes: Uint8Array, mimeType: string): Promise<Uint8Array> {
+  // TIFF: use dedicated JS decoder since browsers can't render TIFF
+  if (mimeType === "image/tiff") {
+    return decodeTiffToPng(bytes);
+  }
+
   return new Promise((resolve, reject) => {
     const blob = new Blob([bytes.buffer as ArrayBuffer], { type: mimeType });
     const url = URL.createObjectURL(blob);

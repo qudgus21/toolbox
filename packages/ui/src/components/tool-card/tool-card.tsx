@@ -22,7 +22,7 @@ export const ToolCard = forwardRef<HTMLAnchorElement, ToolCardProps>(
       whileHover={{ y: -4, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={cn(
-        "group flex h-full flex-col gap-4 rounded-xl border border-border/60 bg-background-elevated px-6 py-7 shadow-sm",
+        "group flex h-full flex-col gap-4 rounded-xl border border-border/60 bg-background-elevated px-6 py-6 shadow-sm",
         "transition-colors duration-200",
         "hover:border-accent/50 hover:shadow-md",
         className,

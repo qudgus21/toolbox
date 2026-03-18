@@ -53,6 +53,9 @@ const vi: Dictionary = {
     "html-to-pdf": { title: "HTML sang PDF", description: "Chuyển đổi trang web và tệp HTML sang PDF." },
     "png-to-pdf": { title: "PNG sang PDF", description: "Chuyển đổi hình ảnh PNG thành tài liệu PDF." },
     "image-to-pdf": { title: "Hình ảnh sang PDF", description: "Kết hợp nhiều hình ảnh ở bất kỳ định dạng nào thành một tệp PDF." },
+    "webp-to-pdf": { title: "WEBP sang PDF", description: "Chuyển đổi hình ảnh WEBP thành tài liệu PDF." },
+    "tiff-to-pdf": { title: "TIFF sang PDF", description: "Chuyển đổi hình ảnh TIFF thành tài liệu PDF." },
+    "heic-to-pdf": { title: "HEIC sang PDF", description: "Chuyển ảnh HEIC từ iPhone thành tài liệu PDF." },
 
     // Chỉnh sửa
     "edit-pdf": { title: "Chỉnh sửa PDF", description: "Thêm văn bản, hình ảnh, hình dạng và chú thích vào PDF." },

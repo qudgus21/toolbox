@@ -53,6 +53,9 @@ const mt: Dictionary = {
     "html-to-pdf": { title: "HTML għal PDF", description: "Ikkonverti paġni web u fajls HTML għal PDF." },
     "png-to-pdf": { title: "PNG għal PDF", description: "Ikkonverti immaġni PNG f'dokument PDF." },
     "image-to-pdf": { title: "Immaġni għal PDF", description: "Ikkombina diversi immaġni ta' kwalunkwe format f'PDF wieħed." },
+    "webp-to-pdf": { title: "WEBP għal PDF", description: "Ikkonverti immaġni WEBP f'dokument PDF." },
+    "tiff-to-pdf": { title: "TIFF għal PDF", description: "Ikkonverti immaġni TIFF f'dokument PDF." },
+    "heic-to-pdf": { title: "HEIC għal PDF", description: "Ikkonverti ritratti HEIC mill-iPhone f'dokument PDF." },
 
     // Editja
     "edit-pdf": { title: "Editja PDF", description: "Żid test, immaġni, forom u annotazzjonijiet ma' PDF." },

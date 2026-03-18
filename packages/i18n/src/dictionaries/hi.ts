@@ -53,6 +53,9 @@ const hi: Dictionary = {
     "html-to-pdf": { title: "HTML से PDF", description: "वेब पेज और HTML फ़ाइलों को PDF में बदलें।" },
     "png-to-pdf": { title: "PNG से PDF", description: "PNG छवियों को PDF दस्तावेज़ में बदलें।" },
     "image-to-pdf": { title: "छवि से PDF", description: "किसी भी प्रारूप की कई छवियों को एक PDF में जोड़ें।" },
+    "webp-to-pdf": { title: "WEBP से PDF", description: "WEBP छवियों को PDF दस्तावेज़ में बदलें।" },
+    "tiff-to-pdf": { title: "TIFF से PDF", description: "TIFF छवियों को PDF दस्तावेज़ में बदलें।" },
+    "heic-to-pdf": { title: "HEIC से PDF", description: "iPhone और Apple डिवाइस की HEIC तस्वीरों को PDF दस्तावेज़ में बदलें।" },
 
     // संपादित करें
     "edit-pdf": { title: "PDF संपादित करें", description: "PDF में पाठ, छवियां, आकार और एनोटेशन जोड़ें।" },

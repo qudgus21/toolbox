@@ -53,6 +53,9 @@ const zh: Dictionary = {
     "html-to-pdf": { title: "HTML转PDF", description: "将网页和HTML文件转换为PDF。" },
     "png-to-pdf": { title: "PNG转PDF", description: "将PNG图片转换为PDF文档。" },
     "image-to-pdf": { title: "图片转PDF", description: "将多种格式的多张图片合并为一个PDF。" },
+    "webp-to-pdf": { title: "WEBP转PDF", description: "将WEBP图片转换为PDF文档。" },
+    "tiff-to-pdf": { title: "TIFF转PDF", description: "将TIFF图片转换为PDF文档。" },
+    "heic-to-pdf": { title: "HEIC转PDF", description: "将iPhone和Apple设备的HEIC照片转换为PDF文档。" },
 
     // 编辑
     "edit-pdf": { title: "编辑 PDF", description: "向PDF添加文本、图片、形状和注释。" },

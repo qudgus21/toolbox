@@ -53,6 +53,9 @@ const ga: Dictionary = {
     "html-to-pdf": { title: "HTML go PDF", description: "Tiontaigh leathanaigh ghréasáin agus comhaid HTML go PDF." },
     "png-to-pdf": { title: "PNG go PDF", description: "Tiontaigh íomhánna PNG ina ndoiciméad PDF." },
     "image-to-pdf": { title: "Íomhá go PDF", description: "Comhcheangail íomhánna iolracha d'aon fhormáid in aon PDF amháin." },
+    "webp-to-pdf": { title: "WEBP go PDF", description: "Tiontaigh íomhánna WEBP ina ndoiciméad PDF." },
+    "tiff-to-pdf": { title: "TIFF go PDF", description: "Tiontaigh íomhánna TIFF ina ndoiciméad PDF." },
+    "heic-to-pdf": { title: "HEIC go PDF", description: "Tiontaigh grianghraif HEIC ó iPhone ina ndoiciméad PDF." },
 
     // Cuir in eagar
     "edit-pdf": { title: "Cuir PDF in eagar", description: "Cuir téacs, íomhánna, cruthanna agus nótaí le PDF." },

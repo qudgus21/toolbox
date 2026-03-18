@@ -53,6 +53,9 @@ const sv: Dictionary = {
     "html-to-pdf": { title: "HTML till PDF", description: "Konvertera webbsidor och HTML-filer till PDF." },
     "png-to-pdf": { title: "PNG till PDF", description: "Konvertera PNG-bilder till ett PDF-dokument." },
     "image-to-pdf": { title: "Bild till PDF", description: "Kombinera flera bilder i valfritt format till en enda PDF." },
+    "webp-to-pdf": { title: "WEBP till PDF", description: "Konvertera WEBP-bilder till ett PDF-dokument." },
+    "tiff-to-pdf": { title: "TIFF till PDF", description: "Konvertera TIFF-bilder till ett PDF-dokument." },
+    "heic-to-pdf": { title: "HEIC till PDF", description: "Konvertera HEIC-bilder från iPhone till ett PDF-dokument." },
 
     // Redigera
     "edit-pdf": { title: "Redigera PDF", description: "Lägg till text, bilder, former och anteckningar i en PDF." },

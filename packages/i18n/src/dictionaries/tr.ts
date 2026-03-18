@@ -53,6 +53,9 @@ const tr: Dictionary = {
     "html-to-pdf": { title: "HTML'den PDF'ye", description: "Web sayfalarını ve HTML dosyalarını PDF'ye dönüştürün." },
     "png-to-pdf": { title: "PNG'den PDF'ye", description: "PNG görsellerini PDF belgesine dönüştürün." },
     "image-to-pdf": { title: "Görsel'den PDF'ye", description: "Herhangi bir formattaki birden fazla görseli tek bir PDF'de birleştirin." },
+    "webp-to-pdf": { title: "WEBP'den PDF'ye", description: "WEBP görsellerini PDF belgesine dönüştürün." },
+    "tiff-to-pdf": { title: "TIFF'den PDF'ye", description: "TIFF görsellerini PDF belgesine dönüştürün." },
+    "heic-to-pdf": { title: "HEIC'den PDF'ye", description: "iPhone ve Apple cihazlarındaki HEIC fotoğraflarını PDF belgesine dönüştürün." },
 
     // Düzenleme
     "edit-pdf": { title: "PDF Düzenle", description: "PDF'ye metin, görsel, şekil ve açıklamalar ekleyin." },

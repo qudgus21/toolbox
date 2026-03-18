@@ -53,6 +53,9 @@ const id: Dictionary = {
     "html-to-pdf": { title: "HTML ke PDF", description: "Konversi halaman web dan file HTML ke PDF." },
     "png-to-pdf": { title: "PNG ke PDF", description: "Konversi gambar PNG menjadi dokumen PDF." },
     "image-to-pdf": { title: "Gambar ke PDF", description: "Gabungkan beberapa gambar dalam format apa pun menjadi satu PDF." },
+    "webp-to-pdf": { title: "WEBP ke PDF", description: "Konversi gambar WEBP menjadi dokumen PDF." },
+    "tiff-to-pdf": { title: "TIFF ke PDF", description: "Konversi gambar TIFF menjadi dokumen PDF." },
+    "heic-to-pdf": { title: "HEIC ke PDF", description: "Konversi foto HEIC dari iPhone menjadi dokumen PDF." },
 
     // Edit
     "edit-pdf": { title: "Edit PDF", description: "Tambahkan teks, gambar, bentuk, dan anotasi ke PDF." },

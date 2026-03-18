@@ -44,6 +44,7 @@ function marginMmToPct(mm: number): string {
 
 const IMAGE_EXTENSIONS = new Set([
   "jpg", "jpeg", "png", "gif", "webp", "svg", "avif", "bmp", "ico",
+  "tif", "tiff", "heic", "heif",
 ]);
 
 function isImageFile(file: File): boolean {
@@ -51,14 +52,74 @@ function isImageFile(file: File): boolean {
   return IMAGE_EXTENSIONS.has(ext) || file.type.startsWith("image/");
 }
 
+const NEEDS_DECODE_EXTENSIONS = new Set(["tif", "tiff", "heic", "heif"]);
+
+function needsLibraryDecode(file: File): boolean {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+  return NEEDS_DECODE_EXTENSIONS.has(ext);
+}
+
+/**
+ * Decode TIFF/HEIC files that browsers can't render natively.
+ * Returns a blob URL for the decoded image.
+ */
+async function decodeToObjectUrl(file: File): Promise<string> {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+
+  if (ext === "heic" || ext === "heif") {
+    const heic2any = (await import("heic2any")).default;
+    const result = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.7 });
+    const blob = Array.isArray(result) ? result[0] : result;
+    return URL.createObjectURL(blob);
+  }
+
+  // TIFF
+  const UTIF = await import("utif2");
+  const buf = await file.arrayBuffer();
+  const ifds = UTIF.decode(buf);
+  UTIF.decodeImage(buf, ifds[0]);
+  const rgba = UTIF.toRGBA8(ifds[0]);
+  const w = ifds[0].width;
+  const h = ifds[0].height;
+  const canvas = document.createElement("canvas");
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d")!;
+  const imgData = ctx.createImageData(w, h);
+  imgData.data.set(new Uint8Array(rgba.buffer));
+  ctx.putImageData(imgData, 0, 0);
+  return new Promise((resolve) => {
+    canvas.toBlob((blob) => {
+      resolve(URL.createObjectURL(blob!));
+    }, "image/png");
+  });
+}
+
 function ImageThumbnail({ file, className }: { file: File; className?: string }) {
-  const url = useMemo(() => URL.createObjectURL(file), [file]);
+  const needsDecode = useMemo(() => needsLibraryDecode(file), [file]);
+  const nativeUrl = useMemo(() => (needsDecode ? null : URL.createObjectURL(file)), [file, needsDecode]);
+  const [decodedUrl, setDecodedUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!needsDecode) return;
+    let revoked = false;
+    decodeToObjectUrl(file).then((url) => {
+      if (!revoked) setDecodedUrl(url);
+    }).catch(() => {/* fail silently — show nothing */});
+    return () => { revoked = true; };
+  }, [file, needsDecode]);
+
+  const url = nativeUrl ?? decodedUrl;
+  if (!url) {
+    return <div className={cn("bg-background-muted/50 animate-pulse", className)} />;
+  }
+
   return (
     <img
       src={url}
       alt={file.name}
       className={cn("object-contain", className)}
-      onLoad={() => URL.revokeObjectURL(url)}
+      onLoad={() => { if (nativeUrl) URL.revokeObjectURL(nativeUrl); }}
     />
   );
 }

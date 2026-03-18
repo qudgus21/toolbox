@@ -53,6 +53,9 @@ const uk: Dictionary = {
     "html-to-pdf": { title: "HTML у PDF", description: "Конвертуйте веб-сторінки та HTML-файли у PDF." },
     "png-to-pdf": { title: "PNG у PDF", description: "Конвертуйте зображення PNG у PDF-документ." },
     "image-to-pdf": { title: "Зображення у PDF", description: "Об'єднайте кілька зображень будь-якого формату в один PDF." },
+    "webp-to-pdf": { title: "WEBP у PDF", description: "Конвертуйте зображення WEBP у PDF-документ." },
+    "tiff-to-pdf": { title: "TIFF у PDF", description: "Конвертуйте зображення TIFF у PDF-документ." },
+    "heic-to-pdf": { title: "HEIC у PDF", description: "Конвертуйте зображення HEIC з iPhone у PDF-документ." },
 
     // Редагування
     "edit-pdf": { title: "Редагувати PDF", description: "Додайте текст, зображення, фігури та анотації до PDF." },

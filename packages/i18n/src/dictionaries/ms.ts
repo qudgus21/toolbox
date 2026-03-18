@@ -51,6 +51,9 @@ const ms: Dictionary = {
     "html-to-pdf": { title: "HTML ke PDF", description: "Tukar halaman web dan fail HTML kepada PDF." },
     "png-to-pdf": { title: "PNG ke PDF", description: "Tukar imej PNG menjadi dokumen PDF." },
     "image-to-pdf": { title: "Imej ke PDF", description: "Gabungkan pelbagai imej dalam sebarang format menjadi satu PDF." },
+    "webp-to-pdf": { title: "WEBP ke PDF", description: "Tukar imej WEBP menjadi dokumen PDF." },
+    "tiff-to-pdf": { title: "TIFF ke PDF", description: "Tukar imej TIFF menjadi dokumen PDF." },
+    "heic-to-pdf": { title: "HEIC ke PDF", description: "Tukar foto HEIC dari iPhone menjadi dokumen PDF." },
 
     // Sunting
     "edit-pdf": { title: "Sunting PDF", description: "Tambah teks, imej, bentuk dan anotasi pada PDF." },

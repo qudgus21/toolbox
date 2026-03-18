@@ -53,6 +53,9 @@ const is: Dictionary = {
     "html-to-pdf": { title: "HTML í PDF", description: "Umbreyta vefsíðum og HTML skrám í PDF." },
     "png-to-pdf": { title: "PNG í PDF", description: "Umbreyta PNG myndum í PDF skjal." },
     "image-to-pdf": { title: "Mynd í PDF", description: "Sameina margar myndir á hvaða sniði sem er í eina PDF." },
+    "webp-to-pdf": { title: "WEBP í PDF", description: "Umbreyta WEBP myndum í PDF skjal." },
+    "tiff-to-pdf": { title: "TIFF í PDF", description: "Umbreyta TIFF myndum í PDF skjal." },
+    "heic-to-pdf": { title: "HEIC í PDF", description: "Umbreyta HEIC myndum úr iPhone í PDF skjal." },
 
     // Breyta
     "edit-pdf": { title: "Breyta PDF", description: "Bæta texta, myndum, formum og athugasemdum við PDF." },

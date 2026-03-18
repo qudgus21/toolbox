@@ -53,6 +53,9 @@ const pa: Dictionary = {
     "html-to-pdf": { title: "HTML ਤੋਂ PDF", description: "ਵੈੱਬ ਪੰਨਿਆਂ ਅਤੇ HTML ਫਾਈਲਾਂ ਨੂੰ PDF ਵਿੱਚ ਬਦਲੋ।" },
     "png-to-pdf": { title: "PNG ਤੋਂ PDF", description: "PNG ਚਿੱਤਰਾਂ ਨੂੰ PDF ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਬਦਲੋ।" },
     "image-to-pdf": { title: "Image ਤੋਂ PDF", description: "ਕਿਸੇ ਵੀ ਫਾਰਮੈਟ ਦੇ ਕਈ ਚਿੱਤਰਾਂ ਨੂੰ ਇੱਕ PDF ਵਿੱਚ ਜੋੜੋ।" },
+    "webp-to-pdf": { title: "WEBP ਤੋਂ PDF", description: "WEBP ਚਿੱਤਰਾਂ ਨੂੰ PDF ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਬਦਲੋ।" },
+    "tiff-to-pdf": { title: "TIFF ਤੋਂ PDF", description: "TIFF ਚਿੱਤਰਾਂ ਨੂੰ PDF ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਬਦਲੋ।" },
+    "heic-to-pdf": { title: "HEIC ਤੋਂ PDF", description: "iPhone ਦੀਆਂ HEIC ਫੋਟੋਆਂ ਨੂੰ PDF ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਬਦਲੋ।" },
 
     // ਸੰਪਾਦਿਤ ਕਰੋ
     "edit-pdf": { title: "PDF ਸੰਪਾਦਿਤ ਕਰੋ", description: "PDF ਵਿੱਚ ਟੈਕਸਟ, ਚਿੱਤਰ, ਆਕਾਰ ਅਤੇ ਟਿੱਪਣੀਆਂ ਜੋੜੋ।" },

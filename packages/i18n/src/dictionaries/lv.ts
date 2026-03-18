@@ -53,6 +53,9 @@ const lv: Dictionary = {
     "html-to-pdf": { title: "HTML uz PDF", description: "Konvertējiet tīmekļa lapas un HTML failus uz PDF." },
     "png-to-pdf": { title: "PNG uz PDF", description: "Konvertējiet PNG attēlus PDF dokumentā." },
     "image-to-pdf": { title: "Attēls uz PDF", description: "Apvienojiet vairākus jebkura formāta attēlus vienā PDF failā." },
+    "webp-to-pdf": { title: "WEBP uz PDF", description: "Konvertējiet WEBP attēlus PDF dokumentā." },
+    "tiff-to-pdf": { title: "TIFF uz PDF", description: "Konvertējiet TIFF attēlus PDF dokumentā." },
+    "heic-to-pdf": { title: "HEIC uz PDF", description: "Konvertējiet iPhone HEIC fotoattēlus PDF dokumentā." },
 
     // Rediģēt
     "edit-pdf": { title: "Rediģēt PDF", description: "Pievienojiet tekstu, attēlus, formas un anotācijas PDF failam." },

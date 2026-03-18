@@ -13,6 +13,9 @@ const C = {
   html:  { fill: "#A855F7", light: "#F3E8FF" },
   text:  { fill: "#6B7280", light: "#F3F4F6" },
   pdfa:  { fill: "#DC2626", light: "#FEE2E2" },
+  webp:  { fill: "#4CAF50", light: "#E8F5E9" },
+  tiff:  { fill: "#795548", light: "#EFEBE9" },
+  heic:  { fill: "#007AFF", light: "#E3F2FD" },
   // Category accent colors
   amber:  "#F59E0B",
   purple: "#8B5CF6",
@@ -394,6 +397,15 @@ const ImageToPdfIcon: FC<IconProps> = (props) => (
     <Doc x={32} y={3} w={19} h={24} color={C.pdf} foldSize={4} letter="P" />
   </svg>
 );
+const WebpToPdfIcon: FC<IconProps> = (props) => (
+  <ConvertDocIcon srcColor={C.webp} srcLetter="W" destColor={C.pdf} destLetter="P" srcType="image" {...props} />
+);
+const TiffToPdfIcon: FC<IconProps> = (props) => (
+  <ConvertDocIcon srcColor={C.tiff} srcLetter="T" destColor={C.pdf} destLetter="P" srcType="image" {...props} />
+);
+const HeicToPdfIcon: FC<IconProps> = (props) => (
+  <ConvertDocIcon srcColor={C.heic} srcLetter="H" destColor={C.pdf} destLetter="P" srcType="image" {...props} />
+);
 
 // ══════════════════════════════════════════════════════════════
 //  EDIT TOOLS — standalone action icons
@@ -724,6 +736,9 @@ export const toolIconMap: Record<string, FC<IconProps>> = {
   "html-to-pdf": HtmlToPdfIcon,
   "png-to-pdf": PngToPdfIcon,
   "image-to-pdf": ImageToPdfIcon,
+  "webp-to-pdf": WebpToPdfIcon,
+  "tiff-to-pdf": TiffToPdfIcon,
+  "heic-to-pdf": HeicToPdfIcon,
   // Edit
   "edit-pdf": EditPdfIcon,
   "rotate": RotateIcon,

@@ -53,6 +53,9 @@ const ja: Dictionary = {
     "html-to-pdf": { title: "HTMLからPDF", description: "WebページやHTMLファイルをPDFに変換します。" },
     "png-to-pdf": { title: "PNGからPDF", description: "PNG画像をPDFドキュメントに変換します。" },
     "image-to-pdf": { title: "画像からPDF", description: "あらゆる形式の複数の画像を1つのPDFにまとめます。" },
+    "webp-to-pdf": { title: "WEBPからPDF", description: "WEBP画像をPDFドキュメントに変換します。" },
+    "tiff-to-pdf": { title: "TIFFからPDF", description: "TIFF画像をPDFドキュメントに変換します。" },
+    "heic-to-pdf": { title: "HEICからPDF", description: "iPhoneやAppleデバイスのHEIC写真をPDFドキュメントに変換します。" },
 
     // 編集
     "edit-pdf": { title: "PDF 編集", description: "PDFにテキスト、画像、図形、注釈を追加します。" },

@@ -53,6 +53,9 @@ const bs: Dictionary = {
     "html-to-pdf": { title: "HTML u PDF", description: "Konvertujte web stranice i HTML datoteke u PDF." },
     "png-to-pdf": { title: "PNG u PDF", description: "Konvertujte PNG slike u PDF dokument." },
     "image-to-pdf": { title: "Slika u PDF", description: "Kombinirajte više slika bilo kog formata u jedan PDF." },
+    "webp-to-pdf": { title: "WEBP u PDF", description: "Konvertujte WEBP slike u PDF dokument." },
+    "tiff-to-pdf": { title: "TIFF u PDF", description: "Konvertujte TIFF slike u PDF dokument." },
+    "heic-to-pdf": { title: "HEIC u PDF", description: "Konvertujte HEIC fotografije s iPhonea u PDF dokument." },
 
     // Uredi
     "edit-pdf": { title: "Uredi PDF", description: "Dodajte tekst, slike, oblike i napomene u PDF." },

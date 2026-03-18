@@ -97,7 +97,7 @@ export default async function ToolPage({
         extractImagesLabels={slug === "extract-images" ? dict.extractImagesTool : undefined}
         jpgToPdfLabels={slug === "jpg-to-pdf" ? dict.jpgToPdfTool : undefined}
         pngToPdfLabels={slug === "png-to-pdf" ? dict.pngToPdfTool : undefined}
-        imageToPdfLabels={slug === "image-to-pdf" ? dict.imageToPdfTool : undefined}
+        imageToPdfLabels={["image-to-pdf", "webp-to-pdf", "tiff-to-pdf", "heic-to-pdf"].includes(slug) ? dict.imageToPdfTool : undefined}
         htmlToPdfLabels={slug === "html-to-pdf" ? dict.htmlToPdfTool : undefined}
         scanToPdfLabels={slug === "scan-to-pdf" ? dict.scanToPdfTool : undefined}
         organizePagesLabels={slug === "organize-pages" ? dict.organizePagesTool : undefined}

@@ -53,6 +53,9 @@ const fi: Dictionary = {
     "html-to-pdf": { title: "HTML PDF:ksi", description: "Muunna verkkosivut ja HTML-tiedostot PDF-muotoon." },
     "png-to-pdf": { title: "PNG PDF:ksi", description: "Muunna PNG-kuvat PDF-asiakirjaksi." },
     "image-to-pdf": { title: "Kuva PDF:ksi", description: "Yhdistä useita kuvia mistä tahansa muodosta yhdeksi PDF:ksi." },
+    "webp-to-pdf": { title: "WEBP PDF:ksi", description: "Muunna WEBP-kuvat PDF-asiakirjaksi." },
+    "tiff-to-pdf": { title: "TIFF PDF:ksi", description: "Muunna TIFF-kuvat PDF-asiakirjaksi." },
+    "heic-to-pdf": { title: "HEIC PDF:ksi", description: "Muunna iPhonen HEIC-kuvat PDF-asiakirjaksi." },
 
     // Muokkaa
     "edit-pdf": { title: "Muokkaa PDF", description: "Lisää tekstiä, kuvia, muotoja ja merkintöjä PDF:ään." },

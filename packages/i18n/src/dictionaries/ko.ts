@@ -53,6 +53,9 @@ const ko: Dictionary = {
     "html-to-pdf": { title: "HTML → PDF", description: "웹 페이지와 HTML 파일을 PDF로 변환합니다." },
     "png-to-pdf": { title: "PNG → PDF", description: "PNG 이미지를 PDF 문서로 변환합니다." },
     "image-to-pdf": { title: "이미지 → PDF", description: "다양한 형식의 이미지를 하나의 PDF로 합칩니다." },
+    "webp-to-pdf": { title: "WEBP → PDF", description: "WEBP 이미지를 PDF 문서로 변환합니다." },
+    "tiff-to-pdf": { title: "TIFF → PDF", description: "TIFF 이미지를 PDF 문서로 변환합니다." },
+    "heic-to-pdf": { title: "HEIC → PDF", description: "아이폰·Apple 기기의 HEIC 사진을 PDF 문서로 변환합니다." },
 
     // Edit
     "edit-pdf": { title: "PDF 편집", description: "PDF에 텍스트, 이미지, 도형, 주석을 추가합니다." },

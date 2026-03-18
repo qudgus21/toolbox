@@ -53,6 +53,9 @@ const te: Dictionary = {
     "html-to-pdf": { title: "HTML నుండి PDF", description: "వెబ్ పేజీలు మరియు HTML ఫైల్‌లను PDF గా మార్చండి." },
     "png-to-pdf": { title: "PNG నుండి PDF", description: "PNG చిత్రాలను PDF డాక్యుమెంట్‌గా మార్చండి." },
     "image-to-pdf": { title: "Image నుండి PDF", description: "ఏదైనా ఫార్మాట్ యొక్క బహుళ చిత్రాలను ఒకే PDF గా కలపండి." },
+    "webp-to-pdf": { title: "WEBP నుండి PDF", description: "WEBP చిత్రాలను PDF డాక్యుమెంట్‌గా మార్చండి." },
+    "tiff-to-pdf": { title: "TIFF నుండి PDF", description: "TIFF చిత్రాలను PDF డాక్యుమెంట్‌గా మార్చండి." },
+    "heic-to-pdf": { title: "HEIC నుండి PDF", description: "iPhone లోని HEIC ఫోటోలను PDF డాక్యుమెంట్‌గా మార్చండి." },
 
     // సవరించు
     "edit-pdf": { title: "PDF సవరించు", description: "PDF కి టెక్స్ట్, చిత్రాలు, ఆకారాలు మరియు ఆనోటేషన్‌లు జోడించండి." },
