@@ -36,7 +36,7 @@ import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
 import { WatermarkLayout } from "./watermark/watermark-layout";
 import { PagesPerSheetOptions } from "./pages-per-sheet-options";
 import { PagesPerSheetPreview } from "./pages-per-sheet-preview";
-import { HeaderFooterOptionsComponent } from "./header-footer-options";
+import { HeaderFooterLayout } from "./header-footer-layout";
 import { OverlayOptionsComponent } from "./overlay-options";
 import { BookletOptionsComponent } from "./booklet-options";
 import { EditorLayout } from "./edit-pdf/editor-layout";
@@ -671,28 +671,15 @@ export function ToolLoadedContent({
           </div>
         </>
       ) : isHeaderFooter && headerFooterLabels && files.length > 0 ? (
-        /* ─── Header/Footer: single-file + options sidebar ─── */
-        <>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
-            <div className="self-start">
-              <FileList
-                files={files}
-                rotations={rotations}
-                pageCounts={pageCounts}
-                onRemove={removeFile}
-                onReorder={reorderFiles}
-                onRotate={rotateFile}
-              />
-            </div>
-            <div className="lg:sticky lg:top-4 lg:self-start">
-              <HeaderFooterOptionsComponent
-                options={hfOptions}
-                onChange={setHfOptions}
-                labels={headerFooterLabels}
-              />
-            </div>
-          </div>
-        </>
+        /* ─── Header/Footer: single-file + preview + options sidebar ─── */
+        <HeaderFooterLayout
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          options={hfOptions}
+          onOptionsChange={setHfOptions}
+          onChangeFile={handleSingleFileChange}
+          labels={headerFooterLabels}
+        />
       ) : isOverlay && overlayLabels && files.length > 0 ? (
         /* ─── Overlay: 2-file + options sidebar ─── */
         <>

@@ -989,6 +989,7 @@ const lv: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Velciet vai izvēlieties PDF failu",
     headerLabel: "Galvene",
     footerLabel: "Kājene",
     enabled: "Ieslēgts",

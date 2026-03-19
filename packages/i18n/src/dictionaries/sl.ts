@@ -989,6 +989,7 @@ const sl: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Povlecite ali izberite datoteko PDF",
     headerLabel: "Glava",
     footerLabel: "Noga",
     enabled: "Vklopljeno",

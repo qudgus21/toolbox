@@ -977,6 +977,7 @@ const no: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Dra eller velg en PDF-fil",
     headerLabel: "Topptekst",
     footerLabel: "Bunntekst",
     enabled: "Aktivert",

@@ -989,6 +989,7 @@ const ja: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDFファイルをドロップまたは選択してください",
     headerLabel: "ヘッダー",
     footerLabel: "フッター",
     enabled: "有効",

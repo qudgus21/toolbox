@@ -989,6 +989,7 @@ const el: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Σύρετε ή επιλέξτε ένα αρχείο PDF",
     headerLabel: "Κεφαλίδα",
     footerLabel: "Υποσέλιδο",
     enabled: "Ενεργό",

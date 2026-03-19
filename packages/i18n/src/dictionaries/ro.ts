@@ -977,6 +977,7 @@ const ro: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Trageți sau selectați un fișier PDF",
     headerLabel: "Antet",
     footerLabel: "Subsol",
     enabled: "Activat",

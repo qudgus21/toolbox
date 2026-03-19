@@ -989,6 +989,7 @@ const bn: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDF ফাইল ড্রপ বা নির্বাচন করুন",
     headerLabel: "হেডার",
     footerLabel: "ফুটার",
     enabled: "সক্রিয়",

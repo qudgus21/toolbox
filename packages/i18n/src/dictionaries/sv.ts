@@ -989,6 +989,7 @@ const sv: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Dra eller välj en PDF-fil",
     headerLabel: "Sidhuvud",
     footerLabel: "Sidfot",
     enabled: "Aktiverad",

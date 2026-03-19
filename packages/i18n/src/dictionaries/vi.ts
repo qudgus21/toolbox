@@ -989,6 +989,7 @@ const vi: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Kéo hoặc chọn tệp PDF",
     headerLabel: "Đầu trang",
     footerLabel: "Chân trang",
     enabled: "Bật",

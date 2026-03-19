@@ -989,6 +989,7 @@ const ar: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "اسحب أو اختر ملف PDF",
     headerLabel: "رأس الصفحة",
     footerLabel: "تذييل الصفحة",
     enabled: "مفعّل",

@@ -989,6 +989,7 @@ const cs: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Přetáhněte nebo vyberte soubor PDF",
     headerLabel: "Záhlaví",
     footerLabel: "Zápatí",
     enabled: "Zapnuto",

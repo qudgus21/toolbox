@@ -989,6 +989,7 @@ const nl: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Sleep of selecteer een PDF-bestand",
     headerLabel: "Koptekst",
     footerLabel: "Voettekst",
     enabled: "Ingeschakeld",

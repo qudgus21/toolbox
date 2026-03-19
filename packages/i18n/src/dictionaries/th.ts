@@ -989,6 +989,7 @@ const th: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "ลากหรือเลือกไฟล์ PDF",
     headerLabel: "ส่วนหัว",
     footerLabel: "ส่วนท้าย",
     enabled: "เปิดใช้งาน",

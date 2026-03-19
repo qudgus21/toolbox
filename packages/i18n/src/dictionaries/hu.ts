@@ -989,6 +989,7 @@ const hu: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Húzza ide vagy válasszon egy PDF-fájlt",
     headerLabel: "Fejléc",
     footerLabel: "Lábléc",
     enabled: "Bekapcsolva",

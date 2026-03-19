@@ -989,6 +989,7 @@ const zh: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "拖放或选择PDF文件",
     headerLabel: "页眉",
     footerLabel: "页脚",
     enabled: "启用",

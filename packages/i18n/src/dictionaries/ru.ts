@@ -989,6 +989,7 @@ const ru: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Перетащите или выберите PDF-файл",
     headerLabel: "Верхний колонтитул",
     footerLabel: "Нижний колонтитул",
     enabled: "Включено",

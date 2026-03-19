@@ -989,6 +989,7 @@ const is: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Dragðu eða veldu PDF-skjal",
     headerLabel: "Haus",
     footerLabel: "Fótur",
     enabled: "Virkt",

@@ -905,6 +905,7 @@ const km: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "អូសឬជ្រើសរើសឯកសារ PDF",
     headerLabel: "បឋមកថា",
     footerLabel: "បាតកថា",
     enabled: "បើក",

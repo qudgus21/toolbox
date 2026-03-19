@@ -989,6 +989,7 @@ const id: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Seret atau pilih file PDF",
     headerLabel: "Header",
     footerLabel: "Footer",
     enabled: "Aktif",

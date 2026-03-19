@@ -989,6 +989,7 @@ const uk: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Перетягніть або виберіть PDF-файл",
     headerLabel: "Верхній колонтитул",
     footerLabel: "Нижній колонтитул",
     enabled: "Увімкнено",

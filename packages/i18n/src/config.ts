@@ -870,6 +870,7 @@ export interface Dictionary {
     fileModeMerge: string;
   };
   headerFooterTool: {
+    dropFile: string;
     headerLabel: string;
     footerLabel: string;
     enabled: string;

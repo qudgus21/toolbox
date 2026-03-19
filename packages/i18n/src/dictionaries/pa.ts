@@ -989,6 +989,7 @@ const pa: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDF ਫਾਈਲ ਡ੍ਰੈਗ ਜਾਂ ਚੁਣੋ",
     headerLabel: "ਸਿਰਲੇਖ",
     footerLabel: "ਫੁੱਟਰ",
     enabled: "ਚਾਲੂ",

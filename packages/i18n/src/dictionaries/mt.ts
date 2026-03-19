@@ -989,6 +989,7 @@ const mt: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Ġarr jew agħżel fajl PDF",
     headerLabel: "Intestatura",
     footerLabel: "Footer",
     enabled: "Attivat",

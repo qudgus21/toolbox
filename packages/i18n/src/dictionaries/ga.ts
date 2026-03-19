@@ -989,6 +989,7 @@ const ga: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Tarraing nó roghnaigh comhad PDF",
     headerLabel: "Ceanntásc",
     footerLabel: "Buntásc",
     enabled: "Cumasaithe",

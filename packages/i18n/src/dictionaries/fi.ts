@@ -989,6 +989,7 @@ const fi: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Vedä tai valitse PDF-tiedosto",
     headerLabel: "Ylätunniste",
     footerLabel: "Alatunniste",
     enabled: "Käytössä",

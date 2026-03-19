@@ -989,6 +989,7 @@ const lt: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Nuvilkite arba pasirinkite PDF failą",
     headerLabel: "Antraštė",
     footerLabel: "Poraštė",
     enabled: "Įjungta",

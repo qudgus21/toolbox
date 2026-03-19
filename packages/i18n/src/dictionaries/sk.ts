@@ -989,6 +989,7 @@ const sk: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Presuňte alebo vyberte súbor PDF",
     headerLabel: "Hlavička",
     footerLabel: "Päta",
     enabled: "Zapnuté",

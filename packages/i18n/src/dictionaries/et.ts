@@ -989,6 +989,7 @@ const et: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Lohistage või valige PDF-fail",
     headerLabel: "Päis",
     footerLabel: "Jalus",
     enabled: "Sees",

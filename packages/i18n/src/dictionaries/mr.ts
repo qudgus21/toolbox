@@ -989,6 +989,7 @@ const mr: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDF फाइल ड्रॉप किंवा निवडा",
     headerLabel: "शीर्षक",
     footerLabel: "तळटीप",
     enabled: "सक्रिय",

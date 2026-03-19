@@ -989,6 +989,7 @@ const tr: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDF dosyasını sürükleyin veya seçin",
     headerLabel: "Üst bilgi",
     footerLabel: "Alt bilgi",
     enabled: "Etkin",

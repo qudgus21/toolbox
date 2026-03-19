@@ -146,7 +146,7 @@ export function ToolPageClient({
       backHref={backHref}
       backLabel={labels.backToAll}
       size={getLayoutSize(stage)}
-      hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) && stage === "loaded"}
+      hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate || isSign || headerFooterLabels) && stage === "loaded"}
       className={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}
       action={fav !== null ? (
         <div className="relative">
@@ -191,8 +191,9 @@ export function ToolPageClient({
             )}
             <FileUploadZone
               accept={acceptedTypes}
+              multiple={!isSingleFileMode}
               onFiles={(f) => isSingleFileMode ? addFiles([f[0]]) : addFiles(f)}
-              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : isEditPdf && editPdfLabels ? editPdfLabels.dropFile : isRedact && redactLabels ? redactLabels.dropFile : labels.dropFiles}
+              title={isSplit && splitLabels ? splitLabels.dropFile : isDeletePages && deletePagesLabels ? deletePagesLabels.dropFile : isExtractPages && extractPagesLabels ? extractPagesLabels.dropFile : isExtractImages && extractImagesLabels ? extractImagesLabels.dropFile : isEditPdf && editPdfLabels ? editPdfLabels.dropFile : isRedact && redactLabels ? redactLabels.dropFile : headerFooterLabels ? headerFooterLabels.dropFile : labels.dropFiles}
               description={`${labels.acceptedFormats}: ${acceptedTypes}`}
             />
             {labels.privacyBadge && (

@@ -989,6 +989,7 @@ const ko: Dictionary = {
     fileModeMerge: "연속 배치",
   },
   headerFooterTool: {
+    dropFile: "PDF 파일을 선택하세요",
     headerLabel: "머리글",
     footerLabel: "바닥글",
     enabled: "사용",

@@ -905,6 +905,7 @@ const ms: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Seret atau pilih fail PDF",
     headerLabel: "Pengepala",
     footerLabel: "Pengaki",
     enabled: "Aktif",

@@ -22,6 +22,7 @@ import type {
 // ── Types ────────────────────────────────────────────────────
 
 export interface HeaderFooterLabels {
+  dropFile: string;
   headerLabel: string;
   footerLabel: string;
   enabled: string;

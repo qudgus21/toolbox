@@ -989,6 +989,7 @@ const da: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "Træk eller vælg en PDF-fil",
     headerLabel: "Sidehoved",
     footerLabel: "Sidefod",
     enabled: "Aktiveret",

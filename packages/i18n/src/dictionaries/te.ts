@@ -989,6 +989,7 @@ const te: Dictionary = {
     fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
+    dropFile: "PDF ఫైల్‌ను డ్రాప్ చేయండి లేదా ఎంచుకోండి",
     headerLabel: "హెడర్",
     footerLabel: "ఫుటర్",
     enabled: "ఆన్",
