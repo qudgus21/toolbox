@@ -1047,6 +1047,9 @@ const zh: Dictionary = {
     bindingLeft: "左侧",
     bindingRight: "右侧",
     changeFile: "更换文件",
+    sheetLabel: "纸张",
+    frontLabel: "正面",
+    backLabel: "背面",
   },
 };
 

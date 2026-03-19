@@ -1047,6 +1047,9 @@ const tr: Dictionary = {
     bindingLeft: "Sol",
     bindingRight: "Sağ",
     changeFile: "Dosyayı değiştir",
+    sheetLabel: "Yaprak",
+    frontLabel: "Ön",
+    backLabel: "Arka",
   },
 };
 

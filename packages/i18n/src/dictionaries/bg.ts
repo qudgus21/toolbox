@@ -1047,6 +1047,9 @@ const bg: Dictionary = {
     bindingLeft: "Ляво",
     bindingRight: "Дясно",
     changeFile: "Смяна на файл",
+    sheetLabel: "Лист",
+    frontLabel: "Лице",
+    backLabel: "Гръб",
   },
 };
 

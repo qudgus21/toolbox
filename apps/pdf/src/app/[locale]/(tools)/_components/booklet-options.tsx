@@ -8,6 +8,9 @@ export interface BookletLabels {
   bindingLeft: string;
   bindingRight: string;
   changeFile: string;
+  sheetLabel: string;
+  frontLabel: string;
+  backLabel: string;
 }
 
 interface BookletOptionsProps {

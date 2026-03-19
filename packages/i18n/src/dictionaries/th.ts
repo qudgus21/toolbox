@@ -1047,6 +1047,9 @@ const th: Dictionary = {
     bindingLeft: "ซ้าย",
     bindingRight: "ขวา",
     changeFile: "เปลี่ยนไฟล์",
+    sheetLabel: "แผ่น",
+    frontLabel: "ด้านหน้า",
+    backLabel: "ด้านหลัง",
   },
 };
 

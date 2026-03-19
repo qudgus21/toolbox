@@ -963,6 +963,9 @@ const ms: Dictionary = {
     bindingLeft: "Kiri",
     bindingRight: "Kanan",
     changeFile: "Tukar fail",
+    sheetLabel: "Helaian",
+    frontLabel: "Depan",
+    backLabel: "Belakang",
   },
 };
 

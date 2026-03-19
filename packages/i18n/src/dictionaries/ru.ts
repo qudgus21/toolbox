@@ -1047,6 +1047,9 @@ const ru: Dictionary = {
     bindingLeft: "Слева",
     bindingRight: "Справа",
     changeFile: "Изменить файл",
+    sheetLabel: "Лист",
+    frontLabel: "Лицевая",
+    backLabel: "Оборотная",
   },
 };
 

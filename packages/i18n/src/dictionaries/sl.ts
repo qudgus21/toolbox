@@ -1047,6 +1047,9 @@ const sl: Dictionary = {
     bindingLeft: "Levo",
     bindingRight: "Desno",
     changeFile: "Zamenjaj datoteko",
+    sheetLabel: "List",
+    frontLabel: "Spredaj",
+    backLabel: "Zadaj",
   },
 };
 

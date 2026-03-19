@@ -1047,6 +1047,9 @@ const lv: Dictionary = {
     bindingLeft: "Pa kreisi",
     bindingRight: "Pa labi",
     changeFile: "Mainīt failu",
+    sheetLabel: "Lapa",
+    frontLabel: "Priekšpuse",
+    backLabel: "Aizmugure",
   },
 };
 

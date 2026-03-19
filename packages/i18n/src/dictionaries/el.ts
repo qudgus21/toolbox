@@ -1047,6 +1047,9 @@ const el: Dictionary = {
     bindingLeft: "Αριστερά",
     bindingRight: "Δεξιά",
     changeFile: "Αλλαγή αρχείου",
+    sheetLabel: "Φύλλο",
+    frontLabel: "Εμπρός",
+    backLabel: "Πίσω",
   },
 };
 

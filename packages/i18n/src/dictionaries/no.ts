@@ -1035,6 +1035,9 @@ const no: Dictionary = {
     bindingLeft: "Venstre",
     bindingRight: "Høyre",
     changeFile: "Bytt fil",
+    sheetLabel: "Ark",
+    frontLabel: "Forside",
+    backLabel: "Bakside",
   },
 };
 

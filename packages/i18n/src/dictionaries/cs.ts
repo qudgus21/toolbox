@@ -1047,6 +1047,9 @@ const cs: Dictionary = {
     bindingLeft: "Vlevo",
     bindingRight: "Vpravo",
     changeFile: "Změnit soubor",
+    sheetLabel: "List",
+    frontLabel: "Přední",
+    backLabel: "Zadní",
   },
 };
 

@@ -1047,6 +1047,9 @@ const bn: Dictionary = {
     bindingLeft: "বামে",
     bindingRight: "ডানে",
     changeFile: "ফাইল পরিবর্তন",
+    sheetLabel: "শীট",
+    frontLabel: "সামনে",
+    backLabel: "পিছনে",
   },
 };
 

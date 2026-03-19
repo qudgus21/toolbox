@@ -1047,6 +1047,9 @@ const en: Dictionary = {
     bindingLeft: "Left",
     bindingRight: "Right",
     changeFile: "Change file",
+    sheetLabel: "Sheet",
+    frontLabel: "Front",
+    backLabel: "Back",
   },
 };
 

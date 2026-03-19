@@ -1047,6 +1047,9 @@ const he: Dictionary = {
     bindingLeft: "שמאל",
     bindingRight: "ימין",
     changeFile: "החלף קובץ",
+    sheetLabel: "דף",
+    frontLabel: "קדמי",
+    backLabel: "אחורי",
   },
 };
 

@@ -1047,6 +1047,9 @@ const sv: Dictionary = {
     bindingLeft: "Vänster",
     bindingRight: "Höger",
     changeFile: "Byt fil",
+    sheetLabel: "Ark",
+    frontLabel: "Framsida",
+    backLabel: "Baksida",
   },
 };
 

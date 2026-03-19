@@ -1047,6 +1047,9 @@ const te: Dictionary = {
     bindingLeft: "ఎడమ",
     bindingRight: "కుడి",
     changeFile: "ఫైల్ మార్చు",
+    sheetLabel: "షీట్",
+    frontLabel: "ముందు",
+    backLabel: "వెనుక",
   },
 };
 

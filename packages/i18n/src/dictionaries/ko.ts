@@ -1047,6 +1047,9 @@ const ko: Dictionary = {
     bindingLeft: "왼쪽",
     bindingRight: "오른쪽",
     changeFile: "파일 변경",
+    sheetLabel: "시트",
+    frontLabel: "앞면",
+    backLabel: "뒷면",
   },
 };
 

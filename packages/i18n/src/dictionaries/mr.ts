@@ -1047,6 +1047,9 @@ const mr: Dictionary = {
     bindingLeft: "डावीकडे",
     bindingRight: "उजवीकडे",
     changeFile: "फाइल बदला",
+    sheetLabel: "शीट",
+    frontLabel: "पुढे",
+    backLabel: "मागे",
   },
 };
 

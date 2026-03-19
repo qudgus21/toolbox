@@ -1047,6 +1047,9 @@ const da: Dictionary = {
     bindingLeft: "Venstre",
     bindingRight: "Højre",
     changeFile: "Skift fil",
+    sheetLabel: "Ark",
+    frontLabel: "Forside",
+    backLabel: "Bagside",
   },
 };
 

@@ -928,5 +928,8 @@ export interface Dictionary {
     bindingLeft: string;
     bindingRight: string;
     changeFile: string;
+    sheetLabel: string;
+    frontLabel: string;
+    backLabel: string;
   };
 }

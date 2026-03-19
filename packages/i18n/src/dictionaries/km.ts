@@ -963,6 +963,9 @@ const km: Dictionary = {
     bindingLeft: "ឆ្វេង",
     bindingRight: "ស្តាំ",
     changeFile: "ប្តូរឯកសារ",
+    sheetLabel: "សន្លឹក",
+    frontLabel: "ផ្នែកមុខ",
+    backLabel: "ផ្នែកក្រោយ",
   },
 };
 

@@ -1035,6 +1035,9 @@ const ro: Dictionary = {
     bindingLeft: "Stânga",
     bindingRight: "Dreapta",
     changeFile: "Schimbă fișierul",
+    sheetLabel: "Foaie",
+    frontLabel: "Față",
+    backLabel: "Spate",
   },
 };
 

@@ -1047,6 +1047,9 @@ const id: Dictionary = {
     bindingLeft: "Kiri",
     bindingRight: "Kanan",
     changeFile: "Ganti file",
+    sheetLabel: "Lembar",
+    frontLabel: "Depan",
+    backLabel: "Belakang",
   },
 };
 

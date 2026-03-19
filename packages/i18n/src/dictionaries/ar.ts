@@ -1047,6 +1047,9 @@ const ar: Dictionary = {
     bindingLeft: "يسار",
     bindingRight: "يمين",
     changeFile: "تغيير الملف",
+    sheetLabel: "ورقة",
+    frontLabel: "الأمام",
+    backLabel: "الخلف",
   },
 };
 

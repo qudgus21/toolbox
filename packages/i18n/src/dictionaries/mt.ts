@@ -1047,6 +1047,9 @@ const mt: Dictionary = {
     bindingLeft: "Xellug",
     bindingRight: "Lemin",
     changeFile: "Ibdel il-fajl",
+    sheetLabel: "Folja",
+    frontLabel: "Quddiem",
+    backLabel: "Wara",
   },
 };
 

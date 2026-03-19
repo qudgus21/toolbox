@@ -1047,6 +1047,9 @@ const hu: Dictionary = {
     bindingLeft: "Bal",
     bindingRight: "Jobb",
     changeFile: "Fájl módosítása",
+    sheetLabel: "Lap",
+    frontLabel: "Előlap",
+    backLabel: "Hátlap",
   },
 };
 

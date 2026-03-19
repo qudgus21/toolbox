@@ -1047,6 +1047,9 @@ const uk: Dictionary = {
     bindingLeft: "Ліворуч",
     bindingRight: "Праворуч",
     changeFile: "Змінити файл",
+    sheetLabel: "Аркуш",
+    frontLabel: "Лицьова",
+    backLabel: "Зворотна",
   },
 };
 

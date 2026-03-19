@@ -1047,6 +1047,9 @@ const is: Dictionary = {
     bindingLeft: "Vinstri",
     bindingRight: "Hægri",
     changeFile: "Skipta um skrá",
+    sheetLabel: "Blað",
+    frontLabel: "Framhlið",
+    backLabel: "Bakhlið",
   },
 };
 

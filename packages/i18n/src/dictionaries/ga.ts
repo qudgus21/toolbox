@@ -1047,6 +1047,9 @@ const ga: Dictionary = {
     bindingLeft: "Clé",
     bindingRight: "Deas",
     changeFile: "Athraigh comhad",
+    sheetLabel: "Bileog",
+    frontLabel: "Tosach",
+    backLabel: "Cúl",
   },
 };
 

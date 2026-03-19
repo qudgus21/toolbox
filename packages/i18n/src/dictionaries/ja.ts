@@ -1047,6 +1047,9 @@ const ja: Dictionary = {
     bindingLeft: "左綴じ",
     bindingRight: "右綴じ",
     changeFile: "ファイルを変更",
+    sheetLabel: "シート",
+    frontLabel: "表面",
+    backLabel: "裏面",
   },
 };
 

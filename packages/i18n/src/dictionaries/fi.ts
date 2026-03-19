@@ -1047,6 +1047,9 @@ const fi: Dictionary = {
     bindingLeft: "Vasen",
     bindingRight: "Oikea",
     changeFile: "Vaihda tiedosto",
+    sheetLabel: "Arkki",
+    frontLabel: "Etupuoli",
+    backLabel: "Takapuoli",
   },
 };
 

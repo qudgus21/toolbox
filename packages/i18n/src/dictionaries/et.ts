@@ -1047,6 +1047,9 @@ const et: Dictionary = {
     bindingLeft: "Vasak",
     bindingRight: "Parem",
     changeFile: "Vaheta fail",
+    sheetLabel: "Leht",
+    frontLabel: "Esikülg",
+    backLabel: "Tagakülg",
   },
 };
 

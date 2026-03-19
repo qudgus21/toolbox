@@ -38,7 +38,7 @@ import { PagesPerSheetOptions } from "./pages-per-sheet-options";
 import { PagesPerSheetPreview } from "./pages-per-sheet-preview";
 import { HeaderFooterLayout } from "./header-footer-layout";
 import { OverlayOptionsComponent } from "./overlay-options";
-import { BookletOptionsComponent } from "./booklet-options";
+import { BookletLayout } from "./booklet-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
 import { SortDropdown } from "./sort-dropdown";
@@ -740,28 +740,20 @@ export function ToolLoadedContent({
           </div>
         </>
       ) : isBooklet && bookletLabels && files.length > 0 ? (
-        /* ─── Booklet: single-file + options sidebar ─── */
-        <>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
-            <div className="self-start">
-              <FileList
-                files={files}
-                rotations={rotations}
-                pageCounts={pageCounts}
-                onRemove={removeFile}
-                onReorder={reorderFiles}
-                onRotate={rotateFile}
-              />
-            </div>
-            <div className="lg:sticky lg:top-4 lg:self-start">
-              <BookletOptionsComponent
-                options={bookletOptions}
-                onChange={setBookletOptions}
-                labels={bookletLabels}
-              />
-            </div>
-          </div>
-        </>
+        /* ─── Booklet: single-file + preview + options sidebar ─── */
+        <BookletLayout
+          file={files[0]}
+          pageCount={pageCounts[fileId(files[0])] ?? 0}
+          options={bookletOptions}
+          onOptionsChange={setBookletOptions}
+          onChangeFile={handleSingleFileChange}
+          labels={bookletLabels}
+          previewLabels={{
+            sheetLabel: bookletLabels.sheetLabel,
+            frontLabel: bookletLabels.frontLabel,
+            backLabel: bookletLabels.backLabel,
+          }}
+        />
       ) : isProtect && protectLabels && files.length > 0 ? (
         /* ─── Protect: multi-file + options sidebar ─── */
         <>

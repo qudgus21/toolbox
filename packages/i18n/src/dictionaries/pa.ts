@@ -1047,6 +1047,9 @@ const pa: Dictionary = {
     bindingLeft: "ਖੱਬੇ",
     bindingRight: "ਸੱਜੇ",
     changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
+    sheetLabel: "ਸ਼ੀਟ",
+    frontLabel: "ਅੱਗੇ",
+    backLabel: "ਪਿੱਛੇ",
   },
 };
 

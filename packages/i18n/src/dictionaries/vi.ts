@@ -1047,6 +1047,9 @@ const vi: Dictionary = {
     bindingLeft: "Trái",
     bindingRight: "Phải",
     changeFile: "Đổi tệp",
+    sheetLabel: "Tờ",
+    frontLabel: "Mặt trước",
+    backLabel: "Mặt sau",
   },
 };
 

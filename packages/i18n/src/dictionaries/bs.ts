@@ -1047,6 +1047,9 @@ const bs: Dictionary = {
     bindingLeft: "Lijevo",
     bindingRight: "Desno",
     changeFile: "Promijeni datoteku",
+    sheetLabel: "List",
+    frontLabel: "Prednja",
+    backLabel: "Zadnja",
   },
 };
 

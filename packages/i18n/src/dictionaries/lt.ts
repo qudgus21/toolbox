@@ -1047,6 +1047,9 @@ const lt: Dictionary = {
     bindingLeft: "Kairė",
     bindingRight: "Dešinė",
     changeFile: "Keisti failą",
+    sheetLabel: "Lapas",
+    frontLabel: "Priekis",
+    backLabel: "Galas",
   },
 };
 

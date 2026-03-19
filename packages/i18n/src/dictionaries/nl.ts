@@ -1047,6 +1047,9 @@ const nl: Dictionary = {
     bindingLeft: "Links",
     bindingRight: "Rechts",
     changeFile: "Bestand wijzigen",
+    sheetLabel: "Vel",
+    frontLabel: "Voorzijde",
+    backLabel: "Achterzijde",
   },
 };
 
