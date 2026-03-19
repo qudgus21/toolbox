@@ -37,7 +37,7 @@ import { WatermarkLayout } from "./watermark/watermark-layout";
 import { PagesPerSheetOptions } from "./pages-per-sheet-options";
 import { PagesPerSheetPreview } from "./pages-per-sheet-preview";
 import { HeaderFooterLayout } from "./header-footer-layout";
-import { OverlayOptionsComponent } from "./overlay-options";
+import { OverlayLayout } from "./overlay-layout";
 import { BookletLayout } from "./booklet-layout";
 import { EditorLayout } from "./edit-pdf/editor-layout";
 import { fileId } from "./file-list";
@@ -681,64 +681,16 @@ export function ToolLoadedContent({
           labels={headerFooterLabels}
         />
       ) : isOverlay && overlayLabels && files.length > 0 ? (
-        /* ─── Overlay: 2-file + options sidebar ─── */
-        <>
-          <MultiFileToolbar
-            files={files}
-            sortMenuOpen={sortMenuOpen}
-            onSortMenuOpenChange={setSortMenuOpen}
-            onSort={sortFiles}
-            onAddMore={handleAddMore}
-            labels={{ filesSelected: labels.filesSelected, addMoreFiles: labels.addMoreFiles, sortByName: labels.sortByName }}
-          />
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
-            <div className="self-start space-y-3">
-              {files.map((f, i) => (
-                <div key={`${f.name}-${f.size}-${f.lastModified}`} className="rounded-lg border border-border bg-background-card p-3">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/10 text-xs font-bold text-accent">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{f.name}</p>
-                      <p className="text-xs text-foreground-subtle">
-                        {i === 0 ? overlayLabels.contentFile : overlayLabels.overlayFile}
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => removeFile(i)}
-                      className="text-foreground-subtle hover:text-destructive transition-colors cursor-pointer"
-                    >
-                      ×
-                    </button>
-                  </div>
-                </div>
-              ))}
-              {files.length === 1 && (
-                <div className="rounded-lg border-2 border-dashed border-border p-6 text-center text-sm text-foreground-subtle">
-                  {overlayLabels.dropOverlay}
-                </div>
-              )}
-              {files.length >= 2 && (
-                <button
-                  type="button"
-                  onClick={() => reorderFiles([files[1], files[0], ...files.slice(2)])}
-                  className="w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground-subtle hover:bg-background-muted transition-colors cursor-pointer"
-                >
-                  {overlayLabels.swapFiles}
-                </button>
-              )}
-            </div>
-            <div className="lg:sticky lg:top-4 lg:self-start">
-              <OverlayOptionsComponent
-                options={overlayOptions}
-                onChange={setOverlayOptions}
-                labels={overlayLabels}
-              />
-            </div>
-          </div>
-        </>
+        /* ─── Overlay: 2-file + preview + options sidebar ─── */
+        <OverlayLayout
+          files={files}
+          options={overlayOptions}
+          onOptionsChange={setOverlayOptions}
+          onReorderFiles={reorderFiles}
+          onRemoveFile={removeFile}
+          onAddMore={handleAddMore}
+          labels={overlayLabels}
+        />
       ) : isBooklet && bookletLabels && files.length > 0 ? (
         /* ─── Booklet: single-file + preview + options sidebar ─── */
         <BookletLayout

@@ -956,6 +956,7 @@ const ms: Dictionary = {
     scaleStretch: "Regang",
     swapFiles: "Tukar kandungan dan tindanan",
     changeFile: "Tukar fail",
+    pageLabel: "Halaman",
   },
   bookletTool: {
     sheetSizeLabel: "Saiz helaian",

@@ -1040,6 +1040,7 @@ const mt: Dictionary = {
     scaleStretch: "Iġbed",
     swapFiles: "Ibdel il-kontenut u l-kopertura",
     changeFile: "Ibdel il-fajl",
+    pageLabel: "Paġna",
   },
   bookletTool: {
     sheetSizeLabel: "Daqs tal-folja",

@@ -1040,6 +1040,7 @@ const ar: Dictionary = {
     scaleStretch: "تمديد",
     swapFiles: "تبديل المحتوى والتراكب",
     changeFile: "تغيير الملف",
+    pageLabel: "صفحة",
   },
   bookletTool: {
     sheetSizeLabel: "حجم الورقة",

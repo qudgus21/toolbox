@@ -1040,6 +1040,7 @@ const he: Dictionary = {
     scaleStretch: "מתח",
     swapFiles: "החלף תוכן ושכבת-על",
     changeFile: "החלף קובץ",
+    pageLabel: "עמוד",
   },
   bookletTool: {
     sheetSizeLabel: "גודל דף",

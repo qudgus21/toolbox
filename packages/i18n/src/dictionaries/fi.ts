@@ -1040,6 +1040,7 @@ const fi: Dictionary = {
     scaleStretch: "Venytä",
     swapFiles: "Vaihda sisältö ja päällys",
     changeFile: "Vaihda tiedosto",
+    pageLabel: "Sivu",
   },
   bookletTool: {
     sheetSizeLabel: "Arkkikoko",

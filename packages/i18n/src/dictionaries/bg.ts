@@ -1040,6 +1040,7 @@ const bg: Dictionary = {
     scaleStretch: "Разтягане",
     swapFiles: "Размяна на съдържание и наслагване",
     changeFile: "Смяна на файл",
+    pageLabel: "Страница",
   },
   bookletTool: {
     sheetSizeLabel: "Размер на листа",

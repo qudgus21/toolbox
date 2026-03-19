@@ -1040,6 +1040,7 @@ const th: Dictionary = {
     scaleStretch: "ยืด",
     swapFiles: "สลับเนื้อหาและซ้อนทับ",
     changeFile: "เปลี่ยนไฟล์",
+    pageLabel: "หน้า",
   },
   bookletTool: {
     sheetSizeLabel: "ขนาดแผ่น",

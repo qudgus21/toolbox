@@ -1040,6 +1040,7 @@ const sv: Dictionary = {
     scaleStretch: "Sträck",
     swapFiles: "Byt innehåll och överlägg",
     changeFile: "Byt fil",
+    pageLabel: "Sida",
   },
   bookletTool: {
     sheetSizeLabel: "Arkstorlek",

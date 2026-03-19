@@ -1040,6 +1040,7 @@ const hi: Dictionary = {
     scaleStretch: "स्ट्रेच",
     swapFiles: "कंटेंट और ओवरले बदलें",
     changeFile: "फ़ाइल बदलें",
+    pageLabel: "पृष्ठ",
   },
   bookletTool: {
     sheetSizeLabel: "शीट का आकार",

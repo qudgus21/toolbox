@@ -1040,6 +1040,7 @@ const ko: Dictionary = {
     scaleStretch: "늘리기",
     swapFiles: "콘텐츠와 오버레이 바꾸기",
     changeFile: "파일 변경",
+    pageLabel: "페이지",
   },
   bookletTool: {
     sheetSizeLabel: "용지 크기",

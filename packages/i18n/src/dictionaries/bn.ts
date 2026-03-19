@@ -1040,6 +1040,7 @@ const bn: Dictionary = {
     scaleStretch: "প্রসারিত",
     swapFiles: "কনটেন্ট ও ওভারলে বিনিময়",
     changeFile: "ফাইল পরিবর্তন",
+    pageLabel: "পৃষ্ঠা",
   },
   bookletTool: {
     sheetSizeLabel: "শীটের আকার",

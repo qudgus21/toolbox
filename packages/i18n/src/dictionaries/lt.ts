@@ -1040,6 +1040,7 @@ const lt: Dictionary = {
     scaleStretch: "Ištempti",
     swapFiles: "Sukeisti turinį ir perdangą",
     changeFile: "Keisti failą",
+    pageLabel: "Puslapis",
   },
   bookletTool: {
     sheetSizeLabel: "Lapo dydis",

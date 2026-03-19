@@ -1040,6 +1040,7 @@ const it: Dictionary = {
     scaleStretch: "Stira",
     swapFiles: "Inverti contenuto e sovrapposizione",
     changeFile: "Cambia file",
+    pageLabel: "Pagina",
   },
   bookletTool: {
     sheetSizeLabel: "Formato foglio",

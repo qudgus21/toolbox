@@ -1040,6 +1040,7 @@ const id: Dictionary = {
     scaleStretch: "Regangkan",
     swapFiles: "Tukar konten dan overlay",
     changeFile: "Ganti file",
+    pageLabel: "Halaman",
   },
   bookletTool: {
     sheetSizeLabel: "Ukuran kertas",

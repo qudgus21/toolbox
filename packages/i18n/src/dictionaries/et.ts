@@ -1040,6 +1040,7 @@ const et: Dictionary = {
     scaleStretch: "Venita",
     swapFiles: "Vaheta sisu ja ülekate",
     changeFile: "Vaheta fail",
+    pageLabel: "Lehekülg",
   },
   bookletTool: {
     sheetSizeLabel: "Lehe suurus",

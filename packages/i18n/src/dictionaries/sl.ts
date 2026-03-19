@@ -1040,6 +1040,7 @@ const sl: Dictionary = {
     scaleStretch: "Raztegni",
     swapFiles: "Zamenjaj vsebino in prekrivanje",
     changeFile: "Zamenjaj datoteko",
+    pageLabel: "Stran",
   },
   bookletTool: {
     sheetSizeLabel: "Velikost lista",

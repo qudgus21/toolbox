@@ -1040,6 +1040,7 @@ const ga: Dictionary = {
     scaleStretch: "Síneadh",
     swapFiles: "Babhtáil ábhar agus forleagan",
     changeFile: "Athraigh comhad",
+    pageLabel: "Leathanach",
   },
   bookletTool: {
     sheetSizeLabel: "Méid bileoige",

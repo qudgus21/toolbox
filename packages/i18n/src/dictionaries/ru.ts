@@ -1040,6 +1040,7 @@ const ru: Dictionary = {
     scaleStretch: "Растянуть",
     swapFiles: "Поменять содержимое и наложение",
     changeFile: "Изменить файл",
+    pageLabel: "Страница",
   },
   bookletTool: {
     sheetSizeLabel: "Размер листа",

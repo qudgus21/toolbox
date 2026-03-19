@@ -1040,6 +1040,7 @@ const nl: Dictionary = {
     scaleStretch: "Uitrekken",
     swapFiles: "Inhoud en overlay wisselen",
     changeFile: "Bestand wijzigen",
+    pageLabel: "Pagina",
   },
   bookletTool: {
     sheetSizeLabel: "Bladformaat",

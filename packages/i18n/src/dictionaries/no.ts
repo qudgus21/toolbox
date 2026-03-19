@@ -1028,6 +1028,7 @@ const no: Dictionary = {
     scaleStretch: "Strekk",
     swapFiles: "Bytt innhold og overlegg",
     changeFile: "Bytt fil",
+    pageLabel: "Side",
   },
   bookletTool: {
     sheetSizeLabel: "Arkstørrelse",

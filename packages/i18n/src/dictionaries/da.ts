@@ -1040,6 +1040,7 @@ const da: Dictionary = {
     scaleStretch: "Stræk",
     swapFiles: "Byt indhold og overlay",
     changeFile: "Skift fil",
+    pageLabel: "Side",
   },
   bookletTool: {
     sheetSizeLabel: "Arkstørrelse",

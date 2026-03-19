@@ -1040,6 +1040,7 @@ const uk: Dictionary = {
     scaleStretch: "Розтягнути",
     swapFiles: "Поміняти вміст і накладання",
     changeFile: "Змінити файл",
+    pageLabel: "Сторінка",
   },
   bookletTool: {
     sheetSizeLabel: "Розмір аркуша",

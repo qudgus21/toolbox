@@ -1028,6 +1028,7 @@ const ro: Dictionary = {
     scaleStretch: "Întindere",
     swapFiles: "Inversează conținut și suprapunere",
     changeFile: "Schimbă fișierul",
+    pageLabel: "Pagină",
   },
   bookletTool: {
     sheetSizeLabel: "Dimensiunea foii",

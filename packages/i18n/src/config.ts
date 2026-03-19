@@ -921,6 +921,7 @@ export interface Dictionary {
     scaleStretch: string;
     swapFiles: string;
     changeFile: string;
+    pageLabel: string;
   };
   bookletTool: {
     sheetSizeLabel: string;

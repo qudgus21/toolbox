@@ -1040,6 +1040,7 @@ const pa: Dictionary = {
     scaleStretch: "ਖਿੱਚੋ",
     swapFiles: "ਸਮੱਗਰੀ ਅਤੇ ਓਵਰਲੇ ਬਦਲੋ",
     changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
+    pageLabel: "ਪੰਨਾ",
   },
   bookletTool: {
     sheetSizeLabel: "ਸ਼ੀਟ ਦਾ ਆਕਾਰ",

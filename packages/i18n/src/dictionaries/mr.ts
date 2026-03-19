@@ -1040,6 +1040,7 @@ const mr: Dictionary = {
     scaleStretch: "ताणा",
     swapFiles: "मजकूर आणि आच्छादन बदला",
     changeFile: "फाइल बदला",
+    pageLabel: "पृष्ठ",
   },
   bookletTool: {
     sheetSizeLabel: "शीट आकार",

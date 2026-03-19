@@ -1040,6 +1040,7 @@ const ja: Dictionary = {
     scaleStretch: "ストレッチ",
     swapFiles: "コンテンツとオーバーレイを入れ替え",
     changeFile: "ファイルを変更",
+    pageLabel: "ページ",
   },
   bookletTool: {
     sheetSizeLabel: "用紙サイズ",

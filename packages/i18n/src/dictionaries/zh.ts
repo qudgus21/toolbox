@@ -1040,6 +1040,7 @@ const zh: Dictionary = {
     scaleStretch: "拉伸",
     swapFiles: "交换内容与叠加",
     changeFile: "更换文件",
+    pageLabel: "页面",
   },
   bookletTool: {
     sheetSizeLabel: "纸张大小",

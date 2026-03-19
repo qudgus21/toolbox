@@ -956,6 +956,7 @@ const km: Dictionary = {
     scaleStretch: "ទាញ",
     swapFiles: "ប្តូរមាតិកា និងត្រួតគ្នា",
     changeFile: "ប្តូរឯកសារ",
+    pageLabel: "ទំព័រ",
   },
   bookletTool: {
     sheetSizeLabel: "ទំហំសន្លឹក",

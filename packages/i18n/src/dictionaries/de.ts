@@ -1040,6 +1040,7 @@ const de: Dictionary = {
     scaleStretch: "Strecken",
     swapFiles: "Inhalt und Overlay tauschen",
     changeFile: "Datei ändern",
+    pageLabel: "Seite",
   },
   bookletTool: {
     sheetSizeLabel: "Blattgröße",

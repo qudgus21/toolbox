@@ -1040,6 +1040,7 @@ const te: Dictionary = {
     scaleStretch: "సాగదీయి",
     swapFiles: "కంటెంట్ మరియు ఓవర్‌లే మార్చు",
     changeFile: "ఫైల్ మార్చు",
+    pageLabel: "పేజీ",
   },
   bookletTool: {
     sheetSizeLabel: "షీట్ పరిమాణం",

@@ -1040,6 +1040,7 @@ const cs: Dictionary = {
     scaleStretch: "Roztáhnout",
     swapFiles: "Prohodit obsah a překryv",
     changeFile: "Změnit soubor",
+    pageLabel: "Stránka",
   },
   bookletTool: {
     sheetSizeLabel: "Velikost archu",

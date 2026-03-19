@@ -1040,6 +1040,7 @@ const el: Dictionary = {
     scaleStretch: "Τέντωμα",
     swapFiles: "Εναλλαγή περιεχομένου και επικάλυψης",
     changeFile: "Αλλαγή αρχείου",
+    pageLabel: "Σελίδα",
   },
   bookletTool: {
     sheetSizeLabel: "Μέγεθος φύλλου",

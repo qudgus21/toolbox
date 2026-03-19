@@ -38,12 +38,11 @@ const overlayPdf: ProcessorFn = async (files, options, onProgress) => {
   const outDoc = await PDFDocument.create();
 
   for (let i = 0; i < contentPageCount; i++) {
-    // Determine which overlay page to use
+    // Auto-detect mode: single overlay page → repeat, multiple → 1:1 match
     let overlayPageIndex: number;
-    if (opts.overlayMode === "repeat-first") {
+    if (overlayPageCount === 1) {
       overlayPageIndex = 0;
     } else {
-      // "match" mode — use corresponding page, skip if no overlay page
       overlayPageIndex = i < overlayPageCount ? i : -1;
     }
 

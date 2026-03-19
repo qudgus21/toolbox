@@ -1040,6 +1040,7 @@ const hu: Dictionary = {
     scaleStretch: "Nyújtás",
     swapFiles: "Tartalom és fedőréteg csere",
     changeFile: "Fájl módosítása",
+    pageLabel: "Oldal",
   },
   bookletTool: {
     sheetSizeLabel: "Lapméret",

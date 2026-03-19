@@ -1040,6 +1040,7 @@ const lv: Dictionary = {
     scaleStretch: "Izstiept",
     swapFiles: "Apmainīt saturu un pārklājumu",
     changeFile: "Mainīt failu",
+    pageLabel: "Lapa",
   },
   bookletTool: {
     sheetSizeLabel: "Lapas izmērs",

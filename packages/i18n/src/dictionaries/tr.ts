@@ -1040,6 +1040,7 @@ const tr: Dictionary = {
     scaleStretch: "Ger",
     swapFiles: "İçerik ve kaplamayı değiştir",
     changeFile: "Dosyayı değiştir",
+    pageLabel: "Sayfa",
   },
   bookletTool: {
     sheetSizeLabel: "Kağıt boyutu",

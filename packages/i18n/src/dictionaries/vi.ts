@@ -1040,6 +1040,7 @@ const vi: Dictionary = {
     scaleStretch: "Kéo giãn",
     swapFiles: "Hoán đổi nội dung và lớp phủ",
     changeFile: "Đổi tệp",
+    pageLabel: "Trang",
   },
   bookletTool: {
     sheetSizeLabel: "Khổ giấy",

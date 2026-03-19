@@ -1040,6 +1040,7 @@ const sk: Dictionary = {
     scaleStretch: "Roztiahnuť",
     swapFiles: "Zameniť obsah a prekryv",
     changeFile: "Zmeniť súbor",
+    pageLabel: "Stránka",
   },
   bookletTool: {
     sheetSizeLabel: "Veľkosť hárku",

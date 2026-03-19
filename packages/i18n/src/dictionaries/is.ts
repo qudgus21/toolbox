@@ -1040,6 +1040,7 @@ const is: Dictionary = {
     scaleStretch: "Teygja",
     swapFiles: "Skipta á efni og yfirlagi",
     changeFile: "Skipta um skrá",
+    pageLabel: "Síða",
   },
   bookletTool: {
     sheetSizeLabel: "Blaðstærð",
