@@ -240,6 +240,7 @@ export function useToolState({
   const [nupPageOrder, setNupPageOrder] = useState<"left-to-right" | "right-to-left" | "top-to-bottom">("left-to-right");
   const [nupGap, setNupGap] = useState(2);
   const [nupBorder, setNupBorder] = useState(false);
+  const [nupFileMode, setNupFileMode] = useState<"merge" | "new-sheet">("merge");
 
   // ─── Header/Footer ───
   const [hfOptions, setHfOptions] = useState({
@@ -463,6 +464,7 @@ export function useToolState({
         pageOrder: nupPageOrder,
         gap: nupGap,
         border: nupBorder,
+        fileMode: nupFileMode,
       };
     } else if (isHeaderFooter) {
       return hfOptions;
@@ -601,7 +603,8 @@ export function useToolState({
     scanToPdfAutoEnhance, scanToPdfColorMode,
     editPdfAnnotations, editedMetadata, redactAreas, annotateAnnotations, signElements, pageNumberOptions,
     cropArea, cropMargins, cropMode, cropPageMode, cropCurrentPage, cropPageRange,
-    isPageNumbers,
+    isPageNumbers, isPagesPerSheet, nupCount, nupSheetSize, nupOrientation, nupPageOrder, nupGap, nupBorder, nupFileMode,
+    isHeaderFooter, hfOptions, isBooklet, bookletOptions, isOverlay, overlayOptions,
   ]);
 
   // ─── getButtonLabel ───
@@ -867,6 +870,8 @@ export function useToolState({
     setNupGap,
     nupBorder,
     setNupBorder,
+    nupFileMode,
+    setNupFileMode,
 
     // Header/Footer
     hfOptions,

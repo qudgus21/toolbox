@@ -981,6 +981,12 @@ const pt: Dictionary = {
     border: "Borda da célula",
     borderOn: "Ativado",
     borderOff: "Desativado",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Cabeçalho",

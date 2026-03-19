@@ -1,5 +1,4 @@
 import { PDFDocument, rgb, type PDFPage } from "pdf-lib";
-import JSZip from "jszip";
 import type { ProcessorFn, ProcessingResult } from "../types";
 import { PAGE_SIZES, type PageSizePreset } from "./resize";
 
@@ -32,8 +31,8 @@ function getSheetSize(
   nup: NupCount,
 ): { width: number; height: number } {
   const size = PAGE_SIZES[preset];
-  let w = size.width;
-  let h = size.height;
+  let w: number = size.width;
+  let h: number = size.height;
 
   if (orientation === "auto") {
     // For 2-up, landscape is usually better; for others portrait
@@ -111,6 +110,7 @@ function drawBorder(
 }
 
 // ── Main processor ───────────────────────────────────────────────
+// All files' pages are merged sequentially into a single N-up PDF output.
 
 const pagesPerSheet: ProcessorFn = async (files, options, onProgress) => {
   if (files.length === 0) throw new Error("No file provided");
@@ -121,6 +121,7 @@ const pagesPerSheet: ProcessorFn = async (files, options, onProgress) => {
   const pageOrder = (options.pageOrder as PageOrder) ?? "left-to-right";
   const gapMm = (options.gap as number) ?? 2;
   const showBorder = (options.border as boolean) ?? false;
+  const fileMode = (options.fileMode as "merge" | "new-sheet") ?? "merge";
   const borderColor = (options.borderColor as { r: number; g: number; b: number }) ?? {
     r: 200,
     g: 200,
@@ -133,108 +134,99 @@ const pagesPerSheet: ProcessorFn = async (files, options, onProgress) => {
 
   onProgress(5);
 
-  const results: { name: string; bytes: Uint8Array; pageCount: number }[] = [];
-
-  for (let fi = 0; fi < files.length; fi++) {
-    const file = files[fi];
+  // 1. Load all source documents and collect total page count
+  const srcDocs: PDFDocument[] = [];
+  let totalSrcPages = 0;
+  for (const file of files) {
     const bytes = await file.arrayBuffer();
-    const srcDoc = await PDFDocument.load(bytes);
-    const totalSrcPages = srcDoc.getPageCount();
+    const doc = await PDFDocument.load(bytes);
+    srcDocs.push(doc);
+    totalSrcPages += doc.getPageCount();
+  }
 
-    const doc = await PDFDocument.create();
-    const cellOrder = getCellOrder(grid.cols, grid.rows, pageOrder);
+  onProgress(10);
 
-    // Total number of cells per output sheet
-    const cellsPerSheet = grid.cols * grid.rows;
+  // 2. Create single output document
+  const doc = await PDFDocument.create();
+  const cellOrder = getCellOrder(grid.cols, grid.rows, pageOrder);
+  const cellsPerSheet = grid.cols * grid.rows;
 
-    // Calculate cell dimensions
-    const totalGapX = gap * (grid.cols - 1);
-    const totalGapY = gap * (grid.rows - 1);
-    const outerMargin = gap; // Use gap as outer margin too
-    const cellW = (sheetW - outerMargin * 2 - totalGapX) / grid.cols;
-    const cellH = (sheetH - outerMargin * 2 - totalGapY) / grid.rows;
+  // Calculate cell dimensions
+  const totalGapX = gap * (grid.cols - 1);
+  const totalGapY = gap * (grid.rows - 1);
+  const outerMargin = gap;
+  const cellW = (sheetW - outerMargin * 2 - totalGapX) / grid.cols;
+  const cellH = (sheetH - outerMargin * 2 - totalGapY) / grid.rows;
 
-    for (let srcIdx = 0; srcIdx < totalSrcPages; srcIdx += cellsPerSheet) {
-      const outPage = doc.addPage([sheetW, sheetH]);
+  // 3. Iterate all pages across all files sequentially
+  let globalPageIdx = 0;
 
-      for (let ci = 0; ci < cellsPerSheet; ci++) {
-        const pageIdx = srcIdx + ci;
-        if (pageIdx >= totalSrcPages) break;
+  for (const srcDoc of srcDocs) {
+    const docPageCount = srcDoc.getPageCount();
 
-        const srcPage = srcDoc.getPage(pageIdx);
-        const { width: srcW, height: srcH } = srcPage.getMediaBox();
-        const embeddedPage = await doc.embedPage(srcPage);
-
-        const { col, row } = cellOrder[ci];
-
-        // Cell position (PDF origin is bottom-left)
-        const cellX = outerMargin + col * (cellW + gap);
-        const cellY = sheetH - outerMargin - (row + 1) * cellH - row * gap;
-
-        // Scale source page to fit within cell (maintain aspect ratio)
-        const scaleX = cellW / srcW;
-        const scaleY = cellH / srcH;
-        const scale = Math.min(scaleX, scaleY);
-        const drawW = srcW * scale;
-        const drawH = srcH * scale;
-
-        // Center within cell
-        const drawX = cellX + (cellW - drawW) / 2;
-        const drawY = cellY + (cellH - drawH) / 2;
-
-        outPage.drawPage(embeddedPage, {
-          x: drawX,
-          y: drawY,
-          width: drawW,
-          height: drawH,
-        });
-
-        // Optional border around the drawn page
-        if (showBorder) {
-          drawBorder(outPage, drawX, drawY, drawW, drawH, borderColor);
-        }
-      }
-
-      onProgress(5 + ((fi + (srcIdx + cellsPerSheet) / totalSrcPages) / files.length) * 85);
+    // In "new-sheet" mode, each file starts on a fresh output sheet
+    if (fileMode === "new-sheet" && globalPageIdx % cellsPerSheet !== 0) {
+      globalPageIdx = Math.ceil(globalPageIdx / cellsPerSheet) * cellsPerSheet;
     }
 
-    const pdfBytes = await doc.save();
-    const baseName = file.name.replace(/\.pdf$/i, "");
-    results.push({
-      name: `${baseName}_${nup}up.pdf`,
-      bytes: pdfBytes,
-      pageCount: doc.getPageCount(),
-    });
+    for (let pi = 0; pi < docPageCount; pi++) {
+      const cellIdx = globalPageIdx % cellsPerSheet;
+
+      // Start a new output sheet when needed
+      if (cellIdx === 0) {
+        doc.addPage([sheetW, sheetH]);
+      }
+
+      const outPage = doc.getPage(doc.getPageCount() - 1);
+      const srcPage = srcDoc.getPage(pi);
+      const { width: srcW, height: srcH } = srcPage.getMediaBox();
+      const embeddedPage = await doc.embedPage(srcPage);
+
+      const { col, row } = cellOrder[cellIdx];
+
+      // Cell position (PDF origin is bottom-left)
+      const cellX = outerMargin + col * (cellW + gap);
+      const cellY = sheetH - outerMargin - (row + 1) * cellH - row * gap;
+
+      // Scale source page to fit within cell (maintain aspect ratio)
+      const scaleX = cellW / srcW;
+      const scaleY = cellH / srcH;
+      const scale = Math.min(scaleX, scaleY);
+      const drawW = srcW * scale;
+      const drawH = srcH * scale;
+
+      // Center within cell
+      const drawX = cellX + (cellW - drawW) / 2;
+      const drawY = cellY + (cellH - drawH) / 2;
+
+      outPage.drawPage(embeddedPage, {
+        x: drawX,
+        y: drawY,
+        width: drawW,
+        height: drawH,
+      });
+
+      if (showBorder) {
+        drawBorder(outPage, drawX, drawY, drawW, drawH, borderColor);
+      }
+
+      globalPageIdx++;
+      onProgress(10 + (globalPageIdx / totalSrcPages) * 85);
+    }
   }
 
-  // Single file → PDF, multiple → ZIP
-  if (results.length === 1) {
-    const r = results[0];
-    const blob = new Blob([r.bytes as BlobPart], { type: "application/pdf" });
-    onProgress(100);
-    return {
-      blob,
-      filename: r.name,
-      size: blob.size,
-      pageCount: r.pageCount,
-    } satisfies ProcessingResult;
-  }
+  const pdfBytes = await doc.save();
+  const baseName = files[0].name.replace(/\.pdf$/i, "");
+  const filename = files.length === 1 ? `${baseName}_${nup}up.pdf` : `combined_${nup}up.pdf`;
+  const blob = new Blob([pdfBytes as BlobPart], { type: "application/pdf" });
 
-  const zip = new JSZip();
-  let totalPageCount = 0;
-  for (const r of results) {
-    zip.file(r.name, r.bytes);
-    totalPageCount += r.pageCount;
-  }
-
-  const zipBlob = await zip.generateAsync({ type: "blob" });
   onProgress(100);
 
   return {
-    blob: zipBlob,
-    filename: "pages_per_sheet.zip",
-    size: zipBlob.size,
-    pageCount: totalPageCount,
+    blob,
+    filename,
+    size: blob.size,
+    pageCount: doc.getPageCount(),
   } satisfies ProcessingResult;
 };
 

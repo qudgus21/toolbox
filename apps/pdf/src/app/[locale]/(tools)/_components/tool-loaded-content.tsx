@@ -35,6 +35,7 @@ import { SignLayout } from "./sign-pdf/sign-layout";
 import { PageNumbersLayout } from "./page-numbers/page-numbers-layout";
 import { WatermarkLayout } from "./watermark/watermark-layout";
 import { PagesPerSheetOptions } from "./pages-per-sheet-options";
+import { PagesPerSheetPreview } from "./pages-per-sheet-preview";
 import { HeaderFooterOptionsComponent } from "./header-footer-options";
 import { OverlayOptionsComponent } from "./overlay-options";
 import { BookletOptionsComponent } from "./booklet-options";
@@ -314,6 +315,8 @@ export function ToolLoadedContent({
     setNupGap,
     nupBorder,
     setNupBorder,
+    nupFileMode,
+    setNupFileMode,
 
     cropArea,
     setCropArea,
@@ -617,25 +620,32 @@ export function ToolLoadedContent({
           </div>
         </>
       ) : isPagesPerSheet && pagesPerSheetLabels && files.length > 0 ? (
-        /* ─── Pages Per Sheet: multi-file + options sidebar ─── */
+        /* ─── Pages Per Sheet: preview + options sidebar ─── */
         <>
-          <MultiFileToolbar
-            files={files}
-            sortMenuOpen={sortMenuOpen}
-            onSortMenuOpenChange={setSortMenuOpen}
-            onSort={sortFiles}
-            onAddMore={handleAddMore}
-            labels={{ filesSelected: labels.filesSelected, addMoreFiles: labels.addMoreFiles, sortByName: labels.sortByName }}
-          />
+          {files.length > 1 && (
+            <MultiFileToolbar
+              files={files}
+              sortMenuOpen={sortMenuOpen}
+              onSortMenuOpenChange={setSortMenuOpen}
+              onSort={sortFiles}
+              onAddMore={handleAddMore}
+              labels={{ filesSelected: labels.filesSelected, addMoreFiles: labels.addMoreFiles, sortByName: labels.sortByName }}
+            />
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
             <div className="self-start">
-              <FileList
+              <PagesPerSheetPreview
                 files={files}
-                rotations={rotations}
                 pageCounts={pageCounts}
-                onRemove={removeFile}
-                onReorder={reorderFiles}
-                onRotate={rotateFile}
+                nup={nupCount}
+                sheetSize={nupSheetSize}
+                orientation={nupOrientation}
+                pageOrder={nupPageOrder}
+                gap={nupGap}
+                border={nupBorder}
+                fileMode={nupFileMode}
+                labels={{ pageOf: pagesPerSheetLabels.pageOf, changeFile: pagesPerSheetLabels.changeFile, sheets: pagesPerSheetLabels.sheets }}
+                onAddMore={handleAddMore}
               />
             </div>
             <div className="lg:sticky lg:top-4 lg:self-start">
@@ -652,6 +662,9 @@ export function ToolLoadedContent({
                 onPageOrderChange={setNupPageOrder}
                 onGapChange={setNupGap}
                 onBorderChange={setNupBorder}
+                fileMode={nupFileMode}
+                fileCount={files.length}
+                onFileModeChange={setNupFileMode}
                 labels={pagesPerSheetLabels}
               />
             </div>

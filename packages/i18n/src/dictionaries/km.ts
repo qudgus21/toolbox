@@ -897,6 +897,12 @@ const km: Dictionary = {
     border: "ស៊ុមក្រឡា",
     borderOn: "បើក",
     borderOff: "បិទ",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "បឋមកថា",

@@ -862,6 +862,12 @@ export interface Dictionary {
     border: string;
     borderOn: string;
     borderOff: string;
+    changeFile: string;
+    pageOf: string;
+    sheets: string;
+    fileMode: string;
+    fileModeNewSheet: string;
+    fileModeMerge: string;
   };
   headerFooterTool: {
     headerLabel: string;

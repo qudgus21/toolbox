@@ -981,6 +981,12 @@ const bn: Dictionary = {
     border: "সেল বর্ডার",
     borderOn: "চালু",
     borderOff: "বন্ধ",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "হেডার",

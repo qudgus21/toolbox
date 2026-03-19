@@ -981,6 +981,12 @@ const fi: Dictionary = {
     border: "Solun reunus",
     borderOn: "Päällä",
     borderOff: "Pois",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Ylätunniste",

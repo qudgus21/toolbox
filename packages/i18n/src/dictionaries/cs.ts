@@ -981,6 +981,12 @@ const cs: Dictionary = {
     border: "Ohraničení buňky",
     borderOn: "Zapnuto",
     borderOff: "Vypnuto",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Záhlaví",

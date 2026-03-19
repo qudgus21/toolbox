@@ -981,6 +981,12 @@ const ja: Dictionary = {
     border: "セル枠線",
     borderOn: "オン",
     borderOff: "オフ",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "ヘッダー",

@@ -981,6 +981,12 @@ const bs: Dictionary = {
     border: "Obrub ćelije",
     borderOn: "Uključeno",
     borderOff: "Isključeno",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Zaglavlje",

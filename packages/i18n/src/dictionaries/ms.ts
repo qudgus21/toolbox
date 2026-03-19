@@ -897,6 +897,12 @@ const ms: Dictionary = {
     border: "Sempadan sel",
     borderOn: "Hidup",
     borderOff: "Mati",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Pengepala",

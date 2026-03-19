@@ -981,6 +981,12 @@ const sv: Dictionary = {
     border: "Cellkant",
     borderOn: "På",
     borderOff: "Av",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Sidhuvud",

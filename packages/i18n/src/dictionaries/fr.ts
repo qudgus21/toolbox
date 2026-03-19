@@ -981,6 +981,12 @@ const fr: Dictionary = {
     border: "Bordure de cellule",
     borderOn: "Activé",
     borderOff: "Désactivé",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "En-tête",

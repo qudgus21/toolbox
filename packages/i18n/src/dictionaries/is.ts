@@ -981,6 +981,12 @@ const is: Dictionary = {
     border: "Reitarammi",
     borderOn: "Kveikt",
     borderOff: "Slökkt",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Haus",

@@ -981,6 +981,12 @@ const tr: Dictionary = {
     border: "Hücre kenarlığı",
     borderOn: "Açık",
     borderOff: "Kapalı",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Üst bilgi",

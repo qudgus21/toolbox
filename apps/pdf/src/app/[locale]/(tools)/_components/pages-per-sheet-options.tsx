@@ -9,6 +9,8 @@ export type NupCount = 2 | 4 | 6 | 9 | 16;
 export type PageOrder = "left-to-right" | "right-to-left" | "top-to-bottom";
 export type NupOrientation = "portrait" | "landscape" | "auto";
 
+export type NupFileMode = "merge" | "new-sheet";
+
 export interface PagesPerSheetLabels {
   pagesPerSheet: string;
   sheetSize: string;
@@ -25,6 +27,12 @@ export interface PagesPerSheetLabels {
   border: string;
   borderOn: string;
   borderOff: string;
+  changeFile: string;
+  pageOf: string;
+  sheets: string;
+  fileMode: string;
+  fileModeNewSheet: string;
+  fileModeMerge: string;
 }
 
 interface PagesPerSheetOptionsProps {
@@ -34,12 +42,15 @@ interface PagesPerSheetOptionsProps {
   pageOrder: PageOrder;
   gap: number;
   border: boolean;
+  fileMode: NupFileMode;
+  fileCount: number;
   onNupChange: (v: NupCount) => void;
   onSheetSizeChange: (v: PageSizePreset) => void;
   onOrientationChange: (v: NupOrientation) => void;
   onPageOrderChange: (v: PageOrder) => void;
   onGapChange: (v: number) => void;
   onBorderChange: (v: boolean) => void;
+  onFileModeChange: (v: NupFileMode) => void;
   labels: PagesPerSheetLabels;
 }
 
@@ -87,12 +98,15 @@ export function PagesPerSheetOptions({
   pageOrder,
   gap,
   border,
+  fileMode,
+  fileCount,
   onNupChange,
   onSheetSizeChange,
   onOrientationChange,
   onPageOrderChange,
   onGapChange,
   onBorderChange,
+  onFileModeChange,
   labels,
 }: PagesPerSheetOptionsProps) {
   const presetKeys = Object.keys(PAGE_SIZES) as PageSizePreset[];
@@ -238,6 +252,32 @@ export function PagesPerSheetOptions({
           ))}
         </div>
       </div>
+
+      {/* File mode toggle — only show when multiple files */}
+      {fileCount > 1 && (
+        <div className="space-y-2">
+          <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wide">
+            {labels.fileMode}
+          </p>
+          <div className="flex gap-2">
+            {(["merge", "new-sheet"] as const).map((mode) => (
+              <button
+                key={mode}
+                type="button"
+                onClick={() => onFileModeChange(mode)}
+                className={cn(
+                  "flex-1 rounded-lg border px-3 py-2.5 text-xs font-bold transition-colors cursor-pointer",
+                  fileMode === mode
+                    ? "border-accent bg-accent-muted/30 text-accent"
+                    : "border-border bg-background-elevated text-foreground-muted hover:border-foreground-subtle hover:text-foreground",
+                )}
+              >
+                {mode === "merge" ? labels.fileModeMerge : labels.fileModeNewSheet}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

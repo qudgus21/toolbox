@@ -981,6 +981,12 @@ const et: Dictionary = {
     border: "Lahtri ääris",
     borderOn: "Sees",
     borderOff: "Väljas",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Päis",

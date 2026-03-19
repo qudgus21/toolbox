@@ -969,6 +969,12 @@ const ro: Dictionary = {
     border: "Bordură celulă",
     borderOn: "Activat",
     borderOff: "Dezactivat",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Antet",

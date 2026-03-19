@@ -981,6 +981,12 @@ const ko: Dictionary = {
     border: "셀 테두리",
     borderOn: "켜기",
     borderOff: "끄기",
+    changeFile: "파일 변경",
+    pageOf: "페이지",
+    sheets: "장",
+    fileMode: "파일 배치",
+    fileModeNewSheet: "파일별 새 용지",
+    fileModeMerge: "연속 배치",
   },
   headerFooterTool: {
     headerLabel: "머리글",

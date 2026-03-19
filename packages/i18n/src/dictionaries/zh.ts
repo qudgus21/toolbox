@@ -981,6 +981,12 @@ const zh: Dictionary = {
     border: "单元格边框",
     borderOn: "开启",
     borderOff: "关闭",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "页眉",

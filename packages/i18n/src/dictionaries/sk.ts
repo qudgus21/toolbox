@@ -981,6 +981,12 @@ const sk: Dictionary = {
     border: "Orámovanie bunky",
     borderOn: "Zapnuté",
     borderOff: "Vypnuté",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Hlavička",

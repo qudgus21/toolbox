@@ -981,6 +981,12 @@ const lt: Dictionary = {
     border: "Langelio kraštinė",
     borderOn: "Įjungta",
     borderOff: "Išjungta",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Antraštė",

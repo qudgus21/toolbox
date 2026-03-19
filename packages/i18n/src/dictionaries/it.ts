@@ -981,6 +981,12 @@ const it: Dictionary = {
     border: "Bordo cella",
     borderOn: "Attivo",
     borderOff: "Disattivo",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Intestazione",

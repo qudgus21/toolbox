@@ -981,6 +981,12 @@ const id: Dictionary = {
     border: "Batas sel",
     borderOn: "Aktif",
     borderOff: "Nonaktif",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Header",

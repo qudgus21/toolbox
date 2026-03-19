@@ -981,6 +981,12 @@ const bg: Dictionary = {
     border: "Рамка на клетка",
     borderOn: "Вкл",
     borderOff: "Изкл",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Горен колонтитул",

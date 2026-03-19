@@ -981,6 +981,12 @@ const te: Dictionary = {
     border: "సెల్ బోర్డర్",
     borderOn: "ఆన్",
     borderOff: "ఆఫ్",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "హెడర్",

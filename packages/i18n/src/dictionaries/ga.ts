@@ -981,6 +981,12 @@ const ga: Dictionary = {
     border: "Imlíne cille",
     borderOn: "Air",
     borderOff: "As",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Ceanntásc",

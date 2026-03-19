@@ -981,6 +981,12 @@ const th: Dictionary = {
     border: "เส้นขอบ",
     borderOn: "เปิด",
     borderOff: "ปิด",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "ส่วนหัว",

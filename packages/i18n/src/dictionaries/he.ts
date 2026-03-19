@@ -981,6 +981,12 @@ const he: Dictionary = {
     border: "גבול תא",
     borderOn: "פעיל",
     borderOff: "כבוי",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "כותרת עליונה",

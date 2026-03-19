@@ -981,6 +981,12 @@ const lv: Dictionary = {
     border: "Šūnas apmale",
     borderOn: "Ieslēgts",
     borderOff: "Izslēgts",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Galvene",

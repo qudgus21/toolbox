@@ -981,6 +981,12 @@ const hu: Dictionary = {
     border: "Cellaszegély",
     borderOn: "Be",
     borderOff: "Ki",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Fejléc",

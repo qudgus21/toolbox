@@ -981,6 +981,12 @@ const el: Dictionary = {
     border: "Περίγραμμα κελιού",
     borderOn: "Ενεργό",
     borderOff: "Ανενεργό",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Κεφαλίδα",

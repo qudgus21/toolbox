@@ -981,6 +981,12 @@ const mt: Dictionary = {
     border: "Bordura taċ-ċella",
     borderOn: "Mixgħul",
     borderOff: "Mitfi",
+    changeFile: "Change File",
+    pageOf: "pages",
+    sheets: "sheets",
+    fileMode: "File layout",
+    fileModeNewSheet: "New sheet per file",
+    fileModeMerge: "Merge continuously",
   },
   headerFooterTool: {
     headerLabel: "Intestatura",
