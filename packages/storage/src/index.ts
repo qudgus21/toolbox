@@ -2,7 +2,7 @@
 
 const STORAGE_PREFIX = "toolbox_";
 
-function getItem<T>(key: string, fallback: T): T {
+export function getItem<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback;
   try {
     const raw = localStorage.getItem(STORAGE_PREFIX + key);
@@ -12,7 +12,7 @@ function getItem<T>(key: string, fallback: T): T {
   }
 }
 
-function setItem<T>(key: string, value: T): void {
+export function setItem<T>(key: string, value: T): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(STORAGE_PREFIX + key, JSON.stringify(value));

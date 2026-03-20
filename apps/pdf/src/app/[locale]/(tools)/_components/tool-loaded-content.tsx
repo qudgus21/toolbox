@@ -47,14 +47,9 @@ import { MultiFileToolbar } from "./multi-file-toolbar";
 import type { ReactNode } from "react";
 import type { ToolPageClientProps, CommonLabels } from "./tool-page-types";
 import type { UseToolStateReturn } from "./use-tool-state";
+import { formatSize } from "@toolbox/utils";
 import { analyzePdf, type FlattenAnalysis } from "@/lib/processors/flatten";
 import type { FlattenLabels } from "./flatten-options";
-
-function formatSize(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
 
 interface ToolLoadedContentProps {
   // From parent props

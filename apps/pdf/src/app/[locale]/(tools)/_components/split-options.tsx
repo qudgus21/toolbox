@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { cn } from "@toolbox/utils";
+import { cn, formatSize } from "@toolbox/utils";
 import { Plus, X, AlertTriangle } from "lucide-react";
 
 type SplitMode = "range" | "extract" | "size";
@@ -43,12 +43,6 @@ interface SplitOptionsProps {
   onRegisterSetRanges?: (setter: (ranges: SplitRange[]) => void) => void;
   onRegisterValidate?: (validator: () => boolean) => void;
   onRegisterSetExtractPages?: (setter: (pages: number[]) => void) => void;
-}
-
-function formatSize(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 function parsePageInput(input: string, maxPage: number): number[] {

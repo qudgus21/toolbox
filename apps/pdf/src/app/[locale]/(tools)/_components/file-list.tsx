@@ -16,7 +16,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { useState, useRef, useMemo, useEffect, type CSSProperties } from "react";
-import { cn } from "@toolbox/utils";
+import { cn, formatSize } from "@toolbox/utils";
 import { X, RotateCw, Lock } from "lucide-react";
 import { PdfThumbnail } from "./pdf-thumbnail";
 
@@ -188,12 +188,6 @@ interface FileListProps {
   onRotate?: (fileKey: string) => void;
   onCardClick?: (file: File) => void;
   className?: string;
-}
-
-function formatSize(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 export function fileId(file: File) {

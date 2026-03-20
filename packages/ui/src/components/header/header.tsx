@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@toolbox/utils";
-import { Container } from "../container";
 
 export interface HeaderProps {
   logo?: React.ReactNode;

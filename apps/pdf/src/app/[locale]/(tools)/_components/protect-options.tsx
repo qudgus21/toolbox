@@ -112,6 +112,7 @@ export function ProtectOptions({ onChange, labels }: ProtectOptionsProps) {
       _valid: pwValid,
     });
   }, [
+    onChange,
     userPassword,
     confirmPassword,
     printing,

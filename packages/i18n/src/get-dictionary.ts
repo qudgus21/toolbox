@@ -44,6 +44,8 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   bn: () => import("./dictionaries/bn").then((m) => m.default),
   pa: () => import("./dictionaries/pa").then((m) => m.default),
   te: () => import("./dictionaries/te").then((m) => m.default),
+  ms: () => import("./dictionaries/ms").then((m) => m.default),
+  km: () => import("./dictionaries/km").then((m) => m.default),
 };
 
 export async function getDictionary(locale: Locale): Promise<Dictionary> {

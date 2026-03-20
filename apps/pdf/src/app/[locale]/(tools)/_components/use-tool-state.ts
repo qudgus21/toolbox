@@ -378,7 +378,7 @@ export function useToolState({
       }
     };
     input.click();
-  }, [acceptedTypes, reset, addFiles, isDeletePages, isExtractPages, isOrganizePages]);
+  }, [acceptedTypes, reset, addFiles, isDeletePages, isExtractPages, isOrganizePages, isCrop]);
 
   const handleAddMore = useCallback(() => {
     const input = document.createElement("input");

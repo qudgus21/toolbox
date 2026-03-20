@@ -155,7 +155,7 @@ export function ToolPageClient({
             onClick={() => handleToggleFavorite(labels.favoriteAdded, labels.favoriteRemoved)}
             onMouseEnter={handleFavHintEnter}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-background-muted transition-colors cursor-pointer"
-            aria-label="Toggle favorite"
+            aria-label={fav ? labels.favoriteRemoved : labels.favoriteAdded}
           >
             <Star
               className={cn(

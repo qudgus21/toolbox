@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { ToolState, ProcessingResult } from "./types";
 import { getProcessor } from "./processor-registry";
 
@@ -17,6 +17,16 @@ const INITIAL_STATE: ToolState = {
 export function useToolProcessor(slug: string) {
   const [state, setState] = useState<ToolState>(INITIAL_STATE);
   const resultUrlRef = useRef<string | null>(null);
+
+  // 언마운트 시 Object URL 해제 (메모리 누수 방지)
+  useEffect(() => {
+    return () => {
+      if (resultUrlRef.current) {
+        URL.revokeObjectURL(resultUrlRef.current);
+        resultUrlRef.current = null;
+      }
+    };
+  }, []);
 
   const addFiles = useCallback((newFiles: File[]) => {
     setState((prev) => ({

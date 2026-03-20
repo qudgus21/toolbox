@@ -13,6 +13,8 @@ const ms: Dictionary = {
     categorySecurity: "Keselamatan",
     searchPlaceholder: "Cari alat...",
     noResults: "Tiada alat ditemui.",
+    recentTools: "Terkini",
+    favorites: "Kegemaran",
     favDragHint: "Seret untuk susun semula",
     favHint: "Tambah ke kegemaran",
   },
@@ -90,11 +92,7 @@ const ms: Dictionary = {
   },
   footer: {
     tools: "Alat",
-    company: "Syarikat",
     legal: "Undang-undang",
-    about: "Tentang Kami",
-    contact: "Hubungi",
-    blog: "Blog",
     privacy: "Dasar Privasi",
     terms: "Terma Perkhidmatan",
     copyright: "ToolBox. All rights reserved.",
@@ -117,6 +115,8 @@ const ms: Dictionary = {
     tryOtherTools: "Try other tools",
     privacyBadge: "Fail diproses dalam pelayar anda dan tidak pernah dimuat naik ke pelayan",
     encryptedFile: "Fail yang disulitkan",
+    clickToSelectPages: "Klik untuk memilih halaman",
+    dragToReorder: "Seret untuk susun semula",
     favoriteAdded: "Ditambah ke kegemaran",
     favoriteRemoved: "Dialih keluar dari kegemaran",
     comingSoon: "Coming Soon",
@@ -125,6 +125,85 @@ const ms: Dictionary = {
     siteTitle: "ToolBox PDF - Alat PDF Percuma",
     siteDescription: "Gabung, pisah, mampat dan tukar fail PDF dalam talian secara percuma.",
     toolTitleSuffix: "- ToolBox PDF",
+  },
+  cookie: {
+    message: "Kami menggunakan kuki untuk meningkatkan pengalaman anda.",
+    accept: "Terima",
+    decline: "Tolak",
+  },
+  privacy: {
+    title: "Dasar Privasi",
+    lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
+    intro: "Di ToolBox PDF, privasi anda penting. Dasar ini menerangkan maklumat yang kami kumpul apabila anda menggunakan perkhidmatan kami dan cara kami mengendalikannya.",
+    sections: [
+      {
+        heading: "1. Maklumat yang Kami Kumpul",
+        content: "ToolBox PDF tidak memerlukan pendaftaran. Kami tidak mengumpul maklumat peribadi. Walau bagaimanapun, kami mungkin mengumpul data tanpa pengenalan secara automatik untuk meningkatkan perkhidmatan:\n\n• Jenis dan versi pelayar\n• Sistem pengendalian\n• Halaman yang dilawati dan masa dihabiskan\n• Kuki dan teknologi serupa untuk corak penggunaan",
+      },
+      {
+        heading: "2. Pengendalian Fail",
+        content: "Fail yang anda muat naik diproses di pelayan kami dan dipadam secara automatik dalam masa 2 jam. Kami tidak membaca, menyimpan atau berkongsi kandungan fail anda dengan sesiapa.",
+      },
+      {
+        heading: "3. Kuki",
+        content: "Kami menggunakan kuki untuk mengingati pilihan anda seperti tema (mod gelap/cerah) dan pilihan bahasa. Rangkaian iklan (cth. Google AdSense) juga mungkin menggunakan kuki untuk menyajikan iklan yang diperibadikan.",
+      },
+      {
+        heading: "4. Perkhidmatan Pihak Ketiga",
+        content: "Kami mungkin menggunakan perkhidmatan pihak ketiga berikut:\n\n• Google Analytics – untuk analisis trafik\n• Google AdSense – untuk menyajikan iklan\n\nSila rujuk dasar privasi setiap perkhidmatan untuk butiran lanjut.",
+      },
+      {
+        heading: "5. Hak Anda",
+        content: "Anda boleh menyahdayakan atau memadam kuki melalui tetapan pelayar anda pada bila-bila masa. Harap maklum bahawa sesetengah ciri mungkin tidak berfungsi dengan baik tanpa kuki.",
+      },
+      {
+        heading: "6. Perubahan pada Dasar Ini",
+        content: "Kami mungkin mengemaskini dasar ini apabila undang-undang berubah atau perkhidmatan kami berkembang. Sebarang perubahan akan disiarkan di halaman ini.",
+      },
+      {
+        heading: "7. Hubungi Kami",
+        content: "Untuk soalan berkaitan privasi, hubungi kami di support@toolbox-pdf.com.",
+      },
+    ],
+  },
+  terms: {
+    title: "Terma Perkhidmatan",
+    lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
+    intro: "Terima kasih kerana menggunakan ToolBox PDF. Dengan mengakses atau menggunakan perkhidmatan kami, anda bersetuju dengan terma berikut.",
+    sections: [
+      {
+        heading: "1. Tentang Perkhidmatan",
+        content: "ToolBox PDF ialah perkhidmatan dalam talian percuma yang membolehkan anda menggabung, memisah, menukar, menyunting dan memampatkan fail PDF secara langsung dalam pelayar anda.",
+      },
+      {
+        heading: "2. Penggunaan yang Diterima",
+        content: "• Anda hanya boleh menggunakan perkhidmatan untuk tujuan yang sah.\n• Jangan memproses fail yang melanggar hak cipta atau harta intelek.\n• Jangan menyalahgunakan perkhidmatan atau memberi beban berlebihan pada pelayan kami.\n• Akses automatik (bot, pengikis, dsb.) tidak dibenarkan.",
+      },
+      {
+        heading: "3. Pengendalian Fail",
+        content: "Fail yang dimuat naik digunakan semata-mata untuk menjalankan operasi yang diminta. Ia dipadam secara automatik daripada pelayan kami dalam masa 2 jam. Kami tidak menganalisis atau menyimpan fail anda.",
+      },
+      {
+        heading: "4. Penafian",
+        content: "Perkhidmatan ini disediakan \"seadanya.\" Kami tidak memberi jaminan mengenai ketepatan penukaran, ketersediaan tanpa gangguan, atau perlindungan terhadap kehilangan data. Sentiasa simpan salinan sandaran fail penting sebelum memproses.",
+      },
+      {
+        heading: "5. Harta Intelek",
+        content: "Semua kandungan di laman ini — termasuk reka bentuk, logo dan kod — adalah milik ToolBox. Anda mengekalkan hak penuh ke atas sebarang fail yang anda muat naik. Kami tidak menuntut pemilikan ke atas kandungan anda.",
+      },
+      {
+        heading: "6. Perubahan Perkhidmatan",
+        content: "Kami berhak untuk mengubah atau menghentikan ciri pada bila-bila masa tanpa notis terlebih dahulu.",
+      },
+      {
+        heading: "7. Kemaskini Terma Ini",
+        content: "Terma ini mungkin disemak semula mengikut keperluan. Perubahan akan disiarkan di halaman ini. Penggunaan berterusan perkhidmatan selepas perubahan bermaksud penerimaan terma yang dikemaskini.",
+      },
+      {
+        heading: "8. Hubungi Kami",
+        content: "Untuk soalan mengenai terma ini, hubungi kami di support@toolbox-pdf.com.",
+      },
+    ],
   },
   splitTool: {
     tabRange: "Pisah mengikut julat",
@@ -162,6 +241,11 @@ const ms: Dictionary = {
     originalSize: "Original size",
     compressedSize: "Compressed size",
     reduction: "Reduction",
+    modeImage: "Pemampatan imej",
+    modeImageDesc: "Mampatkan semula imej sambil mengekalkan teks, fon dan pautan",
+    modeRasterize: "Penukaran halaman penuh",
+    modeRasterizeDesc: "Tukar setiap halaman kepada imej untuk pemampatan maksimum",
+    rasterizeWarning: "Mod ini membuang pemilihan teks, pautan dan penanda buku. Sesuai untuk cetakan atau pengarkiban.",
   },
   deletePagesTool: {
     dropFile: "Pilih fail PDF",

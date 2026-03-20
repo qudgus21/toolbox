@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@toolbox/utils";
+import { cn, formatSize } from "@toolbox/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@toolbox/ui";
 import type { ProcessingResult } from "@/lib/types";
@@ -13,13 +13,8 @@ interface ResultCardProps {
   onReset: () => void;
   downloadLabel?: string;
   resetLabel?: string;
+  pagesLabel?: string;
   className?: string;
-}
-
-function formatSize(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 export function ResultCard({
@@ -28,6 +23,7 @@ export function ResultCard({
   onReset,
   downloadLabel = "Download",
   resetLabel = "Start over",
+  pagesLabel = "pages",
   className,
 }: ResultCardProps) {
   const [isEditing, setIsEditing] = useState(false);
@@ -88,7 +84,7 @@ export function ResultCard({
       {/* 파일 정보 */}
       <p className="mt-1 text-sm text-foreground-muted">
         {formatSize(result.size)}
-        {result.pageCount != null && ` · ${result.pageCount} pages`}
+        {result.pageCount != null && ` · ${result.pageCount} ${pagesLabel}`}
       </p>
 
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

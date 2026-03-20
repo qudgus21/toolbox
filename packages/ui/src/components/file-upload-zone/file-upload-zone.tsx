@@ -9,6 +9,7 @@ export interface FileUploadZoneProps {
   multiple?: boolean;
   maxSizeMB?: number;
   onFiles?: (files: File[]) => void;
+  onReject?: (files: File[]) => void;
   className?: string;
   title?: string;
   description?: string;
@@ -21,6 +22,7 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
       multiple = true,
       maxSizeMB = 100,
       onFiles,
+      onReject,
       className,
       title = "Drop files here",
       description = "or click to browse",
@@ -33,12 +35,16 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
     const handleFiles = useCallback(
       (fileList: FileList | null) => {
         if (!fileList) return;
-        const files = Array.from(fileList).filter(
-          (f) => f.size <= maxSizeMB * 1024 * 1024,
+        const maxBytes = maxSizeMB * 1024 * 1024;
+        const accepted: File[] = [];
+        const rejected: File[] = [];
+        Array.from(fileList).forEach((f) =>
+          f.size <= maxBytes ? accepted.push(f) : rejected.push(f),
         );
-        onFiles?.(files);
+        if (rejected.length > 0) onReject?.(rejected);
+        onFiles?.(accepted);
       },
-      [maxSizeMB, onFiles],
+      [maxSizeMB, onFiles, onReject],
     );
 
     const handleDragOver = useCallback((e: DragEvent) => {
@@ -73,6 +79,7 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
         ref={ref}
         role="button"
         tabIndex={0}
+        aria-label={title}
         onClick={() => inputRef.current?.click()}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") inputRef.current?.click();

@@ -3,7 +3,7 @@ export const locales = [
   "de", "ko", "it", "tr", "vi", "th", "pl", "nl", "uk", "ro",
   "el", "cs", "sv", "hu", "he", "da", "fi", "no", "bg", "hr",
   "sk", "sl", "lt", "lv", "et", "ga", "is", "bs", "mt", "id",
-  "mr", "pa", "te",
+  "ms", "mr", "pa", "te", "km",
 ] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ko";

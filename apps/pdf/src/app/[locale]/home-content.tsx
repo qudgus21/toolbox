@@ -306,7 +306,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               ? "bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-600 opacity-100"
               : "bg-background/80 backdrop-blur-sm border border-transparent opacity-0 group-hover/fav:opacity-100 hover:border-amber-300 dark:hover:border-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/60",
           )}
-          aria-label="Toggle favorite"
+          aria-label={isFav ? dict.common.favoriteRemoved : dict.common.favoriteAdded}
         >
           <Star
             className={cn(
@@ -360,7 +360,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               ? "opacity-100"
               : "opacity-0 group-hover/fav:opacity-100",
           )}
-          aria-label="Toggle favorite"
+          aria-label={isFav ? dict.common.favoriteRemoved : dict.common.favoriteAdded}
         >
           <Star
             className={cn(
