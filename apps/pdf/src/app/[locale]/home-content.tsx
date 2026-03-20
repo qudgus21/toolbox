@@ -18,6 +18,7 @@ import {
 import {
   SortableContext,
   rectSortingStrategy,
+  verticalListSortingStrategy,
   useSortable,
   arrayMove,
 } from "@dnd-kit/sortable";
@@ -281,7 +282,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     const toolDict = dict.tools[tool.slug];
     const isFav = favSlugs?.includes(tool.slug) ?? false;
     return viewMode === "grid" ? (
-      <div className={cn("relative group/fav h-full", tool.comingSoon && "opacity-60 pointer-events-auto")}>
+      <div className={cn("relative group/fav h-full")}>
         <ToolCard
           data-card
           href={`/${locale}/${tool.slug}`}
@@ -291,11 +292,6 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           toolIcon={toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-10 w-auto" />; })() : undefined}
           iconColorClasses={categoryColors[tool.category]}
         />
-        {tool.comingSoon && (
-          <span className="absolute top-2 left-2 z-10 rounded-full bg-zinc-800/80 dark:bg-zinc-200/80 px-2.5 py-0.5 text-[10px] font-bold text-white dark:text-zinc-900 backdrop-blur-sm">
-            {dict.common.comingSoon}
-          </span>
-        )}
         <button
           type="button"
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}
@@ -332,7 +328,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         </button>
       </div>
     ) : (
-      <div className={cn("relative group/fav", tool.comingSoon && "opacity-60")}>
+      <div className={cn("relative group/fav")}>
         <a
           href={`/${locale}/${tool.slug}`}
           className="group flex items-center gap-4 rounded-lg border border-border/60 bg-background-elevated px-4 py-3 shadow-sm transition-colors hover:border-accent/50 hover:shadow-md"
@@ -341,11 +337,6 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           <div className="min-w-0 flex-1">
             <h3 className="text-sm font-semibold text-foreground">
               {toolDict.title}
-              {tool.comingSoon && (
-                <span className="ml-2 inline-block rounded-full bg-zinc-800/80 dark:bg-zinc-200/80 px-2 py-px text-[10px] font-bold text-white dark:text-zinc-900 align-middle">
-                  {dict.common.comingSoon}
-                </span>
-              )}
             </h3>
             <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
           </div>
@@ -487,7 +478,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               onDragStart={handleFavDragStart}
               onDragEnd={handleFavDragEnd}
             >
-              <SortableContext items={favSlugs ?? []} strategy={rectSortingStrategy}>
+              <SortableContext items={favSlugs ?? []} strategy={viewMode === "list" ? verticalListSortingStrategy : rectSortingStrategy}>
                 <div
                   ref={favGridRef}
                   className={
