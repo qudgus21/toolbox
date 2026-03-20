@@ -95,7 +95,7 @@ const de: Dictionary = {
     legal: "Rechtliches",
     privacy: "Datenschutzerkl\u00e4rung",
     terms: "Nutzungsbedingungen",
-    copyright: "ToolBox. Alle Rechte vorbehalten.",
+    copyright: "ToolPop. Alle Rechte vorbehalten.",
   },
   common: {
     backToAll: "Zur\u00fcck zu allen Werkzeugen",
@@ -122,9 +122,9 @@ const de: Dictionary = {
     comingSoon: "In Vorbereitung",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Kostenlose PDF-Werkzeuge",
+    siteTitle: "ToolPop PDF - Kostenlose PDF-Werkzeuge",
     siteDescription: "PDF-Dateien online kostenlos zusammenf\u00fchren, teilen, komprimieren und konvertieren.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern.",
@@ -134,11 +134,11 @@ const de: Dictionary = {
   privacy: {
     title: "Datenschutzerkl\u00e4rung",
     lastUpdated: "Letzte Aktualisierung: 1. M\u00e4rz 2026",
-    intro: "Bei ToolBox PDF nehmen wir den Schutz Ihrer Daten ernst. Diese Erkl\u00e4rung erl\u00e4utert, welche Informationen wir bei der Nutzung unseres Dienstes erheben und wie wir damit umgehen.",
+    intro: "Bei ToolPop PDF nehmen wir den Schutz Ihrer Daten ernst. Diese Erkl\u00e4rung erl\u00e4utert, welche Informationen wir bei der Nutzung unseres Dienstes erheben und wie wir damit umgehen.",
     sections: [
       {
         heading: "1. Erhobene Daten",
-        content: "F\u00fcr die Nutzung von ToolBox PDF ist keine Registrierung erforderlich. Wir erheben keine personenbezogenen Daten. Zur Verbesserung unseres Angebots k\u00f6nnen jedoch automatisch folgende anonyme Daten erfasst werden:\n\n\u2022 Browsertyp und -version\n\u2022 Betriebssystem\n\u2022 Besuchte Seiten und Verweildauer\n\u2022 Cookies zur Analyse von Nutzungsmustern",
+        content: "F\u00fcr die Nutzung von ToolPop PDF ist keine Registrierung erforderlich. Wir erheben keine personenbezogenen Daten. Zur Verbesserung unseres Angebots k\u00f6nnen jedoch automatisch folgende anonyme Daten erfasst werden:\n\n\u2022 Browsertyp und -version\n\u2022 Betriebssystem\n\u2022 Besuchte Seiten und Verweildauer\n\u2022 Cookies zur Analyse von Nutzungsmustern",
       },
       {
         heading: "2. Umgang mit Dateien",
@@ -169,11 +169,11 @@ const de: Dictionary = {
   terms: {
     title: "Nutzungsbedingungen",
     lastUpdated: "Letzte Aktualisierung: 1. M\u00e4rz 2026",
-    intro: "Vielen Dank, dass Sie ToolBox PDF nutzen. Durch den Zugriff auf unseren Dienst oder dessen Nutzung erkl\u00e4ren Sie sich mit den folgenden Bedingungen einverstanden.",
+    intro: "Vielen Dank, dass Sie ToolPop PDF nutzen. Durch den Zugriff auf unseren Dienst oder dessen Nutzung erkl\u00e4ren Sie sich mit den folgenden Bedingungen einverstanden.",
     sections: [
       {
         heading: "1. \u00dcber den Dienst",
-        content: "ToolBox PDF ist ein kostenloser Online-Dienst, mit dem Sie PDF-Dateien direkt im Browser zusammenf\u00fchren, teilen, konvertieren, bearbeiten und komprimieren k\u00f6nnen.",
+        content: "ToolPop PDF ist ein kostenloser Online-Dienst, mit dem Sie PDF-Dateien direkt im Browser zusammenf\u00fchren, teilen, konvertieren, bearbeiten und komprimieren k\u00f6nnen.",
       },
       {
         heading: "2. Zul\u00e4ssige Nutzung",
@@ -189,7 +189,7 @@ const de: Dictionary = {
       },
       {
         heading: "5. Geistiges Eigentum",
-        content: "Alle Inhalte dieser Website \u2014 einschlie\u00dflich Design, Logos und Code \u2014 sind Eigentum von ToolBox. Ihre hochgeladenen Dateien bleiben Ihr Eigentum. Wir erheben keinerlei Anspr\u00fcche auf Ihre Inhalte.",
+        content: "Alle Inhalte dieser Website \u2014 einschlie\u00dflich Design, Logos und Code \u2014 sind Eigentum von ToolPop. Ihre hochgeladenen Dateien bleiben Ihr Eigentum. Wir erheben keinerlei Anspr\u00fcche auf Ihre Inhalte.",
       },
       {
         heading: "6. \u00c4nderungen am Dienst",

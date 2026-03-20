@@ -95,7 +95,7 @@ const fr: Dictionary = {
     legal: "Mentions légales",
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Retour à tous les outils",
@@ -122,9 +122,9 @@ const fr: Dictionary = {
     comingSoon: "Bient^ot disponible",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Outils PDF gratuits",
+    siteTitle: "ToolPop PDF - Outils PDF gratuits",
     siteDescription: "Fusionnez, divisez, compressez et convertissez des fichiers PDF en ligne gratuitement.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Ce site utilise des cookies pour améliorer votre expérience.",
@@ -134,11 +134,11 @@ const fr: Dictionary = {
   privacy: {
     title: "Politique de confidentialit\u00e9",
     lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
-    intro: "Chez ToolBox PDF, la protection de vos donn\u00e9es nous tient \u00e0 c\u0153ur. Cette politique d\u00e9taille les informations que nous collectons lorsque vous utilisez notre service et la fa\u00e7on dont nous les traitons.",
+    intro: "Chez ToolPop PDF, la protection de vos donn\u00e9es nous tient \u00e0 c\u0153ur. Cette politique d\u00e9taille les informations que nous collectons lorsque vous utilisez notre service et la fa\u00e7on dont nous les traitons.",
     sections: [
       {
         heading: "1. Informations collect\u00e9es",
-        content: "ToolBox PDF ne n\u00e9cessite aucune inscription. Nous ne collectons aucune donn\u00e9e personnelle. Toutefois, certaines donn\u00e9es anonymes peuvent \u00eatre collect\u00e9es automatiquement pour am\u00e9liorer le service :\n\n\u2022 Type et version du navigateur\n\u2022 Syst\u00e8me d\u2019exploitation\n\u2022 Pages visit\u00e9es et dur\u00e9e de consultation\n\u2022 Cookies pour analyser les habitudes d\u2019utilisation",
+        content: "ToolPop PDF ne n\u00e9cessite aucune inscription. Nous ne collectons aucune donn\u00e9e personnelle. Toutefois, certaines donn\u00e9es anonymes peuvent \u00eatre collect\u00e9es automatiquement pour am\u00e9liorer le service :\n\n\u2022 Type et version du navigateur\n\u2022 Syst\u00e8me d\u2019exploitation\n\u2022 Pages visit\u00e9es et dur\u00e9e de consultation\n\u2022 Cookies pour analyser les habitudes d\u2019utilisation",
       },
       {
         heading: "2. Traitement des fichiers",
@@ -169,11 +169,11 @@ const fr: Dictionary = {
   terms: {
     title: "Conditions d\u2019utilisation",
     lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
-    intro: "Merci d\u2019utiliser ToolBox PDF. En acc\u00e9dant \u00e0 notre service ou en l\u2019utilisant, vous acceptez les conditions suivantes.",
+    intro: "Merci d\u2019utiliser ToolPop PDF. En acc\u00e9dant \u00e0 notre service ou en l\u2019utilisant, vous acceptez les conditions suivantes.",
     sections: [
       {
         heading: "1. \u00c0 propos du service",
-        content: "ToolBox PDF est un service en ligne gratuit qui vous permet de fusionner, diviser, convertir, \u00e9diter et compresser des fichiers PDF directement dans votre navigateur.",
+        content: "ToolPop PDF est un service en ligne gratuit qui vous permet de fusionner, diviser, convertir, \u00e9diter et compresser des fichiers PDF directement dans votre navigateur.",
       },
       {
         heading: "2. Utilisation acceptable",
@@ -189,7 +189,7 @@ const fr: Dictionary = {
       },
       {
         heading: "5. Propri\u00e9t\u00e9 intellectuelle",
-        content: "L\u2019ensemble du contenu du site \u2014 design, logos et code \u2014 est la propri\u00e9t\u00e9 de ToolBox. Les fichiers que vous envoyez restent les v\u00f4tres. Nous ne revendiquons aucun droit sur votre contenu.",
+        content: "L\u2019ensemble du contenu du site \u2014 design, logos et code \u2014 est la propri\u00e9t\u00e9 de ToolPop. Les fichiers que vous envoyez restent les v\u00f4tres. Nous ne revendiquons aucun droit sur votre contenu.",
       },
       {
         heading: "6. \u00c9volution du service",

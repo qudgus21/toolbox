@@ -19,7 +19,7 @@ export default function RootNotFound() {
             Page not found
           </p>
           <a
-            href="/"
+            href="/pdf"
             style={{
               display: "inline-flex",
               alignItems: "center",

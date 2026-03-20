@@ -95,7 +95,7 @@ const hr: Dictionary = {
     legal: "Pravno",
     privacy: "Politika privatnosti",
     terms: "Uvjeti korištenja",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Natrag na sve alate",
@@ -122,9 +122,9 @@ const hr: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Besplatni PDF alati",
+    siteTitle: "ToolPop PDF - Besplatni PDF alati",
     siteDescription: "Spajajte, dijelite, komprimirajte i pretvarajte PDF datoteke na mreži besplatno.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Koristimo kolačiće za poboljšanje vašeg iskustva.",
@@ -134,11 +134,11 @@ const hr: Dictionary = {
   privacy: {
     title: "Politika privatnosti",
     lastUpdated: "Posljednje ažuriranje: 1. ožujka 2026.",
-    intro: "U ToolBox PDF-u brinemo o vašoj privatnosti. Ova politika objašnjava koje podatke prikupljamo dok koristite našu uslugu i kako s njima postupamo.",
+    intro: "U ToolPop PDF-u brinemo o vašoj privatnosti. Ova politika objašnjava koje podatke prikupljamo dok koristite našu uslugu i kako s njima postupamo.",
     sections: [
       {
         heading: "1. Podaci koje prikupljamo",
-        content: "ToolBox PDF ne zahtijeva registraciju. Ne prikupljamo osobne podatke. Međutim, radi poboljšanja usluge možemo automatski prikupljati podatke koji vas ne identificiraju:\n\n• Vrsta i verzija preglednika\n• Operacijski sustav\n• Posjećene stranice i provedeno vrijeme\n• Kolačići i slične tehnologije za praćenje obrazaca korištenja",
+        content: "ToolPop PDF ne zahtijeva registraciju. Ne prikupljamo osobne podatke. Međutim, radi poboljšanja usluge možemo automatski prikupljati podatke koji vas ne identificiraju:\n\n• Vrsta i verzija preglednika\n• Operacijski sustav\n• Posjećene stranice i provedeno vrijeme\n• Kolačići i slične tehnologije za praćenje obrazaca korištenja",
       },
       {
         heading: "2. Postupanje s datotekama",
@@ -169,11 +169,11 @@ const hr: Dictionary = {
   terms: {
     title: "Uvjeti korištenja",
     lastUpdated: "Posljednje ažuriranje: 1. ožujka 2026.",
-    intro: "Hvala što koristite ToolBox PDF. Pristupanjem ili korištenjem naše usluge prihvaćate sljedeće uvjete.",
+    intro: "Hvala što koristite ToolPop PDF. Pristupanjem ili korištenjem naše usluge prihvaćate sljedeće uvjete.",
     sections: [
       {
         heading: "1. O usluzi",
-        content: "ToolBox PDF je besplatna mrežna usluga koja vam omogućuje spajanje, dijeljenje, pretvaranje, uređivanje i komprimiranje PDF datoteka izravno u pregledniku.",
+        content: "ToolPop PDF je besplatna mrežna usluga koja vam omogućuje spajanje, dijeljenje, pretvaranje, uređivanje i komprimiranje PDF datoteka izravno u pregledniku.",
       },
       {
         heading: "2. Prihvatljivo korištenje",
@@ -189,7 +189,7 @@ const hr: Dictionary = {
       },
       {
         heading: "5. Intelektualno vlasništvo",
-        content: "Sav sadržaj na ovoj stranici — uključujući dizajn, logotipe i programski kod — vlasništvo je ToolBox-a. Vi zadržavate puna prava nad svim datotekama koje učitate. Ne polažemo nikakvo pravo na vaš sadržaj.",
+        content: "Sav sadržaj na ovoj stranici — uključujući dizajn, logotipe i programski kod — vlasništvo je ToolPop-a. Vi zadržavate puna prava nad svim datotekama koje učitate. Ne polažemo nikakvo pravo na vaš sadržaj.",
       },
       {
         heading: "6. Promjene usluge",

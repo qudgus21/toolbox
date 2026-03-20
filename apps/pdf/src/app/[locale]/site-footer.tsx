@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Dictionary } from "@toolbox/i18n";
 import type { ToolDefinition } from "@/lib/tools";
 import { Container } from "@toolbox/ui";
@@ -34,12 +35,12 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
                 <ul className="space-y-1.5">
                   {catTools.map((tool) => (
                     <li key={tool.slug}>
-                      <a
+                      <Link
                         href={`/${locale}/${tool.slug}`}
                         className="text-xs text-foreground-muted hover:text-foreground transition-colors"
                       >
                         {dict.tools[tool.slug].title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -54,14 +55,14 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             </h4>
             <ul className="space-y-1.5">
               <li>
-                <a href={`/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                <Link href={`/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
                   {dict.footer.privacy}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href={`/${locale}/terms`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                <Link href={`/${locale}/terms`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
                   {dict.footer.terms}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

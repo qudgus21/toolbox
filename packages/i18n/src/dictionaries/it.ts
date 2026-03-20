@@ -95,7 +95,7 @@ const it: Dictionary = {
     legal: "Legale",
     privacy: "Informativa sulla Privacy",
     terms: "Termini di Servizio",
-    copyright: "ToolBox. Tutti i diritti riservati.",
+    copyright: "ToolPop. Tutti i diritti riservati.",
   },
   common: {
     backToAll: "Torna a tutti gli strumenti",
@@ -122,9 +122,9 @@ const it: Dictionary = {
     comingSoon: "In arrivo",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Strumenti PDF Gratuiti",
+    siteTitle: "ToolPop PDF - Strumenti PDF Gratuiti",
     siteDescription: "Unisci, dividi, comprimi e converti file PDF online gratuitamente.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Questo sito utilizza i cookie per migliorare la tua esperienza.",
@@ -134,11 +134,11 @@ const it: Dictionary = {
   privacy: {
     title: "Informativa sulla Privacy",
     lastUpdated: "Ultimo aggiornamento: 1 marzo 2026",
-    intro: "Per ToolBox PDF la tua privacy \u00e8 importante. Questa informativa spiega quali dati raccogliamo quando utilizzi il nostro servizio e come li gestiamo.",
+    intro: "Per ToolPop PDF la tua privacy \u00e8 importante. Questa informativa spiega quali dati raccogliamo quando utilizzi il nostro servizio e come li gestiamo.",
     sections: [
       {
         heading: "1. Dati raccolti",
-        content: "ToolBox PDF non richiede registrazione. Non raccogliamo dati personali. Tuttavia, per migliorare il servizio, potremmo raccogliere automaticamente alcune informazioni anonime:\n\n\u2022 Tipo e versione del browser\n\u2022 Sistema operativo\n\u2022 Pagine visitate e tempo di permanenza\n\u2022 Cookie per analizzare le modalit\u00e0 di utilizzo",
+        content: "ToolPop PDF non richiede registrazione. Non raccogliamo dati personali. Tuttavia, per migliorare il servizio, potremmo raccogliere automaticamente alcune informazioni anonime:\n\n\u2022 Tipo e versione del browser\n\u2022 Sistema operativo\n\u2022 Pagine visitate e tempo di permanenza\n\u2022 Cookie per analizzare le modalit\u00e0 di utilizzo",
       },
       {
         heading: "2. Gestione dei file",
@@ -169,11 +169,11 @@ const it: Dictionary = {
   terms: {
     title: "Termini di Servizio",
     lastUpdated: "Ultimo aggiornamento: 1 marzo 2026",
-    intro: "Grazie per aver scelto ToolBox PDF. Accedendo al nostro servizio o utilizzandolo, accetti i seguenti termini.",
+    intro: "Grazie per aver scelto ToolPop PDF. Accedendo al nostro servizio o utilizzandolo, accetti i seguenti termini.",
     sections: [
       {
         heading: "1. Il servizio",
-        content: "ToolBox PDF \u00e8 un servizio online gratuito che ti permette di unire, dividere, convertire, modificare e comprimere file PDF direttamente nel browser.",
+        content: "ToolPop PDF \u00e8 un servizio online gratuito che ti permette di unire, dividere, convertire, modificare e comprimere file PDF direttamente nel browser.",
       },
       {
         heading: "2. Uso consentito",
@@ -189,7 +189,7 @@ const it: Dictionary = {
       },
       {
         heading: "5. Propriet\u00e0 intellettuale",
-        content: "Tutti i contenuti del sito \u2014 design, loghi e codice \u2014 sono di propriet\u00e0 di ToolBox. I file che carichi restano di tua propriet\u00e0. Non rivendichiamo alcun diritto sui tuoi contenuti.",
+        content: "Tutti i contenuti del sito \u2014 design, loghi e codice \u2014 sono di propriet\u00e0 di ToolPop. I file che carichi restano di tua propriet\u00e0. Non rivendichiamo alcun diritto sui tuoi contenuti.",
       },
       {
         heading: "6. Modifiche al servizio",

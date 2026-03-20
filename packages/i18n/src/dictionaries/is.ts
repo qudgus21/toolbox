@@ -95,7 +95,7 @@ const is: Dictionary = {
     legal: "Lagalegar upplýsingar",
     privacy: "Persónuverndarstefna",
     terms: "Þjónustuskilmálar",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Til baka í öll verkfæri",
@@ -122,9 +122,9 @@ const is: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Ókeypis PDF verkfæri",
+    siteTitle: "ToolPop PDF - Ókeypis PDF verkfæri",
     siteDescription: "Sameina, skipta, þjappa og umbreyta PDF skrám á netinu ókeypis.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Við notum vafrakökur til að bæta upplifun þína.",
@@ -134,11 +134,11 @@ const is: Dictionary = {
   privacy: {
     title: "Persónuverndarstefna",
     lastUpdated: "Síðast uppfært: 1. mars 2026",
-    intro: "Hjá ToolBox PDF er persónuvernd þín okkur mikilvæg. Þessi stefna útskýrir hvaða upplýsingar við söfnum þegar þú notar þjónustu okkar og hvernig við meðhöndlum þær.",
+    intro: "Hjá ToolPop PDF er persónuvernd þín okkur mikilvæg. Þessi stefna útskýrir hvaða upplýsingar við söfnum þegar þú notar þjónustu okkar og hvernig við meðhöndlum þær.",
     sections: [
       {
         heading: "1. Upplýsingar sem við söfnum",
-        content: "ToolBox PDF krefst ekki skráningar. Við söfnum ekki persónuupplýsingum. Hins vegar getum við sjálfkrafa safnað ópersónugreinanlegum gögnum til að bæta þjónustuna:\n\n• Gerð og útgáfa vafrans\n• Stýrikerfi\n• Heimsóttar síður og tími á þeim\n• Vefkökur og svipaðar tækni til að greina notkunarmynstur",
+        content: "ToolPop PDF krefst ekki skráningar. Við söfnum ekki persónuupplýsingum. Hins vegar getum við sjálfkrafa safnað ópersónugreinanlegum gögnum til að bæta þjónustuna:\n\n• Gerð og útgáfa vafrans\n• Stýrikerfi\n• Heimsóttar síður og tími á þeim\n• Vefkökur og svipaðar tækni til að greina notkunarmynstur",
       },
       {
         heading: "2. Meðhöndlun skráa",
@@ -169,11 +169,11 @@ const is: Dictionary = {
   terms: {
     title: "Þjónustuskilmálar",
     lastUpdated: "Síðast uppfært: 1. mars 2026",
-    intro: "Takk fyrir að nota ToolBox PDF. Með því að opna eða nota þjónustu okkar samþykkir þú eftirfarandi skilmála.",
+    intro: "Takk fyrir að nota ToolPop PDF. Með því að opna eða nota þjónustu okkar samþykkir þú eftirfarandi skilmála.",
     sections: [
       {
         heading: "1. Um þjónustuna",
-        content: "ToolBox PDF er ókeypis netþjónusta sem gerir þér kleift að sameina, skipta, umbreyta, breyta og þjappa PDF skrár beint í vafranum þínum.",
+        content: "ToolPop PDF er ókeypis netþjónusta sem gerir þér kleift að sameina, skipta, umbreyta, breyta og þjappa PDF skrár beint í vafranum þínum.",
       },
       {
         heading: "2. Leyfileg notkun",
@@ -189,7 +189,7 @@ const is: Dictionary = {
       },
       {
         heading: "5. Hugverkaréttur",
-        content: "Allt efni á þessari vefsíðu -- þar á meðal hönnun, lógó og kóði -- tilheyrir ToolBox. Þú heldur öllum réttindum yfir skrám sem þú hleður upp. Við gerum ekki tilkall til eignarréttar á efninu þínu.",
+        content: "Allt efni á þessari vefsíðu -- þar á meðal hönnun, lógó og kóði -- tilheyrir ToolPop. Þú heldur öllum réttindum yfir skrám sem þú hleður upp. Við gerum ekki tilkall til eignarréttar á efninu þínu.",
       },
       {
         heading: "6. Breytingar á þjónustu",

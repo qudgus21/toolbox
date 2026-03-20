@@ -23,7 +23,7 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
         <div className="shrink-0">
           {logo ?? (
             <a href="/" className="text-lg font-bold text-foreground">
-              ToolBox
+              ToolPop
             </a>
           )}
         </div>

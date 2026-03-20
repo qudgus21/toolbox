@@ -95,7 +95,7 @@ const pl: Dictionary = {
     legal: "Prawne",
     privacy: "Polityka prywatności",
     terms: "Regulamin",
-    copyright: "ToolBox. Wszelkie prawa zastrzeżone.",
+    copyright: "ToolPop. Wszelkie prawa zastrzeżone.",
   },
   common: {
     backToAll: "Powrót do wszystkich narzędzi",
@@ -122,9 +122,9 @@ const pl: Dictionary = {
     comingSoon: "Wkr'otce",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Darmowe narzędzia PDF",
+    siteTitle: "ToolPop PDF - Darmowe narzędzia PDF",
     siteDescription: "Łącz, dziel, kompresuj i konwertuj pliki PDF online za darmo.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Używamy plików cookie, aby poprawić Twoje doświadczenia.",
@@ -134,11 +134,11 @@ const pl: Dictionary = {
   privacy: {
     title: "Polityka prywatności",
     lastUpdated: "Ostatnia aktualizacja: 1 marca 2026",
-    intro: "W ToolBox PDF szanujemy Twoją prywatność. Niniejsza polityka wyjaśnia, jakie informacje zbieramy podczas korzystania z naszego serwisu i jak je przetwarzamy.",
+    intro: "W ToolPop PDF szanujemy Twoją prywatność. Niniejsza polityka wyjaśnia, jakie informacje zbieramy podczas korzystania z naszego serwisu i jak je przetwarzamy.",
     sections: [
       {
         heading: "1. Jakie informacje zbieramy",
-        content: "ToolBox PDF nie wymaga rejestracji. Nie zbieramy danych osobowych. Aby jednak ulepszać serwis, możemy automatycznie gromadzić anonimowe dane:\n\n• Typ i wersja przeglądarki\n• System operacyjny\n• Odwiedzone strony i czas spędzony na witrynie\n• Pliki cookie i podobne technologie do analizy sposobu korzystania z serwisu",
+        content: "ToolPop PDF nie wymaga rejestracji. Nie zbieramy danych osobowych. Aby jednak ulepszać serwis, możemy automatycznie gromadzić anonimowe dane:\n\n• Typ i wersja przeglądarki\n• System operacyjny\n• Odwiedzone strony i czas spędzony na witrynie\n• Pliki cookie i podobne technologie do analizy sposobu korzystania z serwisu",
       },
       {
         heading: "2. Obsługa plików",
@@ -169,11 +169,11 @@ const pl: Dictionary = {
   terms: {
     title: "Regulamin",
     lastUpdated: "Ostatnia aktualizacja: 1 marca 2026",
-    intro: "Dziękujemy za korzystanie z ToolBox PDF. Uzyskując dostęp do naszego serwisu lub korzystając z niego, akceptujesz poniższe warunki.",
+    intro: "Dziękujemy za korzystanie z ToolPop PDF. Uzyskując dostęp do naszego serwisu lub korzystając z niego, akceptujesz poniższe warunki.",
     sections: [
       {
         heading: "1. O serwisie",
-        content: "ToolBox PDF to bezpłatny serwis internetowy, który umożliwia łączenie, dzielenie, konwertowanie, edycję i kompresję plików PDF bezpośrednio w przeglądarce.",
+        content: "ToolPop PDF to bezpłatny serwis internetowy, który umożliwia łączenie, dzielenie, konwertowanie, edycję i kompresję plików PDF bezpośrednio w przeglądarce.",
       },
       {
         heading: "2. Zasady korzystania",
@@ -189,7 +189,7 @@ const pl: Dictionary = {
       },
       {
         heading: "5. Własność intelektualna",
-        content: "Wszystkie treści na tej stronie — w tym projekt graficzny, logotypy i kod — należą do ToolBox. Zachowujesz pełne prawa do przesyłanych plików. Nie rościmy sobie żadnych praw do Twoich treści.",
+        content: "Wszystkie treści na tej stronie — w tym projekt graficzny, logotypy i kod — należą do ToolPop. Zachowujesz pełne prawa do przesyłanych plików. Nie rościmy sobie żadnych praw do Twoich treści.",
       },
       {
         heading: "6. Zmiany w serwisie",

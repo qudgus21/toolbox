@@ -95,7 +95,7 @@ const da: Dictionary = {
     legal: "Juridisk",
     privacy: "Privatlivspolitik",
     terms: "Servicevilkår",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Tilbage til alle værktøjer",
@@ -122,9 +122,9 @@ const da: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Gratis PDF-værktøjer",
+    siteTitle: "ToolPop PDF - Gratis PDF-værktøjer",
     siteDescription: "Flet, opdel, komprimer og konverter PDF-filer online gratis.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Vi bruger cookies for at forbedre din oplevelse.",
@@ -134,11 +134,11 @@ const da: Dictionary = {
   privacy: {
     title: "Privatlivspolitik",
     lastUpdated: "Sidst opdateret: 1. marts 2026",
-    intro: "Hos ToolBox PDF tager vi dit privatliv alvorligt. Denne politik forklarer, hvilke oplysninger vi indsamler, når du bruger vores tjeneste, og hvordan vi håndterer dem.",
+    intro: "Hos ToolPop PDF tager vi dit privatliv alvorligt. Denne politik forklarer, hvilke oplysninger vi indsamler, når du bruger vores tjeneste, og hvordan vi håndterer dem.",
     sections: [
       {
         heading: "1. Oplysninger vi indsamler",
-        content: "ToolBox PDF kræver ingen oprettelse af konto. Vi indsamler ikke personlige oplysninger. Vi kan dog automatisk indsamle ikke-identificerbare data for at forbedre tjenesten:\n\n• Browsertype og -version\n• Styresystem\n• Besøgte sider og tidsforbrug\n• Cookies og lignende teknologier til brugsmønstre",
+        content: "ToolPop PDF kræver ingen oprettelse af konto. Vi indsamler ikke personlige oplysninger. Vi kan dog automatisk indsamle ikke-identificerbare data for at forbedre tjenesten:\n\n• Browsertype og -version\n• Styresystem\n• Besøgte sider og tidsforbrug\n• Cookies og lignende teknologier til brugsmønstre",
       },
       {
         heading: "2. Filhåndtering",
@@ -169,11 +169,11 @@ const da: Dictionary = {
   terms: {
     title: "Servicevilkår",
     lastUpdated: "Sidst opdateret: 1. marts 2026",
-    intro: "Tak fordi du bruger ToolBox PDF. Ved at tilgå eller bruge vores tjeneste accepterer du følgende vilkår.",
+    intro: "Tak fordi du bruger ToolPop PDF. Ved at tilgå eller bruge vores tjeneste accepterer du følgende vilkår.",
     sections: [
       {
         heading: "1. Om tjenesten",
-        content: "ToolBox PDF er en gratis onlinetjeneste, der giver dig mulighed for at flette, opdele, konvertere, redigere og komprimere PDF-filer direkte i din browser.",
+        content: "ToolPop PDF er en gratis onlinetjeneste, der giver dig mulighed for at flette, opdele, konvertere, redigere og komprimere PDF-filer direkte i din browser.",
       },
       {
         heading: "2. Acceptabel brug",
@@ -189,7 +189,7 @@ const da: Dictionary = {
       },
       {
         heading: "5. Immaterielle rettigheder",
-        content: "Alt indhold på denne side — herunder design, logoer og kode — tilhører ToolBox. Du bevarer det fulde ejerskab over de filer, du uploader. Vi gør intet krav på dit indhold.",
+        content: "Alt indhold på denne side — herunder design, logoer og kode — tilhører ToolPop. Du bevarer det fulde ejerskab over de filer, du uploader. Vi gør intet krav på dit indhold.",
       },
       {
         heading: "6. Ændringer af tjenesten",

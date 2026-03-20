@@ -95,7 +95,7 @@ const hu: Dictionary = {
     legal: "Jogi információk",
     privacy: "Adatvédelmi irányelvek",
     terms: "Felhasználási feltételek",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Vissza az összes eszközhöz",
@@ -122,9 +122,9 @@ const hu: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Ingyenes PDF eszközök",
+    siteTitle: "ToolPop PDF - Ingyenes PDF eszközök",
     siteDescription: "PDF fájlok egyesítése, felosztása, tömörítése és konvertálása online, ingyenesen.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Sütiket használunk a jobb felhasználói élmény érdekében.",
@@ -134,11 +134,11 @@ const hu: Dictionary = {
   privacy: {
     title: "Adatvédelmi irányelvek",
     lastUpdated: "Utolsó frissítés: 2026. március 1.",
-    intro: "A ToolBox PDF-nél fontosnak tartjuk az adataid védelmét. Ez az irányelv bemutatja, milyen információkat gyűjtünk a szolgáltatás használata során, és hogyan kezeljük azokat.",
+    intro: "A ToolPop PDF-nél fontosnak tartjuk az adataid védelmét. Ez az irányelv bemutatja, milyen információkat gyűjtünk a szolgáltatás használata során, és hogyan kezeljük azokat.",
     sections: [
       {
         heading: "1. Milyen adatokat gyűjtünk",
-        content: "A ToolBox PDF használatához nem szükséges regisztráció. Nem gyűjtünk személyes adatokat. A szolgáltatás fejlesztése érdekében azonban automatikusan gyűjthetünk nem személyazonosításra alkalmas adatokat:\n\n• Böngésző típusa és verziója\n• Operációs rendszer\n• Meglátogatott oldalak és eltöltött idő\n• Sütik és hasonló technológiák a használati szokások elemzéséhez",
+        content: "A ToolPop PDF használatához nem szükséges regisztráció. Nem gyűjtünk személyes adatokat. A szolgáltatás fejlesztése érdekében azonban automatikusan gyűjthetünk nem személyazonosításra alkalmas adatokat:\n\n• Böngésző típusa és verziója\n• Operációs rendszer\n• Meglátogatott oldalak és eltöltött idő\n• Sütik és hasonló technológiák a használati szokások elemzéséhez",
       },
       {
         heading: "2. Fájlkezelés",
@@ -169,11 +169,11 @@ const hu: Dictionary = {
   terms: {
     title: "Felhasználási feltételek",
     lastUpdated: "Utolsó frissítés: 2026. március 1.",
-    intro: "Köszönjük, hogy a ToolBox PDF-et használod. A szolgáltatás elérésével vagy használatával elfogadod az alábbi feltételeket.",
+    intro: "Köszönjük, hogy a ToolPop PDF-et használod. A szolgáltatás elérésével vagy használatával elfogadod az alábbi feltételeket.",
     sections: [
       {
         heading: "1. A szolgáltatásról",
-        content: "A ToolBox PDF egy ingyenes online szolgáltatás, amellyel PDF-fájlokat egyesíthetsz, feloszthatsz, konvertálhatsz, szerkeszthetsz és tömöríthetsz közvetlenül a böngésződben.",
+        content: "A ToolPop PDF egy ingyenes online szolgáltatás, amellyel PDF-fájlokat egyesíthetsz, feloszthatsz, konvertálhatsz, szerkeszthetsz és tömöríthetsz közvetlenül a böngésződben.",
       },
       {
         heading: "2. Elfogadható használat",
@@ -189,7 +189,7 @@ const hu: Dictionary = {
       },
       {
         heading: "5. Szellemi tulajdon",
-        content: "Az oldal teljes tartalma — beleértve a dizájnt, logókat és kódot — a ToolBox tulajdona. A feltöltött fájljaid felett teljes jogot megőrzöd. Semmilyen tulajdonjogot nem formálunk a te tartalmaidra.",
+        content: "Az oldal teljes tartalma — beleértve a dizájnt, logókat és kódot — a ToolPop tulajdona. A feltöltött fájljaid felett teljes jogot megőrzöd. Semmilyen tulajdonjogot nem formálunk a te tartalmaidra.",
       },
       {
         heading: "6. A szolgáltatás módosítása",

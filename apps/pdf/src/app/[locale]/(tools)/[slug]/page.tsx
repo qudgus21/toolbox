@@ -68,7 +68,7 @@ export default async function ToolPage({
             "@type": "SoftwareApplication",
             name: t.title,
             description: t.description,
-            url: `https://pdf.toolbox.co.kr/${locale}/${slug}`,
+            url: `https://toolpop.org/pdf/${locale}/${slug}`,
             applicationCategory: "UtilityApplication",
             operatingSystem: "Any",
             offers: {

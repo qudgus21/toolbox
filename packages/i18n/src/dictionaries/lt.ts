@@ -95,7 +95,7 @@ const lt: Dictionary = {
     legal: "Teisinė informacija",
     privacy: "Privatumo politika",
     terms: "Naudojimo sąlygos",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Grįžti prie visų įrankių",
@@ -122,9 +122,9 @@ const lt: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Nemokami PDF įrankiai",
+    siteTitle: "ToolPop PDF - Nemokami PDF įrankiai",
     siteDescription: "Sujunkite, padalinkite, suspausite ir konvertuokite PDF failus internetu nemokamai.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Naudojame slapukus jūsų patirčiai gerinti.",
@@ -134,11 +134,11 @@ const lt: Dictionary = {
   privacy: {
     title: "Privatumo politika",
     lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
-    intro: "ToolBox PDF vertina jūsų privatumą. Ši politika paaiškina, kokią informaciją renkame, kai naudojatės mūsų paslauga, ir kaip su ja elgiamės.",
+    intro: "ToolPop PDF vertina jūsų privatumą. Ši politika paaiškina, kokią informaciją renkame, kai naudojatės mūsų paslauga, ir kaip su ja elgiamės.",
     sections: [
       {
         heading: "1. Informacija, kurią renkame",
-        content: "ToolBox PDF nereikalauja registracijos. Nerenkame asmens duomenų. Tačiau galime automatiškai rinkti neasmeninius duomenis paslaugos tobulinimui:\n\n• Naršyklės tipas ir versija\n• Operacinė sistema\n• Aplankyti puslapiai ir praleistas laikas\n• Slapukai ir panašios technologijos naudojimo įpročiams stebėti",
+        content: "ToolPop PDF nereikalauja registracijos. Nerenkame asmens duomenų. Tačiau galime automatiškai rinkti neasmeninius duomenis paslaugos tobulinimui:\n\n• Naršyklės tipas ir versija\n• Operacinė sistema\n• Aplankyti puslapiai ir praleistas laikas\n• Slapukai ir panašios technologijos naudojimo įpročiams stebėti",
       },
       {
         heading: "2. Failų tvarkymas",
@@ -169,11 +169,11 @@ const lt: Dictionary = {
   terms: {
     title: "Naudojimo sąlygos",
     lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
-    intro: "Dėkojame, kad naudojatės ToolBox PDF. Naudodamiesi mūsų paslauga, sutinkate su šiomis sąlygomis.",
+    intro: "Dėkojame, kad naudojatės ToolPop PDF. Naudodamiesi mūsų paslauga, sutinkate su šiomis sąlygomis.",
     sections: [
       {
         heading: "1. Apie paslaugą",
-        content: "ToolBox PDF yra nemokama internetinė paslauga, leidžianti sujungti, padalinti, konvertuoti, redaguoti ir suspausti PDF failus tiesiai naršyklėje.",
+        content: "ToolPop PDF yra nemokama internetinė paslauga, leidžianti sujungti, padalinti, konvertuoti, redaguoti ir suspausti PDF failus tiesiai naršyklėje.",
       },
       {
         heading: "2. Leistinas naudojimas",
@@ -189,7 +189,7 @@ const lt: Dictionary = {
       },
       {
         heading: "5. Intelektinė nuosavybė",
-        content: "Visas šios svetainės turinys — įskaitant dizainą, logotipus ir kodą — priklauso ToolBox. Jūs išlaikote visas teises į visus savo įkeltus failus. Mes nepretenzijame į jūsų turinį.",
+        content: "Visas šios svetainės turinys — įskaitant dizainą, logotipus ir kodą — priklauso ToolPop. Jūs išlaikote visas teises į visus savo įkeltus failus. Mes nepretenzijame į jūsų turinį.",
       },
       {
         heading: "6. Paslaugos pakeitimai",

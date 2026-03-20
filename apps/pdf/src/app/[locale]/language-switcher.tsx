@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { ChevronDown, Globe } from "lucide-react";
 
 const languageNames: Record<string, string> = {
@@ -102,7 +103,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
       {open && (
         <div className="absolute right-0 top-full mt-1 z-50 max-h-80 w-52 overflow-y-auto rounded-lg border border-border bg-background shadow-lg">
           {getSortedLocales(locale).map(([code, name]) => (
-            <a
+            <Link
               key={code}
               href={`/${code}`}
               className={`block px-4 py-2 text-sm transition-colors ${
@@ -113,7 +114,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
               onClick={() => setOpen(false)}
             >
               {name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

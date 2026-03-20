@@ -95,7 +95,7 @@ const sv: Dictionary = {
     legal: "Juridiskt",
     privacy: "Integritetspolicy",
     terms: "Användarvillkor",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Tillbaka till alla verktyg",
@@ -122,9 +122,9 @@ const sv: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Gratis PDF-verktyg",
+    siteTitle: "ToolPop PDF - Gratis PDF-verktyg",
     siteDescription: "Sammanfoga, dela, komprimera och konvertera PDF-filer online gratis.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Vi använder cookies för att förbättra din upplevelse.",
@@ -134,11 +134,11 @@ const sv: Dictionary = {
   privacy: {
     title: "Integritetspolicy",
     lastUpdated: "Senast uppdaterad: 1 mars 2026",
-    intro: "På ToolBox PDF värnar vi om din integritet. Den här policyn beskriver vilken information vi samlar in när du använder vår tjänst och hur vi hanterar den.",
+    intro: "På ToolPop PDF värnar vi om din integritet. Den här policyn beskriver vilken information vi samlar in när du använder vår tjänst och hur vi hanterar den.",
     sections: [
       {
         heading: "1. Information vi samlar in",
-        content: "ToolBox PDF kräver ingen registrering. Vi samlar inte in personuppgifter. Däremot kan vi automatiskt samla in icke-identifierande data för att förbättra tjänsten:\n\n• Webbläsartyp och version\n• Operativsystem\n• Besökta sidor och spenderad tid\n• Cookies och liknande tekniker för att analysera användningsmönster",
+        content: "ToolPop PDF kräver ingen registrering. Vi samlar inte in personuppgifter. Däremot kan vi automatiskt samla in icke-identifierande data för att förbättra tjänsten:\n\n• Webbläsartyp och version\n• Operativsystem\n• Besökta sidor och spenderad tid\n• Cookies och liknande tekniker för att analysera användningsmönster",
       },
       {
         heading: "2. Filhantering",
@@ -169,11 +169,11 @@ const sv: Dictionary = {
   terms: {
     title: "Användarvillkor",
     lastUpdated: "Senast uppdaterad: 1 mars 2026",
-    intro: "Tack för att du använder ToolBox PDF. Genom att använda vår tjänst godkänner du följande villkor.",
+    intro: "Tack för att du använder ToolPop PDF. Genom att använda vår tjänst godkänner du följande villkor.",
     sections: [
       {
         heading: "1. Om tjänsten",
-        content: "ToolBox PDF är en gratis onlinetjänst som låter dig sammanfoga, dela, konvertera, redigera och komprimera PDF-filer direkt i webbläsaren.",
+        content: "ToolPop PDF är en gratis onlinetjänst som låter dig sammanfoga, dela, konvertera, redigera och komprimera PDF-filer direkt i webbläsaren.",
       },
       {
         heading: "2. Godtagbar användning",
@@ -189,7 +189,7 @@ const sv: Dictionary = {
       },
       {
         heading: "5. Immateriella rättigheter",
-        content: "Allt innehåll på denna webbplats -- inklusive design, logotyper och kod -- tillhör ToolBox. Du behåller alla rättigheter till de filer du laddar upp. Vi gör inga anspråk på äganderätt till ditt innehåll.",
+        content: "Allt innehåll på denna webbplats -- inklusive design, logotyper och kod -- tillhör ToolPop. Du behåller alla rättigheter till de filer du laddar upp. Vi gör inga anspråk på äganderätt till ditt innehåll.",
       },
       {
         heading: "6. Ändringar av tjänsten",

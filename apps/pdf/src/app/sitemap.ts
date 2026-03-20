@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@toolbox/i18n";
 import { tools } from "@/lib/tools";
 
-const BASE_URL = "https://pdf.toolbox.co.kr";
+const BASE_URL = "https://toolpop.org/pdf";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

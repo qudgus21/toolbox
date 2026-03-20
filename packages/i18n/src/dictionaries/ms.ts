@@ -95,7 +95,7 @@ const ms: Dictionary = {
     legal: "Undang-undang",
     privacy: "Dasar Privasi",
     terms: "Terma Perkhidmatan",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Kembali ke semua alat",
@@ -122,9 +122,9 @@ const ms: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Alat PDF Percuma",
+    siteTitle: "ToolPop PDF - Alat PDF Percuma",
     siteDescription: "Gabung, pisah, mampat dan tukar fail PDF dalam talian secara percuma.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Kami menggunakan kuki untuk meningkatkan pengalaman anda.",
@@ -134,11 +134,11 @@ const ms: Dictionary = {
   privacy: {
     title: "Dasar Privasi",
     lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
-    intro: "Di ToolBox PDF, privasi anda penting. Dasar ini menerangkan maklumat yang kami kumpul apabila anda menggunakan perkhidmatan kami dan cara kami mengendalikannya.",
+    intro: "Di ToolPop PDF, privasi anda penting. Dasar ini menerangkan maklumat yang kami kumpul apabila anda menggunakan perkhidmatan kami dan cara kami mengendalikannya.",
     sections: [
       {
         heading: "1. Maklumat yang Kami Kumpul",
-        content: "ToolBox PDF tidak memerlukan pendaftaran. Kami tidak mengumpul maklumat peribadi. Walau bagaimanapun, kami mungkin mengumpul data tanpa pengenalan secara automatik untuk meningkatkan perkhidmatan:\n\n• Jenis dan versi pelayar\n• Sistem pengendalian\n• Halaman yang dilawati dan masa dihabiskan\n• Kuki dan teknologi serupa untuk corak penggunaan",
+        content: "ToolPop PDF tidak memerlukan pendaftaran. Kami tidak mengumpul maklumat peribadi. Walau bagaimanapun, kami mungkin mengumpul data tanpa pengenalan secara automatik untuk meningkatkan perkhidmatan:\n\n• Jenis dan versi pelayar\n• Sistem pengendalian\n• Halaman yang dilawati dan masa dihabiskan\n• Kuki dan teknologi serupa untuk corak penggunaan",
       },
       {
         heading: "2. Pengendalian Fail",
@@ -169,11 +169,11 @@ const ms: Dictionary = {
   terms: {
     title: "Terma Perkhidmatan",
     lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
-    intro: "Terima kasih kerana menggunakan ToolBox PDF. Dengan mengakses atau menggunakan perkhidmatan kami, anda bersetuju dengan terma berikut.",
+    intro: "Terima kasih kerana menggunakan ToolPop PDF. Dengan mengakses atau menggunakan perkhidmatan kami, anda bersetuju dengan terma berikut.",
     sections: [
       {
         heading: "1. Tentang Perkhidmatan",
-        content: "ToolBox PDF ialah perkhidmatan dalam talian percuma yang membolehkan anda menggabung, memisah, menukar, menyunting dan memampatkan fail PDF secara langsung dalam pelayar anda.",
+        content: "ToolPop PDF ialah perkhidmatan dalam talian percuma yang membolehkan anda menggabung, memisah, menukar, menyunting dan memampatkan fail PDF secara langsung dalam pelayar anda.",
       },
       {
         heading: "2. Penggunaan yang Diterima",
@@ -189,7 +189,7 @@ const ms: Dictionary = {
       },
       {
         heading: "5. Harta Intelek",
-        content: "Semua kandungan di laman ini — termasuk reka bentuk, logo dan kod — adalah milik ToolBox. Anda mengekalkan hak penuh ke atas sebarang fail yang anda muat naik. Kami tidak menuntut pemilikan ke atas kandungan anda.",
+        content: "Semua kandungan di laman ini — termasuk reka bentuk, logo dan kod — adalah milik ToolPop. Anda mengekalkan hak penuh ke atas sebarang fail yang anda muat naik. Kami tidak menuntut pemilikan ke atas kandungan anda.",
       },
       {
         heading: "6. Perubahan Perkhidmatan",

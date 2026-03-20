@@ -95,7 +95,7 @@ const ja: Dictionary = {
     legal: "法的情報",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "すべてのツールに戻る",
@@ -122,9 +122,9 @@ const ja: Dictionary = {
     comingSoon: "準備中",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - 無料PDFツール",
+    siteTitle: "ToolPop PDF - 無料PDFツール",
     siteDescription: "PDFファイルの結合、分割、圧縮、変換をオンラインで無料で。",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "当サイトではCookieを使用しています。",
@@ -134,11 +134,11 @@ const ja: Dictionary = {
   privacy: {
     title: "プライバシーポリシー",
     lastUpdated: "最終更新日：2026年3月1日",
-    intro: "ToolBox PDFでは、ユーザーの皆さまのプライバシーを大切にしています。このポリシーでは、サービスご利用時に収集する情報とその取り扱いについてご説明します。",
+    intro: "ToolPop PDFでは、ユーザーの皆さまのプライバシーを大切にしています。このポリシーでは、サービスご利用時に収集する情報とその取り扱いについてご説明します。",
     sections: [
       {
         heading: "1. 収集する情報",
-        content: "ToolBox PDFは会員登録不要でご利用いただけます。個人情報の収集は行っておりません。ただし、サービス改善のため、以下の情報を自動的に取得する場合があります。\n\n• ブラウザの種類・バージョン\n• ご利用中のOS情報\n• 閲覧ページ・滞在時間\n• 利用状況を把握するためのCookie",
+        content: "ToolPop PDFは会員登録不要でご利用いただけます。個人情報の収集は行っておりません。ただし、サービス改善のため、以下の情報を自動的に取得する場合があります。\n\n• ブラウザの種類・バージョン\n• ご利用中のOS情報\n• 閲覧ページ・滞在時間\n• 利用状況を把握するためのCookie",
       },
       {
         heading: "2. ファイルの取り扱い",
@@ -169,11 +169,11 @@ const ja: Dictionary = {
   terms: {
     title: "利用規約",
     lastUpdated: "最終更新日：2026年3月1日",
-    intro: "ToolBox PDFをご利用いただきありがとうございます。本サービスをご利用になる場合、以下の利用規約に同意いただいたものとみなします。",
+    intro: "ToolPop PDFをご利用いただきありがとうございます。本サービスをご利用になる場合、以下の利用規約に同意いただいたものとみなします。",
     sections: [
       {
         heading: "1. サービスについて",
-        content: "ToolBox PDFは、ブラウザ上でPDFの結合・分割・変換・編集・圧縮が行える無料のオンラインサービスです。",
+        content: "ToolPop PDFは、ブラウザ上でPDFの結合・分割・変換・編集・圧縮が行える無料のオンラインサービスです。",
       },
       {
         heading: "2. 利用上のルール",
@@ -189,7 +189,7 @@ const ja: Dictionary = {
       },
       {
         heading: "5. 知的財産権",
-        content: "サイト上のデザイン・ロゴ・コードなどのコンテンツはToolBoxに帰属します。お客さまがアップロードしたファイルの権利はお客さまに帰属し、当サービスがその所有権を主張することはありません。",
+        content: "サイト上のデザイン・ロゴ・コードなどのコンテンツはToolPopに帰属します。お客さまがアップロードしたファイルの権利はお客さまに帰属し、当サービスがその所有権を主張することはありません。",
       },
       {
         heading: "6. サービスの変更",

@@ -95,7 +95,7 @@ const nl: Dictionary = {
     legal: "Juridisch",
     privacy: "Privacybeleid",
     terms: "Servicevoorwaarden",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Terug naar alle tools",
@@ -122,9 +122,9 @@ const nl: Dictionary = {
     comingSoon: "Binnenkort",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Gratis PDF-tools",
+    siteTitle: "ToolPop PDF - Gratis PDF-tools",
     siteDescription: "Voeg samen, splits, comprimeer en converteer PDF-bestanden gratis online.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Wij gebruiken cookies om je ervaring te verbeteren.",
@@ -134,11 +134,11 @@ const nl: Dictionary = {
   privacy: {
     title: "Privacybeleid",
     lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
-    intro: "Bij ToolBox PDF hechten we veel waarde aan je privacy. In dit beleid leggen we uit welke gegevens we verzamelen wanneer je onze dienst gebruikt en hoe we daarmee omgaan.",
+    intro: "Bij ToolPop PDF hechten we veel waarde aan je privacy. In dit beleid leggen we uit welke gegevens we verzamelen wanneer je onze dienst gebruikt en hoe we daarmee omgaan.",
     sections: [
       {
         heading: "1. Gegevens die we verzamelen",
-        content: "Voor het gebruik van ToolBox PDF hoef je geen account aan te maken. We verzamelen geen persoonlijke gegevens. Wel kunnen we automatisch niet-identificeerbare informatie verzamelen om onze dienst te verbeteren:\n\n• Browsertype en -versie\n• Besturingssysteem\n• Bezochte pagina's en bestede tijd\n• Cookies en vergelijkbare technologieën voor gebruikspatronen",
+        content: "Voor het gebruik van ToolPop PDF hoef je geen account aan te maken. We verzamelen geen persoonlijke gegevens. Wel kunnen we automatisch niet-identificeerbare informatie verzamelen om onze dienst te verbeteren:\n\n• Browsertype en -versie\n• Besturingssysteem\n• Bezochte pagina's en bestede tijd\n• Cookies en vergelijkbare technologieën voor gebruikspatronen",
       },
       {
         heading: "2. Bestandsverwerking",
@@ -169,11 +169,11 @@ const nl: Dictionary = {
   terms: {
     title: "Servicevoorwaarden",
     lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
-    intro: "Bedankt dat je ToolBox PDF gebruikt. Door onze dienst te bezoeken of te gebruiken, ga je akkoord met de volgende voorwaarden.",
+    intro: "Bedankt dat je ToolPop PDF gebruikt. Door onze dienst te bezoeken of te gebruiken, ga je akkoord met de volgende voorwaarden.",
     sections: [
       {
         heading: "1. Over de dienst",
-        content: "ToolBox PDF is een gratis online dienst waarmee je PDF-bestanden kunt samenvoegen, splitsen, converteren, bewerken en comprimeren, rechtstreeks in je browser.",
+        content: "ToolPop PDF is een gratis online dienst waarmee je PDF-bestanden kunt samenvoegen, splitsen, converteren, bewerken en comprimeren, rechtstreeks in je browser.",
       },
       {
         heading: "2. Aanvaardbaar gebruik",
@@ -189,7 +189,7 @@ const nl: Dictionary = {
       },
       {
         heading: "5. Intellectueel eigendom",
-        content: "Alle inhoud op deze site — inclusief ontwerp, logo's en code — is eigendom van ToolBox. Jij behoudt het volledige eigendomsrecht over de bestanden die je uploadt. We claimen geen enkel recht op jouw bestanden.",
+        content: "Alle inhoud op deze site — inclusief ontwerp, logo's en code — is eigendom van ToolPop. Jij behoudt het volledige eigendomsrecht over de bestanden die je uploadt. We claimen geen enkel recht op jouw bestanden.",
       },
       {
         heading: "6. Wijzigingen aan de dienst",

@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, LayoutGrid, List, Shield, Trash2, Gift, Cloud, Star } from "lucide-react";
+import Link from "next/link";
 import { Container, ToolCard } from "@toolbox/ui";
 import { tools, categories, categoryColors } from "@/lib/tools";
 import { toolIconMap, categoryIconMap } from "@/lib/tool-icons";
@@ -286,6 +287,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         <ToolCard
           data-card
           href={`/${locale}/${tool.slug}`}
+          linkComponent={Link}
           icon={tool.icon}
           title={toolDict.title}
           description={toolDict.description}
@@ -329,7 +331,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
       </div>
     ) : (
       <div className={cn("relative group/fav")}>
-        <a
+        <Link
           href={`/${locale}/${tool.slug}`}
           className="group flex items-center gap-4 rounded-lg border border-border/60 bg-background-elevated px-4 py-3 shadow-sm transition-colors hover:border-accent/50 hover:shadow-md"
         >
@@ -340,7 +342,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
             </h3>
             <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
           </div>
-        </a>
+        </Link>
         <button
           type="button"
           onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}

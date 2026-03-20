@@ -95,7 +95,7 @@ const cs: Dictionary = {
     legal: "Právní informace",
     privacy: "Ochrana soukromí",
     terms: "Podmínky služby",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Zpět na všechny nástroje",
@@ -122,9 +122,9 @@ const cs: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Bezplatné PDF nástroje",
+    siteTitle: "ToolPop PDF - Bezplatné PDF nástroje",
     siteDescription: "Slučte, rozdělte, komprimujte a převeďte PDF soubory online zdarma.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Pro zlepšení vašeho zážitku používáme soubory cookie.",
@@ -134,11 +134,11 @@ const cs: Dictionary = {
   privacy: {
     title: "Zásady ochrany osobních údajů",
     lastUpdated: "Poslední aktualizace: 1. března 2026",
-    intro: "V ToolBox PDF si vážíme vašeho soukromí. Tyto zásady vysvětlují, jaké informace shromažďujeme při používání naší služby a jak s nimi nakládáme.",
+    intro: "V ToolPop PDF si vážíme vašeho soukromí. Tyto zásady vysvětlují, jaké informace shromažďujeme při používání naší služby a jak s nimi nakládáme.",
     sections: [
       {
         heading: "1. Informace, které shromažďujeme",
-        content: "ToolBox PDF nevyžaduje registraci. Neshromažďujeme žádné osobní údaje. Pro zlepšení služby však můžeme automaticky zaznamenávat anonymní údaje:\n\n• Typ a verze prohlížeče\n• Operační systém\n• Navštívené stránky a doba strávená na webu\n• Cookies a podobné technologie pro analýzu používání",
+        content: "ToolPop PDF nevyžaduje registraci. Neshromažďujeme žádné osobní údaje. Pro zlepšení služby však můžeme automaticky zaznamenávat anonymní údaje:\n\n• Typ a verze prohlížeče\n• Operační systém\n• Navštívené stránky a doba strávená na webu\n• Cookies a podobné technologie pro analýzu používání",
       },
       {
         heading: "2. Nakládání se soubory",
@@ -169,11 +169,11 @@ const cs: Dictionary = {
   terms: {
     title: "Podmínky služby",
     lastUpdated: "Poslední aktualizace: 1. března 2026",
-    intro: "Děkujeme, že používáte ToolBox PDF. Přístupem k naší službě nebo jejím používáním souhlasíte s následujícími podmínkami.",
+    intro: "Děkujeme, že používáte ToolPop PDF. Přístupem k naší službě nebo jejím používáním souhlasíte s následujícími podmínkami.",
     sections: [
       {
         heading: "1. O službě",
-        content: "ToolBox PDF je bezplatná online služba, která umožňuje slučovat, rozdělovat, převádět, upravovat a komprimovat PDF soubory přímo v prohlížeči.",
+        content: "ToolPop PDF je bezplatná online služba, která umožňuje slučovat, rozdělovat, převádět, upravovat a komprimovat PDF soubory přímo v prohlížeči.",
       },
       {
         heading: "2. Přijatelné použití",
@@ -189,7 +189,7 @@ const cs: Dictionary = {
       },
       {
         heading: "5. Duševní vlastnictví",
-        content: "Veškerý obsah na tomto webu – včetně designu, log a kódu – je vlastnictvím ToolBox. Plná práva k nahraným souborům zůstávají vám. Na váš obsah si nenárokujeme žádná práva.",
+        content: "Veškerý obsah na tomto webu – včetně designu, log a kódu – je vlastnictvím ToolPop. Plná práva k nahraným souborům zůstávají vám. Na váš obsah si nenárokujeme žádná práva.",
       },
       {
         heading: "6. Změny služby",

@@ -83,7 +83,7 @@ const ro: Dictionary = {
     legal: "Legal",
     privacy: "Politica de confidențialitate",
     terms: "Termeni de utilizare",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Înapoi la toate instrumentele",
@@ -110,9 +110,9 @@ const ro: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Instrumente PDF gratuite",
+    siteTitle: "ToolPop PDF - Instrumente PDF gratuite",
     siteDescription: "Unește, împarte, comprimă și convertește fișiere PDF online gratuit.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Folosim cookie-uri pentru a îmbunătăți experiența dumneavoastră.",
@@ -122,11 +122,11 @@ const ro: Dictionary = {
   privacy: {
     title: "Politica de confidențialitate",
     lastUpdated: "Ultima actualizare: 1 martie 2026",
-    intro: "La ToolBox PDF, confidențialitatea ta contează. Această politică explică ce informații colectăm atunci când folosești serviciul nostru și cum le gestionăm.",
+    intro: "La ToolPop PDF, confidențialitatea ta contează. Această politică explică ce informații colectăm atunci când folosești serviciul nostru și cum le gestionăm.",
     sections: [
       {
         heading: "1. Informațiile pe care le colectăm",
-        content: "ToolBox PDF nu necesită înregistrare. Nu colectăm date personale. Cu toate acestea, putem colecta automat date neidentificabile pentru a îmbunătăți serviciul:\n\n• Tipul și versiunea browserului\n• Sistemul de operare\n• Paginile vizitate și timpul petrecut\n• Cookie-uri și tehnologii similare pentru analiza utilizării",
+        content: "ToolPop PDF nu necesită înregistrare. Nu colectăm date personale. Cu toate acestea, putem colecta automat date neidentificabile pentru a îmbunătăți serviciul:\n\n• Tipul și versiunea browserului\n• Sistemul de operare\n• Paginile vizitate și timpul petrecut\n• Cookie-uri și tehnologii similare pentru analiza utilizării",
       },
       {
         heading: "2. Gestionarea fișierelor",
@@ -157,11 +157,11 @@ const ro: Dictionary = {
   terms: {
     title: "Termeni de utilizare",
     lastUpdated: "Ultima actualizare: 1 martie 2026",
-    intro: "Îți mulțumim că folosești ToolBox PDF. Prin accesarea sau utilizarea serviciului nostru, ești de acord cu următorii termeni.",
+    intro: "Îți mulțumim că folosești ToolPop PDF. Prin accesarea sau utilizarea serviciului nostru, ești de acord cu următorii termeni.",
     sections: [
       {
         heading: "1. Despre serviciu",
-        content: "ToolBox PDF este un serviciu online gratuit care îți permite să unești, împarți, convertești, editezi și comprimi fișiere PDF direct în browser.",
+        content: "ToolPop PDF este un serviciu online gratuit care îți permite să unești, împarți, convertești, editezi și comprimi fișiere PDF direct în browser.",
       },
       {
         heading: "2. Utilizare acceptabilă",
@@ -177,7 +177,7 @@ const ro: Dictionary = {
       },
       {
         heading: "5. Proprietate intelectuală",
-        content: "Tot conținutul de pe acest site -- inclusiv designul, logo-urile și codul -- aparține ToolBox. Tu deții toate drepturile asupra fișierelor pe care le încarci. Nu revendicăm niciun drept asupra conținutului tău.",
+        content: "Tot conținutul de pe acest site -- inclusiv designul, logo-urile și codul -- aparține ToolPop. Tu deții toate drepturile asupra fișierelor pe care le încarci. Nu revendicăm niciun drept asupra conținutului tău.",
       },
       {
         heading: "6. Modificări ale serviciului",

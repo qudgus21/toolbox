@@ -1,12 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  basePath: "/pdf",
   transpilePackages: [
     "@toolbox/i18n",
     "@toolbox/ui",
     "@toolbox/utils",
     "@toolbox/design-tokens",
   ],
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/pdf",
+        basePath: false as never,
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

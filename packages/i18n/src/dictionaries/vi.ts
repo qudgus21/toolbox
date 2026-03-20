@@ -95,7 +95,7 @@ const vi: Dictionary = {
     legal: "Pháp lý",
     privacy: "Chính sách bảo mật",
     terms: "Điều khoản dịch vụ",
-    copyright: "ToolBox. Mọi quyền được bảo lưu.",
+    copyright: "ToolPop. Mọi quyền được bảo lưu.",
   },
   common: {
     backToAll: "Quay lại tất cả công cụ",
@@ -122,9 +122,9 @@ const vi: Dictionary = {
     comingSoon: "Sắp ra mắt",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Công cụ PDF miễn phí",
+    siteTitle: "ToolPop PDF - Công cụ PDF miễn phí",
     siteDescription: "Gộp, tách, nén và chuyển đổi tệp PDF trực tuyến miễn phí.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn.",
@@ -134,11 +134,11 @@ const vi: Dictionary = {
   privacy: {
     title: "Chính sách bảo mật",
     lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
-    intro: "Tại ToolBox PDF, chúng tôi coi trọng quyền riêng tư của bạn. Chính sách này giải thích những thông tin chúng tôi thu thập khi bạn sử dụng dịch vụ và cách chúng tôi xử lý chúng.",
+    intro: "Tại ToolPop PDF, chúng tôi coi trọng quyền riêng tư của bạn. Chính sách này giải thích những thông tin chúng tôi thu thập khi bạn sử dụng dịch vụ và cách chúng tôi xử lý chúng.",
     sections: [
       {
         heading: "1. Thông tin chúng tôi thu thập",
-        content: "ToolBox PDF không yêu cầu đăng ký tài khoản. Chúng tôi không thu thập thông tin cá nhân. Tuy nhiên, để cải thiện dịch vụ, chúng tôi có thể tự động thu thập một số dữ liệu ẩn danh:\n\n• Loại và phiên bản trình duyệt\n• Hệ điều hành\n• Các trang đã truy cập và thời gian sử dụng\n• Cookie và các công nghệ tương tự để phân tích hành vi sử dụng",
+        content: "ToolPop PDF không yêu cầu đăng ký tài khoản. Chúng tôi không thu thập thông tin cá nhân. Tuy nhiên, để cải thiện dịch vụ, chúng tôi có thể tự động thu thập một số dữ liệu ẩn danh:\n\n• Loại và phiên bản trình duyệt\n• Hệ điều hành\n• Các trang đã truy cập và thời gian sử dụng\n• Cookie và các công nghệ tương tự để phân tích hành vi sử dụng",
       },
       {
         heading: "2. Xử lý tệp",
@@ -169,11 +169,11 @@ const vi: Dictionary = {
   terms: {
     title: "Điều khoản dịch vụ",
     lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
-    intro: "Cảm ơn bạn đã sử dụng ToolBox PDF. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý với các điều khoản sau.",
+    intro: "Cảm ơn bạn đã sử dụng ToolPop PDF. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý với các điều khoản sau.",
     sections: [
       {
         heading: "1. Về dịch vụ",
-        content: "ToolBox PDF là dịch vụ trực tuyến miễn phí cho phép bạn gộp, tách, chuyển đổi, chỉnh sửa và nén tệp PDF ngay trên trình duyệt.",
+        content: "ToolPop PDF là dịch vụ trực tuyến miễn phí cho phép bạn gộp, tách, chuyển đổi, chỉnh sửa và nén tệp PDF ngay trên trình duyệt.",
       },
       {
         heading: "2. Sử dụng hợp lý",
@@ -189,7 +189,7 @@ const vi: Dictionary = {
       },
       {
         heading: "5. Sở hữu trí tuệ",
-        content: "Toàn bộ nội dung trên trang web — bao gồm thiết kế, logo và mã nguồn — thuộc sở hữu của ToolBox. Bạn giữ toàn quyền đối với tệp bạn tải lên. Chúng tôi không tuyên bố quyền sở hữu nội dung của bạn.",
+        content: "Toàn bộ nội dung trên trang web — bao gồm thiết kế, logo và mã nguồn — thuộc sở hữu của ToolPop. Bạn giữ toàn quyền đối với tệp bạn tải lên. Chúng tôi không tuyên bố quyền sở hữu nội dung của bạn.",
       },
       {
         heading: "6. Thay đổi dịch vụ",

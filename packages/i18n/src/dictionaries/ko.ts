@@ -95,7 +95,7 @@ const ko: Dictionary = {
     legal: "법적 고지",
     privacy: "개인정보처리방침",
     terms: "이용약관",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "모든 도구로 돌아가기",
@@ -122,9 +122,9 @@ const ko: Dictionary = {
     comingSoon: "준비 중",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - 무료 PDF 도구",
+    siteTitle: "ToolPop PDF - 무료 PDF 도구",
     siteDescription: "PDF 파일을 온라인에서 무료로 병합, 분할, 압축, 변환하세요.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "이 사이트는 더 나은 경험을 위해 쿠키를 사용합니다.",
@@ -134,11 +134,11 @@ const ko: Dictionary = {
   privacy: {
     title: "개인정보처리방침",
     lastUpdated: "최종 수정일: 2026년 3월 1일",
-    intro: "ToolBox PDF는 이용자의 개인정보를 소중히 다룹니다. 본 방침은 서비스 이용 과정에서 어떤 정보가 수집되고, 어떻게 활용되는지 안내합니다.",
+    intro: "ToolPop PDF는 이용자의 개인정보를 소중히 다룹니다. 본 방침은 서비스 이용 과정에서 어떤 정보가 수집되고, 어떻게 활용되는지 안내합니다.",
     sections: [
       {
         heading: "1. 수집하는 정보",
-        content: "ToolBox PDF는 회원가입 없이 이용할 수 있으며, 별도의 개인정보를 수집하지 않습니다. 단, 서비스 품질 개선을 위해 다음과 같은 비식별 정보를 자동으로 수집할 수 있습니다.\n\n• 브라우저 종류 및 버전\n• 운영체제 정보\n• 방문 페이지 및 이용 시간\n• 쿠키 및 유사 기술을 통한 사이트 이용 패턴",
+        content: "ToolPop PDF는 회원가입 없이 이용할 수 있으며, 별도의 개인정보를 수집하지 않습니다. 단, 서비스 품질 개선을 위해 다음과 같은 비식별 정보를 자동으로 수집할 수 있습니다.\n\n• 브라우저 종류 및 버전\n• 운영체제 정보\n• 방문 페이지 및 이용 시간\n• 쿠키 및 유사 기술을 통한 사이트 이용 패턴",
       },
       {
         heading: "2. 파일 처리 및 보관",
@@ -146,7 +146,7 @@ const ko: Dictionary = {
       },
       {
         heading: "3. 쿠키 사용",
-        content: "ToolBox PDF는 테마 설정(다크/라이트 모드), 언어 선택 등 이용자 환경을 기억하기 위해 쿠키를 사용합니다. 광고 네트워크(예: Google AdSense)를 통해 맞춤 광고를 제공할 수 있으며, 이 과정에서 쿠키가 사용될 수 있습니다.",
+        content: "ToolPop PDF는 테마 설정(다크/라이트 모드), 언어 선택 등 이용자 환경을 기억하기 위해 쿠키를 사용합니다. 광고 네트워크(예: Google AdSense)를 통해 맞춤 광고를 제공할 수 있으며, 이 과정에서 쿠키가 사용될 수 있습니다.",
       },
       {
         heading: "4. 제3자 서비스",
@@ -169,11 +169,11 @@ const ko: Dictionary = {
   terms: {
     title: "이용약관",
     lastUpdated: "최종 수정일: 2026년 3월 1일",
-    intro: "ToolBox PDF(이하 '서비스')를 이용해 주셔서 감사합니다. 서비스를 이용하시면 아래 약관에 동의한 것으로 간주됩니다.",
+    intro: "ToolPop PDF(이하 '서비스')를 이용해 주셔서 감사합니다. 서비스를 이용하시면 아래 약관에 동의한 것으로 간주됩니다.",
     sections: [
       {
         heading: "1. 서비스 개요",
-        content: "ToolBox PDF는 PDF 파일의 병합, 분할, 변환, 편집, 압축 등 다양한 기능을 웹 브라우저에서 제공하는 무료 온라인 서비스입니다.",
+        content: "ToolPop PDF는 PDF 파일의 병합, 분할, 변환, 편집, 압축 등 다양한 기능을 웹 브라우저에서 제공하는 무료 온라인 서비스입니다.",
       },
       {
         heading: "2. 이용 조건",
@@ -189,11 +189,11 @@ const ko: Dictionary = {
       },
       {
         heading: "5. 지식재산권",
-        content: "서비스의 디자인, 로고, 코드 등 모든 콘텐츠에 대한 권리는 ToolBox에 있습니다. 이용자가 업로드하는 파일에 대한 권리는 이용자에게 있으며, ToolBox는 해당 파일에 대해 어떠한 권리도 주장하지 않습니다.",
+        content: "서비스의 디자인, 로고, 코드 등 모든 콘텐츠에 대한 권리는 ToolPop에 있습니다. 이용자가 업로드하는 파일에 대한 권리는 이용자에게 있으며, ToolPop는 해당 파일에 대해 어떠한 권리도 주장하지 않습니다.",
       },
       {
         heading: "6. 서비스 변경 및 중단",
-        content: "ToolBox는 사전 고지 없이 서비스 기능을 변경하거나 중단할 수 있습니다.",
+        content: "ToolPop는 사전 고지 없이 서비스 기능을 변경하거나 중단할 수 있습니다.",
       },
       {
         heading: "7. 약관 변경",

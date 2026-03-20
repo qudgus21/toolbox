@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import type { Dictionary } from "@toolbox/i18n";
 import { toolIconMap, categoryIconMap } from "@/lib/tool-icons";
 
@@ -61,14 +62,14 @@ export function NavMenu({ locale, dict, categories, tools, categoryLabelKeys }: 
                   >
                     <div className={catTools.length > 6 ? "grid grid-cols-2 gap-x-4" : "flex flex-col"} style={catTools.length > 6 ? { gridTemplateColumns: "1fr 1fr" } : undefined}>
                       {catTools.map((tool) => (
-                        <a
+                        <Link
                           key={tool.slug}
                           href={`/${locale}/${tool.slug}`}
                           className="flex items-center gap-2.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground hover:bg-background-muted"
                         >
                           {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-5 w-auto shrink-0" />; })() : <span className="text-base shrink-0">{tool.emoji}</span>}
                           <span className="font-medium">{dict.tools[tool.slug].title}</span>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </motion.div>

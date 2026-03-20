@@ -95,7 +95,7 @@ const es: Dictionary = {
     legal: "Legal",
     privacy: "Política de privacidad",
     terms: "Términos de servicio",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Volver a todas las herramientas",
@@ -122,9 +122,9 @@ const es: Dictionary = {
     comingSoon: "Pr'oximamente",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Herramientas PDF gratuitas",
+    siteTitle: "ToolPop PDF - Herramientas PDF gratuitas",
     siteDescription: "Combina, divide, comprime y convierte archivos PDF en línea gratis.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Usamos cookies para mejorar tu experiencia.",
@@ -134,11 +134,11 @@ const es: Dictionary = {
   privacy: {
     title: "Política de Privacidad",
     lastUpdated: "Última actualización: 1 de marzo de 2026",
-    intro: "En ToolBox PDF nos tomamos en serio tu privacidad. Esta política explica qué información recopilamos cuando usas nuestro servicio y cómo la manejamos.",
+    intro: "En ToolPop PDF nos tomamos en serio tu privacidad. Esta política explica qué información recopilamos cuando usas nuestro servicio y cómo la manejamos.",
     sections: [
       {
         heading: "1. Información que recopilamos",
-        content: "ToolBox PDF no requiere registro. No recopilamos datos personales. Sin embargo, podemos recoger automáticamente cierta información anónima para mejorar el servicio:\n\n• Tipo y versión del navegador\n• Sistema operativo\n• Páginas visitadas y tiempo de permanencia\n• Cookies para analizar patrones de uso",
+        content: "ToolPop PDF no requiere registro. No recopilamos datos personales. Sin embargo, podemos recoger automáticamente cierta información anónima para mejorar el servicio:\n\n• Tipo y versión del navegador\n• Sistema operativo\n• Páginas visitadas y tiempo de permanencia\n• Cookies para analizar patrones de uso",
       },
       {
         heading: "2. Manejo de archivos",
@@ -169,11 +169,11 @@ const es: Dictionary = {
   terms: {
     title: "Términos de Servicio",
     lastUpdated: "Última actualización: 1 de marzo de 2026",
-    intro: "Gracias por usar ToolBox PDF. Al acceder o utilizar nuestro servicio, aceptas los siguientes términos.",
+    intro: "Gracias por usar ToolPop PDF. Al acceder o utilizar nuestro servicio, aceptas los siguientes términos.",
     sections: [
       {
         heading: "1. Sobre el servicio",
-        content: "ToolBox PDF es un servicio online gratuito que te permite unir, dividir, convertir, editar y comprimir archivos PDF directamente desde tu navegador.",
+        content: "ToolPop PDF es un servicio online gratuito que te permite unir, dividir, convertir, editar y comprimir archivos PDF directamente desde tu navegador.",
       },
       {
         heading: "2. Uso aceptable",
@@ -189,7 +189,7 @@ const es: Dictionary = {
       },
       {
         heading: "5. Propiedad intelectual",
-        content: "Todo el contenido del sitio — diseño, logotipos y código — es propiedad de ToolBox. Los archivos que subas siguen siendo tuyos. No reclamamos ningún derecho sobre tu contenido.",
+        content: "Todo el contenido del sitio — diseño, logotipos y código — es propiedad de ToolPop. Los archivos que subas siguen siendo tuyos. No reclamamos ningún derecho sobre tu contenido.",
       },
       {
         heading: "6. Cambios en el servicio",

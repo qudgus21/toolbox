@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { cn } from "@toolbox/utils";
 import { tools, type ToolDefinition } from "@/lib/tools";
 import { getRecentTools } from "@toolbox/storage";
@@ -73,14 +74,14 @@ export function RelatedTools({
         {related.map((tool) => {
           const Icon = tool.icon;
           return (
-            <a
+            <Link
               key={tool.slug}
               href={`/${locale}/${tool.slug}`}
               className="flex items-center gap-3 rounded-xl border border-border bg-background-elevated px-4 py-3 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground hover:shadow-sm transition-all duration-150 cursor-pointer"
             >
               <Icon className="h-4 w-4 flex-shrink-0 text-accent" />
               <span className="truncate">{tool.title}</span>
-            </a>
+            </Link>
           );
         })}
       </div>

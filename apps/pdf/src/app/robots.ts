@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://pdf.toolbox.co.kr/sitemap.xml",
+    sitemap: "https://toolpop.org/pdf/sitemap.xml",
   };
 }

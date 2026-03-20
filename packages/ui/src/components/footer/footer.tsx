@@ -11,7 +11,7 @@ export function Footer({ className }: FooterProps) {
       <Container size="xl">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-foreground-muted">
-            &copy; {new Date().getFullYear()} ToolBox. All rights reserved.
+            &copy; {new Date().getFullYear()} ToolPop. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="/privacy" className="text-sm text-foreground-subtle hover:text-foreground transition-colors">

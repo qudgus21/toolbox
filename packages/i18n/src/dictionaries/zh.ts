@@ -95,7 +95,7 @@ const zh: Dictionary = {
     legal: "法律",
     privacy: "隐私政策",
     terms: "服务条款",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "返回所有工具",
@@ -122,9 +122,9 @@ const zh: Dictionary = {
     comingSoon: "即将推出",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - 免费PDF工具",
+    siteTitle: "ToolPop PDF - 免费PDF工具",
     siteDescription: "在线免费合并、拆分、压缩和转换PDF文件。",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "本站使用 Cookie 来提升您的体验。",
@@ -134,11 +134,11 @@ const zh: Dictionary = {
   privacy: {
     title: "隐私政策",
     lastUpdated: "最后更新：2026年3月1日",
-    intro: "ToolBox PDF 非常重视您的隐私。本政策说明了我们在您使用服务时会收集哪些信息，以及我们如何处理这些信息。",
+    intro: "ToolPop PDF 非常重视您的隐私。本政策说明了我们在您使用服务时会收集哪些信息，以及我们如何处理这些信息。",
     sections: [
       {
         heading: "1. 我们收集的信息",
-        content: "ToolBox PDF 无需注册即可使用，我们不会收集任何个人信息。为了改善服务体验，我们可能会自动收集以下非个人数据：\n\n• 浏览器类型和版本\n• 操作系统信息\n• 访问页面及停留时长\n• 用于分析使用习惯的 Cookie",
+        content: "ToolPop PDF 无需注册即可使用，我们不会收集任何个人信息。为了改善服务体验，我们可能会自动收集以下非个人数据：\n\n• 浏览器类型和版本\n• 操作系统信息\n• 访问页面及停留时长\n• 用于分析使用习惯的 Cookie",
       },
       {
         heading: "2. 文件处理",
@@ -169,11 +169,11 @@ const zh: Dictionary = {
   terms: {
     title: "服务条款",
     lastUpdated: "最后更新：2026年3月1日",
-    intro: "感谢您使用 ToolBox PDF。使用本服务即表示您同意以下条款。",
+    intro: "感谢您使用 ToolPop PDF。使用本服务即表示您同意以下条款。",
     sections: [
       {
         heading: "1. 服务简介",
-        content: "ToolBox PDF 是一款免费的在线 PDF 工具，支持在浏览器中直接完成 PDF 的合并、拆分、转换、编辑和压缩操作。",
+        content: "ToolPop PDF 是一款免费的在线 PDF 工具，支持在浏览器中直接完成 PDF 的合并、拆分、转换、编辑和压缩操作。",
       },
       {
         heading: "2. 使用规范",
@@ -189,7 +189,7 @@ const zh: Dictionary = {
       },
       {
         heading: "5. 知识产权",
-        content: "本站的设计、Logo 及代码等内容归 ToolBox 所有。您上传的文件始终归您所有，我们不会主张任何所有权。",
+        content: "本站的设计、Logo 及代码等内容归 ToolPop 所有。您上传的文件始终归您所有，我们不会主张任何所有权。",
       },
       {
         heading: "6. 服务变更",

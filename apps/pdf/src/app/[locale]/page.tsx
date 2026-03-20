@@ -52,7 +52,7 @@ export default async function PdfHomePage({
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: dict.metadata.siteTitle,
-            url: `https://pdf.toolbox.co.kr/${locale}`,
+            url: `https://toolpop.org/pdf/${locale}`,
             applicationCategory: "UtilityApplication",
             operatingSystem: "Any",
             offers: {

@@ -95,7 +95,7 @@ const id: Dictionary = {
     legal: "Hukum",
     privacy: "Kebijakan Privasi",
     terms: "Ketentuan Layanan",
-    copyright: "ToolBox. Hak cipta dilindungi.",
+    copyright: "ToolPop. Hak cipta dilindungi.",
   },
   common: {
     backToAll: "Kembali ke semua alat",
@@ -122,9 +122,9 @@ const id: Dictionary = {
     comingSoon: "Segera hadir",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Alat PDF Gratis",
+    siteTitle: "ToolPop PDF - Alat PDF Gratis",
     siteDescription: "Gabungkan, pisahkan, kompres, dan konversi file PDF secara online gratis.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Kami menggunakan cookie untuk meningkatkan pengalaman Anda.",
@@ -134,11 +134,11 @@ const id: Dictionary = {
   privacy: {
     title: "Kebijakan Privasi",
     lastUpdated: "Terakhir diperbarui: 1 Maret 2026",
-    intro: "Di ToolBox PDF, kami menghargai privasi Anda. Kebijakan ini menjelaskan informasi apa saja yang kami kumpulkan saat Anda menggunakan layanan kami dan bagaimana kami menanganinya.",
+    intro: "Di ToolPop PDF, kami menghargai privasi Anda. Kebijakan ini menjelaskan informasi apa saja yang kami kumpulkan saat Anda menggunakan layanan kami dan bagaimana kami menanganinya.",
     sections: [
       {
         heading: "1. Informasi yang Kami Kumpulkan",
-        content: "ToolBox PDF tidak memerlukan pendaftaran akun. Kami tidak mengumpulkan informasi pribadi. Namun, untuk meningkatkan layanan, kami mungkin mengumpulkan data anonim secara otomatis:\n\n• Jenis dan versi browser\n• Sistem operasi\n• Halaman yang dikunjungi dan durasi kunjungan\n• Cookie dan teknologi serupa untuk menganalisis pola penggunaan",
+        content: "ToolPop PDF tidak memerlukan pendaftaran akun. Kami tidak mengumpulkan informasi pribadi. Namun, untuk meningkatkan layanan, kami mungkin mengumpulkan data anonim secara otomatis:\n\n• Jenis dan versi browser\n• Sistem operasi\n• Halaman yang dikunjungi dan durasi kunjungan\n• Cookie dan teknologi serupa untuk menganalisis pola penggunaan",
       },
       {
         heading: "2. Penanganan File",
@@ -169,11 +169,11 @@ const id: Dictionary = {
   terms: {
     title: "Ketentuan Layanan",
     lastUpdated: "Terakhir diperbarui: 1 Maret 2026",
-    intro: "Terima kasih telah menggunakan ToolBox PDF. Dengan mengakses atau menggunakan layanan kami, Anda menyetujui ketentuan berikut.",
+    intro: "Terima kasih telah menggunakan ToolPop PDF. Dengan mengakses atau menggunakan layanan kami, Anda menyetujui ketentuan berikut.",
     sections: [
       {
         heading: "1. Tentang Layanan",
-        content: "ToolBox PDF adalah layanan online gratis yang memungkinkan Anda menggabungkan, memisahkan, mengonversi, mengedit, dan mengompres file PDF langsung di browser.",
+        content: "ToolPop PDF adalah layanan online gratis yang memungkinkan Anda menggabungkan, memisahkan, mengonversi, mengedit, dan mengompres file PDF langsung di browser.",
       },
       {
         heading: "2. Penggunaan yang Diperbolehkan",
@@ -189,7 +189,7 @@ const id: Dictionary = {
       },
       {
         heading: "5. Kekayaan Intelektual",
-        content: "Semua konten di situs ini — termasuk desain, logo, dan kode — adalah milik ToolBox. Anda tetap memiliki hak penuh atas file yang Anda unggah. Kami tidak mengklaim kepemilikan atas konten Anda.",
+        content: "Semua konten di situs ini — termasuk desain, logo, dan kode — adalah milik ToolPop. Anda tetap memiliki hak penuh atas file yang Anda unggah. Kami tidak mengklaim kepemilikan atas konten Anda.",
       },
       {
         heading: "6. Perubahan Layanan",

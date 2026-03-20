@@ -95,7 +95,7 @@ const mt: Dictionary = {
     legal: "Legali",
     privacy: "Politika tal-privatezza",
     terms: "Termini tas-servizz",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Lura għall-għodod kollha",
@@ -122,9 +122,9 @@ const mt: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Għodod PDF b'xejn",
+    siteTitle: "ToolPop PDF - Għodod PDF b'xejn",
     siteDescription: "Għaqqad, aqsam, ikkompressja u ikkonverti fajls PDF online b'xejn.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Nużaw il-cookies biex intejbu l-esperjenza tiegħek.",
@@ -134,11 +134,11 @@ const mt: Dictionary = {
   privacy: {
     title: "Politika tal-Privatezza",
     lastUpdated: "Aġġornata l-aħħar: 1 ta' Marzu, 2026",
-    intro: "F'ToolBox PDF, il-privatezza tiegħek hija importanti. Din il-politika tispjega liema informazzjoni niġbru meta tuża s-servizz tagħna u kif nittrattawha.",
+    intro: "F'ToolPop PDF, il-privatezza tiegħek hija importanti. Din il-politika tispjega liema informazzjoni niġbru meta tuża s-servizz tagħna u kif nittrattawha.",
     sections: [
       {
         heading: "1. Informazzjoni li Niġbru",
-        content: "ToolBox PDF ma jirrikjedix reġistrazzjoni. Ma niġbrux informazzjoni personali. Madankollu, nistgħu niġbru awtomatikament data mhux identifikabbli biex intejbu s-servizz:\n\n• It-tip u l-verżjoni tal-browser\n• Is-sistema operattiva\n• Il-paġni viżitati u l-ħin mgħoddi\n• Cookies u teknoloġiji simili għal mudelli ta' użu",
+        content: "ToolPop PDF ma jirrikjedix reġistrazzjoni. Ma niġbrux informazzjoni personali. Madankollu, nistgħu niġbru awtomatikament data mhux identifikabbli biex intejbu s-servizz:\n\n• It-tip u l-verżjoni tal-browser\n• Is-sistema operattiva\n• Il-paġni viżitati u l-ħin mgħoddi\n• Cookies u teknoloġiji simili għal mudelli ta' użu",
       },
       {
         heading: "2. Immaniġġjar tal-Fajls",
@@ -169,11 +169,11 @@ const mt: Dictionary = {
   terms: {
     title: "Termini tas-Servizz",
     lastUpdated: "Aġġornati l-aħħar: 1 ta' Marzu, 2026",
-    intro: "Grazzi li tuża ToolBox PDF. Billi taċċessa jew tuża s-servizz tagħna, qed taqbel mat-termini li ġejjin.",
+    intro: "Grazzi li tuża ToolPop PDF. Billi taċċessa jew tuża s-servizz tagħna, qed taqbel mat-termini li ġejjin.",
     sections: [
       {
         heading: "1. Dwar is-Servizz",
-        content: "ToolBox PDF huwa servizz online b'xejn li jippermettilek tgħaqqad, taqsam, tikkonverti, teditja u tikkompressja fajls PDF direttament mill-browser tiegħek.",
+        content: "ToolPop PDF huwa servizz online b'xejn li jippermettilek tgħaqqad, taqsam, tikkonverti, teditja u tikkompressja fajls PDF direttament mill-browser tiegħek.",
       },
       {
         heading: "2. Użu Aċċettabbli",
@@ -189,7 +189,7 @@ const mt: Dictionary = {
       },
       {
         heading: "5. Proprjetà Intellettwali",
-        content: "Il-kontenut kollu fuq dan is-sit -- inkluż id-disinn, il-logos u l-kodiċi -- jappartjeni lil-ToolBox. Inti żżomm id-drittijiet kollha fuq il-fajls li ttella'. Ma nikklejmjawx sjieda fuq il-kontenut tiegħek.",
+        content: "Il-kontenut kollu fuq dan is-sit -- inkluż id-disinn, il-logos u l-kodiċi -- jappartjeni lil-ToolPop. Inti żżomm id-drittijiet kollha fuq il-fajls li ttella'. Ma nikklejmjawx sjieda fuq il-kontenut tiegħek.",
       },
       {
         heading: "6. Bidliet fis-Servizz",

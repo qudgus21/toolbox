@@ -95,7 +95,7 @@ const pt: Dictionary = {
     legal: "Legal",
     privacy: "Pol\u00edtica de Privacidade",
     terms: "Termos de Servi\u00e7o",
-    copyright: "ToolBox. Todos os direitos reservados.",
+    copyright: "ToolPop. Todos os direitos reservados.",
   },
   common: {
     backToAll: "Voltar para todas as ferramentas",
@@ -122,9 +122,9 @@ const pt: Dictionary = {
     comingSoon: "Em breve",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Ferramentas PDF Gratuitas",
+    siteTitle: "ToolPop PDF - Ferramentas PDF Gratuitas",
     siteDescription: "Mescle, divida, comprima e converta arquivos PDF online gratuitamente.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Usamos cookies para melhorar sua experiência.",
@@ -134,11 +134,11 @@ const pt: Dictionary = {
   privacy: {
     title: "Pol\u00edtica de Privacidade",
     lastUpdated: "\u00daltima atualiza\u00e7\u00e3o: 1 de mar\u00e7o de 2026",
-    intro: "No ToolBox PDF, a sua privacidade \u00e9 prioridade. Esta pol\u00edtica explica quais informa\u00e7\u00f5es coletamos quando voc\u00ea usa nosso servi\u00e7o e como tratamos esses dados.",
+    intro: "No ToolPop PDF, a sua privacidade \u00e9 prioridade. Esta pol\u00edtica explica quais informa\u00e7\u00f5es coletamos quando voc\u00ea usa nosso servi\u00e7o e como tratamos esses dados.",
     sections: [
       {
         heading: "1. Informa\u00e7\u00f5es coletadas",
-        content: "O ToolBox PDF n\u00e3o exige cadastro. N\u00e3o coletamos dados pessoais. Por\u00e9m, podemos coletar automaticamente algumas informa\u00e7\u00f5es an\u00f4nimas para melhorar o servi\u00e7o:\n\n\u2022 Tipo e vers\u00e3o do navegador\n\u2022 Sistema operacional\n\u2022 P\u00e1ginas visitadas e tempo de perman\u00eancia\n\u2022 Cookies para an\u00e1lise de padr\u00f5es de uso",
+        content: "O ToolPop PDF n\u00e3o exige cadastro. N\u00e3o coletamos dados pessoais. Por\u00e9m, podemos coletar automaticamente algumas informa\u00e7\u00f5es an\u00f4nimas para melhorar o servi\u00e7o:\n\n\u2022 Tipo e vers\u00e3o do navegador\n\u2022 Sistema operacional\n\u2022 P\u00e1ginas visitadas e tempo de perman\u00eancia\n\u2022 Cookies para an\u00e1lise de padr\u00f5es de uso",
       },
       {
         heading: "2. Tratamento de arquivos",
@@ -169,11 +169,11 @@ const pt: Dictionary = {
   terms: {
     title: "Termos de Servi\u00e7o",
     lastUpdated: "\u00daltima atualiza\u00e7\u00e3o: 1 de mar\u00e7o de 2026",
-    intro: "Obrigado por usar o ToolBox PDF. Ao acessar ou utilizar nosso servi\u00e7o, voc\u00ea concorda com os termos a seguir.",
+    intro: "Obrigado por usar o ToolPop PDF. Ao acessar ou utilizar nosso servi\u00e7o, voc\u00ea concorda com os termos a seguir.",
     sections: [
       {
         heading: "1. Sobre o servi\u00e7o",
-        content: "O ToolBox PDF \u00e9 um servi\u00e7o online gratuito que permite mesclar, dividir, converter, editar e comprimir arquivos PDF diretamente no navegador.",
+        content: "O ToolPop PDF \u00e9 um servi\u00e7o online gratuito que permite mesclar, dividir, converter, editar e comprimir arquivos PDF diretamente no navegador.",
       },
       {
         heading: "2. Uso aceit\u00e1vel",
@@ -189,7 +189,7 @@ const pt: Dictionary = {
       },
       {
         heading: "5. Propriedade intelectual",
-        content: "Todo o conte\u00fado do site \u2014 design, logotipos e c\u00f3digo \u2014 pertence ao ToolBox. Os arquivos que voc\u00ea envia continuam sendo seus. N\u00e3o reivindicamos nenhum direito sobre o seu conte\u00fado.",
+        content: "Todo o conte\u00fado do site \u2014 design, logotipos e c\u00f3digo \u2014 pertence ao ToolPop. Os arquivos que voc\u00ea envia continuam sendo seus. N\u00e3o reivindicamos nenhum direito sobre o seu conte\u00fado.",
       },
       {
         heading: "6. Altera\u00e7\u00f5es no servi\u00e7o",

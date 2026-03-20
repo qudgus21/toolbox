@@ -95,7 +95,7 @@ const et: Dictionary = {
     legal: "Õiguslik",
     privacy: "Privaatsuspoliitika",
     terms: "Kasutustingimused",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Tagasi kõigi tööriistade juurde",
@@ -122,9 +122,9 @@ const et: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Tasuta PDF-tööriistad",
+    siteTitle: "ToolPop PDF - Tasuta PDF-tööriistad",
     siteDescription: "Ühendage, tükeldage, tihendage ja teisendage PDF-faile veebis tasuta.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Kasutame küpsiseid teie kasutuskogemuse parandamiseks.",
@@ -134,11 +134,11 @@ const et: Dictionary = {
   privacy: {
     title: "Privaatsuspoliitika",
     lastUpdated: "Viimati uuendatud: 1. märts 2026",
-    intro: "ToolBox PDF-is on sinu privaatsus meile oluline. See poliitika selgitab, millist teavet me kogume, kui kasutad meie teenust, ja kuidas me sellega ümber käime.",
+    intro: "ToolPop PDF-is on sinu privaatsus meile oluline. See poliitika selgitab, millist teavet me kogume, kui kasutad meie teenust, ja kuidas me sellega ümber käime.",
     sections: [
       {
         heading: "1. Teave, mida kogume",
-        content: "ToolBox PDF ei nõua registreerimist. Me ei kogu isikuandmeid. Siiski võime teenuse parandamiseks automaatselt koguda mittetuvastatavat teavet:\n\n• Brauseri tüüp ja versioon\n• Operatsioonisüsteem\n• Külastatud lehed ja veebilehel veedetud aeg\n• Küpsised ja sarnased tehnoloogiad kasutusharjumuste jälgimiseks",
+        content: "ToolPop PDF ei nõua registreerimist. Me ei kogu isikuandmeid. Siiski võime teenuse parandamiseks automaatselt koguda mittetuvastatavat teavet:\n\n• Brauseri tüüp ja versioon\n• Operatsioonisüsteem\n• Külastatud lehed ja veebilehel veedetud aeg\n• Küpsised ja sarnased tehnoloogiad kasutusharjumuste jälgimiseks",
       },
       {
         heading: "2. Failide käsitlemine",
@@ -169,11 +169,11 @@ const et: Dictionary = {
   terms: {
     title: "Kasutustingimused",
     lastUpdated: "Viimati uuendatud: 1. märts 2026",
-    intro: "Täname, et kasutad ToolBox PDF-i. Meie teenust kasutades nõustud järgmiste tingimustega.",
+    intro: "Täname, et kasutad ToolPop PDF-i. Meie teenust kasutades nõustud järgmiste tingimustega.",
     sections: [
       {
         heading: "1. Teenusest",
-        content: "ToolBox PDF on tasuta veebiteenus, mis võimaldab sul PDF-faile ühendada, tükeldada, teisendada, muuta ja tihendada otse oma brauseris.",
+        content: "ToolPop PDF on tasuta veebiteenus, mis võimaldab sul PDF-faile ühendada, tükeldada, teisendada, muuta ja tihendada otse oma brauseris.",
       },
       {
         heading: "2. Lubatud kasutus",
@@ -189,7 +189,7 @@ const et: Dictionary = {
       },
       {
         heading: "5. Intellektuaalomand",
-        content: "Kogu selle saidi sisu — sealhulgas kujundus, logod ja kood — kuulub ToolBox-ile. Sina säilitad täieliku omandiõiguse kõigi üleslaaditud failide üle. Me ei nõua mingit õigust sinu sisule.",
+        content: "Kogu selle saidi sisu — sealhulgas kujundus, logod ja kood — kuulub ToolPop-ile. Sina säilitad täieliku omandiõiguse kõigi üleslaaditud failide üle. Me ei nõua mingit õigust sinu sisule.",
       },
       {
         heading: "6. Teenuse muudatused",

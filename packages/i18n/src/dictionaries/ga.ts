@@ -95,7 +95,7 @@ const ga: Dictionary = {
     legal: "Dlí",
     privacy: "Polasaí príobháideachais",
     terms: "Téarmaí seirbhíse",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Ar ais go dtí gach uirlis",
@@ -122,9 +122,9 @@ const ga: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Uirlisí PDF saor in aisce",
+    siteTitle: "ToolPop PDF - Uirlisí PDF saor in aisce",
     siteDescription: "Cumaisc, roinn, comhbhrúigh agus tiontaigh comhaid PDF ar líne saor in aisce.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Úsáidimid fianáin chun do thaithí a fheabhsú.",
@@ -134,11 +134,11 @@ const ga: Dictionary = {
   privacy: {
     title: "Polasaí Príobháideachais",
     lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
-    intro: "Ag ToolBox PDF, is mór linn do phríobháideachas. Míníonn an polasaí seo cén fhaisnéis a bhailímid nuair a úsáideann tú ár seirbhís agus conas a láimhseálaimid í.",
+    intro: "Ag ToolPop PDF, is mór linn do phríobháideachas. Míníonn an polasaí seo cén fhaisnéis a bhailímid nuair a úsáideann tú ár seirbhís agus conas a láimhseálaimid í.",
     sections: [
       {
         heading: "1. Faisnéis a Bhailímid",
-        content: "Ní gá clárú le ToolBox PDF a úsáid. Ní bhailímid faisnéis phearsanta. Mar sin féin, is féidir linn sonraí neamh-aitheantais a bhailiú go huathoibríoch chun an tseirbhís a fheabhsú:\n\n• Cineál agus leagan brabhsálaí\n• Córas oibriúcháin\n• Leathanaigh a tugadh cuairt orthu agus an t-am a caitheadh\n• Fianáin agus teicneolaíochtaí comhchosúla le haghaidh patrúin úsáide",
+        content: "Ní gá clárú le ToolPop PDF a úsáid. Ní bhailímid faisnéis phearsanta. Mar sin féin, is féidir linn sonraí neamh-aitheantais a bhailiú go huathoibríoch chun an tseirbhís a fheabhsú:\n\n• Cineál agus leagan brabhsálaí\n• Córas oibriúcháin\n• Leathanaigh a tugadh cuairt orthu agus an t-am a caitheadh\n• Fianáin agus teicneolaíochtaí comhchosúla le haghaidh patrúin úsáide",
       },
       {
         heading: "2. Láimhseáil Comhad",
@@ -169,11 +169,11 @@ const ga: Dictionary = {
   terms: {
     title: "Téarmaí Seirbhíse",
     lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
-    intro: "Go raibh maith agat as ToolBox PDF a úsáid. Trí rochtain a fháil ar ár seirbhís nó í a úsáid, aontaíonn tú leis na téarmaí seo a leanas.",
+    intro: "Go raibh maith agat as ToolPop PDF a úsáid. Trí rochtain a fháil ar ár seirbhís nó í a úsáid, aontaíonn tú leis na téarmaí seo a leanas.",
     sections: [
       {
         heading: "1. Faoin tSeirbhís",
-        content: "Is seirbhís ar líne saor in aisce é ToolBox PDF a ligeann duit comhaid PDF a chumasc, a roinnt, a thiontú, a chur in eagar agus a chomhbhrú go díreach i do bhrabhsálaí.",
+        content: "Is seirbhís ar líne saor in aisce é ToolPop PDF a ligeann duit comhaid PDF a chumasc, a roinnt, a thiontú, a chur in eagar agus a chomhbhrú go díreach i do bhrabhsálaí.",
       },
       {
         heading: "2. Úsáid Inghlactha",
@@ -189,7 +189,7 @@ const ga: Dictionary = {
       },
       {
         heading: "5. Maoin Intleachtúil",
-        content: "Is le ToolBox gach ábhar ar an suíomh seo — lena n-áirítear dearadh, lógónna agus cód. Coinníonn tú cearta iomlána ar aon chomhaid a uaslódálann tú. Ní éilímid aon úinéireacht ar do chuid ábhair.",
+        content: "Is le ToolPop gach ábhar ar an suíomh seo — lena n-áirítear dearadh, lógónna agus cód. Coinníonn tú cearta iomlána ar aon chomhaid a uaslódálann tú. Ní éilímid aon úinéireacht ar do chuid ábhair.",
       },
       {
         heading: "6. Athruithe Seirbhíse",

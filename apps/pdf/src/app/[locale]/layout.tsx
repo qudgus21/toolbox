@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import { Header } from "@toolbox/ui";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
 import { tools, categories } from "@/lib/tools";
@@ -33,9 +34,21 @@ export async function generateMetadata({
   const dict = await getDictionary(locale as Locale);
 
   return {
-    metadataBase: new URL("https://pdf.toolbox.co.kr"),
+    metadataBase: new URL("https://toolpop.org/pdf"),
     title: dict.metadata.siteTitle,
     description: dict.metadata.siteDescription,
+    icons: {
+      icon: [
+        { url: "/pdf/favicon.ico", sizes: "48x48" },
+        { url: "/pdf/favicon.svg", type: "image/svg+xml" },
+      ],
+      apple: "/pdf/icon-192.png",
+    },
+    manifest: "/pdf/manifest.json",
+    other: {
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "default",
+    },
     alternates: {
       languages: Object.fromEntries(
         locales.map((l) => [l, `/${l}`]),
@@ -73,15 +86,10 @@ export default async function LocaleLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`,
           }}
         />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="theme-color" content="#ef4444" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js")})}`,
+            __html: `if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/pdf/sw.js")})}`,
           }}
         />
         <script
@@ -90,9 +98,9 @@ export default async function LocaleLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "ToolBox PDF",
-              url: "https://pdf.toolbox.co.kr",
-              logo: "https://pdf.toolbox.co.kr/favicon.svg",
+              name: "ToolPop PDF",
+              url: "https://toolpop.org/pdf",
+              logo: "https://toolpop.org/pdf/favicon.svg",
             }),
           }}
         />
@@ -101,9 +109,22 @@ export default async function LocaleLayout({
         <GoogleAnalytics />
         <Header
           logo={
-            <a href={`/${locale}`} className="text-lg font-bold text-foreground">
-              <span className="text-accent">PDF</span> ToolBox
-            </a>
+            <Link href={`/${locale}`} className="flex items-center gap-2 text-lg font-bold text-foreground">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#ef4444"/>
+                    <stop offset="100%" stopColor="#dc2626"/>
+                  </linearGradient>
+                </defs>
+                <rect width="32" height="32" rx="7" fill="url(#logo-bg)"/>
+                <text x="16" y="21.5" fontFamily="system-ui,-apple-system,sans-serif" fontSize="15" fontWeight="800" fill="white" textAnchor="middle" letterSpacing="-0.5">T</text>
+                <circle cx="25" cy="8" r="3.5" fill="#fbbf24"/>
+                <circle cx="25" cy="8" r="1.5" fill="white"/>
+              </svg>
+              <span>Tool<span className="text-accent">Pop</span></span>
+              <span className="rounded bg-accent/10 px-1.5 py-0.5 text-[10px] font-semibold text-accent leading-none">PDF</span>
+            </Link>
           }
           nav={
             <NavMenu

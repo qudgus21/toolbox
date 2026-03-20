@@ -1,4 +1,4 @@
-const CACHE_NAME = "toolbox-pdf-v1";
+const CACHE_NAME = "toolpop-pdf-v1";
 const STATIC_ASSETS = ["/", "/manifest.json", "/favicon.svg"];
 
 self.addEventListener("install", (event) => {

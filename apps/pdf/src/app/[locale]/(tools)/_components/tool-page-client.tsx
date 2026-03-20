@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { ToolPageLayout, FileUploadZone } from "@toolbox/ui";
 import {
   ArrowRight,
@@ -145,6 +146,7 @@ export function ToolPageClient({
       description={description}
       backHref={backHref}
       backLabel={labels.backToAll}
+      linkComponent={Link}
       size={getLayoutSize(stage)}
       hideHeader={(isEditPdf || isCrop || isRedact || isAnnotate || isSign || headerFooterLabels) && stage === "loaded"}
       className={(isEditPdf || isCrop || isRedact || isAnnotate || isSign) && stage === "loaded" ? "!h-screen !min-h-0 !overflow-hidden !py-0 sm:!py-0 [&>div]:!px-0 [&>div]:!max-w-none [&>div>div:first-child]:!hidden" : undefined}

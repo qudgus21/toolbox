@@ -1,5 +1,6 @@
 "use client";
 
+import { type ElementType } from "react";
 import { cn } from "@toolbox/utils";
 import { ArrowLeft } from "lucide-react";
 import { Container } from "../container";
@@ -15,6 +16,7 @@ export interface ToolPageLayoutProps {
   size?: "sm" | "md" | "lg" | "xl" | "full";
   /** Hide title/description header (e.g. for full-screen editors) */
   hideHeader?: boolean;
+  linkComponent?: ElementType;
 }
 
 export function ToolPageLayout({
@@ -27,18 +29,19 @@ export function ToolPageLayout({
   className,
   size = "lg",
   hideHeader = false,
+  linkComponent: LinkEl = "a",
 }: ToolPageLayoutProps) {
   return (
     <main className={cn("min-h-[calc(100vh-4rem)]", hideHeader ? "py-2 sm:py-3" : "py-6 sm:py-8", className)}>
       <Container size={size}>
         <div className={cn("flex items-center justify-between", hideHeader ? "mb-2" : "mb-4")}>
-          <a
+          <LinkEl
             href={backHref}
             className="inline-flex items-center gap-2 text-sm text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             {backLabel}
-          </a>
+          </LinkEl>
           <div className="h-9 w-9 shrink-0">{action}</div>
         </div>
         {!hideHeader && (

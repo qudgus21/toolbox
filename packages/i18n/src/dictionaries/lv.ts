@@ -95,7 +95,7 @@ const lv: Dictionary = {
     legal: "Juridiskā informācija",
     privacy: "Privātuma politika",
     terms: "Lietošanas noteikumi",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Atpakaļ pie visiem rīkiem",
@@ -122,9 +122,9 @@ const lv: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Bezmaksas PDF rīki",
+    siteTitle: "ToolPop PDF - Bezmaksas PDF rīki",
     siteDescription: "Apvienojiet, sadaliet, saspiežiet un konvertējiet PDF failus tiešsaistē bez maksas.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Mēs izmantojam sīkdatnes, lai uzlabotu jūsu pieredzi.",
@@ -134,11 +134,11 @@ const lv: Dictionary = {
   privacy: {
     title: "Privātuma politika",
     lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
-    intro: "ToolBox PDF rūpējas par jūsu privātumu. Šī politika skaidro, kādu informāciju mēs apkopojam, kad izmantojat mūsu pakalpojumu, un kā mēs ar to rīkojamies.",
+    intro: "ToolPop PDF rūpējas par jūsu privātumu. Šī politika skaidro, kādu informāciju mēs apkopojam, kad izmantojat mūsu pakalpojumu, un kā mēs ar to rīkojamies.",
     sections: [
       {
         heading: "1. Informācija, ko apkopojam",
-        content: "ToolBox PDF neprasa reģistrāciju. Mēs neapkopojam personisko informāciju. Tomēr mēs varam automātiski apkopot neidentificējošus datus, lai uzlabotu pakalpojumu:\n\n• Pārlūkprogrammas tips un versija\n• Operētājsistēma\n• Apmeklētās lapas un pavadītais laiks\n• Sīkdatnes un līdzīgas tehnoloģijas lietošanas paradumu analīzei",
+        content: "ToolPop PDF neprasa reģistrāciju. Mēs neapkopojam personisko informāciju. Tomēr mēs varam automātiski apkopot neidentificējošus datus, lai uzlabotu pakalpojumu:\n\n• Pārlūkprogrammas tips un versija\n• Operētājsistēma\n• Apmeklētās lapas un pavadītais laiks\n• Sīkdatnes un līdzīgas tehnoloģijas lietošanas paradumu analīzei",
       },
       {
         heading: "2. Failu apstrāde",
@@ -169,11 +169,11 @@ const lv: Dictionary = {
   terms: {
     title: "Lietošanas noteikumi",
     lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
-    intro: "Paldies, ka izmantojat ToolBox PDF. Piekļūstot mūsu pakalpojumam vai to izmantojot, jūs piekrītat šādiem noteikumiem.",
+    intro: "Paldies, ka izmantojat ToolPop PDF. Piekļūstot mūsu pakalpojumam vai to izmantojot, jūs piekrītat šādiem noteikumiem.",
     sections: [
       {
         heading: "1. Par pakalpojumu",
-        content: "ToolBox PDF ir bezmaksas tiešsaistes pakalpojums, kas ļauj apvienot, sadalīt, konvertēt, rediģēt un saspiest PDF failus tieši jūsu pārlūkprogrammā.",
+        content: "ToolPop PDF ir bezmaksas tiešsaistes pakalpojums, kas ļauj apvienot, sadalīt, konvertēt, rediģēt un saspiest PDF failus tieši jūsu pārlūkprogrammā.",
       },
       {
         heading: "2. Pieļaujamā lietošana",
@@ -189,7 +189,7 @@ const lv: Dictionary = {
       },
       {
         heading: "5. Intelektuālais īpašums",
-        content: "Viss šīs vietnes saturs — ieskaitot dizainu, logotipus un kodu — pieder ToolBox. Jūs saglabājat pilnas tiesības uz visiem augšupielādētajiem failiem. Mēs nepretendējam uz jūsu saturu.",
+        content: "Viss šīs vietnes saturs — ieskaitot dizainu, logotipus un kodu — pieder ToolPop. Jūs saglabājat pilnas tiesības uz visiem augšupielādētajiem failiem. Mēs nepretendējam uz jūsu saturu.",
       },
       {
         heading: "6. Pakalpojuma izmaiņas",

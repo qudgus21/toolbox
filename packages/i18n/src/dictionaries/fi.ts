@@ -95,7 +95,7 @@ const fi: Dictionary = {
     legal: "Oikeudelliset tiedot",
     privacy: "Tietosuojakäytäntö",
     terms: "Käyttöehdot",
-    copyright: "ToolBox. All rights reserved.",
+    copyright: "ToolPop. All rights reserved.",
   },
   common: {
     backToAll: "Takaisin kaikkiin työkaluihin",
@@ -122,9 +122,9 @@ const fi: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Ilmaiset PDF-työkalut",
+    siteTitle: "ToolPop PDF - Ilmaiset PDF-työkalut",
     siteDescription: "Yhdistä, jaa, pakkaa ja muunna PDF-tiedostoja verkossa ilmaiseksi.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Käytämme evästeitä parantaaksemme kokemustasi.",
@@ -134,11 +134,11 @@ const fi: Dictionary = {
   privacy: {
     title: "Tietosuojakäytäntö",
     lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
-    intro: "ToolBox PDF:ssä yksityisyytesi on meille tärkeää. Tämä käytäntö selittää, mitä tietoja keräämme palvelumme käytön yhteydessä ja miten käsittelemme niitä.",
+    intro: "ToolPop PDF:ssä yksityisyytesi on meille tärkeää. Tämä käytäntö selittää, mitä tietoja keräämme palvelumme käytön yhteydessä ja miten käsittelemme niitä.",
     sections: [
       {
         heading: "1. Keräämämme tiedot",
-        content: "ToolBox PDF ei vaadi rekisteröitymistä. Emme kerää henkilötietoja. Saatamme kuitenkin kerätä automaattisesti ei-tunnistavia tietoja palvelun parantamiseksi:\n\n• Selaimen tyyppi ja versio\n• Käyttöjärjestelmä\n• Vieraillut sivut ja käytetty aika\n• Evästeet ja vastaavat teknologiat käyttötapojen analysointiin",
+        content: "ToolPop PDF ei vaadi rekisteröitymistä. Emme kerää henkilötietoja. Saatamme kuitenkin kerätä automaattisesti ei-tunnistavia tietoja palvelun parantamiseksi:\n\n• Selaimen tyyppi ja versio\n• Käyttöjärjestelmä\n• Vieraillut sivut ja käytetty aika\n• Evästeet ja vastaavat teknologiat käyttötapojen analysointiin",
       },
       {
         heading: "2. Tiedostojen käsittely",
@@ -169,11 +169,11 @@ const fi: Dictionary = {
   terms: {
     title: "Käyttöehdot",
     lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
-    intro: "Kiitos, että käytät ToolBox PDF:ää. Käyttämällä palveluamme hyväksyt seuraavat ehdot.",
+    intro: "Kiitos, että käytät ToolPop PDF:ää. Käyttämällä palveluamme hyväksyt seuraavat ehdot.",
     sections: [
       {
         heading: "1. Palvelusta",
-        content: "ToolBox PDF on ilmainen verkkopalvelu, jonka avulla voit yhdistää, jakaa, muuntaa, muokata ja pakata PDF-tiedostoja suoraan selaimessasi.",
+        content: "ToolPop PDF on ilmainen verkkopalvelu, jonka avulla voit yhdistää, jakaa, muuntaa, muokata ja pakata PDF-tiedostoja suoraan selaimessasi.",
       },
       {
         heading: "2. Hyväksyttävä käyttö",
@@ -189,7 +189,7 @@ const fi: Dictionary = {
       },
       {
         heading: "5. Immateriaalioikeudet",
-        content: "Kaikki tämän sivuston sisältö -- mukaan lukien ulkoasu, logot ja koodi -- kuuluu ToolBoxille. Sinä säilytät kaikki oikeudet lataamiisi tiedostoihin. Emme vaadi omistusoikeutta sisältöösi.",
+        content: "Kaikki tämän sivuston sisältö -- mukaan lukien ulkoasu, logot ja koodi -- kuuluu ToolPopille. Sinä säilytät kaikki oikeudet lataamiisi tiedostoihin. Emme vaadi omistusoikeutta sisältöösi.",
       },
       {
         heading: "6. Palvelun muutokset",

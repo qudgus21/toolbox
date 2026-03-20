@@ -95,7 +95,7 @@ const tr: Dictionary = {
     legal: "Yasal",
     privacy: "Gizlilik Politikası",
     terms: "Hizmet Şartları",
-    copyright: "ToolBox. Tüm hakları saklıdır.",
+    copyright: "ToolPop. Tüm hakları saklıdır.",
   },
   common: {
     backToAll: "Tüm araçlara dön",
@@ -122,9 +122,9 @@ const tr: Dictionary = {
     comingSoon: "Yakında",
   },
   metadata: {
-    siteTitle: "ToolBox PDF - Ücretsiz PDF Araçları",
+    siteTitle: "ToolPop PDF - Ücretsiz PDF Araçları",
     siteDescription: "PDF dosyalarını çevrimiçi olarak ücretsiz birleştirin, bölün, sıkıştırın ve dönüştürün.",
-    toolTitleSuffix: "- ToolBox PDF",
+    toolTitleSuffix: "- ToolPop PDF",
   },
   cookie: {
     message: "Deneyiminizi iyileştirmek için çerez kullanıyoruz.",
@@ -134,11 +134,11 @@ const tr: Dictionary = {
   privacy: {
     title: "Gizlilik Politikası",
     lastUpdated: "Son güncelleme: 1 Mart 2026",
-    intro: "ToolBox PDF olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken hangi bilgileri topladığımızı ve bunları nasıl işlediğimizi açıklar.",
+    intro: "ToolPop PDF olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken hangi bilgileri topladığımızı ve bunları nasıl işlediğimizi açıklar.",
     sections: [
       {
         heading: "1. Topladığımız Bilgiler",
-        content: "ToolBox PDF'de hesap oluşturmanız gerekmez. Kişisel bilgi toplamıyoruz. Ancak hizmeti iyileştirmek amacıyla kimliğinizi belirlemeyen bazı verileri otomatik olarak toplayabiliriz:\n\n• Tarayıcı türü ve sürümü\n• İşletim sistemi\n• Ziyaret edilen sayfalar ve geçirilen süre\n• Kullanım alışkanlıklarını analiz etmek için çerezler ve benzeri teknolojiler",
+        content: "ToolPop PDF'de hesap oluşturmanız gerekmez. Kişisel bilgi toplamıyoruz. Ancak hizmeti iyileştirmek amacıyla kimliğinizi belirlemeyen bazı verileri otomatik olarak toplayabiliriz:\n\n• Tarayıcı türü ve sürümü\n• İşletim sistemi\n• Ziyaret edilen sayfalar ve geçirilen süre\n• Kullanım alışkanlıklarını analiz etmek için çerezler ve benzeri teknolojiler",
       },
       {
         heading: "2. Dosya İşleme",
@@ -169,11 +169,11 @@ const tr: Dictionary = {
   terms: {
     title: "Hizmet Şartları",
     lastUpdated: "Son güncelleme: 1 Mart 2026",
-    intro: "ToolBox PDF'i kullandığınız için teşekkürler. Hizmetimize erişerek veya kullanarak aşağıdaki şartları kabul etmiş olursunuz.",
+    intro: "ToolPop PDF'i kullandığınız için teşekkürler. Hizmetimize erişerek veya kullanarak aşağıdaki şartları kabul etmiş olursunuz.",
     sections: [
       {
         heading: "1. Hizmet Hakkında",
-        content: "ToolBox PDF, doğrudan tarayıcınızda PDF dosyalarını birleştirmenize, bölmenize, dönüştürmenize, düzenlemenize ve sıkıştırmanıza olanak tanıyan ücretsiz bir çevrimiçi hizmettir.",
+        content: "ToolPop PDF, doğrudan tarayıcınızda PDF dosyalarını birleştirmenize, bölmenize, dönüştürmenize, düzenlemenize ve sıkıştırmanıza olanak tanıyan ücretsiz bir çevrimiçi hizmettir.",
       },
       {
         heading: "2. Kabul Edilebilir Kullanım",
@@ -189,7 +189,7 @@ const tr: Dictionary = {
       },
       {
         heading: "5. Fikri Mülkiyet",
-        content: "Bu sitedeki tüm içerik — tasarım, logolar ve kod dahil — ToolBox'a aittir. Yüklediğiniz dosyalar üzerindeki tüm haklar size aittir. İçeriğiniz üzerinde hiçbir hak iddia etmiyoruz.",
+        content: "Bu sitedeki tüm içerik — tasarım, logolar ve kod dahil — ToolPop'a aittir. Yüklediğiniz dosyalar üzerindeki tüm haklar size aittir. İçeriğiniz üzerinde hiçbir hak iddia etmiyoruz.",
       },
       {
         heading: "6. Hizmet Değişiklikleri",
