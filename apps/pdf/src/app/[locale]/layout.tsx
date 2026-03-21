@@ -35,7 +35,10 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://toolpop.org/pdf"),
-    title: dict.metadata.siteTitle,
+    title: {
+      default: dict.metadata.siteTitle,
+      template: `%s | ToolPop PDF`,
+    },
     description: dict.metadata.siteDescription,
     icons: {
       icon: [
@@ -50,12 +53,14 @@ export async function generateMetadata({
       "apple-mobile-web-app-status-bar-style": "default",
     },
     alternates: {
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}`]),
-      ),
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+        "x-default": "/en",
+      },
     },
     openGraph: {
       siteName: dict.metadata.siteTitle,
+      locale: locale,
     },
     twitter: {
       card: "summary_large_image",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
+import { generateAlternates, generateBreadcrumbJsonLd } from "@toolbox/seo";
 import { tools, categories } from "@/lib/tools";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
@@ -15,17 +16,13 @@ export async function generateMetadata({
   return {
     title: dict.metadata.siteTitle,
     description: dict.metadata.siteDescription,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}`]),
-      ),
-    },
+    alternates: generateAlternates("", locales, locale),
     openGraph: {
       title: dict.metadata.siteTitle,
       description: dict.metadata.siteDescription,
       url: `/${locale}`,
       type: "website",
+      locale,
     },
     twitter: {
       card: "summary_large_image",
@@ -43,6 +40,10 @@ export default async function PdfHomePage({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "ToolPop PDF", url: `https://toolpop.org/pdf/${locale}` },
+  ]);
+
   return (
     <>
       <script
@@ -55,6 +56,8 @@ export default async function PdfHomePage({
             url: `https://toolpop.org/pdf/${locale}`,
             applicationCategory: "UtilityApplication",
             operatingSystem: "Any",
+            author: { "@type": "Organization", name: "ToolPop", url: "https://toolpop.org" },
+            inLanguage: locale,
             offers: {
               "@type": "Offer",
               price: "0",
@@ -62,6 +65,10 @@ export default async function PdfHomePage({
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <HomeContent dict={dict} locale={locale} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />

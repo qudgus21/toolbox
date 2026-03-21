@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
+import { generateAlternates, generateBreadcrumbJsonLd } from "@toolbox/seo";
 import { tools, getToolBySlug } from "@/lib/tools";
 import { ToolPageClient } from "../_components/tool-page-client";
+import { RelatedTools } from "../_components/related-tools";
 
 export async function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -25,17 +27,13 @@ export async function generateMetadata({
   return {
     title,
     description: t.description,
-    alternates: {
-      canonical: `/${locale}/${slug}`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/${slug}`]),
-      ),
-    },
+    alternates: generateAlternates(slug, locales, locale),
     openGraph: {
       title,
       description: t.description,
       url: `/${locale}/${slug}`,
       type: "website",
+      locale,
     },
     twitter: {
       card: "summary_large_image",
@@ -58,6 +56,11 @@ export default async function ToolPage({
   const t = dict.tools[slug];
   if (!t) notFound();
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "ToolPop PDF", url: `https://toolpop.org/pdf/${locale}` },
+    { name: t.title, url: `https://toolpop.org/pdf/${locale}/${slug}` },
+  ]);
+
   return (
     <>
       <script
@@ -71,6 +74,8 @@ export default async function ToolPage({
             url: `https://toolpop.org/pdf/${locale}/${slug}`,
             applicationCategory: "UtilityApplication",
             operatingSystem: "Any",
+            author: { "@type": "Organization", name: "ToolPop", url: "https://toolpop.org" },
+            inLanguage: locale,
             offers: {
               "@type": "Offer",
               price: "0",
@@ -78,6 +83,10 @@ export default async function ToolPage({
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ToolPageClient
         slug={slug}
@@ -119,6 +128,13 @@ export default async function ToolPage({
         overlayLabels={slug === "overlay" ? dict.overlayTool : undefined}
         bookletLabels={slug === "booklet" ? dict.bookletTool : undefined}
       />
+      <div className="mx-auto max-w-2xl px-4 pb-12">
+        <RelatedTools
+          currentSlug={slug}
+          locale={locale}
+          title={dict.common.tryOtherTools}
+        />
+      </div>
     </>
   );
 }

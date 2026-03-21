@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of locales) {
     entries.push({
       url: `${BASE_URL}/${locale}`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-03-22"),
       changeFrequency: "weekly",
       priority: 1.0,
     });
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const slug of toolSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/${slug}`,
-        lastModified: new Date(),
+        lastModified: new Date("2026-03-22"),
         changeFrequency: "monthly",
         priority: 0.8,
       });
@@ -34,13 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of locales) {
     entries.push({
       url: `${BASE_URL}/${locale}/privacy`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-03-22"),
       changeFrequency: "yearly",
       priority: 0.3,
     });
     entries.push({
       url: `${BASE_URL}/${locale}/terms`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-03-22"),
       changeFrequency: "yearly",
       priority: 0.3,
     });
