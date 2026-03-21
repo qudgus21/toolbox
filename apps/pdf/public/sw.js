@@ -1,5 +1,5 @@
 const CACHE_NAME = "toolpop-pdf-v1";
-const STATIC_ASSETS = ["/", "/manifest.json", "/favicon.svg"];
+const STATIC_ASSETS = ["/pdf/", "/pdf/manifest.json", "/pdf/favicon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

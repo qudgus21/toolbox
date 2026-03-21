@@ -46,7 +46,7 @@ export async function generateMetadata({
     },
     manifest: "/pdf/manifest.json",
     other: {
-      "apple-mobile-web-app-capable": "yes",
+      "mobile-web-app-capable": "yes",
       "apple-mobile-web-app-status-bar-style": "default",
     },
     alternates: {
