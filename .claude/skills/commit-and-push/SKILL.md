@@ -79,16 +79,23 @@ Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
 
 ## Step 4: Push
 
-커밋을 원격 저장소에 push합니다:
+**항상 develop 브랜치에 push합니다.** main은 프로덕션 브랜치이므로 직접 push 금지.
+
+현재 브랜치가 develop이 아니면 develop으로 전환 후 push:
 
 ```bash
-git push
+# 현재 브랜치 확인
+current=$(git branch --show-current)
+if [ "$current" != "develop" ]; then
+  echo "⚠️ 현재 브랜치: $current — develop이 아닙니다."
+  echo "develop 브랜치로 전환 후 push합니다."
+  git checkout develop
+fi
+
+git push -u origin develop
 ```
 
-만약 새 브랜치를 처음 push하는 경우:
-```bash
-git push -u origin $(git branch --show-current)
-```
+프로덕션 배포는 GitHub에서 develop → main PR merge로 진행.
 
 ## 주의사항
 
@@ -97,3 +104,4 @@ git push -u origin $(git branch --show-current)
 - 커밋 전 변경사항을 사용자에게 요약해서 보여주기
 - push 실패 시 에러 메시지 출력
 - `packages/` 변경 시 "공유 패키지 변경 — 전체 앱 빌드에 영향" 알림
+- **main 브랜치에 직접 push 금지** — 반드시 develop → main PR 워크플로우 사용
