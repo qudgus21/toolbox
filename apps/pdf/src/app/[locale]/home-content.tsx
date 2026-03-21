@@ -8,6 +8,7 @@ import { Container, ToolCard } from "@toolbox/ui";
 import { tools, categories, categoryColors } from "@/lib/tools";
 import { toolIconMap, categoryIconMap } from "@/lib/tool-icons";
 import { getFavorites, toggleFavorite, reorderFavorites } from "@toolbox/storage";
+import { useTrack, pdfEvents } from "@toolbox/analytics";
 import {
   DndContext,
   closestCenter,
@@ -155,6 +156,7 @@ function SortableFavCard({
 }
 
 export function HomeContent({ dict, locale }: HomeContentProps) {
+  const track = useTrack("pdf", pdfEvents);
   const [activeTab, setActiveTab] = useState<CategoryFilter>("all");
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -200,7 +202,8 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     const added = toggleFavorite(slug);
     setFavSlugs(getFavorites());
     setToast(added ? dict.common.favoriteAdded : dict.common.favoriteRemoved);
-  }, [dict.common]);
+    track.favoriteToggle({ tool_slug: slug, action: added ? "add" : "remove" });
+  }, [dict.common, track]);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -251,6 +254,15 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     [favSlugs],
   );
 
+  // 검색어 GA 트래킹 (디바운스 500ms, 2자 이상)
+  useEffect(() => {
+    if (search.trim().length < 2) return;
+    const timer = setTimeout(() => {
+      track.searchQuery({ search_term: search.trim() });
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [search, track]);
+
   const isSearching = search.trim().length > 0;
   const showFavSection = favSlugs !== null && !isSearching && activeTab === "all" && favTools.length > 0;
 
@@ -282,8 +294,14 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const renderToolCard = (tool: typeof tools[number], ctx: "grid" | "fav" = "grid") => {
     const toolDict = dict.tools[tool.slug];
     const isFav = favSlugs?.includes(tool.slug) ?? false;
+    const handleToolClick = () => {
+      track.toolCardClick({
+        tool_slug: tool.slug,
+        source: isSearching ? "search" : ctx === "fav" ? "favorites" : "grid",
+      });
+    };
     return viewMode === "grid" ? (
-      <div className={cn("relative group/fav h-full")}>
+      <div className={cn("relative group/fav h-full")} onClick={handleToolClick}>
         <ToolCard
           data-card
           href={`/${locale}/${tool.slug}`}
@@ -333,6 +351,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
       <div className={cn("relative group/fav")}>
         <Link
           href={`/${locale}/${tool.slug}`}
+          onClick={handleToolClick}
           className="group flex items-center gap-4 rounded-lg border border-border/60 bg-background-elevated px-4 py-3 shadow-sm transition-colors hover:border-accent/50 hover:shadow-md"
         >
           {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-7 w-auto shrink-0" />; })() : tool.emoji ? <span className="text-2xl shrink-0">{tool.emoji}</span> : null}
@@ -427,7 +446,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           transition={{ duration: 0.3, delay: 0.15 }}
         >
           <button
-            onClick={() => { setActiveTab("all"); setSearch(""); }}
+            onClick={() => { setActiveTab("all"); setSearch(""); track.categoryTabClick({ category: "all" }); }}
             className={`cursor-pointer rounded-full border px-4 py-2 text-base font-bold transition-colors ${
               activeTab === "all" && !isSearching
                 ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
@@ -439,7 +458,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           {categories.map((cat) => (
             <button
               key={cat.key}
-              onClick={() => { setActiveTab(cat.key); setSearch(""); }}
+              onClick={() => { setActiveTab(cat.key); setSearch(""); track.categoryTabClick({ category: cat.key }); }}
               className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-base font-bold transition-colors ${
                 activeTab === cat.key && !isSearching
                   ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
@@ -453,13 +472,13 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           {/* View Toggle */}
           <div className="hidden sm:flex items-center gap-1 ml-2 rounded-full border border-border p-0.5">
             <button
-              onClick={() => setViewMode("grid")}
+              onClick={() => { setViewMode("grid"); track.viewModeToggle({ mode: "grid" }); }}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <LayoutGrid className="h-4 w-4" />
             </button>
             <button
-              onClick={() => setViewMode("list")}
+              onClick={() => { setViewMode("list"); track.viewModeToggle({ mode: "list" }); }}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "list" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <List className="h-4 w-4" />

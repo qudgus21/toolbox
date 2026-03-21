@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown, Globe } from "lucide-react";
+import { sendEvent } from "@toolbox/analytics";
 
 const languageNames: Record<string, string> = {
   id: "Bahasa Indonesia",
@@ -111,7 +112,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
                   ? "bg-accent/10 text-accent font-medium"
                   : "text-foreground-muted hover:bg-background-elevated hover:text-foreground"
               }`}
-              onClick={() => setOpen(false)}
+              onClick={() => { sendEvent("language_switch", { app: "pdf", from_locale: locale, to_locale: code }); setOpen(false); }}
             >
               {name}
             </Link>

@@ -32,6 +32,9 @@ importers:
       '@tanstack/react-virtual':
         specifier: ^3.13.21
         version: 3.13.21(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@toolbox/analytics':
+        specifier: workspace:*
+        version: link:../../packages/analytics
       '@toolbox/design-tokens':
         specifier: workspace:*
         version: link:../../packages/design-tokens
@@ -204,10 +207,17 @@ importers:
         version: 5.9.3
 
   packages/analytics:
+    dependencies:
+      react:
+        specifier: ^18 || ^19
+        version: 19.2.4
     devDependencies:
       '@toolbox/config':
         specifier: workspace:*
         version: link:../config
+      '@types/react':
+        specifier: ^19
+        version: 19.2.14
       typescript:
         specifier: ^5
         version: 5.9.3

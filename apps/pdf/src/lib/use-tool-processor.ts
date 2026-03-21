@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { ToolState, ProcessingResult } from "./types";
 import { getProcessor } from "./processor-registry";
+import { sendEvent } from "@toolbox/analytics";
 
 const INITIAL_STATE: ToolState = {
   stage: "idle",
@@ -29,13 +30,19 @@ export function useToolProcessor(slug: string) {
   }, []);
 
   const addFiles = useCallback((newFiles: File[]) => {
-    setState((prev) => ({
-      ...prev,
-      stage: "loaded",
-      files: [...prev.files, ...newFiles],
-      error: null,
-    }));
-  }, []);
+    setState((prev) => {
+      if (prev.stage === "idle") {
+        const totalSizeKb = Math.round(newFiles.reduce((s, f) => s + f.size, 0) / 1024);
+        queueMicrotask(() => sendEvent("file_upload", { app: "pdf", tool_slug: slug, file_count: newFiles.length, total_size_kb: totalSizeKb }));
+      }
+      return {
+        ...prev,
+        stage: "loaded",
+        files: [...prev.files, ...newFiles],
+        error: null,
+      };
+    });
+  }, [slug]);
 
   const removeFile = useCallback((index: number) => {
     setState((prev) => {
@@ -108,11 +115,20 @@ export function useToolProcessor(slug: string) {
           throw new Error(`Processor not found: ${slug}`);
         }
 
+        const startTime = performance.now();
         const result = await processor(
           state.files,
           options,
           (progress) => setState((prev) => ({ ...prev, progress })),
         );
+        const durationMs = Math.round(performance.now() - startTime);
+
+        sendEvent("process_complete", {
+          app: "pdf",
+          tool_slug: slug,
+          duration_ms: durationMs,
+          output_size_kb: Math.round(result.size / 1024),
+        });
 
         setState((prev) => ({
           ...prev,
@@ -121,10 +137,12 @@ export function useToolProcessor(slug: string) {
           result,
         }));
       } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : "Processing failed";
+        sendEvent("process_error", { app: "pdf", tool_slug: slug, error_message: errorMessage });
         setState((prev) => ({
           ...prev,
           stage: "error",
-          error: err instanceof Error ? err.message : "Processing failed",
+          error: errorMessage,
         }));
       }
     },

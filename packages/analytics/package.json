@@ -7,8 +7,12 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  },
   "devDependencies": {
     "@toolbox/config": "workspace:*",
+    "@types/react": "^19",
     "typescript": "^5"
   }
 }

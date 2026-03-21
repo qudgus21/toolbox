@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn, formatSize } from "@toolbox/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@toolbox/ui";
+import { sendEvent } from "@toolbox/analytics";
 import type { ProcessingResult } from "@/lib/types";
 
 interface ResultCardProps {
@@ -15,6 +16,7 @@ interface ResultCardProps {
   resetLabel?: string;
   pagesLabel?: string;
   className?: string;
+  toolSlug: string;
 }
 
 export function ResultCard({
@@ -25,6 +27,7 @@ export function ResultCard({
   resetLabel = "Start over",
   pagesLabel = "pages",
   className,
+  toolSlug,
 }: ResultCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [filename, setFilename] = useState(result.filename);
@@ -88,11 +91,11 @@ export function ResultCard({
       </p>
 
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <Button variant="accent" size="lg" onClick={() => onDownload(filename)}>
+        <Button variant="accent" size="lg" onClick={() => { onDownload(filename); sendEvent("download_click", { app: "pdf", tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) }); }}>
           <Download className="mr-2 h-4 w-4" />
           {downloadLabel}
         </Button>
-        <Button variant="ghost" size="lg" onClick={onReset}>
+        <Button variant="ghost" size="lg" onClick={() => { sendEvent("reset_click", { app: "pdf", tool_slug: toolSlug }); onReset(); }}>
           <RotateCcw className="mr-2 h-4 w-4" />
           {resetLabel}
         </Button>
