@@ -20,6 +20,7 @@ import { PageSelectorModal } from "./page-selector-modal";
 import { fileId } from "./file-list";
 import { useToolState } from "./use-tool-state";
 import { ToolLoadedContent } from "./tool-loaded-content";
+import { sendEvent } from "@toolbox/analytics";
 
 import type { ToolPageClientProps } from "./tool-page-types";
 
@@ -284,6 +285,7 @@ export function ToolPageClient({
               onReset={reset}
               downloadLabel={labels.download}
               resetLabel={labels.startOver}
+              toolSlug={slug}
             />
             <RelatedTools
               currentSlug={slug}
@@ -314,6 +316,7 @@ export function ToolPageClient({
               onClick={() => {
                 const options = buildProcessOptions();
                 if (options !== null) {
+                  sendEvent("process_click", { app: "pdf", tool_slug: slug, file_count: files.length });
                   processFiles(options);
                 }
               }}

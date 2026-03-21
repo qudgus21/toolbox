@@ -408,6 +408,24 @@ pnpm --filter {앱이름} build
 
 ---
 
+## GA 이벤트 점검 (구현 완료 후)
+
+구현이 완료된 도구에 대해 다음을 확인한다:
+
+1. `packages/analytics/src/events/{domain}.ts`에 해당 도구의 이벤트가 정의되어 있는가?
+2. 최소 필수 이벤트가 포함되어 있는가?
+   - `file_upload` — 파일 업로드 시 (use-tool-processor.ts의 addFiles)
+   - `process_click` — 처리 버튼 클릭 (tool-page-client.tsx)
+   - `process_complete` — 처리 완료 (use-tool-processor.ts)
+   - `download_click` — 다운로드 클릭 (result-card.tsx)
+3. 새 도구에 고유한 인터랙션이 있으면 추가 이벤트를 제안한다
+
+**기존 도구 패턴을 따르면 자동으로 트래킹됨** — 새 도구가 `useToolProcessor` + `ResultCard`를 사용하면 file_upload, process_complete, process_error, download_click, reset_click은 이미 동작함. `process_click`만 `tool-page-client.tsx`의 실행 버튼에서 발생하며 이것도 기존 코드에 포함됨.
+
+누락이 있으면 `/analytics implement`로 해결하거나, 직접 인라인으로 추가한다.
+
+---
+
 ## 지식 저장 (구현 완료 후)
 
 구현 중 발견한 새로운 인사이트를 `memory/skills/tool-builder-lessons.md`에 기록한다.

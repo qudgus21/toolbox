@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
+import { sendEvent } from "@toolbox/analytics";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -19,6 +20,7 @@ export function ThemeToggle() {
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
+    sendEvent("theme_toggle", { app: "pdf", theme: next });
   }
 
   return (
