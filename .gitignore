@@ -33,12 +33,16 @@ pnpm-debug.log*
 
 # Testing
 coverage/
+test-results/
 **/e2e/screenshots/
 **/e2e/test-results/
 **/playwright-report/
 
 # Credentials
 ga/
+
+# MCP
+.mcp.json
 
 # Misc
 *.tsbuildinfo
