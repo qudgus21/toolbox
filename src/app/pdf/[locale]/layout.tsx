@@ -128,7 +128,7 @@ export default async function LocaleLayout({
               <circle cx="25" cy="8" r="1.5" fill="white"/>
             </svg>
             <span>Tool<span className="text-accent">Pop</span></span>
-            <span className="rounded bg-accent/10 px-1.5 py-0.5 text-[10px] font-semibold text-accent leading-none">PDF</span>
+            <span className="rounded bg-red-50 px-1.5 py-0.5 text-[10px] font-bold text-red-700 dark:bg-red-950 dark:text-red-400 leading-none">PDF</span>
           </Link>
         }
         nav={
