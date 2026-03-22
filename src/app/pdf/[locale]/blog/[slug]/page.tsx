@@ -4,12 +4,13 @@ import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
-import { articles, getArticleBySlug } from "@/lib/blog/articles";
+import { getArticlesByApp, getArticleBySlug } from "@/lib/blog/articles";
 import { ArrowLeft, BookOpen, Lightbulb, GraduationCap } from "lucide-react";
 
 export async function generateStaticParams() {
+  const pdfArticles = getArticlesByApp("pdf");
   return locales.flatMap((locale) =>
-    articles.map((article) => ({ locale, slug: article.slug })),
+    pdfArticles.map((article) => ({ locale, slug: article.slug })),
   );
 }
 
@@ -20,7 +21,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article || !article.content[locale]) return {};
+  if (!article || article.app !== "pdf" || !article.content[locale]) return {};
 
   const dict = await getDictionary(locale as Locale);
   const content = article.content[locale];
@@ -118,7 +119,7 @@ export default async function BlogArticlePage({
 }) {
   const { locale, slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article || !article.content[locale]) notFound();
+  if (!article || article.app !== "pdf" || !article.content[locale]) notFound();
 
   const dict = await getDictionary(locale as Locale);
   const content = article.content[locale];
