@@ -1,6 +1,7 @@
 "use client";
 
 import { FlipHorizontal, FlipVertical } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface FlipOptionsValue {
   horizontal: boolean;
@@ -10,13 +11,14 @@ export interface FlipOptionsValue {
 interface FlipOptionsProps {
   value: FlipOptionsValue;
   onChange: (value: FlipOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["flip"];
 }
 
-export function FlipOptions({ value, onChange }: FlipOptionsProps) {
+export function FlipOptions({ value, onChange, labels }: FlipOptionsProps) {
   return (
     <div className="space-y-4">
       <label className="block text-xs font-medium text-foreground-muted mb-2">
-        Flip Direction
+        {labels.direction}
       </label>
       <div className="flex gap-3">
         <button
@@ -29,7 +31,7 @@ export function FlipOptions({ value, onChange }: FlipOptionsProps) {
           }`}
         >
           <FlipHorizontal className="h-8 w-8" />
-          <span className="text-xs font-medium">Flip Horizontal</span>
+          <span className="text-xs font-medium">{labels.horizontal}</span>
         </button>
         <button
           type="button"
@@ -41,12 +43,12 @@ export function FlipOptions({ value, onChange }: FlipOptionsProps) {
           }`}
         >
           <FlipVertical className="h-8 w-8" />
-          <span className="text-xs font-medium">Flip Vertical</span>
+          <span className="text-xs font-medium">{labels.vertical}</span>
         </button>
       </div>
       {!value.horizontal && !value.vertical && (
         <p className="text-xs text-foreground-muted text-center">
-          Select at least one direction to flip
+          {labels.selectOne}
         </p>
       )}
     </div>

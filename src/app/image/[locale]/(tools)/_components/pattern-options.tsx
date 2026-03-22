@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface PatternOptionsValue {
   type: "stripes" | "dots" | "checkerboard" | "grid" | "diagonal";
   color1: string;
@@ -12,23 +14,24 @@ export interface PatternOptionsValue {
 interface PatternOptionsProps {
   value: PatternOptionsValue;
   onChange: (value: PatternOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["pattern"];
 }
 
-const PATTERN_TYPES = [
-  { value: "stripes", label: "Stripes" },
-  { value: "dots", label: "Dots" },
-  { value: "checkerboard", label: "Checker" },
-  { value: "grid", label: "Grid" },
-  { value: "diagonal", label: "Diagonal" },
-] as const;
+export function PatternOptions({ value, onChange, labels }: PatternOptionsProps) {
+  const PATTERN_TYPES = [
+    { value: "stripes" as const, label: labels.stripes },
+    { value: "dots" as const, label: labels.dots },
+    { value: "checkerboard" as const, label: labels.checker },
+    { value: "grid" as const, label: labels.grid },
+    { value: "diagonal" as const, label: labels.diagonal },
+  ];
 
-export function PatternOptions({ value, onChange }: PatternOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Pattern type */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Pattern Type
+          {labels.patternType}
         </label>
         <div className="grid grid-cols-3 gap-2">
           {PATTERN_TYPES.map((pt) => (
@@ -51,7 +54,7 @@ export function PatternOptions({ value, onChange }: PatternOptionsProps) {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Color 1
+            {labels.color1}
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -65,7 +68,7 @@ export function PatternOptions({ value, onChange }: PatternOptionsProps) {
         </div>
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Color 2
+            {labels.color2}
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -83,7 +86,7 @@ export function PatternOptions({ value, onChange }: PatternOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Spacing
+            {labels.spacing}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.spacing}px

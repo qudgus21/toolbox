@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface ColorPaletteOptionsValue {
   numColors: number;
   layout: "horizontal" | "grid";
@@ -8,16 +10,22 @@ export interface ColorPaletteOptionsValue {
 interface ColorPaletteOptionsProps {
   value: ColorPaletteOptionsValue;
   onChange: (value: ColorPaletteOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["colorPalette"];
 }
 
-export function ColorPaletteOptions({ value, onChange }: ColorPaletteOptionsProps) {
+export function ColorPaletteOptions({ value, onChange, labels }: ColorPaletteOptionsProps) {
+  const LAYOUT_LABELS: Record<string, string> = {
+    horizontal: labels.horizontal,
+    grid: labels.grid,
+  };
+
   return (
     <div className="space-y-4">
       {/* Number of colors */}
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Number of Colors
+            {labels.numberOfColors}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.numColors}
@@ -41,20 +49,20 @@ export function ColorPaletteOptions({ value, onChange }: ColorPaletteOptionsProp
       {/* Layout */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Layout
+          {labels.layout}
         </label>
         <div className="flex gap-2">
           {(["horizontal", "grid"] as const).map((layout) => (
             <button
               key={layout}
               onClick={() => onChange({ ...value, layout })}
-              className={`flex-1 rounded-md border px-3 py-2 text-sm capitalize cursor-pointer transition-colors ${
+              className={`flex-1 rounded-md border px-3 py-2 text-sm cursor-pointer transition-colors ${
                 value.layout === layout
                   ? "border-accent bg-accent/10 text-accent"
                   : "border-border text-foreground-muted hover:border-foreground/30"
               }`}
             >
-              {layout}
+              {LAYOUT_LABELS[layout]}
             </button>
           ))}
         </div>

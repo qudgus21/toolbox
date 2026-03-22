@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface AddBorderOptionsValue {
   borderWidth: number;
   borderColor: string;
@@ -10,22 +12,23 @@ export interface AddBorderOptionsValue {
 interface AddBorderOptionsProps {
   value: AddBorderOptionsValue;
   onChange: (value: AddBorderOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["addBorder"];
 }
 
-const STYLES = [
-  { value: "solid" as const, label: "Solid" },
-  { value: "double" as const, label: "Double" },
-  { value: "rounded" as const, label: "Rounded" },
-];
+export function AddBorderOptions({ value, onChange, labels }: AddBorderOptionsProps) {
+  const STYLES = [
+    { value: "solid" as const, label: labels.solid },
+    { value: "double" as const, label: labels.double },
+    { value: "rounded" as const, label: labels.rounded },
+  ];
 
-export function AddBorderOptions({ value, onChange }: AddBorderOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Border width */}
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Border Width
+            {labels.borderWidth}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.borderWidth}px
@@ -45,7 +48,7 @@ export function AddBorderOptions({ value, onChange }: AddBorderOptionsProps) {
       {/* Border color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Border Color
+          {labels.borderColor}
         </label>
         <input
           type="color"
@@ -58,7 +61,7 @@ export function AddBorderOptions({ value, onChange }: AddBorderOptionsProps) {
       {/* Border style */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Border Style
+          {labels.borderStyle}
         </label>
         <div className="flex gap-2">
           {STYLES.map((s) => (
@@ -83,7 +86,7 @@ export function AddBorderOptions({ value, onChange }: AddBorderOptionsProps) {
         <div>
           <div className="flex items-center justify-between mb-1">
             <label className="text-xs font-medium text-foreground-muted">
-              Border Radius
+              {labels.borderRadius}
             </label>
             <span className="text-sm font-semibold text-foreground">
               {value.borderRadius}px

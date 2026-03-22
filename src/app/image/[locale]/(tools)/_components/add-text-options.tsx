@@ -1,6 +1,7 @@
 "use client";
 
 import { Bold, Italic, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface AddTextOptionsValue {
   text: string;
@@ -18,6 +19,7 @@ export interface AddTextOptionsValue {
 interface AddTextOptionsProps {
   value: AddTextOptionsValue;
   onChange: (value: AddTextOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["addText"];
 }
 
 const FONT_FAMILIES = [
@@ -36,19 +38,19 @@ const ALIGNMENTS = [
   { value: "right" as const, Icon: AlignRight },
 ];
 
-export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
+export function AddTextOptions({ value, onChange, labels }: AddTextOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Text input */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Text
+          {labels.text}
         </label>
         <input
           type="text"
           value={value.text}
           onChange={(e) => onChange({ ...value, text: e.target.value })}
-          placeholder="Enter text..."
+          placeholder={labels.enterText}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
@@ -56,7 +58,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
       {/* Font family */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Font Family
+          {labels.fontFamily}
         </label>
         <select
           value={value.fontFamily}
@@ -73,7 +75,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Font Size
+            {labels.fontSize}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.fontSize}px
@@ -93,7 +95,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
       {/* Color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Color
+          {labels.color}
         </label>
         <input
           type="color"
@@ -113,7 +115,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
               ? "border-accent bg-accent/10 text-accent"
               : "border-border bg-background text-foreground-muted hover:bg-background-subtle"
           }`}
-          title="Bold"
+          title={labels.bold}
         >
           <Bold className="h-4 w-4" />
         </button>
@@ -125,7 +127,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
               ? "border-accent bg-accent/10 text-accent"
               : "border-border bg-background text-foreground-muted hover:bg-background-subtle"
           }`}
-          title="Italic"
+          title={labels.italic}
         >
           <Italic className="h-4 w-4" />
         </button>
@@ -138,14 +140,14 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
               : "border-border bg-background text-foreground-muted hover:bg-background-subtle"
           }`}
         >
-          Shadow
+          {labels.shadow}
         </button>
       </div>
 
       {/* Alignment */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Alignment
+          {labels.alignment}
         </label>
         <div className="flex gap-2">
           {ALIGNMENTS.map(({ value: v, Icon }) => (
@@ -169,7 +171,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            X Position
+            {labels.xPosition}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.x}%
@@ -190,7 +192,7 @@ export function AddTextOptions({ value, onChange }: AddTextOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Y Position
+            {labels.yPosition}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.y}%

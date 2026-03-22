@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface HtmlToImageOptionsValue {
   html: string;
   width: number;
@@ -10,20 +12,21 @@ export interface HtmlToImageOptionsValue {
 interface HtmlToImageOptionsProps {
   value: HtmlToImageOptionsValue;
   onChange: (value: HtmlToImageOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["htmlToImage"];
 }
 
-export function HtmlToImageOptions({ value, onChange }: HtmlToImageOptionsProps) {
+export function HtmlToImageOptions({ value, onChange, labels }: HtmlToImageOptionsProps) {
   return (
     <div className="space-y-4">
       {/* HTML input */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          HTML Code
+          {labels.htmlCode}
         </label>
         <textarea
           value={value.html}
           onChange={(e) => onChange({ ...value, html: e.target.value })}
-          placeholder="<h1>Hello World</h1>"
+          placeholder={labels.htmlPlaceholder}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground font-mono resize-y min-h-[120px] focus:outline-none focus:ring-2 focus:ring-accent/50"
           rows={6}
         />
@@ -33,7 +36,7 @@ export function HtmlToImageOptions({ value, onChange }: HtmlToImageOptionsProps)
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Width (px)
+            {labels.widthPx}
           </label>
           <input
             type="number"
@@ -46,7 +49,7 @@ export function HtmlToImageOptions({ value, onChange }: HtmlToImageOptionsProps)
         </div>
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Height (px)
+            {labels.heightPx}
           </label>
           <input
             type="number"
@@ -62,7 +65,7 @@ export function HtmlToImageOptions({ value, onChange }: HtmlToImageOptionsProps)
       {/* Background color */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Background Color
+          {labels.bgColor}
         </label>
         <div className="flex items-center gap-2">
           <input

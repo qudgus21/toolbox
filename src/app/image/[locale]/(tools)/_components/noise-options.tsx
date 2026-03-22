@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface NoiseOptionsValue {
   amount: number;
   monochrome: boolean;
@@ -8,15 +10,16 @@ export interface NoiseOptionsValue {
 interface NoiseOptionsProps {
   value: NoiseOptionsValue;
   onChange: (value: NoiseOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["noise"];
 }
 
-export function NoiseOptions({ value, onChange }: NoiseOptionsProps) {
+export function NoiseOptions({ value, onChange, labels }: NoiseOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Amount
+            {labels.amount}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.amount}%
@@ -32,8 +35,8 @@ export function NoiseOptions({ value, onChange }: NoiseOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Subtle</span>
-          <span>Heavy</span>
+          <span>{labels.subtle}</span>
+          <span>{labels.heavy}</span>
         </div>
       </div>
 
@@ -46,7 +49,7 @@ export function NoiseOptions({ value, onChange }: NoiseOptionsProps) {
           className="accent-accent"
         />
         <label htmlFor="noise-monochrome" className="text-xs font-medium text-foreground-muted cursor-pointer">
-          Monochrome noise
+          {labels.monochrome}
         </label>
       </div>
     </div>

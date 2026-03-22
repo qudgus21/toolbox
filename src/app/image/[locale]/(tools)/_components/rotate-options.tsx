@@ -1,6 +1,7 @@
 "use client";
 
 import { RotateCcw, RotateCw } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface RotateOptionsValue {
   angle: number;
@@ -10,29 +11,30 @@ export interface RotateOptionsValue {
 interface RotateOptionsProps {
   value: RotateOptionsValue;
   onChange: (value: RotateOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["rotate"];
 }
 
-const QUICK_ROTATIONS = [
-  { label: "90\u00B0 CCW", angle: 270, icon: RotateCcw },
-  { label: "180\u00B0", angle: 180, icon: RotateCw },
-  { label: "90\u00B0 CW", angle: 90, icon: RotateCw },
-];
-
-const BACKGROUND_COLORS = [
-  { label: "Transparent", value: "transparent" },
-  { label: "White", value: "#ffffff" },
-  { label: "Black", value: "#000000" },
-];
-
-export function RotateOptions({ value, onChange }: RotateOptionsProps) {
+export function RotateOptions({ value, onChange, labels }: RotateOptionsProps) {
   const isNon90 = value.angle % 90 !== 0;
+
+  const QUICK_ROTATIONS = [
+    { label: labels.ccw90, angle: 270, icon: RotateCcw },
+    { label: labels.rotate180, angle: 180, icon: RotateCw },
+    { label: labels.cw90, angle: 90, icon: RotateCw },
+  ];
+
+  const BACKGROUND_COLORS = [
+    { label: labels.transparent, value: "transparent" },
+    { label: labels.white, value: "#ffffff" },
+    { label: labels.black, value: "#000000" },
+  ];
 
   return (
     <div className="space-y-5">
       {/* Quick rotation buttons */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Quick Rotate
+          {labels.quickRotate}
         </label>
         <div className="flex gap-2">
           {QUICK_ROTATIONS.map((r) => {
@@ -60,7 +62,7 @@ export function RotateOptions({ value, onChange }: RotateOptionsProps) {
       {/* Custom angle */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Custom Angle: {value.angle}\u00B0
+          {labels.customAngle} {value.angle}\u00B0
         </label>
         <input
           type="range"
@@ -83,7 +85,7 @@ export function RotateOptions({ value, onChange }: RotateOptionsProps) {
       {/* Angle number input */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Angle (degrees)
+          {labels.angleDegrees}
         </label>
         <input
           type="number"
@@ -102,7 +104,7 @@ export function RotateOptions({ value, onChange }: RotateOptionsProps) {
       {isNon90 && (
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-2">
-            Background Color
+            {labels.bgColor}
           </label>
           <div className="flex gap-2">
             {BACKGROUND_COLORS.map((c) => (
@@ -132,7 +134,7 @@ export function RotateOptions({ value, onChange }: RotateOptionsProps) {
             ))}
           </div>
           <div className="mt-2 flex items-center gap-2">
-            <label className="text-xs text-foreground-muted">Custom:</label>
+            <label className="text-xs text-foreground-muted">{labels.custom}</label>
             <input
               type="color"
               value={value.backgroundColor === "transparent" ? "#ffffff" : value.backgroundColor}

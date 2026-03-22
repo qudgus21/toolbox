@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface MemeOptionsValue {
   topText: string;
   bottomText: string;
@@ -12,21 +14,22 @@ export interface MemeOptionsValue {
 interface MemeOptionsProps {
   value: MemeOptionsValue;
   onChange: (value: MemeOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["meme"];
 }
 
-export function MemeOptions({ value, onChange }: MemeOptionsProps) {
+export function MemeOptions({ value, onChange, labels }: MemeOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Top text */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Top Text
+          {labels.topText}
         </label>
         <input
           type="text"
           value={value.topText}
           onChange={(e) => onChange({ ...value, topText: e.target.value })}
-          placeholder="TOP TEXT"
+          placeholder={labels.topTextPlaceholder}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
@@ -34,13 +37,13 @@ export function MemeOptions({ value, onChange }: MemeOptionsProps) {
       {/* Bottom text */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Bottom Text
+          {labels.bottomText}
         </label>
         <input
           type="text"
           value={value.bottomText}
           onChange={(e) => onChange({ ...value, bottomText: e.target.value })}
-          placeholder="BOTTOM TEXT"
+          placeholder={labels.bottomTextPlaceholder}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
         />
       </div>
@@ -49,7 +52,7 @@ export function MemeOptions({ value, onChange }: MemeOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Font Size
+            {labels.fontSize}
           </label>
           <div className="flex items-center gap-2">
             <button
@@ -61,7 +64,7 @@ export function MemeOptions({ value, onChange }: MemeOptionsProps) {
                   : "text-foreground-muted hover:text-foreground"
               }`}
             >
-              Auto
+              {labels.auto}
             </button>
             {!value.autoFontSize && (
               <span className="text-sm font-semibold text-foreground">
@@ -86,7 +89,7 @@ export function MemeOptions({ value, onChange }: MemeOptionsProps) {
       {/* Text color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Text Color
+          {labels.textColor}
         </label>
         <input
           type="color"
@@ -99,7 +102,7 @@ export function MemeOptions({ value, onChange }: MemeOptionsProps) {
       {/* Stroke color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Stroke Color
+          {labels.strokeColor}
         </label>
         <input
           type="color"

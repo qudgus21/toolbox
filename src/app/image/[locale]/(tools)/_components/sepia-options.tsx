@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface SepiaOptionsValue {
   intensity: number;
 }
@@ -7,15 +9,16 @@ export interface SepiaOptionsValue {
 interface SepiaOptionsProps {
   value: SepiaOptionsValue;
   onChange: (value: SepiaOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["sepia"];
 }
 
-export function SepiaOptions({ value, onChange }: SepiaOptionsProps) {
+export function SepiaOptions({ value, onChange, labels }: SepiaOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Intensity
+            {labels.intensity}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.intensity}%
@@ -31,8 +34,8 @@ export function SepiaOptions({ value, onChange }: SepiaOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Subtle</span>
-          <span>Full</span>
+          <span>{labels.subtle}</span>
+          <span>{labels.full}</span>
         </div>
       </div>
     </div>

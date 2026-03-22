@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface PlaceholderOptionsValue {
   width: number;
   height: number;
@@ -12,22 +14,23 @@ export interface PlaceholderOptionsValue {
 interface PlaceholderOptionsProps {
   value: PlaceholderOptionsValue;
   onChange: (value: PlaceholderOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["placeholder"];
 }
 
-const PRESETS = [
-  { label: "Banner", w: 1200, h: 630 },
-  { label: "Square", w: 800, h: 800 },
-  { label: "HD", w: 1920, h: 1080 },
-  { label: "Thumb", w: 300, h: 200 },
-];
+export function PlaceholderOptions({ value, onChange, labels }: PlaceholderOptionsProps) {
+  const PRESETS = [
+    { label: labels.banner, w: 1200, h: 630 },
+    { label: labels.square, w: 800, h: 800 },
+    { label: labels.hd, w: 1920, h: 1080 },
+    { label: labels.thumb, w: 300, h: 200 },
+  ];
 
-export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Size presets */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Presets
+          {labels.presets}
         </label>
         <div className="grid grid-cols-2 gap-2">
           {PRESETS.map((preset) => (
@@ -50,7 +53,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Width
+            {labels.width}
           </label>
           <input
             type="number"
@@ -63,7 +66,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
         </div>
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Height
+            {labels.height}
           </label>
           <input
             type="number"
@@ -79,7 +82,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
       {/* Background color */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Background Color
+          {labels.bgColor}
         </label>
         <div className="flex items-center gap-2">
           <input
@@ -100,7 +103,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
       {/* Text color */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Text Color
+          {labels.textColor}
         </label>
         <div className="flex items-center gap-2">
           <input
@@ -121,7 +124,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
       {/* Custom text */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Text (leave empty for WxH)
+          {labels.textLabel}
         </label>
         <input
           type="text"
@@ -135,7 +138,7 @@ export function PlaceholderOptions({ value, onChange }: PlaceholderOptionsProps)
       {/* Format */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Format
+          {labels.format}
         </label>
         <div className="flex gap-2">
           {(["png", "jpg"] as const).map((fmt) => (

@@ -52,5 +52,6 @@ const dictionaries: Record<Locale, () => Promise<ImageDictionary>> = {
 export async function getImageDictionary(
   locale: Locale
 ): Promise<ImageDictionary> {
-  return dictionaries[locale]();
+  const loader = dictionaries[locale] ?? dictionaries.en;
+  return loader();
 }

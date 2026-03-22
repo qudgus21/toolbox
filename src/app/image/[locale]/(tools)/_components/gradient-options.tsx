@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface GradientOptionsValue {
   type: "linear" | "radial" | "conic";
   colors: string[];
@@ -11,9 +13,16 @@ export interface GradientOptionsValue {
 interface GradientOptionsProps {
   value: GradientOptionsValue;
   onChange: (value: GradientOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["gradient"];
 }
 
-export function GradientOptions({ value, onChange }: GradientOptionsProps) {
+export function GradientOptions({ value, onChange, labels }: GradientOptionsProps) {
+  const TYPE_LABELS: Record<string, string> = {
+    linear: labels.linear,
+    radial: labels.radial,
+    conic: labels.conic,
+  };
+
   const updateColor = (index: number, color: string) => {
     const newColors = [...value.colors];
     newColors[index] = color;
@@ -37,20 +46,20 @@ export function GradientOptions({ value, onChange }: GradientOptionsProps) {
       {/* Gradient type */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Type
+          {labels.type}
         </label>
         <div className="flex gap-2">
           {(["linear", "radial", "conic"] as const).map((t) => (
             <button
               key={t}
               onClick={() => onChange({ ...value, type: t })}
-              className={`flex-1 rounded-md border px-3 py-2 text-sm capitalize cursor-pointer transition-colors ${
+              className={`flex-1 rounded-md border px-3 py-2 text-sm cursor-pointer transition-colors ${
                 value.type === t
                   ? "border-accent bg-accent/10 text-accent"
                   : "border-border text-foreground-muted hover:border-foreground/30"
               }`}
             >
-              {t}
+              {TYPE_LABELS[t]}
             </button>
           ))}
         </div>
@@ -60,14 +69,14 @@ export function GradientOptions({ value, onChange }: GradientOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-2">
           <label className="text-xs font-medium text-foreground-muted">
-            Colors
+            {labels.colors}
           </label>
           {value.colors.length < 4 && (
             <button
               onClick={addColor}
               className="text-xs text-accent hover:text-accent-hover transition-colors cursor-pointer"
             >
-              + Add color
+              {labels.addColor}
             </button>
           )}
         </div>
@@ -104,7 +113,7 @@ export function GradientOptions({ value, onChange }: GradientOptionsProps) {
         <div>
           <div className="flex items-center justify-between mb-1">
             <label className="text-xs font-medium text-foreground-muted">
-              Angle
+              {labels.angle}
             </label>
             <span className="text-sm font-semibold text-foreground">
               {value.angle}&deg;

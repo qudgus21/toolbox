@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface RoundOptionsValue {
   borderWidth: number;
   borderColor: string;
@@ -8,16 +10,17 @@ export interface RoundOptionsValue {
 interface RoundOptionsProps {
   value: RoundOptionsValue;
   onChange: (value: RoundOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["round"];
 }
 
-export function RoundOptions({ value, onChange }: RoundOptionsProps) {
+export function RoundOptions({ value, onChange, labels }: RoundOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Border width */}
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Border Width
+            {labels.borderWidth}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.borderWidth}px
@@ -37,7 +40,7 @@ export function RoundOptions({ value, onChange }: RoundOptionsProps) {
       {/* Border color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Border Color
+          {labels.borderColor}
         </label>
         <input
           type="color"

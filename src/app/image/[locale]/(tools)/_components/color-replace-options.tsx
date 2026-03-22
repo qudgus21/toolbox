@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface ColorReplaceOptionsValue {
   sourceColor: string;
   targetColor: string;
@@ -9,14 +11,15 @@ export interface ColorReplaceOptionsValue {
 interface ColorReplaceOptionsProps {
   value: ColorReplaceOptionsValue;
   onChange: (value: ColorReplaceOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["colorReplace"];
 }
 
-export function ColorReplaceOptions({ value, onChange }: ColorReplaceOptionsProps) {
+export function ColorReplaceOptions({ value, onChange, labels }: ColorReplaceOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Source Color
+          {labels.sourceColor}
         </label>
         <div className="flex items-center gap-2">
           <input
@@ -31,7 +34,7 @@ export function ColorReplaceOptions({ value, onChange }: ColorReplaceOptionsProp
 
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Target Color
+          {labels.targetColor}
         </label>
         <div className="flex items-center gap-2">
           <input
@@ -47,7 +50,7 @@ export function ColorReplaceOptions({ value, onChange }: ColorReplaceOptionsProp
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Tolerance
+            {labels.tolerance}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.tolerance}%
@@ -63,8 +66,8 @@ export function ColorReplaceOptions({ value, onChange }: ColorReplaceOptionsProp
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Exact</span>
-          <span>Wide</span>
+          <span>{labels.exact}</span>
+          <span>{labels.wide}</span>
         </div>
       </div>
     </div>

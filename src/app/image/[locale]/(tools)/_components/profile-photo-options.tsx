@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface ProfilePhotoOptionsValue {
   platform: "instagram" | "twitter" | "linkedin" | "facebook" | "youtube" | "custom";
   customSize: number;
@@ -8,24 +10,25 @@ export interface ProfilePhotoOptionsValue {
 interface ProfilePhotoOptionsProps {
   value: ProfilePhotoOptionsValue;
   onChange: (value: ProfilePhotoOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["profilePhoto"];
 }
 
-const PLATFORMS = [
-  { value: "instagram" as const, label: "Instagram", size: "320\u00D7320" },
-  { value: "twitter" as const, label: "Twitter / X", size: "400\u00D7400" },
-  { value: "linkedin" as const, label: "LinkedIn", size: "400\u00D7400" },
-  { value: "facebook" as const, label: "Facebook", size: "320\u00D7320" },
-  { value: "youtube" as const, label: "YouTube", size: "800\u00D7800" },
-  { value: "custom" as const, label: "Custom", size: "" },
-];
+export function ProfilePhotoOptions({ value, onChange, labels }: ProfilePhotoOptionsProps) {
+  const PLATFORMS = [
+    { value: "instagram" as const, label: labels.instagram, size: "320\u00D7320" },
+    { value: "twitter" as const, label: labels.twitter, size: "400\u00D7400" },
+    { value: "linkedin" as const, label: labels.linkedin, size: "400\u00D7400" },
+    { value: "facebook" as const, label: labels.facebook, size: "320\u00D7320" },
+    { value: "youtube" as const, label: labels.youtube, size: "800\u00D7800" },
+    { value: "custom" as const, label: labels.custom, size: "" },
+  ];
 
-export function ProfilePhotoOptions({ value, onChange }: ProfilePhotoOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Platform selector */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Platform
+          {labels.platform}
         </label>
         <div className="flex flex-col gap-2">
           {PLATFORMS.map((p) => (
@@ -52,7 +55,7 @@ export function ProfilePhotoOptions({ value, onChange }: ProfilePhotoOptionsProp
       {value.platform === "custom" && (
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Size (px)
+            {labels.sizePx}
           </label>
           <input
             type="number"
@@ -63,7 +66,7 @@ export function ProfilePhotoOptions({ value, onChange }: ProfilePhotoOptionsProp
             className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
           />
           <p className="mt-1 text-xs text-foreground-muted">
-            Output: {value.customSize}&times;{value.customSize}
+            {labels.output} {value.customSize}&times;{value.customSize}
           </p>
         </div>
       )}

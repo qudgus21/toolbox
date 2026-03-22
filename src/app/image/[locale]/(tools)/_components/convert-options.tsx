@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface ConvertOptionsValue {
   quality?: number;
@@ -10,6 +11,7 @@ interface ConvertOptionsProps {
   slug: string;
   value: ConvertOptionsValue;
   onChange: (value: ConvertOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["convert"];
 }
 
 function parseConversionInfo(slug: string): { from: string; to: string } | null {
@@ -20,7 +22,7 @@ function parseConversionInfo(slug: string): { from: string; to: string } | null 
 
 const LOSSY_FORMATS = ["JPG", "JPEG", "WEBP"];
 
-export function ConvertOptions({ slug, value, onChange }: ConvertOptionsProps) {
+export function ConvertOptions({ slug, value, onChange, labels }: ConvertOptionsProps) {
   const info = parseConversionInfo(slug);
   if (!info) return null;
 
@@ -44,7 +46,7 @@ export function ConvertOptions({ slug, value, onChange }: ConvertOptionsProps) {
         <div>
           <div className="flex items-center justify-between mb-2">
             <label className="text-xs font-medium text-foreground-muted">
-              Quality
+              {labels.quality}
             </label>
             <span className="text-sm font-semibold text-foreground">
               {value.quality ?? 92}%
@@ -60,15 +62,15 @@ export function ConvertOptions({ slug, value, onChange }: ConvertOptionsProps) {
             className="w-full accent-accent"
           />
           <div className="flex justify-between text-xs text-foreground-muted mt-1">
-            <span>Smaller file</span>
-            <span>Best quality</span>
+            <span>{labels.smallerFile}</span>
+            <span>{labels.bestQuality}</span>
           </div>
         </div>
       )}
 
       {!isLossyTarget && (
         <p className="text-xs text-foreground-muted text-center">
-          {info.to} is a lossless format. No quality setting needed.
+          {info.to} {labels.losslessMessage}
         </p>
       )}
     </div>

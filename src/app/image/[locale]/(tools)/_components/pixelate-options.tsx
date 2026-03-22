@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface PixelateOptionsValue {
   pixelSize: number;
 }
@@ -7,15 +9,16 @@ export interface PixelateOptionsValue {
 interface PixelateOptionsProps {
   value: PixelateOptionsValue;
   onChange: (value: PixelateOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["pixelate"];
 }
 
-export function PixelateOptions({ value, onChange }: PixelateOptionsProps) {
+export function PixelateOptions({ value, onChange, labels }: PixelateOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Pixel Size
+            {labels.pixelSize}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.pixelSize}px
@@ -31,8 +34,8 @@ export function PixelateOptions({ value, onChange }: PixelateOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Fine</span>
-          <span>Blocky</span>
+          <span>{labels.fine}</span>
+          <span>{labels.blocky}</span>
         </div>
       </div>
     </div>
