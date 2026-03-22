@@ -301,6 +301,11 @@ const pl: ImageDictionary = {
       high: "Wysoka (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Darmowe narzędzia do obrazów",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default pl;

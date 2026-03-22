@@ -301,6 +301,11 @@ const lt: ImageDictionary = {
       high: "Auksta (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Nemokami vaizdo įrankiai",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default lt;

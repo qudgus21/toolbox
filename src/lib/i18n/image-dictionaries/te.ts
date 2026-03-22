@@ -594,10 +594,10 @@ const te: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "చిత్ర సాధనాలు - ఆన్‌లైన్ చిత్ర సంపాదకం",
+    siteTitle: "ToolPop Image - ఉచిత చిత్ర సాధనాలు",
     siteDescription:
       "పరిమాణం మార్చండి, మార్పిడి చేయండి, నేపథ్యం తీసివేయండి మరియు మరిన్ని. మీ బ్రౌజర్‌లో పూర్తిగా నడిచే ఉచిత ఆన్‌లైన్ చిత్ర సాధనాలు.",
-    toolTitleSuffix: "ఆన్‌లైన్ చిత్ర సాధనాలు",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "బ్లాగ్",

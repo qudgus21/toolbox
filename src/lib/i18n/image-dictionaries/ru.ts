@@ -594,10 +594,10 @@ const ru: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Инструменты для изображений — онлайн-редактор",
+    siteTitle: "ToolPop Image - Бесплатные инструменты для изображений",
     siteDescription:
       "Изменяйте размер, конвертируйте форматы и применяйте эффекты. Бесплатные онлайн-инструменты, работающие прямо в браузере.",
-    toolTitleSuffix: "Онлайн-инструменты для изображений",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Блог",

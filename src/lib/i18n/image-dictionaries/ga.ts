@@ -301,6 +301,11 @@ const ga: ImageDictionary = {
       high: "Ard (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Uirlisí íomhá saor in aisce",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default ga;

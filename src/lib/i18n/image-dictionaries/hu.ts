@@ -594,10 +594,10 @@ const hu: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Képeszközök – Online képszerkesztő",
+    siteTitle: "ToolPop Image - Ingyenes képeszközök",
     siteDescription:
       "Átméretezés, konvertálás, háttéreltávolítás és még sok más. Ingyenes online képeszközök, amelyek teljes egészében a böngésződben futnak.",
-    toolTitleSuffix: "Online képeszközök",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

@@ -594,10 +594,10 @@ const ar: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "أدوات الصور - محرر صور أونلاين",
+    siteTitle: "ToolPop Image - أدوات صور مجانية",
     siteDescription:
       "غيّر الحجم، حوّل الصيغة، أضف تأثيرات والمزيد. أدوات صور مجانية تعمل في متصفحك مباشرة.",
-    toolTitleSuffix: "أدوات صور أونلاين",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "المدونة",

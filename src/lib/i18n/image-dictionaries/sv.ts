@@ -301,6 +301,11 @@ const sv: ImageDictionary = {
       high: "Hög (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Gratis bildverktyg",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default sv;

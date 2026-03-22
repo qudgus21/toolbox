@@ -594,10 +594,10 @@ const hi: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "इमेज टूल - ऑनलाइन इमेज एडिटर",
+    siteTitle: "ToolPop Image - मुफ़्त इमेज टूल",
     siteDescription:
       "साइज़ बदलें, फ़ॉर्मेट बदलें, इफ़ेक्ट लगाएं और भी बहुत कुछ। ब्राउज़र में चलने वाले मुफ़्त ऑनलाइन इमेज टूल।",
-    toolTitleSuffix: "ऑनलाइन इमेज टूल",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "ब्लॉग",

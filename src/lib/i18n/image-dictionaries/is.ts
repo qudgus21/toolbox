@@ -301,6 +301,11 @@ const is_: ImageDictionary = {
       high: "Ha (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Ókeypis myndverkfæri",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default is_;

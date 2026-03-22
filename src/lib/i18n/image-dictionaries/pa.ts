@@ -594,10 +594,10 @@ const pa: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "ਤਸਵੀਰ ਟੂਲ - ਔਨਲਾਈਨ ਤਸਵੀਰ ਸੰਪਾਦਕ",
+    siteTitle: "ToolPop Image - ਮੁਫ਼ਤ ਤਸਵੀਰ ਔਜ਼ਾਰ",
     siteDescription:
       "ਆਕਾਰ ਬਦਲੋ, ਫਾਰਮੈਟ ਬਦਲੋ, ਪਿਛੋਕੜ ਹਟਾਓ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ। ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਤਸਵੀਰ ਟੂਲ ਜੋ ਪੂਰੀ ਤਰ੍ਹਾਂ ਤੁਹਾਡੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਚੱਲਦੇ ਹਨ।",
-    toolTitleSuffix: "ਔਨਲਾਈਨ ਤਸਵੀਰ ਟੂਲ",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "ਬਲੌਗ",

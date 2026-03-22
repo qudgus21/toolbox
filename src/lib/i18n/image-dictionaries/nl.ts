@@ -301,6 +301,11 @@ const nl: ImageDictionary = {
       high: "Hoog (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Gratis afbeeldingstools",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default nl;

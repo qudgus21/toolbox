@@ -594,10 +594,10 @@ const de: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Bildwerkzeuge - Online-Bildeditor",
+    siteTitle: "ToolPop Image - Kostenlose Bildwerkzeuge",
     siteDescription:
       "Größe ändern, konvertieren, Hintergründe entfernen und mehr. Kostenlose Online-Bildwerkzeuge direkt im Browser.",
-    toolTitleSuffix: "Online-Bildwerkzeuge",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

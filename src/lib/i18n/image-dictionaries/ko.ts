@@ -607,10 +607,10 @@ const ko: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "이미지 도구 - 온라인 이미지 편집",
+    siteTitle: "ToolPop Image - 무료 이미지 도구",
     siteDescription:
       "크기 조절, 포맷 변환, 배경 제거까지. 브라우저에서 바로 처리하는 무료 이미지 도구.",
-    toolTitleSuffix: "온라인 이미지 도구",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "블로그",

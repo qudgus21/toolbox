@@ -594,10 +594,10 @@ const vi: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Công cụ ảnh - Chỉnh sửa ảnh trực tuyến",
+    siteTitle: "ToolPop Image - Công cụ ảnh miễn phí",
     siteDescription:
       "Thay đổi kích thước, chuyển đổi định dạng và thêm hiệu ứng. Công cụ ảnh miễn phí chạy ngay trên trình duyệt.",
-    toolTitleSuffix: "Công cụ ảnh trực tuyến",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

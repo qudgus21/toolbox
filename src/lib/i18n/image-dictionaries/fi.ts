@@ -594,10 +594,10 @@ const fi: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Kuvatyökalut – Kuvien muokkaus verkossa",
+    siteTitle: "ToolPop Image - Ilmaiset kuvatyökalut",
     siteDescription:
       "Muuta kokoa, muunna, poista taustoja ja paljon muuta. Ilmaiset verkkotyökalut, jotka toimivat kokonaan selaimessasi.",
-    toolTitleSuffix: "Kuvatyökalut verkossa",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blogi",

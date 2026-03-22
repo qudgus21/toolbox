@@ -594,10 +594,10 @@ const tr: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Görsel Araçları - Çevrimiçi Görsel Düzenleyici",
+    siteTitle: "ToolPop Image - Ücretsiz Görsel Araçları",
     siteDescription:
       "Boyutlandırın, dönüştürün, efekt uygulayın ve daha fazlası. Tarayıcınızda çalışan ücretsiz çevrimiçi görsel araçları.",
-    toolTitleSuffix: "Çevrimiçi Görsel Araçları",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

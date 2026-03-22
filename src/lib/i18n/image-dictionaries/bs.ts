@@ -301,6 +301,11 @@ const bs: ImageDictionary = {
       high: "Visoka (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Besplatni alati za slike",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default bs;

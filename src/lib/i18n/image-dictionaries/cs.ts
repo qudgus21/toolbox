@@ -301,6 +301,11 @@ const cs: ImageDictionary = {
       high: "Vysoká (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Bezplatné nástroje na obrázky",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default cs;

@@ -301,6 +301,11 @@ const uk: ImageDictionary = {
       high: "Висока (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Безкоштовні інструменти для зображень",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default uk;

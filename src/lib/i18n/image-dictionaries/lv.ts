@@ -301,6 +301,11 @@ const lv: ImageDictionary = {
       high: "Augsta (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Bezmaksas attēlu rīki",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default lv;

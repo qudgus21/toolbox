@@ -594,10 +594,10 @@ const es: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Herramientas de imagen - Editor de imágenes en línea",
+    siteTitle: "ToolPop Image - Herramientas de imagen gratuitas",
     siteDescription:
       "Redimensiona, convierte, elimina fondos y más. Herramientas de imagen gratuitas que funcionan en tu navegador.",
-    toolTitleSuffix: "Herramientas de imagen en línea",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",
