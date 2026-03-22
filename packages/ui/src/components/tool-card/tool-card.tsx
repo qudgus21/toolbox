@@ -41,7 +41,7 @@ export const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
           <span className="text-4xl leading-none">{emoji}</span>
         ) : null}
         <div>
-          <h3 className="text-base font-semibold text-foreground">{title}</h3>
+          <span className="block text-base font-semibold text-foreground">{title}</span>
           <p className="mt-1 text-sm text-foreground-muted">{description}</p>
         </div>
       </LinkEl>
