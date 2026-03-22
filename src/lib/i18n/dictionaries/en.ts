@@ -96,6 +96,10 @@ const en: Dictionary = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     copyright: "ToolPop. All rights reserved.",
+    company: "Company",
+    about: "About",
+    contact: "Contact",
+    faq: "FAQ",
   },
   common: {
     backToAll: "Back to all tools",
@@ -1051,6 +1055,433 @@ const en: Dictionary = {
     sheetLabel: "Sheet",
     frontLabel: "Front",
     backLabel: "Back",
+  },
+  about: {
+    title: "About ToolPop PDF",
+    intro: "ToolPop PDF is a free, browser-based PDF toolkit that lets you edit, convert, and organize PDF files without uploading them to a server. Your files never leave your device.",
+    sections: [
+      {
+        heading: "Our Mission",
+        content: "We believe everyone deserves access to powerful PDF tools — without subscriptions, without sign-ups, and without compromising privacy. ToolPop PDF was built to make professional-grade document handling accessible to anyone with a web browser.",
+      },
+      {
+        heading: "How It Works",
+        content: "Unlike traditional PDF services that require you to upload files to remote servers, ToolPop PDF processes everything directly in your browser using modern web technologies like WebAssembly and the PDF.js library. This means your sensitive documents stay on your device at all times — we never see, store, or transmit your files.",
+      },
+      {
+        heading: "What We Offer",
+        content: "ToolPop PDF includes over 40 tools across five categories:\n\n• Organize — Merge, split, reorder, extract, and delete pages\n• Convert — Transform between PDF, JPG, PNG, text, and other formats\n• Edit — Add text, images, signatures, watermarks, page numbers, and annotations\n• Optimize — Compress files and optimize for web delivery\n• Security — Password-protect, redact sensitive information, and flatten documents\n\nAll tools are completely free with no file size limits or daily usage caps.",
+      },
+      {
+        heading: "Our Technology",
+        content: "ToolPop PDF is built with Next.js, React, and modern web standards. We use libraries like pdf-lib for PDF manipulation and PDF.js for rendering — all running client-side in your browser. The site supports 45 languages, dark mode, and works on any device with a modern browser.",
+      },
+      {
+        heading: "Get in Touch",
+        content: "Have questions, feedback, or feature requests? We'd love to hear from you. Visit our Contact page or email us.",
+      },
+    ],
+  },
+  contact: {
+    title: "Contact Us",
+    intro: "Have a question, found a bug, or want to suggest a feature? We'd love to hear from you. Choose a category and send us a message.",
+    form: {
+      category: "Category",
+      categoryBug: "Bug Report",
+      categoryFeature: "Feature Request",
+      categoryBusiness: "Business Inquiry",
+      categoryGeneral: "General Inquiry",
+      message: "Message",
+      messagePlaceholder: "Describe your issue or idea in detail...",
+      send: "Send Message",
+      sending: "Sending...",
+      success: "Your message has been sent successfully! We'll get back to you as soon as possible.",
+      error: "Something went wrong. Please try again later.",
+    },
+    sections: [
+      {
+        heading: "Bug Reports",
+        content: "Found something that doesn't work correctly? Please include as much detail as possible — the tool you were using, what you expected to happen, and what actually happened. Screenshots are always helpful.",
+      },
+      {
+        heading: "Feature Requests",
+        content: "Have an idea for a new tool or an improvement to an existing one? We're always looking for ways to make ToolPop better. Let us know what would help you the most.",
+      },
+      {
+        heading: "Business Inquiries",
+        content: "For partnership opportunities, advertising inquiries, or enterprise solutions, select 'Business Inquiry' in the form above and describe your proposal.",
+      },
+    ],
+  },
+  faq: {
+    title: "Frequently Asked Questions",
+    intro: "Find answers to the most common questions about ToolPop PDF. If you don't see your question here, feel free to contact us.",
+    items: [
+      {
+        question: "Is ToolPop PDF really free?",
+        answer: "Yes, completely free. All tools are available without limits, no sign-up required, and no hidden fees. We support the service through non-intrusive advertising.",
+      },
+      {
+        question: "Are my files safe and private?",
+        answer: "Absolutely. Your files are processed entirely in your browser — they never leave your device or get uploaded to any server. We use modern browser APIs to handle all PDF operations locally, so your sensitive documents remain completely private.",
+      },
+      {
+        question: "Do I need to create an account?",
+        answer: "No. ToolPop PDF works without any registration or login. Just open a tool, drop your file, and get results instantly.",
+      },
+      {
+        question: "What is the maximum file size I can process?",
+        answer: "Since processing happens in your browser, the limit depends on your device's available memory. Most modern devices can handle files up to 100–200 MB without issues. For very large files, we recommend using a desktop or laptop browser for best performance.",
+      },
+      {
+        question: "Which browsers are supported?",
+        answer: "ToolPop PDF works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. We recommend using the latest version of your browser for the best experience.",
+      },
+      {
+        question: "Can I use ToolPop PDF on my phone or tablet?",
+        answer: "Yes! ToolPop PDF is fully responsive and works on mobile devices. You can merge, split, convert, and edit PDFs right from your phone or tablet browser.",
+      },
+      {
+        question: "How does browser-based processing work?",
+        answer: "When you select a file, it stays on your device. Our tools use JavaScript libraries like pdf-lib and PDF.js to read, modify, and create PDFs directly in your browser's memory. The processed file is then available for download — no server round-trip required.",
+      },
+      {
+        question: "Can I merge more than two PDF files?",
+        answer: "Yes. Our Merge PDF tool supports combining any number of files. Simply drag and drop all the PDFs you want to merge, arrange them in your preferred order, and click the process button.",
+      },
+      {
+        question: "What file formats can I convert to and from PDF?",
+        answer: "You can convert PDFs to JPG, PNG, and plain text. For creating PDFs, we support JPG, PNG, WEBP, TIFF, HEIC images, HTML files, and scanned documents. More conversion formats are being added regularly.",
+      },
+      {
+        question: "How is ToolPop PDF different from other PDF tools?",
+        answer: "Three key differences: (1) Privacy — your files never leave your device, unlike most competitors that upload to their servers. (2) No limits — no daily caps, no file size restrictions, no watermarks on output. (3) No account required — use any tool instantly without signing up.",
+      },
+      {
+        question: "Can I add a password to protect my PDF?",
+        answer: "Yes. Use our Protect PDF tool to add password protection with AES-256 encryption. You can set both an open password (to view the document) and permissions to control printing, copying, and editing.",
+      },
+      {
+        question: "Does ToolPop PDF add watermarks to my files?",
+        answer: "Never. All processed files are clean and free of any ToolPop branding or watermarks. The output is exactly what you'd expect from a professional tool.",
+      },
+      {
+        question: "Is there an API available?",
+        answer: "Not currently. ToolPop PDF is designed as a browser-based tool for individual use. If you need API access for programmatic PDF processing, please contact us to discuss enterprise solutions.",
+      },
+      {
+        question: "What languages does the site support?",
+        answer: "ToolPop PDF is available in 45 languages including English, Korean, Spanish, Chinese, Japanese, German, French, Portuguese, Arabic, Hindi, and many more. The interface automatically detects your browser language, or you can switch manually using the language selector.",
+      },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "Tips, guides, and insights about working with PDF files.",
+    readMore: "Read more",
+    backToBlog: "Back to blog",
+    publishedOn: "Published on",
+    categoryGuide: "Guide",
+    categoryTips: "Tips",
+    categoryKnowledge: "Knowledge",
+  },
+  toolContent: {
+    merge: {
+      howTo: {
+        title: "How to Merge PDF Files",
+        steps: [
+          "Click 'Select Files' or drag and drop multiple PDF files into the upload area.",
+          "Arrange the files in your desired order by dragging them.",
+          "Click the 'Merge' button to combine all files into one PDF.",
+          "Download your merged PDF file — it's ready to use.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Combine unlimited PDF files into a single document",
+          "Drag-and-drop reordering for precise control over page sequence",
+          "Preview thumbnails before merging to verify content",
+          "Maintains original quality — no compression or quality loss",
+          "Works entirely in your browser — files never leave your device",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Sort files by name or size using the toolbar buttons for quick organization",
+          "Large files may take a moment to process — a progress indicator will keep you informed",
+          "The merged file preserves bookmarks, links, and form fields from the original documents",
+        ],
+      },
+},
+    split: {
+      howTo: {
+        title: "How to Split a PDF",
+        steps: [
+          "Upload a PDF file by clicking 'Select File' or dragging it into the area.",
+          "Choose a split method: by page range, extract specific pages, or split by fixed intervals.",
+          "Configure your desired ranges or page numbers.",
+          "Click 'Split' to create separate PDF files, then download them.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Split by custom page ranges (e.g., pages 1–5, 10–15)",
+          "Extract individual pages into separate files",
+          "Split into equal-sized chunks (every N pages)",
+          "Visual page thumbnails for easy page selection",
+          "Option to merge selected ranges into one output file",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use the range input to specify multiple ranges separated by commas",
+          "Click on page thumbnails to quickly select or deselect pages",
+          "The 'Extract All' option creates one file per page — useful for archiving",
+        ],
+      },
+},
+    compress: {
+      howTo: {
+        title: "How to Compress a PDF",
+        steps: [
+          "Upload a PDF file you want to make smaller.",
+          "Choose a compression level: Maximum (smallest file), Recommended (balanced), or Minimum (best quality).",
+          "Select a compression mode — image-based or rasterize.",
+          "Click 'Compress' and download your smaller PDF file.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Three compression levels to balance size and quality",
+          "Image optimization reduces embedded image sizes",
+          "Shows before and after file sizes with percentage reduction",
+          "Rasterize mode for maximum compression when text quality is less critical",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "The 'Recommended' level works best for most documents, reducing size by 40–70%",
+          "For PDFs with many photos, 'Maximum' compression can dramatically reduce file size",
+          "Use 'Minimum' compression when you need to preserve image sharpness for printing",
+        ],
+      },
+},
+    "pdf-to-jpg": {
+      howTo: {
+        title: "How to Convert PDF to JPG",
+        steps: [
+          "Upload one or more PDF files to convert.",
+          "Select the output quality: High (300 DPI), Medium (150 DPI), or Low (72 DPI).",
+          "Click 'Convert' to transform each PDF page into a JPG image.",
+          "Download individual images or all images as a ZIP file.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Convert every page of a PDF into a high-quality JPG image",
+          "Three quality presets to balance image clarity and file size",
+          "Batch processing — convert multiple PDFs at once",
+          "Download individual pages or all pages in a single ZIP archive",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use 'High' quality for printing or professional presentations",
+          "Choose 'Medium' for web use — good quality with reasonable file sizes",
+          "'Low' quality is perfect for thumbnails or quick previews",
+        ],
+      },
+},
+    "jpg-to-pdf": {
+      howTo: {
+        title: "How to Convert JPG to PDF",
+        steps: [
+          "Upload one or more JPG images by clicking or dragging.",
+          "Choose page size, orientation, and margin settings.",
+          "Arrange images in your preferred order by dragging.",
+          "Click 'Convert' to create your PDF, then download it.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Convert single or multiple JPG images into one PDF",
+          "Choose from standard page sizes (A4, Letter, Legal) or fit-to-image",
+          "Adjustable margins and orientation (portrait/landscape)",
+          "Option to create one PDF per image or merge all into one document",
+          "Drag-and-drop reordering of images",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use 'Fit to Image' page size to avoid cropping or white borders",
+          "For photo albums, use 'Merge all' to create a single PDF with all images",
+          "Adjust margins to zero for edge-to-edge printing",
+        ],
+      },
+},
+    rotate: {
+      howTo: {
+        title: "How to Rotate PDF Pages",
+        steps: [
+          "Upload a PDF file with pages that need rotation.",
+          "Click the rotation buttons on individual page thumbnails to rotate them.",
+          "Use 'Rotate All' to apply the same rotation to every page at once.",
+          "Click 'Rotate' to apply changes and download the corrected PDF.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Rotate individual pages clockwise or counter-clockwise by 90°",
+          "Rotate all pages at once with a single click",
+          "Visual page thumbnails show rotation changes in real-time",
+          "Reset all rotations to start over if needed",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Scanned documents often have pages in mixed orientations — fix them all at once",
+          "Use individual page rotation for documents with both portrait and landscape pages",
+          "The rotation is permanent and maintained when printing or sharing the PDF",
+        ],
+      },
+},
+    "edit-pdf": {
+      howTo: {
+        title: "How to Edit a PDF",
+        steps: [
+          "Upload the PDF you want to edit.",
+          "Select a tool from the toolbar: text, image, shapes, or drawing.",
+          "Click on the page to place your element, then customize its properties.",
+          "Navigate between pages and add elements as needed.",
+          "Click 'Apply' to save all changes and download the edited PDF.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Add text with customizable font, size, color, and alignment",
+          "Insert images from your device anywhere on the page",
+          "Draw freehand lines, rectangles, ellipses, and straight lines",
+          "Add symbols like checkmarks, crosses, stars, and arrows",
+          "Layer control — bring elements forward or send them backward",
+          "Multi-page editing with easy page navigation",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use the zoom controls to work on fine details with precision",
+          "Double-click a text element to edit its content after placing it",
+          "Use Ctrl+Z (Cmd+Z on Mac) to undo any mistakes instantly",
+          "Symbols like checkmarks are perfect for filling out form fields",
+        ],
+      },
+},
+    watermark: {
+      howTo: {
+        title: "How to Add a Watermark to PDF",
+        steps: [
+          "Upload the PDF you want to watermark.",
+          "Choose between text or image watermark.",
+          "Customize the watermark: set text/image, opacity, position, rotation, and size.",
+          "Select which pages to apply the watermark to (all or custom range).",
+          "Click 'Add Watermark' and download the watermarked PDF.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Text watermarks with customizable font, size, color, and shadow",
+          "Image watermarks with adjustable scale and opacity",
+          "Nine position options (corners, edges, and center)",
+          "Tile/mosaic pattern to cover the entire page",
+          "Layer control — place watermark above or below content",
+          "Custom page range selection",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Set opacity to 20–30% for a subtle watermark that doesn't obscure content",
+          "Use the mosaic/tile option for full-page coverage on confidential documents",
+          "A diagonal rotation (typically 45°) makes watermarks harder to remove",
+          "Place watermarks 'below content' so text remains fully readable",
+        ],
+      },
+},
+    protect: {
+      howTo: {
+        title: "How to Password Protect a PDF",
+        steps: [
+          "Upload the PDF you want to protect.",
+          "Enter a password and confirm it.",
+          "Optionally, configure advanced permissions (printing, copying, editing).",
+          "Click 'Protect' to encrypt the PDF with your password.",
+          "Download the protected file — recipients will need the password to open it.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "AES-256 encryption for strong security",
+          "Password strength indicator (weak, medium, strong)",
+          "Granular permission controls for printing, copying, and modifying",
+          "Separate permissions for low-resolution and high-resolution printing",
+          "Form filling and accessibility permission controls",
+          "All encryption happens in your browser — your password never leaves your device",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use a strong password with mixed characters for maximum security",
+          "Restrict 'copying' permission to prevent text extraction from the document",
+          "Allow 'low-res printing' only if you want to prevent high-quality reproductions",
+          "Remember your password — there's no recovery option for encrypted files",
+        ],
+      },
+},
+    "delete-pages": {
+      howTo: {
+        title: "How to Delete Pages from a PDF",
+        steps: [
+          "Upload a PDF file containing pages you want to remove.",
+          "Click on page thumbnails to select the pages you want to delete.",
+          "Use quick-select buttons: select all, odd pages, even pages, or deselect all.",
+          "Click 'Delete' to remove selected pages and download the result.",
+        ],
+      },
+      features: {
+        title: "Features",
+        items: [
+          "Visual page thumbnails for easy identification",
+          "Multi-select with click — choose exactly which pages to remove",
+          "Quick-select options for odd pages, even pages, or all pages",
+          "Real-time counter showing how many pages will be deleted vs. kept",
+          "Safety check prevents you from deleting all pages accidentally",
+        ],
+      },
+      tips: {
+        title: "Tips",
+        items: [
+          "Use 'Select Even Pages' to quickly remove blank back-sides from double-sided scans",
+          "Preview each thumbnail carefully before deleting to avoid removing the wrong pages",
+          "If you need to keep only a few pages, consider using 'Extract Pages' instead — it's faster",
+        ],
+      },
+},
   },
 };
 

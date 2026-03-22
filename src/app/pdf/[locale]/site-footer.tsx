@@ -48,12 +48,32 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             );
           })}
 
-          {/* Legal */}
+          {/* Company */}
           <div>
             <p className="text-sm font-semibold text-foreground mb-3">
-              {dict.footer.legal}
+              {dict.footer.company}
             </p>
             <ul className="space-y-1.5">
+              <li>
+                <Link href={`/pdf/${locale}/blog`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                  {dict.blog.title}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/pdf/${locale}/about`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                  {dict.footer.about}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/pdf/${locale}/contact`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                  {dict.footer.contact}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/pdf/${locale}/faq`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
+                  {dict.footer.faq}
+                </Link>
+              </li>
               <li>
                 <Link href={`/pdf/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
                   {dict.footer.privacy}

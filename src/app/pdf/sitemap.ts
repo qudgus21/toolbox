@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { tools } from "@/lib/pdf/tools";
+import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org/pdf";
 
@@ -30,6 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Info pages for each locale
+  for (const locale of locales) {
+    for (const page of ["about", "contact", "faq"] as const) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/${page}`,
+        lastModified: new Date("2026-03-22"),
+        changeFrequency: "monthly",
+        priority: 0.4,
+      });
+    }
+  }
+
   // Legal pages for each locale
   for (const locale of locales) {
     entries.push({
@@ -44,6 +57,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     });
+  }
+
+  // Blog listing page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/blog`,
+      lastModified: new Date("2026-03-22"),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    });
+  }
+
+  // Blog article pages for each locale x article combination
+  for (const locale of locales) {
+    for (const article of articles) {
+      if (article.content[locale]) {
+        entries.push({
+          url: `${BASE_URL}/${locale}/blog/${article.slug}`,
+          lastModified: new Date(article.publishedAt),
+          changeFrequency: "monthly",
+          priority: 0.5,
+        });
+      }
+    }
   }
 
   return entries;
