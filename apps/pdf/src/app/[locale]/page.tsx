@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { type Locale, locales, getDictionary } from "@toolbox/i18n";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@toolbox/seo";
 import { tools, categories } from "@/lib/tools";
-import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
+
+const HomeContent = dynamic(() =>
+  import("./home-content").then((mod) => mod.HomeContent),
+);
 
 export async function generateMetadata({
   params,

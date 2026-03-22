@@ -37,6 +37,7 @@ export function NavMenu({ locale, dict, categories, tools, categoryLabelKeys }: 
             onMouseLeave={() => setOpenCat(null)}
           >
             <button
+              aria-label={dict.home[categoryLabelKeys[cat.key]] as string}
               className="cursor-pointer flex items-center gap-1.5 px-3 py-2.5 text-base font-medium text-foreground-muted hover:text-foreground transition-colors"
             >
               {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <CatIcon className="h-5 w-5" />; })() : <span className="text-lg">{cat.emoji}</span>}

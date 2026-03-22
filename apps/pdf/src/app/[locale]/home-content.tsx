@@ -356,9 +356,9 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         >
           {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-7 w-auto shrink-0" />; })() : tool.emoji ? <span className="text-2xl shrink-0">{tool.emoji}</span> : null}
           <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-semibold text-foreground">
+            <span className="text-sm font-semibold text-foreground">
               {toolDict.title}
-            </h3>
+            </span>
             <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
           </div>
         </Link>
@@ -472,12 +472,14 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           {/* View Toggle */}
           <div className="hidden sm:flex items-center gap-1 ml-2 rounded-full border border-border p-0.5">
             <button
+              aria-label="Grid view"
               onClick={() => { setViewMode("grid"); track.viewModeToggle({ mode: "grid" }); }}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <LayoutGrid className="h-4 w-4" />
             </button>
             <button
+              aria-label="List view"
               onClick={() => { setViewMode("list"); track.viewModeToggle({ mode: "list" }); }}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "list" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
@@ -572,7 +574,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-muted text-accent">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                <p className="text-sm font-semibold text-foreground">{item.title}</p>
                 <p className="text-xs text-foreground-muted max-w-[200px]">{item.desc}</p>
               </div>
             ))}

@@ -22,6 +22,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: "/:path*.(js|css|woff2|woff|ttf|ico|svg|png|jpg|webp)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
