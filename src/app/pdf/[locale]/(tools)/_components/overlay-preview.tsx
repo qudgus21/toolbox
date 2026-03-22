@@ -61,6 +61,7 @@ function usePdfPages(file: File | null) {
             height: vp.height,
             imageData: ctx.getImageData(0, 0, vp.width, vp.height),
           });
+          canvas.width = 0; canvas.height = 0;
         }
 
         if (!cancelledRef.current) setPages(rendered);

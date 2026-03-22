@@ -12,6 +12,7 @@ import {
   FileInput,
 } from "lucide-react";
 import type { CropArea } from "@/lib/pdf/processors/crop";
+import { ZOOM_STEPS } from "@/lib/pdf/constants";
 import type { CropLabels } from "./crop-options";
 import { CropOptions } from "./crop-options";
 import type { CropPageMode, CropMargins } from "@/lib/pdf/processors/crop";
@@ -43,8 +44,6 @@ interface CropLayoutProps {
   onChangeFile: () => void;
   labels: CropLabels;
 }
-
-const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300] as const;
 
 /* ── Component ──────────────────────────────────────────────── */
 
@@ -186,10 +185,14 @@ export function CropLayout({
           canvas.height = viewport.height;
           const ctx = canvas.getContext("2d")!;
           await page.render({ canvasContext: ctx, viewport, canvas } as Parameters<typeof page.render>[0]).promise;
-          if (cancelled) return;
+          if (cancelled) { canvas.width = 0; canvas.height = 0; return; }
 
-          const blob = await new Promise<Blob>((resolve) =>
-            canvas.toBlob((b) => resolve(b!), "image/png"),
+          const blob = await new Promise<Blob>((resolve, reject) =>
+            canvas.toBlob((b) => {
+              canvas.width = 0;
+              canvas.height = 0;
+              b ? resolve(b) : reject(new Error("toBlob returned null"));
+            }, "image/png"),
           );
           const url = URL.createObjectURL(blob);
           urlsRef.current.push(url);

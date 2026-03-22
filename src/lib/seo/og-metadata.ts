@@ -249,3 +249,7 @@ export const ogBottomBar: Record<string, { free: string; noUpload: string }> = {
   th: { free: "ฟรี 100%", noUpload: "ไม่ต้องอัปโหลด" },
   tr: { free: "100% Ücretsiz", noUpload: "Yükleme gereksiz" },
 };
+
+export function getOgBottomBar(locale: string) {
+  return ogBottomBar[locale] ?? ogBottomBar.en;
+}

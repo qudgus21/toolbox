@@ -206,9 +206,12 @@ export function canvasToJpegBytes(
       .then((b) => b.arrayBuffer())
       .then((ab) => new Uint8Array(ab));
   }
-  return new Promise<Uint8Array>((resolve) => {
+  return new Promise<Uint8Array>((resolve, reject) => {
     canvas.toBlob(
-      (b) => b!.arrayBuffer().then((ab) => resolve(new Uint8Array(ab))),
+      (b) => {
+        if (!b) return reject(new Error("Canvas toBlob returned null"));
+        b.arrayBuffer().then((ab) => resolve(new Uint8Array(ab)));
+      },
       "image/jpeg",
       quality,
     );
@@ -243,6 +246,7 @@ export async function recompressJpeg(
     bitmap.close();
 
     const bytes = await canvasToJpegBytes(canvas, quality);
+    canvas.width = 0; canvas.height = 0;
     return { bytes, width: w, height: h };
   } catch {
     return null;
@@ -298,6 +302,7 @@ export async function recompressFlatImage(
     bitmap.close();
 
     const bytes = await canvasToJpegBytes(canvas, quality);
+    canvas.width = 0; canvas.height = 0;
     return { bytes, width: outW, height: outH };
   } catch {
     return null;
@@ -405,6 +410,7 @@ export async function recompressFlatImageWithSmask(
     bitmap.close();
 
     const bytes = await canvasToJpegBytes(canvas, quality);
+    canvas.width = 0; canvas.height = 0;
     return { bytes, width: outW, height: outH };
   } catch {
     return null;

@@ -1,5 +1,6 @@
-import { PDFDocument, rgb } from "pdf-lib";
+import { PDFDocument } from "pdf-lib";
 import type { ProcessorFn } from "../types";
+import { hexToRgb } from "./color-utils";
 
 export interface RedactArea {
   id: string;
@@ -11,15 +12,6 @@ export interface RedactArea {
   color: string;
   type: "area" | "text";
   label?: string;
-}
-
-function hexToRgb(hex: string) {
-  const h = hex.replace("#", "");
-  return rgb(
-    parseInt(h.substring(0, 2), 16) / 255,
-    parseInt(h.substring(2, 4), 16) / 255,
-    parseInt(h.substring(4, 6), 16) / 255,
-  );
 }
 
 // Convert Konva top-left Y-down to PDF bottom-left Y-up

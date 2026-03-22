@@ -2,10 +2,6 @@ import { PDFDocument } from "pdf-lib";
 import JSZip from "jszip";
 import type { ProcessorFn, ProcessingResult } from "../types";
 
-function fileId(file: File) {
-  return `${file.name}-${file.size}-${file.lastModified}`;
-}
-
 /** Render a single PDF page to a grayscale PNG blob via canvas. */
 async function renderPageGrayscale(
   doc: Awaited<ReturnType<Awaited<typeof import("pdfjs-dist")>["getDocument"]>>["promise"] extends Promise<infer T> ? T : never,
@@ -47,7 +43,11 @@ async function renderPageGrayscale(
     );
   });
 
-  return { blob, width: canvas.width, height: canvas.height };
+  const w = canvas.width;
+  const h = canvas.height;
+  canvas.width = 0;
+  canvas.height = 0;
+  return { blob, width: w, height: h };
 }
 
 /**
@@ -101,8 +101,8 @@ const grayscalePdf: ProcessorFn = async (files, _options, onProgress) => {
       // Preserve original page dimensions (pdf.js renders at scale, but page size should match original)
       const origPage = await doc.getPage(p);
       const origViewport = origPage.getViewport({ scale: 1 });
-      const pageWidth = origViewport.width * 0.75; // Convert from pdf.js units (96dpi based) to PDF points (72dpi)
-      const pageHeight = origViewport.height * 0.75;
+      const pageWidth = origViewport.width;
+      const pageHeight = origViewport.height;
 
       const page = newDoc.addPage([pageWidth, pageHeight]);
       page.drawImage(pngImage, {

@@ -1,6 +1,5 @@
 import {
   PDFDocument,
-  rgb,
   StandardFonts,
   degrees,
   type PDFFont,
@@ -8,6 +7,7 @@ import {
   type PDFPage,
 } from "pdf-lib";
 import type { ProcessorFn, ProcessingResult } from "../types";
+import { hexToRgb } from "./color-utils";
 import type {
   WatermarkOptions,
   WatermarkPosition,
@@ -18,15 +18,6 @@ import type {
 const MM_TO_PT = 72 / 25.4;
 
 // ─── Helpers ──────────────────────────────────────────────────
-
-function hexToRgb(hex: string) {
-  const h = hex.replace("#", "");
-  return rgb(
-    parseInt(h.substring(0, 2), 16) / 255,
-    parseInt(h.substring(2, 4), 16) / 255,
-    parseInt(h.substring(4, 6), 16) / 255,
-  );
-}
 
 function hasNonLatinChars(text: string): boolean {
   for (let i = 0; i < text.length; i++) {
@@ -75,9 +66,11 @@ async function textToImage(
   ctx.textBaseline = "top";
   ctx.fillText(content, padding, padding);
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  measure.width = 0; measure.height = 0;
+  canvas.width = 0; canvas.height = 0;
   return {
     pngBytes: new Uint8Array(await blob.arrayBuffer()),
     width,
@@ -265,9 +258,10 @@ async function convertToPng(file: File): Promise<Uint8Array> {
   const ctx = canvas.getContext("2d")!;
   ctx.drawImage(bitmap, 0, 0);
   bitmap.close();
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  canvas.width = 0; canvas.height = 0;
   return new Uint8Array(await blob.arrayBuffer());
 }
 
@@ -502,7 +496,6 @@ export default watermarkPdf;
 
 // 테스트용 export
 export {
-  hexToRgb,
   hasNonLatinChars,
   parseRange,
   getTargetPageIndices,

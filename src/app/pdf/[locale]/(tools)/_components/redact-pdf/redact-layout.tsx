@@ -41,10 +41,9 @@ import {
   type PatternType,
   type TextSearchResult,
 } from "./redact-types";
+import { ZOOM_STEPS } from "@/lib/pdf/constants";
 
 export type { RedactPdfLabels };
-
-const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300] as const;
 
 type AnchorDir = "nw" | "n" | "ne" | "e" | "se" | "s" | "sw" | "w";
 

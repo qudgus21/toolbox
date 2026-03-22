@@ -54,8 +54,12 @@ export function usePdfPages(file: File | null) {
 
           if (cancelled) return;
 
-          const blob = await new Promise<Blob>((resolve) =>
-            canvas.toBlob((b) => resolve(b!), "image/png"),
+          const blob = await new Promise<Blob>((resolve, reject) =>
+            canvas.toBlob((b) => {
+              canvas.width = 0;
+              canvas.height = 0;
+              b ? resolve(b) : reject(new Error("toBlob returned null"));
+            }, "image/png"),
           );
           const url = URL.createObjectURL(blob);
           urlsRef.current.push(url);

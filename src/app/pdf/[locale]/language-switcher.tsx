@@ -81,6 +81,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!open) return;
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
@@ -88,7 +89,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [open]);
 
   return (
     <div ref={ref} className="relative">

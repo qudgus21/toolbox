@@ -71,7 +71,7 @@ function signReducer(state: SignState, action: SignAction): SignState {
       if (!src) return state;
       const dup: SignElement = {
         ...src,
-        id: `sign_${Date.now()}_dup`,
+        id: `sign_${Date.now()}_${Math.random().toString(36).slice(2, 8)}_dup`,
         x: src.x + 20,
         y: src.y + 20,
       };

@@ -222,7 +222,7 @@ async function optimizeSinglePdf(
   onProgress: (pct: number) => void,
   progressBase: number,
   progressRange: number,
-): Promise<{ bytes: Uint8Array; pageCount: number; stats: OptimizationStats }> {
+): Promise<{ bytes: Uint8Array; pageCount: number; stats: OptimizationStats; srcBytes: ArrayBuffer }> {
   const config = presetConfig[preset];
   const srcBytes = await file.arrayBuffer();
 
@@ -298,7 +298,7 @@ async function optimizeSinglePdf(
 
   onProgress(progressBase + progressRange);
 
-  return { bytes: pdfBytes, pageCount: doc.getPageCount(), stats };
+  return { bytes: pdfBytes, pageCount: doc.getPageCount(), stats, srcBytes };
 }
 
 // ─── 메인 프로세서 ────────────────────────────────────
@@ -318,13 +318,13 @@ const webOptimizePdf: ProcessorFn = async (files, options, onProgress) => {
   if (files.length === 1) {
     const file = files[0];
     const originalSize = file.size;
-    const { bytes, pageCount } = await optimizeSinglePdf(
+    const { bytes, pageCount, srcBytes } = await optimizeSinglePdf(
       file, preset, toggles, onProgress, 5, 90,
     );
 
     // 결과가 원본보다 크면 원본 반환
     const finalBytes = bytes.length >= originalSize
-      ? new Uint8Array(await file.arrayBuffer())
+      ? new Uint8Array(srcBytes)
       : bytes;
 
     const blob = new Blob([finalBytes as BlobPart], { type: "application/pdf" });
@@ -348,12 +348,12 @@ const webOptimizePdf: ProcessorFn = async (files, options, onProgress) => {
     const file = files[i];
     const originalSize = file.size;
     const base = 5 + i * perFile;
-    const { bytes, pageCount } = await optimizeSinglePdf(
+    const { bytes, pageCount, srcBytes } = await optimizeSinglePdf(
       file, preset, toggles, onProgress, base, perFile,
     );
 
     const finalBytes = bytes.length >= originalSize
-      ? new Uint8Array(await file.arrayBuffer())
+      ? new Uint8Array(srcBytes)
       : bytes;
 
     const baseName = file.name.replace(/\.pdf$/i, "");

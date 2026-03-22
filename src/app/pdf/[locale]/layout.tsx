@@ -85,7 +85,7 @@ export default async function LocaleLayout({
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${locale}";document.documentElement.dir="${dir}"`,
+          __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(dir)}`,
         }}
       />
       <script

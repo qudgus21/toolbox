@@ -117,6 +117,7 @@ function useLazyPdfThumbnails(file: File | null) {
       const url = await new Promise<string>((resolve) => {
         canvas.toBlob(
           (blob) => {
+            canvas.width = 0; canvas.height = 0;
             if (!blob) {
               resolve("");
               return;
@@ -243,6 +244,7 @@ function usePdfSpecificThumbnails(file: File | null, pageNumbers: number[]) {
           const url = await new Promise<string>((resolve) => {
             canvas.toBlob(
               (blob) => {
+                canvas.width = 0; canvas.height = 0;
                 if (!blob) {
                   resolve("");
                   return;

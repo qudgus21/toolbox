@@ -17,11 +17,11 @@ import { SignCreateModal } from "./sign-create-modal";
 import { useSignStore } from "./use-sign-store";
 import { usePdfPages } from "../edit-pdf/use-pdf-pages";
 import {
-  ZOOM_STEPS,
   generateSignId,
   type SignPdfLabels,
   type SignElement,
 } from "./sign-types";
+import { ZOOM_STEPS } from "@/lib/pdf/constants";
 
 export type { SignPdfLabels };
 
@@ -35,7 +35,7 @@ const SignPageCanvas = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full w-full items-center justify-center bg-white">
+      <div className="flex h-full w-full items-center justify-center bg-background">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-accent border-t-transparent" />
       </div>
     ),

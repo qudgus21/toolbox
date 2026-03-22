@@ -2,10 +2,6 @@ import { PDFDocument } from "pdf-lib-plus-encrypt";
 import JSZip from "jszip";
 import type { ProcessorFn, ProcessingResult } from "../types";
 
-function fileId(file: File) {
-  return `${file.name}-${file.size}-${file.lastModified}`;
-}
-
 /**
  * Protect PDF processor (multi-file)
  *

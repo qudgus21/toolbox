@@ -17,10 +17,9 @@ import { AnnotatePropertiesPanel } from "./annotate-properties-panel";
 import { useAnnotateStore } from "./use-annotate-store";
 import { usePdfPages } from "../edit-pdf/use-pdf-pages";
 import { generateId, type AnnotatePdfLabels, type AnnotateElement } from "./annotate-types";
+import { ZOOM_STEPS } from "@/lib/pdf/constants";
 
 export type { AnnotatePdfLabels };
-
-const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300] as const;
 
 /* ── Dynamic import for Konva (SSR-safe) ────────────────────── */
 
@@ -32,7 +31,7 @@ const AnnotatePageCanvas = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full w-full items-center justify-center bg-white">
+      <div className="flex h-full w-full items-center justify-center bg-background">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-accent border-t-transparent" />
       </div>
     ),

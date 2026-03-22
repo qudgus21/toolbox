@@ -155,7 +155,7 @@ export const DEFAULT_TEXT_FIELD = {
 };
 
 // ─── Zoom ───────────────────────────────────────────────────
-export const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300];
+export { ZOOM_STEPS } from "@/lib/pdf/constants";
 
 // ─── Labels ─────────────────────────────────────────────────
 export interface SignPdfLabels {

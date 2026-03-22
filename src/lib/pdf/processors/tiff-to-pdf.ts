@@ -64,6 +64,7 @@ async function decodeTiffToPng(buf: ArrayBuffer): Promise<{ pngBytes: Uint8Array
 
   return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => {
+      canvas.width = 0; canvas.height = 0;
       if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
       blob.arrayBuffer().then(
         (b) => resolve({ pngBytes: new Uint8Array(b), width: w, height: h }),

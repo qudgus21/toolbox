@@ -1,12 +1,12 @@
 import {
   PDFDocument,
-  rgb,
   StandardFonts,
   degrees,
   type PDFPage,
   type PDFFont,
 } from "pdf-lib";
 import type { ProcessorFn } from "../types";
+import { hexToRgb } from "./color-utils";
 
 interface BaseAnnotation {
   id: string;
@@ -83,14 +83,6 @@ type Annotation =
   | SymbolAnnotation;
 
 // ─── Helpers ──────────────────────────────────────────────────
-function hexToRgb(hex: string) {
-  const h = hex.replace("#", "");
-  return rgb(
-    parseInt(h.substring(0, 2), 16) / 255,
-    parseInt(h.substring(2, 4), 16) / 255,
-    parseInt(h.substring(4, 6), 16) / 255,
-  );
-}
 
 function getFontKey(family: string, bold: boolean, italic: boolean): keyof typeof StandardFonts {
   const map: Record<string, keyof typeof StandardFonts> = {
@@ -181,9 +173,10 @@ async function textToImage(
     }
   }
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  canvas.width = 0; canvas.height = 0;
   return new Uint8Array(await blob.arrayBuffer());
 }
 
@@ -462,9 +455,10 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
             };
             ctx.fillText(emojiMap[ann.symbol] ?? "?", 0, 0);
 
-            const blob = await new Promise<Blob>((res) =>
-              canvas.toBlob((b) => res(b!), "image/png"),
+            const blob = await new Promise<Blob>((res, rej) =>
+              canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
             );
+            canvas.width = 0; canvas.height = 0;
             const arrBuf = await blob.arrayBuffer();
             const emojiImage = await doc.embedPng(new Uint8Array(arrBuf));
             const pdfY = toPdfY(ann.y, ann.width, ph);

@@ -7,10 +7,10 @@ import type { HeaderFooterOptions, HeaderFooterAlign } from "./header-footer-typ
 import type { PageNumberFont } from "./page-numbers-types";
 // Re-use helpers from page-numbers
 import {
-  hexToRgb,
   hasNonLatinChars,
   parseRange,
 } from "./page-numbers";
+import { hexToRgb } from "./color-utils";
 
 const MM_TO_PT = 72 / 25.4;
 
@@ -70,9 +70,11 @@ async function textToImage(
   ctx.textBaseline = "top";
   ctx.fillText(content, 0, 0);
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  measure.width = 0; measure.height = 0;
+  canvas.width = 0; canvas.height = 0;
   return {
     pngBytes: new Uint8Array(await blob.arrayBuffer()),
     width,

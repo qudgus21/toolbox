@@ -40,6 +40,7 @@ export function PdfThumbnail({ file, className, objectFit = "object-contain" }: 
         if (cancelled) return;
 
         canvas.toBlob((blob) => {
+          canvas.width = 0; canvas.height = 0;
           if (cancelled || !blob) return;
           if (revokeRef.current) URL.revokeObjectURL(revokeRef.current);
           const url = URL.createObjectURL(blob);

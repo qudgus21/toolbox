@@ -90,14 +90,13 @@ function stripBloat(doc: PDFDocument, level: CompressionLevel): void {
 // ─── 모드 A: 이미지 XObject 재압축 (DCTDecode + FlateDecode) ──
 
 async function compressImageMode(
-  file: File,
+  srcBytes: ArrayBuffer,
   level: CompressionLevel,
   onProgress: (pct: number) => void,
   progressBase: number,
   progressRange: number,
 ): Promise<{ bytes: Uint8Array; pageCount: number }> {
   const config = levelConfig[level];
-  const srcBytes = await file.arrayBuffer();
 
   const srcDoc = await PDFDocument.load(srcBytes);
   const doc = await PDFDocument.create();
@@ -135,14 +134,13 @@ async function compressImageMode(
 // ─── 모드 B: 전체 페이지 래스터화 ──────────────────────
 
 async function compressRasterizeMode(
-  file: File,
+  srcBytes: ArrayBuffer,
   level: CompressionLevel,
   onProgress: (pct: number) => void,
   progressBase: number,
   progressRange: number,
 ): Promise<{ bytes: Uint8Array; pageCount: number }> {
   const config = rasterizeConfig[level];
-  const srcBytes = await file.arrayBuffer();
 
   // pdfjs-dist 동적 로드
   const pdfjsLib = await import("pdfjs-dist");
@@ -175,6 +173,8 @@ async function compressRasterizeMode(
     } as Parameters<typeof page.render>[0]) as { promise: Promise<void> }).promise;
 
     const jpegBytes = await canvasToJpegBytes(canvas, config.quality);
+    canvas.width = 0;
+    canvas.height = 0;
     const image = await doc.embedJpg(jpegBytes);
 
     // 원본 페이지 크기(pt) 유지
@@ -203,7 +203,7 @@ async function compressRasterizeMode(
 // ─── 단일 파일 압축 (모드 분기) ─────────────────────────
 
 async function compressSinglePdf(
-  file: File,
+  srcBytes: ArrayBuffer,
   level: CompressionLevel,
   mode: CompressMode,
   onProgress: (pct: number) => void,
@@ -212,7 +212,7 @@ async function compressSinglePdf(
 ): Promise<{ bytes: Uint8Array; pageCount: number }> {
   if (mode === "rasterize") {
     return compressRasterizeMode(
-      file,
+      srcBytes,
       level,
       onProgress,
       progressBase,
@@ -220,7 +220,7 @@ async function compressSinglePdf(
     );
   }
   return compressImageMode(
-    file,
+    srcBytes,
     level,
     onProgress,
     progressBase,
@@ -239,9 +239,10 @@ async function compressWithSizeGuard(
   progressBase: number,
   progressRange: number,
 ): Promise<{ bytes: Uint8Array; pageCount: number }> {
-  const originalBytes = new Uint8Array(await file.arrayBuffer());
+  const ab = await file.arrayBuffer();
+  const originalBytes = new Uint8Array(ab);
   const result = await compressSinglePdf(
-    file,
+    ab,
     level,
     mode,
     onProgress,

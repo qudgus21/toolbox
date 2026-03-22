@@ -81,13 +81,14 @@ export function AnnotatePageCanvas({
   /* ── Load page image ──────────────────────────────────── */
 
   useEffect(() => {
+    if (!isVisible) return;
     const img = new window.Image();
     img.onload = () => setPageImg(img);
     img.src = page.imageUrl;
     return () => {
       img.onload = null;
     };
-  }, [page.imageUrl]);
+  }, [page.imageUrl, isVisible]);
 
   /* ── Transformer ──────────────────────────────────────── */
 

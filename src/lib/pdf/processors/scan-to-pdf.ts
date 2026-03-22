@@ -186,6 +186,7 @@ export function enhanceScanImage(
 
       canvas.toBlob(
         (resultBlob) => {
+          canvas.width = 0; canvas.height = 0;
           if (!resultBlob) { reject(new Error("Canvas toBlob failed")); return; }
           resultBlob.arrayBuffer().then(
             (buf) => resolve(new Uint8Array(buf)),

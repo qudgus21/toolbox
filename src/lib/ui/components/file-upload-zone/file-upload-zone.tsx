@@ -36,15 +36,24 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
       (fileList: FileList | null) => {
         if (!fileList) return;
         const maxBytes = maxSizeMB * 1024 * 1024;
+        const acceptedExts = accept
+          ? accept.split(",").map((e) => e.trim().toLowerCase())
+          : [];
         const accepted: File[] = [];
         const rejected: File[] = [];
-        Array.from(fileList).forEach((f) =>
-          f.size <= maxBytes ? accepted.push(f) : rejected.push(f),
-        );
+        Array.from(fileList).forEach((f) => {
+          const ext = "." + (f.name.split(".").pop()?.toLowerCase() ?? "");
+          const typeOk =
+            acceptedExts.length === 0 ||
+            acceptedExts.some((a) =>
+              a.startsWith(".") ? ext === a : f.type.startsWith(a),
+            );
+          typeOk && f.size <= maxBytes ? accepted.push(f) : rejected.push(f);
+        });
         if (rejected.length > 0) onReject?.(rejected);
         onFiles?.(accepted);
       },
-      [maxSizeMB, onFiles, onReject],
+      [accept, maxSizeMB, onFiles, onReject],
     );
 
     const handleDragOver = useCallback((e: DragEvent) => {

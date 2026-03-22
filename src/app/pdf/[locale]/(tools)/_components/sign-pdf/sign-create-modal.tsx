@@ -74,7 +74,10 @@ function cropCanvas(src: HTMLCanvasElement): { dataUrl: string; w: number; h: nu
   out.height = ch;
   const oc = out.getContext("2d")!;
   oc.drawImage(src, cx, cy, cw, ch, 0, 0, cw, ch);
-  return { dataUrl: out.toDataURL("image/png"), w: cw, h: ch };
+  const dataUrl = out.toDataURL("image/png");
+  out.width = 0;
+  out.height = 0;
+  return { dataUrl, w: cw, h: ch };
 }
 
 // ─── Text to Image ──────────────────────────────────────────
@@ -99,7 +102,10 @@ function textToSignatureImage(
   ctx2.fillStyle = color;
   ctx2.textBaseline = "middle";
   ctx2.fillText(text, 12, h / 2);
-  return cropCanvas(c) ?? { dataUrl: c.toDataURL("image/png"), w: w * 2, h: h * 2 };
+  const result = cropCanvas(c) ?? { dataUrl: c.toDataURL("image/png"), w: w * 2, h: h * 2 };
+  c.width = 0;
+  c.height = 0;
+  return result;
 }
 
 // ─── Component ──────────────────────────────────────────────
@@ -250,9 +256,12 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
         c.height = h;
         const ctx = c.getContext("2d")!;
         ctx.drawImage(img, 0, 0, w, h);
-        setUploadedImage(c.toDataURL("image/png"));
+        const dataUrl = c.toDataURL("image/png");
+        c.width = 0; c.height = 0;
+        setUploadedImage(dataUrl);
         setUploadedSize({ w, h });
       };
+      img.onerror = () => { /* silently ignore invalid image */ };
       img.src = dataUrl;
     };
     reader.readAsDataURL(file);
