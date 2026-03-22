@@ -96,6 +96,10 @@ const fr: Dictionary = {
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
     copyright: "ToolPop. All rights reserved.",
+    company: "Entreprise",
+    about: "À propos",
+    contact: "Contact",
+    faq: "FAQ",
   },
   common: {
     backToAll: "Retour à tous les outils",
@@ -1052,6 +1056,146 @@ const fr: Dictionary = {
     frontLabel: "Recto",
     backLabel: "Verso",
   },
+  about: {
+    title: "À propos de ToolPop PDF",
+    intro: "ToolPop PDF est une boîte à outils PDF gratuite qui fonctionne directement dans votre navigateur. Modifiez, convertissez et organisez vos fichiers PDF sans les téléverser sur un serveur. Vos fichiers ne quittent jamais votre appareil.",
+    sections: [
+      {
+        heading: "Notre mission",
+        content: "Nous pensons que tout le monde mérite d'accéder à des outils PDF professionnels — sans abonnement, sans inscription et sans compromettre sa vie privée. ToolPop PDF a été conçu pour rendre la gestion de documents accessible à quiconque dispose d'un navigateur web.",
+      },
+      {
+        heading: "Comment ça fonctionne",
+        content: "Contrairement aux services PDF traditionnels qui exigent de téléverser vos fichiers sur des serveurs distants, ToolPop PDF traite tout directement dans votre navigateur grâce aux technologies web modernes comme WebAssembly et la bibliothèque PDF.js. Vos documents sensibles restent sur votre appareil en permanence — nous ne voyons, ne stockons ni ne transmettons jamais vos fichiers.",
+      },
+      {
+        heading: "Ce que nous proposons",
+        content: "ToolPop PDF comprend plus de 40 outils répartis en cinq catégories :\n\n• Organiser — Fusionner, scinder, réordonner, extraire et supprimer des pages\n• Convertir — Transformer entre PDF, JPG, PNG, texte et autres formats\n• Modifier — Ajouter du texte, des images, des signatures, des filigranes, des numéros de page et des annotations\n• Optimiser — Compresser les fichiers et optimiser pour le web\n• Sécurité — Protéger par mot de passe, caviarder les informations sensibles et aplatir les documents\n\nTous les outils sont entièrement gratuits, sans limite de taille de fichier ni quota d'utilisation quotidien.",
+      },
+      {
+        heading: "Notre technologie",
+        content: "ToolPop PDF est développé avec Next.js, React et les standards web modernes. Nous utilisons des bibliothèques comme pdf-lib pour la manipulation des PDF et PDF.js pour le rendu — le tout s'exécutant côté client dans votre navigateur. Le site prend en charge 45 langues, le mode sombre et fonctionne sur tout appareil doté d'un navigateur moderne.",
+      },
+      {
+        heading: "Nous contacter",
+        content: "Vous avez des questions, des commentaires ou des suggestions de fonctionnalités ? N'hésitez pas à nous écrire. Consultez notre page de contact ou envoyez-nous un e-mail.",
+      },
+    ],
+  },
+  contact: {
+    title: "Nous contacter",
+    intro: "Vous avez une question, trouvé un bug ou souhaitez proposer une fonctionnalité ? Nous serions ravis de vous lire. Choisissez le meilleur moyen de nous joindre ci-dessous.",
+    form: {
+      category: "Catégorie",
+      categoryBug: "Signaler un bug",
+      categoryFeature: "Suggestion",
+      categoryBusiness: "Demande commerciale",
+      categoryGeneral: "Question générale",
+      message: "Message",
+      messagePlaceholder: "Décrivez votre problème ou idée en détail...",
+      send: "Envoyer",
+      sending: "Envoi en cours...",
+      success: "Votre message a bien été envoyé ! Nous vous répondrons dès que possible.",
+      error: "Une erreur est survenue. Veuillez réessayer plus tard.",
+    },
+    sections: [
+      {
+        heading: "Support général",
+        content: "Pour toute question sur l'utilisation de nos outils, le dépannage ou les demandes générales, écrivez-nous. Nous répondons généralement sous 24 heures les jours ouvrés.",
+      },
+      {
+        heading: "Signaler un bug ou suggérer une amélioration",
+        content: "Vous avez trouvé quelque chose qui ne fonctionne pas correctement ? Vous avez une idée de nouvel outil ou d'amélioration ? Dites-le-nous en écrivant avec une description du problème ou de la suggestion. Les captures d'écran sont toujours utiles pour les signalements de bugs.",
+      },
+      {
+        heading: "Demandes commerciales",
+        content: "Pour les opportunités de partenariat, les demandes publicitaires ou les solutions entreprise, contactez-nous.",
+      },
+    ],
+  },
+  faq: {
+    title: "Questions fréquentes",
+    intro: "Retrouvez les réponses aux questions les plus courantes sur ToolPop PDF. Si vous ne trouvez pas votre réponse ici, n'hésitez pas à nous contacter.",
+    items: [
+      { question: "ToolPop PDF est-il vraiment gratuit ?", answer: "Oui, totalement gratuit. Tous les outils sont disponibles sans limite, sans inscription et sans frais cachés. Nous finançons le service par de la publicité non intrusive." },
+      { question: "Mes fichiers sont-ils en sécurité et privés ?", answer: "Absolument. Vos fichiers sont traités intégralement dans votre navigateur — ils ne quittent jamais votre appareil et ne sont jamais téléversés sur un serveur. Nous utilisons les API modernes du navigateur pour gérer toutes les opérations PDF localement, vos documents sensibles restent donc totalement privés." },
+      { question: "Dois-je créer un compte ?", answer: "Non. ToolPop PDF fonctionne sans aucune inscription ni connexion. Ouvrez un outil, déposez votre fichier et obtenez le résultat instantanément." },
+      { question: "Quelle est la taille maximale de fichier que je peux traiter ?", answer: "Le traitement s'effectuant dans votre navigateur, la limite dépend de la mémoire disponible de votre appareil. La plupart des appareils modernes gèrent des fichiers jusqu'à 100-200 Mo sans problème. Pour les très gros fichiers, nous recommandons d'utiliser un navigateur de bureau." },
+      { question: "Quels navigateurs sont compatibles ?", answer: "ToolPop PDF fonctionne sur tous les navigateurs modernes, notamment Chrome, Firefox, Safari, Edge et Opera. Nous recommandons d'utiliser la dernière version de votre navigateur." },
+      { question: "Puis-je utiliser ToolPop PDF sur mon téléphone ou ma tablette ?", answer: "Oui ! ToolPop PDF est entièrement responsive et fonctionne sur les appareils mobiles. Vous pouvez fusionner, scinder, convertir et modifier des PDF directement depuis le navigateur de votre téléphone ou tablette." },
+      { question: "Comment fonctionne le traitement dans le navigateur ?", answer: "Lorsque vous sélectionnez un fichier, il reste sur votre appareil. Nos outils utilisent des bibliothèques JavaScript comme pdf-lib et PDF.js pour lire, modifier et créer des PDF directement dans la mémoire de votre navigateur. Le fichier traité est ensuite disponible au téléchargement — aucune communication avec un serveur n'est nécessaire." },
+      { question: "Puis-je fusionner plus de deux fichiers PDF ?", answer: "Oui. Notre outil de fusion PDF permet de combiner autant de fichiers que souhaité. Glissez-déposez tous les PDF à fusionner, organisez-les dans l'ordre voulu et cliquez sur le bouton de traitement." },
+      { question: "Quels formats de conversion sont disponibles ?", answer: "Vous pouvez convertir des PDF en JPG, PNG et texte brut. Pour créer des PDF, nous prenons en charge les images JPG, PNG, WEBP, TIFF, HEIC, les fichiers HTML et les documents numérisés. De nouveaux formats de conversion sont ajoutés régulièrement." },
+      { question: "En quoi ToolPop PDF se distingue-t-il des autres outils PDF ?", answer: "Trois différences majeures : (1) Confidentialité — vos fichiers ne quittent jamais votre appareil, contrairement à la plupart des concurrents qui les téléversent sur leurs serveurs. (2) Sans limites — pas de quotas quotidiens, pas de restrictions de taille, pas de filigrane sur les fichiers de sortie. (3) Sans compte — utilisez n'importe quel outil instantanément sans vous inscrire." },
+      { question: "Puis-je protéger mon PDF par un mot de passe ?", answer: "Oui. Utilisez notre outil Protéger PDF pour ajouter un mot de passe avec chiffrement AES-256. Vous pouvez définir un mot de passe d'ouverture et des permissions pour contrôler l'impression, la copie et la modification." },
+      { question: "ToolPop PDF ajoute-t-il des filigranes à mes fichiers ?", answer: "Jamais. Tous les fichiers traités sont propres et exempts de toute marque ou filigrane ToolPop. Le résultat est exactement ce que vous attendez d'un outil professionnel." },
+      { question: "Y a-t-il une API disponible ?", answer: "Pas pour le moment. ToolPop PDF est conçu comme un outil basé sur le navigateur pour un usage individuel. Si vous avez besoin d'un accès API pour le traitement programmatique de PDF, contactez-nous pour discuter de solutions entreprise." },
+      { question: "Quelles langues le site prend-il en charge ?", answer: "ToolPop PDF est disponible en 45 langues dont l'anglais, le coréen, l'espagnol, le chinois, le japonais, l'allemand, le français, le portugais, l'arabe, le hindi et bien d'autres. L'interface détecte automatiquement la langue de votre navigateur, ou vous pouvez la changer manuellement via le sélecteur de langue." },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "Astuces, guides et informations pratiques pour travailler avec vos fichiers PDF.",
+    readMore: "Lire la suite",
+    backToBlog: "Retour au blog",
+    publishedOn: "Publié le",
+    categoryGuide: "Guide",
+    categoryTips: "Astuces",
+    categoryKnowledge: "Savoir",
+  },
+  toolContent: {
+    merge: {
+      howTo: { title: "Comment fusionner des fichiers PDF", steps: ["Cliquez sur 'Sélectionner des fichiers' ou glissez-déposez plusieurs PDF dans la zone de téléversement.", "Organisez les fichiers dans l'ordre souhaité en les faisant glisser.", "Cliquez sur 'Fusionner' pour combiner tous les fichiers en un seul PDF.", "Téléchargez votre PDF fusionné — il est prêt à l'emploi."] },
+      features: { title: "Fonctionnalités", items: ["Combinez un nombre illimité de fichiers PDF en un seul document", "Réorganisation par glisser-déposer pour un contrôle précis de l'ordre des pages", "Aperçu des miniatures avant la fusion pour vérifier le contenu", "Qualité d'origine préservée — aucune compression ni perte de qualité", "Fonctionne entièrement dans votre navigateur — les fichiers ne quittent jamais votre appareil"] },
+      tips: { title: "Conseils", items: ["Triez les fichiers par nom ou par taille à l'aide des boutons de la barre d'outils", "Les fichiers volumineux peuvent prendre un instant à traiter — un indicateur de progression vous tient informé", "Le fichier fusionné conserve les signets, liens et champs de formulaire des documents d'origine"] },
+},
+    split: {
+      howTo: { title: "Comment scinder un PDF", steps: ["Téléversez un fichier PDF en cliquant sur 'Sélectionner un fichier' ou en le faisant glisser.", "Choisissez une méthode de scission : par plage de pages, extraction de pages spécifiques ou intervalles fixes.", "Configurez les plages ou numéros de pages souhaités.", "Cliquez sur 'Scinder' pour créer des fichiers PDF séparés, puis téléchargez-les."] },
+      features: { title: "Fonctionnalités", items: ["Scission par plages de pages personnalisées (ex. pages 1-5, 10-15)", "Extraction de pages individuelles en fichiers distincts", "Scission en parties égales (toutes les N pages)", "Miniatures visuelles pour une sélection facile des pages", "Option de regrouper les plages sélectionnées en un seul fichier de sortie"] },
+      tips: { title: "Conseils", items: ["Utilisez le champ de plage pour spécifier plusieurs plages séparées par des virgules", "Cliquez sur les miniatures pour sélectionner ou désélectionner rapidement des pages", "L'option 'Tout extraire' crée un fichier par page — idéal pour l'archivage"] },
+},
+    compress: {
+      howTo: { title: "Comment compresser un PDF", steps: ["Téléversez le fichier PDF que vous souhaitez réduire.", "Choisissez un niveau de compression : Maximum (fichier le plus petit), Recommandé (équilibré) ou Minimum (meilleure qualité).", "Sélectionnez un mode de compression — optimisation des images ou rastérisation.", "Cliquez sur 'Compresser' et téléchargez votre PDF allégé."] },
+      features: { title: "Fonctionnalités", items: ["Trois niveaux de compression pour équilibrer taille et qualité", "Optimisation des images pour réduire la taille des images intégrées", "Affichage des tailles avant et après avec le pourcentage de réduction", "Mode rastérisation pour une compression maximale quand la qualité du texte est secondaire"] },
+      tips: { title: "Conseils", items: ["Le niveau 'Recommandé' convient à la plupart des documents et réduit la taille de 40 à 70 %", "Pour les PDF riches en photos, la compression 'Maximum' peut réduire considérablement la taille", "Utilisez la compression 'Minimum' quand vous devez préserver la netteté des images pour l'impression"] },
+},
+    "pdf-to-jpg": {
+      howTo: { title: "Comment convertir un PDF en JPG", steps: ["Téléversez un ou plusieurs fichiers PDF à convertir.", "Sélectionnez la qualité de sortie : Haute (300 DPI), Moyenne (150 DPI) ou Basse (72 DPI).", "Cliquez sur 'Convertir' pour transformer chaque page du PDF en image JPG.", "Téléchargez les images individuellement ou toutes en un fichier ZIP."] },
+      features: { title: "Fonctionnalités", items: ["Convertissez chaque page d'un PDF en image JPG haute qualité", "Trois préréglages de qualité pour équilibrer netteté et taille de fichier", "Traitement par lots — convertissez plusieurs PDF à la fois", "Téléchargez les pages individuellement ou toutes dans une seule archive ZIP"] },
+      tips: { title: "Conseils", items: ["Utilisez la qualité 'Haute' pour l'impression ou les présentations professionnelles", "Choisissez 'Moyenne' pour le web — bonne qualité avec des tailles raisonnables", "'Basse' est parfaite pour les miniatures ou les aperçus rapides"] },
+},
+    "jpg-to-pdf": {
+      howTo: { title: "Comment convertir des JPG en PDF", steps: ["Téléversez une ou plusieurs images JPG en cliquant ou en les faisant glisser.", "Choisissez la taille de page, l'orientation et les marges.", "Réorganisez les images dans l'ordre souhaité par glisser-déposer.", "Cliquez sur 'Convertir' pour créer votre PDF, puis téléchargez-le."] },
+      features: { title: "Fonctionnalités", items: ["Convertissez une ou plusieurs images JPG en un seul PDF", "Choix parmi les formats de page standard (A4, Letter, Legal) ou ajustement à l'image", "Marges et orientation ajustables (portrait/paysage)", "Option de créer un PDF par image ou de tout regrouper en un seul document", "Réorganisation des images par glisser-déposer"] },
+      tips: { title: "Conseils", items: ["Utilisez 'Ajuster à l'image' pour éviter le recadrage ou les bordures blanches", "Pour les albums photo, utilisez 'Tout fusionner' pour créer un seul PDF avec toutes les images", "Réglez les marges à zéro pour une impression bord à bord"] },
+},
+    rotate: {
+      howTo: { title: "Comment pivoter des pages PDF", steps: ["Téléversez un fichier PDF contenant des pages à pivoter.", "Cliquez sur les boutons de rotation sur les miniatures des pages.", "Utilisez 'Tout pivoter' pour appliquer la même rotation à toutes les pages en une fois.", "Cliquez sur 'Pivoter' pour appliquer les modifications et télécharger le PDF corrigé."] },
+      features: { title: "Fonctionnalités", items: ["Rotation de pages individuelles de 90° dans le sens horaire ou antihoraire", "Rotation de toutes les pages en un seul clic", "Les miniatures affichent les changements de rotation en temps réel", "Réinitialisation de toutes les rotations pour recommencer"] },
+      tips: { title: "Conseils", items: ["Les documents numérisés ont souvent des pages dans des orientations variées — corrigez-les toutes en une fois", "Utilisez la rotation individuelle pour les documents mélangeant pages portrait et paysage", "La rotation est permanente et conservée à l'impression ou au partage du PDF"] },
+},
+    "edit-pdf": {
+      howTo: { title: "Comment modifier un PDF", steps: ["Téléversez le PDF que vous souhaitez modifier.", "Sélectionnez un outil dans la barre : texte, image, formes ou dessin.", "Cliquez sur la page pour placer votre élément, puis personnalisez ses propriétés.", "Naviguez entre les pages et ajoutez des éléments selon vos besoins.", "Cliquez sur 'Appliquer' pour enregistrer toutes les modifications et télécharger le PDF modifié."] },
+      features: { title: "Fonctionnalités", items: ["Ajout de texte avec police, taille, couleur et alignement personnalisables", "Insertion d'images depuis votre appareil n'importe où sur la page", "Dessin à main levée, rectangles, ellipses et lignes droites", "Ajout de symboles comme des coches, des croix, des étoiles et des flèches", "Contrôle des calques — avancer ou reculer des éléments", "Édition multi-pages avec navigation facile entre les pages"] },
+      tips: { title: "Conseils", items: ["Utilisez les commandes de zoom pour travailler avec précision sur les détails", "Double-cliquez sur un élément texte pour modifier son contenu après l'avoir placé", "Utilisez Ctrl+Z (Cmd+Z sur Mac) pour annuler instantanément une erreur", "Les symboles de type coche sont parfaits pour remplir les champs de formulaire"] },
+},
+    watermark: {
+      howTo: { title: "Comment ajouter un filigrane à un PDF", steps: ["Téléversez le PDF auquel vous souhaitez ajouter un filigrane.", "Choisissez entre un filigrane texte ou image.", "Personnalisez le filigrane : texte/image, opacité, position, rotation et taille.", "Sélectionnez les pages concernées (toutes ou plage personnalisée).", "Cliquez sur 'Ajouter le filigrane' et téléchargez le PDF filigrané."] },
+      features: { title: "Fonctionnalités", items: ["Filigranes texte avec police, taille, couleur et ombre personnalisables", "Filigranes image avec échelle et opacité ajustables", "Neuf options de positionnement (coins, bords et centre)", "Motif mosaïque pour couvrir toute la page", "Contrôle des calques — filigrane au-dessus ou en dessous du contenu", "Sélection personnalisée de la plage de pages"] },
+      tips: { title: "Conseils", items: ["Réglez l'opacité entre 20 et 30 % pour un filigrane discret qui ne masque pas le contenu", "Utilisez l'option mosaïque pour une couverture intégrale sur les documents confidentiels", "Une rotation diagonale (généralement 45°) rend le filigrane plus difficile à supprimer", "Placez les filigranes 'sous le contenu' pour que le texte reste parfaitement lisible"] },
+},
+    protect: {
+      howTo: { title: "Comment protéger un PDF par mot de passe", steps: ["Téléversez le PDF que vous souhaitez protéger.", "Saisissez un mot de passe et confirmez-le.", "Configurez éventuellement les permissions avancées (impression, copie, modification).", "Cliquez sur 'Protéger' pour chiffrer le PDF avec votre mot de passe.", "Téléchargez le fichier protégé — les destinataires auront besoin du mot de passe pour l'ouvrir."] },
+      features: { title: "Fonctionnalités", items: ["Chiffrement AES-256 pour une sécurité renforcée", "Indicateur de robustesse du mot de passe (faible, moyen, fort)", "Contrôle granulaire des permissions d'impression, de copie et de modification", "Permissions distinctes pour l'impression basse et haute résolution", "Contrôle des permissions de remplissage de formulaire et d'accessibilité", "Tout le chiffrement s'effectue dans votre navigateur — votre mot de passe ne quitte jamais votre appareil"] },
+      tips: { title: "Conseils", items: ["Utilisez un mot de passe fort avec des caractères variés pour une sécurité maximale", "Restreignez la permission de 'copie' pour empêcher l'extraction de texte du document", "N'autorisez que l'impression 'basse résolution' si vous souhaitez empêcher les reproductions haute qualité", "Mémorisez votre mot de passe — il n'y a pas d'option de récupération pour les fichiers chiffrés"] },
+},
+    "delete-pages": {
+      howTo: { title: "Comment supprimer des pages d'un PDF", steps: ["Téléversez un fichier PDF contenant les pages à supprimer.", "Cliquez sur les miniatures des pages que vous souhaitez supprimer.", "Utilisez les boutons de sélection rapide : tout sélectionner, pages impaires, pages paires ou tout désélectionner.", "Cliquez sur 'Supprimer' pour retirer les pages sélectionnées et télécharger le résultat."] },
+      features: { title: "Fonctionnalités", items: ["Miniatures visuelles pour identifier facilement les pages", "Sélection multiple par clic pour choisir précisément les pages à supprimer", "Options de sélection rapide pour les pages impaires, paires ou toutes les pages", "Compteur en temps réel indiquant le nombre de pages supprimées et conservées", "Vérification de sécurité empêchant la suppression accidentelle de toutes les pages"] },
+      tips: { title: "Conseils", items: ["Utilisez 'Sélectionner les pages paires' pour supprimer rapidement les versos vierges des numérisations recto-verso", "Vérifiez attentivement chaque miniature avant de supprimer pour éviter d'effacer les mauvaises pages", "Si vous ne souhaitez conserver que quelques pages, utilisez plutôt 'Extraire des pages' — c'est plus rapide"] },
+},
+  },
+
 };
 
 export default fr;

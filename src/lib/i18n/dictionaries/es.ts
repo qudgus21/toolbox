@@ -96,6 +96,10 @@ const es: Dictionary = {
     privacy: "Política de privacidad",
     terms: "Términos de servicio",
     copyright: "ToolPop. All rights reserved.",
+    company: "Empresa",
+    about: "Sobre nosotros",
+    contact: "Contacto",
+    faq: "Preguntas frecuentes",
   },
   common: {
     backToAll: "Volver a todas las herramientas",
@@ -1052,6 +1056,146 @@ const es: Dictionary = {
     frontLabel: "Frente",
     backLabel: "Reverso",
   },
+  about: {
+    title: "Sobre ToolPop PDF",
+    intro: "ToolPop PDF es un conjunto de herramientas PDF gratuito que funciona directamente en tu navegador. Edita, convierte y organiza archivos PDF sin subirlos a ningún servidor. Tus archivos nunca salen de tu dispositivo.",
+    sections: [
+      {
+        heading: "Nuestra misión",
+        content: "Creemos que todo el mundo merece acceso a herramientas PDF profesionales, sin suscripciones, sin registros y sin comprometer la privacidad. ToolPop PDF nació para que cualquier persona con un navegador web pueda gestionar documentos de forma profesional.",
+      },
+      {
+        heading: "Cómo funciona",
+        content: "A diferencia de los servicios PDF tradicionales que requieren subir archivos a servidores remotos, ToolPop PDF procesa todo directamente en tu navegador mediante tecnologías web modernas como WebAssembly y la librería PDF.js. Tus documentos confidenciales permanecen en tu dispositivo en todo momento: nunca vemos, almacenamos ni transmitimos tus archivos.",
+      },
+      {
+        heading: "Qué ofrecemos",
+        content: "ToolPop PDF incluye más de 40 herramientas en cinco categorías:\n\n• Organizar: combinar, dividir, reordenar, extraer y eliminar páginas\n• Convertir: transformar entre PDF, JPG, PNG, texto y otros formatos\n• Editar: añadir texto, imágenes, firmas, marcas de agua, números de página y anotaciones\n• Optimizar: comprimir archivos y optimizar para la web\n• Seguridad: proteger con contraseña, censurar información sensible y aplanar documentos\n\nTodas las herramientas son completamente gratuitas, sin límites de tamaño ni restricciones de uso diario.",
+      },
+      {
+        heading: "Nuestra tecnología",
+        content: "ToolPop PDF está desarrollado con Next.js, React y estándares web modernos. Utilizamos librerías como pdf-lib para la manipulación de PDF y PDF.js para el renderizado, todo ejecutándose en el lado del cliente en tu navegador. El sitio soporta 45 idiomas, modo oscuro y funciona en cualquier dispositivo con un navegador moderno.",
+      },
+      {
+        heading: "Contacta con nosotros",
+        content: "¿Tienes preguntas, comentarios o sugerencias de funcionalidades? Nos encantaría saber de ti. Visita nuestra página de contacto o escríbenos.",
+      },
+    ],
+  },
+  contact: {
+    title: "Contacto",
+    intro: "¿Tienes alguna pregunta, encontraste un error o quieres sugerir una función? Nos encantaría saber de ti. Elige la mejor forma de contactarnos a continuación.",
+    form: {
+      category: "Categoría",
+      categoryBug: "Reporte de error",
+      categoryFeature: "Sugerencia",
+      categoryBusiness: "Consulta comercial",
+      categoryGeneral: "Consulta general",
+      message: "Mensaje",
+      messagePlaceholder: "Describe tu problema o idea en detalle...",
+      send: "Enviar",
+      sending: "Enviando...",
+      success: "Tu mensaje se ha enviado correctamente. Te responderemos lo antes posible.",
+      error: "Algo salió mal. Inténtalo de nuevo más tarde.",
+    },
+    sections: [
+      {
+        heading: "Soporte general",
+        content: "Para consultas sobre el uso de nuestras herramientas, resolución de problemas o preguntas generales, escríbenos. Normalmente respondemos en un plazo de 24 horas en días laborables.",
+      },
+      {
+        heading: "Informes de errores y sugerencias",
+        content: "¿Encontraste algo que no funciona correctamente? ¿Tienes una idea para una nueva herramienta o mejora? Cuéntanos enviando un correo con una descripción del problema o la sugerencia. Las capturas de pantalla siempre son de gran ayuda para reportar errores.",
+      },
+      {
+        heading: "Consultas comerciales",
+        content: "Para oportunidades de colaboración, consultas sobre publicidad o soluciones empresariales, contacta con nosotros en.",
+      },
+    ],
+  },
+  faq: {
+    title: "Preguntas frecuentes",
+    intro: "Encuentra respuestas a las preguntas más habituales sobre ToolPop PDF. Si no encuentras lo que buscas, no dudes en contactarnos.",
+    items: [
+      { question: "¿ToolPop PDF es realmente gratis?", answer: "Sí, totalmente gratis. Todas las herramientas están disponibles sin límites, sin necesidad de registro y sin costes ocultos. Mantenemos el servicio mediante publicidad no intrusiva." },
+      { question: "¿Mis archivos están seguros y son privados?", answer: "Por supuesto. Tus archivos se procesan íntegramente en tu navegador: nunca salen de tu dispositivo ni se suben a ningún servidor. Utilizamos APIs modernas del navegador para gestionar todas las operaciones PDF de forma local, por lo que tus documentos confidenciales permanecen completamente privados." },
+      { question: "¿Necesito crear una cuenta?", answer: "No. ToolPop PDF funciona sin ningún tipo de registro o inicio de sesión. Solo abre una herramienta, arrastra tu archivo y obtén resultados al instante." },
+      { question: "¿Cuál es el tamaño máximo de archivo que puedo procesar?", answer: "Como el procesamiento ocurre en tu navegador, el límite depende de la memoria disponible de tu dispositivo. La mayoría de dispositivos modernos pueden manejar archivos de hasta 100-200 MB sin problemas. Para archivos muy grandes, recomendamos usar un navegador de escritorio o portátil." },
+      { question: "¿Qué navegadores son compatibles?", answer: "ToolPop PDF funciona en todos los navegadores modernos, incluyendo Chrome, Firefox, Safari, Edge y Opera. Recomendamos usar la última versión de tu navegador para la mejor experiencia." },
+      { question: "¿Puedo usar ToolPop PDF en mi teléfono o tablet?", answer: "¡Sí! ToolPop PDF es totalmente responsive y funciona en dispositivos móviles. Puedes combinar, dividir, convertir y editar PDFs directamente desde el navegador de tu teléfono o tablet." },
+      { question: "¿Cómo funciona el procesamiento en el navegador?", answer: "Cuando seleccionas un archivo, este permanece en tu dispositivo. Nuestras herramientas usan librerías JavaScript como pdf-lib y PDF.js para leer, modificar y crear PDFs directamente en la memoria de tu navegador. El archivo procesado queda listo para descargar sin necesidad de comunicación con ningún servidor." },
+      { question: "¿Puedo combinar más de dos archivos PDF?", answer: "Sí. Nuestra herramienta de combinar PDF permite unir cualquier número de archivos. Simplemente arrastra todos los PDFs que quieras combinar, ordénalos como prefieras y haz clic en el botón de procesar." },
+      { question: "¿A qué formatos puedo convertir desde y hacia PDF?", answer: "Puedes convertir PDFs a JPG, PNG y texto plano. Para crear PDFs, aceptamos imágenes JPG, PNG, WEBP, TIFF, HEIC, archivos HTML y documentos escaneados. Seguimos añadiendo más formatos de conversión." },
+      { question: "¿En qué se diferencia ToolPop PDF de otras herramientas PDF?", answer: "Tres diferencias clave: (1) Privacidad: tus archivos nunca salen de tu dispositivo, a diferencia de la mayoría de competidores que los suben a sus servidores. (2) Sin límites: sin cuotas diarias, sin restricciones de tamaño, sin marcas de agua en los archivos de salida. (3) Sin cuenta obligatoria: usa cualquier herramienta al instante sin registrarte." },
+      { question: "¿Puedo añadir una contraseña para proteger mi PDF?", answer: "Sí. Usa nuestra herramienta Proteger PDF para añadir protección con contraseña mediante cifrado AES-256. Puedes establecer una contraseña de apertura y permisos para controlar la impresión, copia y edición." },
+      { question: "¿ToolPop PDF añade marcas de agua a mis archivos?", answer: "Nunca. Todos los archivos procesados están limpios y libres de cualquier marca o logotipo de ToolPop. El resultado es exactamente lo que esperarías de una herramienta profesional." },
+      { question: "¿Hay una API disponible?", answer: "Actualmente no. ToolPop PDF está diseñado como una herramienta basada en el navegador para uso individual. Si necesitas acceso API para el procesamiento programático de PDFs, contáctanos en para hablar sobre soluciones empresariales." },
+      { question: "¿En qué idiomas está disponible el sitio?", answer: "ToolPop PDF está disponible en 45 idiomas, incluyendo inglés, coreano, español, chino, japonés, alemán, francés, portugués, árabe, hindi y muchos más. La interfaz detecta automáticamente el idioma de tu navegador, o puedes cambiarlo manualmente con el selector de idioma." },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "Consejos, guías y artículos útiles sobre cómo trabajar con archivos PDF.",
+    readMore: "Leer más",
+    backToBlog: "Volver al blog",
+    publishedOn: "Publicado el",
+    categoryGuide: "Guía",
+    categoryTips: "Consejos",
+    categoryKnowledge: "Conocimiento",
+  },
+  toolContent: {
+    merge: {
+      howTo: { title: "Cómo combinar archivos PDF", steps: ["Haz clic en 'Seleccionar archivos' o arrastra varios PDF a la zona de carga.", "Ordena los archivos arrastrándolos a la posición deseada.", "Haz clic en 'Combinar' para unir todos los archivos en un solo PDF.", "Descarga tu PDF combinado: está listo para usar."] },
+      features: { title: "Características", items: ["Combina un número ilimitado de archivos PDF en un solo documento", "Reordenación por arrastrar y soltar para un control preciso de la secuencia de páginas", "Vista previa de miniaturas antes de combinar para verificar el contenido", "Mantiene la calidad original, sin compresión ni pérdida de calidad", "Funciona completamente en tu navegador: los archivos nunca salen de tu dispositivo"] },
+      tips: { title: "Consejos", items: ["Ordena los archivos por nombre o tamaño con los botones de la barra de herramientas", "Los archivos grandes pueden tardar un momento en procesarse; un indicador de progreso te mantendrá informado", "El archivo combinado conserva los marcadores, enlaces y campos de formulario de los documentos originales"] },
+},
+    split: {
+      howTo: { title: "Cómo dividir un PDF", steps: ["Sube un archivo PDF haciendo clic en 'Seleccionar archivo' o arrastrándolo al área.", "Elige un método de división: por rango de páginas, extraer páginas específicas o dividir por intervalos fijos.", "Configura los rangos o números de página deseados.", "Haz clic en 'Dividir' para crear archivos PDF separados y descárgalos."] },
+      features: { title: "Características", items: ["División por rangos de páginas personalizados (p. ej., páginas 1-5, 10-15)", "Extracción de páginas individuales como archivos separados", "División en partes iguales (cada N páginas)", "Miniaturas visuales para seleccionar páginas fácilmente", "Opción de combinar los rangos seleccionados en un solo archivo de salida"] },
+      tips: { title: "Consejos", items: ["Usa la entrada de rangos para especificar varios rangos separados por comas", "Haz clic en las miniaturas para seleccionar o deseleccionar páginas rápidamente", "La opción 'Extraer todo' crea un archivo por página, ideal para archivar"] },
+},
+    compress: {
+      howTo: { title: "Cómo comprimir un PDF", steps: ["Sube el archivo PDF que deseas reducir.", "Elige un nivel de compresión: Máxima (archivo más pequeño), Recomendada (equilibrada) o Mínima (mejor calidad).", "Selecciona un modo de compresión: basado en imagen o rasterizado.", "Haz clic en 'Comprimir' y descarga tu PDF más ligero."] },
+      features: { title: "Características", items: ["Tres niveles de compresión para equilibrar tamaño y calidad", "Optimización de imágenes para reducir el tamaño de las imágenes incrustadas", "Muestra los tamaños antes y después con el porcentaje de reducción", "Modo rasterizado para máxima compresión cuando la calidad del texto es menos crítica"] },
+      tips: { title: "Consejos", items: ["El nivel 'Recomendado' funciona mejor para la mayoría de documentos, reduciendo el tamaño entre un 40% y un 70%", "Para PDFs con muchas fotos, la compresión 'Máxima' puede reducir drásticamente el tamaño", "Usa la compresión 'Mínima' cuando necesites conservar la nitidez de las imágenes para impresión"] },
+},
+    "pdf-to-jpg": {
+      howTo: { title: "Cómo convertir PDF a JPG", steps: ["Sube uno o varios archivos PDF para convertir.", "Selecciona la calidad de salida: Alta (300 DPI), Media (150 DPI) o Baja (72 DPI).", "Haz clic en 'Convertir' para transformar cada página del PDF en una imagen JPG.", "Descarga las imágenes individualmente o todas juntas como archivo ZIP."] },
+      features: { title: "Características", items: ["Convierte cada página de un PDF en una imagen JPG de alta calidad", "Tres presets de calidad para equilibrar claridad y tamaño de archivo", "Procesamiento por lotes: convierte varios PDFs a la vez", "Descarga páginas individuales o todas en un único archivo ZIP"] },
+      tips: { title: "Consejos", items: ["Usa calidad 'Alta' para impresión o presentaciones profesionales", "Elige 'Media' para uso web: buena calidad con tamaños de archivo razonables", "'Baja' es perfecta para miniaturas o vistas previas rápidas"] },
+},
+    "jpg-to-pdf": {
+      howTo: { title: "Cómo convertir JPG a PDF", steps: ["Sube una o varias imágenes JPG haciendo clic o arrastrándolas.", "Elige tamaño de página, orientación y márgenes.", "Ordena las imágenes arrastrándolas al orden deseado.", "Haz clic en 'Convertir' para crear tu PDF y descárgalo."] },
+      features: { title: "Características", items: ["Convierte una o varias imágenes JPG en un PDF", "Elige entre tamaños de página estándar (A4, Carta, Legal) o ajuste a imagen", "Márgenes y orientación ajustables (vertical/horizontal)", "Opción de crear un PDF por imagen o combinar todas en un documento", "Reordenación de imágenes por arrastrar y soltar"] },
+      tips: { title: "Consejos", items: ["Usa 'Ajustar a imagen' para evitar recortes o bordes blancos", "Para álbumes de fotos, usa 'Combinar todo' para crear un solo PDF con todas las imágenes", "Ajusta los márgenes a cero para impresión a sangre completa"] },
+},
+    rotate: {
+      howTo: { title: "Cómo rotar páginas de un PDF", steps: ["Sube un archivo PDF con páginas que necesitan rotación.", "Haz clic en los botones de rotación en las miniaturas de cada página.", "Usa 'Rotar todo' para aplicar la misma rotación a todas las páginas a la vez.", "Haz clic en 'Rotar' para aplicar los cambios y descargar el PDF corregido."] },
+      features: { title: "Características", items: ["Rota páginas individuales en sentido horario o antihorario 90°", "Rota todas las páginas a la vez con un solo clic", "Las miniaturas muestran los cambios de rotación en tiempo real", "Restablece todas las rotaciones para empezar de nuevo"] },
+      tips: { title: "Consejos", items: ["Los documentos escaneados suelen tener páginas con orientaciones variadas; corrígelas todas de una vez", "Usa la rotación individual para documentos con páginas tanto verticales como horizontales", "La rotación es permanente y se mantiene al imprimir o compartir el PDF"] },
+},
+    "edit-pdf": {
+      howTo: { title: "Cómo editar un PDF", steps: ["Sube el PDF que deseas editar.", "Selecciona una herramienta de la barra: texto, imagen, formas o dibujo.", "Haz clic en la página para colocar el elemento y personaliza sus propiedades.", "Navega entre páginas y añade elementos según necesites.", "Haz clic en 'Aplicar' para guardar los cambios y descargar el PDF editado."] },
+      features: { title: "Características", items: ["Añade texto con fuente, tamaño, color y alineación personalizables", "Inserta imágenes desde tu dispositivo en cualquier parte de la página", "Dibuja líneas a mano alzada, rectángulos, elipses y líneas rectas", "Añade símbolos como marcas de verificación, cruces, estrellas y flechas", "Control de capas: mueve elementos hacia delante o hacia atrás", "Edición de múltiples páginas con navegación sencilla"] },
+      tips: { title: "Consejos", items: ["Usa los controles de zoom para trabajar con precisión en los detalles", "Haz doble clic en un elemento de texto para editar su contenido después de colocarlo", "Usa Ctrl+Z (Cmd+Z en Mac) para deshacer errores al instante", "Los símbolos como marcas de verificación son ideales para rellenar campos de formulario"] },
+},
+    watermark: {
+      howTo: { title: "Cómo añadir una marca de agua a un PDF", steps: ["Sube el PDF al que quieres añadir marca de agua.", "Elige entre marca de agua de texto o de imagen.", "Personaliza la marca de agua: texto/imagen, opacidad, posición, rotación y tamaño.", "Selecciona en qué páginas aplicarla (todas o rango personalizado).", "Haz clic en 'Añadir marca de agua' y descarga el PDF con marca de agua."] },
+      features: { title: "Características", items: ["Marcas de agua de texto con fuente, tamaño, color y sombra personalizables", "Marcas de agua de imagen con escala y opacidad ajustables", "Nueve opciones de posición (esquinas, bordes y centro)", "Patrón de mosaico para cubrir toda la página", "Control de capas: marca de agua encima o debajo del contenido", "Selección personalizada de rango de páginas"] },
+      tips: { title: "Consejos", items: ["Establece la opacidad entre 20-30% para una marca de agua sutil que no oculte el contenido", "Usa la opción de mosaico para cobertura total en documentos confidenciales", "Una rotación diagonal (normalmente 45°) dificulta la eliminación de la marca de agua", "Coloca las marcas de agua 'debajo del contenido' para que el texto sea completamente legible"] },
+},
+    protect: {
+      howTo: { title: "Cómo proteger un PDF con contraseña", steps: ["Sube el PDF que deseas proteger.", "Introduce una contraseña y confírmala.", "Opcionalmente, configura los permisos avanzados (impresión, copia, edición).", "Haz clic en 'Proteger' para cifrar el PDF con tu contraseña.", "Descarga el archivo protegido: los destinatarios necesitarán la contraseña para abrirlo."] },
+      features: { title: "Características", items: ["Cifrado AES-256 para máxima seguridad", "Indicador de fortaleza de contraseña (débil, media, fuerte)", "Controles granulares de permisos para impresión, copia y modificación", "Permisos separados para impresión en baja y alta resolución", "Controles de permisos para relleno de formularios y accesibilidad", "Todo el cifrado ocurre en tu navegador: tu contraseña nunca sale de tu dispositivo"] },
+      tips: { title: "Consejos", items: ["Usa una contraseña fuerte con caracteres mixtos para máxima seguridad", "Restringe el permiso de 'copia' para impedir la extracción de texto del documento", "Permite solo 'impresión en baja resolución' si quieres evitar reproducciones de alta calidad", "Recuerda tu contraseña: no hay opción de recuperación para archivos cifrados"] },
+},
+    "delete-pages": {
+      howTo: { title: "Cómo eliminar páginas de un PDF", steps: ["Sube un archivo PDF que contenga páginas que deseas eliminar.", "Haz clic en las miniaturas de las páginas que quieres borrar.", "Usa los botones de selección rápida: seleccionar todo, páginas impares, páginas pares o deseleccionar todo.", "Haz clic en 'Eliminar' para quitar las páginas seleccionadas y descarga el resultado."] },
+      features: { title: "Características", items: ["Miniaturas visuales para identificar páginas fácilmente", "Selección múltiple con clic para elegir exactamente qué páginas eliminar", "Opciones de selección rápida para páginas impares, pares o todas", "Contador en tiempo real que muestra cuántas páginas se eliminarán y cuántas se conservarán", "Comprobación de seguridad que impide eliminar todas las páginas accidentalmente"] },
+      tips: { title: "Consejos", items: ["Usa 'Seleccionar pares' para eliminar rápidamente las caras traseras en blanco de escaneos a doble cara", "Revisa cuidadosamente cada miniatura antes de eliminar para no borrar las páginas equivocadas", "Si solo necesitas conservar unas pocas páginas, usa 'Extraer páginas' en su lugar: es más rápido"] },
+},
+  },
+
 };
 
 export default es;

@@ -51,6 +51,10 @@ export interface Dictionary {
     privacy: string;
     terms: string;
     copyright: string;
+    company: string;
+    about: string;
+    contact: string;
+    faq: string;
   };
   privacy: {
     title: string;
@@ -923,6 +927,49 @@ export interface Dictionary {
     changeFile: string;
     pageLabel: string;
   };
+  about: {
+    title: string;
+    intro: string;
+    sections: { heading: string; content: string }[];
+  };
+  contact: {
+    title: string;
+    intro: string;
+    form: {
+      category: string;
+      categoryBug: string;
+      categoryFeature: string;
+      categoryBusiness: string;
+      categoryGeneral: string;
+      message: string;
+      messagePlaceholder: string;
+      send: string;
+      sending: string;
+      success: string;
+      error: string;
+    };
+    sections: { heading: string; content: string }[];
+  };
+  faq: {
+    title: string;
+    intro: string;
+    items: { question: string; answer: string }[];
+  };
+  blog: {
+    title: string;
+    description: string;
+    readMore: string;
+    backToBlog: string;
+    publishedOn: string;
+    categoryGuide: string;
+    categoryTips: string;
+    categoryKnowledge: string;
+  };
+  toolContent: Record<string, {
+    howTo: { title: string; steps: string[] };
+    features: { title: string; items: string[] };
+    tips: { title: string; items: string[] };
+  }>;
   bookletTool: {
     sheetSizeLabel: string;
     bindingLabel: string;

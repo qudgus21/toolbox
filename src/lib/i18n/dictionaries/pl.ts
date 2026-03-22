@@ -96,6 +96,10 @@ const pl: Dictionary = {
     privacy: "Polityka prywatności",
     terms: "Regulamin",
     copyright: "ToolPop. Wszelkie prawa zastrzeżone.",
+    company: "Firma",
+    about: "O nas",
+    contact: "Kontakt",
+    faq: "FAQ",
   },
   common: {
     backToAll: "Powrót do wszystkich narzędzi",
@@ -1051,6 +1055,367 @@ const pl: Dictionary = {
     sheetLabel: "Arkusz",
     frontLabel: "Przód",
     backLabel: "Tył",
+  },
+  about: {
+    title: "O ToolPop PDF",
+    intro: "ToolPop PDF to darmowy zestaw narzędzi PDF działający w przeglądarce. Edytuj, konwertuj i organizuj pliki PDF bez przesyłania ich na żaden serwer. Twoje pliki nigdy nie opuszczają urządzenia.",
+    sections: [
+      { heading: "Nasza misja", content: "Wierzymy, że każdy zasługuje na dostęp do profesjonalnych narzędzi PDF — bez subskrypcji, bez rejestracji i bez kompromisów w kwestii prywatności. ToolPop PDF powstał, aby umożliwić profesjonalną obsługę dokumentów każdemu, kto ma przeglądarkę internetową." },
+      { heading: "Jak to działa", content: "W odróżnieniu od tradycyjnych serwisów PDF, które wymagają przesyłania plików na zdalne serwery, ToolPop PDF przetwarza wszystko bezpośrednio w Twojej przeglądarce, korzystając z nowoczesnych technologii webowych, takich jak WebAssembly i biblioteka PDF.js. Twoje poufne dokumenty zawsze pozostają na Twoim urządzeniu — nigdy ich nie widzimy, nie przechowujemy ani nie przesyłamy." },
+      { heading: "Co oferujemy", content: "ToolPop PDF zawiera ponad 40 narzędzi w pięciu kategoriach:\n\n• Organizuj — Łącz, dziel, zmieniaj kolejność, wyodrębniaj i usuwaj strony\n• Konwertuj — Przekształcaj między PDF, JPG, PNG, tekstem i innymi formatami\n• Edytuj — Dodawaj tekst, obrazy, podpisy, znaki wodne, numery stron i adnotacje\n• Optymalizuj — Kompresuj pliki i optymalizuj pod kątem sieci\n• Bezpieczeństwo — Chroń hasłem, zamazuj poufne informacje i spłaszczaj dokumenty\n\nWszystkie narzędzia są całkowicie darmowe, bez limitów rozmiaru pliku i dziennych ograniczeń." },
+      { heading: "Nasza technologia", content: "ToolPop PDF zbudowany jest na Next.js, React i nowoczesnych standardach webowych. Korzystamy z bibliotek takich jak pdf-lib do manipulacji PDF i PDF.js do renderowania — wszystko działa po stronie klienta w Twojej przeglądarce. Serwis obsługuje 45 języków, tryb ciemny i działa na każdym urządzeniu z nowoczesną przeglądarką." },
+      { heading: "Kontakt", content: "Masz pytania, uwagi lub pomysły na nowe funkcje? Chętnie je poznamy. Odwiedź naszą stronę kontaktową lub napisz do nas." },
+    ],
+  },
+  contact: {
+    title: "Kontakt",
+    intro: "Masz pytanie, znalazłeś błąd lub chcesz zaproponować funkcję? Chętnie pomożemy. Wybierz najwygodniejszy sposób kontaktu poniżej.",
+    form: {
+      category: "Kategoria",
+      categoryBug: "Zgłoszenie błędu",
+      categoryFeature: "Propozycja funkcji",
+      categoryBusiness: "Zapytanie biznesowe",
+      categoryGeneral: "Zapytanie ogólne",
+      message: "Wiadomość",
+      messagePlaceholder: "Opisz szczegółowo swój problem lub pomysł...",
+      send: "Wyślij",
+      sending: "Wysyłanie...",
+      success: "Twoja wiadomość została wysłana! Odpowiemy jak najszybciej.",
+      error: "Coś poszło nie tak. Spróbuj ponownie później.",
+    },
+    sections: [
+      { heading: "Wsparcie ogólne", content: "W przypadku pytań dotyczących korzystania z narzędzi, rozwiązywania problemów lub ogólnych zapytań, napisz. Zwykle odpowiadamy w ciągu 24 godzin w dni robocze." },
+      { heading: "Zgłaszanie błędów i propozycje funkcji", content: "Znalazłeś coś, co nie działa poprawnie? Masz pomysł na nowe narzędzie lub ulepszenie? Napisz z opisem problemu lub sugestią. Zrzuty ekranu zawsze pomagają przy zgłaszaniu błędów." },
+      { heading: "Zapytania biznesowe", content: "W sprawie współpracy, reklamy lub rozwiązań dla firm prosimy o kontakt pod adresem." },
+    ],
+  },
+  faq: {
+    title: "Najczęściej zadawane pytania",
+    intro: "Znajdź odpowiedzi na najczęstsze pytania o ToolPop PDF. Jeśli nie widzisz swojego pytania, skontaktuj się z nami.",
+    items: [
+      { question: "Czy ToolPop PDF jest naprawdę darmowy?", answer: "Tak, całkowicie darmowy. Wszystkie narzędzia są dostępne bez ograniczeń, bez rejestracji i bez ukrytych opłat. Utrzymujemy serwis dzięki dyskretnym reklamom." },
+      { question: "Czy moje pliki są bezpieczne i prywatne?", answer: "Absolutnie. Pliki są przetwarzane wyłącznie w Twojej przeglądarce — nigdy nie opuszczają urządzenia ani nie są przesyłane na żaden serwer. Używamy nowoczesnych API przeglądarki do obsługi wszystkich operacji PDF lokalnie, więc Twoje poufne dokumenty pozostają całkowicie prywatne." },
+      { question: "Czy muszę zakładać konto?", answer: "Nie. ToolPop PDF działa bez rejestracji i logowania. Po prostu otwórz narzędzie, przeciągnij plik i od razu otrzymaj wynik." },
+      { question: "Jaki jest maksymalny rozmiar pliku do przetworzenia?", answer: "Ponieważ przetwarzanie odbywa się w przeglądarce, limit zależy od dostępnej pamięci urządzenia. Większość nowoczesnych urządzeń bez problemu obsługuje pliki do 100–200 MB. W przypadku bardzo dużych plików zalecamy korzystanie z przeglądarki na komputerze stacjonarnym lub laptopie." },
+      { question: "Jakie przeglądarki są obsługiwane?", answer: "ToolPop PDF działa we wszystkich nowoczesnych przeglądarkach, w tym Chrome, Firefox, Safari, Edge i Opera. Zalecamy korzystanie z najnowszej wersji przeglądarki." },
+      { question: "Czy mogę korzystać na telefonie lub tablecie?", answer: "Tak! ToolPop PDF jest w pełni responsywny i działa na urządzeniach mobilnych. Możesz łączyć, dzielić, konwertować i edytować pliki PDF bezpośrednio w przeglądarce telefonu lub tabletu." },
+      { question: "Jak działa przetwarzanie w przeglądarce?", answer: "Kiedy wybierzesz plik, pozostaje on na Twoim urządzeniu. Nasze narzędzia korzystają z bibliotek JavaScript, takich jak pdf-lib i PDF.js, do odczytywania, modyfikowania i tworzenia plików PDF bezpośrednio w pamięci przeglądarki. Przetworzony plik jest gotowy do pobrania — bez podróży na serwer." },
+      { question: "Czy mogę połączyć więcej niż dwa pliki PDF?", answer: "Tak. Narzędzie Łącz PDF obsługuje łączenie dowolnej liczby plików. Po prostu przeciągnij i upuść wszystkie pliki PDF, ułóż je w wybranej kolejności i kliknij przycisk przetwarzania." },
+      { question: "Jakie formaty plików mogę konwertować z i do PDF?", answer: "Możesz konwertować PDF do JPG, PNG i zwykłego tekstu. Do tworzenia PDF obsługujemy obrazy JPG, PNG, WEBP, TIFF, HEIC, pliki HTML i zeskanowane dokumenty. Regularnie dodajemy nowe formaty." },
+      { question: "Czym ToolPop PDF różni się od innych narzędzi PDF?", answer: "Trzy kluczowe różnice: (1) Prywatność — Twoje pliki nigdy nie opuszczają urządzenia, w przeciwieństwie do konkurencji, która przesyła je na swoje serwery. (2) Bez limitów — bez dziennych ograniczeń, bez limitów rozmiaru, bez znaków wodnych na wynikach. (3) Bez konta — korzystaj z każdego narzędzia natychmiast, bez rejestracji." },
+      { question: "Czy mogę zabezpieczyć PDF hasłem?", answer: "Tak. Użyj narzędzia Chroń PDF, aby dodać ochronę hasłem z szyfrowaniem AES-256. Możesz ustawić hasło do otwarcia dokumentu oraz uprawnienia kontrolujące drukowanie, kopiowanie i edycję." },
+      { question: "Czy ToolPop PDF dodaje znaki wodne do moich plików?", answer: "Nigdy. Wszystkie przetworzone pliki są czyste, bez jakichkolwiek znaków wodnych czy logo ToolPop. Wynik jest dokładnie taki, jakiego oczekujesz od profesjonalnego narzędzia." },
+      { question: "Czy dostępne jest API?", answer: "Obecnie nie. ToolPop PDF jest zaprojektowany jako narzędzie przeglądarkowe do użytku indywidualnego. Jeśli potrzebujesz dostępu do API do programowego przetwarzania PDF, skontaktuj się z nami pod adresem w sprawie rozwiązań dla firm." },
+      { question: "Ile języków obsługuje serwis?", answer: "ToolPop PDF jest dostępny w 45 językach, w tym angielskim, koreańskim, hiszpańskim, chińskim, japońskim, niemieckim, francuskim, portugalskim, arabskim, hindi i wielu innych. Interfejs automatycznie wykrywa język przeglądarki, ale możesz też zmienić go ręcznie za pomocą selektora języków." },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "Porady, poradniki i przydatne informacje o pracy z plikami PDF.",
+    readMore: "Czytaj dalej",
+    backToBlog: "Wróć do bloga",
+    publishedOn: "Opublikowano",
+    categoryGuide: "Poradnik",
+    categoryTips: "Porady",
+    categoryKnowledge: "Wiedza",
+  },
+  toolContent: {
+    merge: {
+      howTo: {
+        title: "Jak połączyć pliki PDF",
+        steps: [
+          "Kliknij 'Wybierz pliki' lub przeciągnij i upuść kilka plików PDF w obszarze przesyłania.",
+          "Ułóż pliki w wybranej kolejności, przeciągając je.",
+          "Kliknij przycisk 'Połącz', aby scalić wszystkie pliki w jeden PDF.",
+          "Pobierz połączony plik PDF — gotowy do użycia.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Łączenie nieograniczonej liczby plików PDF w jeden dokument",
+          "Przeciągnij i upuść, aby precyzyjnie ustalić kolejność stron",
+          "Podgląd miniatur przed łączeniem w celu weryfikacji zawartości",
+          "Zachowanie oryginalnej jakości — bez kompresji i utraty jakości",
+          "Przetwarzanie w przeglądarce — pliki nie opuszczają urządzenia",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Sortuj pliki po nazwie lub rozmiarze za pomocą przycisków na pasku narzędzi",
+          "Duże pliki mogą chwilę się przetwarzać — pasek postępu informuje o stanie",
+          "Połączony plik zachowuje zakładki, linki i pola formularzy z oryginalnych dokumentów",
+        ],
+      },
+},
+    split: {
+      howTo: {
+        title: "Jak podzielić plik PDF",
+        steps: [
+          "Prześlij plik PDF, klikając 'Wybierz plik' lub przeciągając go.",
+          "Wybierz metodę podziału: zakres stron, wyodrębnianie konkretnych stron lub podział co N stron.",
+          "Skonfiguruj żądane zakresy lub numery stron.",
+          "Kliknij 'Podziel', aby utworzyć oddzielne pliki PDF, a następnie pobierz je.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Podział według niestandardowych zakresów stron (np. strony 1–5, 10–15)",
+          "Wyodrębnianie pojedynczych stron do osobnych plików",
+          "Podział na równe części (co N stron)",
+          "Wizualne miniatury stron ułatwiające wybór",
+          "Opcja scalenia wybranych zakresów w jeden plik wyjściowy",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Podawaj wiele zakresów oddzielonych przecinkami w polu zakresu",
+          "Klikaj miniatury stron, aby szybko zaznaczać lub odznaczać",
+          "Opcja 'Wyodrębnij wszystkie' tworzy jeden plik na stronę — przydatne do archiwizacji",
+        ],
+      },
+},
+    compress: {
+      howTo: {
+        title: "Jak skompresować plik PDF",
+        steps: [
+          "Prześlij plik PDF, który chcesz zmniejszyć.",
+          "Wybierz poziom kompresji: Maksymalna (najmniejszy plik), Zalecana (zrównoważona) lub Minimalna (najlepsza jakość).",
+          "Wybierz tryb kompresji — oparty na obrazach lub rasteryzacja.",
+          "Kliknij 'Kompresuj' i pobierz zmniejszony plik PDF.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Trzy poziomy kompresji do balansowania rozmiaru i jakości",
+          "Optymalizacja obrazów zmniejsza rozmiar osadzonych grafik",
+          "Wyświetlanie rozmiaru przed i po z procentową redukcją",
+          "Tryb rasteryzacji do maksymalnej kompresji, gdy jakość tekstu jest mniej istotna",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Poziom 'Zalecana' sprawdza się najlepiej w większości dokumentów — redukcja o 40–70%",
+          "Dla PDF z dużą liczbą zdjęć kompresja 'Maksymalna' znacząco zmniejsza rozmiar",
+          "Użyj kompresji 'Minimalna', gdy chcesz zachować ostrość obrazów do druku",
+        ],
+      },
+},
+    "pdf-to-jpg": {
+      howTo: {
+        title: "Jak przekonwertować PDF na JPG",
+        steps: [
+          "Prześlij jeden lub więcej plików PDF do konwersji.",
+          "Wybierz jakość: Wysoka (300 DPI), Średnia (150 DPI) lub Niska (72 DPI).",
+          "Kliknij 'Konwertuj', aby zamienić każdą stronę PDF na obraz JPG.",
+          "Pobierz pojedyncze obrazy lub wszystkie jako plik ZIP.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Konwersja każdej strony PDF na wysokiej jakości obraz JPG",
+          "Trzy ustawienia jakości do balansowania ostrości i rozmiaru pliku",
+          "Przetwarzanie wsadowe — konwersja wielu PDF jednocześnie",
+          "Pobieranie pojedynczych stron lub wszystkich w jednym archiwum ZIP",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Wybierz 'Wysoka' jakość do druku lub profesjonalnych prezentacji",
+          "Wybierz 'Średnia' do użytku w sieci — dobra jakość przy rozsądnym rozmiarze",
+          "'Niska' jakość idealnie nadaje się do miniatur lub szybkiego podglądu",
+        ],
+      },
+},
+    "jpg-to-pdf": {
+      howTo: {
+        title: "Jak przekonwertować JPG na PDF",
+        steps: [
+          "Prześlij jeden lub więcej obrazów JPG, klikając lub przeciągając.",
+          "Wybierz rozmiar strony, orientację i ustawienia marginesów.",
+          "Ułóż obrazy w wybranej kolejności, przeciągając je.",
+          "Kliknij 'Konwertuj', aby utworzyć PDF, a następnie pobierz go.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Konwersja jednego lub wielu obrazów JPG w jeden PDF",
+          "Wybór standardowych rozmiarów stron (A4, Letter, Legal) lub dopasowanie do obrazu",
+          "Regulowane marginesy i orientacja (pionowa/pozioma)",
+          "Opcja tworzenia jednego PDF na obraz lub scalenia wszystkich w jeden dokument",
+          "Przeciągnij i upuść, aby zmienić kolejność obrazów",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Wybierz 'Dopasuj do obrazu', aby uniknąć przycinania lub białych obramowań",
+          "Dla albumów zdjęć użyj 'Scal wszystkie', aby utworzyć jeden PDF ze wszystkimi obrazami",
+          "Ustaw marginesy na zero, aby drukować od krawędzi do krawędzi",
+        ],
+      },
+},
+    rotate: {
+      howTo: {
+        title: "Jak obrócić strony PDF",
+        steps: [
+          "Prześlij plik PDF ze stronami wymagającymi obrotu.",
+          "Klikaj przyciski obrotu na miniaturach poszczególnych stron.",
+          "Użyj 'Obróć wszystkie', aby zastosować ten sam obrót do każdej strony jednocześnie.",
+          "Kliknij 'Obróć', aby zastosować zmiany i pobrać poprawiony PDF.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Obrót pojedynczych stron w prawo lub w lewo o 90°",
+          "Obrót wszystkich stron jednocześnie jednym kliknięciem",
+          "Wizualne miniatury stron pokazują zmiany obrotu w czasie rzeczywistym",
+          "Resetowanie wszystkich obrotów, aby zacząć od nowa",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Zeskanowane dokumenty często mają strony w różnych orientacjach — popraw je wszystkie naraz",
+          "Użyj obrotu indywidualnego dla dokumentów z mieszanką stron pionowych i poziomych",
+          "Obrót jest trwały i zachowywany przy drukowaniu lub udostępnianiu PDF",
+        ],
+      },
+},
+    "edit-pdf": {
+      howTo: {
+        title: "Jak edytować PDF",
+        steps: [
+          "Prześlij plik PDF do edycji.",
+          "Wybierz narzędzie z paska: tekst, obraz, kształty lub rysunek odręczny.",
+          "Kliknij na stronie, aby umieścić element, a następnie dostosuj jego właściwości.",
+          "Nawiguj między stronami i dodawaj elementy według potrzeb.",
+          "Kliknij 'Zastosuj', aby zapisać wszystkie zmiany i pobrać edytowany PDF.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Dodawanie tekstu z regulowaną czcionką, rozmiarem, kolorem i wyrównaniem",
+          "Wstawianie obrazów z urządzenia w dowolnym miejscu strony",
+          "Rysowanie odręcznych linii, prostokątów, elips i linii prostych",
+          "Dodawanie symboli: ptaszków, krzyżyków, gwiazdek i strzałek",
+          "Kontrola warstw — przesuwanie elementów do przodu lub do tyłu",
+          "Edycja wielu stron z łatwą nawigacją między nimi",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Użyj powiększenia, aby pracować nad szczegółami z precyzją",
+          "Kliknij dwukrotnie element tekstowy, aby edytować jego treść po umieszczeniu",
+          "Użyj Ctrl+Z (Cmd+Z na Macu), aby natychmiast cofnąć błędy",
+          "Symbole takie jak ptaszki idealnie nadają się do wypełniania pól formularzy",
+        ],
+      },
+},
+    watermark: {
+      howTo: {
+        title: "Jak dodać znak wodny do PDF",
+        steps: [
+          "Prześlij plik PDF, do którego chcesz dodać znak wodny.",
+          "Wybierz między znakiem wodnym tekstowym a graficznym.",
+          "Dostosuj znak wodny: ustaw tekst/obraz, przezroczystość, pozycję, kąt i rozmiar.",
+          "Wybierz strony do oznaczenia (wszystkie lub niestandardowy zakres).",
+          "Kliknij 'Dodaj znak wodny' i pobierz oznaczony PDF.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Tekstowe znaki wodne z regulowaną czcionką, rozmiarem, kolorem i cieniem",
+          "Graficzne znaki wodne z regulowaną skalą i przezroczystością",
+          "Dziewięć opcji pozycji (rogi, krawędzie i środek)",
+          "Wzór kafelkowy/mozaika pokrywający całą stronę",
+          "Kontrola warstw — znak wodny nad lub pod treścią",
+          "Niestandardowy wybór zakresu stron",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Ustaw przezroczystość na 20–30%, aby znak wodny był subtelny i nie zasłaniał treści",
+          "Użyj opcji mozaiki/kafelków do pełnostronicowego pokrycia dokumentów poufnych",
+          "Obrót pod kątem (zwykle 45°) utrudnia usunięcie znaku wodnego",
+          "Umieść znak wodny 'pod treścią', aby tekst pozostał w pełni czytelny",
+        ],
+      },
+},
+    protect: {
+      howTo: {
+        title: "Jak zabezpieczyć PDF hasłem",
+        steps: [
+          "Prześlij plik PDF, który chcesz zabezpieczyć.",
+          "Wprowadź hasło i potwierdź je.",
+          "Opcjonalnie skonfiguruj zaawansowane uprawnienia (drukowanie, kopiowanie, edycja).",
+          "Kliknij 'Zabezpiecz', aby zaszyfrować PDF Twoim hasłem.",
+          "Pobierz zabezpieczony plik — odbiorcy potrzebują hasła, aby go otworzyć.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Szyfrowanie AES-256 zapewniające wysoki poziom bezpieczeństwa",
+          "Wskaźnik siły hasła (słabe, średnie, silne)",
+          "Szczegółowa kontrola uprawnień: drukowanie, kopiowanie, modyfikowanie",
+          "Oddzielne uprawnienia dla druku w niskiej i wysokiej rozdzielczości",
+          "Kontrola uprawnień do wypełniania formularzy i dostępności",
+          "Całe szyfrowanie odbywa się w przeglądarce — hasło nigdy nie opuszcza urządzenia",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Używaj silnego hasła z mieszanką znaków dla maksymalnego bezpieczeństwa",
+          "Ogranicz uprawnienie 'kopiowanie', aby uniemożliwić wyodrębnianie tekstu z dokumentu",
+          "Zezwalaj na 'druk niskiej rozdzielczości' tylko, jeśli chcesz zapobiec reprodukcjom wysokiej jakości",
+          "Zapamiętaj hasło — nie ma możliwości odzyskania zaszyfrowanych plików",
+        ],
+      },
+},
+    "delete-pages": {
+      howTo: {
+        title: "Jak usunąć strony z PDF",
+        steps: [
+          "Prześlij plik PDF ze stronami do usunięcia.",
+          "Klikaj miniatury stron, aby wybrać strony do usunięcia.",
+          "Użyj przycisków szybkiego wyboru: zaznacz wszystkie, nieparzyste, parzyste lub odznacz wszystkie.",
+          "Kliknij 'Usuń', aby usunąć zaznaczone strony i pobrać wynik.",
+        ],
+      },
+      features: {
+        title: "Funkcje",
+        items: [
+          "Wizualne miniatury stron ułatwiające identyfikację",
+          "Zaznaczanie wielu stron kliknięciem — precyzyjny wybór stron do usunięcia",
+          "Szybki wybór stron nieparzystych, parzystych lub wszystkich",
+          "Licznik w czasie rzeczywistym: ile stron zostanie usuniętych, a ile zachowanych",
+          "Zabezpieczenie przed przypadkowym usunięciem wszystkich stron",
+        ],
+      },
+      tips: {
+        title: "Wskazówki",
+        items: [
+          "Użyj 'Zaznacz parzyste', aby szybko usunąć puste tylne strony z dwustronnych skanów",
+          "Dokładnie sprawdź miniatury przed usunięciem, aby uniknąć usunięcia niewłaściwych stron",
+          "Jeśli chcesz zachować tylko kilka stron, rozważ 'Wyodrębnij strony' — to szybsze",
+        ],
+      },
+},
   },
 };
 

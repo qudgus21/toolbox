@@ -96,6 +96,10 @@ const vi: Dictionary = {
     privacy: "Chính sách bảo mật",
     terms: "Điều khoản dịch vụ",
     copyright: "ToolPop. Mọi quyền được bảo lưu.",
+    company: "Công ty",
+    about: "Giới thiệu",
+    contact: "Liên hệ",
+    faq: "Câu hỏi thường gặp",
   },
   common: {
     backToAll: "Quay lại tất cả công cụ",
@@ -1051,6 +1055,367 @@ const vi: Dictionary = {
     sheetLabel: "Tờ",
     frontLabel: "Mặt trước",
     backLabel: "Mặt sau",
+  },
+  about: {
+    title: "Giới thiệu ToolPop PDF",
+    intro: "ToolPop PDF là bộ công cụ PDF miễn phí hoạt động hoàn toàn trên trình duyệt. Chỉnh sửa, chuyển đổi và sắp xếp file PDF mà không cần tải lên bất kỳ máy chủ nào. File của bạn không bao giờ rời khỏi thiết bị.",
+    sections: [
+      { heading: "Sứ mệnh của chúng tôi", content: "Chúng tôi tin rằng mọi người đều xứng đáng được sử dụng các công cụ PDF chuyên nghiệp — không cần đăng ký, không cần tài khoản và không lo ngại về quyền riêng tư. ToolPop PDF được xây dựng để mang khả năng xử lý tài liệu chuyên nghiệp đến với bất kỳ ai có trình duyệt web." },
+      { heading: "Cách hoạt động", content: "Khác với các dịch vụ PDF truyền thống yêu cầu tải file lên máy chủ từ xa, ToolPop PDF xử lý mọi thứ trực tiếp trên trình duyệt bằng công nghệ web hiện đại như WebAssembly và thư viện PDF.js. Tài liệu nhạy cảm luôn nằm trên thiết bị của bạn — chúng tôi không bao giờ xem, lưu trữ hay truyền file của bạn." },
+      { heading: "Các tính năng", content: "ToolPop PDF cung cấp hơn 40 công cụ thuộc năm danh mục:\n\n• Sắp xếp — Ghép, tách, sắp xếp lại, trích xuất và xóa trang\n• Chuyển đổi — Chuyển đổi giữa PDF, JPG, PNG, văn bản và nhiều định dạng khác\n• Chỉnh sửa — Thêm chữ, hình ảnh, chữ ký, watermark, số trang và ghi chú\n• Tối ưu — Nén file và tối ưu hóa cho web\n• Bảo mật — Đặt mật khẩu, che thông tin nhạy cảm và làm phẳng tài liệu\n\nTất cả công cụ hoàn toàn miễn phí, không giới hạn kích thước file hay số lần sử dụng mỗi ngày." },
+      { heading: "Công nghệ", content: "ToolPop PDF được xây dựng bằng Next.js, React và các tiêu chuẩn web hiện đại. Chúng tôi sử dụng các thư viện như pdf-lib để xử lý PDF và PDF.js để hiển thị — tất cả chạy phía client trên trình duyệt. Trang web hỗ trợ 45 ngôn ngữ, chế độ tối và hoạt động trên mọi thiết bị có trình duyệt hiện đại." },
+      { heading: "Liên hệ", content: "Có câu hỏi, góp ý hoặc yêu cầu tính năng mới? Chúng tôi rất muốn lắng nghe bạn. Truy cập trang Liên hệ hoặc gửi email đến." },
+    ],
+  },
+  contact: {
+    title: "Liên hệ",
+    intro: "Có câu hỏi, phát hiện lỗi hoặc muốn đề xuất tính năng? Chúng tôi rất muốn lắng nghe bạn. Chọn cách liên hệ phù hợp nhất bên dưới.",
+    form: {
+      category: "Danh mục",
+      categoryBug: "Báo lỗi",
+      categoryFeature: "Đề xuất tính năng",
+      categoryBusiness: "Hợp tác kinh doanh",
+      categoryGeneral: "Câu hỏi chung",
+      message: "Tin nhắn",
+      messagePlaceholder: "Mô tả chi tiết vấn đề hoặc ý tưởng của bạn...",
+      send: "Gửi",
+      sending: "Đang gửi...",
+      success: "Tin nhắn đã được gửi thành công! Chúng tôi sẽ phản hồi sớm nhất có thể.",
+      error: "Đã xảy ra lỗi. Vui lòng thử lại sau.",
+    },
+    sections: [
+      { heading: "Hỗ trợ chung", content: "Nếu bạn cần hướng dẫn sử dụng, khắc phục sự cố hoặc có thắc mắc chung, hãy gửi email đến. Chúng tôi thường phản hồi trong vòng 24 giờ vào ngày làm việc." },
+      { heading: "Báo lỗi & Yêu cầu tính năng", content: "Phát hiện điều gì đó hoạt động không đúng? Có ý tưởng cho công cụ mới hoặc cải tiến? Hãy gửi email đến kèm mô tả vấn đề hoặc đề xuất. Ảnh chụp màn hình luôn hữu ích khi báo lỗi." },
+      { heading: "Hợp tác kinh doanh", content: "Về cơ hội hợp tác, quảng cáo hoặc giải pháp doanh nghiệp, vui lòng liên hệ." },
+    ],
+  },
+  faq: {
+    title: "Câu hỏi thường gặp",
+    intro: "Tìm câu trả lời cho các câu hỏi phổ biến nhất về ToolPop PDF. Nếu không thấy câu hỏi của bạn, hãy liên hệ với chúng tôi.",
+    items: [
+      { question: "ToolPop PDF có thực sự miễn phí không?", answer: "Hoàn toàn miễn phí. Tất cả công cụ đều không giới hạn, không cần đăng ký và không có phí ẩn. Chúng tôi duy trì dịch vụ thông qua quảng cáo không gây phiền." },
+      { question: "File của tôi có an toàn và riêng tư không?", answer: "Tuyệt đối an toàn. File được xử lý hoàn toàn trên trình duyệt — không bao giờ rời khỏi thiết bị hay được tải lên bất kỳ máy chủ nào. Chúng tôi sử dụng API trình duyệt hiện đại để xử lý mọi thao tác PDF cục bộ, đảm bảo tài liệu nhạy cảm luôn được bảo mật." },
+      { question: "Tôi có cần tạo tài khoản không?", answer: "Không cần. ToolPop PDF hoạt động mà không cần đăng ký hay đăng nhập. Chỉ cần mở công cụ, kéo thả file và nhận kết quả ngay lập tức." },
+      { question: "Kích thước file tối đa có thể xử lý là bao nhiêu?", answer: "Vì xử lý diễn ra trên trình duyệt, giới hạn phụ thuộc vào bộ nhớ khả dụng của thiết bị. Hầu hết các thiết bị hiện đại có thể xử lý file đến 100–200 MB mà không gặp vấn đề. Với file rất lớn, nên sử dụng trình duyệt trên máy tính để bàn hoặc laptop." },
+      { question: "Hỗ trợ những trình duyệt nào?", answer: "ToolPop PDF hoạt động trên tất cả trình duyệt hiện đại bao gồm Chrome, Firefox, Safari, Edge và Opera. Nên sử dụng phiên bản mới nhất để có trải nghiệm tốt nhất." },
+      { question: "Có dùng được trên điện thoại hoặc máy tính bảng không?", answer: "Có! ToolPop PDF hoàn toàn tương thích di động. Bạn có thể ghép, tách, chuyển đổi và chỉnh sửa PDF ngay trên trình duyệt điện thoại hoặc máy tính bảng." },
+      { question: "Xử lý trên trình duyệt hoạt động như thế nào?", answer: "Khi bạn chọn file, file vẫn nằm trên thiết bị. Công cụ sử dụng các thư viện JavaScript như pdf-lib và PDF.js để đọc, chỉnh sửa và tạo PDF trực tiếp trong bộ nhớ trình duyệt. File đã xử lý sẵn sàng để tải về — không cần gửi qua máy chủ." },
+      { question: "Có thể ghép nhiều hơn hai file PDF không?", answer: "Có. Công cụ Ghép PDF hỗ trợ kết hợp không giới hạn số file. Chỉ cần kéo thả tất cả PDF cần ghép, sắp xếp theo thứ tự mong muốn và nhấn nút xử lý." },
+      { question: "Có thể chuyển đổi những định dạng nào sang và từ PDF?", answer: "Bạn có thể chuyển PDF sang JPG, PNG và văn bản thuần. Để tạo PDF, chúng tôi hỗ trợ ảnh JPG, PNG, WEBP, TIFF, HEIC, file HTML và tài liệu quét. Thêm nhiều định dạng đang được bổ sung thường xuyên." },
+      { question: "ToolPop PDF khác gì so với các công cụ PDF khác?", answer: "Ba điểm khác biệt chính: (1) Quyền riêng tư — file không bao giờ rời khỏi thiết bị, khác với hầu hết đối thủ tải lên máy chủ. (2) Không giới hạn — không hạn chế hàng ngày, không giới hạn kích thước file, không đóng dấu trên kết quả. (3) Không cần tài khoản — sử dụng mọi công cụ ngay lập tức." },
+      { question: "Có thể đặt mật khẩu bảo vệ PDF không?", answer: "Có. Sử dụng công cụ Bảo vệ PDF để thêm mật khẩu với mã hóa AES-256. Bạn có thể đặt mật khẩu mở tài liệu và quyền kiểm soát in, sao chép, chỉnh sửa." },
+      { question: "ToolPop PDF có đóng dấu trên file không?", answer: "Không bao giờ. Tất cả file đã xử lý đều sạch, không có watermark hay logo ToolPop. Kết quả xuất ra chuyên nghiệp như bạn mong đợi." },
+      { question: "Có API không?", answer: "Hiện tại chưa có. ToolPop PDF được thiết kế cho người dùng cá nhân sử dụng qua trình duyệt. Nếu bạn cần truy cập API để xử lý PDF tự động, vui lòng liên hệ để thảo luận về giải pháp doanh nghiệp." },
+      { question: "Trang web hỗ trợ bao nhiêu ngôn ngữ?", answer: "ToolPop PDF hỗ trợ 45 ngôn ngữ bao gồm tiếng Anh, Hàn, Tây Ban Nha, Trung Quốc, Nhật, Đức, Pháp, Bồ Đào Nha, Ả Rập, Hindi và nhiều ngôn ngữ khác. Giao diện tự động nhận diện ngôn ngữ trình duyệt hoặc bạn có thể chuyển đổi thủ công bằng bộ chọn ngôn ngữ." },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "Mẹo hay, hướng dẫn và kiến thức hữu ích về xử lý file PDF.",
+    readMore: "Đọc tiếp",
+    backToBlog: "Quay lại blog",
+    publishedOn: "Đăng ngày",
+    categoryGuide: "Hướng dẫn",
+    categoryTips: "Mẹo",
+    categoryKnowledge: "Kiến thức",
+  },
+  toolContent: {
+    merge: {
+      howTo: {
+        title: "Cách ghép file PDF",
+        steps: [
+          "Nhấn 'Chọn file' hoặc kéo thả nhiều file PDF vào vùng tải lên.",
+          "Sắp xếp các file theo thứ tự mong muốn bằng cách kéo thả.",
+          "Nhấn nút 'Ghép' để kết hợp tất cả file thành một PDF.",
+          "Tải về file PDF đã ghép — sẵn sàng sử dụng.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Ghép không giới hạn số file PDF thành một tài liệu duy nhất",
+          "Kéo thả để sắp xếp thứ tự trang chính xác",
+          "Xem trước hình thu nhỏ trước khi ghép để kiểm tra nội dung",
+          "Giữ nguyên chất lượng gốc — không nén hay giảm chất lượng",
+          "Xử lý hoàn toàn trên trình duyệt — file không rời khỏi thiết bị",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Sắp xếp file theo tên hoặc kích thước bằng các nút trên thanh công cụ",
+          "File lớn có thể mất một chút thời gian — thanh tiến trình sẽ hiển thị trạng thái",
+          "File ghép giữ nguyên bookmark, liên kết và trường biểu mẫu từ tài liệu gốc",
+        ],
+      },
+},
+    split: {
+      howTo: {
+        title: "Cách tách file PDF",
+        steps: [
+          "Tải lên file PDF bằng cách nhấn 'Chọn file' hoặc kéo thả.",
+          "Chọn phương thức tách: theo phạm vi trang, trích xuất trang cụ thể hoặc tách theo khoảng cố định.",
+          "Cấu hình phạm vi hoặc số trang mong muốn.",
+          "Nhấn 'Tách' để tạo các file PDF riêng biệt rồi tải về.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Tách theo phạm vi trang tùy chỉnh (ví dụ: trang 1–5, 10–15)",
+          "Trích xuất từng trang riêng lẻ thành file độc lập",
+          "Tách thành các phần bằng nhau (mỗi N trang)",
+          "Hình thu nhỏ trực quan giúp chọn trang dễ dàng",
+          "Tùy chọn gộp các phạm vi đã chọn thành một file đầu ra",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng ô nhập phạm vi để chỉ định nhiều khoảng cách nhau bằng dấu phẩy",
+          "Nhấn vào hình thu nhỏ trang để nhanh chóng chọn hoặc bỏ chọn",
+          "Tùy chọn 'Trích xuất tất cả' tạo một file cho mỗi trang — hữu ích cho lưu trữ",
+        ],
+      },
+},
+    compress: {
+      howTo: {
+        title: "Cách nén file PDF",
+        steps: [
+          "Tải lên file PDF cần giảm kích thước.",
+          "Chọn mức nén: Tối đa (file nhỏ nhất), Khuyến nghị (cân bằng) hoặc Tối thiểu (chất lượng tốt nhất).",
+          "Chọn chế độ nén — dựa trên hình ảnh hoặc rasterize.",
+          "Nhấn 'Nén' và tải về file PDF đã giảm kích thước.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Ba mức nén để cân bằng giữa kích thước và chất lượng",
+          "Tối ưu hóa hình ảnh giúp giảm kích thước ảnh nhúng",
+          "Hiển thị kích thước trước và sau kèm tỷ lệ giảm phần trăm",
+          "Chế độ rasterize cho mức nén tối đa khi chất lượng chữ không quá quan trọng",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Mức 'Khuyến nghị' phù hợp nhất cho hầu hết tài liệu, giảm 40–70% kích thước",
+          "Với PDF nhiều ảnh, nén 'Tối đa' giúp giảm kích thước đáng kể",
+          "Dùng nén 'Tối thiểu' khi cần giữ độ sắc nét hình ảnh để in ấn",
+        ],
+      },
+},
+    "pdf-to-jpg": {
+      howTo: {
+        title: "Cách chuyển PDF sang JPG",
+        steps: [
+          "Tải lên một hoặc nhiều file PDF cần chuyển đổi.",
+          "Chọn chất lượng đầu ra: Cao (300 DPI), Trung bình (150 DPI) hoặc Thấp (72 DPI).",
+          "Nhấn 'Chuyển đổi' để biến mỗi trang PDF thành ảnh JPG.",
+          "Tải về từng ảnh riêng lẻ hoặc tất cả dưới dạng file ZIP.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Chuyển mỗi trang PDF thành ảnh JPG chất lượng cao",
+          "Ba mức chất lượng để cân bằng độ rõ nét và kích thước file",
+          "Xử lý hàng loạt — chuyển đổi nhiều PDF cùng lúc",
+          "Tải về từng trang hoặc tất cả trong một file ZIP",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng chất lượng 'Cao' khi in ấn hoặc thuyết trình chuyên nghiệp",
+          "Chọn 'Trung bình' cho sử dụng trên web — chất lượng tốt với kích thước hợp lý",
+          "Chất lượng 'Thấp' phù hợp cho hình thu nhỏ hoặc xem nhanh",
+        ],
+      },
+},
+    "jpg-to-pdf": {
+      howTo: {
+        title: "Cách chuyển JPG sang PDF",
+        steps: [
+          "Tải lên một hoặc nhiều ảnh JPG bằng cách nhấn hoặc kéo thả.",
+          "Chọn kích thước trang, hướng và cài đặt lề.",
+          "Sắp xếp ảnh theo thứ tự mong muốn bằng cách kéo thả.",
+          "Nhấn 'Chuyển đổi' để tạo PDF rồi tải về.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Chuyển một hoặc nhiều ảnh JPG thành một file PDF",
+          "Chọn kích thước trang tiêu chuẩn (A4, Letter, Legal) hoặc vừa khít ảnh",
+          "Lề và hướng trang tùy chỉnh (dọc/ngang)",
+          "Tùy chọn tạo một PDF mỗi ảnh hoặc gộp tất cả thành một tài liệu",
+          "Kéo thả để sắp xếp thứ tự ảnh",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng kích thước 'Vừa khít ảnh' để tránh cắt xén hay viền trắng",
+          "Với album ảnh, dùng 'Gộp tất cả' để tạo một PDF chứa tất cả ảnh",
+          "Đặt lề bằng 0 để in tràn viền",
+        ],
+      },
+},
+    rotate: {
+      howTo: {
+        title: "Cách xoay trang PDF",
+        steps: [
+          "Tải lên file PDF có các trang cần xoay.",
+          "Nhấn nút xoay trên hình thu nhỏ từng trang để xoay.",
+          "Dùng 'Xoay tất cả' để áp dụng cùng góc xoay cho mọi trang cùng lúc.",
+          "Nhấn 'Xoay' để áp dụng thay đổi và tải về PDF đã sửa.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Xoay từng trang theo chiều kim đồng hồ hoặc ngược lại 90°",
+          "Xoay tất cả trang cùng lúc chỉ với một cú nhấp",
+          "Hình thu nhỏ hiển thị thay đổi xoay theo thời gian thực",
+          "Đặt lại tất cả góc xoay nếu cần bắt đầu lại",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Tài liệu quét thường có trang xoay lộn xộn — sửa hết cùng lúc",
+          "Dùng xoay từng trang cho tài liệu có cả trang dọc lẫn ngang",
+          "Góc xoay được lưu vĩnh viễn và giữ nguyên khi in hoặc chia sẻ PDF",
+        ],
+      },
+},
+    "edit-pdf": {
+      howTo: {
+        title: "Cách chỉnh sửa PDF",
+        steps: [
+          "Tải lên file PDF cần chỉnh sửa.",
+          "Chọn công cụ từ thanh công cụ: chữ, hình ảnh, hình dạng hoặc vẽ tay.",
+          "Nhấn vào trang để đặt phần tử rồi tùy chỉnh thuộc tính.",
+          "Di chuyển giữa các trang và thêm phần tử khi cần.",
+          "Nhấn 'Áp dụng' để lưu mọi thay đổi và tải về PDF đã chỉnh sửa.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Thêm chữ với phông chữ, kích thước, màu sắc và căn chỉnh tùy chỉnh",
+          "Chèn ảnh từ thiết bị vào bất kỳ vị trí nào trên trang",
+          "Vẽ tay, hình chữ nhật, hình elip và đường thẳng",
+          "Thêm ký hiệu như dấu tích, dấu X, ngôi sao và mũi tên",
+          "Điều khiển lớp — đưa phần tử lên trước hoặc ra sau",
+          "Chỉnh sửa đa trang với điều hướng trang dễ dàng",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng điều khiển phóng to để làm việc chi tiết chính xác hơn",
+          "Nhấp đúp vào phần tử chữ để chỉnh sửa nội dung sau khi đặt",
+          "Dùng Ctrl+Z (Cmd+Z trên Mac) để hoàn tác lỗi ngay lập tức",
+          "Các ký hiệu như dấu tích rất phù hợp để điền vào ô biểu mẫu",
+        ],
+      },
+},
+    watermark: {
+      howTo: {
+        title: "Cách thêm watermark vào PDF",
+        steps: [
+          "Tải lên file PDF cần thêm watermark.",
+          "Chọn giữa watermark chữ hoặc hình ảnh.",
+          "Tùy chỉnh watermark: đặt chữ/hình, độ mờ, vị trí, góc xoay và kích thước.",
+          "Chọn trang cần áp dụng watermark (tất cả hoặc phạm vi tùy chỉnh).",
+          "Nhấn 'Thêm watermark' và tải về PDF đã đóng dấu.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Watermark chữ với phông chữ, kích thước, màu sắc và đổ bóng tùy chỉnh",
+          "Watermark hình ảnh với tỷ lệ và độ mờ điều chỉnh được",
+          "Chín vị trí đặt watermark (góc, cạnh và giữa trang)",
+          "Mẫu lát gạch/mosaic để phủ kín toàn bộ trang",
+          "Điều khiển lớp — đặt watermark trên hoặc dưới nội dung",
+          "Chọn phạm vi trang tùy chỉnh",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Đặt độ mờ 20–30% để watermark tinh tế, không che nội dung",
+          "Dùng tùy chọn mosaic/lát gạch để phủ kín trang cho tài liệu mật",
+          "Xoay chéo (thường 45°) khiến watermark khó bị xóa hơn",
+          "Đặt watermark 'dưới nội dung' để chữ vẫn đọc được rõ ràng",
+        ],
+      },
+},
+    protect: {
+      howTo: {
+        title: "Cách đặt mật khẩu bảo vệ PDF",
+        steps: [
+          "Tải lên file PDF cần bảo vệ.",
+          "Nhập mật khẩu và xác nhận lại.",
+          "Tùy chọn cấu hình quyền nâng cao (in, sao chép, chỉnh sửa).",
+          "Nhấn 'Bảo vệ' để mã hóa PDF bằng mật khẩu của bạn.",
+          "Tải về file đã bảo vệ — người nhận cần mật khẩu để mở.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Mã hóa AES-256 cho bảo mật mạnh mẽ",
+          "Chỉ báo độ mạnh mật khẩu (yếu, trung bình, mạnh)",
+          "Kiểm soát quyền chi tiết cho in, sao chép và chỉnh sửa",
+          "Phân quyền riêng cho in độ phân giải thấp và cao",
+          "Kiểm soát quyền điền biểu mẫu và trợ năng",
+          "Mọi quá trình mã hóa diễn ra trên trình duyệt — mật khẩu không bao giờ rời khỏi thiết bị",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng mật khẩu mạnh với ký tự hỗn hợp để bảo mật tối đa",
+          "Hạn chế quyền 'sao chép' để ngăn trích xuất văn bản từ tài liệu",
+          "Chỉ cho phép 'in độ phân giải thấp' nếu muốn ngăn sao chép chất lượng cao",
+          "Hãy nhớ mật khẩu — không có tùy chọn khôi phục cho file đã mã hóa",
+        ],
+      },
+},
+    "delete-pages": {
+      howTo: {
+        title: "Cách xóa trang trong PDF",
+        steps: [
+          "Tải lên file PDF chứa các trang cần xóa.",
+          "Nhấn vào hình thu nhỏ trang để chọn trang cần xóa.",
+          "Dùng nút chọn nhanh: chọn tất cả, trang lẻ, trang chẵn hoặc bỏ chọn tất cả.",
+          "Nhấn 'Xóa' để xóa trang đã chọn và tải về kết quả.",
+        ],
+      },
+      features: {
+        title: "Tính năng",
+        items: [
+          "Hình thu nhỏ trang trực quan để nhận dạng dễ dàng",
+          "Chọn nhiều trang bằng cách nhấp — chọn chính xác trang cần xóa",
+          "Tùy chọn chọn nhanh cho trang lẻ, trang chẵn hoặc tất cả trang",
+          "Bộ đếm thời gian thực hiển thị số trang sẽ bị xóa so với giữ lại",
+          "Kiểm tra an toàn ngăn bạn vô tình xóa tất cả trang",
+        ],
+      },
+      tips: {
+        title: "Mẹo sử dụng",
+        items: [
+          "Dùng 'Chọn trang chẵn' để nhanh chóng xóa mặt sau trống từ bản quét hai mặt",
+          "Xem kỹ hình thu nhỏ trước khi xóa để tránh xóa nhầm trang",
+          "Nếu chỉ cần giữ vài trang, hãy dùng 'Trích xuất trang' — nhanh hơn",
+        ],
+      },
+},
   },
 };
 

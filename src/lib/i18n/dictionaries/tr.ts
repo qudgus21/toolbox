@@ -96,6 +96,10 @@ const tr: Dictionary = {
     privacy: "Gizlilik Politikası",
     terms: "Hizmet Şartları",
     copyright: "ToolPop. Tüm hakları saklıdır.",
+    company: "Şirket",
+    about: "Hakkımızda",
+    contact: "İletişim",
+    faq: "SSS",
   },
   common: {
     backToAll: "Tüm araçlara dön",
@@ -1052,6 +1056,122 @@ const tr: Dictionary = {
     frontLabel: "Ön",
     backLabel: "Arka",
   },
+  about: {
+    title: "ToolPop PDF Hakkında",
+    intro: "ToolPop PDF, tarayıcınızda doğrudan çalışan ücretsiz bir PDF araç setidir. PDF dosyalarınızı herhangi bir sunucuya yüklemeden düzenleyin, dönüştürün ve düzenleyin. Dosyalarınız asla cihazınızdan çıkmaz.",
+    sections: [
+      { heading: "Misyonumuz", content: "Herkesin profesyonel PDF araçlarına erişim hakkı olduğuna inanıyoruz — abonelik olmadan, kayıt olmadan ve gizlilikten ödün vermeden. ToolPop PDF, web tarayıcısı olan herkesin belgeleri kolayca yönetebilmesi için geliştirildi." },
+      { heading: "Nasıl çalışır", content: "Dosyalarınızı uzak sunuculara yüklemenizi gerektiren geleneksel PDF hizmetlerinin aksine, ToolPop PDF her şeyi WebAssembly ve PDF.js gibi modern web teknolojileri kullanarak doğrudan tarayıcınızda işler. Hassas belgeleriniz her zaman cihazınızda kalır — dosyalarınızı asla görmez, saklamaz veya iletmeyiz." },
+      { heading: "Neler sunuyoruz", content: "ToolPop PDF, beş kategoride 40'tan fazla araç içerir:\n\n• Düzenle — Birleştir, böl, yeniden sırala, çıkar ve sayfaları sil\n• Dönüştür — PDF, JPG, PNG, metin ve diğer formatlar arasında dönüştür\n• Düzenle — Metin, görsel, imza, filigran, sayfa numarası ve açıklama ekle\n• Optimize et — Dosyaları sıkıştır ve web için optimize et\n• Güvenlik — Parola koruması, hassas bilgileri gizleme ve belgeleri düzleştirme\n\nTüm araçlar tamamen ücretsizdir; dosya boyutu sınırı veya günlük kullanım kotası yoktur." },
+      { heading: "Teknolojimiz", content: "ToolPop PDF; Next.js, React ve modern web standartları ile geliştirilmiştir. PDF işleme için pdf-lib, görüntüleme için PDF.js kütüphanelerini kullanırız — tamamı tarayıcınızda istemci tarafında çalışır. Site 45 dili, karanlık modu destekler ve modern tarayıcısı olan her cihazda çalışır." },
+      { heading: "İletişim", content: "Sorularınız, geri bildirimleriniz veya özellik talepleriniz mi var? Sizden haber almaktan mutluluk duyarız. İletişim sayfamızı ziyaret edin veya adresine e-posta gönderin." },
+    ],
+  },
+  contact: {
+    title: "İletişim",
+    intro: "Bir sorunuz mu var, hata mı buldunuz, yoksa bir özellik mi önermek istiyorsunuz? Sizden haber almak isteriz. Aşağıdan en uygun iletişim yöntemini seçin.",
+    form: {
+      category: "Kategori",
+      categoryBug: "Hata bildirimi",
+      categoryFeature: "Özellik önerisi",
+      categoryBusiness: "İş talebi",
+      categoryGeneral: "Genel soru",
+      message: "Mesaj",
+      messagePlaceholder: "Sorununuzu veya fikrinizi ayrıntılı olarak açıklayın...",
+      send: "Gönder",
+      sending: "Gönderiliyor...",
+      success: "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.",
+      error: "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+    },
+    sections: [
+      { heading: "Genel destek", content: "Araçlarımızın kullanımı, sorun giderme veya genel sorular için adresine e-posta gönderin. Genellikle iş günlerinde 24 saat içinde yanıt veririz." },
+      { heading: "Hata bildirimi ve öneriler", content: "Düzgün çalışmayan bir şey mi buldunuz? Yeni bir araç veya iyileştirme fikriniz mi var? adresine sorunun veya önerinin açıklamasını gönderin. Hata raporları için ekran görüntüleri her zaman faydalıdır." },
+      { heading: "İş birlikleri", content: "Ortaklık fırsatları, reklam veya kurumsal çözümler için adresinden bize ulaşın." },
+    ],
+  },
+  faq: {
+    title: "Sık Sorulan Sorular",
+    intro: "ToolPop PDF hakkında en sık sorulan soruların yanıtlarını burada bulabilirsiniz. Sorunuzun yanıtını bulamazsanız, bize ulaşmaktan çekinmeyin.",
+    items: [
+      { question: "ToolPop PDF gerçekten ücretsiz mi?", answer: "Evet, tamamen ücretsiz. Tüm araçlar sınırsız kullanılabilir, kayıt gerekmez, gizli ücret yoktur. Hizmeti göze batmayan reklamlarla sürdürüyoruz." },
+      { question: "Dosyalarım güvende mi?", answer: "Kesinlikle. Dosyalarınız tamamen tarayıcınızda işlenir — cihazınızdan çıkmaz veya herhangi bir sunucuya yüklenmez. Tüm PDF işlemlerini modern tarayıcı API'leri ile yerel olarak gerçekleştiririz; hassas belgeleriniz tamamen gizli kalır." },
+      { question: "Hesap oluşturmam gerekiyor mu?", answer: "Hayır. ToolPop PDF herhangi bir kayıt veya giriş yapmadan çalışır. Bir araç açın, dosyanızı bırakın ve anında sonuç alın." },
+      { question: "İşleyebileceğim maksimum dosya boyutu nedir?", answer: "İşleme tarayıcınızda yapıldığı için limit, cihazınızın kullanılabilir belleğine bağlıdır. Modern cihazların çoğu 100-200 MB'a kadar dosyaları sorunsuz işleyebilir. Çok büyük dosyalar için masaüstü tarayıcısı kullanmanızı öneririz." },
+      { question: "Hangi tarayıcılar destekleniyor?", answer: "ToolPop PDF; Chrome, Firefox, Safari, Edge ve Opera dahil tüm modern tarayıcılarda çalışır. En iyi deneyim için tarayıcınızın en son sürümünü kullanmanızı öneririz." },
+      { question: "Telefon veya tablette kullanabilir miyim?", answer: "Evet! ToolPop PDF tamamen duyarlıdır ve mobil cihazlarda çalışır. Telefonunuzun veya tabletinizin tarayıcısından doğrudan PDF birleştirme, bölme, dönüştürme ve düzenleme yapabilirsiniz." },
+      { question: "Tarayıcıda işleme nasıl çalışır?", answer: "Bir dosya seçtiğinizde, dosya cihazınızda kalır. Araçlarımız pdf-lib ve PDF.js gibi JavaScript kütüphanelerini kullanarak PDF'leri doğrudan tarayıcınızın belleğinde okur, değiştirir ve oluşturur. İşlenmiş dosya indirmeye hazır olur — sunucu iletişimi gerekmez." },
+      { question: "İkiden fazla PDF birleştirebilir miyim?", answer: "Evet. PDF birleştirme aracımız istediğiniz sayıda dosyayı destekler. Tüm PDF'leri sürükleyip bırakın, istediğiniz sırada düzenleyin ve işle düğmesine tıklayın." },
+      { question: "Hangi dosya formatlarına dönüştürebilirim?", answer: "PDF'leri JPG, PNG ve düz metne dönüştürebilirsiniz. PDF oluşturmak için JPG, PNG, WEBP, TIFF, HEIC görsel, HTML dosyası ve taranmış belge desteklenir. Daha fazla format düzenli olarak eklenmektedir." },
+      { question: "ToolPop PDF'yi diğer PDF araçlarından ayıran nedir?", answer: "Üç temel fark: (1) Gizlilik — dosyalarınız cihazınızdan çıkmaz, rakiplerin çoğunun sunucularına yüklediğinin aksine. (2) Sınırsız — günlük kota yok, dosya boyutu sınırı yok, çıktılarda filigran yok. (3) Hesap gerekmez — kaydolmadan herhangi bir aracı anında kullanın." },
+      { question: "PDF'ime parola ekleyebilir miyim?", answer: "Evet. PDF Koru aracımızı kullanarak AES-256 şifreleme ile parola koruması ekleyebilirsiniz. Açma parolası ayarlayabilir ve yazdırma, kopyalama ve düzenleme izinlerini kontrol edebilirsiniz." },
+      { question: "ToolPop PDF dosyalarıma filigran ekler mi?", answer: "Asla. Tüm işlenmiş dosyalar temizdir ve herhangi bir ToolPop markası veya filigran içermez. Çıktı, profesyonel bir araçtan beklediğiniz kalitededir." },
+      { question: "API mevcut mu?", answer: "Şu anda hayır. ToolPop PDF, bireysel kullanım için tarayıcı tabanlı bir araç olarak tasarlanmıştır. Programatik PDF işleme için API erişimine ihtiyacınız varsa, kurumsal çözümler hakkında adresinden bize ulaşın." },
+      { question: "Site hangi dillerde mevcut?", answer: "ToolPop PDF; İngilizce, Korece, İspanyolca, Çince, Japonca, Almanca, Fransızca, Portekizce, Arapça, Hintçe ve daha birçok dil dahil 45 dilde mevcuttur. Arayüz tarayıcınızın dilini otomatik algılar veya dil seçiciyi kullanarak manuel olarak değiştirebilirsiniz." },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    description: "PDF dosyalarıyla çalışmak için faydalı ipuçları, rehberler ve bilgiler.",
+    readMore: "Devamını oku",
+    backToBlog: "Bloga dön",
+    publishedOn: "Yayınlanma tarihi",
+    categoryGuide: "Rehber",
+    categoryTips: "İpuçları",
+    categoryKnowledge: "Bilgi",
+  },
+  toolContent: {
+    merge: {
+      howTo: { title: "PDF dosyaları nasıl birleştirilir", steps: ["'Dosya seç' düğmesine tıklayın veya birden fazla PDF'i yükleme alanına sürükleyin.", "Dosyaları sürükleyerek istediğiniz sırada düzenleyin.", "'Birleştir' düğmesine tıklayarak tüm dosyaları tek bir PDF'de birleştirin.", "Birleştirilmiş PDF'inizi indirin — kullanıma hazır."] },
+      features: { title: "Özellikler", items: ["Sınırsız sayıda PDF dosyasını tek bir belgede birleştirin", "Sayfa sıralamasının hassas kontrolü için sürükle-bırak ile yeniden sıralama", "Birleştirmeden önce miniatur önizleme ile içeriği doğrulayın", "Orijinal kalite korunur — sıkıştırma veya kalite kaybı yoktur", "Tamamen tarayıcınızda çalışır — dosyalar asla cihazınızdan çıkmaz"] },
+      tips: { title: "İpuçları", items: ["Araç çubuğu düğmeleri ile dosyaları ada veya boyuta göre hızlıca sıralayın", "Büyük dosyaların işlenmesi biraz zaman alabilir — ilerleme göstergesi sizi bilgilendirir", "Birleştirilmiş dosya, orijinal belgelerdeki yer imlerini, bağlantıları ve form alanlarını korur"] },
+},
+    split: {
+      howTo: { title: "PDF nasıl bölünür", steps: ["'Dosya seç'e tıklayarak veya sürükleyerek bir PDF yükleyin.", "Bölme yöntemini seçin: sayfa aralığı, belirli sayfaları çıkarma veya sabit aralıklarla bölme.", "İstediğiniz aralıkları veya sayfa numaralarını ayarlayın.", "'Böl' düğmesine tıklayarak ayrı PDF dosyaları oluşturun ve indirin."] },
+      features: { title: "Özellikler", items: ["Özel sayfa aralıklarına göre bölme (örn. 1-5, 10-15)", "Tek sayfaları ayrı dosyalar olarak çıkarma", "Eşit parçalara bölme (her N sayfa)", "Kolay sayfa seçimi için görsel küçük resimler", "Seçili aralıkları tek bir çıktı dosyasında birleştirme seçeneği"] },
+      tips: { title: "İpuçları", items: ["Aralık alanına virgülle ayrılmış birden fazla aralık girin", "Sayfaları hızlıca seçmek veya seçimi kaldırmak için küçük resimlere tıklayın", "'Hepsini çıkar' seçeneği sayfa başına bir dosya oluşturur — arşivleme için idealdir"] },
+},
+    compress: {
+      howTo: { title: "PDF nasıl sıkıştırılır", steps: ["Küçültmek istediğiniz PDF'i yükleyin.", "Sıkıştırma seviyesini seçin: Maksimum (en küçük dosya), Önerilen (dengeli) veya Minimum (en iyi kalite).", "Sıkıştırma modunu seçin — görsel tabanlı veya rasterleştirme.", "'Sıkıştır' düğmesine tıklayın ve küçültülmüş PDF'i indirin."] },
+      features: { title: "Özellikler", items: ["Boyut ve kalite dengesini sağlamak için üç sıkıştırma seviyesi", "Gömülü görsellerin boyutunu azaltan görsel optimizasyonu", "Önceki ve sonraki dosya boyutlarını yüzdelik azalma ile gösterir", "Metin kalitesi daha az önemli olduğunda maksimum sıkıştırma için rasterleştirme modu"] },
+      tips: { title: "İpuçları", items: ["'Önerilen' seviye çoğu belge için en iyisidir, boyutu %40-70 azaltır", "Çok fotoğraflı PDF'ler için 'Maksimum' sıkıştırma boyutu önemli ölçüde azaltabilir", "Baskı için görsel netliğini korumak istediğinizde 'Minimum' sıkıştırmayı kullanın"] },
+},
+    "pdf-to-jpg": {
+      howTo: { title: "PDF'yi JPG'ye nasıl dönüştürülür", steps: ["Dönüştürmek için bir veya daha fazla PDF yükleyin.", "Çıktı kalitesini seçin: Yüksek (300 DPI), Orta (150 DPI) veya Düşük (72 DPI).", "'Dönüştür' düğmesine tıklayarak her PDF sayfasını JPG görseline dönüştürün.", "Görselleri tek tek veya hepsini ZIP olarak indirin."] },
+      features: { title: "Özellikler", items: ["PDF'in her sayfasını yüksek kaliteli JPG görseline dönüştürme", "Netlik ve dosya boyutu dengesi için üç kalite ön ayarı", "Toplu işleme — birden fazla PDF'i aynı anda dönüştürme", "Tek sayfaları veya hepsini tek bir ZIP arşivinde indirme"] },
+      tips: { title: "İpuçları", items: ["Baskı veya profesyonel sunumlar için 'Yüksek' kaliteyi kullanın", "Web kullanımı için 'Orta'yı seçin — iyi kalite, makul dosya boyutu", "'Düşük' kalite küçük resimler veya hızlı önizlemeler için idealdir"] },
+},
+    "jpg-to-pdf": {
+      howTo: { title: "JPG'yi PDF'ye nasıl dönüştürülür", steps: ["Tıklayarak veya sürükleyerek bir veya daha fazla JPG görsel yükleyin.", "Sayfa boyutu, yön ve kenar boşluklarını seçin.", "Görselleri sürükleyerek istediğiniz sırada düzenleyin.", "'Dönüştür' düğmesine tıklayarak PDF oluşturun ve indirin."] },
+      features: { title: "Özellikler", items: ["Bir veya birden fazla JPG görseli tek bir PDF'e dönüştürme", "Standart sayfa boyutları (A4, Letter, Legal) veya görsele uygun boyut seçimi", "Ayarlanabilir kenar boşlukları ve yön (dikey/yatay)", "Her görsel için ayrı PDF veya hepsini tek belgede birleştirme seçeneği", "Sürükle-bırak ile görsel sıralama"] },
+      tips: { title: "İpuçları", items: ["Kırpma veya beyaz kenarlıklardan kaçınmak için 'Görsele uygun' boyutu kullanın", "Fotoğraf albümleri için 'Hepsini birleştir' ile tüm görsellerin tek PDF'ini oluşturun", "Kenarsız baskı için kenar boşluklarını sıfıra ayarlayın"] },
+},
+    rotate: {
+      howTo: { title: "PDF sayfaları nasıl döndürülür", steps: ["Döndürülmesi gereken sayfaları içeren bir PDF yükleyin.", "Her sayfanın küçük resmindeki döndürme düğmelerine tıklayın.", "Tüm sayfalara aynı döndürmeyi uygulamak için 'Hepsini döndür'ü kullanın.", "'Döndür' düğmesine tıklayarak değişiklikleri uygulayın ve düzeltilmiş PDF'i indirin."] },
+      features: { title: "Özellikler", items: ["Tek sayfaları saat yönünde veya saat yönünün tersine 90° döndürme", "Tüm sayfaları tek tıkla döndürme", "Görsel küçük resimler döndürme değişikliklerini gerçek zamanlı gösterir", "Yeniden başlamak için tüm döndürmeleri sıfırlama"] },
+      tips: { title: "İpuçları", items: ["Taranmış belgeler genellikle farklı yönlerdeki sayfalara sahiptir — hepsini bir seferde düzeltin", "Hem dikey hem yatay sayfaları olan belgeler için tek sayfa döndürme kullanın", "Döndürme kalıcıdır ve yazdırma veya paylaşımda korunur"] },
+},
+    "edit-pdf": {
+      howTo: { title: "PDF nasıl düzenlenir", steps: ["Düzenlemek istediğiniz PDF'i yükleyin.", "Araç çubuğundan bir araç seçin: metin, görsel, şekiller veya çizim.", "Sayfaya tıklayarak öğeyi yerleştirin ve özelliklerini özelleştirin.", "Sayfalar arasında gezinin ve gerektiği gibi öğeler ekleyin.", "'Uygula' düğmesine tıklayarak tüm değişiklikleri kaydedin ve düzenlenmiş PDF'i indirin."] },
+      features: { title: "Özellikler", items: ["Özelleştirilebilir yazı tipi, boyut, renk ve hizalama ile metin ekleme", "Cihazınızdan sayfanın herhangi bir yerine görsel ekleme", "Serbest çizgi, dikdörtgen, elips ve düz çizgi çizme", "Onay işareti, çarpı, yıldız ve ok gibi semboller ekleme", "Katman kontrolü — öğeleri öne veya arkaya taşıma", "Kolay sayfa gezintili çok sayfalı düzenleme"] },
+      tips: { title: "İpuçları", items: ["Ayrıntılarda hassas çalışma için yakınlaştırma kontrollerini kullanın", "Yerleştirdikten sonra içeriği düzenlemek için metin öğesine çift tıklayın", "Hataları anında geri almak için Ctrl+Z (Mac'te Cmd+Z) kullanın", "Onay işaretleri form alanlarını doldurmak için mükemmeldir"] },
+},
+    watermark: {
+      howTo: { title: "PDF'ye filigran nasıl eklenir", steps: ["Filigran eklemek istediğiniz PDF'i yükleyin.", "Metin veya görsel filigran arasında seçim yapın.", "Filigranı özelleştirin: metin/görsel, saydamlık, konum, döndürme ve boyut ayarlayın.", "Uygulanacak sayfaları seçin (tümü veya özel aralık).", "'Filigran ekle' düğmesine tıklayın ve filigranlı PDF'i indirin."] },
+      features: { title: "Özellikler", items: ["Özelleştirilebilir yazı tipi, boyut, renk ve gölge ile metin filigranları", "Ayarlanabilir ölçek ve saydamlıklı görsel filigranlar", "Dokuz konum seçeneği (köşeler, kenarlar ve merkez)", "Tüm sayfayı kaplamak için döşeme/mozaik deseni", "Katman kontrolü — filigranı içeriğin üstüne veya altına yerleştirme", "Özel sayfa aralığı seçimi"] },
+      tips: { title: "İpuçları", items: ["İçeriği kapatmayan hafif bir filigran için saydamlığı %20-30 olarak ayarlayın", "Gizli belgelerde tam kapsama için mozaik seçeneğini kullanın", "Çapraz döndürme (genellikle 45°) filigranın kaldırılmasını zorlaştırır", "Metnin tamamen okunabilir kalması için filigranı 'içeriğin altına' yerleştirin"] },
+},
+    protect: {
+      howTo: { title: "PDF parola ile nasıl korunur", steps: ["Korumak istediğiniz PDF'i yükleyin.", "Bir parola girin ve onaylayın.", "İsteğe bağlı olarak gelişmiş izinleri (yazdırma, kopyalama, düzenleme) yapılandırın.", "'Koru' düğmesine tıklayarak PDF'i parolanızla şifreleyin.", "Korumalı dosyayı indirin — alıcılar açmak için parolaya ihtiyaç duyacaktır."] },
+      features: { title: "Özellikler", items: ["Güçlü güvenlik için AES-256 şifreleme", "Parola güç göstergesi (zayıf, orta, güçlü)", "Yazdırma, kopyalama ve değiştirme için ayrıntılı izin kontrolleri", "Düşük ve yüksek çözünürlüklü yazdırma için ayrı izinler", "Form doldurma ve erişilebilirlik izin kontrolleri", "Tüm şifreleme tarayıcınızda gerçekleşir — parolanız asla cihazınızdan çıkmaz"] },
+      tips: { title: "İpuçları", items: ["Maksimum güvenlik için karışık karakterli güçlü bir parola kullanın", "Belgeden metin çıkarılmasını önlemek için 'kopyalama' iznini kısıtlayın", "Yüksek kaliteli kopyaları önlemek istiyorsanız yalnızca 'düşük çözünürlüklü yazdırma'ya izin verin", "Parolanızı unutmayın — şifrelenmiş dosyalar için kurtarma seçeneği yoktur"] },
+},
+    "delete-pages": {
+      howTo: { title: "PDF'den sayfalar nasıl silinir", steps: ["Silmek istediğiniz sayfaları içeren PDF'i yükleyin.", "Silmek istediğiniz sayfaların küçük resimlerine tıklayın.", "Hızlı seçim düğmelerini kullanın: hepsini seç, tek sayfalar, çift sayfalar veya hiçbirini seçme.", "'Sil' düğmesine tıklayarak seçili sayfaları kaldırın ve sonucu indirin."] },
+      features: { title: "Özellikler", items: ["Kolay tanımlama için görsel sayfa küçük resimleri", "Hangi sayfaların silineceğini tam olarak seçmek için tıkla-çoklu seçim", "Tek, çift veya tüm sayfalar için hızlı seçim seçenekleri", "Kaç sayfanın silineceğini ve kalacağını gösteren gerçek zamanlı sayaç", "Tüm sayfaların yanlışlıkla silinmesini engelleyen güvenlik kontrolü"] },
+      tips: { title: "İpuçları", items: ["Çift taraflı taramaların boş arka yüzlerini hızlıca silmek için 'Çift sayfaları seç'i kullanın", "Yanlış sayfaları silmemek için silmeden önce her küçük resmi dikkatle inceleyin", "Yalnızca birkaç sayfayı saklamak istiyorsanız, bunun yerine 'Sayfa çıkar'ı kullanın — daha hızlıdır"] },
+},
+  },
+
 };
 
 export default tr;
