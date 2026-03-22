@@ -356,9 +356,9 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         >
           {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-7 w-auto shrink-0" />; })() : tool.emoji ? <span className="text-2xl shrink-0">{tool.emoji}</span> : null}
           <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-semibold text-foreground">
+            <span className="block text-sm font-semibold text-foreground">
               {toolDict.title}
-            </h3>
+            </span>
             <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
           </div>
         </Link>
