@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface CombineOptionsValue {
   layout: "horizontal" | "vertical" | "grid";
   gap: number;
@@ -10,27 +12,28 @@ export interface CombineOptionsValue {
 interface CombineOptionsProps {
   value: CombineOptionsValue;
   onChange: (value: CombineOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["combine"];
 }
 
-const LAYOUTS = [
-  { value: "horizontal" as const, label: "Horizontal", icon: "|||" },
-  { value: "vertical" as const, label: "Vertical", icon: "\u2261" },
-  { value: "grid" as const, label: "Grid", icon: "\u229E" },
-];
+export function CombineOptions({ value, onChange, labels }: CombineOptionsProps) {
+  const LAYOUTS = [
+    { value: "horizontal" as const, label: labels.horizontal, icon: "|||" },
+    { value: "vertical" as const, label: labels.vertical, icon: "\u2261" },
+    { value: "grid" as const, label: labels.grid, icon: "\u229E" },
+  ];
 
-const ALIGNMENTS = [
-  { value: "start" as const, label: "Start" },
-  { value: "center" as const, label: "Center" },
-  { value: "end" as const, label: "End" },
-];
+  const ALIGNMENTS = [
+    { value: "start" as const, label: labels.start },
+    { value: "center" as const, label: labels.center },
+    { value: "end" as const, label: labels.end },
+  ];
 
-export function CombineOptions({ value, onChange }: CombineOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Layout selector */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Layout
+          {labels.layout}
         </label>
         <div className="flex gap-2">
           {LAYOUTS.map((l) => (
@@ -55,7 +58,7 @@ export function CombineOptions({ value, onChange }: CombineOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Gap
+            {labels.gap}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.gap}px
@@ -75,7 +78,7 @@ export function CombineOptions({ value, onChange }: CombineOptionsProps) {
       {/* Background color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Background Color
+          {labels.bgColor}
         </label>
         <input
           type="color"
@@ -88,7 +91,7 @@ export function CombineOptions({ value, onChange }: CombineOptionsProps) {
       {/* Alignment */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Alignment
+          {labels.alignment}
         </label>
         <div className="flex gap-2">
           {ALIGNMENTS.map((a) => (

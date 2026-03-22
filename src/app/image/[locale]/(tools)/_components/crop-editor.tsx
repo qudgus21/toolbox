@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 import type { CropOptionsValue } from "./crop-options";
 import { CropOptions, getDefaultCropOptions } from "./crop-options";
 
@@ -10,6 +11,7 @@ interface CropEditorProps {
   originalHeight: number;
   value: CropOptionsValue;
   onChange: (value: CropOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["crop"];
 }
 
 type DragMode =
@@ -27,6 +29,7 @@ export function CropEditor({
   originalHeight,
   value,
   onChange,
+  labels,
 }: CropEditorProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageUrl, setImageUrl] = useState<string>("");
@@ -217,6 +220,7 @@ export function CropEditor({
         onChange={onChange}
         originalWidth={originalWidth}
         originalHeight={originalHeight}
+        labels={labels}
       />
 
       {/* Interactive crop area */}

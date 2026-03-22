@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface QrCodeOptionsValue {
   text: string;
   size: number;
@@ -11,27 +13,28 @@ export interface QrCodeOptionsValue {
 interface QrCodeOptionsProps {
   value: QrCodeOptionsValue;
   onChange: (value: QrCodeOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["qrCode"];
 }
 
-const EC_LABELS: Record<string, string> = {
-  L: "Low (7%)",
-  M: "Medium (15%)",
-  Q: "Quartile (25%)",
-  H: "High (30%)",
-};
+export function QrCodeOptions({ value, onChange, labels }: QrCodeOptionsProps) {
+  const EC_LABELS: Record<string, string> = {
+    L: labels.low,
+    M: labels.medium,
+    Q: labels.quartile,
+    H: labels.high,
+  };
 
-export function QrCodeOptions({ value, onChange }: QrCodeOptionsProps) {
   return (
     <div className="space-y-4">
       {/* Text/URL input */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-1 block">
-          Text or URL
+          {labels.textOrUrl}
         </label>
         <textarea
           value={value.text}
           onChange={(e) => onChange({ ...value, text: e.target.value })}
-          placeholder="https://example.com"
+          placeholder={labels.urlPlaceholder}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground resize-y min-h-[80px] focus:outline-none focus:ring-2 focus:ring-accent/50"
           rows={3}
         />
@@ -41,7 +44,7 @@ export function QrCodeOptions({ value, onChange }: QrCodeOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Size
+            {labels.size}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.size}px
@@ -62,7 +65,7 @@ export function QrCodeOptions({ value, onChange }: QrCodeOptionsProps) {
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Foreground
+            {labels.foreground}
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -76,7 +79,7 @@ export function QrCodeOptions({ value, onChange }: QrCodeOptionsProps) {
         </div>
         <div>
           <label className="text-xs font-medium text-foreground-muted mb-1 block">
-            Background
+            {labels.background}
           </label>
           <div className="flex items-center gap-2">
             <input
@@ -93,7 +96,7 @@ export function QrCodeOptions({ value, onChange }: QrCodeOptionsProps) {
       {/* Error correction */}
       <div>
         <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          Error Correction
+          {labels.errorCorrection}
         </label>
         <div className="grid grid-cols-2 gap-2">
           {(["L", "M", "Q", "H"] as const).map((level) => (

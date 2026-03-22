@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface CollageOptionsValue {
   template: "2h" | "2v" | "3l" | "3r" | "4grid" | "5mix";
   gap: number;
@@ -10,16 +12,8 @@ export interface CollageOptionsValue {
 interface CollageOptionsProps {
   value: CollageOptionsValue;
   onChange: (value: CollageOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["collage"];
 }
-
-const TEMPLATES: { value: CollageOptionsValue["template"]; label: string }[] = [
-  { value: "2h", label: "2 Horizontal" },
-  { value: "2v", label: "2 Vertical" },
-  { value: "3l", label: "3 Left Focus" },
-  { value: "3r", label: "3 Right Focus" },
-  { value: "4grid", label: "4 Grid" },
-  { value: "5mix", label: "5 Mixed" },
-];
 
 /**
  * Renders a small visual preview for each collage template.
@@ -81,13 +75,22 @@ function TemplatePreview({ template }: { template: CollageOptionsValue["template
   }
 }
 
-export function CollageOptions({ value, onChange }: CollageOptionsProps) {
+export function CollageOptions({ value, onChange, labels }: CollageOptionsProps) {
+  const TEMPLATES: { value: CollageOptionsValue["template"]; label: string }[] = [
+    { value: "2h", label: labels.horizontal2 },
+    { value: "2v", label: labels.vertical2 },
+    { value: "3l", label: labels.leftFocus3 },
+    { value: "3r", label: labels.rightFocus3 },
+    { value: "4grid", label: labels.grid4 },
+    { value: "5mix", label: labels.mixed5 },
+  ];
+
   return (
     <div className="space-y-4">
       {/* Template selector */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Template
+          {labels.template}
         </label>
         <div className="grid grid-cols-3 gap-2">
           {TEMPLATES.map((t) => (
@@ -118,7 +121,7 @@ export function CollageOptions({ value, onChange }: CollageOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Gap
+            {labels.gap}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.gap}px
@@ -138,7 +141,7 @@ export function CollageOptions({ value, onChange }: CollageOptionsProps) {
       {/* Background color */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Background Color
+          {labels.bgColor}
         </label>
         <input
           type="color"
@@ -152,7 +155,7 @@ export function CollageOptions({ value, onChange }: CollageOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Border Radius
+            {labels.borderRadius}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.borderRadius}px

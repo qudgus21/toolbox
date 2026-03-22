@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Link2, Link2Off } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface ResizeOptionsValue {
   width: number;
@@ -15,21 +16,23 @@ interface ResizeOptionsProps {
   originalHeight: number;
   value: ResizeOptionsValue;
   onChange: (value: ResizeOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["resize"];
 }
-
-const MODES = [
-  { value: "fit" as const, label: "Fit", desc: "Scale to fit within bounds" },
-  { value: "fill" as const, label: "Fill", desc: "Cover the area, crop overflow" },
-  { value: "stretch" as const, label: "Stretch", desc: "Stretch to exact size" },
-];
 
 export function ResizeOptions({
   originalWidth,
   originalHeight,
   value,
   onChange,
+  labels,
 }: ResizeOptionsProps) {
   const aspectRatio = originalWidth > 0 ? originalWidth / originalHeight : 1;
+
+  const MODES = [
+    { value: "fit" as const, label: labels.fit, desc: labels.fitDesc },
+    { value: "fill" as const, label: labels.fill, desc: labels.fillDesc },
+    { value: "stretch" as const, label: labels.stretch, desc: labels.stretchDesc },
+  ];
 
   const handleWidthChange = useCallback(
     (w: number) => {
@@ -71,7 +74,7 @@ export function ResizeOptions({
     <div className="space-y-5">
       {/* Original dimensions */}
       <div className="text-sm text-foreground-muted">
-        Original: {originalWidth} &times; {originalHeight} px
+        {labels.original} {originalWidth} &times; {originalHeight} px
       </div>
 
       {/* Width & Height inputs with lock toggle */}
@@ -79,7 +82,7 @@ export function ResizeOptions({
         {/* Width */}
         <div className="flex-1">
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Width (px)
+            {labels.widthPx}
           </label>
           <input
             type="number"
@@ -96,7 +99,7 @@ export function ResizeOptions({
           type="button"
           onClick={toggleAspectRatio}
           className="mt-5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border hover:bg-background-subtle transition-colors cursor-pointer"
-          title={value.maintainAspectRatio ? "Unlock aspect ratio" : "Lock aspect ratio"}
+          title={value.maintainAspectRatio ? labels.unlockAspect : labels.lockAspect}
         >
           {value.maintainAspectRatio ? (
             <Link2 className="h-4 w-4 text-accent" />
@@ -108,7 +111,7 @@ export function ResizeOptions({
         {/* Height */}
         <div className="flex-1">
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Height (px)
+            {labels.heightPx}
           </label>
           <input
             type="number"
@@ -124,7 +127,7 @@ export function ResizeOptions({
       {/* Mode selector */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Resize Mode
+          {labels.resizeMode}
         </label>
         <div className="flex gap-2">
           {MODES.map((m) => (

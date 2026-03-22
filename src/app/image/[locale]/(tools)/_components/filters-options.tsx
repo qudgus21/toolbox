@@ -1,6 +1,7 @@
 "use client";
 
 import { RotateCcw } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export interface FiltersOptionsValue {
   brightness: number;
@@ -14,6 +15,7 @@ export interface FiltersOptionsValue {
 interface FiltersOptionsProps {
   value: FiltersOptionsValue;
   onChange: (value: FiltersOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["filters"];
 }
 
 const DEFAULTS: FiltersOptionsValue = {
@@ -25,31 +27,31 @@ const DEFAULTS: FiltersOptionsValue = {
   invert: 0,
 };
 
-const SLIDERS: {
+const SLIDER_KEYS: {
   key: keyof FiltersOptionsValue;
-  label: string;
+  labelKey: keyof ImageDictionary["toolOptions"]["filters"];
   min: number;
   max: number;
   unit: string;
 }[] = [
-  { key: "brightness", label: "Brightness", min: 0, max: 200, unit: "%" },
-  { key: "contrast", label: "Contrast", min: 0, max: 200, unit: "%" },
-  { key: "saturation", label: "Saturation", min: 0, max: 200, unit: "%" },
-  { key: "hueRotate", label: "Hue Rotate", min: 0, max: 360, unit: "\u00B0" },
-  { key: "sepia", label: "Sepia", min: 0, max: 100, unit: "%" },
-  { key: "invert", label: "Invert", min: 0, max: 100, unit: "%" },
+  { key: "brightness", labelKey: "brightness", min: 0, max: 200, unit: "%" },
+  { key: "contrast", labelKey: "contrast", min: 0, max: 200, unit: "%" },
+  { key: "saturation", labelKey: "saturation", min: 0, max: 200, unit: "%" },
+  { key: "hueRotate", labelKey: "hueRotate", min: 0, max: 360, unit: "\u00B0" },
+  { key: "sepia", labelKey: "sepia", min: 0, max: 100, unit: "%" },
+  { key: "invert", labelKey: "invert", min: 0, max: 100, unit: "%" },
 ];
 
-export function FiltersOptions({ value, onChange }: FiltersOptionsProps) {
-  const isModified = SLIDERS.some((s) => value[s.key] !== DEFAULTS[s.key]);
+export function FiltersOptions({ value, onChange, labels }: FiltersOptionsProps) {
+  const isModified = SLIDER_KEYS.some((s) => value[s.key] !== DEFAULTS[s.key]);
 
   return (
     <div className="space-y-4">
-      {SLIDERS.map((s) => (
+      {SLIDER_KEYS.map((s) => (
         <div key={s.key}>
           <div className="flex items-center justify-between mb-1">
             <label className="text-xs font-medium text-foreground-muted">
-              {s.label}
+              {labels[s.labelKey]}
             </label>
             <span className="text-sm font-semibold text-foreground">
               {value[s.key]}{s.unit}
@@ -75,7 +77,7 @@ export function FiltersOptions({ value, onChange }: FiltersOptionsProps) {
           className="flex w-full items-center justify-center gap-1.5 rounded-md border border-border px-3 py-2 text-xs font-medium text-foreground-muted hover:bg-background-subtle transition-colors cursor-pointer"
         >
           <RotateCcw className="h-3.5 w-3.5" />
-          Reset All
+          {labels.resetAll}
         </button>
       )}
     </div>

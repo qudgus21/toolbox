@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface CropOptionsValue {
   x: number;
   y: number;
@@ -13,24 +15,26 @@ interface CropOptionsProps {
   onChange: (value: CropOptionsValue) => void;
   originalWidth: number;
   originalHeight: number;
+  labels: ImageDictionary["toolOptions"]["crop"];
 }
-
-const PRESETS: { label: string; ratio: number | null }[] = [
-  { label: "Free", ratio: null },
-  { label: "1:1", ratio: 1 },
-  { label: "4:3", ratio: 4 / 3 },
-  { label: "16:9", ratio: 16 / 9 },
-  { label: "3:2", ratio: 3 / 2 },
-  { label: "9:16", ratio: 9 / 16 },
-  { label: "3:4", ratio: 3 / 4 },
-];
 
 export function CropOptions({
   value,
   onChange,
   originalWidth,
   originalHeight,
+  labels,
 }: CropOptionsProps) {
+  const PRESETS: { label: string; ratio: number | null }[] = [
+    { label: labels.free, ratio: null },
+    { label: "1:1", ratio: 1 },
+    { label: "4:3", ratio: 4 / 3 },
+    { label: "16:9", ratio: 16 / 9 },
+    { label: "3:2", ratio: 3 / 2 },
+    { label: "9:16", ratio: 9 / 16 },
+    { label: "3:4", ratio: 3 / 4 },
+  ];
+
   const handlePreset = (ratio: number | null) => {
     if (ratio === null) {
       onChange({ ...value, aspectRatio: null });
@@ -71,7 +75,7 @@ export function CropOptions({
       {/* Aspect ratio presets */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Aspect Ratio
+          {labels.aspectRatio}
         </label>
         <div className="flex flex-wrap gap-2">
           {PRESETS.map((preset) => (
@@ -95,7 +99,7 @@ export function CropOptions({
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            X
+            {labels.x}
           </label>
           <input
             type="number"
@@ -108,7 +112,7 @@ export function CropOptions({
         </div>
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Y
+            {labels.y}
           </label>
           <input
             type="number"
@@ -121,7 +125,7 @@ export function CropOptions({
         </div>
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Width
+            {labels.width}
           </label>
           <input
             type="number"
@@ -141,7 +145,7 @@ export function CropOptions({
         </div>
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-1">
-            Height
+            {labels.height}
           </label>
           <input
             type="number"

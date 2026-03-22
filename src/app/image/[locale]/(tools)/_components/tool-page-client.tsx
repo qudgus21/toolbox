@@ -85,6 +85,7 @@ interface ToolPageClientProps {
   multiFile?: boolean;
   backHref: string;
   labels: ImageDictionary["common"];
+  toolLabels: ImageDictionary["toolOptions"];
 }
 
 type ToolOptionsMap = {
@@ -169,6 +170,7 @@ export function ToolPageClient({
   multiFile,
   backHref,
   labels,
+  toolLabels,
 }: ToolPageClientProps) {
   const {
     stage,
@@ -344,23 +346,23 @@ export function ToolPageClient({
         <div className="space-y-4">
           <div className="rounded-lg border border-border bg-background p-4">
             <h3 className="text-sm font-semibold text-foreground mb-4">
-              Options
+              {labels.options}
             </h3>
 
             {slug === "html-to-image" && (
-              <HtmlToImageOptions value={htmlToImageOpts} onChange={setHtmlToImageOpts} />
+              <HtmlToImageOptions value={htmlToImageOpts} onChange={setHtmlToImageOpts} labels={toolLabels.htmlToImage} />
             )}
             {slug === "gradient" && (
-              <GradientOptions value={gradientOpts} onChange={setGradientOpts} />
+              <GradientOptions value={gradientOpts} onChange={setGradientOpts} labels={toolLabels.gradient} />
             )}
             {slug === "placeholder" && (
-              <PlaceholderOptions value={placeholderOpts} onChange={setPlaceholderOpts} />
+              <PlaceholderOptions value={placeholderOpts} onChange={setPlaceholderOpts} labels={toolLabels.placeholder} />
             )}
             {slug === "pattern" && (
-              <PatternOptions value={patternOpts} onChange={setPatternOpts} />
+              <PatternOptions value={patternOpts} onChange={setPatternOpts} labels={toolLabels.pattern} />
             )}
             {slug === "qr-code" && (
-              <QrCodeOptions value={qrCodeOpts} onChange={setQrCodeOpts} />
+              <QrCodeOptions value={qrCodeOpts} onChange={setQrCodeOpts} labels={toolLabels.qrCode} />
             )}
           </div>
 
@@ -418,7 +420,7 @@ export function ToolPageClient({
               onClick={reset}
               className="ml-2 text-xs text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
             >
-              Change file
+              {labels.changeFile}
             </button>
           </div>
 
@@ -464,6 +466,7 @@ export function ToolPageClient({
               originalHeight={origH}
               value={cropValue}
               onChange={setCropOpts}
+              labels={toolLabels.crop}
             />
           )}
 
@@ -489,7 +492,7 @@ export function ToolPageClient({
                   }`}
                 >
                   <h3 className="text-sm font-semibold text-foreground mb-4">
-                    Options
+                    {labels.options}
                   </h3>
 
                   {slug === "resize" && origW > 0 && (
@@ -498,6 +501,7 @@ export function ToolPageClient({
                       originalHeight={origH}
                       value={resizeValue}
                       onChange={setResizeOpts}
+                      labels={toolLabels.resize}
                     />
                   )}
 
@@ -505,6 +509,7 @@ export function ToolPageClient({
                     <RotateOptions
                       value={rotateOpts}
                       onChange={setRotateOpts}
+                      labels={toolLabels.rotate}
                     />
                   )}
 
@@ -512,6 +517,7 @@ export function ToolPageClient({
                     <FlipOptions
                       value={flipOpts}
                       onChange={setFlipOpts}
+                      labels={toolLabels.flip}
                     />
                   )}
 
@@ -520,6 +526,7 @@ export function ToolPageClient({
                       value={compressOpts}
                       onChange={setCompressOpts}
                       originalSize={firstFile?.size}
+                      labels={toolLabels.compress}
                     />
                   )}
 
@@ -528,6 +535,7 @@ export function ToolPageClient({
                       slug={slug}
                       value={convertOpts}
                       onChange={setConvertOpts}
+                      labels={toolLabels.convert}
                     />
                   )}
 
@@ -535,6 +543,7 @@ export function ToolPageClient({
                     <GrayscaleOptions
                       value={grayscaleOpts}
                       onChange={setGrayscaleOpts}
+                      labels={toolLabels.grayscale}
                     />
                   )}
 
@@ -542,6 +551,7 @@ export function ToolPageClient({
                     <AddTextOptions
                       value={addTextOpts}
                       onChange={setAddTextOpts}
+                      labels={toolLabels.addText}
                     />
                   )}
 
@@ -549,6 +559,7 @@ export function ToolPageClient({
                     <AddBorderOptions
                       value={addBorderOpts}
                       onChange={setAddBorderOpts}
+                      labels={toolLabels.addBorder}
                     />
                   )}
 
@@ -556,6 +567,7 @@ export function ToolPageClient({
                     <PixelateOptions
                       value={pixelateOpts}
                       onChange={setPixelateOpts}
+                      labels={toolLabels.pixelate}
                     />
                   )}
 
@@ -563,6 +575,7 @@ export function ToolPageClient({
                     <BlurOptions
                       value={blurOpts}
                       onChange={setBlurOpts}
+                      labels={toolLabels.blur}
                     />
                   )}
 
@@ -570,6 +583,7 @@ export function ToolPageClient({
                     <FiltersOptions
                       value={filtersOpts}
                       onChange={setFiltersOpts}
+                      labels={toolLabels.filters}
                     />
                   )}
 
@@ -577,6 +591,7 @@ export function ToolPageClient({
                     <CombineOptions
                       value={combineOpts}
                       onChange={setCombineOpts}
+                      labels={toolLabels.combine}
                     />
                   )}
 
@@ -584,6 +599,7 @@ export function ToolPageClient({
                     <SplitOptions
                       value={splitOpts}
                       onChange={setSplitOpts}
+                      labels={toolLabels.split}
                     />
                   )}
 
@@ -591,6 +607,7 @@ export function ToolPageClient({
                     <CollageOptions
                       value={collageOpts}
                       onChange={setCollageOpts}
+                      labels={toolLabels.collage}
                     />
                   )}
 
@@ -598,6 +615,7 @@ export function ToolPageClient({
                     <RoundOptions
                       value={roundOpts}
                       onChange={setRoundOpts}
+                      labels={toolLabels.round}
                     />
                   )}
 
@@ -605,6 +623,7 @@ export function ToolPageClient({
                     <ProfilePhotoOptions
                       value={profilePhotoOpts}
                       onChange={setProfilePhotoOpts}
+                      labels={toolLabels.profilePhoto}
                     />
                   )}
 
@@ -612,6 +631,7 @@ export function ToolPageClient({
                     <MemeOptions
                       value={memeOpts}
                       onChange={setMemeOpts}
+                      labels={toolLabels.meme}
                     />
                   )}
 
@@ -619,6 +639,7 @@ export function ToolPageClient({
                     <WatermarkOptions
                       value={watermarkOpts}
                       onChange={setWatermarkOpts}
+                      labels={toolLabels.watermark}
                     />
                   )}
 
@@ -626,6 +647,7 @@ export function ToolPageClient({
                     <ColorReplaceOptions
                       value={colorReplaceOpts}
                       onChange={setColorReplaceOpts}
+                      labels={toolLabels.colorReplace}
                     />
                   )}
 
@@ -633,6 +655,7 @@ export function ToolPageClient({
                     <VignetteOptions
                       value={vignetteOpts}
                       onChange={setVignetteOpts}
+                      labels={toolLabels.vignette}
                     />
                   )}
 
@@ -640,6 +663,7 @@ export function ToolPageClient({
                     <NoiseOptions
                       value={noiseOpts}
                       onChange={setNoiseOpts}
+                      labels={toolLabels.noise}
                     />
                   )}
 
@@ -647,6 +671,7 @@ export function ToolPageClient({
                     <SharpenOptions
                       value={sharpenOpts}
                       onChange={setSharpenOpts}
+                      labels={toolLabels.sharpen}
                     />
                   )}
 
@@ -654,6 +679,7 @@ export function ToolPageClient({
                     <SepiaOptions
                       value={sepiaOpts}
                       onChange={setSepiaOpts}
+                      labels={toolLabels.sepia}
                     />
                   )}
 
@@ -661,6 +687,7 @@ export function ToolPageClient({
                     <InvertOptions
                       value={invertOpts}
                       onChange={setInvertOpts}
+                      labels={toolLabels.invert}
                     />
                   )}
 
@@ -668,6 +695,7 @@ export function ToolPageClient({
                     <ImageToIconOptions
                       value={imageToIconOpts}
                       onChange={setImageToIconOpts}
+                      labels={toolLabels.imageToIcon}
                     />
                   )}
 
@@ -675,6 +703,7 @@ export function ToolPageClient({
                     <ColorPaletteOptions
                       value={colorPaletteOpts}
                       onChange={setColorPaletteOpts}
+                      labels={toolLabels.colorPalette}
                     />
                   )}
 
@@ -682,6 +711,7 @@ export function ToolPageClient({
                     <HtmlToImageOptions
                       value={htmlToImageOpts}
                       onChange={setHtmlToImageOpts}
+                      labels={toolLabels.htmlToImage}
                     />
                   )}
 
@@ -689,6 +719,7 @@ export function ToolPageClient({
                     <GradientOptions
                       value={gradientOpts}
                       onChange={setGradientOpts}
+                      labels={toolLabels.gradient}
                     />
                   )}
 
@@ -696,6 +727,7 @@ export function ToolPageClient({
                     <PlaceholderOptions
                       value={placeholderOpts}
                       onChange={setPlaceholderOpts}
+                      labels={toolLabels.placeholder}
                     />
                   )}
 
@@ -703,6 +735,7 @@ export function ToolPageClient({
                     <PatternOptions
                       value={patternOpts}
                       onChange={setPatternOpts}
+                      labels={toolLabels.pattern}
                     />
                   )}
 
@@ -710,6 +743,7 @@ export function ToolPageClient({
                     <QrCodeOptions
                       value={qrCodeOpts}
                       onChange={setQrCodeOpts}
+                      labels={toolLabels.qrCode}
                     />
                   )}
                 </div>

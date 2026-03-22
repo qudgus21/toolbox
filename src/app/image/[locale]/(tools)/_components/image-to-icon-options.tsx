@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 const ALL_SIZES = [16, 32, 48, 64, 128, 256, 512];
 
 export interface ImageToIconOptionsValue {
@@ -9,9 +11,10 @@ export interface ImageToIconOptionsValue {
 interface ImageToIconOptionsProps {
   value: ImageToIconOptionsValue;
   onChange: (value: ImageToIconOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["imageToIcon"];
 }
 
-export function ImageToIconOptions({ value, onChange }: ImageToIconOptionsProps) {
+export function ImageToIconOptions({ value, onChange, labels }: ImageToIconOptionsProps) {
   const allSelected = value.sizes.length === ALL_SIZES.length;
 
   const toggleSize = (size: number) => {
@@ -31,13 +34,13 @@ export function ImageToIconOptions({ value, onChange }: ImageToIconOptionsProps)
     <div className="space-y-4">
       <div className="flex items-center justify-between mb-2">
         <label className="text-xs font-medium text-foreground-muted">
-          Icon Sizes
+          {labels.iconSizes}
         </label>
         <button
           onClick={toggleAll}
           className="text-xs text-accent hover:text-accent-hover transition-colors cursor-pointer"
         >
-          {allSelected ? "Deselect all" : "Select all"}
+          {allSelected ? labels.deselectAll : labels.selectAll}
         </button>
       </div>
 
@@ -61,10 +64,9 @@ export function ImageToIconOptions({ value, onChange }: ImageToIconOptionsProps)
       </div>
 
       <div className="rounded-md border border-border bg-background-subtle p-3 text-center">
-        <span className="text-xs text-foreground-muted">Output: </span>
+        <span className="text-xs text-foreground-muted">{labels.output} </span>
         <span className="text-sm font-semibold text-foreground">
-          {value.sizes.length} icon{value.sizes.length !== 1 ? "s" : ""}
-          {value.sizes.length > 1 ? " (ZIP)" : ""}
+          {labels.outputDesc}
         </span>
       </div>
     </div>

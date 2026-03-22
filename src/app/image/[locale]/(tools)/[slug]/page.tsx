@@ -97,6 +97,7 @@ export default async function ToolPage({
         multiFile={tool.multiFile}
         backHref={`/image/${locale}`}
         labels={dict.common}
+        toolLabels={dict.toolOptions}
       />
     </>
   );

@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface BlurOptionsValue {
   radius: number;
 }
@@ -7,15 +9,16 @@ export interface BlurOptionsValue {
 interface BlurOptionsProps {
   value: BlurOptionsValue;
   onChange: (value: BlurOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["blur"];
 }
 
-export function BlurOptions({ value, onChange }: BlurOptionsProps) {
+export function BlurOptions({ value, onChange, labels }: BlurOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Blur Radius
+            {labels.blurRadius}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.radius}px
@@ -31,8 +34,8 @@ export function BlurOptions({ value, onChange }: BlurOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Subtle</span>
-          <span>Heavy</span>
+          <span>{labels.subtle}</span>
+          <span>{labels.heavy}</span>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface GrayscaleOptionsValue {
   mode: "luminance" | "average" | "desaturate";
 }
@@ -7,19 +9,20 @@ export interface GrayscaleOptionsValue {
 interface GrayscaleOptionsProps {
   value: GrayscaleOptionsValue;
   onChange: (value: GrayscaleOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["grayscale"];
 }
 
-const MODES = [
-  { value: "luminance" as const, label: "Luminance", desc: "Weighted RGB (human perception)" },
-  { value: "average" as const, label: "Average", desc: "Equal weight RGB average" },
-  { value: "desaturate" as const, label: "Desaturate", desc: "Min/max lightness blend" },
-];
+export function GrayscaleOptions({ value, onChange, labels }: GrayscaleOptionsProps) {
+  const MODES = [
+    { value: "luminance" as const, label: labels.luminance, desc: labels.luminanceDesc },
+    { value: "average" as const, label: labels.average, desc: labels.averageDesc },
+    { value: "desaturate" as const, label: labels.desaturate, desc: labels.desaturateDesc },
+  ];
 
-export function GrayscaleOptions({ value, onChange }: GrayscaleOptionsProps) {
   return (
     <div className="space-y-4">
       <label className="block text-xs font-medium text-foreground-muted mb-2">
-        Grayscale Mode
+        {labels.mode}
       </label>
       <div className="flex flex-col gap-2">
         {MODES.map((m) => (

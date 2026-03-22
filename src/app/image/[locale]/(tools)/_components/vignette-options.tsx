@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface VignetteOptionsValue {
   intensity: number;
   radius: number;
@@ -8,15 +10,16 @@ export interface VignetteOptionsValue {
 interface VignetteOptionsProps {
   value: VignetteOptionsValue;
   onChange: (value: VignetteOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["vignette"];
 }
 
-export function VignetteOptions({ value, onChange }: VignetteOptionsProps) {
+export function VignetteOptions({ value, onChange, labels }: VignetteOptionsProps) {
   return (
     <div className="space-y-4">
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Intensity
+            {labels.intensity}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.intensity}%
@@ -32,15 +35,15 @@ export function VignetteOptions({ value, onChange }: VignetteOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Subtle</span>
-          <span>Heavy</span>
+          <span>{labels.subtle}</span>
+          <span>{labels.heavy}</span>
         </div>
       </div>
 
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Radius
+            {labels.radius}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.radius}%
@@ -56,8 +59,8 @@ export function VignetteOptions({ value, onChange }: VignetteOptionsProps) {
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Small</span>
-          <span>Large</span>
+          <span>{labels.small}</span>
+          <span>{labels.large}</span>
         </div>
       </div>
     </div>

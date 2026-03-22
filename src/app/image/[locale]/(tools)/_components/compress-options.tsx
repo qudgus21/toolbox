@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface CompressOptionsValue {
   quality: number;
   outputFormat: "jpeg" | "webp";
@@ -9,6 +11,7 @@ interface CompressOptionsProps {
   value: CompressOptionsValue;
   onChange: (value: CompressOptionsValue) => void;
   originalSize?: number; // bytes
+  labels: ImageDictionary["toolOptions"]["compress"];
 }
 
 const FORMAT_OPTIONS: { value: CompressOptionsValue["outputFormat"]; label: string }[] = [
@@ -26,6 +29,7 @@ export function CompressOptions({
   value,
   onChange,
   originalSize,
+  labels,
 }: CompressOptionsProps) {
   // Rough estimate: quality maps roughly to size ratio
   const estimatedRatio = value.outputFormat === "webp"
@@ -39,7 +43,7 @@ export function CompressOptions({
       <div>
         <div className="flex items-center justify-between mb-2">
           <label className="text-xs font-medium text-foreground-muted">
-            Quality
+            {labels.quality}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.quality}%
@@ -55,15 +59,15 @@ export function CompressOptions({
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>Smallest</span>
-          <span>Best quality</span>
+          <span>{labels.smallest}</span>
+          <span>{labels.bestQuality}</span>
         </div>
       </div>
 
       {/* Output format */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          Output Format
+          {labels.outputFormat}
         </label>
         <div className="flex gap-2">
           {FORMAT_OPTIONS.map((f) => (
@@ -87,15 +91,15 @@ export function CompressOptions({
       {originalSize && estimatedSize && (
         <div className="rounded-md border border-border bg-background-subtle p-3">
           <div className="flex justify-between text-xs">
-            <span className="text-foreground-muted">Original size</span>
+            <span className="text-foreground-muted">{labels.originalSize}</span>
             <span className="font-medium text-foreground">{formatBytes(originalSize)}</span>
           </div>
           <div className="flex justify-between text-xs mt-1">
-            <span className="text-foreground-muted">Estimated output</span>
+            <span className="text-foreground-muted">{labels.estimatedOutput}</span>
             <span className="font-medium text-accent">~{formatBytes(estimatedSize)}</span>
           </div>
           <div className="flex justify-between text-xs mt-1">
-            <span className="text-foreground-muted">Estimated reduction</span>
+            <span className="text-foreground-muted">{labels.estimatedReduction}</span>
             <span className="font-medium text-green-600 dark:text-green-400">
               ~{Math.round((1 - estimatedRatio) * 100)}%
             </span>

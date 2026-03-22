@@ -1,5 +1,7 @@
 "use client";
 
+import type { ImageDictionary } from "@/lib/i18n/image-config";
+
 export interface SplitOptionsValue {
   rows: number;
   cols: number;
@@ -8,9 +10,10 @@ export interface SplitOptionsValue {
 interface SplitOptionsProps {
   value: SplitOptionsValue;
   onChange: (value: SplitOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["split"];
 }
 
-export function SplitOptions({ value, onChange }: SplitOptionsProps) {
+export function SplitOptions({ value, onChange, labels }: SplitOptionsProps) {
   const total = value.rows * value.cols;
 
   return (
@@ -19,7 +22,7 @@ export function SplitOptions({ value, onChange }: SplitOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Rows
+            {labels.rows}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.rows}
@@ -40,7 +43,7 @@ export function SplitOptions({ value, onChange }: SplitOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Columns
+            {labels.columns}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.cols}
@@ -59,9 +62,9 @@ export function SplitOptions({ value, onChange }: SplitOptionsProps) {
 
       {/* Preview */}
       <div className="rounded-md border border-border bg-background-subtle p-3 text-center">
-        <span className="text-xs text-foreground-muted">Output: </span>
+        <span className="text-xs text-foreground-muted">{labels.output} </span>
         <span className="text-sm font-semibold text-foreground">
-          {value.rows}&times;{value.cols} = {total} images
+          {value.rows}&times;{value.cols} = {total} {labels.outputDesc}
         </span>
       </div>
 

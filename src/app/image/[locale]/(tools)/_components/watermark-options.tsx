@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { Upload } from "lucide-react";
+import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 export type WatermarkPosition =
   | "top-left"
@@ -31,6 +32,7 @@ export interface WatermarkOptionsValue {
 interface WatermarkOptionsProps {
   value: WatermarkOptionsValue;
   onChange: (value: WatermarkOptionsValue) => void;
+  labels: ImageDictionary["toolOptions"]["watermark"];
 }
 
 const FONT_FAMILIES = [
@@ -43,27 +45,27 @@ const FONT_FAMILIES = [
   "Courier New",
 ];
 
-const POSITIONS: { value: WatermarkPosition; label: string }[] = [
-  { value: "top-left", label: "TL" },
-  { value: "top-center", label: "TC" },
-  { value: "top-right", label: "TR" },
-  { value: "center-left", label: "CL" },
-  { value: "center", label: "C" },
-  { value: "center-right", label: "CR" },
-  { value: "bottom-left", label: "BL" },
-  { value: "bottom-center", label: "BC" },
-  { value: "bottom-right", label: "BR" },
-];
-
-export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
+export function WatermarkOptions({ value, onChange, labels }: WatermarkOptionsProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const POSITIONS: { value: WatermarkPosition; label: string }[] = [
+    { value: "top-left", label: labels.tl },
+    { value: "top-center", label: labels.tc },
+    { value: "top-right", label: labels.tr },
+    { value: "center-left", label: labels.cl },
+    { value: "center", label: labels.c },
+    { value: "center-right", label: labels.cr },
+    { value: "bottom-left", label: labels.bl },
+    { value: "bottom-center", label: labels.bc },
+    { value: "bottom-right", label: labels.br },
+  ];
 
   return (
     <div className="space-y-4">
       {/* Mode tabs */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-1">
-          Mode
+          {labels.mode}
         </label>
         <div className="flex gap-1 rounded-md border border-border p-1">
           <button
@@ -75,7 +77,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
                 : "text-foreground-muted hover:bg-background-subtle"
             }`}
           >
-            Text
+            {labels.text}
           </button>
           <button
             type="button"
@@ -86,7 +88,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
                 : "text-foreground-muted hover:bg-background-subtle"
             }`}
           >
-            Image
+            {labels.image}
           </button>
         </div>
       </div>
@@ -97,13 +99,13 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           {/* Text input */}
           <div>
             <label className="block text-xs font-medium text-foreground-muted mb-1">
-              Text
+              {labels.text}
             </label>
             <input
               type="text"
               value={value.text}
               onChange={(e) => onChange({ ...value, text: e.target.value })}
-              placeholder="Enter watermark text..."
+              placeholder={labels.enterWatermarkText}
               className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
             />
           </div>
@@ -111,7 +113,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           {/* Font family */}
           <div>
             <label className="block text-xs font-medium text-foreground-muted mb-1">
-              Font Family
+              {labels.fontFamily}
             </label>
             <select
               value={value.fontFamily}
@@ -128,7 +130,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           <div>
             <div className="flex items-center justify-between mb-1">
               <label className="text-xs font-medium text-foreground-muted">
-                Font Size
+                {labels.fontSize}
               </label>
               <span className="text-sm font-semibold text-foreground">
                 {value.fontSize}px
@@ -148,7 +150,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           {/* Color */}
           <div>
             <label className="block text-xs font-medium text-foreground-muted mb-1">
-              Color
+              {labels.color}
             </label>
             <input
               type="color"
@@ -166,7 +168,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           {/* Image upload */}
           <div>
             <label className="block text-xs font-medium text-foreground-muted mb-1">
-              Watermark Image
+              {labels.watermarkImage}
             </label>
             <input
               ref={fileInputRef}
@@ -184,7 +186,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
               className="flex w-full items-center justify-center gap-2 rounded-md border border-dashed border-border bg-background px-3 py-3 text-sm text-foreground-muted hover:bg-background-subtle transition-colors cursor-pointer"
             >
               <Upload className="h-4 w-4" />
-              {value.watermarkImage ? value.watermarkImage.name : "Choose image..."}
+              {value.watermarkImage ? value.watermarkImage.name : labels.chooseImage}
             </button>
           </div>
 
@@ -192,7 +194,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
           <div>
             <div className="flex items-center justify-between mb-1">
               <label className="text-xs font-medium text-foreground-muted">
-                Scale
+                {labels.scale}
               </label>
               <span className="text-sm font-semibold text-foreground">
                 {value.scale}%
@@ -217,7 +219,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Opacity
+            {labels.opacity}
           </label>
           <span className="text-sm font-semibold text-foreground">
             {value.opacity}%
@@ -238,7 +240,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
       {!value.mosaic && (
         <div>
           <label className="block text-xs font-medium text-foreground-muted mb-2">
-            Position
+            {labels.position}
           </label>
           <div className="grid grid-cols-3 gap-1">
             {POSITIONS.map(({ value: pos, label }) => (
@@ -263,10 +265,10 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
       <div>
         <div className="flex items-center justify-between mb-1">
           <label className="text-xs font-medium text-foreground-muted">
-            Rotation
+            {labels.rotation}
           </label>
           <span className="text-sm font-semibold text-foreground">
-            {value.rotation}°
+            {value.rotation}&deg;
           </span>
         </div>
         <input
@@ -283,7 +285,7 @@ export function WatermarkOptions({ value, onChange }: WatermarkOptionsProps) {
       {/* Mosaic toggle */}
       <div className="flex items-center justify-between">
         <label className="text-xs font-medium text-foreground-muted">
-          Mosaic (tile)
+          {labels.mosaic}
         </label>
         <button
           type="button"
