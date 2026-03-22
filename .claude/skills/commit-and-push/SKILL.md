@@ -112,15 +112,20 @@ gh pr create \
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 ```
 
-PR URL을 사용자에게 보여줍니다.
+## Step 5: PR 머지 & develop 브랜치 복귀
 
-## Step 5: develop 브랜치로 복귀
-
-PR 생성 후 develop 브랜치로 돌아갑니다:
+PR 생성 후 **즉시 머지하고** develop으로 돌아갑니다. 사용자 확인 없이 바로 진행:
 
 ```bash
+# PR 머지
+gh pr merge PR번호 --merge
+
+# develop으로 복귀 & 동기화
 git checkout develop
+git pull origin develop
 ```
+
+PR URL을 사용자에게 보여줍니다.
 
 ## 주의사항
 
