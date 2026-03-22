@@ -4,7 +4,7 @@ import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { generateAlternates } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
-import { articles } from "@/lib/blog/articles";
+import { getArticlesByApp } from "@/lib/blog/articles";
 import { BookOpen, Lightbulb, GraduationCap } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -59,7 +59,7 @@ export default async function BlogPage({
 
   const dict = await getDictionary(locale as Locale);
 
-  const localeArticles = articles
+  const localeArticles = getArticlesByApp("pdf")
     .filter((a) => a.content[locale])
     .sort(
       (a, b) =>

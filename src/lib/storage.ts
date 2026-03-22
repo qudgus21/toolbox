@@ -70,3 +70,35 @@ export function isFavorite(slug: string): boolean {
 export function reorderFavorites(slugs: string[]): void {
   setItem(FAVORITES_KEY, slugs);
 }
+
+// --- App-scoped Favorites ---
+
+function appFavKey(app: string): string {
+  return `${app}_favorite_tools`;
+}
+
+export function getAppFavorites(app: string): string[] {
+  return getItem<string[]>(appFavKey(app), []);
+}
+
+export function toggleAppFavorite(app: string, slug: string): boolean {
+  const key = appFavKey(app);
+  const favs = getItem<string[]>(key, []);
+  const idx = favs.indexOf(slug);
+  if (idx >= 0) {
+    favs.splice(idx, 1);
+    setItem(key, favs);
+    return false;
+  }
+  favs.unshift(slug);
+  setItem(key, favs);
+  return true;
+}
+
+export function isAppFavorite(app: string, slug: string): boolean {
+  return getItem<string[]>(appFavKey(app), []).includes(slug);
+}
+
+export function reorderAppFavorites(app: string, slugs: string[]): void {
+  setItem(appFavKey(app), slugs);
+}
