@@ -29,9 +29,9 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             const catTools = tools.filter((t) => t.category === cat.key);
             return (
               <div key={cat.key}>
-                <h4 className="text-sm font-semibold text-foreground mb-3">
+                <p className="text-sm font-semibold text-foreground mb-3">
                   {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <CatIcon className="inline-block h-4 w-4 align-middle -mt-0.5 mr-1" />; })() : <>{cat.emoji} </>}{dict.home[categoryLabelKeys[cat.key]]}
-                </h4>
+                </p>
                 <ul className="space-y-1.5">
                   {catTools.map((tool) => (
                     <li key={tool.slug}>
@@ -50,9 +50,9 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <p className="text-sm font-semibold text-foreground mb-3">
               {dict.footer.legal}
-            </h4>
+            </p>
             <ul className="space-y-1.5">
               <li>
                 <Link href={`/pdf/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">

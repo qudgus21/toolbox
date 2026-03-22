@@ -294,6 +294,7 @@ function SortableCard({
             e.stopPropagation();
             onRemove();
           }}
+          aria-label="Remove file"
           className="absolute -top-2 -right-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-background-elevated border border-border-muted text-foreground-subtle opacity-0 shadow-sm transition-opacity duration-150 hover:bg-error-muted hover:text-error hover:border-error/30 group-hover:opacity-100 cursor-pointer"
         >
           <X className="h-3 w-3" />
@@ -386,6 +387,7 @@ function SortableCard({
                 e.stopPropagation();
                 onRotate();
               }}
+              aria-label="Rotate page"
               className="absolute bottom-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/50 text-white opacity-0 shadow-sm transition-opacity duration-150 hover:bg-black/70 group-hover:opacity-100 cursor-pointer"
             >
               <RotateCw className="h-3.5 w-3.5" />

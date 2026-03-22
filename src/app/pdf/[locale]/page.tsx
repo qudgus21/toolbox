@@ -16,7 +16,7 @@ export async function generateMetadata({
   return {
     title: dict.metadata.siteTitle,
     description: dict.metadata.siteDescription,
-    alternates: generateAlternates("", locales, locale),
+    alternates: generateAlternates("", locales, locale, "en", "pdf"),
     openGraph: {
       title: dict.metadata.siteTitle,
       description: dict.metadata.siteDescription,

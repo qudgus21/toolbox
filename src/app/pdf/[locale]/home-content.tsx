@@ -1,32 +1,18 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef, Suspense, lazy } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, LayoutGrid, List, Shield, Trash2, Gift, Cloud, Star } from "lucide-react";
 import Link from "next/link";
 import { Container, ToolCard } from "@/lib/ui";
 import { tools, categories, categoryColors } from "@/lib/pdf/tools";
 import { toolIconMap, categoryIconMap } from "@/lib/pdf/tool-icons";
-import { getFavorites, toggleFavorite, reorderFavorites } from "@/lib/storage";
+import { getFavorites, toggleFavorite } from "@/lib/storage";
 import { useTrack, pdfEvents } from "@/lib/analytics";
-import {
-  DndContext,
-  closestCenter,
-  PointerSensor,
-  useSensor,
-  useSensors,
-  type DragEndEvent,
-} from "@dnd-kit/core";
-import {
-  SortableContext,
-  rectSortingStrategy,
-  verticalListSortingStrategy,
-  useSortable,
-  arrayMove,
-} from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
 import { cn } from "@/lib/utils";
 import type { Dictionary } from "@/lib/i18n";
+
+const FavoritesDnd = lazy(() => import("./favorites-dnd").then(m => ({ default: m.FavoritesDnd })));
 
 type CategoryFilter = "all" | "organize" | "convert" | "edit" | "optimize" | "security";
 
@@ -71,89 +57,7 @@ function FavToast({ message, onDone }: { message: string; onDone: () => void }) 
   );
 }
 
-const FAV_DRAG_HINT_KEY = "fav-drag-hint-seen";
 const FAV_HINT_KEY = "fav-hint-seen";
-
-function SortableFavCard({
-  slug,
-  children,
-  disableTransition,
-  didDragRef,
-  hintText,
-}: {
-  slug: string;
-  children: React.ReactNode;
-  disableTransition: boolean;
-  didDragRef: React.RefObject<boolean>;
-  hintText: string;
-}) {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    isDragging,
-  } = useSortable({ id: slug });
-
-  const [showHint, setShowHint] = useState(false);
-
-  const handleMouseEnter = useCallback(() => {
-    if (typeof window === "undefined") return;
-    if (localStorage.getItem(FAV_DRAG_HINT_KEY)) return;
-    setShowHint(true);
-    localStorage.setItem(FAV_DRAG_HINT_KEY, "1");
-  }, []);
-
-  useEffect(() => {
-    if (!showHint) return;
-    const t = setTimeout(() => setShowHint(false), 2500);
-    return () => clearTimeout(t);
-  }, [showHint]);
-
-  const style: React.CSSProperties = {
-    transform: CSS.Transform.toString(transform),
-    transition:
-      isDragging || disableTransition
-        ? "none"
-        : "transform 300ms cubic-bezier(0.25, 1, 0.5, 1)",
-    zIndex: isDragging ? 50 : "auto",
-  };
-
-  return (
-    <div
-      ref={setNodeRef}
-      style={style}
-      {...attributes}
-      {...listeners}
-      onMouseEnter={handleMouseEnter}
-      onClickCapture={(e) => {
-        if (didDragRef.current) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      }}
-      className={cn(
-        "relative cursor-grab active:cursor-grabbing",
-        isDragging && "scale-105 opacity-80",
-      )}
-    >
-      <AnimatePresence>
-        {showHint && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
-          >
-            {hintText}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {children}
-    </div>
-  );
-}
 
 export function HomeContent({ dict, locale }: HomeContentProps) {
   const track = useTrack("pdf", pdfEvents);
@@ -205,33 +109,6 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     track.favoriteToggle({ tool_slug: slug, action: added ? "add" : "remove" });
   }, [dict.common, track]);
 
-  const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
-  );
-
-  function handleFavDragStart() {
-    didDragRef.current = true;
-  }
-
-  function handleFavDragEnd(event: DragEndEvent) {
-    const { active, over } = event;
-    // 드래그 후 click 차단 — 짧은 시간 후 해제
-    setTimeout(() => { didDragRef.current = false; }, 0);
-
-    if (!over || active.id === over.id || !favSlugs) return;
-    const oldIndex = favSlugs.indexOf(active.id as string);
-    const newIndex = favSlugs.indexOf(over.id as string);
-    if (oldIndex === -1 || newIndex === -1) return;
-    setDisableFavTransition(true);
-    const newOrder = arrayMove(favSlugs, oldIndex, newIndex);
-    setFavSlugs(newOrder);
-    reorderFavorites(newOrder);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setDisableFavTransition(false);
-      });
-    });
-  }
 
   const filteredTools = useMemo(() => {
     let result = activeTab === "all" ? tools : tools.filter((t) => t.category === activeTab);
@@ -411,8 +288,19 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           transition={{ duration: 0.4 }}
         >
           <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            {dict.home.title}{" "}
-            <span className="text-accent">{dict.home.titleAccent}</span>
+            {(() => {
+              const pdfIdx = dict.home.title.indexOf("PDF");
+              if (pdfIdx !== -1) {
+                return (
+                  <>
+                    {dict.home.title.slice(0, pdfIdx)}
+                    <span className="text-accent">PDF</span>
+                    {dict.home.title.slice(pdfIdx + 3)}
+                  </>
+                );
+              }
+              return <>{dict.home.title} <span className="text-accent">{dict.home.titleAccent}</span></>;
+            })()}
           </h1>
           <p className="mt-2 text-base text-foreground-muted max-w-2xl mx-auto">
             {dict.home.description}
@@ -473,12 +361,14 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           <div className="hidden sm:flex items-center gap-1 ml-2 rounded-full border border-border p-0.5">
             <button
               onClick={() => { setViewMode("grid"); track.viewModeToggle({ mode: "grid" }); }}
+              aria-label="Grid view"
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <LayoutGrid className="h-4 w-4" />
             </button>
             <button
               onClick={() => { setViewMode("list"); track.viewModeToggle({ mode: "list" }); }}
+              aria-label="List view"
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "list" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <List className="h-4 w-4" />
@@ -493,29 +383,30 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
               <h2 className="text-sm font-bold text-foreground">{dict.home.favorites}</h2>
             </div>
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCenter}
-              onDragStart={handleFavDragStart}
-              onDragEnd={handleFavDragEnd}
-            >
-              <SortableContext items={favSlugs ?? []} strategy={viewMode === "list" ? verticalListSortingStrategy : rectSortingStrategy}>
-                <div
-                  ref={favGridRef}
-                  className={
-                    viewMode === "grid"
-                      ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-                      : "flex flex-col gap-2"
-                  }
-                >
-                  {favTools.map((tool) => (
-                    <SortableFavCard key={`fav-${tool.slug}`} slug={tool.slug} disableTransition={disableFavTransition} didDragRef={didDragRef} hintText={dict.home.favDragHint}>
-                      {renderToolCard(tool, "fav")}
-                    </SortableFavCard>
-                  ))}
-                </div>
-              </SortableContext>
-            </DndContext>
+            <Suspense fallback={
+              <div
+                ref={favGridRef}
+                className={viewMode === "grid" ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" : "flex flex-col gap-2"}
+              >
+                {favTools.map((tool) => <div key={`fav-fallback-${tool.slug}`}>{renderToolCard(tool, "fav")}</div>)}
+              </div>
+            }>
+              <FavoritesDnd
+                favSlugs={favSlugs ?? []}
+                setFavSlugs={setFavSlugs}
+                viewMode={viewMode}
+                disableFavTransition={disableFavTransition}
+                setDisableFavTransition={setDisableFavTransition}
+                didDragRef={didDragRef}
+                hintText={dict.home.favDragHint}
+                favGridRef={favGridRef}
+              >
+                {(slug) => {
+                  const tool = favTools.find(t => t.slug === slug);
+                  return tool ? renderToolCard(tool, "fav") : null;
+                }}
+              </FavoritesDnd>
+            </Suspense>
           </section>
         )}
 
@@ -572,7 +463,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-muted text-accent">
                   <item.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                <p className="text-sm font-semibold text-foreground">{item.title}</p>
                 <p className="text-xs text-foreground-muted max-w-[200px]">{item.desc}</p>
               </div>
             ))}
