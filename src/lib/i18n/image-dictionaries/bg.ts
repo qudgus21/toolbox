@@ -594,10 +594,10 @@ const bg: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Инструменти за изображения – Онлайн редактор",
+    siteTitle: "ToolPop Image - Безплатни инструменти за изображения",
     siteDescription:
       "Преоразмеряване, конвертиране, премахване на фон и много повече. Безплатни онлайн инструменти за изображения, работещи изцяло в браузъра ви.",
-    toolTitleSuffix: "Онлайн инструменти за изображения",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Блог",

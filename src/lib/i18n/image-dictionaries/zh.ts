@@ -593,10 +593,10 @@ const zh: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "图片工具 - 在线图片编辑器",
+    siteTitle: "ToolPop Image - 免费图片工具",
     siteDescription:
       "调整大小、格式转换、去除背景等。在浏览器中运行的免费在线图片工具。",
-    toolTitleSuffix: "在线图片工具",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "博客",

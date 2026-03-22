@@ -594,10 +594,10 @@ const id: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Alat Gambar - Editor Gambar Online",
+    siteTitle: "ToolPop Image - Alat Gambar Gratis",
     siteDescription:
       "Ubah ukuran, konversi format, terapkan efek, dan lainnya. Alat gambar gratis yang berjalan di browser Anda.",
-    toolTitleSuffix: "Alat Gambar Online",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

@@ -594,10 +594,10 @@ const it: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Strumenti immagine - Editor di immagini online",
+    siteTitle: "ToolPop Image - Strumenti immagine gratuiti",
     siteDescription:
       "Ridimensiona, converti, rimuovi sfondi e altro ancora. Strumenti per immagini gratuiti che funzionano nel tuo browser.",
-    toolTitleSuffix: "Strumenti immagine online",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

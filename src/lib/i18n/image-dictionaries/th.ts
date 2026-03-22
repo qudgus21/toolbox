@@ -594,10 +594,10 @@ const th: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "เครื่องมือแต่งภาพ - แก้ไขภาพออนไลน์",
+    siteTitle: "ToolPop Image - เครื่องมือแต่งภาพฟรี",
     siteDescription:
       "ปรับขนาด แปลงไฟล์ ใส่เอฟเฟกต์ และอื่นๆ เครื่องมือแต่งภาพฟรี ทำงานบนเบราว์เซอร์ของคุณ",
-    toolTitleSuffix: "เครื่องมือแต่งภาพออนไลน์",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "บล็อก",

@@ -594,10 +594,10 @@ const bn: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "ছবি টুল - অনলাইন ছবি সম্পাদক",
+    siteTitle: "ToolPop Image - বিনামূল্যে ছবি টুল",
     siteDescription:
       "আকার পরিবর্তন, রূপান্তর, পটভূমি সরানো এবং আরও অনেক কিছু। বিনামূল্যে অনলাইন ছবি টুল যা সম্পূর্ণরূপে আপনার ব্রাউজারে চলে।",
-    toolTitleSuffix: "অনলাইন ছবি টুল",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "ব্লগ",

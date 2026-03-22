@@ -301,6 +301,11 @@ const ro: ImageDictionary = {
       high: "Ridicată (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Instrumente de imagine gratuite",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default ro;

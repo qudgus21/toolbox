@@ -594,10 +594,10 @@ const hr: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Alati za slike – Online uređivač slika",
+    siteTitle: "ToolPop Image - Besplatni alati za slike",
     siteDescription:
       "Promijenite veličinu, pretvorite, uklonite pozadinu i još mnogo toga. Besplatni online alati za slike koji rade u potpunosti u pregledniku.",
-    toolTitleSuffix: "Online alati za slike",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

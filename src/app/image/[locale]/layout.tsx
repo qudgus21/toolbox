@@ -12,6 +12,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { NavMenu } from "./nav-menu";
 import { GoogleAnalytics } from "./google-analytics";
 import { GoogleAdSense } from "./google-adsense";
+import { LayoutScripts } from "./layout-scripts";
 
 const categoryLabelKeys: Record<string, "categoryEdit" | "categoryConvert" | "categoryEffects" | "categoryCompose" | "categoryOptimize" | "categoryGenerate"> = {
   edit: "categoryEdit",
@@ -87,29 +88,18 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(dir)}`,
-        }}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`,
+      <LayoutScripts
+        locale={locale}
+        dir={dir}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "ToolPop Image",
+          url: "https://toolpop.org/image",
+          logo: "https://toolpop.org/image/favicon.svg",
         }}
       />
       <meta name="theme-color" content="#6366f1" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "ToolPop Image",
-            url: "https://toolpop.org/image",
-            logo: "https://toolpop.org/image/favicon.svg",
-          }),
-        }}
-      />
       <GoogleAnalytics />
       <GoogleAdSense />
       <Header

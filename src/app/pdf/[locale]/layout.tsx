@@ -10,6 +10,7 @@ import { ThemeToggle } from "./theme-toggle";
 import { NavMenu } from "./nav-menu";
 import { GoogleAnalytics } from "./google-analytics";
 import { GoogleAdSense } from "./google-adsense";
+import { LayoutScripts } from "./layout-scripts";
 
 const categoryLabelKeys: Record<string, "categoryOrganize" | "categoryConvert" | "categoryEdit" | "categoryOptimize" | "categorySecurity"> = {
   organize: "categoryOrganize",
@@ -84,34 +85,18 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(dir)}`,
-        }}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`,
+      <LayoutScripts
+        locale={locale}
+        dir={dir}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "ToolPop PDF",
+          url: "https://toolpop.org/pdf",
+          logo: "https://toolpop.org/pdf/favicon.svg",
         }}
       />
       <meta name="theme-color" content="#ef4444" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/pdf/sw.js")})}`,
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "ToolPop PDF",
-            url: "https://toolpop.org/pdf",
-            logo: "https://toolpop.org/pdf/favicon.svg",
-          }),
-        }}
-      />
       <GoogleAnalytics />
       <GoogleAdSense />
       <Header

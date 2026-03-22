@@ -594,10 +594,10 @@ const mt: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Għodod tal-Immaġni - Editur tal-Immaġni Online",
+    siteTitle: "ToolPop Image - Għodod tal-immaġni b'xejn",
     siteDescription:
       "Ibdel id-daqs, ikkonverti, neħħi l-isfond, u aktar. Għodod tal-immaġni online b'xejn li jaħdmu kompletament fil-browser tiegħek.",
-    toolTitleSuffix: "Għodod tal-Immaġni Online",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

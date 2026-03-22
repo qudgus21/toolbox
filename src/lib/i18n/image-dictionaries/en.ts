@@ -608,10 +608,10 @@ const en: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Image Tools - Online Image Editor",
+    siteTitle: "ToolPop Image - Free Online Image Tools",
     siteDescription:
       "Resize, convert, remove backgrounds, and more. Free online image tools that run entirely in your browser.",
-    toolTitleSuffix: "Online Image Tools",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

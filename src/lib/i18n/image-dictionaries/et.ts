@@ -301,6 +301,11 @@ const et: ImageDictionary = {
       high: "Korge (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Tasuta pilditööriistad",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default et;

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState, useMemo, useCallback } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ShieldCheck } from "lucide-react";
 import { ToolPageLayout, FileUploadZone } from "@/lib/ui";
 import { useToolProcessor } from "@/lib/image/use-tool-processor";
 import { hasProcessor } from "@/lib/image/processor-registry";
@@ -343,7 +345,7 @@ export function ToolPageClient({
     >
       {/* Idle -- no-upload tools show options directly */}
       {stage === "idle" && isNoUploadTool && (
-        <div className="space-y-4">
+        <div className="space-y-4 pb-24">
           <div className="rounded-lg border border-border bg-background p-4">
             <h3 className="text-sm font-semibold text-foreground mb-4">
               {labels.options}
@@ -365,15 +367,6 @@ export function ToolPageClient({
               <QrCodeOptions value={qrCodeOpts} onChange={setQrCodeOpts} labels={toolLabels.qrCode} />
             )}
           </div>
-
-          <div className="flex justify-center">
-            <button
-              onClick={handleProcess}
-              className="cursor-pointer rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent-hover transition-colors"
-            >
-              {labels.process}
-            </button>
-          </div>
         </div>
       )}
 
@@ -390,8 +383,14 @@ export function ToolPageClient({
             multiple={multiFile !== false}
             onFiles={addFiles}
             title={labels.dropFiles}
-            description={labels.acceptedFormats}
+            description={`${labels.acceptedFormats}: ${acceptedTypes}`}
           />
+          {labels.privacyBadge && (
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs text-foreground-subtle">
+              <ShieldCheck className="h-3.5 w-3.5 text-success" />
+              <span>{labels.privacyBadge}</span>
+            </div>
+          )}
         </>
       )}
 
@@ -404,12 +403,11 @@ export function ToolPageClient({
           multiFile={multiFile}
           addFiles={addFiles}
           removeFile={removeFile}
-          onProcess={handleProcess}
         />
       )}
 
       {stage === "loaded" && needsEditorLayout && (
-        <div className="space-y-4">
+        <div className="space-y-4 pb-24">
           {/* File info bar */}
           <div className="flex items-center justify-between rounded-lg border border-border bg-background px-4 py-2">
             <span className="text-sm text-foreground truncate">
@@ -751,14 +749,29 @@ export function ToolPageClient({
             </div>
           )}
 
-          {/* Process button */}
-          <div className="flex justify-center">
+        </div>
+      )}
+
+      {/* Fixed bottom action bar */}
+      {(stage === "loaded" || (stage === "idle" && isNoUploadTool)) && (
+        <div
+          className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3"
+          role="toolbar"
+          aria-label="Actions"
+        >
+          <div className="mx-auto max-w-md">
             <button
+              type="button"
               onClick={handleProcess}
               disabled={dimLoading}
-              className="cursor-pointer rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group w-full cursor-pointer overflow-hidden rounded-xl bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-md hover:shadow-xl hover:brightness-110 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 transition-all duration-200"
             >
-              {labels.process}
+              <span className="flex items-center justify-center gap-2">
+                {labels.process}
+                <svg className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </button>
           </div>
         </div>
@@ -773,7 +786,7 @@ export function ToolPageClient({
       {stage === "done" && result && (
         <ResultCard
           result={result}
-          onDownload={() => download()}
+          onDownload={(filename) => download(filename)}
           onReset={reset}
           labels={labels}
         />
@@ -802,7 +815,6 @@ function LoadedSimple({
   multiFile,
   addFiles,
   removeFile,
-  onProcess,
 }: {
   files: File[];
   labels: ImageDictionary["common"];
@@ -810,10 +822,9 @@ function LoadedSimple({
   multiFile?: boolean;
   addFiles: (f: File[]) => void;
   removeFile: (i: number) => void;
-  onProcess: () => void;
 }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-24">
       <div className="rounded-lg border border-border bg-background p-4">
         <p className="text-sm font-medium text-foreground mb-3">
           {files.length} {labels.filesSelected}
@@ -843,15 +854,6 @@ function LoadedSimple({
         title={labels.addMoreFiles}
         className="min-h-[80px]"
       />
-
-      <div className="flex justify-center">
-        <button
-          onClick={onProcess}
-          className="cursor-pointer rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent-hover transition-colors"
-        >
-          {labels.process}
-        </button>
-      </div>
     </div>
   );
 }

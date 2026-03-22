@@ -594,10 +594,10 @@ const mr: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "प्रतिमा साधने - ऑनलाइन प्रतिमा संपादक",
+    siteTitle: "ToolPop Image - विनामूल्य प्रतिमा साधने",
     siteDescription:
       "आकार बदला, रूपांतरित करा, पार्श्वभूमी काढा आणि बरेच काही. मोफत ऑनलाइन प्रतिमा साधने जी पूर्णपणे तुमच्या ब्राउझरमध्ये चालतात.",
-    toolTitleSuffix: "ऑनलाइन प्रतिमा साधने",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "ब्लॉग",

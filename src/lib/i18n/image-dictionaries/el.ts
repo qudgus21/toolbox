@@ -301,6 +301,11 @@ const el: ImageDictionary = {
       high: "Υψηλή (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Δωρεάν εργαλεία εικόνας",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default el;

@@ -593,10 +593,10 @@ const ja: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "画像ツール - オンライン画像エディター",
+    siteTitle: "ToolPop Image - 無料画像ツール",
     siteDescription:
       "リサイズ、フォーマット変換、背景削除など。ブラウザで完結する無料の画像ツール。",
-    toolTitleSuffix: "オンライン画像ツール",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "ブログ",

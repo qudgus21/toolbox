@@ -594,10 +594,10 @@ const ms: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Alat Imej - Penyunting Imej Dalam Talian",
+    siteTitle: "ToolPop Image - Alat Imej Percuma",
     siteDescription:
       "Ubah saiz, tukar format, buang latar belakang, dan banyak lagi. Alat imej dalam talian percuma yang berjalan sepenuhnya dalam pelayar anda.",
-    toolTitleSuffix: "Alat Imej Dalam Talian",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

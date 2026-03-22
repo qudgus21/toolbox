@@ -593,10 +593,10 @@ const he: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "כלי תמונה - עורך תמונות מקוון",
+    siteTitle: "ToolPop Image - כלי תמונה חינמיים",
     siteDescription:
       "שינוי גודל, המרה, הסרת רקע ועוד. כלי תמונה חינמיים שרצים לגמרי בדפדפן.",
-    toolTitleSuffix: "כלי תמונה מקוונים",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "בלוג",

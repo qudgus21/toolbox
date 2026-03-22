@@ -594,10 +594,10 @@ const da: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Billedværktøjer – Online billedredigering",
+    siteTitle: "ToolPop Image - Gratis billedværktøjer",
     siteDescription:
       "Tilpas størrelse, konvertér, fjern baggrunde og meget mere. Gratis online billedværktøjer der kører helt i din browser.",
-    toolTitleSuffix: "Online billedværktøjer",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",

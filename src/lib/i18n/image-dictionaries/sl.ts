@@ -301,6 +301,11 @@ const sl: ImageDictionary = {
       high: "Visoka (30%)",
     },
   },
+  metadata: {
+    siteTitle: "ToolPop Image - Brezplačna orodja za slike",
+    siteDescription: "",
+    toolTitleSuffix: "- ToolPop Image",
+  },
 };
 
 export default sl;

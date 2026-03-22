@@ -594,10 +594,10 @@ const sk: ImageDictionary = {
     },
   },
   metadata: {
-    siteTitle: "Nástroje na obrázky – Online editor obrázkov",
+    siteTitle: "ToolPop Image - Bezplatné nástroje na obrázky",
     siteDescription:
       "Zmena veľkosti, konverzia, odstránenie pozadia a oveľa viac. Bezplatné online nástroje na obrázky, ktoré bežia celé vo vašom prehliadači.",
-    toolTitleSuffix: "Online nástroje na obrázky",
+    toolTitleSuffix: "- ToolPop Image",
   },
   blog: {
     title: "Blog",
