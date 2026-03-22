@@ -1,7 +1,0 @@
-{
-  "extends": "@toolbox/config/tsconfig/library",
-  "compilerOptions": {
-    "rootDir": "src"
-  },
-  "include": ["src"]
-}

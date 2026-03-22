@@ -2,7 +2,7 @@
 name: tool-builder
 description: 경쟁 서비스 분석 → 도구 페이지 설계 → 구현까지. 특정 도구(예- PDF 병합, 이미지 압축)를 경쟁사 대비 차별화된 UX로 구현하는 스킬.
 disable-model-invocation: false
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash(pnpm build), Bash(pnpm dev), Bash(turbo build), WebSearch, WebFetch, Task
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash(pnpm build), Bash(pnpm dev), Bash(pnpm build), WebSearch, WebFetch, Task
 user-invocable: true
 ---
 
@@ -17,9 +17,9 @@ user-invocable: true
 
 ## 프로젝트 컨텍스트
 
-- **모노레포**: Turborepo + pnpm workspace
-- **앱 구조**: `apps/{domain}/app/[locale]/{tool}/page.tsx`
-- **공유 패키지**: `packages/ui`, `packages/i18n`, `packages/seo`, `packages/ads`, `packages/storage`, `packages/wasm`, `packages/hooks`
+- **구조**: 단일 Next.js 프로젝트
+- **앱 라우트**: `src/app/{domain}/[locale]/(tools)/{tool}/page.tsx`
+- **공유 라이브러리**: `src/lib/ui/`, `src/lib/i18n/`, `src/lib/seo/`, `src/lib/analytics/`, `src/lib/storage.ts`
 - **파일 처리**: 100% 클라이언트사이드 (WASM) — 서버 전송 없음
 - **i18n**: `next-intl` + `[locale]` 동적 세그먼트 (30개+ 언어)
 - **수익**: AdSense (도구 영역에 광고 침범 금지)
@@ -220,7 +220,7 @@ WebSearch: "{경쟁사이름} {도구명}" (구체적 분석)
 ### Step 5-1: 파일 구조 생성
 
 ```
-apps/{domain}/
+src/app/{domain}/
 ├── app/[locale]/{tool}/
 │   ├── page.tsx              # 도구 페이지 (SSR 메타데이터)
 │   └── _components/          # 도구 전용 컴포넌트
@@ -248,27 +248,27 @@ apps/{domain}/
 5. **다크모드**: `dark:` 프리픽스로 다크모드 완벽 지원
 6. **파일 처리**: 100% 클라이언트사이드 (WASM/Web Worker)
 7. **에러 처리**: 파일 검증, 처리 실패, 브라우저 미지원 대응
-8. **설정 저장**: `packages/storage`로 마지막 설정값 기억
+8. **설정 저장**: `src/lib/storage.ts`로 마지막 설정값 기억
 9. **광고 배치**: 도구 영역 외부에 적절히 배치
 10. **모션**: Framer Motion으로 자연스러운 전환
 
-**공유 패키지 활용:**
+**공유 라이브러리 활용:**
 
 ```typescript
-// packages/ui
-import { Button, FileUploader, ProgressBar, ToolCard } from '@toolbox/ui';
+// @/lib/ui
+import { Button, FileUploader, ProgressBar, ToolCard } from '@/lib/ui';
 
-// packages/i18n
+// @/lib/i18n
 import { useTranslations } from 'next-intl';
 
-// packages/seo
-import { generateToolMetadata, ToolJsonLd } from '@toolbox/seo';
+// @/lib/seo
+import { generateToolMetadata, ToolJsonLd } from '@/lib/seo';
 
-// packages/storage
-import { useToolSettings } from '@toolbox/storage';
+// @/lib/storage
+import { useToolSettings } from '@/lib/storage';
 
-// packages/ads
-import { AdBanner, SideAd } from '@toolbox/ads';
+// @/lib/ads
+import { AdBanner, SideAd } from '@/lib/ads';
 ```
 
 ### Step 5-3: i18n 번역 파일 생성
@@ -276,7 +276,7 @@ import { AdBanner, SideAd } from '@toolbox/ads';
 도구별 번역 파일을 최소 5개 언어로 생성:
 
 ```
-packages/i18n/locales/
+src/lib/i18n/locales/
 ├── en/{domain}-{tool}.json
 ├── ko/{domain}-{tool}.json
 ├── ja/{domain}-{tool}.json
@@ -338,7 +338,7 @@ JSON-LD:
 ### Step 5-5: 빌드 검증
 
 ```bash
-pnpm --filter {앱이름} build
+pnpm build
 ```
 
 빌드 에러 발생 시 즉시 수정.
@@ -351,9 +351,9 @@ pnpm --filter {앱이름} build
 ### 생성된 파일
 | 파일 | 설명 |
 |------|------|
-| `apps/{domain}/app/[locale]/{tool}/page.tsx` | 도구 페이지 |
-| `apps/{domain}/app/[locale]/{tool}/_components/...` | 도구 컴포넌트 |
-| `packages/i18n/locales/en/{domain}-{tool}.json` | 영어 번역 |
+| `src/app/{domain}/[locale]/(tools)/{tool}/page.tsx` | 도구 페이지 |
+| `src/app/{domain}/[locale]/(tools)/{tool}/_components/...` | 도구 컴포넌트 |
+| `src/lib/i18n/locales/en/{domain}-{tool}.json` | 영어 번역 |
 | ... | ... |
 
 ### 구현된 기능
@@ -370,7 +370,7 @@ pnpm --filter {앱이름} build
 
 ### 빌드: 성공
 
-`pnpm --filter {앱이름} dev`로 확인해보세요.
+`pnpm dev`로 확인해보세요.
 다른 도구도 구현할까요?
 ```
 
@@ -412,7 +412,7 @@ pnpm --filter {앱이름} build
 
 구현이 완료된 도구에 대해 다음을 확인한다:
 
-1. `packages/analytics/src/events/{domain}.ts`에 해당 도구의 이벤트가 정의되어 있는가?
+1. `src/lib/analytics/events/{domain}.ts`에 해당 도구의 이벤트가 정의되어 있는가?
 2. 최소 필수 이벤트가 포함되어 있는가?
    - `file_upload` — 파일 업로드 시 (use-tool-processor.ts의 addFiles)
    - `process_click` — 처리 버튼 클릭 (tool-page-client.tsx)

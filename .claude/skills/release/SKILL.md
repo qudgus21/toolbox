@@ -35,7 +35,7 @@ git log origin/main..origin/develop --oneline --no-merges
 
 - 현재 버전: `vX.Y.Z` (태그가 없으면 `v0.0.0`으로 간주)
 - 총 커밋 수
-- 영향 범위 (apps/pdf, packages/ui 등)
+- 영향 범위 (src/app/pdf, src/lib 등)
 - 주요 변경사항 요약
 
 그 후 **사용자에게 버전 타입을 선택하도록 질문합니다:**
@@ -73,9 +73,9 @@ gh pr create \
 - [i18n] 일본어 번역 추가
 
 ### 영향 범위
-- apps/pdf
-- packages/ui
-- packages/i18n
+- src/app/pdf
+- src/lib/ui
+- src/lib/i18n
 
 ### 배포 전 확인
 - [ ] Vercel Preview 정상 동작 확인

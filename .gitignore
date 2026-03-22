@@ -4,11 +4,9 @@ node_modules/
 
 # Build outputs
 .next/
+.turbo/
 dist/
 out/
-
-# Turbo
-.turbo/
 
 # Environment
 .env
