@@ -21,7 +21,7 @@ interface SiteFooterProps {
 
 export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps) {
   return (
-    <footer className="border-t border-border bg-background-subtle">
+    <footer className="border-t border-border bg-background-subtle" style={{ contentVisibility: "auto", containIntrinsicSize: "0 300px" }}>
       <Container size="full" className="max-w-screen-2xl py-12">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
           {/* Tool categories */}
@@ -29,9 +29,9 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             const catTools = tools.filter((t) => t.category === cat.key);
             return (
               <div key={cat.key}>
-                <h4 className="text-sm font-semibold text-foreground mb-3">
+                <h3 className="text-sm font-semibold text-foreground mb-3">
                   {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <CatIcon className="inline-block h-4 w-4 align-middle -mt-0.5 mr-1" />; })() : <>{cat.emoji} </>}{dict.home[categoryLabelKeys[cat.key]]}
-                </h4>
+                </h3>
                 <ul className="space-y-1.5">
                   {catTools.map((tool) => (
                     <li key={tool.slug}>
@@ -50,9 +50,9 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h3 className="text-sm font-semibold text-foreground mb-3">
               {dict.footer.legal}
-            </h4>
+            </h3>
             <ul className="space-y-1.5">
               <li>
                 <Link href={`/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">

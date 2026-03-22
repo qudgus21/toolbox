@@ -34,13 +34,14 @@ Phase 8: 최종 리포트 + 지식 저장
 ## Phase 0: 지식 로드
 
 1. `memory/skills/lighthouse-lessons.md` 읽기 (없으면 skip)
-2. **앱 동적 탐지**: `apps/` 하위 디렉토리 중 `src/app/` 또는 `app/`이 있는 앱만 활성으로 인식
+2. `.env.local`에서 `PSI_API_KEY` 읽기 (PSI API 호출 시 필수)
+3. **앱 동적 탐지**: `apps/` 하위 디렉토리 중 `src/app/` 또는 `app/`이 있는 앱만 활성으로 인식
 3. 각 활성 앱에서:
    - `.vercel/project.json` → `projectId`, `orgId`
    - `next.config.ts` → `basePath`
    - `src/lib/tools.ts` (또는 유사 파일) → slug 목록 (`comingSoon: true` 제외). 없으면 홈만 측정
 4. `mcp__vercel__list_projects`로 앱별 **실제 운영 도메인** 조회
-5. `git describe --tags --abbrev=0`로 현재 버전 확인
+5. `git tag --sort=-v:refname | head -1`로 최신 버전 태그 확인 (반드시 `git tag` 목록에서 가장 높은 버전을 사용할 것. `git describe`는 태그가 현재 커밋에 없으면 부정확할 수 있음)
 
 **URL 구성 규칙:**
 ```
@@ -84,6 +85,8 @@ Phase 8: 최종 리포트 + 지식 저장
 
 ### PSI API 호출
 
+**API Key**: `.env.local`에서 `PSI_API_KEY`를 읽어서 반드시 `&key={PSI_API_KEY}`를 포함할 것. 키 없이 호출하면 429 Rate Limit에 걸림.
+
 각 URL에 대해 모바일/데스크탑 각각 WebFetch:
 
 ```
@@ -91,6 +94,7 @@ https://www.googleapis.com/pagespeedonline/v5/runPagespeed
   ?url={encodedURL}
   &category=performance&category=accessibility&category=seo&category=best-practices
   &strategy=mobile (또는 desktop)
+  &key={PSI_API_KEY}
 ```
 
 ### 응답 파싱
@@ -240,7 +244,7 @@ https://www.googleapis.com/pagespeedonline/v5/runPagespeed
 
 ### Step 5-1: patch 버전 범프
 
-`git describe --tags --abbrev=0`로 현재 태그 확인 → patch +1 → root `package.json` version 업데이트.
+`git tag --sort=-v:refname | head -1`로 최신 버전 태그 확인 → patch +1 → root `package.json` version 업데이트. **주의: 반드시 기존 태그 목록에서 가장 높은 semver 버전을 기준으로 patch를 올릴 것.**
 
 ### Step 5-2: commit & push
 

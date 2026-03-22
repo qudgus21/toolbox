@@ -559,6 +559,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         {/* Trust Section */}
         <motion.section
           className="mt-16 mb-4"
+          style={{ contentVisibility: "auto", containIntrinsicSize: "0 200px" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
