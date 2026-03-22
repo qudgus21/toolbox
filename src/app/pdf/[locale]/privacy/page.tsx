@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
+import { generateAlternates } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
 
@@ -20,12 +21,7 @@ export async function generateMetadata({
   return {
     title,
     description: dict.privacy.intro,
-    alternates: {
-      canonical: `/pdf/${locale}/privacy`,
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `/${l}/privacy`]),
-      ),
-    },
+    alternates: generateAlternates("privacy", locales, locale, "en", "pdf"),
     openGraph: {
       title,
       description: dict.privacy.intro,

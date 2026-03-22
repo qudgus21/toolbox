@@ -201,8 +201,8 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             <button
               onClick={addName}
               disabled={!userName.trim()}
-              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
-              title={labels.addToDocument}
+              className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              aria-label={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
             </button>
@@ -226,8 +226,8 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             </div>
             <button
               onClick={addDate}
-              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
-              title={labels.addToDocument}
+              className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              aria-label={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
             </button>
@@ -259,8 +259,8 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
             <button
               onClick={addText}
               disabled={!customText.trim()}
-              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
-              title={labels.addToDocument}
+              className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 disabled:cursor-default disabled:opacity-30 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              aria-label={labels.addToDocument}
             >
               <Plus className="h-4 w-4" />
             </button>
@@ -370,14 +370,14 @@ function FieldCard({
           {preview && (
             <button
               onClick={onEdit}
-              className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+              className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
             >
               <Pencil className="h-3.5 w-3.5" />
             </button>
           )}
           <button
             onClick={onAdd}
-            className="cursor-pointer rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+            className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
             aria-label="add to document"
           >
             <Plus className="h-4 w-4" />
@@ -397,7 +397,7 @@ function FieldCard({
       ) : (
         <button
           onClick={onEdit}
-          className="cursor-pointer flex w-full items-center justify-center rounded border-2 border-dashed border-zinc-200 py-4 text-sm text-zinc-400 transition-colors hover:border-red-300 hover:text-red-500 dark:border-zinc-700 dark:hover:border-red-600 dark:hover:text-red-400"
+          className="cursor-pointer flex w-full items-center justify-center rounded border-2 border-dashed border-zinc-200 py-4 text-sm text-zinc-500 transition-colors hover:border-red-300 hover:text-red-500 dark:text-zinc-400 dark:border-zinc-700 dark:hover:border-red-600 dark:hover:text-red-400"
         >
           <span>{emptyText} — {emptyAction}</span>
         </button>
