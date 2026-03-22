@@ -278,35 +278,8 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   };
 
   return (
-    <main className="py-8">
+    <main className="pb-8">
       <Container size="full" className="max-w-screen-2xl">
-        {/* Hero */}
-        <motion.div
-          className="text-center mb-6"
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            {(() => {
-              const pdfIdx = dict.home.title.indexOf("PDF");
-              if (pdfIdx !== -1) {
-                return (
-                  <>
-                    {dict.home.title.slice(0, pdfIdx)}
-                    <span className="text-accent">PDF</span>
-                    {dict.home.title.slice(pdfIdx + 3)}
-                  </>
-                );
-              }
-              return <>{dict.home.title} <span className="text-accent">{dict.home.titleAccent}</span></>;
-            })()}
-          </h1>
-          <p className="mt-2 text-base text-foreground-muted max-w-2xl mx-auto">
-            {dict.home.description}
-          </p>
-        </motion.div>
-
         {/* Search Bar */}
         <motion.div
           className="max-w-md mx-auto mb-5"
