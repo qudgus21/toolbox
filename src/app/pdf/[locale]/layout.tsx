@@ -9,6 +9,7 @@ import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
 import { NavMenu } from "./nav-menu";
 import { GoogleAnalytics } from "./google-analytics";
+import { GoogleAdSense } from "./google-adsense";
 
 const categoryLabelKeys: Record<string, "categoryOrganize" | "categoryConvert" | "categoryEdit" | "categoryOptimize" | "categorySecurity"> = {
   organize: "categoryOrganize",
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
         }}
       />
       <GoogleAnalytics />
+      <GoogleAdSense />
       <Header
         logo={
           <Link href={`/pdf/${locale}`} className="flex items-center gap-2 text-lg font-bold text-foreground">
