@@ -111,8 +111,8 @@ export function ProtectOptions({ onChange, labels }: ProtectOptionsProps) {
       permissions,
       _valid: pwValid,
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    onChange,
     userPassword,
     confirmPassword,
     printing,

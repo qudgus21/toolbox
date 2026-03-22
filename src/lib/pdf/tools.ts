@@ -526,6 +526,8 @@ export const categories = [
   { key: "security" as const, label: "Security", emoji: "🛡️" },
 ];
 
+const toolsBySlug = new Map(tools.map((t) => [t.slug, t]));
+
 export function getToolBySlug(slug: string) {
-  return tools.find((t) => t.slug === slug);
+  return toolsBySlug.get(slug);
 }

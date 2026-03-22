@@ -72,6 +72,7 @@ async function decodeTiffToPng(bytes: Uint8Array): Promise<Uint8Array> {
 
   return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => {
+      canvas.width = 0; canvas.height = 0;
       if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
       blob.arrayBuffer().then(
         (b) => resolve(new Uint8Array(b)),
@@ -104,6 +105,7 @@ function convertToPngViaCanvas(bytes: Uint8Array, mimeType: string): Promise<Uin
       ctx.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
       canvas.toBlob((pngBlob) => {
+        canvas.width = 0; canvas.height = 0;
         if (!pngBlob) { reject(new Error("Canvas toBlob failed")); return; }
         pngBlob.arrayBuffer().then(
           (buf) => resolve(new Uint8Array(buf)),

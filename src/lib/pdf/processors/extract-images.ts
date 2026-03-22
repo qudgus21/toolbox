@@ -255,7 +255,11 @@ async function flatImageToBlob(
 
     return new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(
-        (b) => (b ? resolve(b) : reject(new Error("toBlob failed"))),
+        (b) => {
+          canvas.width = 0;
+          canvas.height = 0;
+          b ? resolve(b) : reject(new Error("toBlob failed"));
+        },
         "image/png",
       );
     });

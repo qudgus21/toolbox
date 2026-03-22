@@ -78,21 +78,32 @@ export const SignPageCanvas = memo(function SignPageCanvas({
     );
     if (needLoad.length === 0) return;
 
+    let cancelled = false;
     const loaded: Record<string, HTMLImageElement> = {};
     let count = 0;
+    const images: HTMLImageElement[] = [];
 
     for (const el of needLoad) {
       if (el.type !== "signature" && el.type !== "initials") continue;
       const img = new window.Image();
+      images.push(img);
       img.src = el.imageDataUrl;
-      img.onload = () => {
-        loaded[el.id] = img;
+      const onDone = () => {
         count++;
-        if (count === needLoad.length) {
+        if (count === needLoad.length && !cancelled) {
           setElImages((prev) => ({ ...prev, ...loaded }));
         }
       };
+      img.onload = () => {
+        loaded[el.id] = img;
+        onDone();
+      };
+      img.onerror = onDone;
     }
+    return () => {
+      cancelled = true;
+      for (const img of images) { img.onload = null; img.onerror = null; }
+    };
   }, [elements, elImages]);
 
   /* ── Attach Transformer to selected node ───────────────── */

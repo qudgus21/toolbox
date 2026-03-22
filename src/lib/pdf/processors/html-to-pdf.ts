@@ -40,7 +40,11 @@ const MM_TO_PT = 2.83465;
 /** PDF points to CSS pixels (96dpi) — 1pt = 96/72 px */
 const PT_TO_PX = 96 / 72;
 
-/** Strip scripts, event handlers, and dangerous elements from HTML */
+/**
+ * Best-effort strip of scripts, event handlers, and dangerous elements.
+ * NOTE: Regex-based sanitization is bypassable — the real security boundary
+ * is the iframe sandbox (no allow-scripts) in renderHtmlToCanvas.
+ */
 function sanitizeHtml(html: string): string {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
@@ -168,6 +172,7 @@ async function addHtmlPagesToPdf(
       chunk.toBlob((b) => (b ? resolve(b) : reject(new Error("toBlob failed"))), "image/png");
     });
     const pngBytes = new Uint8Array(await pngBlob.arrayBuffer());
+    chunk.width = 0; chunk.height = 0;
     const embedded = await pdfDoc.embedPng(pngBytes);
 
     // Draw on PDF page
@@ -252,6 +257,7 @@ const htmlToPdf: ProcessorFn = async (files, options, onProgress) => {
       const gapPx = Math.round(fileGapMm * MM_TO_PT * PT_TO_PX * 2); // *2 for html2canvas 2x scale
       const combined = stitchCanvases(canvases, gapPx);
       totalPageCount = await addHtmlPagesToPdf(pdfDoc, combined, pageSize, orientation, marginMm);
+      combined.width = 0; combined.height = 0;
     } else {
       // Each file starts on a new page
       totalPageCount = 0;
@@ -259,6 +265,7 @@ const htmlToPdf: ProcessorFn = async (files, options, onProgress) => {
         totalPageCount += await addHtmlPagesToPdf(pdfDoc, canvas, pageSize, orientation, marginMm);
       }
     }
+    for (const c of canvases) { c.width = 0; c.height = 0; }
 
     onProgress(90);
     const pdfBytes = await pdfDoc.save();
@@ -291,6 +298,7 @@ const htmlToPdf: ProcessorFn = async (files, options, onProgress) => {
 
     const pdfDoc = await PDFDocument.create();
     const pages = await addHtmlPagesToPdf(pdfDoc, canvas, pageSize, orientation, marginMm);
+    canvas.width = 0; canvas.height = 0;
     totalPageCount += pages;
 
     const pdfBytes = await pdfDoc.save();

@@ -88,9 +88,12 @@ async function decodeToObjectUrl(file: File): Promise<string> {
   const imgData = ctx.createImageData(w, h);
   imgData.data.set(new Uint8Array(rgba.buffer));
   ctx.putImageData(imgData, 0, 0);
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     canvas.toBlob((blob) => {
-      resolve(URL.createObjectURL(blob!));
+      canvas.width = 0;
+      canvas.height = 0;
+      if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
+      resolve(URL.createObjectURL(blob));
     }, "image/png");
   });
 }
@@ -103,10 +106,19 @@ function ImageThumbnail({ file, className }: { file: File; className?: string })
   useEffect(() => {
     if (!needsDecode) return;
     let revoked = false;
+    let createdUrl: string | null = null;
     decodeToObjectUrl(file).then((url) => {
-      if (!revoked) setDecodedUrl(url);
+      if (!revoked) {
+        createdUrl = url;
+        setDecodedUrl(url);
+      } else {
+        URL.revokeObjectURL(url);
+      }
     }).catch(() => {/* fail silently — show nothing */});
-    return () => { revoked = true; };
+    return () => {
+      revoked = true;
+      if (createdUrl) URL.revokeObjectURL(createdUrl);
+    };
   }, [file, needsDecode]);
 
   const url = nativeUrl ?? decodedUrl;

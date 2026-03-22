@@ -4,9 +4,9 @@ import watermarkPdf, {
   calculateWatermarkPosition,
   parseRange,
   getTargetPageIndices,
-  hexToRgb,
   hasNonLatinChars,
 } from "../watermark";
+import { hexToRgb } from "../color-utils";
 import {
   createMarkedPdf,
   resultToPdf,

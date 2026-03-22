@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ToolState, ProcessingResult } from "./types";
+import type { ToolState } from "./types";
 import { getProcessor } from "./processor-registry";
 import { sendEvent } from "@/lib/analytics";
 
@@ -18,6 +18,8 @@ const INITIAL_STATE: ToolState = {
 export function useToolProcessor(slug: string) {
   const [state, setState] = useState<ToolState>(INITIAL_STATE);
   const resultUrlRef = useRef<string | null>(null);
+  const filesRef = useRef<File[]>(state.files);
+  filesRef.current = state.files;
 
   // 언마운트 시 Object URL 해제 (메모리 누수 방지)
   useEffect(() => {
@@ -115,9 +117,10 @@ export function useToolProcessor(slug: string) {
           throw new Error(`Processor not found: ${slug}`);
         }
 
+        const currentFiles = filesRef.current;
         const startTime = performance.now();
         const result = await processor(
-          state.files,
+          currentFiles,
           options,
           (progress) => setState((prev) => ({ ...prev, progress })),
         );
@@ -146,7 +149,7 @@ export function useToolProcessor(slug: string) {
         }));
       }
     },
-    [slug, state.files],
+    [slug],
   );
 
   const download = useCallback((customFilename?: string) => {

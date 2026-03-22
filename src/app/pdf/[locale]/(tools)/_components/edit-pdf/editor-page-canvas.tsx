@@ -72,13 +72,14 @@ export function PageCanvas({
   /* ── Load page image ──────────────────────────────────── */
 
   useEffect(() => {
+    if (!isVisible) return;
     const img = new window.Image();
     img.onload = () => setPageImg(img);
     img.src = page.imageUrl;
     return () => {
       img.onload = null;
     };
-  }, [page.imageUrl]);
+  }, [page.imageUrl, isVisible]);
 
   /* ── Transformer ──────────────────────────────────────── */
 
@@ -886,9 +887,11 @@ function ImageNode({
   const [img, setImg] = useState<HTMLImageElement | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     const image = new window.Image();
-    image.onload = () => setImg(image);
+    image.onload = () => { if (!cancelled) setImg(image); };
     image.src = el.dataUrl;
+    return () => { cancelled = true; image.onload = null; };
   }, [el.dataUrl]);
 
   if (!img) return null;

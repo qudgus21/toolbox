@@ -93,6 +93,8 @@ const pdfToJpg: ProcessorFn = async (files, options, onProgress) => {
     onProgress(80);
 
     const blob = await canvasToJpegBlob(canvas, config.jpegQuality);
+    canvas.width = 0;
+    canvas.height = 0;
     doc.destroy();
     onProgress(100);
 
@@ -136,6 +138,8 @@ const pdfToJpg: ProcessorFn = async (files, options, onProgress) => {
       ).promise;
 
       const blob = await canvasToJpegBlob(canvas, config.jpegQuality);
+      canvas.width = 0;
+      canvas.height = 0;
       const ab = await blob.arrayBuffer();
 
       const pageLabel = String(p).padStart(padLen, "0");

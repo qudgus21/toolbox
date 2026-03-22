@@ -128,13 +128,6 @@ export default async function ToolPage({
         overlayLabels={slug === "overlay" ? dict.overlayTool : undefined}
         bookletLabels={slug === "booklet" ? dict.bookletTool : undefined}
       />
-      <div className="mx-auto max-w-2xl px-4 pb-12">
-        <RelatedTools
-          currentSlug={slug}
-          locale={locale}
-          title={dict.common.tryOtherTools}
-        />
-      </div>
     </>
   );
 }

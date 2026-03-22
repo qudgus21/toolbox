@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { ToolPageLayout, FileUploadZone } from "@/lib/ui";
@@ -96,6 +96,13 @@ export function ToolPageClient({
 
   const { pageCounts, totalPages, encryptedFiles } = usePdfPageCounts(files);
   const [pageSelectorFile, setPageSelectorFile] = useState<File | null>(null);
+  const favToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (favToastTimerRef.current) clearTimeout(favToastTimerRef.current);
+    };
+  }, []);
 
   const toolState = useToolState({
     slug,
@@ -159,6 +166,7 @@ export function ToolPageClient({
             onMouseEnter={handleFavHintEnter}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-background-muted transition-colors cursor-pointer"
             aria-label={fav ? labels.favoriteRemoved : labels.favoriteAdded}
+            aria-pressed={fav}
           >
             <Star
               className={cn(
@@ -309,7 +317,7 @@ export function ToolPageClient({
 
       {/* 하단 고정 실행 버튼 — AnimatePresence 밖에서 CLS 방지 */}
       {stage === "loaded" && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3" role="toolbar" aria-label="Actions">
           <div className="mx-auto max-w-md">
             <button
               type="button"
@@ -384,7 +392,7 @@ export function ToolPageClient({
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             onAnimationComplete={() => {
-              setTimeout(() => setFavToast(null), 2000);
+              favToastTimerRef.current = setTimeout(() => setFavToast(null), 2000);
             }}
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background shadow-lg"
           >

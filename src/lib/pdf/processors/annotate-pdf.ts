@@ -1,12 +1,19 @@
 import {
   PDFDocument,
-  rgb,
   StandardFonts,
   degrees,
+  pushGraphicsState,
+  popGraphicsState,
+  moveTo,
+  lineTo,
+  closePath,
+  fill,
+  setFillingColor,
   type PDFPage,
   type PDFFont,
 } from "pdf-lib";
 import type { ProcessorFn } from "../types";
+import { hexToRgb } from "./color-utils";
 import type {
   AnnotateElement,
   HighlightElement,
@@ -25,15 +32,6 @@ import {
 } from "../../../app/pdf/[locale]/(tools)/_components/annotate-pdf/annotate-types";
 
 // ─── Helpers ──────────────────────────────────────────────────
-
-function hexToRgb(hex: string) {
-  const h = hex.replace("#", "");
-  return rgb(
-    parseInt(h.substring(0, 2), 16) / 255,
-    parseInt(h.substring(2, 4), 16) / 255,
-    parseInt(h.substring(4, 6), 16) / 255,
-  );
-}
 
 /** Convert Konva top-left Y-down to PDF bottom-left Y-up */
 function toPdfY(konvaY: number, elementHeight: number, pageHeight: number): number {
@@ -111,9 +109,10 @@ async function textToImage(
     ctx.fillText(lines[i], x, i * lh);
   }
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  canvas.width = 0; canvas.height = 0;
   return new Uint8Array(await blob.arrayBuffer());
 }
 
@@ -176,9 +175,10 @@ async function stampToImage(
   ctx.textBaseline = "middle";
   ctx.fillText(text, 0, 0);
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  canvas.width = 0; canvas.height = 0;
   return new Uint8Array(await blob.arrayBuffer());
 }
 
@@ -382,20 +382,14 @@ const annotatePdf: ProcessorFn = async (files, options, onProgress) => {
 
             // Draw the arrowhead as a filled triangle using moveTo/lineTo
             page.pushOperators(
-              // eslint-disable-next-line @typescript-eslint/no-require-imports
-              ...(() => {
-                const { pushGraphicsState, popGraphicsState, moveTo, lineTo, closePath, fill, setFillingColor } = require("pdf-lib") as typeof import("pdf-lib");
-                return [
-                  pushGraphicsState(),
-                  setFillingColor(arrowColor),
-                  moveTo(pdfX2, pdfY2),
-                  lineTo(leftX, leftY),
-                  lineTo(rightX, rightY),
-                  closePath(),
-                  fill(),
-                  popGraphicsState(),
-                ];
-              })(),
+              pushGraphicsState(),
+              setFillingColor(arrowColor),
+              moveTo(pdfX2, pdfY2),
+              lineTo(leftX, leftY),
+              lineTo(rightX, rightY),
+              closePath(),
+              fill(),
+              popGraphicsState(),
             );
           }
           break;

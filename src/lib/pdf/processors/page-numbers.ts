@@ -1,10 +1,10 @@
 import {
   PDFDocument,
-  rgb,
   StandardFonts,
   type PDFFont,
 } from "pdf-lib";
 import type { ProcessorFn, ProcessingResult } from "../types";
+import { hexToRgb } from "./color-utils";
 import type {
   PageNumberOptions,
   PageNumberPosition,
@@ -14,15 +14,6 @@ import type {
 const MM_TO_PT = 72 / 25.4;
 
 // ─── Helpers ──────────────────────────────────────────────────
-
-function hexToRgb(hex: string) {
-  const h = hex.replace("#", "");
-  return rgb(
-    parseInt(h.substring(0, 2), 16) / 255,
-    parseInt(h.substring(2, 4), 16) / 255,
-    parseInt(h.substring(4, 6), 16) / 255,
-  );
-}
 
 /** WinAnsi 범위를 벗어나는 문자가 있으면 true */
 function hasNonLatinChars(text: string): boolean {
@@ -62,9 +53,11 @@ async function textToImage(
   ctx.textBaseline = "top";
   ctx.fillText(content, 0, 0);
 
-  const blob = await new Promise<Blob>((res) =>
-    canvas.toBlob((b) => res(b!), "image/png"),
+  const blob = await new Promise<Blob>((res, rej) =>
+    canvas.toBlob((b) => b ? res(b) : rej(new Error("Canvas toBlob returned null")), "image/png"),
   );
+  measure.width = 0; measure.height = 0;
+  canvas.width = 0; canvas.height = 0;
   return {
     pngBytes: new Uint8Array(await blob.arrayBuffer()),
     width,
@@ -329,6 +322,5 @@ export {
   parseRange,
   getTargetPageIndices,
   getTemplate,
-  hexToRgb,
   hasNonLatinChars,
 };

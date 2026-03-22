@@ -16,10 +16,9 @@ import { EditorHistoryPanel } from "./editor-history-panel";
 import { useEditorStore } from "./use-editor-store";
 import { usePdfPages } from "./use-pdf-pages";
 import { generateId, type EditPdfLabels, type EditorElement } from "./editor-types";
+import { ZOOM_STEPS } from "@/lib/pdf/constants";
 
 export type { EditPdfLabels };
-
-const ZOOM_STEPS = [25, 33, 50, 67, 75, 100, 125, 150, 200, 300] as const;
 
 /* ── Dynamic import for Konva (SSR-safe) ────────────────────── */
 
@@ -31,7 +30,7 @@ const PageCanvas = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full w-full items-center justify-center bg-white">
+      <div className="flex h-full w-full items-center justify-center bg-background">
         <div className="h-6 w-6 animate-spin rounded-full border-2 border-accent border-t-transparent" />
       </div>
     ),
