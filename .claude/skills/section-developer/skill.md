@@ -32,9 +32,9 @@ user-invocable: true
 - **핵심 차별점**: 서버 전송 없음(개인정보), 완전 무료, 빠른 처리
 
 ### 앱별 SERVICE_GUIDE.md 위치:
-- PDF: `apps/pdf/SERVICE_GUIDE.md`
-- Video: `apps/video/SERVICE_GUIDE.md` (추후)
-- Landing: `apps/landing/SERVICE_GUIDE.md` (추후)
+- PDF: `SERVICE_GUIDE.md` (루트)
+- Video: (추후)
+- Landing: (추후)
 
 SERVICE_GUIDE.md의 톤과 어긋나는 제안은 하지 않는다.
 
@@ -74,8 +74,8 @@ Glob: **/processors/{입력값}.ts
 도구 목록과 공통 컴포넌트를 스캔:
 
 ```
-Glob: apps/pdf/src/lib/processors/*.ts
-Glob: apps/pdf/src/app/[locale]/(tools)/_components/*.tsx
+Glob: src/lib/pdf/processors/*.ts
+Glob: src/app/pdf/[locale]/(tools)/_components/*.tsx
 ```
 
 결과를 카테고리별로 출력:
@@ -363,7 +363,7 @@ WebSearch: "file processing web app UX best practice 2026"
 ### Step 6-3: 빌드 검증
 
 ```bash
-pnpm --filter @toolbox/pdf build
+pnpm build
 ```
 
 빌드 에러 발생 시 즉시 수정.

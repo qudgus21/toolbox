@@ -1,0 +1,591 @@
+"use client";
+
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, LayoutGrid, List, Shield, Trash2, Gift, Cloud, Star } from "lucide-react";
+import Link from "next/link";
+import { Container, ToolCard } from "@/lib/ui";
+import { tools, categories, categoryColors } from "@/lib/pdf/tools";
+import { toolIconMap, categoryIconMap } from "@/lib/pdf/tool-icons";
+import { getFavorites, toggleFavorite, reorderFavorites } from "@/lib/storage";
+import { useTrack, pdfEvents } from "@/lib/analytics";
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  rectSortingStrategy,
+  verticalListSortingStrategy,
+  useSortable,
+  arrayMove,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { cn } from "@/lib/utils";
+import type { Dictionary } from "@/lib/i18n";
+
+type CategoryFilter = "all" | "organize" | "convert" | "edit" | "optimize" | "security";
+
+const categoryTabColors: Record<Exclude<CategoryFilter, "all">, { icon: string }> = {
+  organize: { icon: "text-amber-500" },
+  convert:  { icon: "text-blue-500" },
+  edit:     { icon: "text-purple-500" },
+  optimize: { icon: "text-green-500" },
+  security: { icon: "text-zinc-400" },
+};
+
+const categoryLabelKeys: Record<string, keyof Dictionary["home"]> = {
+  organize: "categoryOrganize",
+  convert: "categoryConvert",
+  edit: "categoryEdit",
+  optimize: "categoryOptimize",
+  security: "categorySecurity",
+};
+
+interface HomeContentProps {
+  dict: Dictionary;
+  locale: string;
+}
+
+function FavToast({ message, onDone }: { message: string; onDone: () => void }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 2000);
+    return () => clearTimeout(t);
+  }, [onDone]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background shadow-lg"
+    >
+      <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+      {message}
+    </motion.div>
+  );
+}
+
+const FAV_DRAG_HINT_KEY = "fav-drag-hint-seen";
+const FAV_HINT_KEY = "fav-hint-seen";
+
+function SortableFavCard({
+  slug,
+  children,
+  disableTransition,
+  didDragRef,
+  hintText,
+}: {
+  slug: string;
+  children: React.ReactNode;
+  disableTransition: boolean;
+  didDragRef: React.RefObject<boolean>;
+  hintText: string;
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    isDragging,
+  } = useSortable({ id: slug });
+
+  const [showHint, setShowHint] = useState(false);
+
+  const handleMouseEnter = useCallback(() => {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(FAV_DRAG_HINT_KEY)) return;
+    setShowHint(true);
+    localStorage.setItem(FAV_DRAG_HINT_KEY, "1");
+  }, []);
+
+  useEffect(() => {
+    if (!showHint) return;
+    const t = setTimeout(() => setShowHint(false), 2500);
+    return () => clearTimeout(t);
+  }, [showHint]);
+
+  const style: React.CSSProperties = {
+    transform: CSS.Transform.toString(transform),
+    transition:
+      isDragging || disableTransition
+        ? "none"
+        : "transform 300ms cubic-bezier(0.25, 1, 0.5, 1)",
+    zIndex: isDragging ? 50 : "auto",
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+      {...listeners}
+      onMouseEnter={handleMouseEnter}
+      onClickCapture={(e) => {
+        if (didDragRef.current) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }}
+      className={cn(
+        "relative cursor-grab active:cursor-grabbing",
+        isDragging && "scale-105 opacity-80",
+      )}
+    >
+      <AnimatePresence>
+        {showHint && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+          >
+            {hintText}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {children}
+    </div>
+  );
+}
+
+export function HomeContent({ dict, locale }: HomeContentProps) {
+  const track = useTrack("pdf", pdfEvents);
+  const [activeTab, setActiveTab] = useState<CategoryFilter>("all");
+  const [search, setSearch] = useState("");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [favSlugs, setFavSlugs] = useState<string[] | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+  const [disableFavTransition, setDisableFavTransition] = useState(false);
+  const [favHintSlug, setFavHintSlug] = useState<string | null>(null);
+  const didDragRef = useRef(false);
+  const isInitialMount = useRef(true);
+
+  useEffect(() => {
+    isInitialMount.current = false;
+  }, []);
+
+  const handleFavHintEnter = useCallback((slug: string) => {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(FAV_HINT_KEY)) return;
+    setFavHintSlug(slug);
+    localStorage.setItem(FAV_HINT_KEY, "1");
+  }, []);
+
+  useEffect(() => {
+    if (!favHintSlug) return;
+    const t = setTimeout(() => setFavHintSlug(null), 2500);
+    return () => clearTimeout(t);
+  }, [favHintSlug]);
+
+  const refreshFavs = useCallback(() => {
+    setFavSlugs(getFavorites());
+  }, []);
+
+  useEffect(() => {
+    refreshFavs();
+    // 다른 탭/페이지에서 돌아왔을 때 즐겨찾기 동기화
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") refreshFavs();
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, [refreshFavs]);
+
+  const handleToggleFav = useCallback((slug: string) => {
+    const added = toggleFavorite(slug);
+    setFavSlugs(getFavorites());
+    setToast(added ? dict.common.favoriteAdded : dict.common.favoriteRemoved);
+    track.favoriteToggle({ tool_slug: slug, action: added ? "add" : "remove" });
+  }, [dict.common, track]);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+  );
+
+  function handleFavDragStart() {
+    didDragRef.current = true;
+  }
+
+  function handleFavDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    // 드래그 후 click 차단 — 짧은 시간 후 해제
+    setTimeout(() => { didDragRef.current = false; }, 0);
+
+    if (!over || active.id === over.id || !favSlugs) return;
+    const oldIndex = favSlugs.indexOf(active.id as string);
+    const newIndex = favSlugs.indexOf(over.id as string);
+    if (oldIndex === -1 || newIndex === -1) return;
+    setDisableFavTransition(true);
+    const newOrder = arrayMove(favSlugs, oldIndex, newIndex);
+    setFavSlugs(newOrder);
+    reorderFavorites(newOrder);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setDisableFavTransition(false);
+      });
+    });
+  }
+
+  const filteredTools = useMemo(() => {
+    let result = activeTab === "all" ? tools : tools.filter((t) => t.category === activeTab);
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      result = tools.filter((t) => {
+        const td = dict.tools[t.slug];
+        return (
+          td.title.toLowerCase().includes(q) ||
+          td.description.toLowerCase().includes(q) ||
+          t.slug.includes(q)
+        );
+      });
+    }
+    return result;
+  }, [activeTab, search, dict.tools]);
+
+  const favTools = useMemo(
+    () => (favSlugs ?? []).map((s) => tools.find((t) => t.slug === s)).filter(Boolean) as typeof tools,
+    [favSlugs],
+  );
+
+  // 검색어 GA 트래킹 (디바운스 500ms, 2자 이상)
+  useEffect(() => {
+    if (search.trim().length < 2) return;
+    const timer = setTimeout(() => {
+      track.searchQuery({ search_term: search.trim() });
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [search, track]);
+
+  const isSearching = search.trim().length > 0;
+  const showFavSection = favSlugs !== null && !isSearching && activeTab === "all" && favTools.length > 0;
+
+  const equalizeCards = useCallback((node: HTMLDivElement | null) => {
+    if (!node) return;
+    const sync = () => {
+      if (viewMode !== "grid") return;
+      const cards = node.querySelectorAll<HTMLElement>("[data-card]");
+      cards.forEach((c) => (c.style.minHeight = ""));
+      let max = 0;
+      cards.forEach((c) => { max = Math.max(max, c.offsetHeight); });
+      if (max > 0) cards.forEach((c) => (c.style.minHeight = `${max}px`));
+    };
+    requestAnimationFrame(sync);
+    const ro = new ResizeObserver(() => requestAnimationFrame(sync));
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [viewMode]);
+
+  const gridRef = useRef<HTMLDivElement>(null);
+  const favGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cleanup1 = equalizeCards(gridRef.current);
+    const cleanup2 = equalizeCards(favGridRef.current);
+    return () => { cleanup1?.(); cleanup2?.(); };
+  }, [equalizeCards, filteredTools, favSlugs]);
+
+  const renderToolCard = (tool: typeof tools[number], ctx: "grid" | "fav" = "grid") => {
+    const toolDict = dict.tools[tool.slug];
+    const isFav = favSlugs?.includes(tool.slug) ?? false;
+    const handleToolClick = () => {
+      track.toolCardClick({
+        tool_slug: tool.slug,
+        source: isSearching ? "search" : ctx === "fav" ? "favorites" : "grid",
+      });
+    };
+    return viewMode === "grid" ? (
+      <div className={cn("relative group/fav h-full")} onClick={handleToolClick}>
+        <ToolCard
+          data-card
+          href={`/pdf/${locale}/${tool.slug}`}
+          linkComponent={Link}
+          icon={tool.icon}
+          title={toolDict.title}
+          description={toolDict.description}
+          toolIcon={toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-10 w-auto" />; })() : undefined}
+          iconColorClasses={categoryColors[tool.category]}
+        />
+        <button
+          type="button"
+          onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}
+          onMouseEnter={ctx === "grid" ? () => handleFavHintEnter(tool.slug) : undefined}
+          className={cn(
+            "absolute top-2 right-2 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all duration-150 cursor-pointer",
+            isFav
+              ? "bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-600 opacity-100"
+              : "bg-background/80 backdrop-blur-sm border border-transparent opacity-0 group-hover/fav:opacity-100 hover:border-amber-300 dark:hover:border-amber-600 hover:bg-amber-50 dark:hover:bg-amber-950/60",
+          )}
+          aria-label={isFav ? dict.common.favoriteRemoved : dict.common.favoriteAdded}
+        >
+          <Star
+            className={cn(
+              "h-3.5 w-3.5 transition-colors",
+              isFav
+                ? "fill-amber-400 text-amber-400"
+                : "text-foreground-muted hover:text-amber-400",
+            )}
+          />
+          <AnimatePresence>
+            {ctx === "grid" && favHintSlug === tool.slug && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+              >
+                {dict.home.favHint}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
+      </div>
+    ) : (
+      <div className={cn("relative group/fav")}>
+        <Link
+          href={`/pdf/${locale}/${tool.slug}`}
+          onClick={handleToolClick}
+          className="group flex items-center gap-4 rounded-lg border border-border/60 bg-background-elevated px-4 py-3 shadow-sm transition-colors hover:border-accent/50 hover:shadow-md"
+        >
+          {toolIconMap[tool.slug] ? (() => { const Icon = toolIconMap[tool.slug]; return <Icon className="h-7 w-auto shrink-0" />; })() : tool.emoji ? <span className="text-2xl shrink-0">{tool.emoji}</span> : null}
+          <div className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold text-foreground">
+              {toolDict.title}
+            </span>
+            <p className="text-xs text-foreground-muted truncate">{toolDict.description}</p>
+          </div>
+        </Link>
+        <button
+          type="button"
+          onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleFav(tool.slug); }}
+          onMouseEnter={ctx === "grid" ? () => handleFavHintEnter(tool.slug) : undefined}
+          className={cn(
+            "absolute top-1/2 -translate-y-1/2 right-3 z-10 flex h-7 w-7 items-center justify-center rounded-full transition-all duration-150 cursor-pointer",
+            isFav
+              ? "opacity-100"
+              : "opacity-0 group-hover/fav:opacity-100",
+          )}
+          aria-label={isFav ? dict.common.favoriteRemoved : dict.common.favoriteAdded}
+        >
+          <Star
+            className={cn(
+              "h-3.5 w-3.5 transition-colors",
+              isFav
+                ? "fill-amber-400 text-amber-400"
+                : "text-foreground-muted hover:text-amber-400",
+            )}
+          />
+          <AnimatePresence>
+            {ctx === "grid" && favHintSlug === tool.slug && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute -top-8 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap rounded-md bg-foreground px-2.5 py-1 text-xs font-medium text-background shadow-lg pointer-events-none"
+              >
+                {dict.home.favHint}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
+      </div>
+    );
+  };
+
+  return (
+    <main className="py-8">
+      <Container size="full" className="max-w-screen-2xl">
+        {/* Hero */}
+        <motion.div
+          className="text-center mb-6"
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+            {dict.home.title}{" "}
+            <span className="text-accent">{dict.home.titleAccent}</span>
+          </h1>
+          <p className="mt-2 text-base text-foreground-muted max-w-2xl mx-auto">
+            {dict.home.description}
+          </p>
+        </motion.div>
+
+        {/* Search Bar */}
+        <motion.div
+          className="max-w-md mx-auto mb-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
+        >
+          <div className="relative">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-foreground-subtle" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={dict.home.searchPlaceholder}
+              className="w-full rounded-full border border-border bg-background-elevated pl-11 pr-4 py-2.5 text-sm text-foreground placeholder:text-foreground-subtle focus:border-border-focus focus:outline-none focus:ring-1 focus:ring-border-focus/30 transition-colors"
+            />
+          </div>
+        </motion.div>
+
+        {/* Category Tabs + View Toggle */}
+        <motion.div
+          className="flex flex-wrap items-center justify-center gap-2.5 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.15 }}
+        >
+          <button
+            onClick={() => { setActiveTab("all"); setSearch(""); track.categoryTabClick({ category: "all" }); }}
+            className={`cursor-pointer rounded-full border px-4 py-2 text-base font-bold transition-colors ${
+              activeTab === "all" && !isSearching
+                ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
+                : "border-border dark:border-zinc-600 text-foreground-muted hover:bg-background-muted hover:text-foreground hover:border-foreground-subtle"
+            }`}
+          >
+            {dict.home.tabAll}
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              onClick={() => { setActiveTab(cat.key); setSearch(""); track.categoryTabClick({ category: cat.key }); }}
+              className={`cursor-pointer inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-base font-bold transition-colors ${
+                activeTab === cat.key && !isSearching
+                  ? "bg-zinc-800 border-zinc-800 text-white dark:bg-zinc-200 dark:border-zinc-200 dark:text-zinc-900"
+                  : "border-border dark:border-zinc-600 text-foreground-muted hover:bg-background-muted hover:text-foreground hover:border-foreground-subtle"
+              }`}
+            >
+              {categoryIconMap[cat.key] ? (() => { const CatIcon = categoryIconMap[cat.key]; return <><CatIcon className={cn("h-4 w-4 shrink-0", categoryTabColors[cat.key].icon)} />{dict.home[categoryLabelKeys[cat.key]]}</>; })() : <>{cat.emoji} {dict.home[categoryLabelKeys[cat.key]]}</>}
+            </button>
+          ))}
+
+          {/* View Toggle */}
+          <div className="hidden sm:flex items-center gap-1 ml-2 rounded-full border border-border p-0.5">
+            <button
+              onClick={() => { setViewMode("grid"); track.viewModeToggle({ mode: "grid" }); }}
+              className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
+            >
+              <LayoutGrid className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => { setViewMode("list"); track.viewModeToggle({ mode: "list" }); }}
+              className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "list" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
+            >
+              <List className="h-4 w-4" />
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Favorites Section */}
+        {showFavSection && (
+          <section className="mb-8">
+            <div className="flex items-center gap-2 mb-3">
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+              <h2 className="text-sm font-bold text-foreground">{dict.home.favorites}</h2>
+            </div>
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragStart={handleFavDragStart}
+              onDragEnd={handleFavDragEnd}
+            >
+              <SortableContext items={favSlugs ?? []} strategy={viewMode === "list" ? verticalListSortingStrategy : rectSortingStrategy}>
+                <div
+                  ref={favGridRef}
+                  className={
+                    viewMode === "grid"
+                      ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+                      : "flex flex-col gap-2"
+                  }
+                >
+                  {favTools.map((tool) => (
+                    <SortableFavCard key={`fav-${tool.slug}`} slug={tool.slug} disableTransition={disableFavTransition} didDragRef={didDragRef} hintText={dict.home.favDragHint}>
+                      {renderToolCard(tool, "fav")}
+                    </SortableFavCard>
+                  ))}
+                </div>
+              </SortableContext>
+            </DndContext>
+          </section>
+        )}
+
+        {/* All Tools title (only when favorites exist) */}
+        {showFavSection && (
+          <div className="flex items-center gap-2 mb-3">
+            <h2 className="text-sm font-bold text-foreground">{dict.nav.allTools}</h2>
+          </div>
+        )}
+
+        {/* Tool Grid / List */}
+        <div
+          ref={gridRef}
+          className={
+            viewMode === "grid"
+              ? "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+              : "flex flex-col gap-2"
+          }
+        >
+          {filteredTools.length === 0 ? (
+            <p className="col-span-full text-center py-12 text-foreground-muted">
+              {dict.home.noResults}
+            </p>
+          ) : (
+            filteredTools.map((tool, i) => (
+              <motion.div
+                key={tool.slug}
+                className="h-full"
+                initial={isInitialMount.current ? { opacity: 0, y: 12 } : false}
+                animate={{ opacity: 1, y: 0 }}
+                transition={isInitialMount.current ? { duration: 0.25, delay: i * 0.03 } : { duration: 0 }}
+              >
+                {renderToolCard(tool)}
+              </motion.div>
+            ))
+          )}
+        </div>
+
+        {/* Trust Section */}
+        <motion.section
+          className="mt-16 mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Shield, title: dict.trust.encryption, desc: dict.trust.encryptionDesc },
+              { icon: Trash2, title: dict.trust.autoDelete, desc: dict.trust.autoDeleteDesc },
+              { icon: Gift, title: dict.trust.free, desc: dict.trust.freeDesc },
+              { icon: Cloud, title: dict.trust.cloud, desc: dict.trust.cloudDesc },
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center text-center gap-2 py-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent-muted text-accent">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                <p className="text-xs text-foreground-muted max-w-[200px]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+      </Container>
+
+      {/* Toast */}
+      <AnimatePresence>
+        {toast && (
+          <FavToast message={toast} onDone={() => setToast(null)} />
+        )}
+      </AnimatePresence>
+    </main>
+  );
+}
