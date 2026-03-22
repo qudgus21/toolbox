@@ -1,44 +1,61 @@
 ---
 name: release
-description: develop → main PR 생성 & 머지 & 버전 태그로 프로덕션 배포. 배포할 커밋 목록과 버전을 보여주고 사용자 확인 후 진행.
+description: 선택한 PR들만 cherry-pick하여 main에 배포. 배포할 PR을 선택하고 버전 태그 생성.
 disable-model-invocation: false
 allowed-tools: Bash(git *), Bash(gh *)
 user-invocable: true
 ---
 
-# Release — 프로덕션 배포 워크플로우
+# Release — 선택적 프로덕션 배포 워크플로우
 
-develop 브랜치의 변경사항을 main에 머지하고 버전 태그를 생성하여 프로덕션 배포합니다.
+develop에 머지된 PR 중 사용자가 선택한 것만 main에 배포합니다.
 
-## Step 1: 현재 버전 & 배포할 변경사항 확인
+## Step 1: 배포 가능한 PR 목록 확인
+
+develop에 머지되었지만 main에는 아직 반영되지 않은 PR들을 보여줍니다:
 
 ```bash
 git fetch origin
 
-# 최신 버전 태그 확인
-git tag --sort=-v:refname | head -5
-
-# 배포할 커밋 확인
-git log origin/main..origin/develop --oneline --no-merges
+# main에 없는 develop의 머지 커밋들에서 PR 번호 추출
+git log origin/main..origin/develop --oneline --merges
 ```
 
-배포할 커밋이 없으면 "배포할 변경사항이 없습니다" 알림 후 중단.
+그리고 `gh` CLI로 해당 PR들의 상세 정보를 가져옵니다:
 
-## Step 2: 버전 결정 & 변경사항 요약
+```bash
+# develop에 머지된 PR 목록 (closed + merged)
+gh pr list --base develop --state merged --json number,title,mergedAt,labels --limit 50
+```
+
+**main에 이미 반영된 PR은 제외하고**, 아직 배포되지 않은 PR만 표시합니다.
+
+사용자에게 다음 형식으로 보여줍니다:
+
+```
+📦 배포 가능한 PR 목록:
+
+ #42  [pdf] Google AdSense 적용          (2026-03-20 머지)
+ #41  [ui] 다크모드 토글 개선             (2026-03-19 머지)
+ #40  [pdf] PDF 압축 품질 옵션 추가       (2026-03-18 머지)
+
+배포할 PR 번호를 선택해주세요 (예: 42 또는 42,40):
+```
+
+배포 가능한 PR이 없으면 "배포할 변경사항이 없습니다" 알림 후 중단.
+
+## Step 2: 버전 결정
 
 **버전 규칙 (Semantic Versioning):**
 - `major` (v1.0.0 → v2.0.0): 큰 기능 변경, 호환성 깨짐
 - `minor` (v1.0.0 → v1.1.0): 새 기능 추가, 도구 추가
 - `patch` (v1.0.0 → v1.0.1): 버그 수정, 자잘한 개선
 
-커밋 내용을 분석하여 사용자에게 다음을 보여줍니다:
+선택된 PR 내용을 분석하여 사용자에게 다음을 보여줍니다:
 
 - 현재 버전: `vX.Y.Z` (태그가 없으면 `v0.0.0`으로 간주)
-- 총 커밋 수
-- 영향 범위 (src/app/pdf, src/lib 등)
-- 주요 변경사항 요약
-
-그 후 **사용자에게 버전 타입을 선택하도록 질문합니다:**
+- 선택된 PR 수 & 요약
+- 추천 버전 타입
 
 > 어떤 버전으로 릴리즈할까요?
 > 1. **patch** (vX.Y.Z → vX.Y.**Z+1**) — 버그 수정, 자잘한 개선
@@ -46,36 +63,49 @@ git log origin/main..origin/develop --oneline --no-merges
 > 3. **major** (vX.Y.Z → v**X+1**.0.0) — 큰 변경, 호환성 깨짐
 > 4. 직접 입력 (예: v1.2.3)
 
-**사용자가 선택한 버전으로 진행합니다.**
+## Step 3: Release 브랜치 생성 & Cherry-pick
 
-## Step 3: PR 생성
-
-develop → main PR을 생성합니다:
+선택된 PR들의 커밋만 main에 반영하기 위해 release 브랜치를 만듭니다:
 
 ```bash
+# main 기반으로 release 브랜치 생성
+git checkout origin/main -b release/vX.Y.Z
+
+# 선택된 PR들의 머지 커밋을 cherry-pick
+# PR의 머지 커밋 해시를 찾아서 cherry-pick
+git log origin/develop --merges --grep="Merge pull request #PR번호" --format="%H" | head -1
+git cherry-pick -m 1 머지커밋해시
+```
+
+**중요:** `-m 1` 옵션으로 머지 커밋의 첫 번째 부모(develop) 기준으로 cherry-pick합니다.
+
+cherry-pick 충돌이 발생하면 사용자에게 알리고 해결 방법을 안내합니다.
+
+## Step 4: PR 생성 & 확인
+
+release 브랜치에서 main으로의 PR을 생성합니다:
+
+```bash
+git push -u origin release/vX.Y.Z
+
 gh pr create \
   --base main \
-  --head develop \
+  --head release/vX.Y.Z \
   --title "Release vX.Y.Z: 배포 요약" \
   --body "PR 본문"
 ```
 
-**PR 제목 형식:** `Release vX.Y.Z: 주요 변경사항 요약`
-
-**PR 본문 가이드라인:**
+**PR 본문:**
 
 ```markdown
 ## Release vX.Y.Z
 
-### 변경 내용
-- [pdf] PDF 압축 도구 구현
-- [ui] FileUploader 개선
-- [i18n] 일본어 번역 추가
+### 포함된 PR
+- #42 [pdf] Google AdSense 적용
+- #40 [pdf] PDF 압축 품질 옵션 추가
 
-### 영향 범위
-- src/app/pdf
-- src/lib/ui
-- src/lib/i18n
+### 제외된 PR (develop에만 유지)
+- #41 [ui] 다크모드 토글 개선
 
 ### 배포 전 확인
 - [ ] Vercel Preview 정상 동작 확인
@@ -84,9 +114,9 @@ gh pr create \
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 ```
 
-## Step 4: 머지 & 태그 생성
-
 PR URL을 사용자에게 보여주고 확인을 요청합니다.
+
+## Step 5: 머지 & 태그 생성
 
 **사용자가 머지를 요청하면:**
 
@@ -113,18 +143,28 @@ git pull origin develop
 **GitHub Release 노트 형식:**
 
 ```markdown
-## 변경 내용
-- [pdf] PDF 압축 도구 구현
-- [ui] FileUploader 개선
+## 포함된 변경 내용
+- #42 [pdf] Google AdSense 적용
+- #40 [pdf] PDF 압축 품질 옵션 추가
 
 **Full Changelog**: https://github.com/.../compare/vPREV...vX.Y.Z
 ```
 
+## Step 6: Release 브랜치 정리
+
+머지 완료 후 release 브랜치를 삭제합니다:
+
+```bash
+git branch -d release/vX.Y.Z
+git push origin --delete release/vX.Y.Z
+```
+
 ## 주의사항
 
-- 배포할 커밋이 없으면 PR 생성하지 않음
-- PR 생성 전 반드시 사용자 확인
+- 배포 가능한 PR이 없으면 중단
+- PR 선택 전 반드시 목록을 보여주고 사용자 확인
 - 머지 전 반드시 사용자 확인
-- 이미 열려있는 develop → main PR이 있으면 새로 만들지 않고 기존 PR 안내
+- cherry-pick 충돌 시 사용자에게 알리고 해결 지원
 - squash merge가 아닌 일반 merge를 사용하여 커밋 히스토리 보존
 - 태그는 반드시 main 머지 후에 생성
+- **전체 배포 (모든 PR 선택)도 가능** — 사용자가 "전부"라고 하면 모든 PR을 cherry-pick
