@@ -31,9 +31,13 @@ export function ThemeToggle({ app }: ThemeToggleProps) {
   function toggle() {
     const next = theme === "light" ? "dark" : "light";
     setTheme(next);
+    document.documentElement.setAttribute("data-transitioning", "");
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
     sendEvent("theme_toggle", { app: resolvedApp, theme: next });
+    setTimeout(() => {
+      document.documentElement.removeAttribute("data-transitioning");
+    }, 150);
   }
 
   return (
