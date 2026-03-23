@@ -18,3 +18,6 @@ export { ToolPageLayout, type ToolPageLayoutProps } from "./components/tool-page
 export { FooterServiceInfo } from "./footer-service-info";
 export { ShareButton } from "./components/share-button";
 export { ShareToolButton } from "./components/share-button";
+export { ThemeToggle } from "./components/theme-toggle/theme-toggle";
+export { LanguageSwitcher } from "./components/language-switcher/language-switcher";
+export { AppNavMenu, type NavApp, type NavAppTool } from "./components/app-nav-menu/app-nav-menu";

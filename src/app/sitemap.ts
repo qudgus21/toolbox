@@ -7,6 +7,16 @@ const BASE_URL = "https://toolpop.org";
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
+  // Landing page for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}`,
+      lastModified: new Date("2026-03-23"),
+      changeFrequency: "weekly",
+      priority: 1.0,
+    });
+  }
+
   // Blog listing page for each locale
   for (const locale of locales) {
     entries.push({
