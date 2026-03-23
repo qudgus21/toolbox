@@ -9,6 +9,7 @@ import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { getImageDictionary } from "@/lib/i18n/get-image-dictionary";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
+import { GoogleAnalytics } from "./google-analytics";
 import { LayoutScripts } from "./layout-scripts";
 import "./landing-theme.css";
 
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
 
   return (
     <>
+      <GoogleAnalytics />
       <LayoutScripts locale={locale} dir={dir} />
       <Header
         logo={

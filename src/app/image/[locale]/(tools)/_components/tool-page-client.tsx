@@ -14,6 +14,7 @@ import { RelatedTools } from "./related-tools";
 import { ErrorMessage } from "./error-message";
 import { useImageDimensions } from "./use-image-dimensions";
 import { ImagePreview } from "./image-preview";
+import { sendEvent } from "@/lib/analytics";
 import { GeneratePreview } from "./generate-preview";
 import { ResizeOptions, getDefaultResizeOptions } from "./resize-options";
 import type { ResizeOptionsValue } from "./resize-options";
@@ -339,8 +340,9 @@ export function ToolPageClient({
   const previewOptions = useMemo(() => buildProcessOptions(), [buildProcessOptions]);
 
   const handleProcess = useCallback(() => {
+    sendEvent("process_click", { app: "image", tool_slug: slug, file_count: files.length });
     processFiles(buildProcessOptions());
-  }, [processFiles, buildProcessOptions]);
+  }, [processFiles, buildProcessOptions, slug, files.length]);
 
   // Auto-download when processing completes
   const prevStageRef = useRef(stage);
