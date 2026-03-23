@@ -51,6 +51,14 @@
     --primitive-amber-500: #f59e0b;
     --primitive-amber-600: #d97706;
 
+    /* Dark Blue-Gray (dark mode backgrounds) */
+    --primitive-dark-950: #1a252e;
+    --primitive-dark-900: #1f2d38;
+    --primitive-dark-800: #243544;
+    --primitive-dark-700: #2d3f4e;
+    --primitive-dark-600: #3a5060;
+    --primitive-dark-500: #4a6275;
+
     --primitive-white: #ffffff;
     --primitive-black: #000000;
   }
@@ -138,10 +146,10 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     /* Backgrounds */
-    --color-background: var(--primitive-zinc-950);
-    --color-background-subtle: var(--primitive-zinc-900);
-    --color-background-muted: var(--primitive-zinc-800);
-    --color-background-elevated: var(--primitive-zinc-800);
+    --color-background: var(--primitive-dark-950);
+    --color-background-subtle: var(--primitive-dark-900);
+    --color-background-muted: var(--primitive-dark-800);
+    --color-background-elevated: var(--primitive-dark-900);
 
     /* Foregrounds */
     --color-foreground: var(--primitive-zinc-50);
@@ -149,18 +157,18 @@
     --color-foreground-subtle: var(--primitive-zinc-400);
 
     /* Borders */
-    --color-border: var(--primitive-zinc-700);
-    --color-border-muted: var(--primitive-zinc-800);
+    --color-border: var(--primitive-dark-700);
+    --color-border-muted: var(--primitive-dark-800);
 
     /* Primary */
     --color-primary: var(--primitive-white);
-    --color-primary-foreground: var(--primitive-zinc-950);
+    --color-primary-foreground: var(--primitive-dark-950);
     --color-primary-hover: var(--primitive-zinc-200);
 
     /* Secondary */
-    --color-secondary: var(--primitive-zinc-800);
+    --color-secondary: var(--primitive-dark-800);
     --color-secondary-foreground: var(--primitive-zinc-100);
-    --color-secondary-hover: var(--primitive-zinc-700);
+    --color-secondary-hover: var(--primitive-dark-700);
 
     /* Accent */
     --color-accent-hover: var(--primitive-blue-400);
@@ -180,8 +188,8 @@
     --color-info-muted: rgba(59, 130, 246, 0.15);
 
     /* Glass */
-    --color-glass: rgba(9, 9, 11, 0.8);
-    --color-glass-border: rgba(255, 255, 255, 0.1);
+    --color-glass: rgba(26, 37, 46, 0.85);
+    --color-glass-border: rgba(255, 255, 255, 0.08);
 
     /* Shadows */
     --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -194,25 +202,25 @@
 
 /* Manual dark theme override */
 :root[data-theme="dark"] {
-  --color-background: var(--primitive-zinc-950);
-  --color-background-subtle: var(--primitive-zinc-900);
-  --color-background-muted: var(--primitive-zinc-800);
-  --color-background-elevated: var(--primitive-zinc-800);
+  --color-background: var(--primitive-dark-950);
+  --color-background-subtle: var(--primitive-dark-900);
+  --color-background-muted: var(--primitive-dark-800);
+  --color-background-elevated: var(--primitive-dark-900);
 
   --color-foreground: var(--primitive-zinc-50);
   --color-foreground-muted: var(--primitive-zinc-300);
   --color-foreground-subtle: var(--primitive-zinc-400);
 
-  --color-border: var(--primitive-zinc-700);
-  --color-border-muted: var(--primitive-zinc-800);
+  --color-border: var(--primitive-dark-700);
+  --color-border-muted: var(--primitive-dark-800);
 
   --color-primary: var(--primitive-white);
-  --color-primary-foreground: var(--primitive-zinc-950);
+  --color-primary-foreground: var(--primitive-dark-950);
   --color-primary-hover: var(--primitive-zinc-200);
 
-  --color-secondary: var(--primitive-zinc-800);
+  --color-secondary: var(--primitive-dark-800);
   --color-secondary-foreground: var(--primitive-zinc-100);
-  --color-secondary-hover: var(--primitive-zinc-700);
+  --color-secondary-hover: var(--primitive-dark-700);
 
   --color-accent-hover: var(--primitive-blue-400);
   --color-accent-muted: rgba(37, 99, 235, 0.15);
@@ -228,12 +236,21 @@
   --color-info: var(--primitive-blue-500);
   --color-info-muted: rgba(59, 130, 246, 0.15);
 
-  --color-glass: rgba(9, 9, 11, 0.8);
-  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass: rgba(26, 37, 46, 0.85);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
 
   --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Theme Transition (smooth light ↔ dark)
+   ============================================ */
+:root[data-transitioning] *,
+:root[data-transitioning] *::before,
+:root[data-transitioning] *::after {
+  transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease, fill 0.1s ease, stroke 0.1s ease !important;
 }

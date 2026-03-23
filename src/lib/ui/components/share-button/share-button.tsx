@@ -1,9 +1,16 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import { Share2 } from "lucide-react";
 import { sendEvent } from "@/lib/analytics";
 import { ShareModal } from "./share-modal";
+
+function detectApp(pathname: string): string {
+  if (pathname.match(/^\/[^/]+\/pdf(\/|$)/)) return "pdf";
+  if (pathname.match(/^\/[^/]+\/image(\/|$)/)) return "image";
+  return "landing";
+}
 
 interface ShareButtonProps {
   app?: string;
@@ -14,12 +21,14 @@ interface ShareButtonProps {
 }
 
 export function ShareButton({
-  app = "pdf",
+  app,
   shareTitle = "Share this page",
   shareSubtitle = "Spread the word!",
   copyLabel = "Copy link",
   copiedLabel = "Copied!",
 }: ShareButtonProps) {
+  const pathname = usePathname();
+  const resolvedApp = app ?? detectApp(pathname);
   const [open, setOpen] = useState(false);
 
   const handleClick = useCallback(async () => {
@@ -30,14 +39,14 @@ export function ShareButton({
           title: document.title,
           url: window.location.href,
         });
-        sendEvent("share_click", { app, method: "native" });
+        sendEvent("share_click", { app: resolvedApp, method: "native" });
         return;
       } catch {
         // User cancelled — fall through to modal
       }
     }
     setOpen(true);
-  }, [app]);
+  }, [resolvedApp]);
 
   return (
     <>
@@ -56,7 +65,7 @@ export function ShareButton({
         copyLabel={copyLabel}
         copiedLabel={copiedLabel}
         onShare={(method) =>
-          sendEvent("share_click", { app, method })
+          sendEvent("share_click", { app: resolvedApp, method })
         }
       />
     </>

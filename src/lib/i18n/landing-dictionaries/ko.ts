@@ -2,7 +2,7 @@ import type { LandingDictionary } from "../landing-config";
 
 const dict: LandingDictionary = {
   meta: {
-    title: "ToolPop — 온라인 PDF & 이미지 도구",
+    title: "ToolPop — 무료 온라인 도구 모음",
     description:
       "PDF 편집, 병합, 변환부터 이미지 리사이즈, 압축, 변환까지. 설치 없이 브라우저에서 바로 사용하세요.",
   },
@@ -79,6 +79,11 @@ const dict: LandingDictionary = {
     privacy: "개인정보 처리방침",
     terms: "이용약관",
     copyright: "© 2026 ToolPop. All rights reserved.",
+    tagline: "PDF, 이미지 등 다양한 온라인 도구를 무료로. 가입 없이 바로 사용하세요.",
+    madeWith: "모두를 위해 만들었습니다",
+  },
+  search: {
+    noResults: "검색 결과가 없습니다",
   },
   nav: {
     pdf: "PDF",

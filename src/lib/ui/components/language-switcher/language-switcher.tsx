@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown, Globe } from "lucide-react";
 import { sendEvent } from "@/lib/analytics";
@@ -73,14 +74,24 @@ function getSortedLocales(currentLocale: string) {
 
 interface LanguageSwitcherProps {
   locale: string;
-  /** URL prefix before locale, e.g. "/pdf" or "" for root */
+  /** @deprecated Use usePathname instead */
   basePath?: string;
   app?: string;
 }
 
-export function LanguageSwitcher({ locale, basePath = "", app = "landing" }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  // Extract path after locale: /ko/pdf/merge → /pdf/merge
+  const pathAfterLocale = pathname.replace(/^\/[^/]+/, "") || "";
+
+  // Auto-detect app from path if not provided
+  const detectedApp = app ?? (
+    pathname.includes("/pdf") ? "pdf" :
+    pathname.includes("/image") ? "image" : "landing"
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -109,13 +120,13 @@ export function LanguageSwitcher({ locale, basePath = "", app = "landing" }: Lan
           {getSortedLocales(locale).map(([code, name]) => (
             <Link
               key={code}
-              href={`${basePath}/${code}`}
+              href={`/${code}${pathAfterLocale}`}
               className={`block px-4 py-2 text-sm transition-colors ${
                 code === locale
                   ? "bg-accent/10 text-accent font-medium"
                   : "text-foreground-muted hover:bg-background-elevated hover:text-foreground"
               }`}
-              onClick={() => { sendEvent("language_switch", { app, from_locale: locale, to_locale: code }); setOpen(false); }}
+              onClick={() => { sendEvent("language_switch", { app: detectedApp, from_locale: locale, to_locale: code }); setOpen(false); }}
             >
               {name}
             </Link>

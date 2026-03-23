@@ -1,0 +1,39 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — Tasuta veebitööriistad",
+    description: "Muuda, ühenda ja teisenda PDF-e. Muuda pilte, tihenda ja töötle neid. Kõik tasuta, otse brauseris.",
+  },
+  hero: {
+    badge: "87+ tasuta veebitööriista",
+    title: "Kõik vajalikud tööriistad ühes kohas — ToolPop",
+    titleAccent: "ToolPop",
+    subtitle: "Töötle PDF-e ja pilte otse brauseris. Midagi ei pea installima ega kontot looma.",
+    searchPlaceholder: "Millist tööriista otsid?",
+  },
+  apps: {
+    pdf: { name: "PDF tööriistad", description: "Ühendamine, poolitamine, teisendamine, muutmine ja tihendamine — kõik, mida PDF-iga teha saab.", cta: "Avasta PDF tööriistad", toolCount: "39 tööriista" },
+    image: { name: "Pilditööriistad", description: "Suuruse muutmine, kärpimine, teisendamine, efektid, QR-koodid — kõik piltide jaoks.", cta: "Avasta pilditööriistad", toolCount: "48 tööriista" },
+  },
+  popularTools: { sectionTitle: "Populaarsed tööriistad", sectionSubtitle: "Liigu kohe enimkasutatud tööriistade juurde", viewAll: "Vaata kõiki" },
+  stats: { tools: "87+", toolsLabel: "Tasuta tööriista", languages: "45", languagesLabel: "Keelt", users: "100%", usersLabel: "Brauseripõhine", price: "0 €", priceLabel: "Igavesti tasuta" },
+  trust: {
+    sectionTitle: "Miks ToolPop?",
+    sectionSubtitle: "Turvalisus ja mugavus ilma kompromissideta",
+    browserBased: "Töötlus brauseris",
+    browserBasedDesc: "Sinu failid ei lahku kunagi sinu seadmest. Kõik töötab brauseris — kiirelt ja turvaliselt.",
+    free: "Täiesti tasuta",
+    freeDesc: "Kasuta kõiki tööriistu nii palju kui soovid, ilma piiranguteta. Mingeid peidetud tasusid.",
+    private: "Privaatsus ennekõike",
+    privateDesc: "Failid jäävad sinu seadmesse. Serverisse ei laeta midagi — sinu andmed kuuluvad ainult sulle.",
+    noSignup: "Registreerimist pole vaja",
+    noSignupDesc: "Kontot ega e-posti pole vaja. Ava lihtsalt tööriist ja hakka tööle.",
+  },
+  cta: { title: "Valmis alustama?", subtitle: "Ilma installimise, registreerimise ja makseteta — vaid üks klikk.", button: "Sirvi kõiki tööriistu" },
+  common: { shareTitle: "Jaga", shareSubtitle: "Räägi sõpradele ToolPop-ist!", shareCopyLink: "Kopeeri link", shareCopied: "Kopeeritud!" },
+  footer: { apps: "Tööriistad", company: "Ettevõte", about: "Meist", contact: "Kontakt", faq: "KKK", blog: "Blogi", legal: "Õiguslik teave", privacy: "Privaatsuspoliitika", terms: "Kasutustingimused", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Tasuta veebitööriistad PDF-ide, piltide ja muu jaoks. Ilma registreerimata.", madeWith: "Loodud armastusega kõigile" },
+  search: { noResults: "Tulemusi ei leitud" },
+  nav: { pdf: "PDF", image: "Image" },
+};
+export default dict;

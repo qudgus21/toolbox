@@ -20,4 +20,4 @@ export { ShareButton } from "./components/share-button";
 export { ShareToolButton } from "./components/share-button";
 export { ThemeToggle } from "./components/theme-toggle/theme-toggle";
 export { LanguageSwitcher } from "./components/language-switcher/language-switcher";
-export { AppNavMenu, type NavApp, type NavAppTool } from "./components/app-nav-menu/app-nav-menu";
+export { AppNavMenu, type NavApp } from "./components/app-nav-menu/app-nav-menu";
