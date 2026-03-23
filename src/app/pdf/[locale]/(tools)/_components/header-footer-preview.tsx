@@ -306,6 +306,7 @@ export function HeaderFooterPreview({
                   src={thumb}
                   alt={`Page ${pageNum}`}
                   className="h-full w-full object-contain"
+                  loading="lazy"
                   draggable={false}
                 />
               ) : (

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { tools } from "@/lib/pdf/tools";
+import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org/pdf";
 
@@ -27,6 +28,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.8,
       });
+    }
+  }
+
+  // Blog pages
+  const pdfArticles = articles.filter((a) => a.app === "pdf");
+  for (const locale of locales) {
+    if (pdfArticles.length > 0) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog`,
+        lastModified: new Date("2026-03-23"),
+        changeFrequency: "weekly",
+        priority: 0.6,
+      });
+    }
+    for (const article of pdfArticles) {
+      if (article.content[locale]) {
+        entries.push({
+          url: `${BASE_URL}/${locale}/blog/${article.slug}`,
+          lastModified: new Date(article.publishedAt),
+          changeFrequency: "monthly",
+          priority: 0.5,
+        });
+      }
     }
   }
 

@@ -259,6 +259,7 @@ function SortablePageCard({
             src={thumb}
             alt={`${pageLabel} ${pageNum}`}
             className="h-full w-full object-contain bg-white"
+            loading="lazy"
             draggable={false}
           />
         ) : (
