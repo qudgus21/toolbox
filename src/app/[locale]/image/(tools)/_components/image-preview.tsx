@@ -717,6 +717,9 @@ export function ImagePreview({ file, files, slug, options }: ImagePreviewProps) 
               ctx.globalAlpha = 1.0;
               URL.revokeObjectURL(wmUrl);
             };
+            wmImg.onerror = () => {
+              URL.revokeObjectURL(wmUrl);
+            };
             wmImg.src = wmUrl;
           }
         }

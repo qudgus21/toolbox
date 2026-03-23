@@ -25,7 +25,7 @@ function HtmlPreview({ options }: { options: Record<string, unknown> }) {
     >
       <iframe
         srcDoc={srcDoc}
-        sandbox="allow-same-origin"
+        sandbox=""
         title="HTML Preview"
         className="w-full rounded border-0"
         style={{ pointerEvents: "none", height: 400 }}
