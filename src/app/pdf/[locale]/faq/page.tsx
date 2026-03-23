@@ -1,86 +1,10 @@
-import type { Metadata } from "next";
-import { type Locale, locales, getDictionary } from "@/lib/i18n";
-import { generateAlternates } from "@/lib/seo";
-import { Container } from "@/lib/ui";
-import { notFound } from "next/navigation";
-import { FaqAccordion } from "./faq-accordion";
+import { redirect } from "next/navigation";
 
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const dict = await getDictionary(locale as Locale);
-
-  const title = `${dict.faq.title} ${dict.metadata.toolTitleSuffix}`;
-
-  return {
-    title,
-    description: dict.faq.intro,
-    alternates: generateAlternates("faq", locales, locale, "en", "pdf"),
-    openGraph: {
-      title,
-      description: dict.faq.intro,
-      url: `/pdf/${locale}/faq`,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description: dict.faq.intro,
-    },
-  };
-}
-
-export default async function FaqPage({
+export default async function RedirectPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  if (!locales.includes(locale as Locale)) {
-    notFound();
-  }
-
-  const dict = await getDictionary(locale as Locale);
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: dict.faq.items.map((item) => ({
-              "@type": "Question",
-              name: item.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
-              },
-            })),
-          }),
-        }}
-      />
-      <main className="py-12">
-        <Container size="md">
-          <h1 className="text-3xl font-bold text-foreground mb-4">
-            {dict.faq.title}
-          </h1>
-          <p className="text-foreground-muted leading-relaxed mb-8">
-            {dict.faq.intro}
-          </p>
-
-          <FaqAccordion items={dict.faq.items} />
-        </Container>
-      </main>
-    </>
-  );
+  redirect(`/${locale}/faq`);
 }

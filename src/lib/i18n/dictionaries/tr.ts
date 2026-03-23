@@ -124,11 +124,16 @@ const tr: Dictionary = {
     favoriteAdded: "Favorilere eklendi",
     favoriteRemoved: "Favorilerden kaldırıldı",
     comingSoon: "Yakında",
+    share: "Paylaş",
+    shareTitle: "Bu sayfayı paylaş",
+    shareSubtitle: "Herkese duyurun!",
+    shareCopied: "Kopyalandı!",
+    shareCopyLink: "Bağlantıyı kopyala",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Ücretsiz PDF Araçları",
+    siteTitle: "ToolPop - Ücretsiz PDF Araçları",
     siteDescription: "PDF dosyalarını çevrimiçi olarak ücretsiz birleştirin, bölün, sıkıştırın ve dönüştürün.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Deneyiminizi iyileştirmek için çerez kullanıyoruz.",
@@ -138,15 +143,15 @@ const tr: Dictionary = {
   privacy: {
     title: "Gizlilik Politikası",
     lastUpdated: "Son güncelleme: 1 Mart 2026",
-    intro: "ToolPop PDF olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken hangi bilgileri topladığımızı ve bunları nasıl işlediğimizi açıklar.",
+    intro: "ToolPop olarak gizliliğinize önem veriyoruz. Bu politika, hizmetimizi kullanırken hangi bilgileri topladığımızı ve bunları nasıl işlediğimizi açıklar.",
     sections: [
       {
         heading: "1. Topladığımız Bilgiler",
-        content: "ToolPop PDF'de hesap oluşturmanız gerekmez. Kişisel bilgi toplamıyoruz. Ancak hizmeti iyileştirmek amacıyla kimliğinizi belirlemeyen bazı verileri otomatik olarak toplayabiliriz:\n\n• Tarayıcı türü ve sürümü\n• İşletim sistemi\n• Ziyaret edilen sayfalar ve geçirilen süre\n• Kullanım alışkanlıklarını analiz etmek için çerezler ve benzeri teknolojiler",
+        content: "ToolPop'de hesap oluşturmanız gerekmez. Kişisel bilgi toplamıyoruz. Ancak hizmeti iyileştirmek amacıyla kimliğinizi belirlemeyen bazı verileri otomatik olarak toplayabiliriz:\n\n• Tarayıcı türü ve sürümü\n• İşletim sistemi\n• Ziyaret edilen sayfalar ve geçirilen süre\n• Kullanım alışkanlıklarını analiz etmek için çerezler ve benzeri teknolojiler",
       },
       {
         heading: "2. Dosya İşleme",
-        content: "Yüklediğiniz dosyalar sunucularımızda işlenir ve 2 saat içinde otomatik olarak silinir. Dosyalarınızın içeriğini okumaz, saklamaz veya üçüncü taraflarla paylaşmayız.",
+        content: "ToolPop'taki tüm dosya işleme doğrudan tarayıcınızda gerçekleşir. Dosyalarınız hiçbir zaman herhangi bir sunucuya yüklenmez ve cihazınızdan asla ayrılmaz. Yerel ve güvenli işleme için WebAssembly ve modern web teknolojilerini kullanıyoruz.",
       },
       {
         heading: "3. Çerezler",
@@ -166,18 +171,18 @@ const tr: Dictionary = {
       },
       {
         heading: "7. İletişim",
-        content: "Gizlilikle ilgili sorularınız için bize support@toolbox-pdf.com adresinden ulaşabilirsiniz.",
+        content: "Gizlilikle ilgili sorularınız için bize support@toolpop.org adresinden ulaşabilirsiniz.",
       },
     ],
   },
   terms: {
     title: "Hizmet Şartları",
     lastUpdated: "Son güncelleme: 1 Mart 2026",
-    intro: "ToolPop PDF'i kullandığınız için teşekkürler. Hizmetimize erişerek veya kullanarak aşağıdaki şartları kabul etmiş olursunuz.",
+    intro: "ToolPop'i kullandığınız için teşekkürler. Hizmetimize erişerek veya kullanarak aşağıdaki şartları kabul etmiş olursunuz.",
     sections: [
       {
         heading: "1. Hizmet Hakkında",
-        content: "ToolPop PDF, doğrudan tarayıcınızda PDF dosyalarını birleştirmenize, bölmenize, dönüştürmenize, düzenlemenize ve sıkıştırmanıza olanak tanıyan ücretsiz bir çevrimiçi hizmettir.",
+        content: "ToolPop, PDF'leri, görselleri ve diğer dosyaları doğrudan tarayıcınızda işlemenize olanak tanıyan ücretsiz bir çevrimiçi araç setidir. Tüm işlemler cihazınızda yerel olarak gerçekleşir — dosyalar hiçbir zaman herhangi bir sunucuya yüklenmez.",
       },
       {
         heading: "2. Kabul Edilebilir Kullanım",
@@ -185,7 +190,7 @@ const tr: Dictionary = {
       },
       {
         heading: "3. Dosya İşleme",
-        content: "Yüklenen dosyalar yalnızca talep ettiğiniz işlemi gerçekleştirmek için kullanılır. 2 saat içinde sunucularımızdan otomatik olarak silinir. Dosyalarınızı analiz etmez veya saklamayız.",
+        content: "ToolPop'taki tüm dosya işleme doğrudan tarayıcınızda gerçekleşir. Dosyalarınız hiçbir zaman herhangi bir sunucuya gönderilmez ve cihazınızdan asla ayrılmaz. İşlenmiş sonuçlar doğrudan tarayıcınızdan indirilebilir.",
       },
       {
         heading: "4. Sorumluluk Reddi",
@@ -205,7 +210,7 @@ const tr: Dictionary = {
       },
       {
         heading: "8. İletişim",
-        content: "Bu şartlarla ilgili sorularınız için bize support@toolbox-pdf.com adresinden ulaşabilirsiniz.",
+        content: "Bu şartlarla ilgili sorularınız için bize support@toolpop.org adresinden ulaşabilirsiniz.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const tr: Dictionary = {
     backLabel: "Arka",
   },
   about: {
-    title: "ToolPop PDF Hakkında",
-    intro: "ToolPop PDF, tarayıcınızda doğrudan çalışan ücretsiz bir PDF araç setidir. PDF dosyalarınızı herhangi bir sunucuya yüklemeden düzenleyin, dönüştürün ve düzenleyin. Dosyalarınız asla cihazınızdan çıkmaz.",
+    title: "ToolPop Hakkında",
+    intro: "ToolPop, tarayıcınızda doğrudan çalışan ücretsiz bir PDF araç setidir. PDF dosyalarınızı herhangi bir sunucuya yüklemeden düzenleyin, dönüştürün ve düzenleyin. Dosyalarınız asla cihazınızdan çıkmaz.",
     sections: [
-      { heading: "Misyonumuz", content: "Herkesin profesyonel PDF araçlarına erişim hakkı olduğuna inanıyoruz — abonelik olmadan, kayıt olmadan ve gizlilikten ödün vermeden. ToolPop PDF, web tarayıcısı olan herkesin belgeleri kolayca yönetebilmesi için geliştirildi." },
-      { heading: "Nasıl çalışır", content: "Dosyalarınızı uzak sunuculara yüklemenizi gerektiren geleneksel PDF hizmetlerinin aksine, ToolPop PDF her şeyi WebAssembly ve PDF.js gibi modern web teknolojileri kullanarak doğrudan tarayıcınızda işler. Hassas belgeleriniz her zaman cihazınızda kalır — dosyalarınızı asla görmez, saklamaz veya iletmeyiz." },
-      { heading: "Neler sunuyoruz", content: "ToolPop PDF, beş kategoride 40'tan fazla araç içerir:\n\n• Düzenle — Birleştir, böl, yeniden sırala, çıkar ve sayfaları sil\n• Dönüştür — PDF, JPG, PNG, metin ve diğer formatlar arasında dönüştür\n• Düzenle — Metin, görsel, imza, filigran, sayfa numarası ve açıklama ekle\n• Optimize et — Dosyaları sıkıştır ve web için optimize et\n• Güvenlik — Parola koruması, hassas bilgileri gizleme ve belgeleri düzleştirme\n\nTüm araçlar tamamen ücretsizdir; dosya boyutu sınırı veya günlük kullanım kotası yoktur." },
-      { heading: "Teknolojimiz", content: "ToolPop PDF; Next.js, React ve modern web standartları ile geliştirilmiştir. PDF işleme için pdf-lib, görüntüleme için PDF.js kütüphanelerini kullanırız — tamamı tarayıcınızda istemci tarafında çalışır. Site 45 dili, karanlık modu destekler ve modern tarayıcısı olan her cihazda çalışır." },
+      { heading: "Misyonumuz", content: "Herkesin profesyonel PDF araçlarına erişim hakkı olduğuna inanıyoruz — abonelik olmadan, kayıt olmadan ve gizlilikten ödün vermeden. ToolPop, web tarayıcısı olan herkesin belgeleri kolayca yönetebilmesi için geliştirildi." },
+      { heading: "Nasıl çalışır", content: "Dosyalarınızı uzak sunuculara yüklemenizi gerektiren geleneksel PDF hizmetlerinin aksine, ToolPop her şeyi WebAssembly ve PDF.js gibi modern web teknolojileri kullanarak doğrudan tarayıcınızda işler. Hassas belgeleriniz her zaman cihazınızda kalır — dosyalarınızı asla görmez, saklamaz veya iletmeyiz." },
+      { heading: "Neler sunuyoruz", content: "ToolPop, beş kategoride 40'tan fazla araç içerir:\n\n• Düzenle — Birleştir, böl, yeniden sırala, çıkar ve sayfaları sil\n• Dönüştür — PDF, JPG, PNG, metin ve diğer formatlar arasında dönüştür\n• Düzenle — Metin, görsel, imza, filigran, sayfa numarası ve açıklama ekle\n• Optimize et — Dosyaları sıkıştır ve web için optimize et\n• Güvenlik — Parola koruması, hassas bilgileri gizleme ve belgeleri düzleştirme\n\nTüm araçlar tamamen ücretsizdir; dosya boyutu sınırı veya günlük kullanım kotası yoktur." },
+      { heading: "Teknolojimiz", content: "ToolPop; Next.js, React ve modern web standartları ile geliştirilmiştir. PDF işleme için pdf-lib, görüntüleme için PDF.js kütüphanelerini kullanırız — tamamı tarayıcınızda istemci tarafında çalışır. Site 45 dili, karanlık modu destekler ve modern tarayıcısı olan her cihazda çalışır." },
       { heading: "İletişim", content: "Sorularınız, geri bildirimleriniz veya özellik talepleriniz mi var? Sizden haber almaktan mutluluk duyarız. İletişim sayfamızı ziyaret edin veya adresine e-posta gönderin." },
     ],
   },
@@ -1091,22 +1096,22 @@ const tr: Dictionary = {
   },
   faq: {
     title: "Sık Sorulan Sorular",
-    intro: "ToolPop PDF hakkında en sık sorulan soruların yanıtlarını burada bulabilirsiniz. Sorunuzun yanıtını bulamazsanız, bize ulaşmaktan çekinmeyin.",
+    intro: "ToolPop hakkında en sık sorulan soruların yanıtlarını burada bulabilirsiniz. Sorunuzun yanıtını bulamazsanız, bize ulaşmaktan çekinmeyin.",
     items: [
-      { question: "ToolPop PDF gerçekten ücretsiz mi?", answer: "Evet, tamamen ücretsiz. Tüm araçlar sınırsız kullanılabilir, kayıt gerekmez, gizli ücret yoktur. Hizmeti göze batmayan reklamlarla sürdürüyoruz." },
+      { question: "ToolPop gerçekten ücretsiz mi?", answer: "Evet, tamamen ücretsiz. Tüm araçlar sınırsız kullanılabilir, kayıt gerekmez, gizli ücret yoktur. Hizmeti göze batmayan reklamlarla sürdürüyoruz." },
       { question: "Dosyalarım güvende mi?", answer: "Kesinlikle. Dosyalarınız tamamen tarayıcınızda işlenir — cihazınızdan çıkmaz veya herhangi bir sunucuya yüklenmez. Tüm PDF işlemlerini modern tarayıcı API'leri ile yerel olarak gerçekleştiririz; hassas belgeleriniz tamamen gizli kalır." },
-      { question: "Hesap oluşturmam gerekiyor mu?", answer: "Hayır. ToolPop PDF herhangi bir kayıt veya giriş yapmadan çalışır. Bir araç açın, dosyanızı bırakın ve anında sonuç alın." },
+      { question: "Hesap oluşturmam gerekiyor mu?", answer: "Hayır. ToolPop herhangi bir kayıt veya giriş yapmadan çalışır. Bir araç açın, dosyanızı bırakın ve anında sonuç alın." },
       { question: "İşleyebileceğim maksimum dosya boyutu nedir?", answer: "İşleme tarayıcınızda yapıldığı için limit, cihazınızın kullanılabilir belleğine bağlıdır. Modern cihazların çoğu 100-200 MB'a kadar dosyaları sorunsuz işleyebilir. Çok büyük dosyalar için masaüstü tarayıcısı kullanmanızı öneririz." },
-      { question: "Hangi tarayıcılar destekleniyor?", answer: "ToolPop PDF; Chrome, Firefox, Safari, Edge ve Opera dahil tüm modern tarayıcılarda çalışır. En iyi deneyim için tarayıcınızın en son sürümünü kullanmanızı öneririz." },
-      { question: "Telefon veya tablette kullanabilir miyim?", answer: "Evet! ToolPop PDF tamamen duyarlıdır ve mobil cihazlarda çalışır. Telefonunuzun veya tabletinizin tarayıcısından doğrudan PDF birleştirme, bölme, dönüştürme ve düzenleme yapabilirsiniz." },
+      { question: "Hangi tarayıcılar destekleniyor?", answer: "ToolPop; Chrome, Firefox, Safari, Edge ve Opera dahil tüm modern tarayıcılarda çalışır. En iyi deneyim için tarayıcınızın en son sürümünü kullanmanızı öneririz." },
+      { question: "Telefon veya tablette kullanabilir miyim?", answer: "Evet! ToolPop tamamen duyarlıdır ve mobil cihazlarda çalışır. Telefonunuzun veya tabletinizin tarayıcısından doğrudan PDF birleştirme, bölme, dönüştürme ve düzenleme yapabilirsiniz." },
       { question: "Tarayıcıda işleme nasıl çalışır?", answer: "Bir dosya seçtiğinizde, dosya cihazınızda kalır. Araçlarımız pdf-lib ve PDF.js gibi JavaScript kütüphanelerini kullanarak PDF'leri doğrudan tarayıcınızın belleğinde okur, değiştirir ve oluşturur. İşlenmiş dosya indirmeye hazır olur — sunucu iletişimi gerekmez." },
       { question: "İkiden fazla PDF birleştirebilir miyim?", answer: "Evet. PDF birleştirme aracımız istediğiniz sayıda dosyayı destekler. Tüm PDF'leri sürükleyip bırakın, istediğiniz sırada düzenleyin ve işle düğmesine tıklayın." },
       { question: "Hangi dosya formatlarına dönüştürebilirim?", answer: "PDF'leri JPG, PNG ve düz metne dönüştürebilirsiniz. PDF oluşturmak için JPG, PNG, WEBP, TIFF, HEIC görsel, HTML dosyası ve taranmış belge desteklenir. Daha fazla format düzenli olarak eklenmektedir." },
-      { question: "ToolPop PDF'yi diğer PDF araçlarından ayıran nedir?", answer: "Üç temel fark: (1) Gizlilik — dosyalarınız cihazınızdan çıkmaz, rakiplerin çoğunun sunucularına yüklediğinin aksine. (2) Sınırsız — günlük kota yok, dosya boyutu sınırı yok, çıktılarda filigran yok. (3) Hesap gerekmez — kaydolmadan herhangi bir aracı anında kullanın." },
+      { question: "ToolPop'yi diğer PDF araçlarından ayıran nedir?", answer: "Üç temel fark: (1) Gizlilik — dosyalarınız cihazınızdan çıkmaz, rakiplerin çoğunun sunucularına yüklediğinin aksine. (2) Sınırsız — günlük kota yok, dosya boyutu sınırı yok, çıktılarda filigran yok. (3) Hesap gerekmez — kaydolmadan herhangi bir aracı anında kullanın." },
       { question: "PDF'ime parola ekleyebilir miyim?", answer: "Evet. PDF Koru aracımızı kullanarak AES-256 şifreleme ile parola koruması ekleyebilirsiniz. Açma parolası ayarlayabilir ve yazdırma, kopyalama ve düzenleme izinlerini kontrol edebilirsiniz." },
-      { question: "ToolPop PDF dosyalarıma filigran ekler mi?", answer: "Asla. Tüm işlenmiş dosyalar temizdir ve herhangi bir ToolPop markası veya filigran içermez. Çıktı, profesyonel bir araçtan beklediğiniz kalitededir." },
-      { question: "API mevcut mu?", answer: "Şu anda hayır. ToolPop PDF, bireysel kullanım için tarayıcı tabanlı bir araç olarak tasarlanmıştır. Programatik PDF işleme için API erişimine ihtiyacınız varsa, kurumsal çözümler hakkında adresinden bize ulaşın." },
-      { question: "Site hangi dillerde mevcut?", answer: "ToolPop PDF; İngilizce, Korece, İspanyolca, Çince, Japonca, Almanca, Fransızca, Portekizce, Arapça, Hintçe ve daha birçok dil dahil 45 dilde mevcuttur. Arayüz tarayıcınızın dilini otomatik algılar veya dil seçiciyi kullanarak manuel olarak değiştirebilirsiniz." },
+      { question: "ToolPop dosyalarıma filigran ekler mi?", answer: "Asla. Tüm işlenmiş dosyalar temizdir ve herhangi bir ToolPop markası veya filigran içermez. Çıktı, profesyonel bir araçtan beklediğiniz kalitededir." },
+      { question: "API mevcut mu?", answer: "Şu anda hayır. ToolPop, bireysel kullanım için tarayıcı tabanlı bir araç olarak tasarlanmıştır. Programatik PDF işleme için API erişimine ihtiyacınız varsa, kurumsal çözümler hakkında adresinden bize ulaşın." },
+      { question: "Site hangi dillerde mevcut?", answer: "ToolPop; İngilizce, Korece, İspanyolca, Çince, Japonca, Almanca, Fransızca, Portekizce, Arapça, Hintçe ve daha birçok dil dahil 45 dilde mevcuttur. Arayüz tarayıcınızın dilini otomatik algılar veya dil seçiciyi kullanarak manuel olarak değiştirebilirsiniz." },
     ],
   },
   blog: {

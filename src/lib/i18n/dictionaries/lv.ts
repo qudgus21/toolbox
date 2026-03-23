@@ -124,11 +124,16 @@ const lv: Dictionary = {
     favoriteAdded: "Pievienots izlasei",
     favoriteRemoved: "Noņemts no izlases",
     comingSoon: "Coming Soon",
+    share: "Dalīties",
+    shareTitle: "Dalīties ar šo lapu",
+    shareSubtitle: "Pastāstiet citiem!",
+    shareCopied: "Nokopēts!",
+    shareCopyLink: "Kopēt saiti",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Bezmaksas PDF rīki",
+    siteTitle: "ToolPop - Bezmaksas PDF rīki",
     siteDescription: "Apvienojiet, sadaliet, saspiežiet un konvertējiet PDF failus tiešsaistē bez maksas.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Mēs izmantojam sīkdatnes, lai uzlabotu jūsu pieredzi.",
@@ -138,15 +143,15 @@ const lv: Dictionary = {
   privacy: {
     title: "Privātuma politika",
     lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
-    intro: "ToolPop PDF rūpējas par jūsu privātumu. Šī politika skaidro, kādu informāciju mēs apkopojam, kad izmantojat mūsu pakalpojumu, un kā mēs ar to rīkojamies.",
+    intro: "ToolPop rūpējas par jūsu privātumu. Šī politika skaidro, kādu informāciju mēs apkopojam, kad izmantojat mūsu pakalpojumu, un kā mēs ar to rīkojamies.",
     sections: [
       {
         heading: "1. Informācija, ko apkopojam",
-        content: "ToolPop PDF neprasa reģistrāciju. Mēs neapkopojam personisko informāciju. Tomēr mēs varam automātiski apkopot neidentificējošus datus, lai uzlabotu pakalpojumu:\n\n• Pārlūkprogrammas tips un versija\n• Operētājsistēma\n• Apmeklētās lapas un pavadītais laiks\n• Sīkdatnes un līdzīgas tehnoloģijas lietošanas paradumu analīzei",
+        content: "ToolPop neprasa reģistrāciju. Mēs neapkopojam personisko informāciju. Tomēr mēs varam automātiski apkopot neidentificējošus datus, lai uzlabotu pakalpojumu:\n\n• Pārlūkprogrammas tips un versija\n• Operētājsistēma\n• Apmeklētās lapas un pavadītais laiks\n• Sīkdatnes un līdzīgas tehnoloģijas lietošanas paradumu analīzei",
       },
       {
         heading: "2. Failu apstrāde",
-        content: "Jūsu augšupielādētie faili tiek apstrādāti mūsu serveros un automātiski dzēsti 2 stundu laikā. Mēs nelasām, neglabājam un nekopīgojam jūsu failu saturu ar nevienu.",
+        content: "Visa failu apstrāde ToolPop notiek tieši jūsu pārlūkprogrammā. Jūsu faili nekad netiek augšupielādēti nevienā serverī un nekad neatstāj jūsu ierīci. Mēs izmantojam WebAssembly un modernas tīmekļa tehnoloģijas lokālai un drošai apstrādei.",
       },
       {
         heading: "3. Sīkdatnes",
@@ -166,18 +171,18 @@ const lv: Dictionary = {
       },
       {
         heading: "7. Sazinieties ar mums",
-        content: "Ja jums ir jautājumi par privātumu, rakstiet mums uz support@toolbox-pdf.com.",
+        content: "Ja jums ir jautājumi par privātumu, rakstiet mums uz support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Lietošanas noteikumi",
     lastUpdated: "Pēdējo reizi atjaunināts: 2026. gada 1. marts",
-    intro: "Paldies, ka izmantojat ToolPop PDF. Piekļūstot mūsu pakalpojumam vai to izmantojot, jūs piekrītat šādiem noteikumiem.",
+    intro: "Paldies, ka izmantojat ToolPop. Piekļūstot mūsu pakalpojumam vai to izmantojot, jūs piekrītat šādiem noteikumiem.",
     sections: [
       {
         heading: "1. Par pakalpojumu",
-        content: "ToolPop PDF ir bezmaksas tiešsaistes pakalpojums, kas ļauj apvienot, sadalīt, konvertēt, rediģēt un saspiest PDF failus tieši jūsu pārlūkprogrammā.",
+        content: "ToolPop ir bezmaksas tiešsaistes rīku komplekts, kas ļauj apstrādāt PDF, attēlus un citus failus tieši pārlūkprogrammā. Visa apstrāde notiek jūsu ierīcē — faili nekad netiek augšupielādēti nevienā serverī.",
       },
       {
         heading: "2. Pieļaujamā lietošana",
@@ -185,7 +190,7 @@ const lv: Dictionary = {
       },
       {
         heading: "3. Failu apstrāde",
-        content: "Augšupielādētie faili tiek izmantoti tikai pieprasītās darbības veikšanai. Tie automātiski tiek dzēsti no mūsu serveriem 2 stundu laikā. Mēs neanalizējam un neglabājam jūsu failus.",
+        content: "Visa failu apstrāde ToolPop notiek tieši jūsu pārlūkprogrammā. Jūsu faili nekad netiek nosūtīti uz nevienu serveri un nekad neatstāj jūsu ierīci. Apstrādātie rezultāti ir pieejami lejupielādei tieši no pārlūkprogrammas.",
       },
       {
         heading: "4. Atbildības ierobežojums",
@@ -205,7 +210,7 @@ const lv: Dictionary = {
       },
       {
         heading: "8. Sazinieties ar mums",
-        content: "Ja jums ir jautājumi par šiem noteikumiem, rakstiet mums uz support@toolbox-pdf.com.",
+        content: "Ja jums ir jautājumi par šiem noteikumiem, rakstiet mums uz support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const lv: Dictionary = {
     backLabel: "Aizmugure",
   },
   about: {
-    title: "Par ToolPop PDF",
-    intro: "ToolPop PDF ir bezmaksas PDF rīku komplekts, kas darbojas tieši pārlūkprogrammā. Rediģējiet, konvertējiet un kārtojiet PDF failus, neaugšupielādējot tos serverī. Jūsu faili nekad neatstāj jūsu ierīci.",
+    title: "Par ToolPop",
+    intro: "ToolPop ir bezmaksas PDF rīku komplekts, kas darbojas tieši pārlūkprogrammā. Rediģējiet, konvertējiet un kārtojiet PDF failus, neaugšupielādējot tos serverī. Jūsu faili nekad neatstāj jūsu ierīci.",
     sections: [
-      { heading: "Mūsu misija", content: "Mēs ticam, ka ikvienam ir jābūt pieejai jaudīgiem PDF rīkiem — bez abonementiem, bez reģistrācijas un neapdraudot privātumu. ToolPop PDF tika izveidots, lai profesionāla dokumentu apstrāde būtu pieejama ikvienam ar tīmekļa pārlūkprogrammu." },
-      { heading: "Kā tas darbojas", content: "Atšķirībā no tradicionālajiem PDF pakalpojumiem, kas pieprasa augšupielādēt failus attālinātos serveros, ToolPop PDF visu apstrādā tieši jūsu pārlūkprogrammā, izmantojot modernās tīmekļa tehnoloģijas, piemēram, WebAssembly un PDF.js bibliotēku. Tas nozīmē, ka jūsu konfidenciālie dokumenti vienmēr paliek jūsu ierīcē — mēs nekad neredzam, neglabājam un nepārsūtām jūsu failus." },
-      { heading: "Ko mēs piedāvājam", content: "ToolPop PDF ietver vairāk nekā 40 rīkus piecās kategorijās:\n\n• Kārtošana — apvienošana, sadalīšana, pārkārtošana, izvilkšana un lapu dzēšana\n• Konvertēšana — pārveidošana starp PDF, JPG, PNG, tekstu un citiem formātiem\n• Rediģēšana — teksta, attēlu, parakstu, ūdenszīmju, lappušu numuru un anotāciju pievienošana\n• Optimizēšana — failu saspiešana un optimizēšana tīmeklim\n• Drošība — paroles aizsardzība, konfidenciālas informācijas noslēpšana un dokumentu saplacināšana\n\nVisi rīki ir pilnīgi bezmaksas, bez failu izmēra ierobežojumiem vai dienas lietošanas limitiem." },
-      { heading: "Mūsu tehnoloģija", content: "ToolPop PDF ir veidots ar Next.js, React un modernajiem tīmekļa standartiem. Mēs izmantojam tādas bibliotēkas kā pdf-lib PDF apstrādei un PDF.js renderēšanai — viss darbojas klienta pusē jūsu pārlūkprogrammā. Vietne atbalsta 45 valodas, tumšo režīmu un darbojas jebkurā ierīcē ar modernu pārlūkprogrammu." },
+      { heading: "Mūsu misija", content: "Mēs ticam, ka ikvienam ir jābūt pieejai jaudīgiem PDF rīkiem — bez abonementiem, bez reģistrācijas un neapdraudot privātumu. ToolPop tika izveidots, lai profesionāla dokumentu apstrāde būtu pieejama ikvienam ar tīmekļa pārlūkprogrammu." },
+      { heading: "Kā tas darbojas", content: "Atšķirībā no tradicionālajiem PDF pakalpojumiem, kas pieprasa augšupielādēt failus attālinātos serveros, ToolPop visu apstrādā tieši jūsu pārlūkprogrammā, izmantojot modernās tīmekļa tehnoloģijas, piemēram, WebAssembly un PDF.js bibliotēku. Tas nozīmē, ka jūsu konfidenciālie dokumenti vienmēr paliek jūsu ierīcē — mēs nekad neredzam, neglabājam un nepārsūtām jūsu failus." },
+      { heading: "Ko mēs piedāvājam", content: "ToolPop ietver vairāk nekā 40 rīkus piecās kategorijās:\n\n• Kārtošana — apvienošana, sadalīšana, pārkārtošana, izvilkšana un lapu dzēšana\n• Konvertēšana — pārveidošana starp PDF, JPG, PNG, tekstu un citiem formātiem\n• Rediģēšana — teksta, attēlu, parakstu, ūdenszīmju, lappušu numuru un anotāciju pievienošana\n• Optimizēšana — failu saspiešana un optimizēšana tīmeklim\n• Drošība — paroles aizsardzība, konfidenciālas informācijas noslēpšana un dokumentu saplacināšana\n\nVisi rīki ir pilnīgi bezmaksas, bez failu izmēra ierobežojumiem vai dienas lietošanas limitiem." },
+      { heading: "Mūsu tehnoloģija", content: "ToolPop ir veidots ar Next.js, React un modernajiem tīmekļa standartiem. Mēs izmantojam tādas bibliotēkas kā pdf-lib PDF apstrādei un PDF.js renderēšanai — viss darbojas klienta pusē jūsu pārlūkprogrammā. Vietne atbalsta 45 valodas, tumšo režīmu un darbojas jebkurā ierīcē ar modernu pārlūkprogrammu." },
       { heading: "Sazinieties ar mums", content: "Vai jums ir jautājumi, atsauksmes vai funkciju pieprasījumi? Mēs labprāt uzklausīsim. Apmeklējiet mūsu Kontaktu lapu vai rakstiet mums uz." },
     ],
   },
@@ -1091,22 +1096,22 @@ const lv: Dictionary = {
   },
   faq: {
     title: "Biežāk uzdotie jautājumi",
-    intro: "Atrodiet atbildes uz visbiežāk uzdotajiem jautājumiem par ToolPop PDF. Ja neatrodat savu jautājumu, droši sazinieties ar mums.",
+    intro: "Atrodiet atbildes uz visbiežāk uzdotajiem jautājumiem par ToolPop. Ja neatrodat savu jautājumu, droši sazinieties ar mums.",
     items: [
-      { question: "Vai ToolPop PDF tiešām ir bezmaksas?", answer: "Jā, pilnīgi bezmaksas. Visi rīki ir pieejami bez ierobežojumiem, bez reģistrācijas un bez slēptām maksām. Pakalpojumu uzturām ar neuzbāzīgu reklāmu." },
+      { question: "Vai ToolPop tiešām ir bezmaksas?", answer: "Jā, pilnīgi bezmaksas. Visi rīki ir pieejami bez ierobežojumiem, bez reģistrācijas un bez slēptām maksām. Pakalpojumu uzturām ar neuzbāzīgu reklāmu." },
       { question: "Vai mani faili ir droši un privāti?", answer: "Pilnīgi noteikti. Jūsu faili tiek apstrādāti tikai jūsu pārlūkprogrammā — tie nekad neatstāj jūsu ierīci un netiek augšupielādēti nevienā serverī. Mēs izmantojam modernās pārlūkprogrammas API visām PDF operācijām, tāpēc jūsu konfidenciālie dokumenti paliek pilnīgi privāti." },
-      { question: "Vai man jāizveido konts?", answer: "Nē. ToolPop PDF darbojas bez jebkādas reģistrācijas vai pieteikšanās. Vienkārši atveriet rīku, ievelciet failu un uzreiz saņemiet rezultātu." },
+      { question: "Vai man jāizveido konts?", answer: "Nē. ToolPop darbojas bez jebkādas reģistrācijas vai pieteikšanās. Vienkārši atveriet rīku, ievelciet failu un uzreiz saņemiet rezultātu." },
       { question: "Kāds ir maksimālais faila izmērs?", answer: "Tā kā apstrāde notiek jūsu pārlūkprogrammā, limits ir atkarīgs no jūsu ierīces pieejamās atmiņas. Lielākā daļa moderno ierīču bez problēmām apstrādā failus līdz 100–200 MB. Ļoti lieliem failiem iesakām izmantot galddatora pārlūkprogrammu." },
-      { question: "Kuras pārlūkprogrammas tiek atbalstītas?", answer: "ToolPop PDF darbojas visās modernajās pārlūkprogrammās, ieskaitot Chrome, Firefox, Safari, Edge un Opera. Labākajai pieredzei iesakām izmantot jaunāko pārlūkprogrammas versiju." },
-      { question: "Vai varu lietot ToolPop PDF savā tālrunī vai planšetdatorā?", answer: "Jā! ToolPop PDF ir pilnīgi responsīvs un darbojas mobilajās ierīcēs. Varat apvienot, sadalīt, konvertēt un rediģēt PDF failus tieši no sava tālruņa vai planšetdatora pārlūkprogrammas." },
+      { question: "Kuras pārlūkprogrammas tiek atbalstītas?", answer: "ToolPop darbojas visās modernajās pārlūkprogrammās, ieskaitot Chrome, Firefox, Safari, Edge un Opera. Labākajai pieredzei iesakām izmantot jaunāko pārlūkprogrammas versiju." },
+      { question: "Vai varu lietot ToolPop savā tālrunī vai planšetdatorā?", answer: "Jā! ToolPop ir pilnīgi responsīvs un darbojas mobilajās ierīcēs. Varat apvienot, sadalīt, konvertēt un rediģēt PDF failus tieši no sava tālruņa vai planšetdatora pārlūkprogrammas." },
       { question: "Kā darbojas apstrāde pārlūkprogrammā?", answer: "Kad izvēlaties failu, tas paliek jūsu ierīcē. Mūsu rīki izmanto JavaScript bibliotēkas, piemēram, pdf-lib un PDF.js, lai lasītu, modificētu un izveidotu PDF failus tieši pārlūkprogrammas atmiņā. Apstrādātais fails pēc tam ir pieejams lejupielādei — bez servera komunikācijas." },
       { question: "Vai varu apvienot vairāk nekā divus PDF failus?", answer: "Jā. Mūsu PDF apvienošanas rīks atbalsta jebkura skaita failu apvienošanu. Vienkārši ievelciet visus vēlamos PDF failus, sakārtojiet tos vēlamajā secībā un nospiediet apstrādes pogu." },
       { question: "Kādus failu formātus var konvertēt uz un no PDF?", answer: "PDF failus var konvertēt uz JPG, PNG un vienkāršu tekstu. PDF izveidei atbalstām JPG, PNG, WEBP, TIFF, HEIC attēlus, HTML failus un skenētus dokumentus. Regulāri pievienojam jaunus formātus." },
-      { question: "Ar ko ToolPop PDF atšķiras no citiem PDF rīkiem?", answer: "Trīs galvenās atšķirības: (1) Privātums — jūsu faili nekad neatstāj jūsu ierīci, atšķirībā no lielākās daļas konkurentu, kas augšupielādē savos serveros. (2) Bez ierobežojumiem — bez dienas limitiem, bez failu izmēra ierobežojumiem, bez ūdenszīmēm. (3) Bez reģistrācijas — lietojiet jebkuru rīku uzreiz bez pieteikšanās." },
+      { question: "Ar ko ToolPop atšķiras no citiem PDF rīkiem?", answer: "Trīs galvenās atšķirības: (1) Privātums — jūsu faili nekad neatstāj jūsu ierīci, atšķirībā no lielākās daļas konkurentu, kas augšupielādē savos serveros. (2) Bez ierobežojumiem — bez dienas limitiem, bez failu izmēra ierobežojumiem, bez ūdenszīmēm. (3) Bez reģistrācijas — lietojiet jebkuru rīku uzreiz bez pieteikšanās." },
       { question: "Vai varu pievienot paroli PDF aizsardzībai?", answer: "Jā. Izmantojiet mūsu PDF aizsardzības rīku ar AES-256 šifrēšanu. Varat iestatīt atvēršanas paroli un atļaujas drukāšanas, kopēšanas un rediģēšanas kontrolei." },
-      { question: "Vai ToolPop PDF pievieno ūdenszīmes maniem failiem?", answer: "Nekad. Visi apstrādātie faili ir tīri un bez jebkādām ToolPop zīmēm vai ūdenszīmēm. Rezultāts ir tieši tāds, kādu sagaidītu no profesionāla rīka." },
-      { question: "Vai ir pieejams API?", answer: "Pašlaik nē. ToolPop PDF ir veidots kā pārlūkprogrammas rīks individuālai lietošanai. Ja nepieciešama API piekļuve programmatiskai PDF apstrādei, sazinieties ar mums uz uzņēmumu risinājumiem." },
-      { question: "Kādas valodas atbalsta vietne?", answer: "ToolPop PDF ir pieejams 45 valodās, ieskaitot angļu, korejiešu, spāņu, ķīniešu, japāņu, vācu, franču, portugāļu, arābu, hindi un daudzās citās. Saskarne automātiski nosaka jūsu pārlūkprogrammas valodu, vai arī varat pārslēgt manuāli ar valodu izvēlni." },
+      { question: "Vai ToolPop pievieno ūdenszīmes maniem failiem?", answer: "Nekad. Visi apstrādātie faili ir tīri un bez jebkādām ToolPop zīmēm vai ūdenszīmēm. Rezultāts ir tieši tāds, kādu sagaidītu no profesionāla rīka." },
+      { question: "Vai ir pieejams API?", answer: "Pašlaik nē. ToolPop ir veidots kā pārlūkprogrammas rīks individuālai lietošanai. Ja nepieciešama API piekļuve programmatiskai PDF apstrādei, sazinieties ar mums uz uzņēmumu risinājumiem." },
+      { question: "Kādas valodas atbalsta vietne?", answer: "ToolPop ir pieejams 45 valodās, ieskaitot angļu, korejiešu, spāņu, ķīniešu, japāņu, vācu, franču, portugāļu, arābu, hindi un daudzās citās. Saskarne automātiski nosaka jūsu pārlūkprogrammas valodu, vai arī varat pārslēgt manuāli ar valodu izvēlni." },
     ],
   },
   blog: {

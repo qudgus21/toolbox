@@ -124,11 +124,16 @@ const ga: Dictionary = {
     favoriteAdded: "Curtha leis na ceanáin",
     favoriteRemoved: "Bainte ó na ceanáin",
     comingSoon: "Coming Soon",
+    share: "Roinn",
+    shareTitle: "Roinn an leathanach seo",
+    shareSubtitle: "Inis do do chairde!",
+    shareCopied: "Cóipeáilte!",
+    shareCopyLink: "Cóipeáil nasc",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Uirlisí PDF saor in aisce",
+    siteTitle: "ToolPop - Uirlisí PDF saor in aisce",
     siteDescription: "Cumaisc, roinn, comhbhrúigh agus tiontaigh comhaid PDF ar líne saor in aisce.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Úsáidimid fianáin chun do thaithí a fheabhsú.",
@@ -138,15 +143,15 @@ const ga: Dictionary = {
   privacy: {
     title: "Polasaí Príobháideachais",
     lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
-    intro: "Ag ToolPop PDF, is mór linn do phríobháideachas. Míníonn an polasaí seo cén fhaisnéis a bhailímid nuair a úsáideann tú ár seirbhís agus conas a láimhseálaimid í.",
+    intro: "Ag ToolPop, is mór linn do phríobháideachas. Míníonn an polasaí seo cén fhaisnéis a bhailímid nuair a úsáideann tú ár seirbhís agus conas a láimhseálaimid í.",
     sections: [
       {
         heading: "1. Faisnéis a Bhailímid",
-        content: "Ní gá clárú le ToolPop PDF a úsáid. Ní bhailímid faisnéis phearsanta. Mar sin féin, is féidir linn sonraí neamh-aitheantais a bhailiú go huathoibríoch chun an tseirbhís a fheabhsú:\n\n• Cineál agus leagan brabhsálaí\n• Córas oibriúcháin\n• Leathanaigh a tugadh cuairt orthu agus an t-am a caitheadh\n• Fianáin agus teicneolaíochtaí comhchosúla le haghaidh patrúin úsáide",
+        content: "Ní gá clárú le ToolPop a úsáid. Ní bhailímid faisnéis phearsanta. Mar sin féin, is féidir linn sonraí neamh-aitheantais a bhailiú go huathoibríoch chun an tseirbhís a fheabhsú:\n\n• Cineál agus leagan brabhsálaí\n• Córas oibriúcháin\n• Leathanaigh a tugadh cuairt orthu agus an t-am a caitheadh\n• Fianáin agus teicneolaíochtaí comhchosúla le haghaidh patrúin úsáide",
       },
       {
         heading: "2. Láimhseáil Comhad",
-        content: "Próiseáiltear comhaid a uaslódálann tú ar ár bhfreastalaithe agus scriostar go huathoibríoch iad laistigh de 2 uair an chloig. Ní léimid, ní stórálaimid agus ní roinneann muid inneachar do chuid comhad le haon duine.",
+        content: "Déantar próiseáil comhad go léir ar ToolPop go díreach i do bhrabhsálaí. Ní uaslódáiltear do chuid comhad chuig aon fhreastalaí riamh agus ní fhágann siad do ghléas choíche. Úsáidimid WebAssembly agus teicneolaíochtaí gréasáin nua-aimseartha le haghaidh próiseála áitiúla agus slána.",
       },
       {
         heading: "3. Fianáin",
@@ -166,18 +171,18 @@ const ga: Dictionary = {
       },
       {
         heading: "7. Déan Teagmháil Linn",
-        content: "Má tá ceisteanna agat faoi phríobháideachas, scríobh chugainn ag support@toolbox-pdf.com.",
+        content: "Má tá ceisteanna agat faoi phríobháideachas, scríobh chugainn ag support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Téarmaí Seirbhíse",
     lastUpdated: "Nuashonraithe go deireanach: 1 Márta, 2026",
-    intro: "Go raibh maith agat as ToolPop PDF a úsáid. Trí rochtain a fháil ar ár seirbhís nó í a úsáid, aontaíonn tú leis na téarmaí seo a leanas.",
+    intro: "Go raibh maith agat as ToolPop a úsáid. Trí rochtain a fháil ar ár seirbhís nó í a úsáid, aontaíonn tú leis na téarmaí seo a leanas.",
     sections: [
       {
         heading: "1. Faoin tSeirbhís",
-        content: "Is seirbhís ar líne saor in aisce é ToolPop PDF a ligeann duit comhaid PDF a chumasc, a roinnt, a thiontú, a chur in eagar agus a chomhbhrú go díreach i do bhrabhsálaí.",
+        content: "Is uirlis ar líne saor in aisce é ToolPop a ligeann duit PDFanna, íomhánna agus comhaid eile a phróiseáil go díreach i do bhrabhsálaí. Déantar an phróiseáil go léir go háitiúil ar do ghléas — ní uaslódáiltear comhaid chuig aon fhreastalaí riamh.",
       },
       {
         heading: "2. Úsáid Inghlactha",
@@ -185,7 +190,7 @@ const ga: Dictionary = {
       },
       {
         heading: "3. Láimhseáil Comhad",
-        content: "Ní úsáidtear comhaid uaslódáilte ach amháin chun an oibríocht iarrtha a dhéanamh. Scriostar go huathoibríoch iad ónár bhfreastalaithe laistigh de 2 uair an chloig. Ní dhéanaimid anailís ar do chuid comhad agus ní choinníonn muid iad.",
+        content: "Déantar próiseáil comhad go léir ar ToolPop go díreach i do bhrabhsálaí. Ní sheoltar do chuid comhad chuig aon fhreastalaí riamh agus ní fhágann siad do ghléas choíche. Tá na torthaí próiseáilte ar fáil le híoslódáil go díreach ó do bhrabhsálaí.",
       },
       {
         heading: "4. Séanadh",
@@ -205,7 +210,7 @@ const ga: Dictionary = {
       },
       {
         heading: "8. Déan Teagmháil Linn",
-        content: "Má tá ceisteanna agat faoi na téarmaí seo, scríobh chugainn ag support@toolbox-pdf.com.",
+        content: "Má tá ceisteanna agat faoi na téarmaí seo, scríobh chugainn ag support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const ga: Dictionary = {
     backLabel: "Cúl",
   },
   about: {
-    title: "Faoi ToolPop PDF",
-    intro: "Is sraith uirlisí PDF saor in aisce é ToolPop PDF atá bunaithe ar an mbrabhsálaí. Cuir comhaid PDF in eagar, tiontaigh agus eagraigh iad gan iad a uaslódáil chuig freastalaí. Ní fhágann do chuid comhad do ghléas riamh.",
+    title: "Faoi ToolPop",
+    intro: "Is sraith uirlisí PDF saor in aisce é ToolPop atá bunaithe ar an mbrabhsálaí. Cuir comhaid PDF in eagar, tiontaigh agus eagraigh iad gan iad a uaslódáil chuig freastalaí. Ní fhágann do chuid comhad do ghléas riamh.",
     sections: [
-      { heading: "Ár Misean", content: "Creidimid gur chóir go mbeadh rochtain ag gach duine ar uirlisí PDF cumhachtacha — gan síntiúis, gan clárú, agus gan príobháideachas a chur i mbaol. Cruthaíodh ToolPop PDF chun láimhseáil ghairmiúil doiciméad a chur ar fáil d'aon duine a bhfuil brabhsálaí gréasáin acu." },
-      { heading: "Conas a Oibríonn Sé", content: "Murab ionann agus seirbhísí PDF traidisiúnta a éilíonn ort comhaid a uaslódáil chuig freastalaithe cianda, próiseálann ToolPop PDF gach rud go díreach i do bhrabhsálaí ag úsáid teicneolaíochtaí gréasáin nua-aimseartha ar nós WebAssembly agus leabharlann PDF.js. Ciallaíonn sé seo go bhfanann do dhoiciméid íogaire ar do ghléas i gcónaí — ní fheicimid, ní stórálaimid agus ní tharchuirimid do chuid comhad riamh." },
-      { heading: "Cad a Chuirimid ar Fáil", content: "Cuimsíonn ToolPop PDF breis is 40 uirlis i gcúig chatagóir:\n\n• Eagrú — cumaisc, roinn, athordaigh, bain amach agus scrios leathanaigh\n• Tiontú — tiontaigh idir PDF, JPG, PNG, téacs agus formáidí eile\n• Eagarthóireacht — cuir téacs, íomhánna, sínithe, comharthaí uisce, uimhreacha leathanach agus nótaí leis\n• Optamú — comhbhrúigh comhaid agus optamaigh le haghaidh seachadadh gréasáin\n• Slándáil — cosain le pasfhocal, ceal faisnéis íogair agus leacaigh doiciméid\n\nTá gach uirlis saor in aisce go hiomlán, gan teorainneacha méide comhaid ná uasteorainneacha úsáide laethúla." },
-      { heading: "Ár dTeicneolaíocht", content: "Tá ToolPop PDF tógtha le Next.js, React agus caighdeáin ghréasáin nua-aimseartha. Úsáidimid leabharlanna ar nós pdf-lib le haghaidh ionramháil PDF agus PDF.js le haghaidh rindreála — ag rith ar fad ar thaobh an chliaint i do bhrabhsálaí. Tacaíonn an suíomh le 45 teanga, modh dorcha, agus oibríonn sé ar aon ghléas le brabhsálaí nua-aimseartha." },
+      { heading: "Ár Misean", content: "Creidimid gur chóir go mbeadh rochtain ag gach duine ar uirlisí PDF cumhachtacha — gan síntiúis, gan clárú, agus gan príobháideachas a chur i mbaol. Cruthaíodh ToolPop chun láimhseáil ghairmiúil doiciméad a chur ar fáil d'aon duine a bhfuil brabhsálaí gréasáin acu." },
+      { heading: "Conas a Oibríonn Sé", content: "Murab ionann agus seirbhísí PDF traidisiúnta a éilíonn ort comhaid a uaslódáil chuig freastalaithe cianda, próiseálann ToolPop gach rud go díreach i do bhrabhsálaí ag úsáid teicneolaíochtaí gréasáin nua-aimseartha ar nós WebAssembly agus leabharlann PDF.js. Ciallaíonn sé seo go bhfanann do dhoiciméid íogaire ar do ghléas i gcónaí — ní fheicimid, ní stórálaimid agus ní tharchuirimid do chuid comhad riamh." },
+      { heading: "Cad a Chuirimid ar Fáil", content: "Cuimsíonn ToolPop breis is 40 uirlis i gcúig chatagóir:\n\n• Eagrú — cumaisc, roinn, athordaigh, bain amach agus scrios leathanaigh\n• Tiontú — tiontaigh idir PDF, JPG, PNG, téacs agus formáidí eile\n• Eagarthóireacht — cuir téacs, íomhánna, sínithe, comharthaí uisce, uimhreacha leathanach agus nótaí leis\n• Optamú — comhbhrúigh comhaid agus optamaigh le haghaidh seachadadh gréasáin\n• Slándáil — cosain le pasfhocal, ceal faisnéis íogair agus leacaigh doiciméid\n\nTá gach uirlis saor in aisce go hiomlán, gan teorainneacha méide comhaid ná uasteorainneacha úsáide laethúla." },
+      { heading: "Ár dTeicneolaíocht", content: "Tá ToolPop tógtha le Next.js, React agus caighdeáin ghréasáin nua-aimseartha. Úsáidimid leabharlanna ar nós pdf-lib le haghaidh ionramháil PDF agus PDF.js le haghaidh rindreála — ag rith ar fad ar thaobh an chliaint i do bhrabhsálaí. Tacaíonn an suíomh le 45 teanga, modh dorcha, agus oibríonn sé ar aon ghléas le brabhsálaí nua-aimseartha." },
       { heading: "Déan Teagmháil Linn", content: "An bhfuil ceisteanna, aiseolas nó moltaí agat? Ba bhreá linn cloisteáil uait. Tabhair cuairt ar ár leathanach Teagmhála nó seol ríomhphost chugainn ag." },
     ],
   },
@@ -1091,22 +1096,22 @@ const ga: Dictionary = {
   },
   faq: {
     title: "Ceisteanna Coitianta",
-    intro: "Faigh freagraí ar na ceisteanna is coitianta faoi ToolPop PDF. Mura bhfeiceann tú do cheist anseo, ná bíodh drogall ort teagmháil a dhéanamh linn.",
+    intro: "Faigh freagraí ar na ceisteanna is coitianta faoi ToolPop. Mura bhfeiceann tú do cheist anseo, ná bíodh drogall ort teagmháil a dhéanamh linn.",
     items: [
-      { question: "An bhfuil ToolPop PDF saor in aisce i ndáiríre?", answer: "Tá, saor in aisce go hiomlán. Tá gach uirlis ar fáil gan teorainneacha, gan clárú agus gan táillí folaithe. Tacaímid leis an tseirbhís trí fhógraíocht neamhionsaitheach." },
+      { question: "An bhfuil ToolPop saor in aisce i ndáiríre?", answer: "Tá, saor in aisce go hiomlán. Tá gach uirlis ar fáil gan teorainneacha, gan clárú agus gan táillí folaithe. Tacaímid leis an tseirbhís trí fhógraíocht neamhionsaitheach." },
       { question: "An bhfuil mo chuid comhad slán agus príobháideach?", answer: "Go deimhin. Próiseáiltear do chuid comhad go hiomlán i do bhrabhsálaí — ní fhágann siad do ghléas riamh agus ní uaslódáiltear iad chuig aon fhreastalaí. Úsáidimid APIanna brabhsálaí nua-aimseartha le haghaidh gach oibríocht PDF, mar sin fanann do dhoiciméid íogaire go hiomlán príobháideach." },
-      { question: "An gá dom cuntas a chruthú?", answer: "Ní gá. Oibríonn ToolPop PDF gan aon chlárú ná logáil isteach. Oscail uirlis, scaoil do chomhad isteach agus faigh torthaí láithreach." },
+      { question: "An gá dom cuntas a chruthú?", answer: "Ní gá. Oibríonn ToolPop gan aon chlárú ná logáil isteach. Oscail uirlis, scaoil do chomhad isteach agus faigh torthaí láithreach." },
       { question: "Cad é an t-uasmhéid comhaid is féidir liom a phróiseáil?", answer: "Ós rud é go dtarlaíonn an próiseáil i do bhrabhsálaí, braitheann an teorainn ar chuimhne do ghléis. Is féidir le formhór na ngléasanna nua-aimseartha comhaid suas le 100–200 MB a láimhseáil gan fadhbanna. Le haghaidh comhaid an-mhóra, molaimid brabhsálaí deisce a úsáid." },
-      { question: "Cé na brabhsálaithe a dtacaítear leo?", answer: "Oibríonn ToolPop PDF ar gach brabhsálaí nua-aimseartha lena n-áirítear Chrome, Firefox, Safari, Edge agus Opera. Molaimid an leagan is déanaí de do bhrabhsálaí a úsáid don taithí is fearr." },
-      { question: "An féidir liom ToolPop PDF a úsáid ar mo ghuthán nó ar mo tháibléad?", answer: "Is féidir! Tá ToolPop PDF go hiomlán freagrach agus oibríonn sé ar ghléasanna soghluaiste. Is féidir leat comhaid PDF a chumaisc, a roinnt, a thiontú agus a chur in eagar díreach ó bhrabhsálaí do ghutháin nó do tháibléid." },
+      { question: "Cé na brabhsálaithe a dtacaítear leo?", answer: "Oibríonn ToolPop ar gach brabhsálaí nua-aimseartha lena n-áirítear Chrome, Firefox, Safari, Edge agus Opera. Molaimid an leagan is déanaí de do bhrabhsálaí a úsáid don taithí is fearr." },
+      { question: "An féidir liom ToolPop a úsáid ar mo ghuthán nó ar mo tháibléad?", answer: "Is féidir! Tá ToolPop go hiomlán freagrach agus oibríonn sé ar ghléasanna soghluaiste. Is féidir leat comhaid PDF a chumaisc, a roinnt, a thiontú agus a chur in eagar díreach ó bhrabhsálaí do ghutháin nó do tháibléid." },
       { question: "Conas a oibríonn próiseáil bhunaithe ar bhrabhsálaí?", answer: "Nuair a roghnaíonn tú comhad, fanann sé ar do ghléas. Úsáideann ár n-uirlisí leabharlanna JavaScript ar nós pdf-lib agus PDF.js chun comhaid PDF a léamh, a mhodhnú agus a chruthú go díreach i gcuimhne do bhrabhsálaí. Bíonn an comhad próiseáilte ar fáil ansin le híoslódáil — gan aon turas freastalaí." },
       { question: "An féidir liom níos mó ná dhá chomhad PDF a chumaisc?", answer: "Is féidir. Tacaíonn ár n-uirlis Cumaisc PDF le líon ar bith comhad a chomhcheangal. Díreach tarraing agus scaoil na comhaid PDF ar fad, socraigh iad san ord atá uait agus cliceáil an cnaipe próiseála." },
       { question: "Cé na formáidí comhaid is féidir liom a thiontú go agus ó PDF?", answer: "Is féidir leat comhaid PDF a thiontú go JPG, PNG agus gnáth-théacs. Chun PDF a chruthú, tacaímid le híomhánna JPG, PNG, WEBP, TIFF, HEIC, comhaid HTML agus doiciméid scanáilte. Bímid ag cur formáidí nua leis go rialta." },
-      { question: "Conas atá ToolPop PDF difriúil ó uirlisí PDF eile?", answer: "Trí phríomhdhifríocht: (1) Príobháideachas — ní fhágann do chuid comhad do ghléas riamh, murab ionann agus formhór na n-iomaitheoirí a uaslódálann chuig a bhfreastalaithe. (2) Gan teorainneacha — gan uasteorainneacha laethúla, gan srianta méide comhaid, gan comharthaí uisce. (3) Gan clárú — úsáid aon uirlis láithreach gan logáil isteach." },
+      { question: "Conas atá ToolPop difriúil ó uirlisí PDF eile?", answer: "Trí phríomhdhifríocht: (1) Príobháideachas — ní fhágann do chuid comhad do ghléas riamh, murab ionann agus formhór na n-iomaitheoirí a uaslódálann chuig a bhfreastalaithe. (2) Gan teorainneacha — gan uasteorainneacha laethúla, gan srianta méide comhaid, gan comharthaí uisce. (3) Gan clárú — úsáid aon uirlis láithreach gan logáil isteach." },
       { question: "An féidir liom pasfhocal a chur le mo PDF chun é a chosaint?", answer: "Is féidir. Úsáid ár n-uirlis Cosain PDF le criptiú AES-256. Is féidir leat pasfhocal oscailte a shocrú agus ceadanna chun priontáil, cóipeáil agus eagarthóireacht a rialú." },
-      { question: "An gcuireann ToolPop PDF comharthaí uisce ar mo chuid comhad?", answer: "Ní chuireann choíche. Tá gach comhad próiseáilte glan agus saor ó aon bhrandáil nó comharthaí uisce ToolPop. Is é an t-aschur díreach mar a bheifí ag súil leis ó uirlis ghairmiúil." },
-      { question: "An bhfuil API ar fáil?", answer: "Níl faoi láthair. Tá ToolPop PDF deartha mar uirlis bhrabhsálaí le haghaidh úsáid aonair. Más gá duit rochtain API le haghaidh próiseáil ríomhchláraithe PDF, déan teagmháil linn ag chun réitigh fhiontraíochta a phlé." },
-      { question: "Cé na teangacha a dtacaíonn an suíomh leo?", answer: "Tá ToolPop PDF ar fáil i 45 teanga lena n-áirítear Béarla, Cóiréis, Spáinnis, Sínis, Seapáinis, Gearmáinis, Fraincis, Portaingéilis, Araibis, Hiondúis agus go leor eile. Braitheann an comhéadan teanga do bhrabhsálaí go huathoibríoch, nó is féidir leat athrú de láimh leis an roghnóir teanga." },
+      { question: "An gcuireann ToolPop comharthaí uisce ar mo chuid comhad?", answer: "Ní chuireann choíche. Tá gach comhad próiseáilte glan agus saor ó aon bhrandáil nó comharthaí uisce ToolPop. Is é an t-aschur díreach mar a bheifí ag súil leis ó uirlis ghairmiúil." },
+      { question: "An bhfuil API ar fáil?", answer: "Níl faoi láthair. Tá ToolPop deartha mar uirlis bhrabhsálaí le haghaidh úsáid aonair. Más gá duit rochtain API le haghaidh próiseáil ríomhchláraithe PDF, déan teagmháil linn ag chun réitigh fhiontraíochta a phlé." },
+      { question: "Cé na teangacha a dtacaíonn an suíomh leo?", answer: "Tá ToolPop ar fáil i 45 teanga lena n-áirítear Béarla, Cóiréis, Spáinnis, Sínis, Seapáinis, Gearmáinis, Fraincis, Portaingéilis, Araibis, Hiondúis agus go leor eile. Braitheann an comhéadan teanga do bhrabhsálaí go huathoibríoch, nó is féidir leat athrú de láimh leis an roghnóir teanga." },
     ],
   },
   blog: {

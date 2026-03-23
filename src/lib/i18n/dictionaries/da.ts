@@ -124,11 +124,16 @@ const da: Dictionary = {
     favoriteAdded: "Tilføjet til favoritter",
     favoriteRemoved: "Fjernet fra favoritter",
     comingSoon: "Coming Soon",
+    share: "Del",
+    shareTitle: "Del denne side",
+    shareSubtitle: "Fortæl det videre!",
+    shareCopied: "Kopieret!",
+    shareCopyLink: "Kopiér link",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Gratis PDF-værktøjer",
+    siteTitle: "ToolPop - Gratis PDF-værktøjer",
     siteDescription: "Flet, opdel, komprimer og konverter PDF-filer online gratis.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Vi bruger cookies for at forbedre din oplevelse.",
@@ -138,15 +143,15 @@ const da: Dictionary = {
   privacy: {
     title: "Privatlivspolitik",
     lastUpdated: "Sidst opdateret: 1. marts 2026",
-    intro: "Hos ToolPop PDF tager vi dit privatliv alvorligt. Denne politik forklarer, hvilke oplysninger vi indsamler, når du bruger vores tjeneste, og hvordan vi håndterer dem.",
+    intro: "Hos ToolPop tager vi dit privatliv alvorligt. Denne politik forklarer, hvilke oplysninger vi indsamler, når du bruger vores tjeneste, og hvordan vi håndterer dem.",
     sections: [
       {
         heading: "1. Oplysninger vi indsamler",
-        content: "ToolPop PDF kræver ingen oprettelse af konto. Vi indsamler ikke personlige oplysninger. Vi kan dog automatisk indsamle ikke-identificerbare data for at forbedre tjenesten:\n\n• Browsertype og -version\n• Styresystem\n• Besøgte sider og tidsforbrug\n• Cookies og lignende teknologier til brugsmønstre",
+        content: "ToolPop kræver ingen oprettelse af konto. Vi indsamler ikke personlige oplysninger. Vi kan dog automatisk indsamle ikke-identificerbare data for at forbedre tjenesten:\n\n• Browsertype og -version\n• Styresystem\n• Besøgte sider og tidsforbrug\n• Cookies og lignende teknologier til brugsmønstre",
       },
       {
         heading: "2. Filhåndtering",
-        content: "Filer du uploader behandles på vores servere og slettes automatisk inden for 2 timer. Vi læser, gemmer eller deler ikke indholdet af dine filer med nogen.",
+        content: "Al filbehandling på ToolPop sker direkte i din browser. Dine filer uploades aldrig til nogen server og forlader aldrig din enhed. Vi bruger WebAssembly og moderne webteknologier til lokal og sikker behandling.",
       },
       {
         heading: "3. Cookies",
@@ -166,18 +171,18 @@ const da: Dictionary = {
       },
       {
         heading: "7. Kontakt os",
-        content: "Har du spørgsmål om dit privatliv, kan du kontakte os på support@toolbox-pdf.com.",
+        content: "Har du spørgsmål om dit privatliv, kan du kontakte os på support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Servicevilkår",
     lastUpdated: "Sidst opdateret: 1. marts 2026",
-    intro: "Tak fordi du bruger ToolPop PDF. Ved at tilgå eller bruge vores tjeneste accepterer du følgende vilkår.",
+    intro: "Tak fordi du bruger ToolPop. Ved at tilgå eller bruge vores tjeneste accepterer du følgende vilkår.",
     sections: [
       {
         heading: "1. Om tjenesten",
-        content: "ToolPop PDF er en gratis onlinetjeneste, der giver dig mulighed for at flette, opdele, konvertere, redigere og komprimere PDF-filer direkte i din browser.",
+        content: "ToolPop er et gratis onlineværktøj, der lader dig behandle PDF'er, billeder og andre filer direkte i din browser. Al behandling sker lokalt på din enhed — filer uploades aldrig til nogen server.",
       },
       {
         heading: "2. Acceptabel brug",
@@ -185,7 +190,7 @@ const da: Dictionary = {
       },
       {
         heading: "3. Filhåndtering",
-        content: "Uploadede filer bruges udelukkende til at udføre den ønskede handling. De slettes automatisk fra vores servere inden for 2 timer. Vi analyserer eller opbevarer ikke dine filer.",
+        content: "Al filbehandling på ToolPop sker direkte i din browser. Dine filer sendes aldrig til nogen server og forlader aldrig din enhed. Behandlede resultater er tilgængelige til download direkte fra din browser.",
       },
       {
         heading: "4. Ansvarsfraskrivelse",
@@ -205,7 +210,7 @@ const da: Dictionary = {
       },
       {
         heading: "8. Kontakt os",
-        content: "Har du spørgsmål om disse vilkår, kan du kontakte os på support@toolbox-pdf.com.",
+        content: "Har du spørgsmål om disse vilkår, kan du kontakte os på support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const da: Dictionary = {
     backLabel: "Bagside",
   },
   about: {
-    title: "Om ToolPop PDF",
-    intro: "ToolPop PDF er et gratis PDF-værktøjssæt, der kører direkte i din browser. Rediger, konverter og organiser PDF-filer uden at uploade dem til en server. Dine filer forlader aldrig din enhed.",
+    title: "Om ToolPop",
+    intro: "ToolPop er et gratis PDF-værktøjssæt, der kører direkte i din browser. Rediger, konverter og organiser PDF-filer uden at uploade dem til en server. Dine filer forlader aldrig din enhed.",
     sections: [
-      { heading: "Vores mission", content: "Vi mener, at alle fortjener adgang til kraftfulde PDF-værktøjer — uden abonnementer, uden tilmelding og uden at gå på kompromis med privatlivets fred. ToolPop PDF blev skabt for at gøre professionel dokumenthåndtering tilgængelig for alle med en webbrowser." },
-      { heading: "Sådan fungerer det", content: "I modsætning til traditionelle PDF-tjenester, der kræver upload af filer til eksterne servere, behandler ToolPop PDF alt direkte i din browser ved hjælp af moderne webteknologier som WebAssembly og PDF.js-biblioteket. Det betyder, at dine følsomme dokumenter altid forbliver på din enhed — vi ser, gemmer eller overfører aldrig dine filer." },
-      { heading: "Hvad vi tilbyder", content: "ToolPop PDF indeholder over 40 værktøjer i fem kategorier:\n\n• Organiser — Sammenflet, opdel, omarranger, udtræk og slet sider\n• Konverter — Omdan mellem PDF, JPG, PNG, tekst og andre formater\n• Rediger — Tilføj tekst, billeder, underskrifter, vandmærker, sidetal og annotationer\n• Optimer — Komprimer filer og optimer til web\n• Sikkerhed — Adgangskodebeskyt, sløring af følsomme oplysninger og fladgøring af dokumenter\n\nAlle værktøjer er helt gratis uden filstørrelsesbegrænsninger eller daglige forbrugsgrænser." },
-      { heading: "Vores teknologi", content: "ToolPop PDF er bygget med Next.js, React og moderne webstandarder. Vi bruger biblioteker som pdf-lib til PDF-manipulation og PDF.js til gengivelse — alt kører på klientsiden i din browser. Siden understøtter 45 sprog, mørk tilstand og fungerer på enhver enhed med en moderne browser." },
+      { heading: "Vores mission", content: "Vi mener, at alle fortjener adgang til kraftfulde PDF-værktøjer — uden abonnementer, uden tilmelding og uden at gå på kompromis med privatlivets fred. ToolPop blev skabt for at gøre professionel dokumenthåndtering tilgængelig for alle med en webbrowser." },
+      { heading: "Sådan fungerer det", content: "I modsætning til traditionelle PDF-tjenester, der kræver upload af filer til eksterne servere, behandler ToolPop alt direkte i din browser ved hjælp af moderne webteknologier som WebAssembly og PDF.js-biblioteket. Det betyder, at dine følsomme dokumenter altid forbliver på din enhed — vi ser, gemmer eller overfører aldrig dine filer." },
+      { heading: "Hvad vi tilbyder", content: "ToolPop indeholder over 40 værktøjer i fem kategorier:\n\n• Organiser — Sammenflet, opdel, omarranger, udtræk og slet sider\n• Konverter — Omdan mellem PDF, JPG, PNG, tekst og andre formater\n• Rediger — Tilføj tekst, billeder, underskrifter, vandmærker, sidetal og annotationer\n• Optimer — Komprimer filer og optimer til web\n• Sikkerhed — Adgangskodebeskyt, sløring af følsomme oplysninger og fladgøring af dokumenter\n\nAlle værktøjer er helt gratis uden filstørrelsesbegrænsninger eller daglige forbrugsgrænser." },
+      { heading: "Vores teknologi", content: "ToolPop er bygget med Next.js, React og moderne webstandarder. Vi bruger biblioteker som pdf-lib til PDF-manipulation og PDF.js til gengivelse — alt kører på klientsiden i din browser. Siden understøtter 45 sprog, mørk tilstand og fungerer på enhver enhed med en moderne browser." },
       { heading: "Kontakt os", content: "Har du spørgsmål, feedback eller ønsker til nye funktioner? Vi vil meget gerne høre fra dig. Besøg vores kontaktside eller send os en e-mail på." },
     ],
   },
@@ -1091,22 +1096,22 @@ const da: Dictionary = {
   },
   faq: {
     title: "Ofte stillede spørgsmål",
-    intro: "Find svar på de mest almindelige spørgsmål om ToolPop PDF. Finder du ikke dit spørgsmål? Tøv ikke med at kontakte os.",
+    intro: "Find svar på de mest almindelige spørgsmål om ToolPop. Finder du ikke dit spørgsmål? Tøv ikke med at kontakte os.",
     items: [
-      { question: "Er ToolPop PDF virkelig gratis?", answer: "Ja, helt gratis. Alle værktøjer er tilgængelige uden begrænsninger, uden tilmelding og uden skjulte gebyrer. Vi finansierer tjenesten gennem diskret annoncering." },
+      { question: "Er ToolPop virkelig gratis?", answer: "Ja, helt gratis. Alle værktøjer er tilgængelige uden begrænsninger, uden tilmelding og uden skjulte gebyrer. Vi finansierer tjenesten gennem diskret annoncering." },
       { question: "Er mine filer sikre?", answer: "Absolut. Dine filer behandles udelukkende i din browser — de forlader aldrig din enhed og uploades ikke til nogen server. Vi bruger moderne browser-API'er til at håndtere alle PDF-operationer lokalt, så dine følsomme dokumenter forbliver helt private." },
-      { question: "Skal jeg oprette en konto?", answer: "Nej. ToolPop PDF fungerer uden tilmelding eller login. Åbn bare et værktøj, træk din fil ind og få resultater med det samme." },
+      { question: "Skal jeg oprette en konto?", answer: "Nej. ToolPop fungerer uden tilmelding eller login. Åbn bare et værktøj, træk din fil ind og få resultater med det samme." },
       { question: "Hvad er den maksimale filstørrelse?", answer: "Da behandlingen sker i din browser, afhænger grænsen af din enheds tilgængelige hukommelse. De fleste moderne enheder kan håndtere filer op til 100–200 MB uden problemer. Til meget store filer anbefaler vi at bruge en desktop- eller laptopbrowser." },
-      { question: "Hvilke browsere understøttes?", answer: "ToolPop PDF fungerer i alle moderne browsere, herunder Chrome, Firefox, Safari, Edge og Opera. Vi anbefaler at bruge den nyeste version af din browser for den bedste oplevelse." },
-      { question: "Kan jeg bruge ToolPop PDF på min telefon eller tablet?", answer: "Ja! ToolPop PDF er fuldt responsivt og fungerer på mobile enheder. Du kan sammenflete, opdele, konvertere og redigere PDF-filer direkte fra din telefon- eller tabletbrowser." },
+      { question: "Hvilke browsere understøttes?", answer: "ToolPop fungerer i alle moderne browsere, herunder Chrome, Firefox, Safari, Edge og Opera. Vi anbefaler at bruge den nyeste version af din browser for den bedste oplevelse." },
+      { question: "Kan jeg bruge ToolPop på min telefon eller tablet?", answer: "Ja! ToolPop er fuldt responsivt og fungerer på mobile enheder. Du kan sammenflete, opdele, konvertere og redigere PDF-filer direkte fra din telefon- eller tabletbrowser." },
       { question: "Hvordan fungerer browserbaseret behandling?", answer: "Når du vælger en fil, forbliver den på din enhed. Vores værktøjer bruger JavaScript-biblioteker som pdf-lib og PDF.js til at læse, ændre og oprette PDF-filer direkte i browserens hukommelse. Den behandlede fil er derefter klar til download — uden serverkommunikation." },
       { question: "Kan jeg sammenflete mere end to PDF-filer?", answer: "Ja. Vores Sammenflet PDF-værktøj understøtter sammenflettning af et ubegrænset antal filer. Træk bare alle de PDF-filer, du vil sammenflete, arranger dem i den ønskede rækkefølge og klik på behandlingsknappen." },
       { question: "Hvilke filformater kan jeg konvertere?", answer: "Du kan konvertere PDF til JPG, PNG og ren tekst. Til oprettelse af PDF understøtter vi JPG, PNG, WEBP, TIFF, HEIC-billeder, HTML-filer og scannede dokumenter. Flere konverteringsformater tilføjes løbende." },
-      { question: "Hvad adskiller ToolPop PDF fra andre PDF-værktøjer?", answer: "Tre afgørende forskelle: (1) Privatliv — dine filer forlader aldrig din enhed, i modsætning til de fleste konkurrenter, der uploader til deres servere. (2) Ingen begrænsninger — ingen daglige grænser, ingen filstørrelsesbegrænsninger, ingen vandmærker på resultatet. (3) Ingen konto nødvendig — brug ethvert værktøj med det samme uden tilmelding." },
+      { question: "Hvad adskiller ToolPop fra andre PDF-værktøjer?", answer: "Tre afgørende forskelle: (1) Privatliv — dine filer forlader aldrig din enhed, i modsætning til de fleste konkurrenter, der uploader til deres servere. (2) Ingen begrænsninger — ingen daglige grænser, ingen filstørrelsesbegrænsninger, ingen vandmærker på resultatet. (3) Ingen konto nødvendig — brug ethvert værktøj med det samme uden tilmelding." },
       { question: "Kan jeg tilføje en adgangskode for at beskytte min PDF?", answer: "Ja. Brug vores Beskyt PDF-værktøj til at tilføje adgangskodebeskyttelse med AES-256-kryptering. Du kan indstille både en åbningsadgangskode og tilladelser til udskrivning, kopiering og redigering." },
-      { question: "Tilføjer ToolPop PDF vandmærker til mine filer?", answer: "Aldrig. Alle behandlede filer er rene og fri for ToolPop-branding eller vandmærker. Resultatet er præcis, hvad du ville forvente af et professionelt værktøj." },
-      { question: "Er der en API tilgængelig?", answer: "Ikke i øjeblikket. ToolPop PDF er designet som et browserværktøj til individuel brug. Hvis du har brug for API-adgang til programmatisk PDF-behandling, kontakt os på for virksomhedsløsninger." },
-      { question: "Hvilke sprog understøtter siden?", answer: "ToolPop PDF er tilgængelig på 45 sprog, herunder dansk, engelsk, spansk, kinesisk, japansk, tysk, fransk, portugisisk, arabisk, hindi og mange flere. Grænsefladen registrerer automatisk dit browsersprog, eller du kan skifte manuelt via sprogvælgeren." },
+      { question: "Tilføjer ToolPop vandmærker til mine filer?", answer: "Aldrig. Alle behandlede filer er rene og fri for ToolPop-branding eller vandmærker. Resultatet er præcis, hvad du ville forvente af et professionelt værktøj." },
+      { question: "Er der en API tilgængelig?", answer: "Ikke i øjeblikket. ToolPop er designet som et browserværktøj til individuel brug. Hvis du har brug for API-adgang til programmatisk PDF-behandling, kontakt os på for virksomhedsløsninger." },
+      { question: "Hvilke sprog understøtter siden?", answer: "ToolPop er tilgængelig på 45 sprog, herunder dansk, engelsk, spansk, kinesisk, japansk, tysk, fransk, portugisisk, arabisk, hindi og mange flere. Grænsefladen registrerer automatisk dit browsersprog, eller du kan skifte manuelt via sprogvælgeren." },
     ],
   },
   blog: {

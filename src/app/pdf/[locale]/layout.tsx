@@ -1,23 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Header } from "@/lib/ui";
+import { Header, AppNavMenu } from "@/lib/ui";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
+import { getImageDictionary } from "@/lib/i18n/get-image-dictionary";
+import { buildNavApps } from "@/lib/build-nav-apps";
 import "../pdf-theme.css";
-import { tools, categories } from "@/lib/pdf/tools";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
-import { NavMenu } from "./nav-menu";
+import { ShareButton } from "@/lib/ui/components/share-button";
 import { GoogleAnalytics } from "./google-analytics";
 import { GoogleAdSense } from "./google-adsense";
-
-const categoryLabelKeys: Record<string, "categoryOrganize" | "categoryConvert" | "categoryEdit" | "categoryOptimize" | "categorySecurity"> = {
-  organize: "categoryOrganize",
-  convert: "categoryConvert",
-  edit: "categoryEdit",
-  optimize: "categoryOptimize",
-  security: "categorySecurity",
-};
+import { LayoutScripts } from "./layout-scripts";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -79,44 +73,38 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const dict = await getDictionary(locale as Locale);
+  const [dict, imageDict] = await Promise.all([
+    getDictionary(locale as Locale),
+    getImageDictionary(locale as Locale),
+  ]);
   const dir = locale === "ar" || locale === "he" ? "rtl" : "ltr";
+
+  const navApps = buildNavApps({
+    locale,
+    pdfDict: dict as unknown as Record<string, Record<string, Record<string, string>>>,
+    imageDict: imageDict as unknown as Record<string, Record<string, Record<string, string>>>,
+    viewAllLabel: dict.nav.allTools,
+  });
 
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang=${JSON.stringify(locale)};document.documentElement.dir=${JSON.stringify(dir)}`,
-        }}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`,
+      <LayoutScripts
+        locale={locale}
+        dir={dir}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "ToolPop PDF",
+          url: "https://toolpop.org/pdf",
+          logo: "https://toolpop.org/pdf/favicon.svg",
         }}
       />
       <meta name="theme-color" content="#ef4444" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/pdf/sw.js")})}`,
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "ToolPop PDF",
-            url: "https://toolpop.org/pdf",
-            logo: "https://toolpop.org/pdf/favicon.svg",
-          }),
-        }}
-      />
       <GoogleAnalytics />
       <GoogleAdSense />
       <Header
         logo={
-          <Link href={`/pdf/${locale}`} className="flex items-center gap-2 text-lg font-bold text-foreground">
+          <Link href="/" className="flex items-center gap-2 text-lg font-bold text-foreground">
             <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -133,17 +121,16 @@ export default async function LocaleLayout({
             <span className="rounded bg-red-50 px-1.5 py-0.5 text-[10px] font-bold text-red-700 dark:bg-red-950 dark:text-red-400 leading-none">PDF</span>
           </Link>
         }
-        nav={
-          <NavMenu
-            locale={locale}
-            dict={dict}
-            categories={categories}
-            tools={tools.map(({ slug, emoji, category }) => ({ slug, emoji, category }))}
-            categoryLabelKeys={categoryLabelKeys}
-          />
-        }
+        nav={<AppNavMenu apps={navApps} />}
       >
         <ThemeToggle />
+        <ShareButton
+          app="pdf"
+          shareTitle={dict.common.shareTitle}
+          shareSubtitle={dict.common.shareSubtitle}
+          copyLabel={dict.common.shareCopyLink}
+          copiedLabel={dict.common.shareCopied}
+        />
         <LanguageSwitcher locale={locale} />
       </Header>
       <div className="flex min-h-screen flex-col">

@@ -124,11 +124,16 @@ const is: Dictionary = {
     favoriteAdded: "Bætt í eftirlæti",
     favoriteRemoved: "Fjarlægt úr eftirlætum",
     comingSoon: "Coming Soon",
+    share: "Deila",
+    shareTitle: "Deila þessari síðu",
+    shareSubtitle: "Segðu öðrum frá!",
+    shareCopied: "Afritað!",
+    shareCopyLink: "Afrita hlekk",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Ókeypis PDF verkfæri",
+    siteTitle: "ToolPop - Ókeypis PDF verkfæri",
     siteDescription: "Sameina, skipta, þjappa og umbreyta PDF skrám á netinu ókeypis.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Við notum vafrakökur til að bæta upplifun þína.",
@@ -138,15 +143,15 @@ const is: Dictionary = {
   privacy: {
     title: "Persónuverndarstefna",
     lastUpdated: "Síðast uppfært: 1. mars 2026",
-    intro: "Hjá ToolPop PDF er persónuvernd þín okkur mikilvæg. Þessi stefna útskýrir hvaða upplýsingar við söfnum þegar þú notar þjónustu okkar og hvernig við meðhöndlum þær.",
+    intro: "Hjá ToolPop er persónuvernd þín okkur mikilvæg. Þessi stefna útskýrir hvaða upplýsingar við söfnum þegar þú notar þjónustu okkar og hvernig við meðhöndlum þær.",
     sections: [
       {
         heading: "1. Upplýsingar sem við söfnum",
-        content: "ToolPop PDF krefst ekki skráningar. Við söfnum ekki persónuupplýsingum. Hins vegar getum við sjálfkrafa safnað ópersónugreinanlegum gögnum til að bæta þjónustuna:\n\n• Gerð og útgáfa vafrans\n• Stýrikerfi\n• Heimsóttar síður og tími á þeim\n• Vefkökur og svipaðar tækni til að greina notkunarmynstur",
+        content: "ToolPop krefst ekki skráningar. Við söfnum ekki persónuupplýsingum. Hins vegar getum við sjálfkrafa safnað ópersónugreinanlegum gögnum til að bæta þjónustuna:\n\n• Gerð og útgáfa vafrans\n• Stýrikerfi\n• Heimsóttar síður og tími á þeim\n• Vefkökur og svipaðar tækni til að greina notkunarmynstur",
       },
       {
         heading: "2. Meðhöndlun skráa",
-        content: "Skrár sem þú hleður upp eru unnar á netþjónum okkar og sjálfkrafa eyddar innan 2 klukkustunda. Við lesum ekki, geymum ekki og deilum ekki efni skráanna þinna með neinum.",
+        content: "Öll skráavinnsla á ToolPop fer fram beint í vafranum þínum. Skrárnar þínar eru aldrei hlaðnar upp á neinn þjón og yfirgefa aldrei tækið þitt. Við notum WebAssembly og nútíma veftækni til staðbundinnar og öruggrar vinnslu.",
       },
       {
         heading: "3. Vefkökur",
@@ -166,18 +171,18 @@ const is: Dictionary = {
       },
       {
         heading: "7. Hafðu samband",
-        content: "Ef þú hefur spurningar um persónuvernd geturðu haft samband við okkur á support@toolbox-pdf.com.",
+        content: "Ef þú hefur spurningar um persónuvernd geturðu haft samband við okkur á support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Þjónustuskilmálar",
     lastUpdated: "Síðast uppfært: 1. mars 2026",
-    intro: "Takk fyrir að nota ToolPop PDF. Með því að opna eða nota þjónustu okkar samþykkir þú eftirfarandi skilmála.",
+    intro: "Takk fyrir að nota ToolPop. Með því að opna eða nota þjónustu okkar samþykkir þú eftirfarandi skilmála.",
     sections: [
       {
         heading: "1. Um þjónustuna",
-        content: "ToolPop PDF er ókeypis netþjónusta sem gerir þér kleift að sameina, skipta, umbreyta, breyta og þjappa PDF skrár beint í vafranum þínum.",
+        content: "ToolPop er ókeypis verkfærasett á netinu sem gerir þér kleift að vinna úr PDF-skjölum, myndum og öðrum skrám beint í vafranum þínum. Öll vinnsla fer fram á tækinu þínu — skrár eru aldrei hlaðnar upp á neinn þjón.",
       },
       {
         heading: "2. Leyfileg notkun",
@@ -185,7 +190,7 @@ const is: Dictionary = {
       },
       {
         heading: "3. Meðhöndlun skráa",
-        content: "Upphlöðnum skrám er eingöngu beitt til að framkvæma umbeðna aðgerð. Þeim er sjálfkrafa eytt af netþjónum okkar innan 2 klukkustunda. Við greinum ekki eða geymum skrár þínar.",
+        content: "Öll skráavinnsla á ToolPop fer fram beint í vafranum þínum. Skrárnar þínar eru aldrei sendar á neinn þjón og yfirgefa aldrei tækið þitt. Unnar niðurstöður eru tiltækar til niðurhals beint úr vafranum þínum.",
       },
       {
         heading: "4. Fyrirvari",
@@ -205,7 +210,7 @@ const is: Dictionary = {
       },
       {
         heading: "8. Hafðu samband",
-        content: "Ef þú hefur spurningar um þessa skilmála geturðu haft samband við okkur á support@toolbox-pdf.com.",
+        content: "Ef þú hefur spurningar um þessa skilmála geturðu haft samband við okkur á support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const is: Dictionary = {
     backLabel: "Bakhlið",
   },
   about: {
-    title: "Um ToolPop PDF",
-    intro: "ToolPop PDF er ókeypis PDF-verkfærasett sem keyrir beint í vafranum þínum. Breyttu, umbreyttu og skipulagðu PDF-skrár án þess að hlaða þeim upp á netþjón. Skrárnar þínar fara aldrei frá tækinu þínu.",
+    title: "Um ToolPop",
+    intro: "ToolPop er ókeypis PDF-verkfærasett sem keyrir beint í vafranum þínum. Breyttu, umbreyttu og skipulagðu PDF-skrár án þess að hlaða þeim upp á netþjón. Skrárnar þínar fara aldrei frá tækinu þínu.",
     sections: [
-      { heading: "Hlutverk okkar", content: "Við trúum því að allir eigi skilið aðgang að öflugum PDF-verkfærum — án áskrifta, án nýskráningar og án þess að setja friðhelgi í hættu. ToolPop PDF var búið til svo fagleg skjalameðferð væri aðgengileg öllum með vafra." },
-      { heading: "Hvernig það virkar", content: "Ólíkt hefðbundnum PDF-þjónustum sem krefjast þess að þú hleður skrám upp á ytri netþjóna, vinnur ToolPop PDF allt beint í vafranum þínum með nútíma veftækni eins og WebAssembly og PDF.js safninu. Þetta þýðir að viðkvæm skjöl þín eru alltaf á tækinu þínu — við sjáum aldrei, geymum aldrei og sendum aldrei skrárnar þínar." },
-      { heading: "Hvað við bjóðum", content: "ToolPop PDF inniheldur yfir 40 verkfæri í fimm flokkum:\n\n• Skipulag — sameina, skipta, endurraða, draga út og eyða síðum\n• Umbreyting — breyta milli PDF, JPG, PNG, texta og annarra sniða\n• Breyting — bæta við texta, myndum, undirskriftum, vatnsmerki, blaðsíðunúmerum og athugasemdum\n• Hagræðing — þjappa skrám og hagræða fyrir vefbirtingu\n• Öryggi — lykilorðavernd, afmá viðkvæmar upplýsingar og fletja skjöl\n\nÖll verkfæri eru algjörlega ókeypis, án takmarkana á skráarstærð eða daglegum notkunarmörkum." },
-      { heading: "Tæknin okkar", content: "ToolPop PDF er byggt með Next.js, React og nútíma vefstöðlum. Við notum söfn eins og pdf-lib fyrir PDF-vinnslu og PDF.js fyrir myndgerð — allt keyrir á biðlarahlið í vafranum þínum. Vefurinn styður 45 tungumál, dökkan ham og virkar á hvaða tæki sem er með nútíma vafra." },
+      { heading: "Hlutverk okkar", content: "Við trúum því að allir eigi skilið aðgang að öflugum PDF-verkfærum — án áskrifta, án nýskráningar og án þess að setja friðhelgi í hættu. ToolPop var búið til svo fagleg skjalameðferð væri aðgengileg öllum með vafra." },
+      { heading: "Hvernig það virkar", content: "Ólíkt hefðbundnum PDF-þjónustum sem krefjast þess að þú hleður skrám upp á ytri netþjóna, vinnur ToolPop allt beint í vafranum þínum með nútíma veftækni eins og WebAssembly og PDF.js safninu. Þetta þýðir að viðkvæm skjöl þín eru alltaf á tækinu þínu — við sjáum aldrei, geymum aldrei og sendum aldrei skrárnar þínar." },
+      { heading: "Hvað við bjóðum", content: "ToolPop inniheldur yfir 40 verkfæri í fimm flokkum:\n\n• Skipulag — sameina, skipta, endurraða, draga út og eyða síðum\n• Umbreyting — breyta milli PDF, JPG, PNG, texta og annarra sniða\n• Breyting — bæta við texta, myndum, undirskriftum, vatnsmerki, blaðsíðunúmerum og athugasemdum\n• Hagræðing — þjappa skrám og hagræða fyrir vefbirtingu\n• Öryggi — lykilorðavernd, afmá viðkvæmar upplýsingar og fletja skjöl\n\nÖll verkfæri eru algjörlega ókeypis, án takmarkana á skráarstærð eða daglegum notkunarmörkum." },
+      { heading: "Tæknin okkar", content: "ToolPop er byggt með Next.js, React og nútíma vefstöðlum. Við notum söfn eins og pdf-lib fyrir PDF-vinnslu og PDF.js fyrir myndgerð — allt keyrir á biðlarahlið í vafranum þínum. Vefurinn styður 45 tungumál, dökkan ham og virkar á hvaða tæki sem er með nútíma vafra." },
       { heading: "Hafðu samband", content: "Ertu með spurningar, athugasemdir eða hugmyndir að nýjum eiginleikum? Okkur langar að heyra frá þér. Heimsæktu tengiliðasíðuna okkar eða sendu okkur tölvupóst á." },
     ],
   },
@@ -1091,22 +1096,22 @@ const is: Dictionary = {
   },
   faq: {
     title: "Algengar spurningar",
-    intro: "Finndu svör við algengustu spurningunum um ToolPop PDF. Ef þú sérð ekki spurninguna þína hér, ekki hika við að hafa samband við okkur.",
+    intro: "Finndu svör við algengustu spurningunum um ToolPop. Ef þú sérð ekki spurninguna þína hér, ekki hika við að hafa samband við okkur.",
     items: [
-      { question: "Er ToolPop PDF virkilega ókeypis?", answer: "Já, algjörlega ókeypis. Öll verkfæri eru aðgengileg án takmarkana, án nýskráningar og án falinna gjalda. Við styðjum þjónustuna með hóflegum auglýsingum." },
+      { question: "Er ToolPop virkilega ókeypis?", answer: "Já, algjörlega ókeypis. Öll verkfæri eru aðgengileg án takmarkana, án nýskráningar og án falinna gjalda. Við styðjum þjónustuna með hóflegum auglýsingum." },
       { question: "Eru skrárnar mínar öruggar og einkamál?", answer: "Algjörlega. Skrárnar þínar eru unnar alfarið í vafranum þínum — þær fara aldrei frá tækinu þínu og eru aldrei hlaðnar upp á neinn netþjón. Við notum nútíma vafra-API til allrar PDF-vinnslu, svo viðkvæm skjöl þín haldast algjörlega einkamál." },
-      { question: "Þarf ég að stofna aðgang?", answer: "Nei. ToolPop PDF virkar án nokkurrar nýskráningar eða innskráningar. Opnaðu verkfæri, slepptu skránni og fáðu niðurstöður strax." },
+      { question: "Þarf ég að stofna aðgang?", answer: "Nei. ToolPop virkar án nokkurrar nýskráningar eða innskráningar. Opnaðu verkfæri, slepptu skránni og fáðu niðurstöður strax." },
       { question: "Hver er hámarksstærð skráar?", answer: "Þar sem vinnsla fer fram í vafranum þínum fer mörkin eftir tiltæku minni tækisins þíns. Flest nútíma tæki ráða vel við skrár allt að 100–200 MB. Fyrir mjög stórar skrár mælum við með að nota skjáborðsvafra." },
-      { question: "Hvaða vafrar eru studdir?", answer: "ToolPop PDF virkar í öllum nútíma vöfrum þar á meðal Chrome, Firefox, Safari, Edge og Opera. Við mælum með nýjustu útgáfu vafrans þíns fyrir bestu upplifun." },
-      { question: "Get ég notað ToolPop PDF í símanum eða spjaldtölvunni?", answer: "Já! ToolPop PDF er sveigjanlegt og virkar á farsímum. Þú getur sameinað, skipt, umbreytt og breytt PDF-skrám beint úr vafra símans eða spjaldtölvunnar." },
+      { question: "Hvaða vafrar eru studdir?", answer: "ToolPop virkar í öllum nútíma vöfrum þar á meðal Chrome, Firefox, Safari, Edge og Opera. Við mælum með nýjustu útgáfu vafrans þíns fyrir bestu upplifun." },
+      { question: "Get ég notað ToolPop í símanum eða spjaldtölvunni?", answer: "Já! ToolPop er sveigjanlegt og virkar á farsímum. Þú getur sameinað, skipt, umbreytt og breytt PDF-skrám beint úr vafra símans eða spjaldtölvunnar." },
       { question: "Hvernig virkar vaframeðferð?", answer: "Þegar þú velur skrá helst hún á tækinu þínu. Verkfærin okkar nota JavaScript-söfn eins og pdf-lib og PDF.js til að lesa, breyta og búa til PDF-skrár beint í minni vafrans. Unnin skráin er síðan tilbúin til niðurhals — enginn netþjónssamskipti þörf." },
       { question: "Get ég sameinað fleiri en tvær PDF-skrár?", answer: "Já. Sameinunarverkfærið okkar styður hvaða fjölda skráa sem er. Dragðu og slepptu öllum PDF-skrám sem þú vilt sameina, raðaðu þeim í þá röð sem þú vilt og smelltu á vinnslutakkann." },
       { question: "Hvaða skráarsnið get ég umbreytt í og úr PDF?", answer: "Þú getur umbreytt PDF í JPG, PNG og venjulegan texta. Til að búa til PDF styðjum við JPG, PNG, WEBP, TIFF, HEIC myndir, HTML-skrár og skannað skjöl. Við bætum reglulega við nýjum sniðum." },
-      { question: "Hvað aðgreinir ToolPop PDF frá öðrum PDF-verkfærum?", answer: "Þrír lykilmunir: (1) Friðhelgi — skrárnar þínar fara aldrei frá tækinu þínu, ólíkt flestum keppinautum sem hlaða upp á sína netþjóna. (2) Engar takmarkanir — engin dagleg mörk, engar stærðartakmarkanir á skrám, engin vatnsmerki. (3) Engin nýskráning — notaðu hvaða verkfæri sem er strax án innskráningar." },
+      { question: "Hvað aðgreinir ToolPop frá öðrum PDF-verkfærum?", answer: "Þrír lykilmunir: (1) Friðhelgi — skrárnar þínar fara aldrei frá tækinu þínu, ólíkt flestum keppinautum sem hlaða upp á sína netþjóna. (2) Engar takmarkanir — engin dagleg mörk, engar stærðartakmarkanir á skrám, engin vatnsmerki. (3) Engin nýskráning — notaðu hvaða verkfæri sem er strax án innskráningar." },
       { question: "Get ég bætt lykilorði við til að vernda PDF?", answer: "Já. Notaðu PDF-verndarverkfærið okkar með AES-256 dulkóðun. Þú getur stillt opnunarlykilorð og heimildir til að stjórna prentun, afritun og breytingum." },
-      { question: "Bætir ToolPop PDF vatnsmerkjum á skrárnar mínar?", answer: "Aldrei. Allar unnar skrár eru hreinar og lausar við ToolPop-merki eða vatnsmerki. Úttakið er nákvæmlega eins og þú myndir búast við frá faglegu verkfæri." },
-      { question: "Er API í boði?", answer: "Ekki eins og er. ToolPop PDF er hannað sem vafraverkfæri fyrir einstaklingsnotkun. Ef þú þarft API-aðgang fyrir forritunarlega PDF-vinnslu, hafðu samband á til að ræða fyrirtækjalausnir." },
-      { question: "Hvaða tungumál styður vefurinn?", answer: "ToolPop PDF er í boði á 45 tungumálum þar á meðal ensku, kóresku, spænsku, kínversku, japönsku, þýsku, frönsku, portúgölsku, arabísku, hindí og mörgum fleiri. Viðmótið greinir sjálfkrafa tungumál vafrans þíns, eða þú getur skipt handvirkt með tungumálavalinu." },
+      { question: "Bætir ToolPop vatnsmerkjum á skrárnar mínar?", answer: "Aldrei. Allar unnar skrár eru hreinar og lausar við ToolPop-merki eða vatnsmerki. Úttakið er nákvæmlega eins og þú myndir búast við frá faglegu verkfæri." },
+      { question: "Er API í boði?", answer: "Ekki eins og er. ToolPop er hannað sem vafraverkfæri fyrir einstaklingsnotkun. Ef þú þarft API-aðgang fyrir forritunarlega PDF-vinnslu, hafðu samband á til að ræða fyrirtækjalausnir." },
+      { question: "Hvaða tungumál styður vefurinn?", answer: "ToolPop er í boði á 45 tungumálum þar á meðal ensku, kóresku, spænsku, kínversku, japönsku, þýsku, frönsku, portúgölsku, arabísku, hindí og mörgum fleiri. Viðmótið greinir sjálfkrafa tungumál vafrans þíns, eða þú getur skipt handvirkt með tungumálavalinu." },
     ],
   },
   blog: {

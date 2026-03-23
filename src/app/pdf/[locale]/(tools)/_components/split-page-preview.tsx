@@ -307,6 +307,7 @@ function PageThumb({
           src={src}
           alt={`Page ${pageNum}`}
           className="h-full w-full object-cover"
+          loading="lazy"
           draggable={false}
         />
       ) : (
@@ -592,6 +593,7 @@ function SortableExtractCard({
               src={thumbnail}
               alt={`Page ${pageNum}`}
               className="h-full w-full object-cover"
+              loading="lazy"
               draggable={false}
             />
           ) : (
@@ -917,6 +919,7 @@ function FlatGridView({
                     src={thumbnails[pageNum]}
                     alt={`Page ${pageNum}`}
                     className="h-full w-full object-cover"
+                    loading="lazy"
                     draggable={false}
                   />
                 ) : (

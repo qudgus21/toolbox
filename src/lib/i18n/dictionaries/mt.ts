@@ -124,11 +124,16 @@ const mt: Dictionary = {
     favoriteAdded: "Miżjud mal-favoriti",
     favoriteRemoved: "Imneħħi mill-favoriti",
     comingSoon: "Coming Soon",
+    share: "Aqsam",
+    shareTitle: "Aqsam din il-paġna",
+    shareSubtitle: "Għid lil-ħbieb!",
+    shareCopied: "Ikkupjat!",
+    shareCopyLink: "Ikkopja l-link",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Għodod PDF b'xejn",
+    siteTitle: "ToolPop - Għodod PDF b'xejn",
     siteDescription: "Għaqqad, aqsam, ikkompressja u ikkonverti fajls PDF online b'xejn.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Nużaw il-cookies biex intejbu l-esperjenza tiegħek.",
@@ -138,15 +143,15 @@ const mt: Dictionary = {
   privacy: {
     title: "Politika tal-Privatezza",
     lastUpdated: "Aġġornata l-aħħar: 1 ta' Marzu, 2026",
-    intro: "F'ToolPop PDF, il-privatezza tiegħek hija importanti. Din il-politika tispjega liema informazzjoni niġbru meta tuża s-servizz tagħna u kif nittrattawha.",
+    intro: "F'ToolPop, il-privatezza tiegħek hija importanti. Din il-politika tispjega liema informazzjoni niġbru meta tuża s-servizz tagħna u kif nittrattawha.",
     sections: [
       {
         heading: "1. Informazzjoni li Niġbru",
-        content: "ToolPop PDF ma jirrikjedix reġistrazzjoni. Ma niġbrux informazzjoni personali. Madankollu, nistgħu niġbru awtomatikament data mhux identifikabbli biex intejbu s-servizz:\n\n• It-tip u l-verżjoni tal-browser\n• Is-sistema operattiva\n• Il-paġni viżitati u l-ħin mgħoddi\n• Cookies u teknoloġiji simili għal mudelli ta' użu",
+        content: "ToolPop ma jirrikjedix reġistrazzjoni. Ma niġbrux informazzjoni personali. Madankollu, nistgħu niġbru awtomatikament data mhux identifikabbli biex intejbu s-servizz:\n\n• It-tip u l-verżjoni tal-browser\n• Is-sistema operattiva\n• Il-paġni viżitati u l-ħin mgħoddi\n• Cookies u teknoloġiji simili għal mudelli ta' użu",
       },
       {
         heading: "2. Immaniġġjar tal-Fajls",
-        content: "Il-fajls li ttella' jiġu pproċessati fuq is-servers tagħna u jitħassru awtomatikament fi żmien sagħtejn. Ma naqrawx, ma naħżnux u ma naqsmux il-kontenut tal-fajls tiegħek ma' ħadd.",
+        content: "L-ipproċessar kollu tal-fajls fuq ToolPop isir direttament fil-browser tiegħek. Il-fajls tiegħek qatt ma jitilgħu fuq ebda server u qatt ma jħallu l-apparat tiegħek. Nużaw WebAssembly u teknoloġiji web moderni għal-ipproċessar lokali u sigur.",
       },
       {
         heading: "3. Cookies",
@@ -166,18 +171,18 @@ const mt: Dictionary = {
       },
       {
         heading: "7. Ikkuntattjana",
-        content: "Għal mistoqsijiet relatati mal-privatezza, ikkuntattjana fuq support@toolbox-pdf.com.",
+        content: "Għal mistoqsijiet relatati mal-privatezza, ikkuntattjana fuq support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Termini tas-Servizz",
     lastUpdated: "Aġġornati l-aħħar: 1 ta' Marzu, 2026",
-    intro: "Grazzi li tuża ToolPop PDF. Billi taċċessa jew tuża s-servizz tagħna, qed taqbel mat-termini li ġejjin.",
+    intro: "Grazzi li tuża ToolPop. Billi taċċessa jew tuża s-servizz tagħna, qed taqbel mat-termini li ġejjin.",
     sections: [
       {
         heading: "1. Dwar is-Servizz",
-        content: "ToolPop PDF huwa servizz online b'xejn li jippermettilek tgħaqqad, taqsam, tikkonverti, teditja u tikkompressja fajls PDF direttament mill-browser tiegħek.",
+        content: "ToolPop huwa sett ta' għodod onlajn b'xejn li jħallik tipproċessa PDFs, stampi u fajls oħra direttament fil-browser tiegħek. L-ipproċessar kollu jsir lokalment fuq l-apparat tiegħek — il-fajls qatt ma jitilgħu fuq ebda server.",
       },
       {
         heading: "2. Użu Aċċettabbli",
@@ -185,7 +190,7 @@ const mt: Dictionary = {
       },
       {
         heading: "3. Immaniġġjar tal-Fajls",
-        content: "Il-fajls imtella' jintużaw biss biex issir l-operazzjoni mitluba. Jitħassru awtomatikament mis-servers tagħna fi żmien sagħtejn. Ma nanalizzawx u ma nżommux il-fajls tiegħek.",
+        content: "L-ipproċessar kollu tal-fajls fuq ToolPop isir direttament fil-browser tiegħek. Il-fajls tiegħek qatt ma jintbagħtu fuq ebda server u qatt ma jħallu l-apparat tiegħek. Ir-riżultati pproċessati huma disponibbli għat-tniżżil direttament mill-browser tiegħek.",
       },
       {
         heading: "4. Rinunzja",
@@ -205,7 +210,7 @@ const mt: Dictionary = {
       },
       {
         heading: "8. Ikkuntattjana",
-        content: "Għal mistoqsijiet dwar dawn it-termini, ikkuntattjana fuq support@toolbox-pdf.com.",
+        content: "Għal mistoqsijiet dwar dawn it-termini, ikkuntattjana fuq support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const mt: Dictionary = {
     backLabel: "Wara",
   },
   about: {
-    title: "Dwar ToolPop PDF",
-    intro: "ToolPop PDF huwa sett ta' għodod PDF b'xejn li jaħdem direttament fil-browser tiegħek. Editja, ikkonverti u organizza fajls PDF mingħajr ma ttellagħhom fuq server. Il-fajls tiegħek qatt ma jħallu l-apparat tiegħek.",
+    title: "Dwar ToolPop",
+    intro: "ToolPop huwa sett ta' għodod PDF b'xejn li jaħdem direttament fil-browser tiegħek. Editja, ikkonverti u organizza fajls PDF mingħajr ma ttellagħhom fuq server. Il-fajls tiegħek qatt ma jħallu l-apparat tiegħek.",
     sections: [
-      { heading: "Il-Missjoni Tagħna", content: "Nemmnu li kulħadd jistħoqqlu aċċess għal għodod PDF b'saħħithom — mingħajr abbonamenti, mingħajr reġistrazzjonijiet, u mingħajr ma tpoġġi l-privatezza f'riskju. ToolPop PDF inħoloq biex jimmaniġġja dokumenti b'mod professjonali jkun aċċessibbli għal kulħadd b'browser tal-web." },
-      { heading: "Kif Jaħdem", content: "B'differenza minn servizzi PDF tradizzjonali li jeħtieġu li ttella' fajls fuq servers remoti, ToolPop PDF jipproċessa kollox direttament fil-browser tiegħek bl-użu ta' teknoloġiji web moderni bħal WebAssembly u l-librerija PDF.js. Dan ifisser li d-dokumenti sensittivi tiegħek dejjem jibqgħu fuq l-apparat tiegħek — qatt ma naraw, naħżnu jew nittrasmettu l-fajls tiegħek." },
-      { heading: "X'Noffru", content: "ToolPop PDF jinkludi aktar minn 40 għodda f'ħames kategoriji:\n\n• Organizza — għaqqad, aqsam, irranġa mill-ġdid, iġbed u ħassar paġni\n• Ikkonverti — ibdel bejn PDF, JPG, PNG, test u formati oħra\n• Editja — żid test, stampi, firem, watermarks, numri tal-paġni u annotazzjonijiet\n• Ottimizza — ikkompresja fajls u ottimizza għad-distribuzzjoni tal-web\n• Sigurtà — ipproteġi b'password, ħassar informazzjoni sensittiva u ċċattja dokumenti\n\nL-għodod kollha huma kompletament b'xejn, mingħajr limiti ta' daqs tal-fajl jew limiti ta' użu ta' kuljum." },
-      { heading: "It-Teknoloġija Tagħna", content: "ToolPop PDF huwa mibni b'Next.js, React u standards tal-web moderni. Nużaw libreriji bħal pdf-lib għall-manipulazzjoni ta' PDF u PDF.js għar-rendering — kollox jaħdem fuq in-naħa tal-klijent fil-browser tiegħek. Is-sit jappoġġja 45 lingwa, dark mode, u jaħdem fuq kull apparat b'browser modern." },
+      { heading: "Il-Missjoni Tagħna", content: "Nemmnu li kulħadd jistħoqqlu aċċess għal għodod PDF b'saħħithom — mingħajr abbonamenti, mingħajr reġistrazzjonijiet, u mingħajr ma tpoġġi l-privatezza f'riskju. ToolPop inħoloq biex jimmaniġġja dokumenti b'mod professjonali jkun aċċessibbli għal kulħadd b'browser tal-web." },
+      { heading: "Kif Jaħdem", content: "B'differenza minn servizzi PDF tradizzjonali li jeħtieġu li ttella' fajls fuq servers remoti, ToolPop jipproċessa kollox direttament fil-browser tiegħek bl-użu ta' teknoloġiji web moderni bħal WebAssembly u l-librerija PDF.js. Dan ifisser li d-dokumenti sensittivi tiegħek dejjem jibqgħu fuq l-apparat tiegħek — qatt ma naraw, naħżnu jew nittrasmettu l-fajls tiegħek." },
+      { heading: "X'Noffru", content: "ToolPop jinkludi aktar minn 40 għodda f'ħames kategoriji:\n\n• Organizza — għaqqad, aqsam, irranġa mill-ġdid, iġbed u ħassar paġni\n• Ikkonverti — ibdel bejn PDF, JPG, PNG, test u formati oħra\n• Editja — żid test, stampi, firem, watermarks, numri tal-paġni u annotazzjonijiet\n• Ottimizza — ikkompresja fajls u ottimizza għad-distribuzzjoni tal-web\n• Sigurtà — ipproteġi b'password, ħassar informazzjoni sensittiva u ċċattja dokumenti\n\nL-għodod kollha huma kompletament b'xejn, mingħajr limiti ta' daqs tal-fajl jew limiti ta' użu ta' kuljum." },
+      { heading: "It-Teknoloġija Tagħna", content: "ToolPop huwa mibni b'Next.js, React u standards tal-web moderni. Nużaw libreriji bħal pdf-lib għall-manipulazzjoni ta' PDF u PDF.js għar-rendering — kollox jaħdem fuq in-naħa tal-klijent fil-browser tiegħek. Is-sit jappoġġja 45 lingwa, dark mode, u jaħdem fuq kull apparat b'browser modern." },
       { heading: "Ikkuntattjana", content: "Għandek mistoqsijiet, feedback jew suġġerimenti għal karatteristiċi ġodda? Nixtiequ nisimgħu mingħandek. Żur il-paġna tal-Kuntatt tagħna jew ibagħtilna email fuq." },
     ],
   },
@@ -1091,22 +1096,22 @@ const mt: Dictionary = {
   },
   faq: {
     title: "Mistoqsijiet Frekwenti",
-    intro: "Sib tweġibiet għall-aktar mistoqsijiet komuni dwar ToolPop PDF. Jekk ma ssibx il-mistoqsija tiegħek hawn, ikkuntattjana mingħajr eżitazzjoni.",
+    intro: "Sib tweġibiet għall-aktar mistoqsijiet komuni dwar ToolPop. Jekk ma ssibx il-mistoqsija tiegħek hawn, ikkuntattjana mingħajr eżitazzjoni.",
     items: [
-      { question: "ToolPop PDF huwa tassew b'xejn?", answer: "Iva, kompletament b'xejn. L-għodod kollha huma disponibbli mingħajr limiti, mingħajr reġistrazzjoni u mingħajr ħlasijiet moħbija. Nappoġġjaw is-servizz permezz ta' reklamar mhux invażiv." },
+      { question: "ToolPop huwa tassew b'xejn?", answer: "Iva, kompletament b'xejn. L-għodod kollha huma disponibbli mingħajr limiti, mingħajr reġistrazzjoni u mingħajr ħlasijiet moħbija. Nappoġġjaw is-servizz permezz ta' reklamar mhux invażiv." },
       { question: "Il-fajls tiegħi huma siguri u privati?", answer: "Assolutament. Il-fajls tiegħek jiġu pproċessati kompletament fil-browser tiegħek — qatt ma jħallu l-apparat tiegħek u qatt ma jittellgħu fuq xi server. Nużaw APIs moderni tal-browser għall-operazzjonijiet kollha tal-PDF, għalhekk id-dokumenti sensittivi tiegħek jibqgħu kompletament privati." },
-      { question: "Għandi bżonn noħloq kont?", answer: "Le. ToolPop PDF jaħdem mingħajr ebda reġistrazzjoni jew login. Iftaħ għodda, aqbez il-fajl tiegħek u ikseb ir-riżultati mal-ewwel." },
+      { question: "Għandi bżonn noħloq kont?", answer: "Le. ToolPop jaħdem mingħajr ebda reġistrazzjoni jew login. Iftaħ għodda, aqbez il-fajl tiegħek u ikseb ir-riżultati mal-ewwel." },
       { question: "X'inhu d-daqs massimu tal-fajl li nista' nipproċessa?", answer: "Peress li l-ipproċessar iseħħ fil-browser tiegħek, il-limitu jiddependi fuq il-memorja disponibbli tal-apparat tiegħek. Il-biċċa l-kbira tal-apparati moderni jistgħu jimmaniġġjaw fajls sa 100–200 MB mingħajr problemi. Għal fajls kbar ħafna, nirrakkomandaw tuża browser tad-desktop." },
-      { question: "Liema browsers huma appoġġjati?", answer: "ToolPop PDF jaħdem fuq il-browsers moderni kollha inkluż Chrome, Firefox, Safari, Edge u Opera. Nirrakkomandaw tuża l-aħħar verżjoni tal-browser tiegħek għall-aħjar esperjenza." },
-      { question: "Nista' nuża ToolPop PDF fuq it-telefon jew it-tablet tiegħi?", answer: "Iva! ToolPop PDF huwa kompletament responsiv u jaħdem fuq apparati mobbli. Tista' tgħaqqad, taqsam, tikkonverti u teditja PDFs direttament mill-browser tat-telefon jew tat-tablet tiegħek." },
+      { question: "Liema browsers huma appoġġjati?", answer: "ToolPop jaħdem fuq il-browsers moderni kollha inkluż Chrome, Firefox, Safari, Edge u Opera. Nirrakkomandaw tuża l-aħħar verżjoni tal-browser tiegħek għall-aħjar esperjenza." },
+      { question: "Nista' nuża ToolPop fuq it-telefon jew it-tablet tiegħi?", answer: "Iva! ToolPop huwa kompletament responsiv u jaħdem fuq apparati mobbli. Tista' tgħaqqad, taqsam, tikkonverti u teditja PDFs direttament mill-browser tat-telefon jew tat-tablet tiegħek." },
       { question: "Kif jaħdem l-ipproċessar ibbażat fuq il-browser?", answer: "Meta tagħżel fajl, jibqa' fuq l-apparat tiegħek. L-għodod tagħna jużaw libreriji JavaScript bħal pdf-lib u PDF.js biex jaqraw, jimmodifikaw u joħolqu PDFs direttament fil-memorja tal-browser tiegħek. Il-fajl ipproċessat imbagħad ikun disponibbli għad-download — mingħajr ebda round-trip mas-server." },
       { question: "Nista' ngħaqqad aktar minn żewġ fajls PDF?", answer: "Iva. L-għodda tagħna għall-għaqda tal-PDF tappoġġja l-għaqda ta' kull numru ta' fajls. Sempliċement aqbez il-fajls PDF kollha, arranġahom fl-ordni li trid u ikklikkja l-buttuna tal-ipproċessar." },
       { question: "Liema formati ta' fajls nista' nikkonverti lejn u minn PDF?", answer: "Tista' tikkonverti PDFs għal JPG, PNG u test sempliċi. Għall-ħolqien ta' PDFs, nappoġġjaw stampi JPG, PNG, WEBP, TIFF, HEIC, fajls HTML u dokumenti skennjati. Qed inżidu formati ġodda regolarment." },
-      { question: "Kif inhu differenti ToolPop PDF minn għodod PDF oħra?", answer: "Tliet differenzi ewlenin: (1) Privatezza — il-fajls tiegħek qatt ma jħallu l-apparat tiegħek, b'differenza mill-biċċa l-kbira tal-kompetituri li jtellgħuhom fuq is-servers tagħhom. (2) Mingħajr limiti — mingħajr limiti ta' kuljum, mingħajr restrizzjonijiet fuq id-daqs, mingħajr watermarks. (3) Mingħajr reġistrazzjoni — uża kull għodda mal-ewwel mingħajr login." },
+      { question: "Kif inhu differenti ToolPop minn għodod PDF oħra?", answer: "Tliet differenzi ewlenin: (1) Privatezza — il-fajls tiegħek qatt ma jħallu l-apparat tiegħek, b'differenza mill-biċċa l-kbira tal-kompetituri li jtellgħuhom fuq is-servers tagħhom. (2) Mingħajr limiti — mingħajr limiti ta' kuljum, mingħajr restrizzjonijiet fuq id-daqs, mingħajr watermarks. (3) Mingħajr reġistrazzjoni — uża kull għodda mal-ewwel mingħajr login." },
       { question: "Nista' nżid password biex nipproteġi l-PDF tiegħi?", answer: "Iva. Uża l-għodda tagħna Protegi PDF b'encryption AES-256. Tista' tissettja password tal-ftuħ u permessi biex tikkontrolla l-ipprintjar, il-kopjar u l-editjar." },
-      { question: "ToolPop PDF iżid watermarks fuq il-fajls tiegħi?", answer: "Qatt. Il-fajls ipproċessati kollha huma nodfa u mingħajr ebda branding jew watermarks ta' ToolPop. Ir-riżultat huwa eżattament dak li tistenna minn għodda professjonali." },
-      { question: "Hemm API disponibbli?", answer: "Bħalissa le. ToolPop PDF huwa ddisinjat bħala għodda tal-browser għall-użu individwali. Jekk teħtieġ aċċess API għall-ipproċessar programmatiku tal-PDF, ikkuntattjana fuq biex tiddiskuti soluzzjonijiet kummerċjali." },
-      { question: "Liema lingwi jappoġġja s-sit?", answer: "ToolPop PDF huwa disponibbli f'45 lingwa inkluż l-Ingliż, il-Korean, l-Ispanjol, iċ-Ċiniż, il-Ġappuniż, il-Ġermaniż, il-Franċiż, il-Portugiż, l-Għarbi, il-Hindi u ħafna oħrajn. L-interface awtomatikament jiskopri l-lingwa tal-browser tiegħek, jew tista' tibdel manwalment bl-użu tas-selektur tal-lingwa." },
+      { question: "ToolPop iżid watermarks fuq il-fajls tiegħi?", answer: "Qatt. Il-fajls ipproċessati kollha huma nodfa u mingħajr ebda branding jew watermarks ta' ToolPop. Ir-riżultat huwa eżattament dak li tistenna minn għodda professjonali." },
+      { question: "Hemm API disponibbli?", answer: "Bħalissa le. ToolPop huwa ddisinjat bħala għodda tal-browser għall-użu individwali. Jekk teħtieġ aċċess API għall-ipproċessar programmatiku tal-PDF, ikkuntattjana fuq biex tiddiskuti soluzzjonijiet kummerċjali." },
+      { question: "Liema lingwi jappoġġja s-sit?", answer: "ToolPop huwa disponibbli f'45 lingwa inkluż l-Ingliż, il-Korean, l-Ispanjol, iċ-Ċiniż, il-Ġappuniż, il-Ġermaniż, il-Franċiż, il-Portugiż, l-Għarbi, il-Hindi u ħafna oħrajn. L-interface awtomatikament jiskopri l-lingwa tal-browser tiegħek, jew tista' tibdel manwalment bl-użu tas-selektur tal-lingwa." },
     ],
   },
   blog: {

@@ -112,11 +112,16 @@ const ro: Dictionary = {
     favoriteAdded: "Adăugat la favorite",
     favoriteRemoved: "Eliminat din favorite",
     comingSoon: "Coming Soon",
+    share: "Distribuie",
+    shareTitle: "Distribuie această pagină",
+    shareSubtitle: "Dă de veste!",
+    shareCopied: "Copiat!",
+    shareCopyLink: "Copiază linkul",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Instrumente PDF gratuite",
+    siteTitle: "ToolPop - Instrumente PDF gratuite",
     siteDescription: "Unește, împarte, comprimă și convertește fișiere PDF online gratuit.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Folosim cookie-uri pentru a îmbunătăți experiența dumneavoastră.",
@@ -126,15 +131,15 @@ const ro: Dictionary = {
   privacy: {
     title: "Politica de confidențialitate",
     lastUpdated: "Ultima actualizare: 1 martie 2026",
-    intro: "La ToolPop PDF, confidențialitatea ta contează. Această politică explică ce informații colectăm atunci când folosești serviciul nostru și cum le gestionăm.",
+    intro: "La ToolPop, confidențialitatea ta contează. Această politică explică ce informații colectăm atunci când folosești serviciul nostru și cum le gestionăm.",
     sections: [
       {
         heading: "1. Informațiile pe care le colectăm",
-        content: "ToolPop PDF nu necesită înregistrare. Nu colectăm date personale. Cu toate acestea, putem colecta automat date neidentificabile pentru a îmbunătăți serviciul:\n\n• Tipul și versiunea browserului\n• Sistemul de operare\n• Paginile vizitate și timpul petrecut\n• Cookie-uri și tehnologii similare pentru analiza utilizării",
+        content: "ToolPop nu necesită înregistrare. Nu colectăm date personale. Cu toate acestea, putem colecta automat date neidentificabile pentru a îmbunătăți serviciul:\n\n• Tipul și versiunea browserului\n• Sistemul de operare\n• Paginile vizitate și timpul petrecut\n• Cookie-uri și tehnologii similare pentru analiza utilizării",
       },
       {
         heading: "2. Gestionarea fișierelor",
-        content: "Fișierele pe care le încarci sunt procesate pe serverele noastre și șterse automat în decurs de 2 ore. Nu citim, nu stocăm și nu partajăm conținutul fișierelor tale cu nimeni.",
+        content: "Toată procesarea fișierelor pe ToolPop are loc direct în browserul tău. Fișierele tale nu sunt niciodată încărcate pe vreun server și nu părăsesc niciodată dispozitivul tău. Folosim WebAssembly și tehnologii web moderne pentru procesare locală și sigură.",
       },
       {
         heading: "3. Cookie-uri",
@@ -154,18 +159,18 @@ const ro: Dictionary = {
       },
       {
         heading: "7. Contact",
-        content: "Pentru întrebări legate de confidențialitate, ne poți contacta la support@toolbox-pdf.com.",
+        content: "Pentru întrebări legate de confidențialitate, ne poți contacta la support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Termeni de utilizare",
     lastUpdated: "Ultima actualizare: 1 martie 2026",
-    intro: "Îți mulțumim că folosești ToolPop PDF. Prin accesarea sau utilizarea serviciului nostru, ești de acord cu următorii termeni.",
+    intro: "Îți mulțumim că folosești ToolPop. Prin accesarea sau utilizarea serviciului nostru, ești de acord cu următorii termeni.",
     sections: [
       {
         heading: "1. Despre serviciu",
-        content: "ToolPop PDF este un serviciu online gratuit care îți permite să unești, împarți, convertești, editezi și comprimi fișiere PDF direct în browser.",
+        content: "ToolPop este un set de instrumente online gratuit care îți permite să procesezi PDF-uri, imagini și alte fișiere direct în browser. Toată procesarea are loc local pe dispozitivul tău — fișierele nu sunt niciodată încărcate pe vreun server.",
       },
       {
         heading: "2. Utilizare acceptabilă",
@@ -173,7 +178,7 @@ const ro: Dictionary = {
       },
       {
         heading: "3. Gestionarea fișierelor",
-        content: "Fișierele încărcate sunt utilizate exclusiv pentru a efectua operațiunea solicitată. Ele sunt șterse automat de pe serverele noastre în decurs de 2 ore. Nu analizăm și nu păstrăm fișierele tale.",
+        content: "Toată procesarea fișierelor pe ToolPop are loc direct în browserul tău. Fișierele tale nu sunt niciodată trimise la vreun server și nu părăsesc niciodată dispozitivul tău. Rezultatele procesate sunt disponibile pentru descărcare direct din browser.",
       },
       {
         heading: "4. Limitarea responsabilității",
@@ -193,7 +198,7 @@ const ro: Dictionary = {
       },
       {
         heading: "8. Contact",
-        content: "Pentru întrebări despre acești termeni, ne poți contacta la support@toolbox-pdf.com.",
+        content: "Pentru întrebări despre acești termeni, ne poți contacta la support@toolpop.org.",
       },
     ],
   },
@@ -1045,13 +1050,13 @@ const ro: Dictionary = {
     backLabel: "Spate",
   },
   about: {
-    title: "Despre ToolPop PDF",
-    intro: "ToolPop PDF este un set gratuit de instrumente PDF care funcționează direct în browser. Editează, convertește și organizează fișiere PDF fără a le încărca pe vreun server. Fișierele tale nu părăsesc niciodată dispozitivul.",
+    title: "Despre ToolPop",
+    intro: "ToolPop este un set gratuit de instrumente PDF care funcționează direct în browser. Editează, convertește și organizează fișiere PDF fără a le încărca pe vreun server. Fișierele tale nu părăsesc niciodată dispozitivul.",
     sections: [
-      { heading: "Misiunea noastră", content: "Credem că toată lumea merită acces la instrumente PDF performante — fără abonamente, fără înregistrare și fără compromisuri la capitolul confidențialitate. ToolPop PDF a fost creat pentru a pune la dispoziția oricui are un browser web instrumente profesionale de gestionare a documentelor." },
-      { heading: "Cum funcționează", content: "Spre deosebire de serviciile PDF tradiționale, care necesită încărcarea fișierelor pe servere externe, ToolPop PDF procesează totul direct în browserul tău, folosind tehnologii web moderne precum WebAssembly și biblioteca PDF.js. Asta înseamnă că documentele tale sensibile rămân mereu pe dispozitivul tău — noi nu vedem, nu stocăm și nu transmitem niciodată fișierele tale." },
-      { heading: "Ce oferim", content: "ToolPop PDF include peste 40 de instrumente în cinci categorii:\n\n• Organizare — unire, separare, reordonare, extragere și ștergere pagini\n• Conversie — transformare între PDF, JPG, PNG, text și alte formate\n• Editare — adăugare text, imagini, semnături, filigrane, numere de pagină și adnotări\n• Optimizare — comprimare fișiere și optimizare pentru web\n• Securitate — protecție cu parolă, redactare informații sensibile și aplatizare documente\n\nToate instrumentele sunt complet gratuite, fără limite de dimensiune a fișierelor sau restricții zilnice de utilizare." },
-      { heading: "Tehnologia noastră", content: "ToolPop PDF este construit cu Next.js, React și standarde web moderne. Folosim biblioteci precum pdf-lib pentru manipularea PDF și PDF.js pentru randare — totul rulează pe partea de client, în browserul tău. Site-ul suportă 45 de limbi, mod întunecat și funcționează pe orice dispozitiv cu un browser modern." },
+      { heading: "Misiunea noastră", content: "Credem că toată lumea merită acces la instrumente PDF performante — fără abonamente, fără înregistrare și fără compromisuri la capitolul confidențialitate. ToolPop a fost creat pentru a pune la dispoziția oricui are un browser web instrumente profesionale de gestionare a documentelor." },
+      { heading: "Cum funcționează", content: "Spre deosebire de serviciile PDF tradiționale, care necesită încărcarea fișierelor pe servere externe, ToolPop procesează totul direct în browserul tău, folosind tehnologii web moderne precum WebAssembly și biblioteca PDF.js. Asta înseamnă că documentele tale sensibile rămân mereu pe dispozitivul tău — noi nu vedem, nu stocăm și nu transmitem niciodată fișierele tale." },
+      { heading: "Ce oferim", content: "ToolPop include peste 40 de instrumente în cinci categorii:\n\n• Organizare — unire, separare, reordonare, extragere și ștergere pagini\n• Conversie — transformare între PDF, JPG, PNG, text și alte formate\n• Editare — adăugare text, imagini, semnături, filigrane, numere de pagină și adnotări\n• Optimizare — comprimare fișiere și optimizare pentru web\n• Securitate — protecție cu parolă, redactare informații sensibile și aplatizare documente\n\nToate instrumentele sunt complet gratuite, fără limite de dimensiune a fișierelor sau restricții zilnice de utilizare." },
+      { heading: "Tehnologia noastră", content: "ToolPop este construit cu Next.js, React și standarde web moderne. Folosim biblioteci precum pdf-lib pentru manipularea PDF și PDF.js pentru randare — totul rulează pe partea de client, în browserul tău. Site-ul suportă 45 de limbi, mod întunecat și funcționează pe orice dispozitiv cu un browser modern." },
       { heading: "Contactează-ne", content: "Ai întrebări, sugestii sau idei de funcționalități noi? Ne-ar plăcea să auzim de la tine. Vizitează pagina noastră de contact sau scrie-ne la." },
     ],
   },
@@ -1079,22 +1084,22 @@ const ro: Dictionary = {
   },
   faq: {
     title: "Întrebări frecvente",
-    intro: "Găsește răspunsuri la cele mai comune întrebări despre ToolPop PDF. Dacă nu găsești ce cauți, nu ezita să ne contactezi.",
+    intro: "Găsește răspunsuri la cele mai comune întrebări despre ToolPop. Dacă nu găsești ce cauți, nu ezita să ne contactezi.",
     items: [
-      { question: "ToolPop PDF este cu adevărat gratuit?", answer: "Da, complet gratuit. Toate instrumentele sunt disponibile fără limite, fără înregistrare și fără costuri ascunse. Susținem serviciul prin publicitate discretă." },
+      { question: "ToolPop este cu adevărat gratuit?", answer: "Da, complet gratuit. Toate instrumentele sunt disponibile fără limite, fără înregistrare și fără costuri ascunse. Susținem serviciul prin publicitate discretă." },
       { question: "Sunt fișierele mele în siguranță?", answer: "Absolut. Fișierele tale sunt procesate integral în browserul tău — nu părăsesc niciodată dispozitivul și nu sunt încărcate pe niciun server. Folosim API-uri moderne de browser pentru a gestiona toate operațiunile PDF local, astfel încât documentele tale sensibile rămân complet private." },
-      { question: "Trebuie să îmi creez un cont?", answer: "Nu. ToolPop PDF funcționează fără nicio înregistrare sau autentificare. Deschide un instrument, trage fișierul și obții rezultatul instant." },
+      { question: "Trebuie să îmi creez un cont?", answer: "Nu. ToolPop funcționează fără nicio înregistrare sau autentificare. Deschide un instrument, trage fișierul și obții rezultatul instant." },
       { question: "Care este dimensiunea maximă a fișierului?", answer: "Deoarece procesarea are loc în browser, limita depinde de memoria disponibilă a dispozitivului tău. Majoritatea dispozitivelor moderne pot gestiona fișiere de până la 100–200 MB fără probleme. Pentru fișiere foarte mari, recomandăm utilizarea unui browser de desktop sau laptop." },
-      { question: "Ce browsere sunt compatibile?", answer: "ToolPop PDF funcționează pe toate browserele moderne, inclusiv Chrome, Firefox, Safari, Edge și Opera. Recomandăm utilizarea celei mai recente versiuni a browserului pentru cea mai bună experiență." },
-      { question: "Pot folosi ToolPop PDF pe telefon sau tabletă?", answer: "Da! ToolPop PDF este complet responsiv și funcționează pe dispozitive mobile. Poți uni, separa, converti și edita PDF-uri direct din browserul telefonului sau tabletei." },
+      { question: "Ce browsere sunt compatibile?", answer: "ToolPop funcționează pe toate browserele moderne, inclusiv Chrome, Firefox, Safari, Edge și Opera. Recomandăm utilizarea celei mai recente versiuni a browserului pentru cea mai bună experiență." },
+      { question: "Pot folosi ToolPop pe telefon sau tabletă?", answer: "Da! ToolPop este complet responsiv și funcționează pe dispozitive mobile. Poți uni, separa, converti și edita PDF-uri direct din browserul telefonului sau tabletei." },
       { question: "Cum funcționează procesarea în browser?", answer: "Când selectezi un fișier, acesta rămâne pe dispozitivul tău. Instrumentele noastre folosesc biblioteci JavaScript precum pdf-lib și PDF.js pentru a citi, modifica și crea PDF-uri direct în memoria browserului. Fișierul procesat este apoi disponibil pentru descărcare — fără comunicare cu serverul." },
       { question: "Pot uni mai mult de două fișiere PDF?", answer: "Da. Instrumentul nostru Unire PDF permite combinarea oricărui număr de fișiere. Trage toate PDF-urile pe care vrei să le unești, aranjează-le în ordinea dorită și apasă butonul de procesare." },
       { question: "Ce formate de fișiere pot converti?", answer: "Poți converti PDF-uri în JPG, PNG și text simplu. Pentru crearea de PDF-uri, acceptăm imagini JPG, PNG, WEBP, TIFF, HEIC, fișiere HTML și documente scanate. Se adaugă regulat formate noi de conversie." },
-      { question: "Ce diferențiază ToolPop PDF de alte instrumente PDF?", answer: "Trei diferențe cheie: (1) Confidențialitate — fișierele tale nu părăsesc niciodată dispozitivul, spre deosebire de majoritatea concurenților care le încarcă pe serverele lor. (2) Fără limite — fără restricții zilnice, fără limite de dimensiune, fără filigrane pe rezultat. (3) Fără cont necesar — folosește orice instrument instant, fără înregistrare." },
+      { question: "Ce diferențiază ToolPop de alte instrumente PDF?", answer: "Trei diferențe cheie: (1) Confidențialitate — fișierele tale nu părăsesc niciodată dispozitivul, spre deosebire de majoritatea concurenților care le încarcă pe serverele lor. (2) Fără limite — fără restricții zilnice, fără limite de dimensiune, fără filigrane pe rezultat. (3) Fără cont necesar — folosește orice instrument instant, fără înregistrare." },
       { question: "Pot adăuga o parolă pentru a proteja PDF-ul meu?", answer: "Da. Folosește instrumentul nostru Protejare PDF pentru a adăuga protecție cu parolă cu criptare AES-256. Poți seta atât o parolă de deschidere (pentru vizualizarea documentului), cât și permisiuni pentru tipărire, copiere și editare." },
-      { question: "ToolPop PDF adaugă filigrane pe fișierele mele?", answer: "Niciodată. Toate fișierele procesate sunt curate și fără nicio amprentă ToolPop sau filigran. Rezultatul este exact ce ai aștepta de la un instrument profesional." },
-      { question: "Există un API disponibil?", answer: "Momentan nu. ToolPop PDF este conceput ca instrument de browser pentru uz individual. Dacă ai nevoie de acces API pentru procesare programatică de PDF-uri, contactează-ne la pentru soluții enterprise." },
-      { question: "Ce limbi suportă site-ul?", answer: "ToolPop PDF este disponibil în 45 de limbi, inclusiv română, engleză, spaniolă, chineză, japoneză, germană, franceză, portugheză, arabă, hindi și multe altele. Interfața detectează automat limba browserului sau poți comuta manual din selectorul de limbă." },
+      { question: "ToolPop adaugă filigrane pe fișierele mele?", answer: "Niciodată. Toate fișierele procesate sunt curate și fără nicio amprentă ToolPop sau filigran. Rezultatul este exact ce ai aștepta de la un instrument profesional." },
+      { question: "Există un API disponibil?", answer: "Momentan nu. ToolPop este conceput ca instrument de browser pentru uz individual. Dacă ai nevoie de acces API pentru procesare programatică de PDF-uri, contactează-ne la pentru soluții enterprise." },
+      { question: "Ce limbi suportă site-ul?", answer: "ToolPop este disponibil în 45 de limbi, inclusiv română, engleză, spaniolă, chineză, japoneză, germană, franceză, portugheză, arabă, hindi și multe altele. Interfața detectează automat limba browserului sau poți comuta manual din selectorul de limbă." },
     ],
   },
   blog: {

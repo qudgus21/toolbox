@@ -23,25 +23,23 @@ function detectLocale(acceptLanguage: string): string {
   return defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+function handleAppLocale(request: NextRequest, appPrefix: string): NextResponse | null {
   const { pathname } = request.nextUrl;
 
-  // Only handle /pdf paths
-  if (!pathname.startsWith("/pdf")) return NextResponse.next();
+  if (!pathname.startsWith(`/${appPrefix}`)) return null;
 
-  // Get the path after /pdf
-  const afterPdf = pathname.slice("/pdf".length); // e.g., "/ko/merge" or "" or "/merge"
+  const afterApp = pathname.slice(`/${appPrefix}`.length);
 
   // Skip static files and internal paths
-  if (afterPdf.includes(".") || afterPdf.startsWith("/_next") || afterPdf.startsWith("/api")) {
-    return NextResponse.next();
+  if (afterApp.includes(".") || afterApp.startsWith("/_next") || afterApp.startsWith("/api")) {
+    return null;
   }
 
   // Check if pathname already has a valid locale
   const pathnameLocale = locales.find(
-    (locale) => afterPdf.startsWith(`/${locale}/`) || afterPdf === `/${locale}`,
+    (locale) => afterApp.startsWith(`/${locale}/`) || afterApp === `/${locale}`,
   );
-  if (pathnameLocale) return NextResponse.next();
+  if (pathnameLocale) return null;
 
   // Detect locale from Accept-Language header
   const acceptLanguage = request.headers.get("accept-language") ?? "";
@@ -49,10 +47,51 @@ export function middleware(request: NextRequest) {
 
   // Redirect to locale-prefixed path
   const url = request.nextUrl.clone();
-  url.pathname = `/pdf/${detectedLocale}${afterPdf}`;
+  url.pathname = `/${appPrefix}/${detectedLocale}${afterApp}`;
   return NextResponse.redirect(url);
 }
 
+/** Handle root-level locale detection for /{locale}/... paths */
+function handleRootLocale(request: NextRequest): NextResponse | null {
+  const { pathname } = request.nextUrl;
+
+  // Skip paths that start with known app prefixes
+  if (pathname.startsWith("/pdf") || pathname.startsWith("/image")) return null;
+
+  // Skip static files and internal paths
+  if (pathname.includes(".") || pathname.startsWith("/_next") || pathname.startsWith("/api")) {
+    return null;
+  }
+
+  // Skip root "/" — handled by page.tsx redirect
+  if (pathname === "/") return null;
+
+  // Check if first segment is already a valid locale
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length > 0 && locales.includes(segments[0] as (typeof locales)[number])) {
+    return null;
+  }
+
+  // Detect locale and redirect
+  const acceptLanguage = request.headers.get("accept-language") ?? "";
+  const detectedLocale = detectLocale(acceptLanguage);
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${detectedLocale}${pathname}`;
+  return NextResponse.redirect(url);
+}
+
+export function middleware(request: NextRequest) {
+  return handleAppLocale(request, "pdf")
+    ?? handleAppLocale(request, "image")
+    ?? handleRootLocale(request)
+    ?? NextResponse.next();
+}
+
 export const config = {
-  matcher: ["/pdf/((?!_next|api|.*\\..*).*)"],
+  matcher: [
+    "/pdf/((?!_next|api|.*\\..*).*)",
+    "/image/((?!_next|api|.*\\..*).*)",
+    "/((?!pdf|image|_next|api|.*\\..*).*)",
+  ],
 };

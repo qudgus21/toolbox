@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/lib/ui";
 
 export default function NotFound() {
@@ -8,12 +9,12 @@ export default function NotFound() {
         <p className="text-lg text-foreground-muted mb-8">
           Page not found
         </p>
-        <a
+        <Link
           href="/"
           className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary-hover transition-colors"
         >
           Go Home
-        </a>
+        </Link>
       </Container>
     </main>
   );

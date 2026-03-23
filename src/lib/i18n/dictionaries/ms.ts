@@ -124,11 +124,16 @@ const ms: Dictionary = {
     favoriteAdded: "Ditambah ke kegemaran",
     favoriteRemoved: "Dialih keluar dari kegemaran",
     comingSoon: "Coming Soon",
+    share: "Kongsi",
+    shareTitle: "Kongsi halaman ini",
+    shareSubtitle: "Beritahu rakan-rakan!",
+    shareCopied: "Disalin!",
+    shareCopyLink: "Salin pautan",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Alat PDF Percuma",
+    siteTitle: "ToolPop - Alat PDF Percuma",
     siteDescription: "Gabung, pisah, mampat dan tukar fail PDF dalam talian secara percuma.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Kami menggunakan kuki untuk meningkatkan pengalaman anda.",
@@ -138,15 +143,15 @@ const ms: Dictionary = {
   privacy: {
     title: "Dasar Privasi",
     lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
-    intro: "Di ToolPop PDF, privasi anda penting. Dasar ini menerangkan maklumat yang kami kumpul apabila anda menggunakan perkhidmatan kami dan cara kami mengendalikannya.",
+    intro: "Di ToolPop, privasi anda penting. Dasar ini menerangkan maklumat yang kami kumpul apabila anda menggunakan perkhidmatan kami dan cara kami mengendalikannya.",
     sections: [
       {
         heading: "1. Maklumat yang Kami Kumpul",
-        content: "ToolPop PDF tidak memerlukan pendaftaran. Kami tidak mengumpul maklumat peribadi. Walau bagaimanapun, kami mungkin mengumpul data tanpa pengenalan secara automatik untuk meningkatkan perkhidmatan:\n\n• Jenis dan versi pelayar\n• Sistem pengendalian\n• Halaman yang dilawati dan masa dihabiskan\n• Kuki dan teknologi serupa untuk corak penggunaan",
+        content: "ToolPop tidak memerlukan pendaftaran. Kami tidak mengumpul maklumat peribadi. Walau bagaimanapun, kami mungkin mengumpul data tanpa pengenalan secara automatik untuk meningkatkan perkhidmatan:\n\n• Jenis dan versi pelayar\n• Sistem pengendalian\n• Halaman yang dilawati dan masa dihabiskan\n• Kuki dan teknologi serupa untuk corak penggunaan",
       },
       {
         heading: "2. Pengendalian Fail",
-        content: "Fail yang anda muat naik diproses di pelayan kami dan dipadam secara automatik dalam masa 2 jam. Kami tidak membaca, menyimpan atau berkongsi kandungan fail anda dengan sesiapa.",
+        content: "Semua pemprosesan fail di ToolPop dilakukan terus dalam pelayar anda. Fail anda tidak pernah dimuat naik ke mana-mana pelayan dan tidak pernah meninggalkan peranti anda. Kami menggunakan WebAssembly dan teknologi web moden untuk pemprosesan tempatan yang selamat.",
       },
       {
         heading: "3. Kuki",
@@ -166,18 +171,18 @@ const ms: Dictionary = {
       },
       {
         heading: "7. Hubungi Kami",
-        content: "Untuk soalan berkaitan privasi, hubungi kami di support@toolbox-pdf.com.",
+        content: "Untuk soalan berkaitan privasi, hubungi kami di support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Terma Perkhidmatan",
     lastUpdated: "Kemaskini terakhir: 1 Mac 2026",
-    intro: "Terima kasih kerana menggunakan ToolPop PDF. Dengan mengakses atau menggunakan perkhidmatan kami, anda bersetuju dengan terma berikut.",
+    intro: "Terima kasih kerana menggunakan ToolPop. Dengan mengakses atau menggunakan perkhidmatan kami, anda bersetuju dengan terma berikut.",
     sections: [
       {
         heading: "1. Tentang Perkhidmatan",
-        content: "ToolPop PDF ialah perkhidmatan dalam talian percuma yang membolehkan anda menggabung, memisah, menukar, menyunting dan memampatkan fail PDF secara langsung dalam pelayar anda.",
+        content: "ToolPop ialah kit alat dalam talian percuma yang membolehkan anda memproses PDF, imej dan fail lain terus dalam pelayar. Semua pemprosesan dilakukan secara tempatan pada peranti anda — fail tidak pernah dimuat naik ke mana-mana pelayan.",
       },
       {
         heading: "2. Penggunaan yang Diterima",
@@ -185,7 +190,7 @@ const ms: Dictionary = {
       },
       {
         heading: "3. Pengendalian Fail",
-        content: "Fail yang dimuat naik digunakan semata-mata untuk menjalankan operasi yang diminta. Ia dipadam secara automatik daripada pelayan kami dalam masa 2 jam. Kami tidak menganalisis atau menyimpan fail anda.",
+        content: "Semua pemprosesan fail di ToolPop dilakukan terus dalam pelayar anda. Fail anda tidak pernah dihantar ke mana-mana pelayan dan tidak pernah meninggalkan peranti anda. Hasil yang diproses boleh dimuat turun terus dari pelayar anda.",
       },
       {
         heading: "4. Penafian",
@@ -205,7 +210,7 @@ const ms: Dictionary = {
       },
       {
         heading: "8. Hubungi Kami",
-        content: "Untuk soalan mengenai terma ini, hubungi kami di support@toolbox-pdf.com.",
+        content: "Untuk soalan mengenai terma ini, hubungi kami di support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const ms: Dictionary = {
     backLabel: "Belakang",
   },
   about: {
-    title: "Tentang ToolPop PDF",
-    intro: "ToolPop PDF ialah set alat PDF percuma berasaskan pelayar yang membolehkan anda mengedit, menukar dan menyusun fail PDF tanpa memuat naiknya ke pelayan. Fail anda tidak pernah meninggalkan peranti anda.",
+    title: "Tentang ToolPop",
+    intro: "ToolPop ialah set alat PDF percuma berasaskan pelayar yang membolehkan anda mengedit, menukar dan menyusun fail PDF tanpa memuat naiknya ke pelayan. Fail anda tidak pernah meninggalkan peranti anda.",
     sections: [
-      { heading: "Misi Kami", content: "Kami percaya semua orang layak mendapat akses kepada alat PDF yang berkuasa — tanpa langganan, tanpa pendaftaran, dan tanpa menjejaskan privasi. ToolPop PDF dicipta supaya pengurusan dokumen profesional boleh diakses oleh sesiapa sahaja yang mempunyai pelayar web." },
-      { heading: "Cara Ia Berfungsi", content: "Tidak seperti perkhidmatan PDF tradisional yang memerlukan anda memuat naik fail ke pelayan jauh, ToolPop PDF memproses segala-galanya terus dalam pelayar anda menggunakan teknologi web moden seperti WebAssembly dan pustaka PDF.js. Ini bermakna dokumen sensitif anda sentiasa kekal di peranti anda — kami tidak pernah melihat, menyimpan atau menghantar fail anda." },
-      { heading: "Apa Yang Kami Tawarkan", content: "ToolPop PDF merangkumi lebih 40 alat dalam lima kategori:\n\n• Susun — gabung, pisah, susun semula, ekstrak dan padam halaman\n• Tukar — tukar antara PDF, JPG, PNG, teks dan format lain\n• Edit — tambah teks, imej, tandatangan, tera air, nombor halaman dan anotasi\n• Optimum — mampat fail dan optimumkan untuk pengedaran web\n• Keselamatan — lindungi dengan kata laluan, redaksi maklumat sensitif dan ratakan dokumen\n\nSemua alat percuma sepenuhnya tanpa had saiz fail atau had penggunaan harian." },
-      { heading: "Teknologi Kami", content: "ToolPop PDF dibina dengan Next.js, React dan standard web moden. Kami menggunakan pustaka seperti pdf-lib untuk manipulasi PDF dan PDF.js untuk pemaparan — semuanya berjalan di sisi klien dalam pelayar anda. Laman ini menyokong 45 bahasa, mod gelap dan berfungsi pada mana-mana peranti dengan pelayar moden." },
+      { heading: "Misi Kami", content: "Kami percaya semua orang layak mendapat akses kepada alat PDF yang berkuasa — tanpa langganan, tanpa pendaftaran, dan tanpa menjejaskan privasi. ToolPop dicipta supaya pengurusan dokumen profesional boleh diakses oleh sesiapa sahaja yang mempunyai pelayar web." },
+      { heading: "Cara Ia Berfungsi", content: "Tidak seperti perkhidmatan PDF tradisional yang memerlukan anda memuat naik fail ke pelayan jauh, ToolPop memproses segala-galanya terus dalam pelayar anda menggunakan teknologi web moden seperti WebAssembly dan pustaka PDF.js. Ini bermakna dokumen sensitif anda sentiasa kekal di peranti anda — kami tidak pernah melihat, menyimpan atau menghantar fail anda." },
+      { heading: "Apa Yang Kami Tawarkan", content: "ToolPop merangkumi lebih 40 alat dalam lima kategori:\n\n• Susun — gabung, pisah, susun semula, ekstrak dan padam halaman\n• Tukar — tukar antara PDF, JPG, PNG, teks dan format lain\n• Edit — tambah teks, imej, tandatangan, tera air, nombor halaman dan anotasi\n• Optimum — mampat fail dan optimumkan untuk pengedaran web\n• Keselamatan — lindungi dengan kata laluan, redaksi maklumat sensitif dan ratakan dokumen\n\nSemua alat percuma sepenuhnya tanpa had saiz fail atau had penggunaan harian." },
+      { heading: "Teknologi Kami", content: "ToolPop dibina dengan Next.js, React dan standard web moden. Kami menggunakan pustaka seperti pdf-lib untuk manipulasi PDF dan PDF.js untuk pemaparan — semuanya berjalan di sisi klien dalam pelayar anda. Laman ini menyokong 45 bahasa, mod gelap dan berfungsi pada mana-mana peranti dengan pelayar moden." },
       { heading: "Hubungi Kami", content: "Ada soalan, maklum balas atau permintaan ciri? Kami gembira mendengar daripada anda. Layari halaman Hubungi kami atau hantarkan e-mel ke." },
     ],
   },
@@ -1091,22 +1096,22 @@ const ms: Dictionary = {
   },
   faq: {
     title: "Soalan Lazim",
-    intro: "Cari jawapan kepada soalan yang paling kerap ditanya tentang ToolPop PDF. Jika anda tidak menjumpai soalan anda di sini, jangan segan untuk menghubungi kami.",
+    intro: "Cari jawapan kepada soalan yang paling kerap ditanya tentang ToolPop. Jika anda tidak menjumpai soalan anda di sini, jangan segan untuk menghubungi kami.",
     items: [
-      { question: "Adakah ToolPop PDF benar-benar percuma?", answer: "Ya, percuma sepenuhnya. Semua alat tersedia tanpa had, tanpa pendaftaran dan tanpa caj tersembunyi. Kami menyokong perkhidmatan ini melalui pengiklanan yang tidak mengganggu." },
+      { question: "Adakah ToolPop benar-benar percuma?", answer: "Ya, percuma sepenuhnya. Semua alat tersedia tanpa had, tanpa pendaftaran dan tanpa caj tersembunyi. Kami menyokong perkhidmatan ini melalui pengiklanan yang tidak mengganggu." },
       { question: "Adakah fail saya selamat dan peribadi?", answer: "Sudah tentu. Fail anda diproses sepenuhnya dalam pelayar anda — ia tidak pernah meninggalkan peranti anda atau dimuat naik ke mana-mana pelayan. Kami menggunakan API pelayar moden untuk semua operasi PDF, jadi dokumen sensitif anda kekal sepenuhnya peribadi." },
-      { question: "Perlukah saya membuat akaun?", answer: "Tidak. ToolPop PDF berfungsi tanpa sebarang pendaftaran atau log masuk. Buka sahaja alat, lepaskan fail anda dan dapatkan hasil serta-merta." },
+      { question: "Perlukah saya membuat akaun?", answer: "Tidak. ToolPop berfungsi tanpa sebarang pendaftaran atau log masuk. Buka sahaja alat, lepaskan fail anda dan dapatkan hasil serta-merta." },
       { question: "Apakah saiz fail maksimum yang boleh diproses?", answer: "Oleh kerana pemprosesan berlaku dalam pelayar anda, hadnya bergantung kepada memori peranti yang tersedia. Kebanyakan peranti moden boleh mengendalikan fail sehingga 100–200 MB tanpa masalah. Untuk fail yang sangat besar, kami cadangkan menggunakan pelayar desktop." },
-      { question: "Pelayar mana yang disokong?", answer: "ToolPop PDF berfungsi pada semua pelayar moden termasuk Chrome, Firefox, Safari, Edge dan Opera. Kami mengesyorkan menggunakan versi terkini pelayar anda untuk pengalaman terbaik." },
-      { question: "Bolehkah saya menggunakan ToolPop PDF pada telefon atau tablet?", answer: "Boleh! ToolPop PDF sepenuhnya responsif dan berfungsi pada peranti mudah alih. Anda boleh menggabung, memisah, menukar dan mengedit PDF terus dari pelayar telefon atau tablet." },
+      { question: "Pelayar mana yang disokong?", answer: "ToolPop berfungsi pada semua pelayar moden termasuk Chrome, Firefox, Safari, Edge dan Opera. Kami mengesyorkan menggunakan versi terkini pelayar anda untuk pengalaman terbaik." },
+      { question: "Bolehkah saya menggunakan ToolPop pada telefon atau tablet?", answer: "Boleh! ToolPop sepenuhnya responsif dan berfungsi pada peranti mudah alih. Anda boleh menggabung, memisah, menukar dan mengedit PDF terus dari pelayar telefon atau tablet." },
       { question: "Bagaimana pemprosesan berasaskan pelayar berfungsi?", answer: "Apabila anda memilih fail, ia kekal di peranti anda. Alat kami menggunakan pustaka JavaScript seperti pdf-lib dan PDF.js untuk membaca, mengubah suai dan mencipta PDF terus dalam memori pelayar. Fail yang diproses kemudian tersedia untuk dimuat turun — tanpa perjalanan ke pelayan." },
       { question: "Bolehkah saya menggabungkan lebih daripada dua fail PDF?", answer: "Boleh. Alat Gabung PDF kami menyokong penggabungan sebarang bilangan fail. Seret sahaja semua fail PDF, susun mengikut urutan pilihan anda dan klik butang proses." },
       { question: "Format fail apa yang boleh ditukar ke dan dari PDF?", answer: "Anda boleh menukar PDF ke JPG, PNG dan teks biasa. Untuk mencipta PDF, kami menyokong imej JPG, PNG, WEBP, TIFF, HEIC, fail HTML dan dokumen imbasan. Format baru ditambah secara berkala." },
-      { question: "Apa yang membezakan ToolPop PDF daripada alat PDF lain?", answer: "Tiga perbezaan utama: (1) Privasi — fail anda tidak pernah meninggalkan peranti, tidak seperti kebanyakan pesaing yang memuat naik ke pelayan mereka. (2) Tanpa had — tanpa kuota harian, tanpa had saiz fail, tanpa tera air. (3) Tanpa pendaftaran — gunakan mana-mana alat serta-merta tanpa log masuk." },
+      { question: "Apa yang membezakan ToolPop daripada alat PDF lain?", answer: "Tiga perbezaan utama: (1) Privasi — fail anda tidak pernah meninggalkan peranti, tidak seperti kebanyakan pesaing yang memuat naik ke pelayan mereka. (2) Tanpa had — tanpa kuota harian, tanpa had saiz fail, tanpa tera air. (3) Tanpa pendaftaran — gunakan mana-mana alat serta-merta tanpa log masuk." },
       { question: "Bolehkah saya menambah kata laluan untuk melindungi PDF?", answer: "Boleh. Gunakan alat Lindungi PDF kami dengan penyulitan AES-256. Anda boleh menetapkan kata laluan pembukaan dan kebenaran untuk mengawal pencetakan, penyalinan dan penyuntingan." },
-      { question: "Adakah ToolPop PDF menambah tera air pada fail saya?", answer: "Tidak pernah. Semua fail yang diproses bersih dan bebas daripada sebarang penjenamaan atau tera air ToolPop. Hasilnya tepat seperti yang anda jangkakan daripada alat profesional." },
-      { question: "Adakah API tersedia?", answer: "Buat masa ini tidak. ToolPop PDF direka sebagai alat pelayar untuk kegunaan individu. Jika anda memerlukan akses API untuk pemprosesan PDF secara atur cara, hubungi kami di untuk penyelesaian perusahaan." },
-      { question: "Bahasa apa yang disokong laman ini?", answer: "ToolPop PDF tersedia dalam 45 bahasa termasuk Inggeris, Korea, Sepanyol, Cina, Jepun, Jerman, Perancis, Portugis, Arab, Hindi dan banyak lagi. Antara muka mengesan bahasa pelayar anda secara automatik, atau anda boleh bertukar secara manual menggunakan pemilih bahasa." },
+      { question: "Adakah ToolPop menambah tera air pada fail saya?", answer: "Tidak pernah. Semua fail yang diproses bersih dan bebas daripada sebarang penjenamaan atau tera air ToolPop. Hasilnya tepat seperti yang anda jangkakan daripada alat profesional." },
+      { question: "Adakah API tersedia?", answer: "Buat masa ini tidak. ToolPop direka sebagai alat pelayar untuk kegunaan individu. Jika anda memerlukan akses API untuk pemprosesan PDF secara atur cara, hubungi kami di untuk penyelesaian perusahaan." },
+      { question: "Bahasa apa yang disokong laman ini?", answer: "ToolPop tersedia dalam 45 bahasa termasuk Inggeris, Korea, Sepanyol, Cina, Jepun, Jerman, Perancis, Portugis, Arab, Hindi dan banyak lagi. Antara muka mengesan bahasa pelayar anda secara automatik, atau anda boleh bertukar secara manual menggunakan pemilih bahasa." },
     ],
   },
   blog: {

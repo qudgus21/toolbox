@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 import type { ToolDefinition } from "@/lib/pdf/tools";
-import { Container } from "@/lib/ui";
+import { Container, FooterServiceInfo } from "@/lib/ui";
 import { categoryIconMap } from "@/lib/pdf/tool-icons";
 
 const categoryLabelKeys: Record<string, keyof Dictionary["home"]> = {
@@ -48,44 +48,12 @@ export function SiteFooter({ locale, dict, categories, tools }: SiteFooterProps)
             );
           })}
 
-          {/* Company */}
-          <div>
-            <p className="text-sm font-semibold text-foreground mb-3">
-              {dict.footer.company}
-            </p>
-            <ul className="space-y-1.5">
-              <li>
-                <Link href={`/pdf/${locale}/blog`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.blog.title}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/pdf/${locale}/about`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.footer.about}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/pdf/${locale}/contact`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.footer.contact}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/pdf/${locale}/faq`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.footer.faq}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/pdf/${locale}/privacy`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.footer.privacy}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/pdf/${locale}/terms`} className="text-xs text-foreground-muted hover:text-foreground transition-colors">
-                  {dict.footer.terms}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Service Info */}
+          <FooterServiceInfo
+            locale={locale}
+            labels={dict.footer}
+            blogTitle={dict.blog.title}
+          />
         </div>
       </Container>
 

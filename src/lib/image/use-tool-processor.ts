@@ -1,0 +1,163 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { ImageToolState } from "./types";
+import { getProcessor } from "./processor-registry";
+import { sendEvent } from "@/lib/analytics";
+
+const INITIAL_STATE: ImageToolState = {
+  stage: "idle",
+  files: [],
+  progress: 0,
+  result: null,
+  error: null,
+};
+
+export function useToolProcessor(slug: string) {
+  const [state, setState] = useState<ImageToolState>(INITIAL_STATE);
+  const resultUrlRef = useRef<string | null>(null);
+  const filesRef = useRef<File[]>(state.files);
+  filesRef.current = state.files;
+
+  // 언마운트 시 Object URL 해제
+  useEffect(() => {
+    return () => {
+      if (resultUrlRef.current) {
+        URL.revokeObjectURL(resultUrlRef.current);
+        resultUrlRef.current = null;
+      }
+    };
+  }, []);
+
+  const addFiles = useCallback((newFiles: File[]) => {
+    setState((prev) => {
+      if (prev.stage === "idle") {
+        const totalSizeKb = Math.round(newFiles.reduce((s, f) => s + f.size, 0) / 1024);
+        queueMicrotask(() => sendEvent("file_upload", { app: "image", tool_slug: slug, file_count: newFiles.length, total_size_kb: totalSizeKb }));
+      }
+      return {
+        ...prev,
+        stage: "loaded",
+        files: [...prev.files, ...newFiles],
+        error: null,
+      };
+    });
+  }, [slug]);
+
+  const removeFile = useCallback((index: number) => {
+    setState((prev) => {
+      const files = prev.files.filter((_, i) => i !== index);
+      return {
+        ...prev,
+        files,
+        stage: files.length === 0 ? "idle" : "loaded",
+      };
+    });
+  }, []);
+
+  const reorderFiles = useCallback((files: File[]) => {
+    setState((prev) => ({ ...prev, files }));
+  }, []);
+
+  const sortFiles = useCallback(
+    (by: "name-asc" | "name-desc" | "size-asc" | "size-desc") => {
+      setState((prev) => {
+        const sorted = [...prev.files].sort((a, b) => {
+          switch (by) {
+            case "name-asc": return a.name.localeCompare(b.name);
+            case "name-desc": return b.name.localeCompare(a.name);
+            case "size-asc": return a.size - b.size;
+            case "size-desc": return b.size - a.size;
+          }
+        });
+        return { ...prev, files: sorted };
+      });
+    },
+    [],
+  );
+
+  const process = useCallback(
+    async (options: Record<string, unknown> = {}) => {
+      setState((prev) => ({
+        ...prev,
+        stage: "processing",
+        progress: 0,
+        error: null,
+      }));
+
+      try {
+        const processor = await getProcessor(slug);
+        if (!processor) {
+          throw new Error(`Processor not found: ${slug}`);
+        }
+
+        const currentFiles = filesRef.current;
+        const startTime = performance.now();
+        const result = await processor(
+          currentFiles,
+          options,
+          (progress) => setState((prev) => ({ ...prev, progress })),
+        );
+        const durationMs = Math.round(performance.now() - startTime);
+
+        sendEvent("process_complete", {
+          app: "image",
+          tool_slug: slug,
+          duration_ms: durationMs,
+          output_size_kb: Math.round(result.size / 1024),
+        });
+
+        setState((prev) => ({
+          ...prev,
+          stage: "done",
+          progress: 100,
+          result,
+        }));
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : "Processing failed";
+        sendEvent("process_error", { app: "image", tool_slug: slug, error_message: errorMessage });
+        setState((prev) => ({
+          ...prev,
+          stage: "error",
+          error: errorMessage,
+        }));
+      }
+    },
+    [slug],
+  );
+
+  const download = useCallback((customFilename?: string) => {
+    if (!state.result) return;
+
+    if (resultUrlRef.current) {
+      URL.revokeObjectURL(resultUrlRef.current);
+    }
+
+    const url = URL.createObjectURL(state.result.blob);
+    resultUrlRef.current = url;
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = customFilename ?? state.result.filename;
+    a.click();
+  }, [state.result]);
+
+  const reset = useCallback(() => {
+    if (resultUrlRef.current) {
+      URL.revokeObjectURL(resultUrlRef.current);
+      resultUrlRef.current = null;
+    }
+    setState(INITIAL_STATE);
+  }, []);
+
+  return {
+    ...state,
+    addFiles,
+    removeFile,
+    reorderFiles,
+    sortFiles,
+    process,
+    download,
+    reset,
+  };
+}

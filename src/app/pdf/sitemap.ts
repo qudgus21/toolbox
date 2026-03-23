@@ -31,47 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Info pages for each locale
+  // Blog pages
+  const pdfArticles = articles.filter((a) => a.app === "pdf");
   for (const locale of locales) {
-    for (const page of ["about", "contact", "faq"] as const) {
+    if (pdfArticles.length > 0) {
       entries.push({
-        url: `${BASE_URL}/${locale}/${page}`,
-        lastModified: new Date("2026-03-22"),
-        changeFrequency: "monthly",
-        priority: 0.4,
+        url: `${BASE_URL}/${locale}/blog`,
+        lastModified: new Date("2026-03-23"),
+        changeFrequency: "weekly",
+        priority: 0.6,
       });
     }
-  }
-
-  // Legal pages for each locale
-  for (const locale of locales) {
-    entries.push({
-      url: `${BASE_URL}/${locale}/privacy`,
-      lastModified: new Date("2026-03-22"),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    });
-    entries.push({
-      url: `${BASE_URL}/${locale}/terms`,
-      lastModified: new Date("2026-03-22"),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    });
-  }
-
-  // Blog listing page for each locale
-  for (const locale of locales) {
-    entries.push({
-      url: `${BASE_URL}/${locale}/blog`,
-      lastModified: new Date("2026-03-22"),
-      changeFrequency: "weekly",
-      priority: 0.6,
-    });
-  }
-
-  // Blog article pages for each locale x article combination
-  for (const locale of locales) {
-    for (const article of articles) {
+    for (const article of pdfArticles) {
       if (article.content[locale]) {
         entries.push({
           url: `${BASE_URL}/${locale}/blog/${article.slug}`,

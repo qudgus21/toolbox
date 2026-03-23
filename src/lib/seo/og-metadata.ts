@@ -231,6 +231,85 @@ export const ogMetadata: Record<string, { siteTitle: string; siteDescription: st
   },
 };
 
+/** Image 앱용 OG 메타데이터 */
+export const ogImageMetadata: Record<string, { siteTitle: string; siteDescription: string; altText: string }> = {
+  ko: {
+    siteTitle: "ToolPop Image - 무료 이미지 도구",
+    siteDescription: "이미지 리사이즈, 자르기, 변환, 필터 적용을 온라인에서 무료로.",
+    altText: "ToolPop Image - 무료 온라인 이미지 도구",
+  },
+  en: {
+    siteTitle: "ToolPop Image - Free Image Tools",
+    siteDescription: "Resize, crop, convert, and apply filters to images online for free.",
+    altText: "ToolPop Image - Free Online Image Tools",
+  },
+  ja: {
+    siteTitle: "ToolPop Image - 無料画像ツール",
+    siteDescription: "画像のリサイズ、切り抜き、変換、フィルター適用をオンラインで無料で。",
+    altText: "ToolPop Image - 無料オンライン画像ツール",
+  },
+  zh: {
+    siteTitle: "ToolPop Image - 免费图片工具",
+    siteDescription: "在线免费调整大小、裁剪、转换和应用图片滤镜。",
+    altText: "ToolPop Image - 免费在线图片工具",
+  },
+  es: {
+    siteTitle: "ToolPop Image - Herramientas de imagen gratuitas",
+    siteDescription: "Redimensiona, recorta, convierte y aplica filtros a imágenes en línea gratis.",
+    altText: "ToolPop Image - Herramientas de imagen en línea gratuitas",
+  },
+  fr: {
+    siteTitle: "ToolPop Image - Outils image gratuits",
+    siteDescription: "Redimensionnez, recadrez, convertissez et appliquez des filtres aux images en ligne gratuitement.",
+    altText: "ToolPop Image - Outils image en ligne gratuits",
+  },
+  de: {
+    siteTitle: "ToolPop Image - Kostenlose Bild-Werkzeuge",
+    siteDescription: "Bilder online kostenlos skalieren, zuschneiden, konvertieren und filtern.",
+    altText: "ToolPop Image - Kostenlose Online-Bild-Werkzeuge",
+  },
+  pt: {
+    siteTitle: "ToolPop Image - Ferramentas de Imagem Gratuitas",
+    siteDescription: "Redimensione, recorte, converta e aplique filtros em imagens online gratuitamente.",
+    altText: "ToolPop Image - Ferramentas de imagem online gratuitas",
+  },
+  it: {
+    siteTitle: "ToolPop Image - Strumenti Immagine Gratuiti",
+    siteDescription: "Ridimensiona, ritaglia, converti e applica filtri alle immagini online gratuitamente.",
+    altText: "ToolPop Image - Strumenti immagine online gratuiti",
+  },
+  ru: {
+    siteTitle: "ToolPop Image - Бесплатные инструменты для изображений",
+    siteDescription: "Изменяйте размер, обрезайте, конвертируйте и применяйте фильтры к изображениям онлайн бесплатно.",
+    altText: "ToolPop Image - Бесплатные онлайн инструменты для изображений",
+  },
+  ar: {
+    siteTitle: "ToolPop Image - أدوات صور مجانية",
+    siteDescription: "تغيير الحجم، قص، تحويل وتطبيق فلاتر على الصور عبر الإنترنت مجاناً.",
+    altText: "ToolPop Image - أدوات صور مجانية عبر الإنترنت",
+  },
+  hi: {
+    siteTitle: "ToolPop Image - मुफ़्त इमेज उपकरण",
+    siteDescription: "ऑनलाइन मुफ़्त में इमेज का आकार बदलें, क्रॉप करें, कन्वर्ट करें और फ़िल्टर लगाएँ।",
+    altText: "ToolPop Image - मुफ़्त ऑनलाइन इमेज उपकरण",
+  },
+  vi: {
+    siteTitle: "ToolPop Image - Công cụ ảnh miễn phí",
+    siteDescription: "Thay đổi kích thước, cắt, chuyển đổi và áp dụng bộ lọc cho ảnh trực tuyến miễn phí.",
+    altText: "ToolPop Image - Công cụ ảnh trực tuyến miễn phí",
+  },
+  th: {
+    siteTitle: "ToolPop Image - เครื่องมือรูปภาพฟรี",
+    siteDescription: "ปรับขนาด ครอป แปลง และใส่ฟิลเตอร์รูปภาพออนไลน์ฟรี",
+    altText: "ToolPop Image - เครื่องมือรูปภาพออนไลน์ฟรี",
+  },
+  tr: {
+    siteTitle: "ToolPop Image - Ücretsiz Görsel Araçları",
+    siteDescription: "Görselleri çevrimiçi olarak ücretsiz yeniden boyutlandırın, kırpın, dönüştürün ve filtre uygulayın.",
+    altText: "ToolPop Image - Ücretsiz Çevrimiçi Görsel Araçları",
+  },
+};
+
 /** 하단 바 "100% Free · No Upload Required" 로케일별 텍스트 */
 export const ogBottomBar: Record<string, { free: string; noUpload: string }> = {
   ko: { free: "100% 무료", noUpload: "업로드 불필요" },
