@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
 
@@ -25,7 +26,8 @@ export async function generateMetadata({
         "x-default": "/en/terms",
       },
     },
-    openGraph: { title, description: dict.terms.intro, url: `/${locale}/terms`, type: "website" },
+    openGraph: { title, description: dict.terms.intro, url: `/${locale}/terms`, type: "website", locale },
+    twitter: { card: "summary_large_image", title, description: dict.terms.intro },
   };
 }
 
@@ -39,8 +41,18 @@ export default async function TermsPage({
 
   const dict = await getDictionary(locale as Locale);
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "ToolPop", url: `https://toolpop.org/${locale}` },
+    { name: dict.terms.title, url: `https://toolpop.org/${locale}/terms` },
+  ]);
+
   return (
-    <main className="py-12">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <main className="py-12">
       <Container size="md">
         <h1 className="text-3xl font-bold text-foreground mb-2">
           {dict.terms.title}
@@ -65,5 +77,6 @@ export default async function TermsPage({
         </div>
       </Container>
     </main>
+    </>
   );
 }

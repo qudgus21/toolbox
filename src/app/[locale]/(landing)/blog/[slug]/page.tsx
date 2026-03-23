@@ -41,6 +41,7 @@ export async function generateMetadata({
       url: `/${locale}/blog/${slug}`,
       type: "article",
       publishedTime: article.publishedAt,
+      locale,
     },
     twitter: {
       card: "summary_large_image",

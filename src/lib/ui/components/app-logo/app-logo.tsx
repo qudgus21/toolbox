@@ -9,12 +9,12 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
   landing: {
     from: "#a855f7",
     to: "#7c3aed",
-    accent: "#a855f7",
+    accent: "#9333ea",
   },
   pdf: {
     from: "#ef4444",
     to: "#dc2626",
-    accent: "#ef4444",
+    accent: "#dc2626",
     badge: "PDF",
     badgeClasses: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-400",
   },
