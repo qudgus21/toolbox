@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useMemo } from "react";
+import { useRef, useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Monitor, Gift, ShieldCheck, UserX, Search, Sparkles } from "lucide-react";
@@ -9,6 +9,7 @@ import { apps } from "@/lib/apps";
 import { appIconMap } from "@/lib/app-icons";
 import { toolIconMap as pdfToolIcons } from "@/lib/pdf/tool-icons";
 import { toolIconMap as imageToolIcons } from "@/lib/image/tool-icons";
+import { useTrack, landingEvents } from "@/lib/analytics";
 import type { LandingDictionary } from "@/lib/i18n/landing-config";
 
 interface PopularToolInfo {
@@ -51,7 +52,19 @@ function AnimatedSection({
 }
 
 export function LandingContent({ dict, locale, popularTools, allTools }: LandingContentProps) {
+  const track = useTrack("landing", landingEvents);
   const [search, setSearch] = useState("");
+  const searchTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  // 검색어 디바운스 추적
+  useEffect(() => {
+    if (search.length < 2) return;
+    clearTimeout(searchTimerRef.current);
+    searchTimerRef.current = setTimeout(() => {
+      track.searchQuery({ search_term: search });
+    }, 500);
+    return () => clearTimeout(searchTimerRef.current);
+  }, [search, track]);
 
   const searchResults = useMemo(() => {
     if (search.length < 2) return [];
@@ -93,6 +106,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                       <Link
                         key={`${tool.appSlug}-${tool.slug}`}
                         href={tool.href}
+                        onClick={() => track.searchResultClick({ tool_slug: tool.slug, app_slug: tool.appSlug })}
                         className="flex items-center gap-3 px-4 py-3 hover:bg-background-muted transition-colors border-b border-border/50 last:border-0"
                       >
                         {ToolIcon ? <ToolIcon className="h-6 w-6 shrink-0" /> : <span className="text-xl shrink-0">{tool.emoji}</span>}
@@ -163,6 +177,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                 >
                   <Link
                     href={app.href}
+                    onClick={() => track.appCardClick({ app_slug: app.slug })}
                     className={`group relative block overflow-hidden rounded-2xl border ${app.accentBorder} p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
                   >
                     {/* Gradient bg */}
@@ -229,6 +244,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                   >
                     <Link
                       href={tool.href}
+                      onClick={() => track.popularToolClick({ tool_slug: tool.slug, app_slug: tool.appSlug })}
                       className="group flex flex-col gap-3 rounded-xl border border-border/60 bg-background-elevated p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:border-accent/40"
                     >
                       <div className="flex items-center gap-3">
@@ -329,6 +345,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                     <Link
                       key={app.slug}
                       href={app.href}
+                      onClick={() => track.ctaClick({ app_slug: app.slug, section: "bottom" })}
                       className="inline-flex items-center gap-2 rounded-xl bg-white/95 px-6 py-3 text-sm font-semibold text-purple-700 shadow-md hover:bg-white transition-colors hover:shadow-lg"
                     >
                       {AppIcon && <AppIcon className="h-5 w-5 shrink-0" />}
