@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#1a1a2e"/>
+  <text x="200" y="50" font-family="serif" font-size="28" font-weight="bold" fill="#e94560" text-anchor="middle">Bold Serif</text>
+  <text x="200" y="100" font-family="sans-serif" font-size="22" fill="#0f3460" text-anchor="middle" letter-spacing="4">SPACED SANS</text>
+  <text x="200" y="150" font-family="monospace" font-size="18" fill="#16213e" text-anchor="middle" text-decoration="underline">monospace underline</text>
+  <text x="200" y="185" font-family="sans-serif" font-size="14" fill="#533483" text-anchor="middle" font-style="italic">Italic small text</text>
+</svg>

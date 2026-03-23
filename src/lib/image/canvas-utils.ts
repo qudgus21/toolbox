@@ -60,9 +60,8 @@ export function formatToMimeType(format: string): string {
     webp: "image/webp",
     gif: "image/gif",
     bmp: "image/bmp",
-    svg: "image/svg+xml",
-    avif: "image/avif",
   };
+  // Canvas cannot export SVG, AVIF, etc. — fall back to PNG for non-raster formats
   return map[format.toLowerCase()] ?? "image/png";
 }
 
@@ -79,10 +78,32 @@ export function mimeTypeToExtension(mime: string): string {
   return map[mime] ?? "png";
 }
 
+/** Canvas-supported raster extensions */
+const CANVAS_RASTER_EXTS = new Set(["jpg", "jpeg", "png", "webp", "gif", "bmp"]);
+
 /** Returns the file extension without the dot */
 export function getFileExtension(filename: string): string {
   const idx = filename.lastIndexOf(".");
   return idx >= 0 ? filename.slice(idx + 1).toLowerCase() : "";
+}
+
+/**
+ * Returns a safe output extension for Canvas export.
+ * Non-raster formats (svg, ico, etc.) fall back to "png".
+ */
+export function getSafeOutputExtension(filename: string): string {
+  const ext = getFileExtension(filename);
+  return CANVAS_RASTER_EXTS.has(ext) ? ext : "png";
+}
+
+/**
+ * Ensures the output filename has a Canvas-compatible extension.
+ * e.g. "photo.svg" → "photo.png"
+ */
+export function getSafeOutputFilename(filename: string): string {
+  const ext = getFileExtension(filename);
+  if (CANVAS_RASTER_EXTS.has(ext)) return filename;
+  return replaceExtension(filename, "png");
 }
 
 /** Replaces the file extension */

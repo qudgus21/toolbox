@@ -3,7 +3,8 @@ import {
   loadImage,
   createCanvas,
   canvasToBlob,
-  getFileExtension,
+  getSafeOutputExtension,
+  getSafeOutputFilename,
   formatToMimeType,
 } from "../canvas-utils";
 
@@ -13,52 +14,17 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   const targetWidth = options.width as number;
   const targetHeight = options.height as number;
-  const maintainAspectRatio = (options.maintainAspectRatio as boolean) ?? true;
-  const mode = (options.mode as "fit" | "fill" | "stretch") ?? "fit";
 
   const img = await loadImage(file);
-  const srcW = img.naturalWidth;
-  const srcH = img.naturalHeight;
 
   onProgress(30);
 
-  let drawW: number;
-  let drawH: number;
-  let canvasW: number;
-  let canvasH: number;
-  let offsetX = 0;
-  let offsetY = 0;
-
-  if (!maintainAspectRatio || mode === "stretch") {
-    // Stretch: ignore aspect ratio
-    canvasW = targetWidth;
-    canvasH = targetHeight;
-    drawW = targetWidth;
-    drawH = targetHeight;
-  } else if (mode === "fill") {
-    // Fill: cover the target area, clip overflow
-    canvasW = targetWidth;
-    canvasH = targetHeight;
-    const scale = Math.max(targetWidth / srcW, targetHeight / srcH);
-    drawW = srcW * scale;
-    drawH = srcH * scale;
-    offsetX = (targetWidth - drawW) / 2;
-    offsetY = (targetHeight - drawH) / 2;
-  } else {
-    // Fit: scale to fit within bounds, preserving aspect ratio
-    const scale = Math.min(targetWidth / srcW, targetHeight / srcH);
-    drawW = Math.round(srcW * scale);
-    drawH = Math.round(srcH * scale);
-    canvasW = drawW;
-    canvasH = drawH;
-  }
-
-  const { canvas, ctx } = createCanvas(canvasW, canvasH);
-  ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
+  const { canvas, ctx } = createCanvas(targetWidth, targetHeight);
+  ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
 
   onProgress(70);
 
-  const ext = getFileExtension(file.name);
+  const ext = getSafeOutputExtension(file.name);
   const mime = formatToMimeType(ext);
   const blob = await canvasToBlob(canvas, mime);
 
@@ -66,10 +32,10 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   return {
     blob,
-    filename: file.name,
+    filename: getSafeOutputFilename(file.name),
     size: blob.size,
-    width: canvasW,
-    height: canvasH,
+    width: targetWidth,
+    height: targetHeight,
   };
 };
 

@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { cn, formatSize } from "@/lib/utils";
+import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
+import { Button } from "@/lib/ui";
+import { sendEvent } from "@/lib/analytics";
 import type { ImageProcessingResult } from "@/lib/image/types";
 import type { ImageDictionary } from "@/lib/i18n/image-config";
 
@@ -12,9 +14,18 @@ interface ResultCardProps {
   onDownload: (filename?: string) => void;
   onReset: () => void;
   labels: ImageDictionary["common"];
+  toolSlug: string;
+  className?: string;
 }
 
-export function ResultCard({ result, onDownload, onReset, labels }: ResultCardProps) {
+export function ResultCard({
+  result,
+  onDownload,
+  onReset,
+  labels,
+  toolSlug,
+  className,
+}: ResultCardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [filename, setFilename] = useState(result.filename);
 
@@ -30,7 +41,10 @@ export function ResultCard({ result, onDownload, onReset, labels }: ResultCardPr
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="rounded-2xl border border-success/30 bg-success-muted p-6 text-center"
+      className={cn(
+        "rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
+        className,
+      )}
     >
       <CheckCircle className="mx-auto h-12 w-12 text-success" />
 
@@ -87,20 +101,32 @@ export function ResultCard({ result, onDownload, onReset, labels }: ResultCardPr
 
       {/* Actions */}
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <button
-          onClick={() => onDownload(filename)}
-          className="cursor-pointer inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-md hover:shadow-xl hover:brightness-110 active:scale-[0.98] transition-all duration-200"
+        <Button
+          variant="accent"
+          size="lg"
+          onClick={() => {
+            onDownload(filename);
+            sendEvent("download_click", {
+              app: "image",
+              tool_slug: toolSlug,
+              file_size_kb: Math.round(result.size / 1024),
+            });
+          }}
         >
-          <Download className="h-4 w-4" />
+          <Download className="mr-2 h-4 w-4" />
           {labels.download}
-        </button>
-        <button
-          onClick={onReset}
-          className="cursor-pointer inline-flex items-center gap-2 rounded-xl border border-border px-6 py-3 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
+        </Button>
+        <Button
+          variant="ghost"
+          size="lg"
+          onClick={() => {
+            sendEvent("reset_click", { app: "image", tool_slug: toolSlug });
+            onReset();
+          }}
         >
-          <RotateCcw className="h-4 w-4" />
+          <RotateCcw className="mr-2 h-4 w-4" />
           {labels.startOver}
-        </button>
+        </Button>
       </div>
     </motion.div>
   );

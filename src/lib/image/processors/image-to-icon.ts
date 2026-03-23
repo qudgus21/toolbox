@@ -3,22 +3,44 @@ import { loadImage, createCanvas, canvasToBlob } from "../canvas-utils";
 
 const ALL_SIZES = [16, 32, 48, 64, 128, 256, 512];
 
+async function resizeToIcon(
+  file: File,
+  targetSize: number,
+): Promise<HTMLCanvasElement> {
+  // Center-crop to square, then resize using createImageBitmap (high quality)
+  const bitmap = await createImageBitmap(file);
+  const minDim = Math.min(bitmap.width, bitmap.height);
+  const cropX = (bitmap.width - minDim) / 2;
+  const cropY = (bitmap.height - minDim) / 2;
+
+  // createImageBitmap with resizeWidth/Height uses high-quality Lanczos resampling
+  const resized = await createImageBitmap(file, cropX, cropY, minDim, minDim, {
+    resizeWidth: targetSize,
+    resizeHeight: targetSize,
+    resizeQuality: "high",
+  });
+
+  const { canvas, ctx } = createCanvas(targetSize, targetSize);
+  ctx.drawImage(resized, 0, 0);
+  resized.close();
+  bitmap.close();
+
+  return canvas;
+}
+
 const processor: ImageProcessorFn = async (files, options, onProgress) => {
   const file = files[0];
   onProgress(0);
 
   const sizes = (options.sizes as number[]) ?? ALL_SIZES;
-
-  const img = await loadImage(file);
   onProgress(20);
 
   const blobs: { name: string; blob: Blob }[] = [];
 
   for (let i = 0; i < sizes.length; i++) {
     const size = sizes[i];
-    const { canvas, ctx } = createCanvas(size, size);
-    ctx.drawImage(img, 0, 0, size, size);
-    const blob = await canvasToBlob(canvas, "image/png");
+    const resized = await resizeToIcon(file, size);
+    const blob = await canvasToBlob(resized, "image/png");
     blobs.push({ name: `icon-${size}x${size}.png`, blob });
     onProgress(20 + Math.round(((i + 1) / sizes.length) * 60));
   }

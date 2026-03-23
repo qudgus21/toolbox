@@ -7,7 +7,6 @@ export interface QrCodeOptionsValue {
   size: number;
   fgColor: string;
   bgColor: string;
-  errorCorrection: "L" | "M" | "Q" | "H";
 }
 
 interface QrCodeOptionsProps {
@@ -17,13 +16,6 @@ interface QrCodeOptionsProps {
 }
 
 export function QrCodeOptions({ value, onChange, labels }: QrCodeOptionsProps) {
-  const EC_LABELS: Record<string, string> = {
-    L: labels.low,
-    M: labels.medium,
-    Q: labels.quartile,
-    H: labels.high,
-  };
-
   return (
     <div className="space-y-4">
       {/* Text/URL input */}
@@ -92,28 +84,6 @@ export function QrCodeOptions({ value, onChange, labels }: QrCodeOptionsProps) {
           </div>
         </div>
       </div>
-
-      {/* Error correction */}
-      <div>
-        <label className="text-xs font-medium text-foreground-muted mb-2 block">
-          {labels.errorCorrection}
-        </label>
-        <div className="grid grid-cols-2 gap-2">
-          {(["L", "M", "Q", "H"] as const).map((level) => (
-            <button
-              key={level}
-              onClick={() => onChange({ ...value, errorCorrection: level })}
-              className={`rounded-md border px-3 py-2 text-xs cursor-pointer transition-colors ${
-                value.errorCorrection === level
-                  ? "border-accent bg-accent/10 text-accent"
-                  : "border-border text-foreground-muted hover:border-foreground/30"
-              }`}
-            >
-              {EC_LABELS[level]}
-            </button>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
@@ -124,6 +94,5 @@ export function getDefaultQrCodeOptions(): QrCodeOptionsValue {
     size: 400,
     fgColor: "#000000",
     bgColor: "#ffffff",
-    errorCorrection: "M",
   };
 }
