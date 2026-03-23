@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { tools } from "@/lib/image/tools";
+import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org/image";
 
@@ -27,6 +28,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.8,
       });
+    }
+  }
+
+  // Blog pages
+  const imageArticles = articles.filter((a) => a.app === "image");
+  for (const locale of locales) {
+    if (imageArticles.length > 0) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog`,
+        lastModified: new Date("2026-03-23"),
+        changeFrequency: "weekly",
+        priority: 0.6,
+      });
+    }
+    for (const article of imageArticles) {
+      if (article.content[locale]) {
+        entries.push({
+          url: `${BASE_URL}/${locale}/blog/${article.slug}`,
+          lastModified: new Date(article.publishedAt),
+          changeFrequency: "monthly",
+          priority: 0.5,
+        });
+      }
     }
   }
 
