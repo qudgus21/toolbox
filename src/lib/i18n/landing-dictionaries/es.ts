@@ -1,0 +1,94 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — Herramientas Online Gratuitas",
+    description:
+      "Edita, combina y convierte PDFs. Redimensiona, comprime y transforma imágenes. Todo gratis, desde tu navegador.",
+  },
+  hero: {
+    badge: "87+ herramientas online gratuitas",
+    title: "Todas las herramientas que necesitas, en un solo ToolPop",
+    titleAccent: "ToolPop",
+    subtitle:
+      "Trabaja con PDFs e imágenes directamente en tu navegador. Sin instalaciones, sin registros.",
+    searchPlaceholder: "¿Qué herramienta buscas?",
+  },
+  apps: {
+    pdf: {
+      name: "Herramientas PDF",
+      description:
+        "Combina, divide, convierte, edita y comprime — todo lo que puedes hacer con un PDF.",
+      cta: "Ver herramientas PDF",
+      toolCount: "39 herramientas",
+    },
+    image: {
+      name: "Herramientas de imagen",
+      description:
+        "Redimensiona, recorta, convierte, aplica efectos, genera códigos QR — todo para tus imágenes.",
+      cta: "Ver herramientas de imagen",
+      toolCount: "48 herramientas",
+    },
+  },
+  popularTools: {
+    sectionTitle: "Herramientas populares",
+    sectionSubtitle: "Accede a las herramientas más utilizadas",
+    viewAll: "Ver todo",
+  },
+  stats: {
+    tools: "87+",
+    toolsLabel: "Herramientas gratuitas",
+    languages: "45",
+    languagesLabel: "Idiomas",
+    users: "100%",
+    usersLabel: "En el navegador",
+    price: "€0",
+    priceLabel: "Gratis para siempre",
+  },
+  trust: {
+    sectionTitle: "¿Por qué ToolPop?",
+    sectionSubtitle: "Seguridad y comodidad, sin concesiones",
+    browserBased: "Procesamiento en el navegador",
+    browserBasedDesc: "Tus archivos nunca salen de tu dispositivo. Todo se ejecuta en tu navegador, de forma rápida y segura.",
+    free: "Totalmente gratuito",
+    freeDesc: "Usa cualquier herramienta todas las veces que quieras, sin límites ni costes ocultos.",
+    private: "Privacidad ante todo",
+    privateDesc: "Tus archivos se quedan en tu dispositivo. Sin subidas a servidores, tus datos son solo tuyos.",
+    noSignup: "Sin registro",
+    noSignupDesc: "Sin cuenta, sin correo. Solo abre una herramienta y empieza a trabajar.",
+  },
+  cta: {
+    title: "¿Listo para empezar?",
+    subtitle: "Sin instalaciones, sin registros, sin pagos — a un solo clic.",
+    button: "Explorar todas las herramientas",
+  },
+  common: {
+    shareTitle: "Compartir",
+    shareSubtitle: "¡Recomienda ToolPop a tus amigos!",
+    shareCopyLink: "Copiar enlace",
+    shareCopied: "¡Copiado!",
+  },
+  footer: {
+    apps: "Herramientas",
+    company: "Empresa",
+    about: "Sobre nosotros",
+    contact: "Contacto",
+    faq: "Preguntas frecuentes",
+    blog: "Blog",
+    legal: "Legal",
+    privacy: "Política de privacidad",
+    terms: "Términos de servicio",
+    copyright: "© 2026 ToolPop. All rights reserved.",
+    tagline: "Herramientas online gratuitas para PDF, imágenes y más. Sin registro.",
+    madeWith: "Hecho con amor para todos",
+  },
+  search: {
+    noResults: "No se encontraron resultados",
+  },
+  nav: {
+    pdf: "PDF",
+    image: "Image",
+  },
+};
+
+export default dict;

@@ -9,7 +9,7 @@ import type {
   SignElement,
   SignatureElement,
   TextFieldElement,
-} from "../../../app/pdf/[locale]/(tools)/_components/sign-pdf/sign-types";
+} from "../../../app/[locale]/pdf/(tools)/_components/sign-pdf/sign-types";
 
 // ─── Helpers ──────────────────────────────────────────────────
 

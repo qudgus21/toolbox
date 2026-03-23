@@ -68,6 +68,11 @@ export interface LandingDictionary {
     privacy: string;
     terms: string;
     copyright: string;
+    tagline: string;
+    madeWith: string;
+  };
+  search: {
+    noResults: string;
   };
   nav: Record<string, string>;
 }

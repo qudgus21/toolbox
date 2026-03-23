@@ -1,0 +1,23 @@
+/* Image App — Indigo accent override */
+[data-app="image"] {
+  --color-accent: var(--primitive-blue-600);
+  --color-accent-foreground: var(--primitive-white);
+  --color-accent-hover: var(--primitive-blue-700);
+  --color-accent-muted: var(--primitive-blue-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-app="image"] {
+    --color-accent: #818cf8;
+    --color-accent-foreground: var(--primitive-zinc-950);
+    --color-accent-hover: #a5b4fc;
+    --color-accent-muted: rgba(129, 140, 248, 0.15);
+  }
+}
+
+[data-theme="dark"] [data-app="image"] {
+  --color-accent: #a5b4fc;
+  --color-accent-foreground: var(--primitive-zinc-950);
+  --color-accent-hover: #c7d2fe;
+  --color-accent-muted: rgba(165, 180, 252, 0.15);
+}

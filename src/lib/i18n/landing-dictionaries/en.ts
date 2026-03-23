@@ -2,7 +2,7 @@ import type { LandingDictionary } from "../landing-config";
 
 const dict: LandingDictionary = {
   meta: {
-    title: "ToolPop — Online PDF & Image Tools",
+    title: "ToolPop — Free Online Tools",
     description:
       "Edit, merge, convert PDFs. Resize, compress, transform images. All free, right in your browser.",
   },
@@ -79,6 +79,11 @@ const dict: LandingDictionary = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     copyright: "© 2026 ToolPop. All rights reserved.",
+    tagline: "Free online tools for PDFs, images, and more. No sign-up required.",
+    madeWith: "Made with love for everyone",
+  },
+  search: {
+    noResults: "No results found",
   },
   nav: {
     pdf: "PDF",
