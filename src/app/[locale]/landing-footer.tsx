@@ -35,7 +35,7 @@ export function LandingFooter({ dict, locale }: LandingFooterProps) {
               <span>ToolPop</span>
             </div>
             <p className="text-xs text-foreground-muted leading-relaxed">
-              Free online tools for PDF and image editing. No sign-up required.
+              {dict.footer.tagline}
             </p>
           </div>
 
@@ -112,11 +112,7 @@ export function LandingFooter({ dict, locale }: LandingFooterProps) {
             {dict.footer.copyright}
           </p>
           <div className="flex items-center gap-1 text-xs text-foreground-subtle">
-            Made with
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" className="text-red-400">
-              <path d="M8 14s-5.5-3.5-5.5-7.5C2.5 4 4 2.5 5.5 2.5c1 0 2 .5 2.5 1.5.5-1 1.5-1.5 2.5-1.5C12 2.5 13.5 4 13.5 6.5 13.5 10.5 8 14 8 14z" />
-            </svg>
-            for everyone
+            {dict.footer.madeWith}
           </div>
         </div>
       </div>

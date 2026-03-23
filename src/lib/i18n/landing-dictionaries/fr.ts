@@ -1,0 +1,94 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — Outils en ligne gratuits",
+    description:
+      "Modifiez, fusionnez et convertissez vos PDF. Redimensionnez, compressez et transformez vos images. Tout est gratuit, directement dans votre navigateur.",
+  },
+  hero: {
+    badge: "87+ outils en ligne gratuits",
+    title: "Tous les outils dont vous avez besoin, réunis dans ToolPop",
+    titleAccent: "ToolPop",
+    subtitle:
+      "Travaillez sur vos PDF et images directement dans le navigateur. Rien à installer, aucune inscription.",
+    searchPlaceholder: "Quel outil cherchez-vous ?",
+  },
+  apps: {
+    pdf: {
+      name: "Outils PDF",
+      description:
+        "Fusionner, diviser, convertir, modifier, compresser — tout ce que vous pouvez faire avec un PDF.",
+      cta: "Découvrir les outils PDF",
+      toolCount: "39 outils",
+    },
+    image: {
+      name: "Outils image",
+      description:
+        "Redimensionner, recadrer, convertir, appliquer des effets, générer des QR codes — tout pour vos images.",
+      cta: "Découvrir les outils image",
+      toolCount: "48 outils",
+    },
+  },
+  popularTools: {
+    sectionTitle: "Outils populaires",
+    sectionSubtitle: "Accédez directement aux outils les plus utilisés",
+    viewAll: "Tout voir",
+  },
+  stats: {
+    tools: "87+",
+    toolsLabel: "Outils gratuits",
+    languages: "45",
+    languagesLabel: "Langues",
+    users: "100%",
+    usersLabel: "Dans le navigateur",
+    price: "€0",
+    priceLabel: "Gratuit pour toujours",
+  },
+  trust: {
+    sectionTitle: "Pourquoi ToolPop ?",
+    sectionSubtitle: "Sécurité et simplicité, sans compromis",
+    browserBased: "Traitement dans le navigateur",
+    browserBasedDesc: "Vos fichiers ne quittent jamais votre appareil. Tout se passe dans le navigateur — rapide et sécurisé.",
+    free: "Entièrement gratuit",
+    freeDesc: "Utilisez chaque outil autant de fois que vous le souhaitez, sans aucune limite ni frais cachés.",
+    private: "Confidentialité garantie",
+    privateDesc: "Vos fichiers restent sur votre appareil. Aucun envoi vers un serveur, vos données n'appartiennent qu'à vous.",
+    noSignup: "Aucune inscription requise",
+    noSignupDesc: "Pas de compte, pas d'e-mail. Ouvrez un outil et commencez à travailler.",
+  },
+  cta: {
+    title: "Prêt à commencer ?",
+    subtitle: "Rien à installer, aucune inscription, aucun paiement — un clic suffit.",
+    button: "Parcourir tous les outils",
+  },
+  common: {
+    shareTitle: "Partager",
+    shareSubtitle: "Faites découvrir ToolPop à vos amis !",
+    shareCopyLink: "Copier le lien",
+    shareCopied: "Copié !",
+  },
+  footer: {
+    apps: "Outils",
+    company: "Entreprise",
+    about: "À propos",
+    contact: "Contact",
+    faq: "FAQ",
+    blog: "Blog",
+    legal: "Mentions légales",
+    privacy: "Politique de confidentialité",
+    terms: "Conditions d'utilisation",
+    copyright: "© 2026 ToolPop. All rights reserved.",
+    tagline: "Outils en ligne gratuits pour PDF, images et plus. Sans inscription.",
+    madeWith: "Fait avec amour pour tous",
+  },
+  search: {
+    noResults: "Aucun résultat trouvé",
+  },
+  nav: {
+    pdf: "PDF",
+    image: "Image",
+  },
+};
+
+export default dict;

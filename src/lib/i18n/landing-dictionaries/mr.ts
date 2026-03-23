@@ -1,0 +1,39 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — मोफत ऑनलाइन साधने",
+    description: "PDF संपादित करा, एकत्र करा, रूपांतरित करा. प्रतिमांचा आकार बदला, संकुचित करा, रूपांतरित करा. सर्व मोफत, थेट ब्राउझरमध्ये.",
+  },
+  hero: {
+    badge: "87+ मोफत ऑनलाइन साधने",
+    title: "तुम्हाला हवी ती प्रत्येक साधने, एकाच ToolPop मध्ये",
+    titleAccent: "ToolPop",
+    subtitle: "PDF आणि प्रतिमांवर थेट ब्राउझरमध्ये काम करा. इन्स्टॉल नाही, साइन-अप नाही.",
+    searchPlaceholder: "कोणते साधन शोधत आहात?",
+  },
+  apps: {
+    pdf: { name: "PDF साधने", description: "एकत्र करा, विभाजित करा, रूपांतरित करा, संपादित करा आणि संकुचित करा — PDF सोबत सर्वकाही.", cta: "PDF साधने पहा", toolCount: "39 साधने" },
+    image: { name: "प्रतिमा साधने", description: "आकार बदला, कापा, रूपांतरित करा, प्रभाव लावा, QR कोड तयार करा — प्रतिमांसाठी सर्वकाही.", cta: "प्रतिमा साधने पहा", toolCount: "48 साधने" },
+  },
+  popularTools: { sectionTitle: "लोकप्रिय साधने", sectionSubtitle: "सर्वाधिक वापरल्या जाणाऱ्या साधनांवर थेट जा", viewAll: "सर्व पहा" },
+  stats: { tools: "87+", toolsLabel: "मोफत साधने", languages: "45", languagesLabel: "भाषा", users: "100%", usersLabel: "ब्राउझर-आधारित", price: "₹0", priceLabel: "कायमचे मोफत" },
+  trust: {
+    sectionTitle: "ToolPop का निवडावे?",
+    sectionSubtitle: "सुरक्षितता आणि सोय, कोणत्याही तडजोडीशिवाय",
+    browserBased: "ब्राउझरमध्ये प्रक्रिया",
+    browserBasedDesc: "तुमच्या फाइल्स तुमचे डिव्हाइस कधीही सोडत नाहीत. सर्वकाही ब्राउझरमध्ये चालते — जलद आणि सुरक्षित.",
+    free: "पूर्णपणे मोफत",
+    freeDesc: "प्रत्येक साधन हवे तेवढ्या वेळा वापरा, कोणतीही मर्यादा नाही. कोणतेही छुपे शुल्क नाही.",
+    private: "गोपनीयता प्रथम",
+    privateDesc: "फाइल्स तुमच्या डिव्हाइसवर राहतात. सर्व्हरवर अपलोड नाही — तुमचा डेटा तुमचाच.",
+    noSignup: "साइन-अप आवश्यक नाही",
+    noSignupDesc: "खाते नाही, ईमेल नाही. फक्त साधन उघडा आणि काम सुरू करा.",
+  },
+  cta: { title: "सुरू करायला तयार आहात?", subtitle: "इन्स्टॉल नाही, साइन-अप नाही, पेमेंट नाही — फक्त एक क्लिक.", button: "सर्व साधने पहा" },
+  common: { shareTitle: "शेअर करा", shareSubtitle: "तुमच्या मित्रांना ToolPop बद्दल सांगा!", shareCopyLink: "लिंक कॉपी करा", shareCopied: "कॉपी झाले!" },
+  footer: { apps: "साधने", company: "कंपनी", about: "आमच्याबद्दल", contact: "संपर्क", faq: "वारंवार विचारले जाणारे प्रश्न", blog: "ब्लॉग", legal: "कायदेशीर", privacy: "गोपनीयता धोरण", terms: "सेवा अटी", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, इमेज आणि अधिकसाठी मोफत ऑनलाइन साधने. साइन-अप नाही.", madeWith: "सर्वांसाठी प्रेमाने बनवलेले" },
+  search: { noResults: "कोणतेही परिणाम सापडले नाहीत" },
+  nav: { pdf: "PDF", image: "Image" },
+};
+export default dict;

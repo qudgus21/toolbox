@@ -1,0 +1,39 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ",
+    description: "PDF ਸੰਪਾਦਿਤ ਕਰੋ, ਮਿਲਾਓ ਅਤੇ ਬਦਲੋ। ਤਸਵੀਰਾਂ ਦਾ ਆਕਾਰ ਬਦਲੋ, ਕੰਪ੍ਰੈੱਸ ਕਰੋ ਅਤੇ ਬਦਲੋ। ਸਭ ਮੁਫ਼ਤ, ਸਿੱਧਾ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ।",
+  },
+  hero: {
+    badge: "87+ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ",
+    title: "ਤੁਹਾਨੂੰ ਲੋੜੀਂਦਾ ਹਰ ਟੂਲ, ਇੱਕ ToolPop ਵਿੱਚ",
+    titleAccent: "ToolPop",
+    subtitle: "PDF ਅਤੇ ਤਸਵੀਰਾਂ ਨਾਲ ਸਿੱਧਾ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਕੰਮ ਕਰੋ। ਕੋਈ ਇੰਸਟਾਲ ਨਹੀਂ, ਕੋਈ ਸਾਈਨ-ਅੱਪ ਨਹੀਂ।",
+    searchPlaceholder: "ਕਿਹੜਾ ਟੂਲ ਲੱਭ ਰਹੇ ਹੋ?",
+  },
+  apps: {
+    pdf: { name: "PDF ਟੂਲ", description: "ਮਿਲਾਓ, ਵੰਡੋ, ਬਦਲੋ, ਸੰਪਾਦਿਤ ਕਰੋ ਅਤੇ ਕੰਪ੍ਰੈੱਸ ਕਰੋ — PDF ਨਾਲ ਸਭ ਕੁਝ ਕਰੋ।", cta: "PDF ਟੂਲ ਵੇਖੋ", toolCount: "39 ਟੂਲ" },
+    image: { name: "ਤਸਵੀਰ ਟੂਲ", description: "ਆਕਾਰ ਬਦਲੋ, ਕੱਟੋ, ਬਦਲੋ, ਇਫੈਕਟ ਲਾਓ, QR ਕੋਡ ਬਣਾਓ — ਤਸਵੀਰਾਂ ਲਈ ਸਭ ਕੁਝ।", cta: "ਤਸਵੀਰ ਟੂਲ ਵੇਖੋ", toolCount: "48 ਟੂਲ" },
+  },
+  popularTools: { sectionTitle: "ਪ੍ਰਸਿੱਧ ਟੂਲ", sectionSubtitle: "ਸਭ ਤੋਂ ਵੱਧ ਵਰਤੇ ਜਾਣ ਵਾਲੇ ਟੂਲਾਂ ਤੇ ਸਿੱਧੇ ਜਾਓ", viewAll: "ਸਭ ਵੇਖੋ" },
+  stats: { tools: "87+", toolsLabel: "ਮੁਫ਼ਤ ਟੂਲ", languages: "45", languagesLabel: "ਭਾਸ਼ਾਵਾਂ", users: "100%", usersLabel: "ਬ੍ਰਾਊਜ਼ਰ-ਅਧਾਰਿਤ", price: "₹0", priceLabel: "ਹਮੇਸ਼ਾ ਮੁਫ਼ਤ" },
+  trust: {
+    sectionTitle: "ToolPop ਕਿਉਂ?",
+    sectionSubtitle: "ਸੁਰੱਖਿਆ ਅਤੇ ਸਹੂਲਤ, ਬਿਨਾਂ ਕਿਸੇ ਸਮਝੌਤੇ ਦੇ",
+    browserBased: "ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਪ੍ਰੋਸੈਸਿੰਗ",
+    browserBasedDesc: "ਤੁਹਾਡੀਆਂ ਫਾਈਲਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਤੋਂ ਕਦੇ ਨਹੀਂ ਜਾਂਦੀਆਂ। ਸਭ ਕੁਝ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਚੱਲਦਾ ਹੈ — ਤੇਜ਼ ਅਤੇ ਸੁਰੱਖਿਅਤ।",
+    free: "ਪੂਰੀ ਤਰ੍ਹਾਂ ਮੁਫ਼ਤ",
+    freeDesc: "ਹਰ ਟੂਲ ਜਿੰਨੀ ਵਾਰ ਚਾਹੋ ਵਰਤੋ, ਕੋਈ ਸੀਮਾ ਨਹੀਂ। ਕੋਈ ਛੁਪੀ ਫ਼ੀਸ ਨਹੀਂ।",
+    private: "ਗੋਪਨੀਯਤਾ ਪਹਿਲਾਂ",
+    privateDesc: "ਫਾਈਲਾਂ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਤੇ ਰਹਿੰਦੀਆਂ ਹਨ। ਸਰਵਰ ਤੇ ਕੋਈ ਅੱਪਲੋਡ ਨਹੀਂ — ਤੁਹਾਡਾ ਡਾਟਾ ਤੁਹਾਡਾ ਹੀ ਰਹਿੰਦਾ ਹੈ।",
+    noSignup: "ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ",
+    noSignupDesc: "ਕੋਈ ਖਾਤਾ ਨਹੀਂ, ਕੋਈ ਈਮੇਲ ਨਹੀਂ। ਬੱਸ ਟੂਲ ਖੋਲ੍ਹੋ ਅਤੇ ਕੰਮ ਸ਼ੁਰੂ ਕਰੋ।",
+  },
+  cta: { title: "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?", subtitle: "ਕੋਈ ਇੰਸਟਾਲ ਨਹੀਂ, ਕੋਈ ਸਾਈਨ-ਅੱਪ ਨਹੀਂ, ਕੋਈ ਭੁਗਤਾਨ ਨਹੀਂ — ਬੱਸ ਇੱਕ ਕਲਿੱਕ।", button: "ਸਾਰੇ ਟੂਲ ਵੇਖੋ" },
+  common: { shareTitle: "ਸਾਂਝਾ ਕਰੋ", shareSubtitle: "ਆਪਣੇ ਦੋਸਤਾਂ ਨੂੰ ToolPop ਬਾਰੇ ਦੱਸੋ!", shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ", shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!" },
+  footer: { apps: "ਟੂਲ", company: "ਕੰਪਨੀ", about: "ਸਾਡੇ ਬਾਰੇ", contact: "ਸੰਪਰਕ", faq: "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ", blog: "ਬਲੌਗ", legal: "ਕਾਨੂੰਨੀ", privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ", terms: "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, ਚਿੱਤਰਾਂ ਅਤੇ ਹੋਰ ਲਈ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ। ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ।", madeWith: "ਸਭ ਲਈ ਪਿਆਰ ਨਾਲ ਬਣਾਇਆ" },
+  search: { noResults: "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ ਮਿਲੇ" },
+  nav: { pdf: "PDF", image: "Image" },
+};
+export default dict;
