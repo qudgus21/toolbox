@@ -299,6 +299,11 @@ const vi: ImageDictionary = {
     height: "Chiều cao",
     options: "Tuỳ chọn",
     changeFile: "Đổi tệp",
+    share: "Chia sẻ",
+    shareTitle: "Chia sẻ trang này",
+    shareSubtitle: "Giới thiệu cho bạn bè!",
+    shareCopied: "Đã sao chép!",
+    shareCopyLink: "Sao chép liên kết",
   },
   toolOptions: {
     resize: {

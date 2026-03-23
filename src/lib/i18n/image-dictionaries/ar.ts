@@ -299,6 +299,11 @@ const ar: ImageDictionary = {
     height: "الارتفاع",
     options: "الخيارات",
     changeFile: "تغيير الملف",
+    share: "مشاركة",
+    shareTitle: "شارك هذه الصفحة",
+    shareSubtitle: "أخبر الآخرين!",
+    shareCopied: "تم النسخ!",
+    shareCopyLink: "نسخ الرابط",
   },
   toolOptions: {
     resize: {

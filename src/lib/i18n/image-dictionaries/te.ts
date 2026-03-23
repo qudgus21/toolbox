@@ -299,6 +299,11 @@ const te: ImageDictionary = {
     height: "ఎత్తు",
     options: "ఎంపికలు",
     changeFile: "ఫైల్ మార్చు",
+    share: "షేర్ చేయండి",
+    shareTitle: "ఈ పేజీని షేర్ చేయండి",
+    shareSubtitle: "ఇతరులకు చెప్పండి!",
+    shareCopied: "కాపీ అయింది!",
+    shareCopyLink: "లింక్ కాపీ చేయండి",
   },
   toolOptions: {
     resize: {

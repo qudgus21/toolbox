@@ -124,6 +124,11 @@ const da: Dictionary = {
     favoriteAdded: "Tilføjet til favoritter",
     favoriteRemoved: "Fjernet fra favoritter",
     comingSoon: "Coming Soon",
+    share: "Del",
+    shareTitle: "Del denne side",
+    shareSubtitle: "Fortæl det videre!",
+    shareCopied: "Kopieret!",
+    shareCopyLink: "Kopiér link",
   },
   metadata: {
     siteTitle: "ToolPop - Gratis PDF-værktøjer",

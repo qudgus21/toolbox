@@ -124,6 +124,11 @@ const nl: Dictionary = {
     favoriteAdded: "Toegevoegd aan favorieten",
     favoriteRemoved: "Verwijderd uit favorieten",
     comingSoon: "Binnenkort",
+    share: "Delen",
+    shareTitle: "Deel deze pagina",
+    shareSubtitle: "Vertel het verder!",
+    shareCopied: "Gekopieerd!",
+    shareCopyLink: "Link kopiëren",
   },
   metadata: {
     siteTitle: "ToolPop - Gratis PDF-tools",

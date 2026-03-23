@@ -124,6 +124,11 @@ const pl: Dictionary = {
     favoriteAdded: "Dodano do ulubionych",
     favoriteRemoved: "Usunięto z ulubionych",
     comingSoon: "Wkr'otce",
+    share: "Udostępnij",
+    shareTitle: "Udostępnij tę stronę",
+    shareSubtitle: "Podziel się ze znajomymi!",
+    shareCopied: "Skopiowano!",
+    shareCopyLink: "Kopiuj link",
   },
   metadata: {
     siteTitle: "ToolPop - Darmowe narzędzia PDF",

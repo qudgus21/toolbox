@@ -7,6 +7,11 @@ const bs: ImageDictionary = {
     ...en.common,
     options: "Opcije",
     changeFile: "Promijeni fajl",
+    share: "Podijeli",
+    shareTitle: "Podijeli ovu stranicu",
+    shareSubtitle: "Reci i drugima!",
+    shareCopied: "Kopirano!",
+    shareCopyLink: "Kopiraj link",
   },
   toolOptions: {
     resize: {

@@ -299,6 +299,11 @@ const tr: ImageDictionary = {
     height: "Yükseklik",
     options: "Seçenekler",
     changeFile: "Dosyayı değiştir",
+    share: "Paylaş",
+    shareTitle: "Bu sayfayı paylaş",
+    shareSubtitle: "Herkese duyurun!",
+    shareCopied: "Kopyalandı!",
+    shareCopyLink: "Bağlantıyı kopyala",
   },
   toolOptions: {
     resize: {

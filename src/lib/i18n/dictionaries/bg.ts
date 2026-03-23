@@ -124,6 +124,11 @@ const bg: Dictionary = {
     favoriteAdded: "Добавено в любими",
     favoriteRemoved: "Премахнато от любими",
     comingSoon: "Coming Soon",
+    share: "Сподели",
+    shareTitle: "Споделете тази страница",
+    shareSubtitle: "Разкажете на другите!",
+    shareCopied: "Копирано!",
+    shareCopyLink: "Копирай линк",
   },
   metadata: {
     siteTitle: "ToolPop - Безплатни PDF Инструменти",

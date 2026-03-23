@@ -124,6 +124,11 @@ const sk: Dictionary = {
     favoriteAdded: "Pridané do obľúbených",
     favoriteRemoved: "Odstránené z obľúbených",
     comingSoon: "Coming Soon",
+    share: "Zdieľať",
+    shareTitle: "Zdieľať túto stránku",
+    shareSubtitle: "Povedzte o tom ďalej!",
+    shareCopied: "Skopírované!",
+    shareCopyLink: "Kopírovať odkaz",
   },
   metadata: {
     siteTitle: "ToolPop - Bezplatné PDF nástroje",

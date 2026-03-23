@@ -7,6 +7,11 @@ const sl: ImageDictionary = {
     ...en.common,
     options: "Moznosti",
     changeFile: "Zamenjaj datoteko",
+    share: "Deli",
+    shareTitle: "Deli to stran",
+    shareSubtitle: "Povej naprej!",
+    shareCopied: "Kopirano!",
+    shareCopyLink: "Kopiraj povezavo",
   },
   toolOptions: {
     resize: {

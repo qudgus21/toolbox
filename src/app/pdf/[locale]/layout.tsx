@@ -7,6 +7,7 @@ import "../pdf-theme.css";
 import { tools, categories } from "@/lib/pdf/tools";
 import { LanguageSwitcher } from "./language-switcher";
 import { ThemeToggle } from "./theme-toggle";
+import { ShareButton } from "@/lib/ui/components/share-button";
 import { NavMenu } from "./nav-menu";
 import { GoogleAnalytics } from "./google-analytics";
 import { GoogleAdSense } from "./google-adsense";
@@ -129,6 +130,13 @@ export default async function LocaleLayout({
         }
       >
         <ThemeToggle />
+        <ShareButton
+          app="pdf"
+          shareTitle={dict.common.shareTitle}
+          shareSubtitle={dict.common.shareSubtitle}
+          copyLabel={dict.common.shareCopyLink}
+          copiedLabel={dict.common.shareCopied}
+        />
         <LanguageSwitcher locale={locale} />
       </Header>
       <div className="flex min-h-screen flex-col">

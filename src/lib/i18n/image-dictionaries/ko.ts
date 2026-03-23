@@ -312,6 +312,11 @@ const ko: ImageDictionary = {
     height: "높이",
     options: "설정",
     changeFile: "파일 변경",
+    share: "공유하기",
+    shareTitle: "페이지 공유",
+    shareSubtitle: "친구에게 알려주세요!",
+    shareCopied: "복사됨!",
+    shareCopyLink: "링크 복사",
   },
   toolOptions: {
     resize: {

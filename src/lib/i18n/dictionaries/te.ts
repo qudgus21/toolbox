@@ -124,6 +124,11 @@ const te: Dictionary = {
     favoriteAdded: "ఇష్టమైనవాటికి జోడించబడింది",
     favoriteRemoved: "ఇష్టమైనవాటి నుండి తీసివేయబడింది",
     comingSoon: "Coming Soon",
+    share: "షేర్ చేయండి",
+    shareTitle: "ఈ పేజీని షేర్ చేయండి",
+    shareSubtitle: "ఇతరులకు చెప్పండి!",
+    shareCopied: "కాపీ అయింది!",
+    shareCopyLink: "లింక్ కాపీ చేయండి",
   },
   metadata: {
     siteTitle: "ToolPop - ఉచిత PDF సాధనాలు",

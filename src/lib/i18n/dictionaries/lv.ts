@@ -124,6 +124,11 @@ const lv: Dictionary = {
     favoriteAdded: "Pievienots izlasei",
     favoriteRemoved: "Noņemts no izlases",
     comingSoon: "Coming Soon",
+    share: "Dalīties",
+    shareTitle: "Dalīties ar šo lapu",
+    shareSubtitle: "Pastāstiet citiem!",
+    shareCopied: "Nokopēts!",
+    shareCopyLink: "Kopēt saiti",
   },
   metadata: {
     siteTitle: "ToolPop - Bezmaksas PDF rīki",

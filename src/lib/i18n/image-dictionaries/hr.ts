@@ -299,6 +299,11 @@ const hr: ImageDictionary = {
     height: "Visina",
     options: "Postavke",
     changeFile: "Promijeni datoteku",
+    share: "Podijeli",
+    shareTitle: "Podijeli ovu stranicu",
+    shareSubtitle: "Reci i drugima!",
+    shareCopied: "Kopirano!",
+    shareCopyLink: "Kopiraj poveznicu",
   },
   toolOptions: {
     resize: {

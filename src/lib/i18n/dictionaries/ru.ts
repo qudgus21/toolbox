@@ -124,6 +124,11 @@ const ru: Dictionary = {
     favoriteAdded: "Добавлено в избранное",
     favoriteRemoved: "Удалено из избранного",
     comingSoon: "Скоро",
+    share: "Поделиться",
+    shareTitle: "Поделиться страницей",
+    shareSubtitle: "Расскажите другим!",
+    shareCopied: "Скопировано!",
+    shareCopyLink: "Скопировать ссылку",
   },
   metadata: {
     siteTitle: "ToolPop - \u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 PDF-\u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b",

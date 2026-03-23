@@ -124,6 +124,11 @@ const id: Dictionary = {
     favoriteAdded: "Ditambahkan ke favorit",
     favoriteRemoved: "Dihapus dari favorit",
     comingSoon: "Segera hadir",
+    share: "Bagikan",
+    shareTitle: "Bagikan halaman ini",
+    shareSubtitle: "Beritahu teman-teman!",
+    shareCopied: "Tersalin!",
+    shareCopyLink: "Salin tautan",
   },
   metadata: {
     siteTitle: "ToolPop - Alat PDF Gratis",

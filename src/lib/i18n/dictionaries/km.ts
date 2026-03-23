@@ -124,6 +124,11 @@ const km: Dictionary = {
     favoriteAdded: "បានបន្ថែមទៅសំណព្វ",
     favoriteRemoved: "បានដកចេញពីសំណព្វ",
     comingSoon: "Coming Soon",
+    share: "ចែករំលែក",
+    shareTitle: "ចែករំលែកទំព័រនេះ",
+    shareSubtitle: "ប្រាប់មិត្តភក្តិ!",
+    shareCopied: "បានចម្លង!",
+    shareCopyLink: "ចម្លងតំណ",
   },
   metadata: {
     siteTitle: "ToolPop - ឧបករណ៍ PDF ឥតគិតថ្លៃ",

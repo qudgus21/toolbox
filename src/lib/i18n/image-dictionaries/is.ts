@@ -7,6 +7,11 @@ const is_: ImageDictionary = {
     ...en.common,
     options: "Valkostir",
     changeFile: "Breyta skra",
+    share: "Deila",
+    shareTitle: "Deila þessari síðu",
+    shareSubtitle: "Segðu öðrum frá!",
+    shareCopied: "Afritað!",
+    shareCopyLink: "Afrita hlekk",
   },
   toolOptions: {
     resize: {

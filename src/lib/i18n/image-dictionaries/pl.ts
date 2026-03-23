@@ -7,6 +7,11 @@ const pl: ImageDictionary = {
     ...en.common,
     options: "Opcje",
     changeFile: "Zmień plik",
+    share: "Udostępnij",
+    shareTitle: "Udostępnij tę stronę",
+    shareSubtitle: "Podziel się ze znajomymi!",
+    shareCopied: "Skopiowano!",
+    shareCopyLink: "Kopiuj link",
   },
   toolOptions: {
     resize: {

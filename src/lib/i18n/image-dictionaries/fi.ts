@@ -299,6 +299,11 @@ const fi: ImageDictionary = {
     height: "Korkeus",
     options: "Asetukset",
     changeFile: "Vaihda tiedosto",
+    share: "Jaa",
+    shareTitle: "Jaa tämä sivu",
+    shareSubtitle: "Kerro muillekin!",
+    shareCopied: "Kopioitu!",
+    shareCopyLink: "Kopioi linkki",
   },
   toolOptions: {
     resize: {

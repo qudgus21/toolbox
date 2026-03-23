@@ -299,6 +299,11 @@ const mt: ImageDictionary = {
     height: "Għoli",
     options: "Għażliet",
     changeFile: "Ibdel il-fajl",
+    share: "Aqsam",
+    shareTitle: "Aqsam din il-paġna",
+    shareSubtitle: "Għid lil-ħbieb!",
+    shareCopied: "Ikkupjat!",
+    shareCopyLink: "Ikkopja l-link",
   },
   toolOptions: {
     resize: {

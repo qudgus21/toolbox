@@ -7,6 +7,11 @@ const cs: ImageDictionary = {
     ...en.common,
     options: "Možnosti",
     changeFile: "Změnit soubor",
+    share: "Sdílet",
+    shareTitle: "Sdílet tuto stránku",
+    shareSubtitle: "Řekněte o tom dál!",
+    shareCopied: "Zkopírováno!",
+    shareCopyLink: "Kopírovat odkaz",
   },
   toolOptions: {
     resize: {

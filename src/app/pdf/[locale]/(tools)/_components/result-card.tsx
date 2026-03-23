@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn, formatSize } from "@/lib/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@/lib/ui";
+import { ShareToolButton } from "@/lib/ui/components/share-button";
 import { sendEvent } from "@/lib/analytics";
 import type { ProcessingResult } from "@/lib/pdf/types";
 
@@ -15,6 +16,11 @@ interface ResultCardProps {
   downloadLabel?: string;
   resetLabel?: string;
   pagesLabel?: string;
+  shareLabel?: string;
+  shareTitle?: string;
+  shareSubtitle?: string;
+  shareCopyLabel?: string;
+  shareCopiedLabel?: string;
   className?: string;
   toolSlug: string;
 }
@@ -26,6 +32,11 @@ export function ResultCard({
   downloadLabel = "Download",
   resetLabel = "Start over",
   pagesLabel = "pages",
+  shareLabel = "Share",
+  shareTitle = "Share this page",
+  shareSubtitle = "Spread the word!",
+  shareCopyLabel = "Copy link",
+  shareCopiedLabel = "Copied!",
   className,
   toolSlug,
 }: ResultCardProps) {
@@ -45,10 +56,23 @@ export function ResultCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        "rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
+        "relative rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
         className,
       )}
     >
+      {/* Share — 우상단 */}
+      <div className="absolute right-4 top-4">
+        <ShareToolButton
+          label={shareLabel}
+          shareTitle={shareTitle}
+          shareSubtitle={shareSubtitle}
+          copyLabel={shareCopyLabel}
+          copiedLabel={shareCopiedLabel}
+          app="pdf"
+          toolSlug={toolSlug}
+        />
+      </div>
+
       <CheckCircle className="mx-auto h-12 w-12 text-success" />
 
       {/* 파일명 (편집 가능) */}

@@ -124,6 +124,11 @@ const el: Dictionary = {
     favoriteAdded: "Προστέθηκε στα αγαπημένα",
     favoriteRemoved: "Αφαιρέθηκε από τα αγαπημένα",
     comingSoon: "Coming Soon",
+    share: "Κοινοποίηση",
+    shareTitle: "Κοινοποιήστε αυτή τη σελίδα",
+    shareSubtitle: "Πείτε το και στους άλλους!",
+    shareCopied: "Αντιγράφηκε!",
+    shareCopyLink: "Αντιγραφή συνδέσμου",
   },
   metadata: {
     siteTitle: "ToolPop - Δωρεάν Εργαλεία PDF",

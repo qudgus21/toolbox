@@ -124,6 +124,11 @@ const he: Dictionary = {
     favoriteAdded: "נוסף למועדפים",
     favoriteRemoved: "הוסר מהמועדפים",
     comingSoon: "Coming Soon",
+    share: "שיתוף",
+    shareTitle: "שתפו את הדף",
+    shareSubtitle: "ספרו לחברים!",
+    shareCopied: "הועתק!",
+    shareCopyLink: "העתק קישור",
   },
   metadata: {
     siteTitle: "ToolPop - כלי PDF חינמיים",

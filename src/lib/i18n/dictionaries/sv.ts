@@ -124,6 +124,11 @@ const sv: Dictionary = {
     favoriteAdded: "Tillagd i favoriter",
     favoriteRemoved: "Borttagen från favoriter",
     comingSoon: "Coming Soon",
+    share: "Dela",
+    shareTitle: "Dela denna sida",
+    shareSubtitle: "Sprid ordet!",
+    shareCopied: "Kopierat!",
+    shareCopyLink: "Kopiera länk",
   },
   metadata: {
     siteTitle: "ToolPop - Gratis PDF-verktyg",

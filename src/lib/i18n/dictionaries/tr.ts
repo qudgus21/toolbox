@@ -124,6 +124,11 @@ const tr: Dictionary = {
     favoriteAdded: "Favorilere eklendi",
     favoriteRemoved: "Favorilerden kaldırıldı",
     comingSoon: "Yakında",
+    share: "Paylaş",
+    shareTitle: "Bu sayfayı paylaş",
+    shareSubtitle: "Herkese duyurun!",
+    shareCopied: "Kopyalandı!",
+    shareCopyLink: "Bağlantıyı kopyala",
   },
   metadata: {
     siteTitle: "ToolPop - Ücretsiz PDF Araçları",

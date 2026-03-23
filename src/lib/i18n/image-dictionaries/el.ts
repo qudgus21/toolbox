@@ -7,6 +7,11 @@ const el: ImageDictionary = {
     ...en.common,
     options: "Επιλογές",
     changeFile: "Αλλαγή αρχείου",
+    share: "Κοινοποίηση",
+    shareTitle: "Κοινοποιήστε αυτή τη σελίδα",
+    shareSubtitle: "Πείτε το και στους άλλους!",
+    shareCopied: "Αντιγράφηκε!",
+    shareCopyLink: "Αντιγραφή συνδέσμου",
   },
   toolOptions: {
     resize: {

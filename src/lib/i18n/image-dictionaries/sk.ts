@@ -299,6 +299,11 @@ const sk: ImageDictionary = {
     height: "Výška",
     options: "Nastavenia",
     changeFile: "Zmeniť súbor",
+    share: "Zdieľať",
+    shareTitle: "Zdieľať túto stránku",
+    shareSubtitle: "Povedzte o tom ďalej!",
+    shareCopied: "Skopírované!",
+    shareCopyLink: "Kopírovať odkaz",
   },
   toolOptions: {
     resize: {

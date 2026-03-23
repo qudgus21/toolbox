@@ -7,6 +7,11 @@ const ro: ImageDictionary = {
     ...en.common,
     options: "Opțiuni",
     changeFile: "Schimbă fișierul",
+    share: "Distribuie",
+    shareTitle: "Distribuie această pagină",
+    shareSubtitle: "Dă de veste!",
+    shareCopied: "Copiat!",
+    shareCopyLink: "Copiază linkul",
   },
   toolOptions: {
     resize: {

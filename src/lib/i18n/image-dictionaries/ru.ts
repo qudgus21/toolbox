@@ -299,6 +299,11 @@ const ru: ImageDictionary = {
     height: "Высота",
     options: "Параметры",
     changeFile: "Сменить файл",
+    share: "Поделиться",
+    shareTitle: "Поделиться страницей",
+    shareSubtitle: "Расскажите другим!",
+    shareCopied: "Скопировано!",
+    shareCopyLink: "Скопировать ссылку",
   },
   toolOptions: {
     resize: {

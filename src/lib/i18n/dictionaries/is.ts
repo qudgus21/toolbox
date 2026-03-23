@@ -124,6 +124,11 @@ const is: Dictionary = {
     favoriteAdded: "Bætt í eftirlæti",
     favoriteRemoved: "Fjarlægt úr eftirlætum",
     comingSoon: "Coming Soon",
+    share: "Deila",
+    shareTitle: "Deila þessari síðu",
+    shareSubtitle: "Segðu öðrum frá!",
+    shareCopied: "Afritað!",
+    shareCopyLink: "Afrita hlekk",
   },
   metadata: {
     siteTitle: "ToolPop - Ókeypis PDF verkfæri",

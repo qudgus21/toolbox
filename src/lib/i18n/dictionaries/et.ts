@@ -124,6 +124,11 @@ const et: Dictionary = {
     favoriteAdded: "Lisatud lemmikutesse",
     favoriteRemoved: "Eemaldatud lemmikutest",
     comingSoon: "Coming Soon",
+    share: "Jaga",
+    shareTitle: "Jaga seda lehte",
+    shareSubtitle: "Räägi teistele!",
+    shareCopied: "Kopeeritud!",
+    shareCopyLink: "Kopeeri link",
   },
   metadata: {
     siteTitle: "ToolPop - Tasuta PDF-tööriistad",

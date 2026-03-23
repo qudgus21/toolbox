@@ -124,6 +124,11 @@ const uk: Dictionary = {
     favoriteAdded: "Додано до обраного",
     favoriteRemoved: "Видалено з обраного",
     comingSoon: "Coming Soon",
+    share: "Поділитися",
+    shareTitle: "Поділитися сторінкою",
+    shareSubtitle: "Розкажіть іншим!",
+    shareCopied: "Скопійовано!",
+    shareCopyLink: "Скопіювати посилання",
   },
   metadata: {
     siteTitle: "ToolPop - Безкоштовні PDF Інструменти",

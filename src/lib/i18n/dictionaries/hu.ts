@@ -124,6 +124,11 @@ const hu: Dictionary = {
     favoriteAdded: "Hozzáadva a kedvencekhez",
     favoriteRemoved: "Eltávolítva a kedvencekből",
     comingSoon: "Coming Soon",
+    share: "Megosztás",
+    shareTitle: "Oldal megosztása",
+    shareSubtitle: "Mondd el másoknak is!",
+    shareCopied: "Másolva!",
+    shareCopyLink: "Link másolása",
   },
   metadata: {
     siteTitle: "ToolPop - Ingyenes PDF eszközök",

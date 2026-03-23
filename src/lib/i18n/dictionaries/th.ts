@@ -124,6 +124,11 @@ const th: Dictionary = {
     favoriteAdded: "เพิ่มในรายการโปรดแล้ว",
     favoriteRemoved: "ลบออกจากรายการโปรดแล้ว",
     comingSoon: "เร็วๆ นี้",
+    share: "แชร์",
+    shareTitle: "แชร์หน้านี้",
+    shareSubtitle: "บอกต่อให้เพื่อนรู้!",
+    shareCopied: "คัดลอกแล้ว!",
+    shareCopyLink: "คัดลอกลิงก์",
   },
   metadata: {
     siteTitle: "ToolPop - เครื่องมือ PDF ฟรี",

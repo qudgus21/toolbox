@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn, formatSize } from "@/lib/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@/lib/ui";
+import { ShareToolButton } from "@/lib/ui/components/share-button";
 import { sendEvent } from "@/lib/analytics";
 import type { ImageProcessingResult } from "@/lib/image/types";
 import type { ImageDictionary } from "@/lib/i18n/image-config";
@@ -42,10 +43,23 @@ export function ResultCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       className={cn(
-        "rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
+        "relative rounded-2xl border border-success/30 bg-success-muted p-6 text-center",
         className,
       )}
     >
+      {/* Share — 우상단 */}
+      <div className="absolute right-4 top-4">
+        <ShareToolButton
+          label={labels.share}
+          shareTitle={labels.shareTitle}
+          shareSubtitle={labels.shareSubtitle}
+          copyLabel={labels.shareCopyLink}
+          copiedLabel={labels.shareCopied}
+          app="image"
+          toolSlug={toolSlug}
+        />
+      </div>
+
       <CheckCircle className="mx-auto h-12 w-12 text-success" />
 
       {/* Preview */}

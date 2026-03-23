@@ -124,6 +124,11 @@ const hr: Dictionary = {
     favoriteAdded: "Dodano u favorite",
     favoriteRemoved: "Uklonjeno iz favorita",
     comingSoon: "Coming Soon",
+    share: "Podijeli",
+    shareTitle: "Podijeli ovu stranicu",
+    shareSubtitle: "Reci i drugima!",
+    shareCopied: "Kopirano!",
+    shareCopyLink: "Kopiraj poveznicu",
   },
   metadata: {
     siteTitle: "ToolPop - Besplatni PDF alati",

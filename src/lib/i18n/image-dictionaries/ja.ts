@@ -298,6 +298,11 @@ const ja: ImageDictionary = {
     height: "高さ",
     options: "設定",
     changeFile: "ファイルを変更",
+    share: "共有",
+    shareTitle: "このページを共有",
+    shareSubtitle: "みんなに教えよう!",
+    shareCopied: "コピーしました!",
+    shareCopyLink: "リンクをコピー",
   },
   toolOptions: {
     resize: {

@@ -124,6 +124,11 @@ const fi: Dictionary = {
     favoriteAdded: "Lisätty suosikkeihin",
     favoriteRemoved: "Poistettu suosikeista",
     comingSoon: "Coming Soon",
+    share: "Jaa",
+    shareTitle: "Jaa tämä sivu",
+    shareSubtitle: "Kerro muillekin!",
+    shareCopied: "Kopioitu!",
+    shareCopyLink: "Kopioi linkki",
   },
   metadata: {
     siteTitle: "ToolPop - Ilmaiset PDF-työkalut",

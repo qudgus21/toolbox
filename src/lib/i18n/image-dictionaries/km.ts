@@ -299,6 +299,11 @@ const km: ImageDictionary = {
     height: "កម្ពស់",
     options: "ជម្រើស",
     changeFile: "ប្តូរឯកសារ",
+    share: "ចែករំលែក",
+    shareTitle: "ចែករំលែកទំព័រនេះ",
+    shareSubtitle: "ប្រាប់មិត្តភក្តិ!",
+    shareCopied: "បានចម្លង!",
+    shareCopyLink: "ចម្លងតំណ",
   },
   toolOptions: {
     resize: {

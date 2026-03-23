@@ -124,6 +124,11 @@ const ko: Dictionary = {
     favoriteAdded: "즐겨찾기에 추가했습니다",
     favoriteRemoved: "즐겨찾기에서 해제했습니다",
     comingSoon: "준비 중",
+    share: "공유하기",
+    shareTitle: "페이지 공유",
+    shareSubtitle: "친구에게 알려주세요!",
+    shareCopied: "복사됨!",
+    shareCopyLink: "링크 복사",
   },
   metadata: {
     siteTitle: "ToolPop PDF - 무료 PDF 도구",

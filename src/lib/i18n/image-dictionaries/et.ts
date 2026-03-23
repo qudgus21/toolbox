@@ -7,6 +7,11 @@ const et: ImageDictionary = {
     ...en.common,
     options: "Valikud",
     changeFile: "Vaheta fail",
+    share: "Jaga",
+    shareTitle: "Jaga seda lehte",
+    shareSubtitle: "Räägi teistele!",
+    shareCopied: "Kopeeritud!",
+    shareCopyLink: "Kopeeri link",
   },
   toolOptions: {
     resize: {

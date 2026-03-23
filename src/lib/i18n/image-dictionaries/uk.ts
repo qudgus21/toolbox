@@ -7,6 +7,11 @@ const uk: ImageDictionary = {
     ...en.common,
     options: "Параметри",
     changeFile: "Змінити файл",
+    share: "Поділитися",
+    shareTitle: "Поділитися сторінкою",
+    shareSubtitle: "Розкажіть іншим!",
+    shareCopied: "Скопійовано!",
+    shareCopyLink: "Скопіювати посилання",
   },
   toolOptions: {
     resize: {
