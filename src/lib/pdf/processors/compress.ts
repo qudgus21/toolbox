@@ -175,6 +175,7 @@ async function compressRasterizeMode(
     const jpegBytes = await canvasToJpegBytes(canvas, config.quality);
     canvas.width = 0;
     canvas.height = 0;
+    page.cleanup();
     const image = await doc.embedJpg(jpegBytes);
 
     // 원본 페이지 크기(pt) 유지

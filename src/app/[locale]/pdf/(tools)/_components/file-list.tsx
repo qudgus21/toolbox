@@ -100,8 +100,15 @@ async function decodeToObjectUrl(file: File): Promise<string> {
 
 function ImageThumbnail({ file, className }: { file: File; className?: string }) {
   const needsDecode = useMemo(() => needsLibraryDecode(file), [file]);
-  const nativeUrl = useMemo(() => (needsDecode ? null : URL.createObjectURL(file)), [file, needsDecode]);
+  const [nativeUrl, setNativeUrl] = useState<string | null>(null);
   const [decodedUrl, setDecodedUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (needsDecode) return;
+    const url = URL.createObjectURL(file);
+    setNativeUrl(url);
+    return () => URL.revokeObjectURL(url);
+  }, [file, needsDecode]);
 
   useEffect(() => {
     if (!needsDecode) return;
@@ -131,7 +138,6 @@ function ImageThumbnail({ file, className }: { file: File; className?: string })
       src={url}
       alt={file.name}
       className={cn("object-contain", className)}
-      onLoad={() => { if (nativeUrl) URL.revokeObjectURL(nativeUrl); }}
     />
   );
 }
