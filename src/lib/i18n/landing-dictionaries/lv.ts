@@ -1,0 +1,39 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — Bezmaksas tiešsaistes rīki",
+    description: "Rediģējiet, apvienojiet un konvertējiet PDF. Mainiet izmēru, saspiežiet un pārveidojiet attēlus. Viss bez maksas, tieši pārlūkā.",
+  },
+  hero: {
+    badge: "87+ bezmaksas tiešsaistes rīku",
+    title: "Visi nepieciešamie rīki vienuviet — ToolPop",
+    titleAccent: "ToolPop",
+    subtitle: "Strādājiet ar PDF un attēliem tieši pārlūkā. Bez instalēšanas, bez reģistrācijas.",
+    searchPlaceholder: "Kādu rīku meklējat?",
+  },
+  apps: {
+    pdf: { name: "PDF rīki", description: "Apvienošana, sadalīšana, konvertēšana, rediģēšana un saspiešana — viss, kas vajadzīgs darbam ar PDF.", cta: "Apskatīt PDF rīkus", toolCount: "39 rīki" },
+    image: { name: "Attēlu rīki", description: "Izmēra maiņa, apgriešana, konvertēšana, efekti, QR kodi — viss attēliem.", cta: "Apskatīt attēlu rīkus", toolCount: "48 rīki" },
+  },
+  popularTools: { sectionTitle: "Populāri rīki", sectionSubtitle: "Uzreiz pie visbiežāk izmantotajiem rīkiem", viewAll: "Skatīt visus" },
+  stats: { tools: "87+", toolsLabel: "Bezmaksas rīku", languages: "45", languagesLabel: "Valodu", users: "100%", usersLabel: "Pārlūkā", price: "0 €", priceLabel: "Vienmēr bez maksas" },
+  trust: {
+    sectionTitle: "Kāpēc ToolPop?",
+    sectionSubtitle: "Drošība un ērtības bez kompromisiem",
+    browserBased: "Apstrāde pārlūkā",
+    browserBasedDesc: "Jūsu faili nekad neatstāj jūsu ierīci. Viss darbojas pārlūkā — ātri un droši.",
+    free: "Pilnīgi bez maksas",
+    freeDesc: "Izmantojiet visus rīkus cik vien vēlaties, bez ierobežojumiem. Nekādu slēptu maksu.",
+    private: "Privātums pirmajā vietā",
+    privateDesc: "Faili paliek jūsu ierīcē. Nekas netiek augšupielādēts serverī — jūsu dati pieder tikai jums.",
+    noSignup: "Bez reģistrācijas",
+    noSignupDesc: "Bez konta, bez e-pasta. Vienkārši atveriet rīku un sāciet strādāt.",
+  },
+  cta: { title: "Gatavi sākt?", subtitle: "Bez instalēšanas, bez reģistrācijas, bez maksājumiem — tikai viens klikšķis.", button: "Apskatīt visus rīkus" },
+  common: { shareTitle: "Dalīties", shareSubtitle: "Pastāstiet draugiem par ToolPop!", shareCopyLink: "Kopēt saiti", shareCopied: "Nokopēts!" },
+  footer: { apps: "Rīki", company: "Uzņēmums", about: "Par mums", contact: "Kontakti", faq: "BUJ", blog: "Emuārs", legal: "Juridiskā informācija", privacy: "Privātuma politika", terms: "Lietošanas noteikumi", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Bezmaksas tiešsaistes rīki PDF, attēliem un citiem. Bez reģistrācijas.", madeWith: "Veidots ar mīlestību visiem" },
+  search: { noResults: "Nav rezultātu" },
+  nav: { pdf: "PDF", image: "Image" },
+};
+export default dict;

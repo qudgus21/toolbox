@@ -111,7 +111,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
               <div className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl border border-border bg-background shadow-xl overflow-hidden">
                 {searchResults.length === 0 ? (
                   <div className="px-4 py-6 text-center text-sm text-foreground-muted">
-                    No results found
+                    {dict.search.noResults}
                   </div>
                 ) : (
                   searchResults.map((tool) => {

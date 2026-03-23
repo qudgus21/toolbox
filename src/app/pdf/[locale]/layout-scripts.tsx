@@ -32,7 +32,7 @@ export function LayoutScripts({ locale, dir, jsonLd }: LayoutScriptsProps) {
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
-      const register = () => navigator.serviceWorker.register("/pdf/sw.js");
+      const register = () => navigator.serviceWorker.register("/pdf/sw.js", { scope: "/pdf/" });
       if ("requestIdleCallback" in window) {
         (window as Window).requestIdleCallback(register);
       } else {

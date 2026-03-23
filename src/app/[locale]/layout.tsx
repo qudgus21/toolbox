@@ -38,6 +38,9 @@ export async function generateMetadata({
         { url: "/favicon.svg", type: "image/svg+xml" },
       ],
     },
+    other: {
+      "theme-color": "#a855f7",
+    },
     alternates: {
       languages: {
         ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
@@ -82,7 +85,7 @@ export default async function LocaleLayout({
   });
 
   return (
-    <>
+    <div data-app="landing">
       <GoogleAnalytics />
       <LayoutScripts locale={locale} dir={dir} />
       <Header
@@ -127,6 +130,6 @@ export default async function LocaleLayout({
       <div className="flex min-h-screen flex-col">
         <div className="flex-1">{children}</div>
       </div>
-    </>
+    </div>
   );
 }

@@ -25,12 +25,13 @@ self.addEventListener("fetch", (event) => {
   // Never cache navigation requests (HTML pages) — prevents hydration mismatches
   if (event.request.mode === "navigate") return;
 
-  // Only cache same-origin static assets (not HTML)
-  const isStaticAsset =
+  // Only cache same-origin static assets under /pdf/ path
+  const isPdfAsset =
     url.origin === self.location.origin &&
+    url.pathname.startsWith("/pdf/") &&
     (url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff2?|json)$/) != null);
 
-  if (!isStaticAsset) return;
+  if (!isPdfAsset) return;
 
   event.respondWith(
     fetch(event.request)

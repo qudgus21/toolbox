@@ -22,7 +22,7 @@ export async function generateMetadata({
   const dict = await getLandingDictionary(locale as Locale);
 
   return {
-    title: dict.meta.title,
+    title: { absolute: dict.meta.title },
     description: dict.meta.description,
     alternates: generateAlternates("", locales, locale, "en", ""),
     openGraph: {

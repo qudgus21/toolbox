@@ -1,5 +1,5 @@
 /* Landing — Purple accent override */
-:root {
+[data-app="landing"] {
   --color-accent: var(--primitive-purple-600);
   --color-accent-foreground: var(--primitive-white);
   --color-accent-hover: var(--primitive-purple-700);
@@ -7,7 +7,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme="light"]) [data-app="landing"] {
     --color-accent: #c084fc;
     --color-accent-foreground: var(--primitive-zinc-950);
     --color-accent-hover: #d8b4fe;
@@ -15,7 +15,7 @@
   }
 }
 
-:root[data-theme="dark"] {
+[data-theme="dark"] [data-app="landing"] {
   --color-accent: #c084fc;
   --color-accent-foreground: var(--primitive-zinc-950);
   --color-accent-hover: #d8b4fe;

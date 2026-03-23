@@ -43,6 +43,7 @@ export async function generateMetadata({
     other: {
       "mobile-web-app-capable": "yes",
       "apple-mobile-web-app-status-bar-style": "default",
+      "theme-color": "#6366f1",
     },
     alternates: {
       languages: {
@@ -88,7 +89,7 @@ export default async function LocaleLayout({
   });
 
   return (
-    <>
+    <div data-app="image">
       <LayoutScripts
         locale={locale}
         dir={dir}
@@ -100,7 +101,6 @@ export default async function LocaleLayout({
           logo: "https://toolpop.org/image/favicon.svg",
         }}
       />
-      <meta name="theme-color" content="#6366f1" />
       <GoogleAnalytics />
       <GoogleAdSense />
       <Header
@@ -137,6 +137,6 @@ export default async function LocaleLayout({
       <div className="flex min-h-screen flex-col">
         <div className="flex-1">{children}</div>
       </div>
-    </>
+    </div>
   );
 }
