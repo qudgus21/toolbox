@@ -2,13 +2,10 @@
 
 import { useRef, useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
 import { ArrowRight, Monitor, Gift, ShieldCheck, UserX, Search, Sparkles } from "lucide-react";
 import { Container } from "@/lib/ui";
 import { apps } from "@/lib/apps";
 import { appIconMap } from "@/lib/app-icons";
-import { toolIconMap as pdfToolIcons } from "@/lib/pdf/tool-icons";
-import { toolIconMap as imageToolIcons } from "@/lib/image/tool-icons";
 import { useTrack, landingEvents } from "@/lib/analytics";
 import type { LandingDictionary } from "@/lib/i18n/landing-config";
 
@@ -28,6 +25,7 @@ interface LandingContentProps {
   allTools: PopularToolInfo[];
 }
 
+/* FIX-W1: CSS-based intersection animation instead of framer-motion useInView */
 function AnimatedSection({
   children,
   className,
@@ -36,18 +34,26 @@ function AnimatedSection({
   className?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect(); } },
+      { rootMargin: "-80px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <motion.section
+    <section
       ref={ref}
-      className={className}
-      initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`${className ?? ""} transition-all duration-600 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
     >
       {children}
-    </motion.section>
+    </section>
   );
 }
 
@@ -55,6 +61,16 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
   const track = useTrack("landing", landingEvents);
   const [search, setSearch] = useState("");
   const searchTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  /* FIX-C3: Lazy-load icon maps — only needed for search results (user-triggered) */
+  type IconMap = Record<string, React.ComponentType<{ className?: string }>>;
+  const [iconMaps, setIconMaps] = useState<{ pdf: IconMap; image: IconMap } | null>(null);
+  useEffect(() => {
+    Promise.all([
+      import("@/lib/pdf/tool-icons").then((m) => m.toolIconMap),
+      import("@/lib/image/tool-icons").then((m) => m.toolIconMap),
+    ]).then(([pdf, image]) => setIconMaps({ pdf, image }));
+  }, []);
 
   // 검색어 디바운스 추적
   useEffect(() => {
@@ -100,8 +116,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                 ) : (
                   searchResults.map((tool) => {
                     const app = apps.find((a) => a.slug === tool.appSlug);
-                    const iconMap = tool.appSlug === "pdf" ? pdfToolIcons : imageToolIcons;
-                    const ToolIcon = iconMap[tool.slug];
+                    const ToolIcon = iconMaps?.[tool.appSlug as "pdf" | "image"]?.[tool.slug];
                     return (
                       <Link
                         key={`${tool.appSlug}-${tool.slug}`}
@@ -140,14 +155,8 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
               { value: dict.stats.languages, label: dict.stats.languagesLabel, gradient: "from-blue-500 to-cyan-500" },
               { value: dict.stats.users, label: dict.stats.usersLabel, gradient: "from-green-500 to-emerald-500" },
               { value: dict.stats.price, label: dict.stats.priceLabel, gradient: "from-amber-500 to-orange-500" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.1 * i }}
-                className="relative group"
-              >
+            ].map((stat) => (
+              <div key={stat.label} className="relative group">
                 <div className="rounded-2xl border border-border/60 bg-background-elevated p-5 text-center transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
                   <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent sm:text-4xl`}>
                     {stat.value}
@@ -156,7 +165,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                     {stat.label}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </Container>
@@ -166,15 +175,10 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
       <AnimatedSection className="py-8 sm:py-12">
         <Container size="lg">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {apps.map((app, i) => {
+            {apps.map((app) => {
               const appDict = dict.apps[app.slug];
               return (
-                <motion.div
-                  key={app.slug}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
-                >
+                <div key={app.slug}>
                   <Link
                     href={app.href}
                     onClick={() => track.appCardClick({ app_slug: app.slug })}
@@ -211,7 +215,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                       </span>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -231,17 +235,11 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {popularTools.map((tool, i) => {
+              {popularTools.map((tool) => {
                 const app = apps.find((a) => a.slug === tool.appSlug);
-                const iconMap = tool.appSlug === "pdf" ? pdfToolIcons : imageToolIcons;
-                const ToolIcon = iconMap[tool.slug];
+                const ToolIcon = iconMaps?.[tool.appSlug as "pdf" | "image"]?.[tool.slug];
                 return (
-                  <motion.div
-                    key={`${tool.appSlug}-${tool.slug}`}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.04 * i }}
-                  >
+                  <div key={`${tool.appSlug}-${tool.slug}`}>
                     <Link
                       href={tool.href}
                       onClick={() => track.popularToolClick({ tool_slug: tool.slug, app_slug: tool.appSlug })}
@@ -264,7 +262,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                         {tool.description}
                       </p>
                     </Link>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -297,13 +295,9 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                 { icon: Gift, title: dict.trust.free, desc: dict.trust.freeDesc, color: "from-amber-500 to-orange-500" },
                 { icon: ShieldCheck, title: dict.trust.private, desc: dict.trust.privateDesc, color: "from-green-500 to-emerald-500" },
                 { icon: UserX, title: dict.trust.noSignup, desc: dict.trust.noSignupDesc, color: "from-blue-500 to-cyan-500" },
-              ] as const).map((item, i) => (
-                <motion.div
+              ] as const).map((item) => (
+                <div
                   key={item.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="flex flex-col items-center text-center gap-3 p-4"
                 >
                   <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} shadow-md`}>
@@ -311,7 +305,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                   </div>
                   <p className="text-sm font-bold text-foreground">{item.title}</p>
                   <p className="text-xs text-foreground-muted max-w-[240px] leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

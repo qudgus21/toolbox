@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useEffect, useRef, Suspense, lazy } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, LayoutGrid, List, Shield, Trash2, Gift, Cloud, Star } from "lucide-react";
+/* FIX-C2/W2: motion wrappers removed from search/tabs/grid/trust for LCP. AnimatePresence kept for toast/hints only. */
 import Link from "next/link";
 import { Container, ToolCard } from "@/lib/ui";
 import { tools, categories, categoryColors } from "@/lib/pdf/tools";
@@ -69,11 +70,6 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const [disableFavTransition, setDisableFavTransition] = useState(false);
   const [favHintSlug, setFavHintSlug] = useState<string | null>(null);
   const didDragRef = useRef(false);
-  const isInitialMount = useRef(true);
-
-  useEffect(() => {
-    isInitialMount.current = false;
-  }, []);
 
   const handleFavHintEnter = useCallback((slug: string) => {
     if (typeof window === "undefined") return;
@@ -143,30 +139,8 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const isSearching = search.trim().length > 0;
   const showFavSection = favSlugs !== null && !isSearching && activeTab === "all" && favTools.length > 0;
 
-  const equalizeCards = useCallback((node: HTMLDivElement | null) => {
-    if (!node) return;
-    const sync = () => {
-      if (viewMode !== "grid") return;
-      const cards = node.querySelectorAll<HTMLElement>("[data-card]");
-      cards.forEach((c) => (c.style.minHeight = ""));
-      let max = 0;
-      cards.forEach((c) => { max = Math.max(max, c.offsetHeight); });
-      if (max > 0) cards.forEach((c) => (c.style.minHeight = `${max}px`));
-    };
-    requestAnimationFrame(sync);
-    const ro = new ResizeObserver(() => requestAnimationFrame(sync));
-    ro.observe(node);
-    return () => ro.disconnect();
-  }, [viewMode]);
-
   const gridRef = useRef<HTMLDivElement>(null);
   const favGridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const cleanup1 = equalizeCards(gridRef.current);
-    const cleanup2 = equalizeCards(favGridRef.current);
-    return () => { cleanup1?.(); cleanup2?.(); };
-  }, [equalizeCards, filteredTools, favSlugs]);
 
   const renderToolCard = (tool: typeof tools[number], ctx: "grid" | "fav" = "grid") => {
     const toolDict = dict.tools[tool.slug];
@@ -281,12 +255,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
     <main className="pb-8">
       <Container size="full" className="max-w-screen-2xl">
         {/* Search Bar */}
-        <motion.div
-          className="max-w-md mx-auto mb-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-        >
+        <div className="max-w-md mx-auto mb-5">
           <div className="relative">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-foreground-subtle" />
             <input
@@ -297,15 +266,10 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               className="w-full rounded-full border border-border bg-background-elevated pl-11 pr-4 py-2.5 text-sm text-foreground placeholder:text-foreground-subtle focus:border-border-focus focus:outline-none focus:ring-1 focus:ring-border-focus/30 transition-colors"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Category Tabs + View Toggle */}
-        <motion.div
-          className="flex flex-wrap items-center justify-center gap-2.5 mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 0.15 }}
-        >
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
           <button
             onClick={() => { setActiveTab("all"); setSearch(""); track.categoryTabClick({ category: "all" }); }}
             className={`cursor-pointer rounded-full border px-4 py-2 text-base font-bold transition-colors ${
@@ -347,7 +311,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               <List className="h-4 w-4" />
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Favorites Section */}
         {showFavSection && (
@@ -404,27 +368,16 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               {dict.home.noResults}
             </p>
           ) : (
-            filteredTools.map((tool, i) => (
-              <motion.div
-                key={tool.slug}
-                className="h-full"
-                initial={isInitialMount.current ? { opacity: 0, y: 12 } : false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={isInitialMount.current ? { duration: 0.25, delay: i * 0.03 } : { duration: 0 }}
-              >
+            filteredTools.map((tool) => (
+              <div key={tool.slug} className="h-full">
                 {renderToolCard(tool)}
-              </motion.div>
+              </div>
             ))
           )}
         </div>
 
         {/* Trust Section */}
-        <motion.section
-          className="mt-16 mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-        >
+        <section className="mt-16 mb-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Shield, title: dict.trust.encryption, desc: dict.trust.encryptionDesc },
@@ -441,7 +394,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
               </div>
             ))}
           </div>
-        </motion.section>
+        </section>
       </Container>
 
       {/* Toast */}
