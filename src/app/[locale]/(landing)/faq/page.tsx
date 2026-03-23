@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
 import { FaqAccordion } from "./faq-accordion";
@@ -26,7 +27,8 @@ export async function generateMetadata({
         "x-default": "/en/faq",
       },
     },
-    openGraph: { title, description: dict.faq.intro, url: `/${locale}/faq`, type: "website" },
+    openGraph: { title, description: dict.faq.intro, url: `/${locale}/faq`, type: "website", locale },
+    twitter: { card: "summary_large_image", title, description: dict.faq.intro },
   };
 }
 
@@ -39,6 +41,11 @@ export default async function FaqPage({
   if (!locales.includes(locale as Locale)) notFound();
 
   const dict = await getDictionary(locale as Locale);
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "ToolPop", url: `https://toolpop.org/${locale}` },
+    { name: dict.faq.title, url: `https://toolpop.org/${locale}/faq` },
+  ]);
 
   return (
     <>
@@ -58,6 +65,10 @@ export default async function FaqPage({
             })),
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <main className="py-12">
         <Container size="md">

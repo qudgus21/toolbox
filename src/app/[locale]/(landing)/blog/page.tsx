@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
-import { generateAlternates } from "@/lib/seo";
+import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/blog/articles";
@@ -35,7 +35,9 @@ export async function generateMetadata({
       description: dict.blog.description,
       url: `/${locale}/blog`,
       type: "website",
+      locale,
     },
+    twitter: { card: "summary_large_image", title, description: dict.blog.description },
   };
 }
 
@@ -71,8 +73,18 @@ export default async function BlogPage({
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     );
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "ToolPop", url: `https://toolpop.org/${locale}` },
+    { name: dict.blog.title, url: `https://toolpop.org/${locale}/blog` },
+  ]);
+
   return (
-    <main className="py-12">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <main className="py-12">
       <Container size="lg">
         <h1 className="text-3xl font-bold text-foreground mb-2">
           {dict.blog.title}
@@ -115,5 +127,6 @@ export default async function BlogPage({
         </div>
       </Container>
     </main>
+    </>
   );
 }
