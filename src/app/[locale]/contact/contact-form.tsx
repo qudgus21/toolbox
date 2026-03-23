@@ -66,7 +66,7 @@ export function ContactForm({ labels }: ContactFormProps) {
         name="access_key"
         value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? ""}
       />
-      <input type="hidden" name="from_name" value="ToolPop PDF" />
+      <input type="hidden" name="from_name" value="ToolPop" />
       <input type="checkbox" name="botcheck" className="hidden" />
 
       <div>

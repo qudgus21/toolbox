@@ -126,9 +126,9 @@ const vi: Dictionary = {
     comingSoon: "Sắp ra mắt",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Công cụ PDF miễn phí",
+    siteTitle: "ToolPop - Công cụ PDF miễn phí",
     siteDescription: "Gộp, tách, nén và chuyển đổi tệp PDF trực tuyến miễn phí.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Chúng tôi sử dụng cookie để cải thiện trải nghiệm của bạn.",
@@ -138,15 +138,15 @@ const vi: Dictionary = {
   privacy: {
     title: "Chính sách bảo mật",
     lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
-    intro: "Tại ToolPop PDF, chúng tôi coi trọng quyền riêng tư của bạn. Chính sách này giải thích những thông tin chúng tôi thu thập khi bạn sử dụng dịch vụ và cách chúng tôi xử lý chúng.",
+    intro: "Tại ToolPop, chúng tôi coi trọng quyền riêng tư của bạn. Chính sách này giải thích những thông tin chúng tôi thu thập khi bạn sử dụng dịch vụ và cách chúng tôi xử lý chúng.",
     sections: [
       {
         heading: "1. Thông tin chúng tôi thu thập",
-        content: "ToolPop PDF không yêu cầu đăng ký tài khoản. Chúng tôi không thu thập thông tin cá nhân. Tuy nhiên, để cải thiện dịch vụ, chúng tôi có thể tự động thu thập một số dữ liệu ẩn danh:\n\n• Loại và phiên bản trình duyệt\n• Hệ điều hành\n• Các trang đã truy cập và thời gian sử dụng\n• Cookie và các công nghệ tương tự để phân tích hành vi sử dụng",
+        content: "ToolPop không yêu cầu đăng ký tài khoản. Chúng tôi không thu thập thông tin cá nhân. Tuy nhiên, để cải thiện dịch vụ, chúng tôi có thể tự động thu thập một số dữ liệu ẩn danh:\n\n• Loại và phiên bản trình duyệt\n• Hệ điều hành\n• Các trang đã truy cập và thời gian sử dụng\n• Cookie và các công nghệ tương tự để phân tích hành vi sử dụng",
       },
       {
         heading: "2. Xử lý tệp",
-        content: "Tệp bạn tải lên được xử lý trên máy chủ của chúng tôi và tự động xóa trong vòng 2 giờ. Chúng tôi không đọc, lưu trữ hay chia sẻ nội dung tệp của bạn với bất kỳ ai.",
+        content: "Mọi quá trình xử lý tệp trên ToolPop đều diễn ra trực tiếp trong trình duyệt của bạn. Tệp của bạn không bao giờ được tải lên bất kỳ máy chủ nào và không bao giờ rời khỏi thiết bị của bạn. Chúng tôi sử dụng WebAssembly và các công nghệ web hiện đại để xử lý cục bộ và an toàn.",
       },
       {
         heading: "3. Cookie",
@@ -166,18 +166,18 @@ const vi: Dictionary = {
       },
       {
         heading: "7. Liên hệ",
-        content: "Nếu có câu hỏi về quyền riêng tư, vui lòng liên hệ support@toolbox-pdf.com.",
+        content: "Nếu có câu hỏi về quyền riêng tư, vui lòng liên hệ support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Điều khoản dịch vụ",
     lastUpdated: "Cập nhật lần cuối: 1 tháng 3, 2026",
-    intro: "Cảm ơn bạn đã sử dụng ToolPop PDF. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý với các điều khoản sau.",
+    intro: "Cảm ơn bạn đã sử dụng ToolPop. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý với các điều khoản sau.",
     sections: [
       {
         heading: "1. Về dịch vụ",
-        content: "ToolPop PDF là dịch vụ trực tuyến miễn phí cho phép bạn gộp, tách, chuyển đổi, chỉnh sửa và nén tệp PDF ngay trên trình duyệt.",
+        content: "ToolPop là bộ công cụ trực tuyến miễn phí cho phép bạn xử lý PDF, hình ảnh và các tệp khác trực tiếp trong trình duyệt. Mọi quá trình xử lý diễn ra trên thiết bị của bạn — tệp không bao giờ được tải lên bất kỳ máy chủ nào.",
       },
       {
         heading: "2. Sử dụng hợp lý",
@@ -185,7 +185,7 @@ const vi: Dictionary = {
       },
       {
         heading: "3. Xử lý tệp",
-        content: "Tệp tải lên chỉ được sử dụng để thực hiện thao tác bạn yêu cầu. Chúng sẽ tự động bị xóa khỏi máy chủ trong vòng 2 giờ. Chúng tôi không phân tích hay lưu giữ tệp của bạn.",
+        content: "Mọi quá trình xử lý tệp trên ToolPop đều diễn ra trực tiếp trong trình duyệt của bạn. Tệp của bạn không bao giờ được gửi đến bất kỳ máy chủ nào và không bao giờ rời khỏi thiết bị của bạn. Kết quả đã xử lý có sẵn để tải xuống trực tiếp từ trình duyệt.",
       },
       {
         heading: "4. Miễn trừ trách nhiệm",
@@ -205,7 +205,7 @@ const vi: Dictionary = {
       },
       {
         heading: "8. Liên hệ",
-        content: "Nếu có câu hỏi về điều khoản này, vui lòng liên hệ support@toolbox-pdf.com.",
+        content: "Nếu có câu hỏi về điều khoản này, vui lòng liên hệ support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1057,13 @@ const vi: Dictionary = {
     backLabel: "Mặt sau",
   },
   about: {
-    title: "Giới thiệu ToolPop PDF",
-    intro: "ToolPop PDF là bộ công cụ PDF miễn phí hoạt động hoàn toàn trên trình duyệt. Chỉnh sửa, chuyển đổi và sắp xếp file PDF mà không cần tải lên bất kỳ máy chủ nào. File của bạn không bao giờ rời khỏi thiết bị.",
+    title: "Giới thiệu ToolPop",
+    intro: "ToolPop là bộ công cụ PDF miễn phí hoạt động hoàn toàn trên trình duyệt. Chỉnh sửa, chuyển đổi và sắp xếp file PDF mà không cần tải lên bất kỳ máy chủ nào. File của bạn không bao giờ rời khỏi thiết bị.",
     sections: [
-      { heading: "Sứ mệnh của chúng tôi", content: "Chúng tôi tin rằng mọi người đều xứng đáng được sử dụng các công cụ PDF chuyên nghiệp — không cần đăng ký, không cần tài khoản và không lo ngại về quyền riêng tư. ToolPop PDF được xây dựng để mang khả năng xử lý tài liệu chuyên nghiệp đến với bất kỳ ai có trình duyệt web." },
-      { heading: "Cách hoạt động", content: "Khác với các dịch vụ PDF truyền thống yêu cầu tải file lên máy chủ từ xa, ToolPop PDF xử lý mọi thứ trực tiếp trên trình duyệt bằng công nghệ web hiện đại như WebAssembly và thư viện PDF.js. Tài liệu nhạy cảm luôn nằm trên thiết bị của bạn — chúng tôi không bao giờ xem, lưu trữ hay truyền file của bạn." },
-      { heading: "Các tính năng", content: "ToolPop PDF cung cấp hơn 40 công cụ thuộc năm danh mục:\n\n• Sắp xếp — Ghép, tách, sắp xếp lại, trích xuất và xóa trang\n• Chuyển đổi — Chuyển đổi giữa PDF, JPG, PNG, văn bản và nhiều định dạng khác\n• Chỉnh sửa — Thêm chữ, hình ảnh, chữ ký, watermark, số trang và ghi chú\n• Tối ưu — Nén file và tối ưu hóa cho web\n• Bảo mật — Đặt mật khẩu, che thông tin nhạy cảm và làm phẳng tài liệu\n\nTất cả công cụ hoàn toàn miễn phí, không giới hạn kích thước file hay số lần sử dụng mỗi ngày." },
-      { heading: "Công nghệ", content: "ToolPop PDF được xây dựng bằng Next.js, React và các tiêu chuẩn web hiện đại. Chúng tôi sử dụng các thư viện như pdf-lib để xử lý PDF và PDF.js để hiển thị — tất cả chạy phía client trên trình duyệt. Trang web hỗ trợ 45 ngôn ngữ, chế độ tối và hoạt động trên mọi thiết bị có trình duyệt hiện đại." },
+      { heading: "Sứ mệnh của chúng tôi", content: "Chúng tôi tin rằng mọi người đều xứng đáng được sử dụng các công cụ PDF chuyên nghiệp — không cần đăng ký, không cần tài khoản và không lo ngại về quyền riêng tư. ToolPop được xây dựng để mang khả năng xử lý tài liệu chuyên nghiệp đến với bất kỳ ai có trình duyệt web." },
+      { heading: "Cách hoạt động", content: "Khác với các dịch vụ PDF truyền thống yêu cầu tải file lên máy chủ từ xa, ToolPop xử lý mọi thứ trực tiếp trên trình duyệt bằng công nghệ web hiện đại như WebAssembly và thư viện PDF.js. Tài liệu nhạy cảm luôn nằm trên thiết bị của bạn — chúng tôi không bao giờ xem, lưu trữ hay truyền file của bạn." },
+      { heading: "Các tính năng", content: "ToolPop cung cấp hơn 40 công cụ thuộc năm danh mục:\n\n• Sắp xếp — Ghép, tách, sắp xếp lại, trích xuất và xóa trang\n• Chuyển đổi — Chuyển đổi giữa PDF, JPG, PNG, văn bản và nhiều định dạng khác\n• Chỉnh sửa — Thêm chữ, hình ảnh, chữ ký, watermark, số trang và ghi chú\n• Tối ưu — Nén file và tối ưu hóa cho web\n• Bảo mật — Đặt mật khẩu, che thông tin nhạy cảm và làm phẳng tài liệu\n\nTất cả công cụ hoàn toàn miễn phí, không giới hạn kích thước file hay số lần sử dụng mỗi ngày." },
+      { heading: "Công nghệ", content: "ToolPop được xây dựng bằng Next.js, React và các tiêu chuẩn web hiện đại. Chúng tôi sử dụng các thư viện như pdf-lib để xử lý PDF và PDF.js để hiển thị — tất cả chạy phía client trên trình duyệt. Trang web hỗ trợ 45 ngôn ngữ, chế độ tối và hoạt động trên mọi thiết bị có trình duyệt hiện đại." },
       { heading: "Liên hệ", content: "Có câu hỏi, góp ý hoặc yêu cầu tính năng mới? Chúng tôi rất muốn lắng nghe bạn. Truy cập trang Liên hệ hoặc gửi email đến." },
     ],
   },
@@ -1091,22 +1091,22 @@ const vi: Dictionary = {
   },
   faq: {
     title: "Câu hỏi thường gặp",
-    intro: "Tìm câu trả lời cho các câu hỏi phổ biến nhất về ToolPop PDF. Nếu không thấy câu hỏi của bạn, hãy liên hệ với chúng tôi.",
+    intro: "Tìm câu trả lời cho các câu hỏi phổ biến nhất về ToolPop. Nếu không thấy câu hỏi của bạn, hãy liên hệ với chúng tôi.",
     items: [
-      { question: "ToolPop PDF có thực sự miễn phí không?", answer: "Hoàn toàn miễn phí. Tất cả công cụ đều không giới hạn, không cần đăng ký và không có phí ẩn. Chúng tôi duy trì dịch vụ thông qua quảng cáo không gây phiền." },
+      { question: "ToolPop có thực sự miễn phí không?", answer: "Hoàn toàn miễn phí. Tất cả công cụ đều không giới hạn, không cần đăng ký và không có phí ẩn. Chúng tôi duy trì dịch vụ thông qua quảng cáo không gây phiền." },
       { question: "File của tôi có an toàn và riêng tư không?", answer: "Tuyệt đối an toàn. File được xử lý hoàn toàn trên trình duyệt — không bao giờ rời khỏi thiết bị hay được tải lên bất kỳ máy chủ nào. Chúng tôi sử dụng API trình duyệt hiện đại để xử lý mọi thao tác PDF cục bộ, đảm bảo tài liệu nhạy cảm luôn được bảo mật." },
-      { question: "Tôi có cần tạo tài khoản không?", answer: "Không cần. ToolPop PDF hoạt động mà không cần đăng ký hay đăng nhập. Chỉ cần mở công cụ, kéo thả file và nhận kết quả ngay lập tức." },
+      { question: "Tôi có cần tạo tài khoản không?", answer: "Không cần. ToolPop hoạt động mà không cần đăng ký hay đăng nhập. Chỉ cần mở công cụ, kéo thả file và nhận kết quả ngay lập tức." },
       { question: "Kích thước file tối đa có thể xử lý là bao nhiêu?", answer: "Vì xử lý diễn ra trên trình duyệt, giới hạn phụ thuộc vào bộ nhớ khả dụng của thiết bị. Hầu hết các thiết bị hiện đại có thể xử lý file đến 100–200 MB mà không gặp vấn đề. Với file rất lớn, nên sử dụng trình duyệt trên máy tính để bàn hoặc laptop." },
-      { question: "Hỗ trợ những trình duyệt nào?", answer: "ToolPop PDF hoạt động trên tất cả trình duyệt hiện đại bao gồm Chrome, Firefox, Safari, Edge và Opera. Nên sử dụng phiên bản mới nhất để có trải nghiệm tốt nhất." },
-      { question: "Có dùng được trên điện thoại hoặc máy tính bảng không?", answer: "Có! ToolPop PDF hoàn toàn tương thích di động. Bạn có thể ghép, tách, chuyển đổi và chỉnh sửa PDF ngay trên trình duyệt điện thoại hoặc máy tính bảng." },
+      { question: "Hỗ trợ những trình duyệt nào?", answer: "ToolPop hoạt động trên tất cả trình duyệt hiện đại bao gồm Chrome, Firefox, Safari, Edge và Opera. Nên sử dụng phiên bản mới nhất để có trải nghiệm tốt nhất." },
+      { question: "Có dùng được trên điện thoại hoặc máy tính bảng không?", answer: "Có! ToolPop hoàn toàn tương thích di động. Bạn có thể ghép, tách, chuyển đổi và chỉnh sửa PDF ngay trên trình duyệt điện thoại hoặc máy tính bảng." },
       { question: "Xử lý trên trình duyệt hoạt động như thế nào?", answer: "Khi bạn chọn file, file vẫn nằm trên thiết bị. Công cụ sử dụng các thư viện JavaScript như pdf-lib và PDF.js để đọc, chỉnh sửa và tạo PDF trực tiếp trong bộ nhớ trình duyệt. File đã xử lý sẵn sàng để tải về — không cần gửi qua máy chủ." },
       { question: "Có thể ghép nhiều hơn hai file PDF không?", answer: "Có. Công cụ Ghép PDF hỗ trợ kết hợp không giới hạn số file. Chỉ cần kéo thả tất cả PDF cần ghép, sắp xếp theo thứ tự mong muốn và nhấn nút xử lý." },
       { question: "Có thể chuyển đổi những định dạng nào sang và từ PDF?", answer: "Bạn có thể chuyển PDF sang JPG, PNG và văn bản thuần. Để tạo PDF, chúng tôi hỗ trợ ảnh JPG, PNG, WEBP, TIFF, HEIC, file HTML và tài liệu quét. Thêm nhiều định dạng đang được bổ sung thường xuyên." },
-      { question: "ToolPop PDF khác gì so với các công cụ PDF khác?", answer: "Ba điểm khác biệt chính: (1) Quyền riêng tư — file không bao giờ rời khỏi thiết bị, khác với hầu hết đối thủ tải lên máy chủ. (2) Không giới hạn — không hạn chế hàng ngày, không giới hạn kích thước file, không đóng dấu trên kết quả. (3) Không cần tài khoản — sử dụng mọi công cụ ngay lập tức." },
+      { question: "ToolPop khác gì so với các công cụ PDF khác?", answer: "Ba điểm khác biệt chính: (1) Quyền riêng tư — file không bao giờ rời khỏi thiết bị, khác với hầu hết đối thủ tải lên máy chủ. (2) Không giới hạn — không hạn chế hàng ngày, không giới hạn kích thước file, không đóng dấu trên kết quả. (3) Không cần tài khoản — sử dụng mọi công cụ ngay lập tức." },
       { question: "Có thể đặt mật khẩu bảo vệ PDF không?", answer: "Có. Sử dụng công cụ Bảo vệ PDF để thêm mật khẩu với mã hóa AES-256. Bạn có thể đặt mật khẩu mở tài liệu và quyền kiểm soát in, sao chép, chỉnh sửa." },
-      { question: "ToolPop PDF có đóng dấu trên file không?", answer: "Không bao giờ. Tất cả file đã xử lý đều sạch, không có watermark hay logo ToolPop. Kết quả xuất ra chuyên nghiệp như bạn mong đợi." },
-      { question: "Có API không?", answer: "Hiện tại chưa có. ToolPop PDF được thiết kế cho người dùng cá nhân sử dụng qua trình duyệt. Nếu bạn cần truy cập API để xử lý PDF tự động, vui lòng liên hệ để thảo luận về giải pháp doanh nghiệp." },
-      { question: "Trang web hỗ trợ bao nhiêu ngôn ngữ?", answer: "ToolPop PDF hỗ trợ 45 ngôn ngữ bao gồm tiếng Anh, Hàn, Tây Ban Nha, Trung Quốc, Nhật, Đức, Pháp, Bồ Đào Nha, Ả Rập, Hindi và nhiều ngôn ngữ khác. Giao diện tự động nhận diện ngôn ngữ trình duyệt hoặc bạn có thể chuyển đổi thủ công bằng bộ chọn ngôn ngữ." },
+      { question: "ToolPop có đóng dấu trên file không?", answer: "Không bao giờ. Tất cả file đã xử lý đều sạch, không có watermark hay logo ToolPop. Kết quả xuất ra chuyên nghiệp như bạn mong đợi." },
+      { question: "Có API không?", answer: "Hiện tại chưa có. ToolPop được thiết kế cho người dùng cá nhân sử dụng qua trình duyệt. Nếu bạn cần truy cập API để xử lý PDF tự động, vui lòng liên hệ để thảo luận về giải pháp doanh nghiệp." },
+      { question: "Trang web hỗ trợ bao nhiêu ngôn ngữ?", answer: "ToolPop hỗ trợ 45 ngôn ngữ bao gồm tiếng Anh, Hàn, Tây Ban Nha, Trung Quốc, Nhật, Đức, Pháp, Bồ Đào Nha, Ả Rập, Hindi và nhiều ngôn ngữ khác. Giao diện tự động nhận diện ngôn ngữ trình duyệt hoặc bạn có thể chuyển đổi thủ công bằng bộ chọn ngôn ngữ." },
     ],
   },
   blog: {

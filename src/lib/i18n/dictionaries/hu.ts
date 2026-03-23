@@ -126,9 +126,9 @@ const hu: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Ingyenes PDF eszközök",
+    siteTitle: "ToolPop - Ingyenes PDF eszközök",
     siteDescription: "PDF fájlok egyesítése, felosztása, tömörítése és konvertálása online, ingyenesen.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Sütiket használunk a jobb felhasználói élmény érdekében.",
@@ -138,15 +138,15 @@ const hu: Dictionary = {
   privacy: {
     title: "Adatvédelmi irányelvek",
     lastUpdated: "Utolsó frissítés: 2026. március 1.",
-    intro: "A ToolPop PDF-nél fontosnak tartjuk az adataid védelmét. Ez az irányelv bemutatja, milyen információkat gyűjtünk a szolgáltatás használata során, és hogyan kezeljük azokat.",
+    intro: "A ToolPop-nél fontosnak tartjuk az adataid védelmét. Ez az irányelv bemutatja, milyen információkat gyűjtünk a szolgáltatás használata során, és hogyan kezeljük azokat.",
     sections: [
       {
         heading: "1. Milyen adatokat gyűjtünk",
-        content: "A ToolPop PDF használatához nem szükséges regisztráció. Nem gyűjtünk személyes adatokat. A szolgáltatás fejlesztése érdekében azonban automatikusan gyűjthetünk nem személyazonosításra alkalmas adatokat:\n\n• Böngésző típusa és verziója\n• Operációs rendszer\n• Meglátogatott oldalak és eltöltött idő\n• Sütik és hasonló technológiák a használati szokások elemzéséhez",
+        content: "A ToolPop használatához nem szükséges regisztráció. Nem gyűjtünk személyes adatokat. A szolgáltatás fejlesztése érdekében azonban automatikusan gyűjthetünk nem személyazonosításra alkalmas adatokat:\n\n• Böngésző típusa és verziója\n• Operációs rendszer\n• Meglátogatott oldalak és eltöltött idő\n• Sütik és hasonló technológiák a használati szokások elemzéséhez",
       },
       {
         heading: "2. Fájlkezelés",
-        content: "A feltöltött fájlokat a szervereink dolgozzák fel, és 2 órán belül automatikusan törlődnek. Nem olvassuk, nem tároljuk és senkivel nem osztjuk meg a fájljaid tartalmát.",
+        content: "A ToolPop-on minden fájlfeldolgozás közvetlenül a böngészőjében történik. Fájljai soha nem kerülnek fel semmilyen szerverre, és soha nem hagyják el az eszközét. WebAssembly és modern webes technológiákat használunk a helyi és biztonságos feldolgozáshoz.",
       },
       {
         heading: "3. Sütik",
@@ -166,18 +166,18 @@ const hu: Dictionary = {
       },
       {
         heading: "7. Kapcsolat",
-        content: "Adatvédelmi kérdésekben írj nekünk a support@toolbox-pdf.com címre.",
+        content: "Adatvédelmi kérdésekben írj nekünk a support@toolpop.org címre.",
       },
     ],
   },
   terms: {
     title: "Felhasználási feltételek",
     lastUpdated: "Utolsó frissítés: 2026. március 1.",
-    intro: "Köszönjük, hogy a ToolPop PDF-et használod. A szolgáltatás elérésével vagy használatával elfogadod az alábbi feltételeket.",
+    intro: "Köszönjük, hogy a ToolPop-et használod. A szolgáltatás elérésével vagy használatával elfogadod az alábbi feltételeket.",
     sections: [
       {
         heading: "1. A szolgáltatásról",
-        content: "A ToolPop PDF egy ingyenes online szolgáltatás, amellyel PDF-fájlokat egyesíthetsz, feloszthatsz, konvertálhatsz, szerkeszthetsz és tömöríthetsz közvetlenül a böngésződben.",
+        content: "A ToolPop egy ingyenes online eszközkészlet, amellyel PDF-eket, képeket és egyéb fájlokat dolgozhat fel közvetlenül a böngészőjében. Minden feldolgozás az eszközén történik — a fájlok soha nem kerülnek fel semmilyen szerverre.",
       },
       {
         heading: "2. Elfogadható használat",
@@ -185,7 +185,7 @@ const hu: Dictionary = {
       },
       {
         heading: "3. Fájlkezelés",
-        content: "A feltöltött fájlokat kizárólag a kért művelet végrehajtásához használjuk. 2 órán belül automatikusan törlődnek a szervereinkről. Nem elemezzük és nem őrizzük meg a fájljaidat.",
+        content: "A ToolPop-on minden fájlfeldolgozás közvetlenül a böngészőjében történik. Fájljai soha nem kerülnek elküldésre semmilyen szerverre, és soha nem hagyják el az eszközét. A feldolgozott eredmények közvetlenül a böngészőjéből tölthetők le.",
       },
       {
         heading: "4. Felelősségkizárás",
@@ -205,7 +205,7 @@ const hu: Dictionary = {
       },
       {
         heading: "8. Kapcsolat",
-        content: "A feltételekkel kapcsolatos kérdésekben írj nekünk a support@toolbox-pdf.com címre.",
+        content: "A feltételekkel kapcsolatos kérdésekben írj nekünk a support@toolpop.org címre.",
       },
     ],
   },
@@ -1057,13 +1057,13 @@ const hu: Dictionary = {
     backLabel: "Hátlap",
   },
   about: {
-    title: "A ToolPop PDF-ről",
-    intro: "A ToolPop PDF egy ingyenes, böngészőalapú PDF-eszközkészlet, amellyel szerkesztheted, konvertálhatod és rendszerezheted PDF-fájljaidat anélkül, hogy feltöltenéd őket egy szerverre. Fájljaid soha nem hagyják el az eszközödet.",
+    title: "A ToolPop-ről",
+    intro: "A ToolPop egy ingyenes, böngészőalapú PDF-eszközkészlet, amellyel szerkesztheted, konvertálhatod és rendszerezheted PDF-fájljaidat anélkül, hogy feltöltenéd őket egy szerverre. Fájljaid soha nem hagyják el az eszközödet.",
     sections: [
-      { heading: "Küldetésünk", content: "Hisszük, hogy mindenkinek joga van hatékony PDF-eszközökhöz — előfizetés nélkül, regisztráció nélkül és adatvédelmi kompromisszumok nélkül. A ToolPop PDF azért jött létre, hogy a professzionális dokumentumkezelést bárki számára elérhetővé tegye, akinek van webböngészője." },
-      { heading: "Hogyan működik", content: "A hagyományos PDF-szolgáltatásokkal ellentétben, amelyek megkövetelik a fájlok feltöltését távoli szerverekre, a ToolPop PDF mindent közvetlenül a böngésződben dolgoz fel modern webtechnológiák, például a WebAssembly és a PDF.js könyvtár segítségével. Ez azt jelenti, hogy érzékeny dokumentumaid mindig az eszközödön maradnak — fájljaidat soha nem látjuk, nem tároljuk és nem továbbítjuk." },
-      { heading: "Mit kínálunk", content: "A ToolPop PDF több mint 40 eszközt tartalmaz öt kategóriában:\n\n• Rendszerezés — egyesítés, felosztás, átrendezés, kinyerés és oldalak törlése\n• Konvertálás — átalakítás PDF, JPG, PNG, szöveg és más formátumok között\n• Szerkesztés — szöveg, képek, aláírások, vízjelek, oldalszámok és megjegyzések hozzáadása\n• Optimalizálás — fájlok tömörítése és webre optimalizálás\n• Biztonság — jelszóvédelem, érzékeny adatok kitakarása és dokumentumok simítása\n\nMinden eszköz teljesen ingyenes, fájlméret-korlátozás vagy napi használati limit nélkül." },
-      { heading: "Technológiánk", content: "A ToolPop PDF Next.js, React és modern webszabványok alapján készült. Olyan könyvtárakat használunk, mint a pdf-lib a PDF-kezeléshez és a PDF.js a megjelenítéshez — minden kliensoldalon fut a böngésződben. Az oldal 45 nyelvet, sötét módot támogat, és bármilyen modern böngészővel rendelkező eszközön működik." },
+      { heading: "Küldetésünk", content: "Hisszük, hogy mindenkinek joga van hatékony PDF-eszközökhöz — előfizetés nélkül, regisztráció nélkül és adatvédelmi kompromisszumok nélkül. A ToolPop azért jött létre, hogy a professzionális dokumentumkezelést bárki számára elérhetővé tegye, akinek van webböngészője." },
+      { heading: "Hogyan működik", content: "A hagyományos PDF-szolgáltatásokkal ellentétben, amelyek megkövetelik a fájlok feltöltését távoli szerverekre, a ToolPop mindent közvetlenül a böngésződben dolgoz fel modern webtechnológiák, például a WebAssembly és a PDF.js könyvtár segítségével. Ez azt jelenti, hogy érzékeny dokumentumaid mindig az eszközödön maradnak — fájljaidat soha nem látjuk, nem tároljuk és nem továbbítjuk." },
+      { heading: "Mit kínálunk", content: "A ToolPop több mint 40 eszközt tartalmaz öt kategóriában:\n\n• Rendszerezés — egyesítés, felosztás, átrendezés, kinyerés és oldalak törlése\n• Konvertálás — átalakítás PDF, JPG, PNG, szöveg és más formátumok között\n• Szerkesztés — szöveg, képek, aláírások, vízjelek, oldalszámok és megjegyzések hozzáadása\n• Optimalizálás — fájlok tömörítése és webre optimalizálás\n• Biztonság — jelszóvédelem, érzékeny adatok kitakarása és dokumentumok simítása\n\nMinden eszköz teljesen ingyenes, fájlméret-korlátozás vagy napi használati limit nélkül." },
+      { heading: "Technológiánk", content: "A ToolPop Next.js, React és modern webszabványok alapján készült. Olyan könyvtárakat használunk, mint a pdf-lib a PDF-kezeléshez és a PDF.js a megjelenítéshez — minden kliensoldalon fut a böngésződben. Az oldal 45 nyelvet, sötét módot támogat, és bármilyen modern böngészővel rendelkező eszközön működik." },
       { heading: "Lépj velünk kapcsolatba", content: "Kérdésed, visszajelzésed vagy ötleted van? Szívesen hallanánk rólad. Látogasd meg kapcsolati oldalunkat, vagy írj nekünk címre." },
     ],
   },
@@ -1091,22 +1091,22 @@ const hu: Dictionary = {
   },
   faq: {
     title: "Gyakran ismételt kérdések",
-    intro: "Találd meg a válaszokat a ToolPop PDF-fel kapcsolatos leggyakoribb kérdésekre. Ha nem találod a kérdésedet, bátran lépj velünk kapcsolatba.",
+    intro: "Találd meg a válaszokat a ToolPop-fel kapcsolatos leggyakoribb kérdésekre. Ha nem találod a kérdésedet, bátran lépj velünk kapcsolatba.",
     items: [
-      { question: "Tényleg ingyenes a ToolPop PDF?", answer: "Igen, teljesen ingyenes. Minden eszköz korlátozás nélkül elérhető, regisztráció és rejtett díjak nélkül. A szolgáltatást visszafogott hirdetésekkel tartjuk fenn." },
+      { question: "Tényleg ingyenes a ToolPop?", answer: "Igen, teljesen ingyenes. Minden eszköz korlátozás nélkül elérhető, regisztráció és rejtett díjak nélkül. A szolgáltatást visszafogott hirdetésekkel tartjuk fenn." },
       { question: "Biztonságban vannak a fájljaim?", answer: "Teljes mértékben. Fájljaid kizárólag a böngésződben kerülnek feldolgozásra — soha nem hagyják el az eszközödet és nem töltődnek fel semmilyen szerverre. Modern böngésző API-kat használunk az összes PDF-művelet helyi végrehajtásához, így érzékeny dokumentumaid teljesen privát maradnak." },
-      { question: "Létre kell hoznom egy fiókot?", answer: "Nem. A ToolPop PDF regisztráció és bejelentkezés nélkül működik. Csak nyisd meg az eszközt, húzd be a fájlt, és azonnal megkapod az eredményt." },
+      { question: "Létre kell hoznom egy fiókot?", answer: "Nem. A ToolPop regisztráció és bejelentkezés nélkül működik. Csak nyisd meg az eszközt, húzd be a fájlt, és azonnal megkapod az eredményt." },
       { question: "Mekkora a maximális fájlméret?", answer: "Mivel a feldolgozás a böngésződben történik, a korlát az eszközöd rendelkezésre álló memóriájától függ. A legtöbb modern eszköz gond nélkül kezel 100–200 MB méretű fájlokat. Nagyon nagy fájlokhoz asztali vagy laptop böngésző használatát javasoljuk." },
-      { question: "Milyen böngészők támogatottak?", answer: "A ToolPop PDF minden modern böngészőben működik, beleértve a Chrome-ot, Firefoxot, Safarit, Edge-et és az Operát. A legjobb élményért a böngésződ legújabb verzióját javasoljuk." },
-      { question: "Használhatom a ToolPop PDF-et telefonon vagy tableten?", answer: "Igen! A ToolPop PDF teljesen reszponzív és mobil eszközökön is működik. PDF-eket egyesíthetsz, szétválaszthatsz, konvertálhatsz és szerkeszthetsz közvetlenül a telefonod vagy tableted böngészőjéből." },
+      { question: "Milyen böngészők támogatottak?", answer: "A ToolPop minden modern böngészőben működik, beleértve a Chrome-ot, Firefoxot, Safarit, Edge-et és az Operát. A legjobb élményért a böngésződ legújabb verzióját javasoljuk." },
+      { question: "Használhatom a ToolPop-et telefonon vagy tableten?", answer: "Igen! A ToolPop teljesen reszponzív és mobil eszközökön is működik. PDF-eket egyesíthetsz, szétválaszthatsz, konvertálhatsz és szerkeszthetsz közvetlenül a telefonod vagy tableted böngészőjéből." },
       { question: "Hogyan működik a böngészőben történő feldolgozás?", answer: "Amikor kiválasztasz egy fájlt, az az eszközödön marad. Eszközeink JavaScript-könyvtárakat használnak, mint a pdf-lib és a PDF.js, hogy közvetlenül a böngésző memóriájában olvassák, módosítsák és hozzák létre a PDF-eket. A feldolgozott fájl ezután letölthető — szerverkommunikáció nélkül." },
       { question: "Egyesíthetek kettőnél több PDF-fájlt?", answer: "Igen. PDF egyesítő eszközünk tetszőleges számú fájl összefűzését támogatja. Egyszerűen húzd be az összes PDF-et, amelyet egyesíteni szeretnél, rendezd a kívánt sorrendbe, és kattints a feldolgozás gombra." },
       { question: "Milyen fájlformátumokat konvertálhatok?", answer: "PDF-eket JPG, PNG és sima szöveg formátumra konvertálhatsz. PDF létrehozásához JPG, PNG, WEBP, TIFF, HEIC képeket, HTML-fájlokat és beszkennelt dokumentumokat támogatunk. Rendszeresen bővítjük a konvertálási formátumok listáját." },
-      { question: "Miben más a ToolPop PDF, mint a többi PDF-eszköz?", answer: "Három lényeges különbség: (1) Adatvédelem — fájljaid soha nem hagyják el az eszközödet, ellentétben a legtöbb versenytárssal, amelyek a szervereikre töltik fel azokat. (2) Nincsenek korlátok — nincs napi limit, nincs fájlméret-korlátozás, nincs vízjel a kimeneten. (3) Nem kell fiók — bármely eszközt azonnal használhatod regisztráció nélkül." },
+      { question: "Miben más a ToolPop, mint a többi PDF-eszköz?", answer: "Három lényeges különbség: (1) Adatvédelem — fájljaid soha nem hagyják el az eszközödet, ellentétben a legtöbb versenytárssal, amelyek a szervereikre töltik fel azokat. (2) Nincsenek korlátok — nincs napi limit, nincs fájlméret-korlátozás, nincs vízjel a kimeneten. (3) Nem kell fiók — bármely eszközt azonnal használhatod regisztráció nélkül." },
       { question: "Hozzáadhatok jelszót a PDF védelméhez?", answer: "Igen. Használd PDF védelme eszközünket AES-256 titkosítással ellátott jelszóvédelem hozzáadásához. Beállíthatsz megnyitási jelszót és engedélyeket a nyomtatáshoz, másoláshoz és szerkesztéshez." },
-      { question: "Tesz vízjelet a ToolPop PDF a fájljaimra?", answer: "Soha. Minden feldolgozott fájl tiszta és mentes bármilyen ToolPop márkajelzéstől vagy vízjeltől. A kimenet pontosan az, amit egy professzionális eszköztől várnál." },
-      { question: "Elérhető API?", answer: "Jelenleg nem. A ToolPop PDF böngészőalapú eszközként egyéni használatra készült. Ha API-hozzáférésre van szükséged programozott PDF-feldolgozáshoz, keresd fel címet vállalati megoldásokért." },
-      { question: "Milyen nyelveket támogat az oldal?", answer: "A ToolPop PDF 45 nyelven érhető el, beleértve a magyart, angolt, spanyolt, kínait, japánt, németet, franciát, portugált, arabot, hindit és még sok mást. A felület automatikusan felismeri a böngésződ nyelvét, vagy manuálisan válthatsz a nyelvválasztóval." },
+      { question: "Tesz vízjelet a ToolPop a fájljaimra?", answer: "Soha. Minden feldolgozott fájl tiszta és mentes bármilyen ToolPop márkajelzéstől vagy vízjeltől. A kimenet pontosan az, amit egy professzionális eszköztől várnál." },
+      { question: "Elérhető API?", answer: "Jelenleg nem. A ToolPop böngészőalapú eszközként egyéni használatra készült. Ha API-hozzáférésre van szükséged programozott PDF-feldolgozáshoz, keresd fel címet vállalati megoldásokért." },
+      { question: "Milyen nyelveket támogat az oldal?", answer: "A ToolPop 45 nyelven érhető el, beleértve a magyart, angolt, spanyolt, kínait, japánt, németet, franciát, portugált, arabot, hindit és még sok mást. A felület automatikusan felismeri a böngésződ nyelvét, vagy manuálisan válthatsz a nyelvválasztóval." },
     ],
   },
   blog: {
