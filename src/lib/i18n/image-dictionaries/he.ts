@@ -298,6 +298,11 @@ const he: ImageDictionary = {
     height: "גובה",
     options: "אפשרויות",
     changeFile: "החלף קובץ",
+    share: "שיתוף",
+    shareTitle: "שתפו את הדף",
+    shareSubtitle: "ספרו לחברים!",
+    shareCopied: "הועתק!",
+    shareCopyLink: "העתק קישור",
   },
   toolOptions: {
     resize: {

@@ -112,6 +112,11 @@ const ro: Dictionary = {
     favoriteAdded: "Adăugat la favorite",
     favoriteRemoved: "Eliminat din favorite",
     comingSoon: "Coming Soon",
+    share: "Distribuie",
+    shareTitle: "Distribuie această pagină",
+    shareSubtitle: "Dă de veste!",
+    shareCopied: "Copiat!",
+    shareCopyLink: "Copiază linkul",
   },
   metadata: {
     siteTitle: "ToolPop - Instrumente PDF gratuite",

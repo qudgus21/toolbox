@@ -7,6 +7,11 @@ const sv: ImageDictionary = {
     ...en.common,
     options: "Alternativ",
     changeFile: "Byt fil",
+    share: "Dela",
+    shareTitle: "Dela denna sida",
+    shareSubtitle: "Sprid ordet!",
+    shareCopied: "Kopierat!",
+    shareCopyLink: "Kopiera länk",
   },
   toolOptions: {
     resize: {

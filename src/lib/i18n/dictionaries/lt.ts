@@ -124,6 +124,11 @@ const lt: Dictionary = {
     favoriteAdded: "Pridėta prie mėgstamų",
     favoriteRemoved: "Pašalinta iš mėgstamų",
     comingSoon: "Coming Soon",
+    share: "Dalintis",
+    shareTitle: "Dalintis šiuo puslapiu",
+    shareSubtitle: "Papasakokite kitiems!",
+    shareCopied: "Nukopijuota!",
+    shareCopyLink: "Kopijuoti nuorodą",
   },
   metadata: {
     siteTitle: "ToolPop - Nemokami PDF įrankiai",

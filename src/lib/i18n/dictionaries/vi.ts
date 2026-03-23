@@ -124,6 +124,11 @@ const vi: Dictionary = {
     favoriteAdded: "Đã thêm vào yêu thích",
     favoriteRemoved: "Đã xóa khỏi yêu thích",
     comingSoon: "Sắp ra mắt",
+    share: "Chia sẻ",
+    shareTitle: "Chia sẻ trang này",
+    shareSubtitle: "Giới thiệu cho bạn bè!",
+    shareCopied: "Đã sao chép!",
+    shareCopyLink: "Sao chép liên kết",
   },
   metadata: {
     siteTitle: "ToolPop - Công cụ PDF miễn phí",

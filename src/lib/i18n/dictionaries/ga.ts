@@ -124,6 +124,11 @@ const ga: Dictionary = {
     favoriteAdded: "Curtha leis na ceanáin",
     favoriteRemoved: "Bainte ó na ceanáin",
     comingSoon: "Coming Soon",
+    share: "Roinn",
+    shareTitle: "Roinn an leathanach seo",
+    shareSubtitle: "Inis do do chairde!",
+    shareCopied: "Cóipeáilte!",
+    shareCopyLink: "Cóipeáil nasc",
   },
   metadata: {
     siteTitle: "ToolPop - Uirlisí PDF saor in aisce",

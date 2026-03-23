@@ -70,6 +70,11 @@ export interface ImageDictionary {
     height: string;
     options: string;
     changeFile: string;
+    share: string;
+    shareTitle: string;
+    shareSubtitle: string;
+    shareCopied: string;
+    shareCopyLink: string;
   };
   toolOptions: {
     resize: {

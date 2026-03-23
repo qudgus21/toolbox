@@ -299,6 +299,11 @@ const th: ImageDictionary = {
     height: "ความสูง",
     options: "ตัวเลือก",
     changeFile: "เปลี่ยนไฟล์",
+    share: "แชร์",
+    shareTitle: "แชร์หน้านี้",
+    shareSubtitle: "บอกต่อให้เพื่อนรู้!",
+    shareCopied: "คัดลอกแล้ว!",
+    shareCopyLink: "คัดลอกลิงก์",
   },
   toolOptions: {
     resize: {

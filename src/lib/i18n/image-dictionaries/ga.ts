@@ -7,6 +7,11 @@ const ga: ImageDictionary = {
     ...en.common,
     options: "Roghanna",
     changeFile: "Athraigh comhad",
+    share: "Roinn",
+    shareTitle: "Roinn an leathanach seo",
+    shareSubtitle: "Inis do do chairde!",
+    shareCopied: "Cóipeáilte!",
+    shareCopyLink: "Cóipeáil nasc",
   },
   toolOptions: {
     resize: {

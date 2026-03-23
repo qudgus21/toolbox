@@ -124,6 +124,11 @@ const hi: Dictionary = {
     favoriteAdded: "पसंदीदा में जोड़ा गया",
     favoriteRemoved: "पसंदीदा से हटाया गया",
     comingSoon: "जल्द आ रहा है",
+    share: "साझा करें",
+    shareTitle: "यह पेज साझा करें",
+    shareSubtitle: "दूसरों को बताएं!",
+    shareCopied: "कॉपी हो गया!",
+    shareCopyLink: "लिंक कॉपी करें",
   },
   metadata: {
     siteTitle: "ToolPop - मुफ़्त PDF उपकरण",

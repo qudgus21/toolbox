@@ -299,6 +299,11 @@ const it: ImageDictionary = {
     height: "Altezza",
     options: "Opzioni",
     changeFile: "Cambia file",
+    share: "Condividi",
+    shareTitle: "Condividi questa pagina",
+    shareSubtitle: "Spargi la voce!",
+    shareCopied: "Copiato!",
+    shareCopyLink: "Copia link",
   },
   toolOptions: {
     resize: {

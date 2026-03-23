@@ -124,6 +124,11 @@ const mt: Dictionary = {
     favoriteAdded: "Miżjud mal-favoriti",
     favoriteRemoved: "Imneħħi mill-favoriti",
     comingSoon: "Coming Soon",
+    share: "Aqsam",
+    shareTitle: "Aqsam din il-paġna",
+    shareSubtitle: "Għid lil-ħbieb!",
+    shareCopied: "Ikkupjat!",
+    shareCopyLink: "Ikkopja l-link",
   },
   metadata: {
     siteTitle: "ToolPop - Għodod PDF b'xejn",

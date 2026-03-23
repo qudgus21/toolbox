@@ -299,6 +299,11 @@ const da: ImageDictionary = {
     height: "Højde",
     options: "Indstillinger",
     changeFile: "Skift fil",
+    share: "Del",
+    shareTitle: "Del denne side",
+    shareSubtitle: "Fortæl det videre!",
+    shareCopied: "Kopieret!",
+    shareCopyLink: "Kopiér link",
   },
   toolOptions: {
     resize: {

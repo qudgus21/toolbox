@@ -7,6 +7,11 @@ const lv: ImageDictionary = {
     ...en.common,
     options: "Opcijas",
     changeFile: "Mainit failu",
+    share: "Dalīties",
+    shareTitle: "Dalīties ar šo lapu",
+    shareSubtitle: "Pastāstiet citiem!",
+    shareCopied: "Nokopēts!",
+    shareCopyLink: "Kopēt saiti",
   },
   toolOptions: {
     resize: {

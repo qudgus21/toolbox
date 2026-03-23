@@ -299,6 +299,11 @@ const bn: ImageDictionary = {
     height: "উচ্চতা",
     options: "বিকল্প",
     changeFile: "ফাইল পরিবর্তন করুন",
+    share: "শেয়ার করুন",
+    shareTitle: "এই পেজ শেয়ার করুন",
+    shareSubtitle: "অন্যদের জানান!",
+    shareCopied: "কপি হয়েছে!",
+    shareCopyLink: "লিংক কপি করুন",
   },
   toolOptions: {
     resize: {

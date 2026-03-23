@@ -50,6 +50,11 @@ export interface CommonLabels {
   favHint?: string;
   favoriteAdded?: string;
   favoriteRemoved?: string;
+  share?: string;
+  shareTitle?: string;
+  shareSubtitle?: string;
+  shareCopied?: string;
+  shareCopyLink?: string;
 }
 
 export interface SplitLabels {

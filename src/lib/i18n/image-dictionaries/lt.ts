@@ -7,6 +7,11 @@ const lt: ImageDictionary = {
     ...en.common,
     options: "Parinktys",
     changeFile: "Pakeisti faila",
+    share: "Dalintis",
+    shareTitle: "Dalintis šiuo puslapiu",
+    shareSubtitle: "Papasakokite kitiems!",
+    shareCopied: "Nukopijuota!",
+    shareCopyLink: "Kopijuoti nuorodą",
   },
   toolOptions: {
     resize: {

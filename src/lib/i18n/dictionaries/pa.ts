@@ -124,6 +124,11 @@ const pa: Dictionary = {
     favoriteAdded: "ਮਨਪਸੰਦ ਵਿੱਚ ਜੋੜਿਆ",
     favoriteRemoved: "ਮਨਪਸੰਦ ਤੋਂ ਹਟਾਇਆ",
     comingSoon: "Coming Soon",
+    share: "ਸਾਂਝਾ ਕਰੋ",
+    shareTitle: "ਇਹ ਪੇਜ ਸਾਂਝਾ ਕਰੋ",
+    shareSubtitle: "ਦੋਸਤਾਂ ਨੂੰ ਦੱਸੋ!",
+    shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!",
+    shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
   },
   metadata: {
     siteTitle: "ToolPop - ਮੁਫ਼ਤ PDF ਔਜ਼ਾਰ",

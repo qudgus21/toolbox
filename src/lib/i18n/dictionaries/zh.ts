@@ -124,6 +124,11 @@ const zh: Dictionary = {
     favoriteAdded: "已添加到收藏夹",
     favoriteRemoved: "已从收藏夹移除",
     comingSoon: "即将推出",
+    share: "分享",
+    shareTitle: "分享此页面",
+    shareSubtitle: "让更多人知道!",
+    shareCopied: "已复制!",
+    shareCopyLink: "复制链接",
   },
   metadata: {
     siteTitle: "ToolPop - 免费PDF工具",

@@ -299,6 +299,11 @@ const pa: ImageDictionary = {
     height: "ਉਚਾਈ",
     options: "ਵਿਕਲਪ",
     changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
+    share: "ਸਾਂਝਾ ਕਰੋ",
+    shareTitle: "ਇਹ ਪੇਜ ਸਾਂਝਾ ਕਰੋ",
+    shareSubtitle: "ਦੋਸਤਾਂ ਨੂੰ ਦੱਸੋ!",
+    shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!",
+    shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
   },
   toolOptions: {
     resize: {

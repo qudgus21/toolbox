@@ -124,6 +124,11 @@ const ja: Dictionary = {
     favoriteAdded: "お気に入りに追加しました",
     favoriteRemoved: "お気に入りから削除しました",
     comingSoon: "準備中",
+    share: "共有",
+    shareTitle: "このページを共有",
+    shareSubtitle: "みんなに教えよう!",
+    shareCopied: "コピーしました!",
+    shareCopyLink: "リンクをコピー",
   },
   metadata: {
     siteTitle: "ToolPop - 無料PDFツール",

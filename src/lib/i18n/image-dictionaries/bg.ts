@@ -299,6 +299,11 @@ const bg: ImageDictionary = {
     height: "Височина",
     options: "Настройки",
     changeFile: "Промяна на файл",
+    share: "Сподели",
+    shareTitle: "Споделете тази страница",
+    shareSubtitle: "Разкажете на другите!",
+    shareCopied: "Копирано!",
+    shareCopyLink: "Копирай линк",
   },
   toolOptions: {
     resize: {

@@ -299,6 +299,11 @@ const hu: ImageDictionary = {
     height: "Magasság",
     options: "Beállítások",
     changeFile: "Fájl módosítása",
+    share: "Megosztás",
+    shareTitle: "Oldal megosztása",
+    shareSubtitle: "Mondd el másoknak is!",
+    shareCopied: "Másolva!",
+    shareCopyLink: "Link másolása",
   },
   toolOptions: {
     resize: {

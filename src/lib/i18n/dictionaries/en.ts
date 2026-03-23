@@ -124,6 +124,11 @@ const en: Dictionary = {
     favoriteAdded: "Added to favorites",
     favoriteRemoved: "Removed from favorites",
     comingSoon: "Coming Soon",
+    share: "Share",
+    shareTitle: "Share this page",
+    shareSubtitle: "Spread the word!",
+    shareCopied: "Copied!",
+    shareCopyLink: "Copy link",
   },
   metadata: {
     siteTitle: "ToolPop PDF - Free PDF Tools",

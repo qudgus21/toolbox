@@ -299,6 +299,11 @@ const ms: ImageDictionary = {
     height: "Tinggi",
     options: "Pilihan",
     changeFile: "Tukar fail",
+    share: "Kongsi",
+    shareTitle: "Kongsi halaman ini",
+    shareSubtitle: "Beritahu rakan-rakan!",
+    shareCopied: "Disalin!",
+    shareCopyLink: "Salin pautan",
   },
   toolOptions: {
     resize: {

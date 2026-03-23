@@ -298,6 +298,11 @@ const zh: ImageDictionary = {
     height: "高度",
     options: "选项",
     changeFile: "更换文件",
+    share: "分享",
+    shareTitle: "分享此页面",
+    shareSubtitle: "让更多人知道!",
+    shareCopied: "已复制!",
+    shareCopyLink: "复制链接",
   },
   toolOptions: {
     resize: {

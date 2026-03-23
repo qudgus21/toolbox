@@ -293,6 +293,11 @@ export function ToolPageClient({
               onReset={reset}
               downloadLabel={labels.download}
               resetLabel={labels.startOver}
+              shareLabel={labels.share}
+              shareTitle={labels.shareTitle}
+              shareSubtitle={labels.shareSubtitle}
+              shareCopyLabel={labels.shareCopyLink}
+              shareCopiedLabel={labels.shareCopied}
               toolSlug={slug}
             />
             <RelatedTools

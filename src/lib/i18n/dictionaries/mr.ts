@@ -124,6 +124,11 @@ const mr: Dictionary = {
     favoriteAdded: "आवडींमध्ये जोडले",
     favoriteRemoved: "आवडींमधून काढले",
     comingSoon: "Coming Soon",
+    share: "शेअर करा",
+    shareTitle: "हे पेज शेअर करा",
+    shareSubtitle: "इतरांना सांगा!",
+    shareCopied: "कॉपी झाले!",
+    shareCopyLink: "लिंक कॉपी करा",
   },
   metadata: {
     siteTitle: "ToolPop - विनामूल्य PDF साधने",
