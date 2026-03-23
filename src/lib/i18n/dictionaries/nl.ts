@@ -126,9 +126,9 @@ const nl: Dictionary = {
     comingSoon: "Binnenkort",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Gratis PDF-tools",
+    siteTitle: "ToolPop - Gratis PDF-tools",
     siteDescription: "Voeg samen, splits, comprimeer en converteer PDF-bestanden gratis online.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Wij gebruiken cookies om je ervaring te verbeteren.",
@@ -138,15 +138,15 @@ const nl: Dictionary = {
   privacy: {
     title: "Privacybeleid",
     lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
-    intro: "Bij ToolPop PDF hechten we veel waarde aan je privacy. In dit beleid leggen we uit welke gegevens we verzamelen wanneer je onze dienst gebruikt en hoe we daarmee omgaan.",
+    intro: "Bij ToolPop hechten we veel waarde aan je privacy. In dit beleid leggen we uit welke gegevens we verzamelen wanneer je onze dienst gebruikt en hoe we daarmee omgaan.",
     sections: [
       {
         heading: "1. Gegevens die we verzamelen",
-        content: "Voor het gebruik van ToolPop PDF hoef je geen account aan te maken. We verzamelen geen persoonlijke gegevens. Wel kunnen we automatisch niet-identificeerbare informatie verzamelen om onze dienst te verbeteren:\n\n• Browsertype en -versie\n• Besturingssysteem\n• Bezochte pagina's en bestede tijd\n• Cookies en vergelijkbare technologieën voor gebruikspatronen",
+        content: "Voor het gebruik van ToolPop hoef je geen account aan te maken. We verzamelen geen persoonlijke gegevens. Wel kunnen we automatisch niet-identificeerbare informatie verzamelen om onze dienst te verbeteren:\n\n• Browsertype en -versie\n• Besturingssysteem\n• Bezochte pagina's en bestede tijd\n• Cookies en vergelijkbare technologieën voor gebruikspatronen",
       },
       {
         heading: "2. Bestandsverwerking",
-        content: "Bestanden die je uploadt worden op onze servers verwerkt en binnen 2 uur automatisch verwijderd. We lezen, bewaren of delen de inhoud van je bestanden met niemand.",
+        content: "Alle bestandsverwerking op ToolPop vindt rechtstreeks in uw browser plaats. Uw bestanden worden nooit naar een server geüpload en verlaten nooit uw apparaat. We gebruiken WebAssembly en moderne webtechnologieën voor lokale en veilige verwerking.",
       },
       {
         heading: "3. Cookies",
@@ -166,18 +166,18 @@ const nl: Dictionary = {
       },
       {
         heading: "7. Contact",
-        content: "Heb je vragen over je privacy? Neem contact met ons op via support@toolbox-pdf.com.",
+        content: "Heb je vragen over je privacy? Neem contact met ons op via support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Servicevoorwaarden",
     lastUpdated: "Laatst bijgewerkt: 1 maart 2026",
-    intro: "Bedankt dat je ToolPop PDF gebruikt. Door onze dienst te bezoeken of te gebruiken, ga je akkoord met de volgende voorwaarden.",
+    intro: "Bedankt dat je ToolPop gebruikt. Door onze dienst te bezoeken of te gebruiken, ga je akkoord met de volgende voorwaarden.",
     sections: [
       {
         heading: "1. Over de dienst",
-        content: "ToolPop PDF is een gratis online dienst waarmee je PDF-bestanden kunt samenvoegen, splitsen, converteren, bewerken en comprimeren, rechtstreeks in je browser.",
+        content: "ToolPop is een gratis online toolkit waarmee u PDF's, afbeeldingen en andere bestanden rechtstreeks in uw browser kunt verwerken. Alle verwerking vindt lokaal op uw apparaat plaats — bestanden worden nooit naar een server geüpload.",
       },
       {
         heading: "2. Aanvaardbaar gebruik",
@@ -185,7 +185,7 @@ const nl: Dictionary = {
       },
       {
         heading: "3. Bestandsverwerking",
-        content: "Geüploade bestanden worden uitsluitend gebruikt om de gevraagde bewerking uit te voeren. Ze worden binnen 2 uur automatisch van onze servers verwijderd. We analyseren of bewaren je bestanden niet.",
+        content: "Alle bestandsverwerking op ToolPop vindt rechtstreeks in uw browser plaats. Uw bestanden worden nooit naar een server verzonden en verlaten nooit uw apparaat. Verwerkte resultaten zijn direct vanuit uw browser te downloaden.",
       },
       {
         heading: "4. Aansprakelijkheid",
@@ -205,7 +205,7 @@ const nl: Dictionary = {
       },
       {
         heading: "8. Contact",
-        content: "Heb je vragen over deze voorwaarden? Neem contact met ons op via support@toolbox-pdf.com.",
+        content: "Heb je vragen over deze voorwaarden? Neem contact met ons op via support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1057,13 @@ const nl: Dictionary = {
     backLabel: "Achterzijde",
   },
   about: {
-    title: "Over ToolPop PDF",
-    intro: "ToolPop PDF is een gratis PDF-toolkit in je browser waarmee je PDF-bestanden kunt bewerken, converteren en organiseren zonder ze naar een server te uploaden. Je bestanden verlaten nooit je apparaat.",
+    title: "Over ToolPop",
+    intro: "ToolPop is een gratis PDF-toolkit in je browser waarmee je PDF-bestanden kunt bewerken, converteren en organiseren zonder ze naar een server te uploaden. Je bestanden verlaten nooit je apparaat.",
     sections: [
-      { heading: "Onze missie", content: "Wij geloven dat iedereen toegang verdient tot krachtige PDF-tools — zonder abonnementen, zonder registratie en zonder concessies aan privacy. ToolPop PDF is gebouwd om professionele documentverwerking toegankelijk te maken voor iedereen met een webbrowser." },
-      { heading: "Hoe het werkt", content: "Anders dan traditionele PDF-diensten waarbij je bestanden naar externe servers moet uploaden, verwerkt ToolPop PDF alles rechtstreeks in je browser met moderne webtechnologieën zoals WebAssembly en de PDF.js-bibliotheek. Dat betekent dat je gevoelige documenten altijd op je apparaat blijven — wij zien, bewaren of verzenden je bestanden nooit." },
-      { heading: "Wat we bieden", content: "ToolPop PDF bevat meer dan 40 tools in vijf categorieën:\n\n• Organiseren — Samenvoegen, splitsen, herschikken, extraheren en pagina's verwijderen\n• Converteren — Omzetten tussen PDF, JPG, PNG, tekst en andere formaten\n• Bewerken — Tekst, afbeeldingen, handtekeningen, watermerken, paginanummers en annotaties toevoegen\n• Optimaliseren — Bestanden comprimeren en optimaliseren voor webgebruik\n• Beveiliging — Wachtwoordbeveiliging, gevoelige informatie redigeren en documenten afvlakken\n\nAlle tools zijn volledig gratis, zonder bestandsgroottelimieten of dagelijkse gebruikslimieten." },
-      { heading: "Onze technologie", content: "ToolPop PDF is gebouwd met Next.js, React en moderne webstandaarden. We gebruiken bibliotheken zoals pdf-lib voor PDF-manipulatie en PDF.js voor weergave — alles draait client-side in je browser. De site ondersteunt 45 talen, donkere modus en werkt op elk apparaat met een moderne browser." },
+      { heading: "Onze missie", content: "Wij geloven dat iedereen toegang verdient tot krachtige PDF-tools — zonder abonnementen, zonder registratie en zonder concessies aan privacy. ToolPop is gebouwd om professionele documentverwerking toegankelijk te maken voor iedereen met een webbrowser." },
+      { heading: "Hoe het werkt", content: "Anders dan traditionele PDF-diensten waarbij je bestanden naar externe servers moet uploaden, verwerkt ToolPop alles rechtstreeks in je browser met moderne webtechnologieën zoals WebAssembly en de PDF.js-bibliotheek. Dat betekent dat je gevoelige documenten altijd op je apparaat blijven — wij zien, bewaren of verzenden je bestanden nooit." },
+      { heading: "Wat we bieden", content: "ToolPop bevat meer dan 40 tools in vijf categorieën:\n\n• Organiseren — Samenvoegen, splitsen, herschikken, extraheren en pagina's verwijderen\n• Converteren — Omzetten tussen PDF, JPG, PNG, tekst en andere formaten\n• Bewerken — Tekst, afbeeldingen, handtekeningen, watermerken, paginanummers en annotaties toevoegen\n• Optimaliseren — Bestanden comprimeren en optimaliseren voor webgebruik\n• Beveiliging — Wachtwoordbeveiliging, gevoelige informatie redigeren en documenten afvlakken\n\nAlle tools zijn volledig gratis, zonder bestandsgroottelimieten of dagelijkse gebruikslimieten." },
+      { heading: "Onze technologie", content: "ToolPop is gebouwd met Next.js, React en moderne webstandaarden. We gebruiken bibliotheken zoals pdf-lib voor PDF-manipulatie en PDF.js voor weergave — alles draait client-side in je browser. De site ondersteunt 45 talen, donkere modus en werkt op elk apparaat met een moderne browser." },
       { heading: "Neem contact op", content: "Heb je vragen, feedback of suggesties? We horen graag van je. Bezoek onze contactpagina of mail ons op." },
     ],
   },
@@ -1091,22 +1091,22 @@ const nl: Dictionary = {
   },
   faq: {
     title: "Veelgestelde vragen",
-    intro: "Vind antwoorden op de meest voorkomende vragen over ToolPop PDF. Staat je vraag er niet bij? Neem gerust contact met ons op.",
+    intro: "Vind antwoorden op de meest voorkomende vragen over ToolPop. Staat je vraag er niet bij? Neem gerust contact met ons op.",
     items: [
-      { question: "Is ToolPop PDF echt gratis?", answer: "Ja, volledig gratis. Alle tools zijn onbeperkt beschikbaar, zonder registratie en zonder verborgen kosten. We onderhouden de dienst via onopvallende advertenties." },
+      { question: "Is ToolPop echt gratis?", answer: "Ja, volledig gratis. Alle tools zijn onbeperkt beschikbaar, zonder registratie en zonder verborgen kosten. We onderhouden de dienst via onopvallende advertenties." },
       { question: "Zijn mijn bestanden veilig en privé?", answer: "Absoluut. Je bestanden worden volledig in je browser verwerkt — ze verlaten nooit je apparaat en worden niet naar een server geüpload. We gebruiken moderne browser-API's om alle PDF-bewerkingen lokaal uit te voeren, zodat je gevoelige documenten volledig privé blijven." },
-      { question: "Moet ik een account aanmaken?", answer: "Nee. ToolPop PDF werkt zonder registratie of inloggen. Open gewoon een tool, sleep je bestand erin en je hebt direct resultaat." },
+      { question: "Moet ik een account aanmaken?", answer: "Nee. ToolPop werkt zonder registratie of inloggen. Open gewoon een tool, sleep je bestand erin en je hebt direct resultaat." },
       { question: "Wat is de maximale bestandsgrootte?", answer: "Omdat de verwerking in je browser plaatsvindt, hangt de limiet af van het beschikbare geheugen van je apparaat. De meeste moderne apparaten kunnen bestanden tot 100–200 MB probleemloos verwerken. Voor zeer grote bestanden raden we aan om een desktop- of laptopbrowser te gebruiken." },
-      { question: "Welke browsers worden ondersteund?", answer: "ToolPop PDF werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari, Edge en Opera. We raden aan de nieuwste versie van je browser te gebruiken voor de beste ervaring." },
-      { question: "Kan ik ToolPop PDF op mijn telefoon of tablet gebruiken?", answer: "Ja! ToolPop PDF is volledig responsief en werkt op mobiele apparaten. Je kunt PDF's samenvoegen, splitsen, converteren en bewerken rechtstreeks vanuit je telefoon- of tabletbrowser." },
+      { question: "Welke browsers worden ondersteund?", answer: "ToolPop werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari, Edge en Opera. We raden aan de nieuwste versie van je browser te gebruiken voor de beste ervaring." },
+      { question: "Kan ik ToolPop op mijn telefoon of tablet gebruiken?", answer: "Ja! ToolPop is volledig responsief en werkt op mobiele apparaten. Je kunt PDF's samenvoegen, splitsen, converteren en bewerken rechtstreeks vanuit je telefoon- of tabletbrowser." },
       { question: "Hoe werkt browserverwerking?", answer: "Wanneer je een bestand selecteert, blijft het op je apparaat. Onze tools gebruiken JavaScript-bibliotheken zoals pdf-lib en PDF.js om PDF's direct in het geheugen van je browser te lezen, aan te passen en te maken. Het verwerkte bestand is vervolgens beschikbaar om te downloaden — zonder serververkeer." },
       { question: "Kan ik meer dan twee PDF-bestanden samenvoegen?", answer: "Ja. Onze tool PDF samenvoegen ondersteunt het combineren van een onbeperkt aantal bestanden. Sleep alle PDF's die je wilt samenvoegen, rangschik ze in de gewenste volgorde en klik op de verwerkingsknop." },
       { question: "Welke bestandsformaten kan ik converteren van en naar PDF?", answer: "Je kunt PDF's converteren naar JPG, PNG en platte tekst. Voor het maken van PDF's ondersteunen we JPG, PNG, WEBP, TIFF, HEIC-afbeeldingen, HTML-bestanden en gescande documenten. Er worden regelmatig meer conversieformaten toegevoegd." },
-      { question: "Wat maakt ToolPop PDF anders dan andere PDF-tools?", answer: "Drie belangrijke verschillen: (1) Privacy — je bestanden verlaten nooit je apparaat, in tegenstelling tot de meeste concurrenten die naar hun servers uploaden. (2) Geen limieten — geen dagelijkse beperkingen, geen bestandsgrootterestricties, geen watermerken op de uitvoer. (3) Geen account nodig — gebruik elke tool direct zonder registratie." },
+      { question: "Wat maakt ToolPop anders dan andere PDF-tools?", answer: "Drie belangrijke verschillen: (1) Privacy — je bestanden verlaten nooit je apparaat, in tegenstelling tot de meeste concurrenten die naar hun servers uploaden. (2) Geen limieten — geen dagelijkse beperkingen, geen bestandsgrootterestricties, geen watermerken op de uitvoer. (3) Geen account nodig — gebruik elke tool direct zonder registratie." },
       { question: "Kan ik een wachtwoord toevoegen om mijn PDF te beveiligen?", answer: "Ja. Gebruik onze tool PDF beveiligen om wachtwoordbeveiliging met AES-256-versleuteling toe te voegen. Je kunt zowel een wachtwoord voor openen (om het document te bekijken) als machtigingen instellen voor afdrukken, kopiëren en bewerken." },
-      { question: "Voegt ToolPop PDF watermerken toe aan mijn bestanden?", answer: "Nooit. Alle verwerkte bestanden zijn schoon en vrij van ToolPop-branding of watermerken. De uitvoer is precies wat je van een professionele tool zou verwachten." },
-      { question: "Is er een API beschikbaar?", answer: "Momenteel niet. ToolPop PDF is ontworpen als een browsertool voor individueel gebruik. Als je API-toegang nodig hebt voor programmatische PDF-verwerking, neem dan contact met ons op via voor bedrijfsoplossingen." },
-      { question: "Welke talen ondersteunt de site?", answer: "ToolPop PDF is beschikbaar in 45 talen, waaronder Nederlands, Engels, Spaans, Chinees, Japans, Duits, Frans, Portugees, Arabisch, Hindi en nog veel meer. De interface detecteert automatisch je browsertaal, of je kunt handmatig wisselen via de taalkiezer." },
+      { question: "Voegt ToolPop watermerken toe aan mijn bestanden?", answer: "Nooit. Alle verwerkte bestanden zijn schoon en vrij van ToolPop-branding of watermerken. De uitvoer is precies wat je van een professionele tool zou verwachten." },
+      { question: "Is er een API beschikbaar?", answer: "Momenteel niet. ToolPop is ontworpen als een browsertool voor individueel gebruik. Als je API-toegang nodig hebt voor programmatische PDF-verwerking, neem dan contact met ons op via voor bedrijfsoplossingen." },
+      { question: "Welke talen ondersteunt de site?", answer: "ToolPop is beschikbaar in 45 talen, waaronder Nederlands, Engels, Spaans, Chinees, Japans, Duits, Frans, Portugees, Arabisch, Hindi en nog veel meer. De interface detecteert automatisch je browsertaal, of je kunt handmatig wisselen via de taalkiezer." },
     ],
   },
   blog: {

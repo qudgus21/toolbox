@@ -126,9 +126,9 @@ const fr: Dictionary = {
     comingSoon: "Bient^ot disponible",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Outils PDF gratuits",
+    siteTitle: "ToolPop - Outils PDF gratuits",
     siteDescription: "Fusionnez, divisez, compressez et convertissez des fichiers PDF en ligne gratuitement.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Ce site utilise des cookies pour améliorer votre expérience.",
@@ -138,15 +138,15 @@ const fr: Dictionary = {
   privacy: {
     title: "Politique de confidentialit\u00e9",
     lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
-    intro: "Chez ToolPop PDF, la protection de vos donn\u00e9es nous tient \u00e0 c\u0153ur. Cette politique d\u00e9taille les informations que nous collectons lorsque vous utilisez notre service et la fa\u00e7on dont nous les traitons.",
+    intro: "Chez ToolPop, la protection de vos donn\u00e9es nous tient \u00e0 c\u0153ur. Cette politique d\u00e9taille les informations que nous collectons lorsque vous utilisez notre service et la fa\u00e7on dont nous les traitons.",
     sections: [
       {
         heading: "1. Informations collect\u00e9es",
-        content: "ToolPop PDF ne n\u00e9cessite aucune inscription. Nous ne collectons aucune donn\u00e9e personnelle. Toutefois, certaines donn\u00e9es anonymes peuvent \u00eatre collect\u00e9es automatiquement pour am\u00e9liorer le service :\n\n\u2022 Type et version du navigateur\n\u2022 Syst\u00e8me d\u2019exploitation\n\u2022 Pages visit\u00e9es et dur\u00e9e de consultation\n\u2022 Cookies pour analyser les habitudes d\u2019utilisation",
+        content: "ToolPop ne n\u00e9cessite aucune inscription. Nous ne collectons aucune donn\u00e9e personnelle. Toutefois, certaines donn\u00e9es anonymes peuvent \u00eatre collect\u00e9es automatiquement pour am\u00e9liorer le service :\n\n\u2022 Type et version du navigateur\n\u2022 Syst\u00e8me d\u2019exploitation\n\u2022 Pages visit\u00e9es et dur\u00e9e de consultation\n\u2022 Cookies pour analyser les habitudes d\u2019utilisation",
       },
       {
         heading: "2. Traitement des fichiers",
-        content: "Les fichiers que vous envoyez sont trait\u00e9s sur nos serveurs, puis automatiquement supprim\u00e9s dans un d\u00e9lai de 2 heures. Nous ne consultons, ne stockons et ne partageons jamais le contenu de vos fichiers.",
+        content: "L'ensemble du traitement des fichiers sur ToolPop s'effectue directement dans votre navigateur. Vos fichiers ne sont jamais envoyés vers un serveur et ne quittent jamais votre appareil. Nous utilisons WebAssembly et des technologies web modernes pour un traitement local et sécurisé.",
       },
       {
         heading: "3. Cookies",
@@ -166,18 +166,18 @@ const fr: Dictionary = {
       },
       {
         heading: "7. Nous contacter",
-        content: "Pour toute question relative \u00e0 la confidentialit\u00e9, \u00e9crivez-nous \u00e0 support@toolbox-pdf.com.",
+        content: "Pour toute question relative \u00e0 la confidentialit\u00e9, \u00e9crivez-nous \u00e0 support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Conditions d\u2019utilisation",
     lastUpdated: "Derni\u00e8re mise \u00e0 jour : 1er mars 2026",
-    intro: "Merci d\u2019utiliser ToolPop PDF. En acc\u00e9dant \u00e0 notre service ou en l\u2019utilisant, vous acceptez les conditions suivantes.",
+    intro: "Merci d\u2019utiliser ToolPop. En acc\u00e9dant \u00e0 notre service ou en l\u2019utilisant, vous acceptez les conditions suivantes.",
     sections: [
       {
         heading: "1. \u00c0 propos du service",
-        content: "ToolPop PDF est un service en ligne gratuit qui vous permet de fusionner, diviser, convertir, \u00e9diter et compresser des fichiers PDF directement dans votre navigateur.",
+        content: "ToolPop est une boîte à outils en ligne gratuite qui vous permet de traiter des PDF, des images et d'autres fichiers directement dans votre navigateur. Tout le traitement s'effectue localement sur votre appareil — les fichiers ne sont jamais envoyés vers un serveur.",
       },
       {
         heading: "2. Utilisation acceptable",
@@ -185,7 +185,7 @@ const fr: Dictionary = {
       },
       {
         heading: "3. Traitement des fichiers",
-        content: "Les fichiers envoy\u00e9s servent uniquement \u00e0 r\u00e9aliser l\u2019op\u00e9ration demand\u00e9e. Ils sont automatiquement supprim\u00e9s de nos serveurs dans un d\u00e9lai de 2 heures. Nous ne les analysons ni ne les conservons.",
+        content: "L'ensemble du traitement des fichiers sur ToolPop s'effectue directement dans votre navigateur. Vos fichiers ne sont jamais envoyés vers un serveur et ne quittent jamais votre appareil. Les résultats traités sont disponibles au téléchargement directement depuis votre navigateur.",
       },
       {
         heading: "4. Avertissement",
@@ -205,7 +205,7 @@ const fr: Dictionary = {
       },
       {
         heading: "8. Nous contacter",
-        content: "Pour toute question concernant ces conditions, \u00e9crivez-nous \u00e0 support@toolbox-pdf.com.",
+        content: "Pour toute question concernant ces conditions, \u00e9crivez-nous \u00e0 support@toolpop.org.",
       },
     ],
   },
@@ -1057,24 +1057,24 @@ const fr: Dictionary = {
     backLabel: "Verso",
   },
   about: {
-    title: "À propos de ToolPop PDF",
-    intro: "ToolPop PDF est une boîte à outils PDF gratuite qui fonctionne directement dans votre navigateur. Modifiez, convertissez et organisez vos fichiers PDF sans les téléverser sur un serveur. Vos fichiers ne quittent jamais votre appareil.",
+    title: "À propos de ToolPop",
+    intro: "ToolPop est une boîte à outils PDF gratuite qui fonctionne directement dans votre navigateur. Modifiez, convertissez et organisez vos fichiers PDF sans les téléverser sur un serveur. Vos fichiers ne quittent jamais votre appareil.",
     sections: [
       {
         heading: "Notre mission",
-        content: "Nous pensons que tout le monde mérite d'accéder à des outils PDF professionnels — sans abonnement, sans inscription et sans compromettre sa vie privée. ToolPop PDF a été conçu pour rendre la gestion de documents accessible à quiconque dispose d'un navigateur web.",
+        content: "Nous pensons que tout le monde mérite d'accéder à des outils PDF professionnels — sans abonnement, sans inscription et sans compromettre sa vie privée. ToolPop a été conçu pour rendre la gestion de documents accessible à quiconque dispose d'un navigateur web.",
       },
       {
         heading: "Comment ça fonctionne",
-        content: "Contrairement aux services PDF traditionnels qui exigent de téléverser vos fichiers sur des serveurs distants, ToolPop PDF traite tout directement dans votre navigateur grâce aux technologies web modernes comme WebAssembly et la bibliothèque PDF.js. Vos documents sensibles restent sur votre appareil en permanence — nous ne voyons, ne stockons ni ne transmettons jamais vos fichiers.",
+        content: "Contrairement aux services PDF traditionnels qui exigent de téléverser vos fichiers sur des serveurs distants, ToolPop traite tout directement dans votre navigateur grâce aux technologies web modernes comme WebAssembly et la bibliothèque PDF.js. Vos documents sensibles restent sur votre appareil en permanence — nous ne voyons, ne stockons ni ne transmettons jamais vos fichiers.",
       },
       {
         heading: "Ce que nous proposons",
-        content: "ToolPop PDF comprend plus de 40 outils répartis en cinq catégories :\n\n• Organiser — Fusionner, scinder, réordonner, extraire et supprimer des pages\n• Convertir — Transformer entre PDF, JPG, PNG, texte et autres formats\n• Modifier — Ajouter du texte, des images, des signatures, des filigranes, des numéros de page et des annotations\n• Optimiser — Compresser les fichiers et optimiser pour le web\n• Sécurité — Protéger par mot de passe, caviarder les informations sensibles et aplatir les documents\n\nTous les outils sont entièrement gratuits, sans limite de taille de fichier ni quota d'utilisation quotidien.",
+        content: "ToolPop comprend plus de 40 outils répartis en cinq catégories :\n\n• Organiser — Fusionner, scinder, réordonner, extraire et supprimer des pages\n• Convertir — Transformer entre PDF, JPG, PNG, texte et autres formats\n• Modifier — Ajouter du texte, des images, des signatures, des filigranes, des numéros de page et des annotations\n• Optimiser — Compresser les fichiers et optimiser pour le web\n• Sécurité — Protéger par mot de passe, caviarder les informations sensibles et aplatir les documents\n\nTous les outils sont entièrement gratuits, sans limite de taille de fichier ni quota d'utilisation quotidien.",
       },
       {
         heading: "Notre technologie",
-        content: "ToolPop PDF est développé avec Next.js, React et les standards web modernes. Nous utilisons des bibliothèques comme pdf-lib pour la manipulation des PDF et PDF.js pour le rendu — le tout s'exécutant côté client dans votre navigateur. Le site prend en charge 45 langues, le mode sombre et fonctionne sur tout appareil doté d'un navigateur moderne.",
+        content: "ToolPop est développé avec Next.js, React et les standards web modernes. Nous utilisons des bibliothèques comme pdf-lib pour la manipulation des PDF et PDF.js pour le rendu — le tout s'exécutant côté client dans votre navigateur. Le site prend en charge 45 langues, le mode sombre et fonctionne sur tout appareil doté d'un navigateur moderne.",
       },
       {
         heading: "Nous contacter",
@@ -1115,22 +1115,22 @@ const fr: Dictionary = {
   },
   faq: {
     title: "Questions fréquentes",
-    intro: "Retrouvez les réponses aux questions les plus courantes sur ToolPop PDF. Si vous ne trouvez pas votre réponse ici, n'hésitez pas à nous contacter.",
+    intro: "Retrouvez les réponses aux questions les plus courantes sur ToolPop. Si vous ne trouvez pas votre réponse ici, n'hésitez pas à nous contacter.",
     items: [
-      { question: "ToolPop PDF est-il vraiment gratuit ?", answer: "Oui, totalement gratuit. Tous les outils sont disponibles sans limite, sans inscription et sans frais cachés. Nous finançons le service par de la publicité non intrusive." },
+      { question: "ToolPop est-il vraiment gratuit ?", answer: "Oui, totalement gratuit. Tous les outils sont disponibles sans limite, sans inscription et sans frais cachés. Nous finançons le service par de la publicité non intrusive." },
       { question: "Mes fichiers sont-ils en sécurité et privés ?", answer: "Absolument. Vos fichiers sont traités intégralement dans votre navigateur — ils ne quittent jamais votre appareil et ne sont jamais téléversés sur un serveur. Nous utilisons les API modernes du navigateur pour gérer toutes les opérations PDF localement, vos documents sensibles restent donc totalement privés." },
-      { question: "Dois-je créer un compte ?", answer: "Non. ToolPop PDF fonctionne sans aucune inscription ni connexion. Ouvrez un outil, déposez votre fichier et obtenez le résultat instantanément." },
+      { question: "Dois-je créer un compte ?", answer: "Non. ToolPop fonctionne sans aucune inscription ni connexion. Ouvrez un outil, déposez votre fichier et obtenez le résultat instantanément." },
       { question: "Quelle est la taille maximale de fichier que je peux traiter ?", answer: "Le traitement s'effectuant dans votre navigateur, la limite dépend de la mémoire disponible de votre appareil. La plupart des appareils modernes gèrent des fichiers jusqu'à 100-200 Mo sans problème. Pour les très gros fichiers, nous recommandons d'utiliser un navigateur de bureau." },
-      { question: "Quels navigateurs sont compatibles ?", answer: "ToolPop PDF fonctionne sur tous les navigateurs modernes, notamment Chrome, Firefox, Safari, Edge et Opera. Nous recommandons d'utiliser la dernière version de votre navigateur." },
-      { question: "Puis-je utiliser ToolPop PDF sur mon téléphone ou ma tablette ?", answer: "Oui ! ToolPop PDF est entièrement responsive et fonctionne sur les appareils mobiles. Vous pouvez fusionner, scinder, convertir et modifier des PDF directement depuis le navigateur de votre téléphone ou tablette." },
+      { question: "Quels navigateurs sont compatibles ?", answer: "ToolPop fonctionne sur tous les navigateurs modernes, notamment Chrome, Firefox, Safari, Edge et Opera. Nous recommandons d'utiliser la dernière version de votre navigateur." },
+      { question: "Puis-je utiliser ToolPop sur mon téléphone ou ma tablette ?", answer: "Oui ! ToolPop est entièrement responsive et fonctionne sur les appareils mobiles. Vous pouvez fusionner, scinder, convertir et modifier des PDF directement depuis le navigateur de votre téléphone ou tablette." },
       { question: "Comment fonctionne le traitement dans le navigateur ?", answer: "Lorsque vous sélectionnez un fichier, il reste sur votre appareil. Nos outils utilisent des bibliothèques JavaScript comme pdf-lib et PDF.js pour lire, modifier et créer des PDF directement dans la mémoire de votre navigateur. Le fichier traité est ensuite disponible au téléchargement — aucune communication avec un serveur n'est nécessaire." },
       { question: "Puis-je fusionner plus de deux fichiers PDF ?", answer: "Oui. Notre outil de fusion PDF permet de combiner autant de fichiers que souhaité. Glissez-déposez tous les PDF à fusionner, organisez-les dans l'ordre voulu et cliquez sur le bouton de traitement." },
       { question: "Quels formats de conversion sont disponibles ?", answer: "Vous pouvez convertir des PDF en JPG, PNG et texte brut. Pour créer des PDF, nous prenons en charge les images JPG, PNG, WEBP, TIFF, HEIC, les fichiers HTML et les documents numérisés. De nouveaux formats de conversion sont ajoutés régulièrement." },
-      { question: "En quoi ToolPop PDF se distingue-t-il des autres outils PDF ?", answer: "Trois différences majeures : (1) Confidentialité — vos fichiers ne quittent jamais votre appareil, contrairement à la plupart des concurrents qui les téléversent sur leurs serveurs. (2) Sans limites — pas de quotas quotidiens, pas de restrictions de taille, pas de filigrane sur les fichiers de sortie. (3) Sans compte — utilisez n'importe quel outil instantanément sans vous inscrire." },
+      { question: "En quoi ToolPop se distingue-t-il des autres outils PDF ?", answer: "Trois différences majeures : (1) Confidentialité — vos fichiers ne quittent jamais votre appareil, contrairement à la plupart des concurrents qui les téléversent sur leurs serveurs. (2) Sans limites — pas de quotas quotidiens, pas de restrictions de taille, pas de filigrane sur les fichiers de sortie. (3) Sans compte — utilisez n'importe quel outil instantanément sans vous inscrire." },
       { question: "Puis-je protéger mon PDF par un mot de passe ?", answer: "Oui. Utilisez notre outil Protéger PDF pour ajouter un mot de passe avec chiffrement AES-256. Vous pouvez définir un mot de passe d'ouverture et des permissions pour contrôler l'impression, la copie et la modification." },
-      { question: "ToolPop PDF ajoute-t-il des filigranes à mes fichiers ?", answer: "Jamais. Tous les fichiers traités sont propres et exempts de toute marque ou filigrane ToolPop. Le résultat est exactement ce que vous attendez d'un outil professionnel." },
-      { question: "Y a-t-il une API disponible ?", answer: "Pas pour le moment. ToolPop PDF est conçu comme un outil basé sur le navigateur pour un usage individuel. Si vous avez besoin d'un accès API pour le traitement programmatique de PDF, contactez-nous pour discuter de solutions entreprise." },
-      { question: "Quelles langues le site prend-il en charge ?", answer: "ToolPop PDF est disponible en 45 langues dont l'anglais, le coréen, l'espagnol, le chinois, le japonais, l'allemand, le français, le portugais, l'arabe, le hindi et bien d'autres. L'interface détecte automatiquement la langue de votre navigateur, ou vous pouvez la changer manuellement via le sélecteur de langue." },
+      { question: "ToolPop ajoute-t-il des filigranes à mes fichiers ?", answer: "Jamais. Tous les fichiers traités sont propres et exempts de toute marque ou filigrane ToolPop. Le résultat est exactement ce que vous attendez d'un outil professionnel." },
+      { question: "Y a-t-il une API disponible ?", answer: "Pas pour le moment. ToolPop est conçu comme un outil basé sur le navigateur pour un usage individuel. Si vous avez besoin d'un accès API pour le traitement programmatique de PDF, contactez-nous pour discuter de solutions entreprise." },
+      { question: "Quelles langues le site prend-il en charge ?", answer: "ToolPop est disponible en 45 langues dont l'anglais, le coréen, l'espagnol, le chinois, le japonais, l'allemand, le français, le portugais, l'arabe, le hindi et bien d'autres. L'interface détecte automatiquement la langue de votre navigateur, ou vous pouvez la changer manuellement via le sélecteur de langue." },
     ],
   },
   blog: {

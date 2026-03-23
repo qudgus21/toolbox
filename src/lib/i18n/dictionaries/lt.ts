@@ -126,9 +126,9 @@ const lt: Dictionary = {
     comingSoon: "Coming Soon",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Nemokami PDF įrankiai",
+    siteTitle: "ToolPop - Nemokami PDF įrankiai",
     siteDescription: "Sujunkite, padalinkite, suspausite ir konvertuokite PDF failus internetu nemokamai.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Naudojame slapukus jūsų patirčiai gerinti.",
@@ -138,15 +138,15 @@ const lt: Dictionary = {
   privacy: {
     title: "Privatumo politika",
     lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
-    intro: "ToolPop PDF vertina jūsų privatumą. Ši politika paaiškina, kokią informaciją renkame, kai naudojatės mūsų paslauga, ir kaip su ja elgiamės.",
+    intro: "ToolPop vertina jūsų privatumą. Ši politika paaiškina, kokią informaciją renkame, kai naudojatės mūsų paslauga, ir kaip su ja elgiamės.",
     sections: [
       {
         heading: "1. Informacija, kurią renkame",
-        content: "ToolPop PDF nereikalauja registracijos. Nerenkame asmens duomenų. Tačiau galime automatiškai rinkti neasmeninius duomenis paslaugos tobulinimui:\n\n• Naršyklės tipas ir versija\n• Operacinė sistema\n• Aplankyti puslapiai ir praleistas laikas\n• Slapukai ir panašios technologijos naudojimo įpročiams stebėti",
+        content: "ToolPop nereikalauja registracijos. Nerenkame asmens duomenų. Tačiau galime automatiškai rinkti neasmeninius duomenis paslaugos tobulinimui:\n\n• Naršyklės tipas ir versija\n• Operacinė sistema\n• Aplankyti puslapiai ir praleistas laikas\n• Slapukai ir panašios technologijos naudojimo įpročiams stebėti",
       },
       {
         heading: "2. Failų tvarkymas",
-        content: "Jūsų įkelti failai apdorojami mūsų serveriuose ir automatiškai ištrinami per 2 valandas. Mes neskaitome, nesaugome ir nesidalijame jūsų failų turiniu su niekuo.",
+        content: "Visas failų apdorojimas ToolPop vyksta tiesiogiai jūsų naršyklėje. Jūsų failai niekada neįkeliami į jokį serverį ir niekada nepalieka jūsų įrenginio. Naudojame WebAssembly ir šiuolaikines žiniatinklio technologijas vietiniam ir saugiam apdorojimui.",
       },
       {
         heading: "3. Slapukai",
@@ -166,18 +166,18 @@ const lt: Dictionary = {
       },
       {
         heading: "7. Susisiekite su mumis",
-        content: "Dėl klausimų, susijusių su privatumu, rašykite mums adresu support@toolbox-pdf.com.",
+        content: "Dėl klausimų, susijusių su privatumu, rašykite mums adresu support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Naudojimo sąlygos",
     lastUpdated: "Paskutinį kartą atnaujinta: 2026 m. kovo 1 d.",
-    intro: "Dėkojame, kad naudojatės ToolPop PDF. Naudodamiesi mūsų paslauga, sutinkate su šiomis sąlygomis.",
+    intro: "Dėkojame, kad naudojatės ToolPop. Naudodamiesi mūsų paslauga, sutinkate su šiomis sąlygomis.",
     sections: [
       {
         heading: "1. Apie paslaugą",
-        content: "ToolPop PDF yra nemokama internetinė paslauga, leidžianti sujungti, padalinti, konvertuoti, redaguoti ir suspausti PDF failus tiesiai naršyklėje.",
+        content: "ToolPop yra nemokamas internetinis įrankių rinkinys, leidžiantis apdoroti PDF, vaizdus ir kitus failus tiesiogiai naršyklėje. Visas apdorojimas vyksta jūsų įrenginyje — failai niekada neįkeliami į jokį serverį.",
       },
       {
         heading: "2. Leistinas naudojimas",
@@ -185,7 +185,7 @@ const lt: Dictionary = {
       },
       {
         heading: "3. Failų tvarkymas",
-        content: "Įkelti failai naudojami tik prašomai operacijai atlikti. Jie automatiškai ištrinami iš mūsų serverių per 2 valandas. Mes neanalizuojame ir nesaugome jūsų failų.",
+        content: "Visas failų apdorojimas ToolPop vyksta tiesiogiai jūsų naršyklėje. Jūsų failai niekada nesiunčiami į jokį serverį ir niekada nepalieka jūsų įrenginio. Apdoroti rezultatai prieinami atsisiuntimui tiesiogiai iš naršyklės.",
       },
       {
         heading: "4. Atsakomybės apribojimas",
@@ -205,7 +205,7 @@ const lt: Dictionary = {
       },
       {
         heading: "8. Susisiekite su mumis",
-        content: "Dėl klausimų apie šias sąlygas rašykite mums adresu support@toolbox-pdf.com.",
+        content: "Dėl klausimų apie šias sąlygas rašykite mums adresu support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1057,13 @@ const lt: Dictionary = {
     backLabel: "Galas",
   },
   about: {
-    title: "Apie ToolPop PDF",
-    intro: "ToolPop PDF — tai nemokamas PDF įrankių rinkinys, veikiantis tiesiai naršyklėje. Redaguokite, konvertuokite ir tvarkykite PDF failus neįkeldami jų į serverį. Jūsų failai niekada nepalieka jūsų įrenginio.",
+    title: "Apie ToolPop",
+    intro: "ToolPop — tai nemokamas PDF įrankių rinkinys, veikiantis tiesiai naršyklėje. Redaguokite, konvertuokite ir tvarkykite PDF failus neįkeldami jų į serverį. Jūsų failai niekada nepalieka jūsų įrenginio.",
     sections: [
-      { heading: "Mūsų misija", content: "Tikime, kad kiekvienas nusipelno turėti prieigą prie galingų PDF įrankių — be prenumeratų, be registracijų ir nekenkiant privatumui. ToolPop PDF sukūrėme tam, kad profesionalus dokumentų tvarkymas būtų prieinamas kiekvienam, turinčiam interneto naršyklę." },
-      { heading: "Kaip tai veikia", content: "Skirtingai nuo tradicinių PDF paslaugų, reikalaujančių įkelti failus į nuotolinius serverius, ToolPop PDF viską apdoroja tiesiai jūsų naršyklėje naudojant šiuolaikines žiniatinklio technologijas, tokias kaip WebAssembly ir PDF.js biblioteka. Tai reiškia, kad jūsų konfidencialūs dokumentai visada lieka jūsų įrenginyje — mes niekada nematome, nesaugome ir neperduodame jūsų failų." },
-      { heading: "Ką siūlome", content: "ToolPop PDF apima daugiau nei 40 įrankių penkiose kategorijose:\n\n• Tvarkymas — sujungimas, padalijimas, pertvarkymas, ištraukimas ir puslapių šalinimas\n• Konvertavimas — konvertavimas tarp PDF, JPG, PNG, teksto ir kitų formatų\n• Redagavimas — teksto, vaizdų, parašų, vandens ženklų, puslapių numerių ir anotacijų pridėjimas\n• Optimizavimas — failų suspaudimas ir optimizavimas žiniatinkliui\n• Saugumas — slaptažodžiu apsauga, konfidencialios informacijos slėpimas ir dokumentų sulyginimas\n\nVisi įrankiai yra visiškai nemokami, be failų dydžio apribojimų ar dienos naudojimo limitų." },
-      { heading: "Mūsų technologija", content: "ToolPop PDF sukurtas su Next.js, React ir šiuolaikiniais žiniatinklio standartais. Naudojame tokias bibliotekas kaip pdf-lib PDF manipuliavimui ir PDF.js atvaizdavimui — viskas veikia kliento pusėje jūsų naršyklėje. Svetainė palaiko 45 kalbas, tamsų režimą ir veikia bet kuriame įrenginyje su šiuolaikine naršykle." },
+      { heading: "Mūsų misija", content: "Tikime, kad kiekvienas nusipelno turėti prieigą prie galingų PDF įrankių — be prenumeratų, be registracijų ir nekenkiant privatumui. ToolPop sukūrėme tam, kad profesionalus dokumentų tvarkymas būtų prieinamas kiekvienam, turinčiam interneto naršyklę." },
+      { heading: "Kaip tai veikia", content: "Skirtingai nuo tradicinių PDF paslaugų, reikalaujančių įkelti failus į nuotolinius serverius, ToolPop viską apdoroja tiesiai jūsų naršyklėje naudojant šiuolaikines žiniatinklio technologijas, tokias kaip WebAssembly ir PDF.js biblioteka. Tai reiškia, kad jūsų konfidencialūs dokumentai visada lieka jūsų įrenginyje — mes niekada nematome, nesaugome ir neperduodame jūsų failų." },
+      { heading: "Ką siūlome", content: "ToolPop apima daugiau nei 40 įrankių penkiose kategorijose:\n\n• Tvarkymas — sujungimas, padalijimas, pertvarkymas, ištraukimas ir puslapių šalinimas\n• Konvertavimas — konvertavimas tarp PDF, JPG, PNG, teksto ir kitų formatų\n• Redagavimas — teksto, vaizdų, parašų, vandens ženklų, puslapių numerių ir anotacijų pridėjimas\n• Optimizavimas — failų suspaudimas ir optimizavimas žiniatinkliui\n• Saugumas — slaptažodžiu apsauga, konfidencialios informacijos slėpimas ir dokumentų sulyginimas\n\nVisi įrankiai yra visiškai nemokami, be failų dydžio apribojimų ar dienos naudojimo limitų." },
+      { heading: "Mūsų technologija", content: "ToolPop sukurtas su Next.js, React ir šiuolaikiniais žiniatinklio standartais. Naudojame tokias bibliotekas kaip pdf-lib PDF manipuliavimui ir PDF.js atvaizdavimui — viskas veikia kliento pusėje jūsų naršyklėje. Svetainė palaiko 45 kalbas, tamsų režimą ir veikia bet kuriame įrenginyje su šiuolaikine naršykle." },
       { heading: "Susisiekite", content: "Turite klausimų, atsiliepimų ar pasiūlymų? Mielai išgirsime. Apsilankykite mūsų Kontaktų puslapyje arba rašykite mums el. paštu." },
     ],
   },
@@ -1091,22 +1091,22 @@ const lt: Dictionary = {
   },
   faq: {
     title: "Dažniausiai užduodami klausimai",
-    intro: "Raskite atsakymus į dažniausius klausimus apie ToolPop PDF. Jei nerandate savo klausimo, drąsiai susisiekite su mumis.",
+    intro: "Raskite atsakymus į dažniausius klausimus apie ToolPop. Jei nerandate savo klausimo, drąsiai susisiekite su mumis.",
     items: [
-      { question: "Ar ToolPop PDF tikrai nemokamas?", answer: "Taip, visiškai nemokamas. Visi įrankiai prieinami be apribojimų, be registracijos ir be paslėptų mokesčių. Paslaugą palaikome nedidele reklama." },
+      { question: "Ar ToolPop tikrai nemokamas?", answer: "Taip, visiškai nemokamas. Visi įrankiai prieinami be apribojimų, be registracijos ir be paslėptų mokesčių. Paslaugą palaikome nedidele reklama." },
       { question: "Ar mano failai saugūs ir privatūs?", answer: "Be abejo. Jūsų failai apdorojami išimtinai jūsų naršyklėje — jie niekada nepalieka jūsų įrenginio ir nėra įkeliami į jokį serverį. Naudojame šiuolaikines naršyklės API visoms PDF operacijoms, todėl jūsų konfidencialūs dokumentai lieka visiškai privatūs." },
-      { question: "Ar reikia susikurti paskyrą?", answer: "Ne. ToolPop PDF veikia be jokios registracijos ar prisijungimo. Tiesiog atidarykite įrankį, nutempkite failą ir iškart gaukite rezultatą." },
+      { question: "Ar reikia susikurti paskyrą?", answer: "Ne. ToolPop veikia be jokios registracijos ar prisijungimo. Tiesiog atidarykite įrankį, nutempkite failą ir iškart gaukite rezultatą." },
       { question: "Koks didžiausias failo dydis?", answer: "Kadangi apdorojimas vyksta jūsų naršyklėje, limitas priklauso nuo jūsų įrenginio turimos atminties. Dauguma šiuolaikinių įrenginių be problemų apdoroja failus iki 100–200 MB. Labai dideliems failams rekomenduojame naudoti stalinį kompiuterį." },
-      { question: "Kokios naršyklės palaikomos?", answer: "ToolPop PDF veikia visose šiuolaikinėse naršyklėse, įskaitant Chrome, Firefox, Safari, Edge ir Opera. Geriausiai patirčiai rekomenduojame naujausią naršyklės versiją." },
-      { question: "Ar galiu naudoti ToolPop PDF telefone ar planšetėje?", answer: "Taip! ToolPop PDF yra visiškai prisitaikantis ir veikia mobiliuosiuose įrenginiuose. Galite sujungti, padalinti, konvertuoti ir redaguoti PDF failus tiesiai iš savo telefono ar planšetės naršyklės." },
+      { question: "Kokios naršyklės palaikomos?", answer: "ToolPop veikia visose šiuolaikinėse naršyklėse, įskaitant Chrome, Firefox, Safari, Edge ir Opera. Geriausiai patirčiai rekomenduojame naujausią naršyklės versiją." },
+      { question: "Ar galiu naudoti ToolPop telefone ar planšetėje?", answer: "Taip! ToolPop yra visiškai prisitaikantis ir veikia mobiliuosiuose įrenginiuose. Galite sujungti, padalinti, konvertuoti ir redaguoti PDF failus tiesiai iš savo telefono ar planšetės naršyklės." },
       { question: "Kaip veikia apdorojimas naršyklėje?", answer: "Kai pasirenkate failą, jis lieka jūsų įrenginyje. Mūsų įrankiai naudoja JavaScript bibliotekas, tokias kaip pdf-lib ir PDF.js, failo skaitymui, modifikavimui ir kūrimui tiesiai naršyklės atmintyje. Apdorotas failas tada paruošiamas atsisiuntimui — be jokio ryšio su serveriu." },
       { question: "Ar galiu sujungti daugiau nei du PDF failus?", answer: "Taip. Mūsų PDF sujungimo įrankis palaiko bet kokį failų skaičių. Tiesiog nutempkite visus norimus PDF failus, surikiuokite juos pageidaujama tvarka ir spauskite apdorojimo mygtuką." },
       { question: "Kokius failų formatus galiu konvertuoti į ir iš PDF?", answer: "PDF failus galite konvertuoti į JPG, PNG ir paprastą tekstą. PDF kūrimui palaikome JPG, PNG, WEBP, TIFF, HEIC vaizdus, HTML failus ir nuskenuotus dokumentus. Nuolat pridedame naujų formatų." },
-      { question: "Kuo ToolPop PDF skiriasi nuo kitų PDF įrankių?", answer: "Trys pagrindiniai skirtumai: (1) Privatumas — jūsų failai niekada nepalieka jūsų įrenginio, skirtingai nei daugumos konkurentų, kurie įkelia į savo serverius. (2) Be apribojimų — be dienos limitų, be failo dydžio ribojimų, be vandens ženklų. (3) Be registracijos — naudokite bet kurį įrankį iškart be prisijungimo." },
+      { question: "Kuo ToolPop skiriasi nuo kitų PDF įrankių?", answer: "Trys pagrindiniai skirtumai: (1) Privatumas — jūsų failai niekada nepalieka jūsų įrenginio, skirtingai nei daugumos konkurentų, kurie įkelia į savo serverius. (2) Be apribojimų — be dienos limitų, be failo dydžio ribojimų, be vandens ženklų. (3) Be registracijos — naudokite bet kurį įrankį iškart be prisijungimo." },
       { question: "Ar galiu pridėti slaptažodį PDF apsaugai?", answer: "Taip. Naudokite mūsų PDF apsaugos įrankį su AES-256 šifravimu. Galite nustatyti atidarymo slaptažodį ir leidimus spausdinimui, kopijavimui ir redagavimui kontroliuoti." },
-      { question: "Ar ToolPop PDF prideda vandens ženklus prie mano failų?", answer: "Niekada. Visi apdoroti failai yra švarūs ir be jokių ToolPop žymenų ar vandens ženklų. Rezultatas yra būtent toks, kokio tikėtumėtės iš profesionalaus įrankio." },
-      { question: "Ar yra API?", answer: "Šiuo metu ne. ToolPop PDF sukurtas kaip naršyklės įrankis asmeniniam naudojimui. Jei reikia API prieigos programiniam PDF apdorojimui, susisiekite su mumis el. paštu dėl verslo sprendimų." },
-      { question: "Kokias kalbas palaiko svetainė?", answer: "ToolPop PDF prieinamas 45 kalbomis, įskaitant anglų, korėjiečių, ispanų, kinų, japonų, vokiečių, prancūzų, portugalų, arabų, hindi ir daugeliu kitų. Sąsaja automatiškai nustato jūsų naršyklės kalbą, arba galite perjungti rankiniu būdu naudodami kalbos parinkiklį." },
+      { question: "Ar ToolPop prideda vandens ženklus prie mano failų?", answer: "Niekada. Visi apdoroti failai yra švarūs ir be jokių ToolPop žymenų ar vandens ženklų. Rezultatas yra būtent toks, kokio tikėtumėtės iš profesionalaus įrankio." },
+      { question: "Ar yra API?", answer: "Šiuo metu ne. ToolPop sukurtas kaip naršyklės įrankis asmeniniam naudojimui. Jei reikia API prieigos programiniam PDF apdorojimui, susisiekite su mumis el. paštu dėl verslo sprendimų." },
+      { question: "Kokias kalbas palaiko svetainė?", answer: "ToolPop prieinamas 45 kalbomis, įskaitant anglų, korėjiečių, ispanų, kinų, japonų, vokiečių, prancūzų, portugalų, arabų, hindi ir daugeliu kitų. Sąsaja automatiškai nustato jūsų naršyklės kalbą, arba galite perjungti rankiniu būdu naudodami kalbos parinkiklį." },
     ],
   },
   blog: {
