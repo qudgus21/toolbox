@@ -3,7 +3,8 @@ import {
   loadImage,
   createCanvas,
   canvasToBlob,
-  getFileExtension,
+  getSafeOutputExtension,
+  getSafeOutputFilename,
   replaceExtension,
 } from "../canvas-utils";
 
@@ -22,7 +23,7 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   // If only 1 tile, return original
   if (rows * cols === 1) {
-    const ext = getFileExtension(file.name);
+    const ext = getSafeOutputExtension(file.name);
     const mime = ext === "jpg" || ext === "jpeg" ? "image/jpeg" : "image/png";
     const { canvas, ctx } = createCanvas(imgW, imgH);
     ctx.drawImage(img, 0, 0);
@@ -30,7 +31,7 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
     onProgress(100);
     return {
       blob,
-      filename: file.name,
+      filename: getSafeOutputFilename(file.name),
       size: blob.size,
       width: imgW,
       height: imgH,

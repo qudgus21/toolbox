@@ -49,7 +49,7 @@ export function ConvertOptions({ slug, value, onChange, labels }: ConvertOptions
               {labels.quality}
             </label>
             <span className="text-sm font-semibold text-foreground">
-              {value.quality ?? 92}%
+              {value.quality ?? 100}%
             </span>
           </div>
           <input
@@ -57,13 +57,13 @@ export function ConvertOptions({ slug, value, onChange, labels }: ConvertOptions
             min={1}
             max={100}
             step={1}
-            value={value.quality ?? 92}
+            value={value.quality ?? 100}
             onChange={(e) => onChange({ ...value, quality: Number(e.target.value) })}
             className="w-full accent-accent"
           />
           <div className="flex justify-between text-xs text-foreground-muted mt-1">
-            <span>{labels.smallerFile}</span>
-            <span>{labels.bestQuality}</span>
+            <span>1%</span>
+            <span>100%</span>
           </div>
         </div>
       )}
@@ -80,5 +80,5 @@ export function ConvertOptions({ slug, value, onChange, labels }: ConvertOptions
 export function getDefaultConvertOptions(slug: string): ConvertOptionsValue {
   const info = parseConversionInfo(slug);
   const isLossy = info && LOSSY_FORMATS.includes(info.to);
-  return { quality: isLossy ? 92 : undefined };
+  return { quality: isLossy ? 100 : undefined };
 }

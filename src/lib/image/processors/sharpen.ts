@@ -3,7 +3,8 @@ import {
   loadImage,
   createCanvas,
   canvasToBlob,
-  getFileExtension,
+  getSafeOutputExtension,
+  getSafeOutputFilename,
   formatToMimeType,
 } from "../canvas-utils";
 
@@ -91,7 +92,7 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   onProgress(80);
 
-  const ext = getFileExtension(file.name);
+  const ext = getSafeOutputExtension(file.name);
   const mime = formatToMimeType(ext);
   const blob = await canvasToBlob(canvas, mime);
 
@@ -99,7 +100,7 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   return {
     blob,
-    filename: file.name,
+    filename: getSafeOutputFilename(file.name),
     size: blob.size,
     width: w,
     height: h,

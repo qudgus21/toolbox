@@ -10,6 +10,7 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
   const file = files[0];
   onProgress(0);
 
+  const borderRadiusPct = (options.borderRadius as number) ?? 50; // 0-50%
   const borderWidth = (options.borderWidth as number) ?? 0;
   const borderColor = (options.borderColor as string) ?? "#ffffff";
 
@@ -28,25 +29,24 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
   const totalSize = minDim + borderWidth * 2;
   const { canvas, ctx } = createCanvas(totalSize, totalSize);
 
-  const centerX = totalSize / 2;
-  const centerY = totalSize / 2;
-  const outerRadius = totalSize / 2;
-  const imageRadius = minDim / 2;
+  // borderRadius as percentage of half-size: 50% = full circle
+  const radius = (borderRadiusPct / 50) * (totalSize / 2);
+  const imageRadius = (borderRadiusPct / 50) * (minDim / 2);
 
   onProgress(50);
 
-  // Draw border circle if borderWidth > 0
+  // Draw border shape if borderWidth > 0
   if (borderWidth > 0) {
     ctx.beginPath();
-    ctx.arc(centerX, centerY, outerRadius, 0, Math.PI * 2);
+    ctx.roundRect(0, 0, totalSize, totalSize, radius);
     ctx.fillStyle = borderColor;
     ctx.fill();
   }
 
-  // Clip to circle for image
+  // Clip to rounded shape for image
   ctx.save();
   ctx.beginPath();
-  ctx.arc(centerX, centerY, imageRadius, 0, Math.PI * 2);
+  ctx.roundRect(borderWidth, borderWidth, minDim, minDim, imageRadius);
   ctx.clip();
 
   // Draw the center-cropped image

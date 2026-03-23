@@ -49,8 +49,8 @@ export interface ImageToolDefinition {
   comingSoon?: boolean;
 }
 
-const IMG_TYPES = ".jpg,.jpeg,.png,.gif,.webp,.bmp,.svg,.avif,.ico";
-const IMG_RASTER = ".jpg,.jpeg,.png,.gif,.webp,.bmp,.avif";
+const IMG_ALL = ".jpg,.jpeg,.png,.gif,.webp,.bmp,.svg,.ico";
+const IMG_RASTER = ".jpg,.jpeg,.png,.gif,.webp,.bmp,.svg,.ico";
 
 export const tools: ImageToolDefinition[] = [
   // ── Edit ──────────────────────────────────────────────
@@ -393,7 +393,7 @@ export const tools: ImageToolDefinition[] = [
     icon: Code,
     emoji: "🌐",
     category: "compose",
-    acceptedTypes: "",
+    acceptedTypes: ".html,.htm,.xhtml,.svg,text/html",
   },
 
   // ── Generate ───────────────────────────────────────────

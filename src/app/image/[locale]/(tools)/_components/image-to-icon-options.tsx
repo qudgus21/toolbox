@@ -66,7 +66,7 @@ export function ImageToIconOptions({ value, onChange, labels }: ImageToIconOptio
       <div className="rounded-md border border-border bg-background-subtle p-3 text-center">
         <span className="text-xs text-foreground-muted">{labels.output} </span>
         <span className="text-sm font-semibold text-foreground">
-          {labels.outputDesc}
+          {value.sizes.length}{labels.outputDesc}
         </span>
       </div>
     </div>

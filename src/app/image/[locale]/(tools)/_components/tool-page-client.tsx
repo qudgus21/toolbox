@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { ToolPageLayout, FileUploadZone } from "@/lib/ui";
@@ -10,9 +10,11 @@ import { hasProcessor } from "@/lib/image/processor-registry";
 import type { ImageDictionary } from "@/lib/i18n/image-config";
 import { ProcessingOverlay } from "./processing-overlay";
 import { ResultCard } from "./result-card";
+import { RelatedTools } from "./related-tools";
 import { ErrorMessage } from "./error-message";
 import { useImageDimensions } from "./use-image-dimensions";
 import { ImagePreview } from "./image-preview";
+import { GeneratePreview } from "./generate-preview";
 import { ResizeOptions, getDefaultResizeOptions } from "./resize-options";
 import type { ResizeOptionsValue } from "./resize-options";
 import { CropEditor, getDefaultCropOptions } from "./crop-editor";
@@ -29,6 +31,7 @@ import { GrayscaleOptions, getDefaultGrayscaleOptions } from "./grayscale-option
 import type { GrayscaleOptionsValue } from "./grayscale-options";
 import { AddTextOptions, getDefaultAddTextOptions } from "./add-text-options";
 import type { AddTextOptionsValue } from "./add-text-options";
+import { AddTextEditor } from "./add-text-editor";
 import { AddBorderOptions, getDefaultAddBorderOptions } from "./add-border-options";
 import type { AddBorderOptionsValue } from "./add-border-options";
 import { PixelateOptions, getDefaultPixelateOptions } from "./pixelate-options";
@@ -140,7 +143,7 @@ const MULTI_FILE_TOOLS = new Set(["combine", "collage"]);
 
 // Tools that don't require file upload (generate from scratch)
 const NO_UPLOAD_TOOLS = new Set([
-  "html-to-image", "gradient", "placeholder", "pattern", "qr-code",
+  "gradient", "placeholder", "pattern", "qr-code",
 ]);
 
 function isConvertTool(slug: string): boolean {
@@ -151,16 +154,19 @@ function hasOptionsPanel(slug: string): boolean {
   return TOOLS_WITH_OPTIONS.has(slug) || isConvertTool(slug);
 }
 
-// Crop has its own built-in preview via CropEditor
-function usesCropEditor(slug: string): boolean {
-  return slug === "crop";
+// Tools with their own built-in editor (preview + options combined)
+const CUSTOM_EDITOR_TOOLS = new Set(["crop", "add-text"]);
+
+function usesCustomEditor(slug: string): boolean {
+  return CUSTOM_EDITOR_TOOLS.has(slug);
 }
 
-// Tools where a standalone preview makes sense
+// Tools that use GeneratePreview instead of ImagePreview (upload file but preview is generated)
+const GENERATE_PREVIEW_TOOLS = new Set(["html-to-image"]);
+
+// Tools where a standalone preview makes sense (all file-upload tools except custom editors)
 function usesImagePreview(slug: string): boolean {
-  return ["resize", "rotate", "flip", "grayscale", "add-text", "add-border",
-    "pixelate", "blur", "filters", "round-image", "profile-photo", "meme", "watermark",
-    "color-replace", "vignette", "noise", "sharpen", "sepia", "invert"].includes(slug);
+  return !NO_UPLOAD_TOOLS.has(slug) && !CUSTOM_EDITOR_TOOLS.has(slug) && !GENERATE_PREVIEW_TOOLS.has(slug);
 }
 
 export function ToolPageClient({
@@ -224,6 +230,16 @@ export function ToolPageClient({
   const [patternOpts, setPatternOpts] = useState<PatternOptionsValue>(getDefaultPatternOptions());
   const [qrCodeOpts, setQrCodeOpts] = useState<QrCodeOptionsValue>(getDefaultQrCodeOptions());
 
+  // Read HTML file content when uploaded for html-to-image tool
+  useEffect(() => {
+    if (slug !== "html-to-image" || !firstFile) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      setHtmlToImageOpts((prev) => ({ ...prev, html: reader.result as string }));
+    };
+    reader.readAsText(firstFile);
+  }, [slug, firstFile]);
+
   // Initialize dimension-dependent options once dimensions are loaded
   const resizeValue = useMemo(() => {
     if (resizeOpts) return resizeOpts;
@@ -258,7 +274,7 @@ export function ToolPageClient({
       case "grayscale":
         return { ...grayscaleOpts };
       case "add-text":
-        return { ...addTextOpts };
+        return { items: addTextOpts.items };
       case "add-border":
         return { ...addBorderOpts };
       case "pixelate":
@@ -309,7 +325,7 @@ export function ToolPageClient({
         return { ...qrCodeOpts };
       default:
         if (isConvertTool(slug)) {
-          return { ...convertOpts };
+          return { ...convertOpts, slug };
         }
         return {};
     }
@@ -326,14 +342,23 @@ export function ToolPageClient({
     processFiles(buildProcessOptions());
   }, [processFiles, buildProcessOptions]);
 
+  // Auto-download when processing completes
+  const prevStageRef = useRef(stage);
+  useEffect(() => {
+    if (prevStageRef.current === "processing" && stage === "done" && result) {
+      download();
+    }
+    prevStageRef.current = stage;
+  }, [stage, result, download]);
+
   const showOptionsPanel = hasOptionsPanel(slug);
   const showPreview = usesImagePreview(slug);
-  const showCropEditor = usesCropEditor(slug);
+  const showCustomEditor = usesCustomEditor(slug);
   const isMultiFileTool = MULTI_FILE_TOOLS.has(slug);
   const isNoUploadTool = NO_UPLOAD_TOOLS.has(slug);
 
   // Whether we need the side-by-side / stacked layout
-  const needsEditorLayout = stage === "loaded" && (showOptionsPanel || showPreview || showCropEditor);
+  const needsEditorLayout = stage === "loaded" && (showOptionsPanel || showPreview || showCustomEditor);
 
   return (
     <ToolPageLayout
@@ -343,29 +368,37 @@ export function ToolPageClient({
       backLabel={labels.backToAll}
       linkComponent={Link}
     >
-      {/* Idle -- no-upload tools show options directly */}
+      {/* Idle -- no-upload tools show preview + options */}
       {stage === "idle" && isNoUploadTool && (
         <div className="space-y-4 pb-24">
-          <div className="rounded-lg border border-border bg-background p-4">
-            <h3 className="text-sm font-semibold text-foreground mb-4">
-              {labels.options}
-            </h3>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
+            {/* Preview area */}
+            <div className="flex-1 min-w-0">
+              <GeneratePreview slug={slug} options={previewOptions} />
+            </div>
 
-            {slug === "html-to-image" && (
-              <HtmlToImageOptions value={htmlToImageOpts} onChange={setHtmlToImageOpts} labels={toolLabels.htmlToImage} />
-            )}
-            {slug === "gradient" && (
-              <GradientOptions value={gradientOpts} onChange={setGradientOpts} labels={toolLabels.gradient} />
-            )}
-            {slug === "placeholder" && (
-              <PlaceholderOptions value={placeholderOpts} onChange={setPlaceholderOpts} labels={toolLabels.placeholder} />
-            )}
-            {slug === "pattern" && (
-              <PatternOptions value={patternOpts} onChange={setPatternOpts} labels={toolLabels.pattern} />
-            )}
-            {slug === "qr-code" && (
-              <QrCodeOptions value={qrCodeOpts} onChange={setQrCodeOpts} labels={toolLabels.qrCode} />
-            )}
+            {/* Options panel */}
+            <div className="shrink-0 rounded-lg border border-border bg-background p-4 lg:w-80">
+              <h3 className="text-sm font-semibold text-foreground mb-4">
+                {labels.options}
+              </h3>
+
+              {slug === "html-to-image" && (
+                <HtmlToImageOptions value={htmlToImageOpts} onChange={setHtmlToImageOpts} labels={toolLabels.htmlToImage} />
+              )}
+              {slug === "gradient" && (
+                <GradientOptions value={gradientOpts} onChange={setGradientOpts} labels={toolLabels.gradient} />
+              )}
+              {slug === "placeholder" && (
+                <PlaceholderOptions value={placeholderOpts} onChange={setPlaceholderOpts} labels={toolLabels.placeholder} />
+              )}
+              {slug === "pattern" && (
+                <PatternOptions value={patternOpts} onChange={setPatternOpts} labels={toolLabels.pattern} />
+              )}
+              {slug === "qr-code" && (
+                <QrCodeOptions value={qrCodeOpts} onChange={setQrCodeOpts} labels={toolLabels.qrCode} />
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -456,8 +489,8 @@ export function ToolPageClient({
             </div>
           )}
 
-          {/* Crop editor (full-width, has its own preview) */}
-          {showCropEditor && firstFile && origW > 0 && (
+          {/* Custom editors (full-width, have their own preview + options) */}
+          {showCustomEditor && slug === "crop" && firstFile && origW > 0 && (
             <CropEditor
               file={firstFile}
               originalWidth={origW}
@@ -467,18 +500,34 @@ export function ToolPageClient({
               labels={toolLabels.crop}
             />
           )}
+          {showCustomEditor && slug === "add-text" && firstFile && origW > 0 && (
+            <AddTextEditor
+              file={firstFile}
+              originalWidth={origW}
+              originalHeight={origH}
+              value={addTextOpts}
+              onChange={setAddTextOpts}
+              labels={toolLabels.addText}
+            />
+          )}
 
-          {/* Side-by-side layout for preview + options (non-crop tools) */}
-          {!showCropEditor && (
-            <div className="flex flex-col gap-4 lg:flex-row">
+          {/* Side-by-side layout for preview + options (non-custom-editor tools) */}
+          {!showCustomEditor && (
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
               {/* Preview area */}
               {showPreview && firstFile && (
                 <div className="flex-1 min-w-0">
                   <ImagePreview
                     file={firstFile}
+                    files={isMultiFileTool ? files : undefined}
                     slug={slug}
                     options={previewOptions}
                   />
+                </div>
+              )}
+              {GENERATE_PREVIEW_TOOLS.has(slug) && (
+                <div className="flex-1 min-w-0">
+                  <GeneratePreview slug={slug} options={previewOptions} />
                 </div>
               )}
 
@@ -486,7 +535,7 @@ export function ToolPageClient({
               {showOptionsPanel && (
                 <div
                   className={`shrink-0 rounded-lg border border-border bg-background p-4 ${
-                    showPreview ? "lg:w-80" : "w-full"
+                    (showPreview || GENERATE_PREVIEW_TOOLS.has(slug)) ? "lg:w-80" : "w-full"
                   }`}
                 >
                   <h3 className="text-sm font-semibold text-foreground mb-4">
@@ -767,7 +816,7 @@ export function ToolPageClient({
               className="group w-full cursor-pointer overflow-hidden rounded-xl bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-md hover:shadow-xl hover:brightness-110 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 transition-all duration-200"
             >
               <span className="flex items-center justify-center gap-2">
-                {labels.process}
+                {title}
                 <svg className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -782,14 +831,22 @@ export function ToolPageClient({
         <ProcessingOverlay progress={progress} label={labels.processing} />
       )}
 
-      {/* Done -- result card */}
+      {/* Done -- result card + related tools */}
       {stage === "done" && result && (
-        <ResultCard
-          result={result}
-          onDownload={(filename) => download(filename)}
-          onReset={reset}
-          labels={labels}
-        />
+        <>
+          <ResultCard
+            result={result}
+            onDownload={(filename) => download(filename)}
+            onReset={reset}
+            labels={labels}
+            toolSlug={slug}
+          />
+          <RelatedTools
+            currentSlug={slug}
+            locale={locale}
+            title={labels.tryOtherTools}
+          />
+        </>
       )}
 
       {/* Error */}

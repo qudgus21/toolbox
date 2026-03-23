@@ -149,6 +149,10 @@ export interface ImageDictionary {
       alignment: string;
       xPosition: string;
       yPosition: string;
+      addText: string;
+      noItems: string;
+      bgColor: string;
+      transparent: string;
     };
     addBorder: {
       borderWidth: string;
@@ -316,7 +320,7 @@ export interface ImageDictionary {
       htmlPlaceholder: string;
       widthPx: string;
       heightPx: string;
-      bgColor: string;
+      outputSize: string;
     };
     gradient: {
       type: string;

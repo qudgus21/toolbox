@@ -370,11 +370,9 @@ const processor: ImageProcessorFn = async (_files, options, onProgress) => {
   const size = (options.size as number) ?? 400;
   const fgColor = (options.fgColor as string) ?? "#000000";
   const bgColor = (options.bgColor as string) ?? "#ffffff";
-  const errorCorrection = (options.errorCorrection as string) ?? "M";
-
   onProgress(20);
 
-  const matrix = generateQRMatrix(text, errorCorrection);
+  const matrix = generateQRMatrix(text, "M");
 
   onProgress(60);
 

@@ -62,23 +62,22 @@ export function RotateOptions({ value, onChange, labels }: RotateOptionsProps) {
       {/* Custom angle */}
       <div>
         <label className="block text-xs font-medium text-foreground-muted mb-2">
-          {labels.customAngle} {value.angle}\u00B0
+          {labels.customAngle} {value.angle}°
         </label>
         <input
           type="range"
           min={0}
-          max={360}
+          max={359}
           step={1}
           value={value.angle}
           onChange={(e) => onChange({ ...value, angle: Number(e.target.value) })}
           className="w-full accent-accent"
         />
         <div className="flex justify-between text-xs text-foreground-muted mt-1">
-          <span>0\u00B0</span>
-          <span>90\u00B0</span>
-          <span>180\u00B0</span>
-          <span>270\u00B0</span>
-          <span>360\u00B0</span>
+          <span>0°</span>
+          <span>90°</span>
+          <span>180°</span>
+          <span>270°</span>
         </div>
       </div>
 
@@ -93,7 +92,7 @@ export function RotateOptions({ value, onChange, labels }: RotateOptionsProps) {
           max={360}
           value={value.angle}
           onChange={(e) => {
-            const v = Math.max(0, Math.min(360, Number(e.target.value)));
+            const v = Math.max(0, Math.min(359, Number(e.target.value)));
             onChange({ ...value, angle: v });
           }}
           className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
@@ -150,7 +149,7 @@ export function RotateOptions({ value, onChange, labels }: RotateOptionsProps) {
 
 export function getDefaultRotateOptions(): RotateOptionsValue {
   return {
-    angle: 90,
+    angle: 0,
     backgroundColor: "transparent",
   };
 }

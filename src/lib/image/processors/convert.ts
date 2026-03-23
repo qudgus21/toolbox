@@ -28,7 +28,8 @@ const processor: ImageProcessorFn = async (files, options, onProgress) => {
 
   const slug = options.slug as string;
   const targetFormat = parseTargetFormat(slug);
-  const quality = (options.quality as number) ?? 0.92;
+  const rawQuality = (options.quality as number) ?? 100;
+  const quality = rawQuality / 100;
 
   const img = await loadImage(file);
   const w = img.naturalWidth;

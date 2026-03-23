@@ -53,7 +53,9 @@ export function CropEditor({
       const rect = container.getBoundingClientRect();
       const maxW = rect.width;
       const maxH = 500; // Max preview height
-      const s = Math.min(maxW / originalWidth, maxH / originalHeight, 1);
+      // Cap upscale at 4x to avoid extreme pixelation on tiny images
+      const fitScale = Math.min(maxW / originalWidth, maxH / originalHeight);
+      const s = Math.min(fitScale, 4);
       setScale(s);
     };
 
@@ -213,106 +215,101 @@ export function CropEditor({
   ];
 
   return (
-    <div className="space-y-4">
-      {/* Crop options (aspect ratio presets + inputs) */}
-      <CropOptions
-        value={value}
-        onChange={onChange}
-        originalWidth={originalWidth}
-        originalHeight={originalHeight}
-        labels={labels}
-      />
-
-      {/* Interactive crop area */}
-      <div
-        ref={containerRef}
-        className="relative mx-auto overflow-hidden rounded-lg border border-border bg-[#1a1a1a]"
-        style={{ width: "100%", maxWidth: displayW }}
-      >
+    <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
+      {/* Interactive crop area (left) */}
+      <div className="flex-1 min-w-0 space-y-2">
         <div
-          className="relative"
-          style={{ width: displayW, height: displayH }}
+          ref={containerRef}
+          className="relative mx-auto overflow-hidden rounded-lg border border-border bg-[#1a1a1a]"
+          style={{ width: "100%", maxWidth: displayW }}
         >
-          {/* Base image (dimmed) */}
-          {imageUrl && (
-            <img
-              src={imageUrl}
-              alt="Crop preview"
-              draggable={false}
-              className="pointer-events-none absolute inset-0 select-none opacity-40"
-              style={{ width: displayW, height: displayH }}
-            />
-          )}
+          <div
+            className="relative"
+            style={{ width: displayW, height: displayH }}
+          >
+            {/* Base image (dimmed) */}
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                alt="Crop preview"
+                draggable={false}
+                className="pointer-events-none absolute inset-0 select-none opacity-40"
+                style={{ width: displayW, height: displayH }}
+              />
+            )}
 
-          {/* Bright crop region (clipped image) */}
-          {imageUrl && (
+            {/* Bright crop region (clipped image via background) */}
+            {imageUrl && (
+              <div
+                className="absolute pointer-events-none"
+                style={{
+                  left: cropLeft,
+                  top: cropTop,
+                  width: cropW,
+                  height: cropH,
+                  backgroundImage: `url(${imageUrl})`,
+                  backgroundSize: `${displayW}px ${displayH}px`,
+                  backgroundPosition: `-${cropLeft}px -${cropTop}px`,
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+            )}
+
+            {/* Crop border */}
             <div
-              className="absolute overflow-hidden"
+              className="absolute border-2 border-white/80"
               style={{
                 left: cropLeft,
                 top: cropTop,
                 width: cropW,
                 height: cropH,
+                cursor: dragMode === "move" ? "grabbing" : "grab",
               }}
+              onMouseDown={(e) => handleMouseDown(e, "move")}
             >
-              <img
-                src={imageUrl}
-                alt=""
-                draggable={false}
-                className="pointer-events-none absolute select-none"
+              {/* Rule of thirds lines */}
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute left-1/3 top-0 h-full w-px bg-white/30" />
+                <div className="absolute left-2/3 top-0 h-full w-px bg-white/30" />
+                <div className="absolute left-0 top-1/3 h-px w-full bg-white/30" />
+                <div className="absolute left-0 top-2/3 h-px w-full bg-white/30" />
+              </div>
+            </div>
+
+            {/* Drag handles */}
+            {handles.map((h) => (
+              <div
+                key={h.mode}
+                className="absolute z-10 rounded-sm border border-white bg-accent"
                 style={{
-                  width: displayW,
-                  height: displayH,
-                  left: -cropLeft,
-                  top: -cropTop,
+                  left: h.left,
+                  top: h.top,
+                  width: handleSize,
+                  height: handleSize,
+                  cursor: h.cursor,
                 }}
+                onMouseDown={(e) => handleMouseDown(e, h.mode)}
               />
-            </div>
-          )}
-
-          {/* Crop border */}
-          <div
-            className="absolute border-2 border-white/80"
-            style={{
-              left: cropLeft,
-              top: cropTop,
-              width: cropW,
-              height: cropH,
-              cursor: dragMode === "move" ? "grabbing" : "grab",
-            }}
-            onMouseDown={(e) => handleMouseDown(e, "move")}
-          >
-            {/* Rule of thirds lines */}
-            <div className="pointer-events-none absolute inset-0">
-              <div className="absolute left-1/3 top-0 h-full w-px bg-white/30" />
-              <div className="absolute left-2/3 top-0 h-full w-px bg-white/30" />
-              <div className="absolute left-0 top-1/3 h-px w-full bg-white/30" />
-              <div className="absolute left-0 top-2/3 h-px w-full bg-white/30" />
-            </div>
+            ))}
           </div>
-
-          {/* Drag handles */}
-          {handles.map((h) => (
-            <div
-              key={h.mode}
-              className="absolute z-10 rounded-sm border border-white bg-accent"
-              style={{
-                left: h.left,
-                top: h.top,
-                width: handleSize,
-                height: handleSize,
-                cursor: h.cursor,
-              }}
-              onMouseDown={(e) => handleMouseDown(e, h.mode)}
-            />
-          ))}
         </div>
+
+        {/* Crop size indicator */}
+        <p className="text-center text-xs text-foreground-muted">
+          {Math.round(value.width)} &times; {Math.round(value.height)} px
+        </p>
       </div>
 
-      {/* Crop size indicator */}
-      <p className="text-center text-xs text-foreground-muted">
-        {Math.round(value.width)} &times; {Math.round(value.height)} px
-      </p>
+      {/* Crop options panel (right) */}
+      <div className="shrink-0 rounded-lg border border-border bg-background p-4 lg:w-80">
+        <CropOptions
+          value={value}
+          onChange={onChange}
+          originalWidth={originalWidth}
+          originalHeight={originalHeight}
+          labels={labels}
+        />
+      </div>
     </div>
   );
 }

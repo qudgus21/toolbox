@@ -8,7 +8,6 @@ export interface ResizeOptionsValue {
   width: number;
   height: number;
   maintainAspectRatio: boolean;
-  mode: "fit" | "fill" | "stretch";
 }
 
 interface ResizeOptionsProps {
@@ -27,12 +26,6 @@ export function ResizeOptions({
   labels,
 }: ResizeOptionsProps) {
   const aspectRatio = originalWidth > 0 ? originalWidth / originalHeight : 1;
-
-  const MODES = [
-    { value: "fit" as const, label: labels.fit, desc: labels.fitDesc },
-    { value: "fill" as const, label: labels.fill, desc: labels.fillDesc },
-    { value: "stretch" as const, label: labels.stretch, desc: labels.stretchDesc },
-  ];
 
   const handleWidthChange = useCallback(
     (w: number) => {
@@ -124,32 +117,6 @@ export function ResizeOptions({
         </div>
       </div>
 
-      {/* Mode selector */}
-      <div>
-        <label className="block text-xs font-medium text-foreground-muted mb-2">
-          {labels.resizeMode}
-        </label>
-        <div className="flex gap-2">
-          {MODES.map((m) => (
-            <button
-              key={m.value}
-              type="button"
-              onClick={() => onChange({ ...value, mode: m.value })}
-              className={`flex-1 rounded-md border px-3 py-2 text-xs font-medium transition-colors cursor-pointer ${
-                value.mode === m.value
-                  ? "border-accent bg-accent/10 text-accent"
-                  : "border-border bg-background text-foreground-muted hover:bg-background-subtle"
-              }`}
-              title={m.desc}
-            >
-              {m.label}
-            </button>
-          ))}
-        </div>
-        <p className="mt-1 text-xs text-foreground-muted">
-          {MODES.find((m) => m.value === value.mode)?.desc}
-        </p>
-      </div>
     </div>
   );
 }
@@ -162,6 +129,5 @@ export function getDefaultResizeOptions(
     width: originalWidth,
     height: originalHeight,
     maintainAspectRatio: true,
-    mode: "fit",
   };
 }
