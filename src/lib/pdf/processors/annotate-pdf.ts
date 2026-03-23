@@ -25,11 +25,11 @@ import type {
   ArrowElement,
   TextBoxElement,
   StampElement,
-} from "../../../app/pdf/[locale]/(tools)/_components/annotate-pdf/annotate-types";
+} from "../../../app/[locale]/pdf/(tools)/_components/annotate-pdf/annotate-types";
 import {
   HIGHLIGHT_COLORS,
   STAMP_TEXT,
-} from "../../../app/pdf/[locale]/(tools)/_components/annotate-pdf/annotate-types";
+} from "../../../app/[locale]/pdf/(tools)/_components/annotate-pdf/annotate-types";
 
 // ─── Helpers ──────────────────────────────────────────────────
 

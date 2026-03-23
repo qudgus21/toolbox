@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
+import { tools as pdfTools } from "@/lib/pdf/tools";
+import { tools as imageTools } from "@/lib/image/tools";
 import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org";
@@ -7,7 +9,7 @@ const BASE_URL = "https://toolpop.org";
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  // Landing page for each locale
+  // Landing pages for each locale
   for (const locale of locales) {
     entries.push({
       url: `${BASE_URL}/${locale}`,
@@ -15,6 +17,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     });
+  }
+
+  // PDF home pages for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/pdf`,
+      lastModified: new Date("2026-03-23"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
+
+  // Image home pages for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/image`,
+      lastModified: new Date("2026-03-23"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
+
+  // PDF tool pages for each locale x tool combination
+  const pdfSlugs = pdfTools.map((t) => t.slug);
+  for (const locale of locales) {
+    for (const slug of pdfSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/pdf/${slug}`,
+        lastModified: new Date("2026-03-23"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
+  }
+
+  // Image tool pages for each locale x tool combination
+  const imageSlugs = imageTools.map((t) => t.slug);
+  for (const locale of locales) {
+    for (const slug of imageSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/image/${slug}`,
+        lastModified: new Date("2026-03-23"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
   }
 
   // Blog listing page for each locale

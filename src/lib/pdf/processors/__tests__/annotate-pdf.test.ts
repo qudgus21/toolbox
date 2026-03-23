@@ -12,7 +12,7 @@ import type {
   FreehandElement,
   TextBoxElement,
   StampElement,
-} from "../../../../app/pdf/[locale]/(tools)/_components/annotate-pdf/annotate-types";
+} from "../../../../app/[locale]/pdf/(tools)/_components/annotate-pdf/annotate-types";
 import {
   createMarkedPdf,
   resultToPdf,
