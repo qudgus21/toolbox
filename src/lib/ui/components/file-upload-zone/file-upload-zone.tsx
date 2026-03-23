@@ -88,6 +88,7 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
         ref={ref}
         role="button"
         tabIndex={0}
+        aria-label={title}
         onClick={() => inputRef.current?.click()}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") inputRef.current?.click();

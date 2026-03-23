@@ -86,6 +86,7 @@ const pdfToPng: ProcessorFn = async (files, options, onProgress) => {
     const blob = await canvasToPngBlob(canvas);
     canvas.width = 0;
     canvas.height = 0;
+    page.cleanup();
     doc.destroy();
     onProgress(100);
 
@@ -131,6 +132,7 @@ const pdfToPng: ProcessorFn = async (files, options, onProgress) => {
       const blob = await canvasToPngBlob(canvas);
       canvas.width = 0;
       canvas.height = 0;
+      page.cleanup();
       const ab = await blob.arrayBuffer();
 
       const pageLabel = String(p).padStart(padLen, "0");

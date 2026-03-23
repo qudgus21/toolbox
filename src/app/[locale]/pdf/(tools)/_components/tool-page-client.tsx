@@ -397,6 +397,7 @@ export function ToolPageClient({
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             onAnimationComplete={() => {
+              if (favToastTimerRef.current) clearTimeout(favToastTimerRef.current);
               favToastTimerRef.current = setTimeout(() => setFavToast(null), 2000);
             }}
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-xl bg-foreground px-4 py-2.5 text-sm font-medium text-background shadow-lg"
