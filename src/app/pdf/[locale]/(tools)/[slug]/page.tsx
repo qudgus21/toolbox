@@ -6,11 +6,17 @@ import { tools, getToolBySlug } from "@/lib/pdf/tools";
 import { ToolPageClient } from "../_components/tool-page-client";
 import { RelatedTools } from "../_components/related-tools";
 
+// Only pre-generate key locales to stay within Vercel's 80MB body limit.
+// Other locales are generated on-demand (ISR).
+const KEY_LOCALES = ["en", "ko", "ja", "zh", "es"] as const;
+
 export async function generateStaticParams() {
-  return locales.flatMap((locale) =>
+  return KEY_LOCALES.flatMap((locale) =>
     tools.map((tool) => ({ locale, slug: tool.slug })),
   );
 }
+
+export const dynamicParams = true;
 
 export async function generateMetadata({
   params,
@@ -22,14 +28,12 @@ export async function generateMetadata({
   const t = dict.tools[slug];
   if (!t) return {};
 
-  const title = `${t.title} ${dict.metadata.toolTitleSuffix}`;
-
   return {
-    title,
+    title: t.title,
     description: t.description,
     alternates: generateAlternates(slug, locales, locale, "en", "pdf"),
     openGraph: {
-      title,
+      title: t.title,
       description: t.description,
       url: `/pdf/${locale}/${slug}`,
       type: "website",
@@ -37,7 +41,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: t.title,
       description: t.description,
     },
   };

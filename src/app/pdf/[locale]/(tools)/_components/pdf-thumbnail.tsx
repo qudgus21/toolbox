@@ -101,6 +101,7 @@ export function PdfThumbnail({ file, className, objectFit = "object-contain" }: 
         src={src}
         alt={file.name}
         className={cn("h-full w-full transition-all duration-300", objectFit)}
+        loading="lazy"
         draggable={false}
       />
     </div>

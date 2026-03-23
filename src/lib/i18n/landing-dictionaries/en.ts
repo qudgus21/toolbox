@@ -1,0 +1,89 @@
+import type { LandingDictionary } from "../landing-config";
+
+const dict: LandingDictionary = {
+  meta: {
+    title: "ToolPop — Online PDF & Image Tools",
+    description:
+      "Edit, merge, convert PDFs. Resize, compress, transform images. All free, right in your browser.",
+  },
+  hero: {
+    badge: "87+ Free Online Tools",
+    title: "Every tool you need, in one ToolPop",
+    titleAccent: "ToolPop",
+    subtitle:
+      "Work with PDFs and images right in your browser. No installs, no sign-ups.",
+    searchPlaceholder: "What tool are you looking for?",
+  },
+  apps: {
+    pdf: {
+      name: "PDF Tools",
+      description:
+        "Merge, split, convert, edit, and compress — everything you can do with a PDF.",
+      cta: "Explore PDF Tools",
+      toolCount: "39 tools",
+    },
+    image: {
+      name: "Image Tools",
+      description:
+        "Resize, crop, convert, apply effects, generate QR codes — everything for images.",
+      cta: "Explore Image Tools",
+      toolCount: "48 tools",
+    },
+  },
+  popularTools: {
+    sectionTitle: "Popular Tools",
+    sectionSubtitle: "Jump right into the most-used tools",
+    viewAll: "View all",
+  },
+  stats: {
+    tools: "87+",
+    toolsLabel: "Free Tools",
+    languages: "45",
+    languagesLabel: "Languages",
+    users: "100%",
+    usersLabel: "Browser-Based",
+    price: "$0",
+    priceLabel: "Free Forever",
+  },
+  trust: {
+    sectionTitle: "Why ToolPop?",
+    sectionSubtitle: "Security and convenience, without compromise",
+    browserBased: "Browser-Based Processing",
+    browserBasedDesc: "Your files never leave your device. Everything runs in your browser — fast and secure.",
+    free: "Completely Free",
+    freeDesc: "Use every tool as many times as you want, with no limits. No hidden fees.",
+    private: "Privacy First",
+    privateDesc: "Files stay on your device. No server uploads means your data stays yours.",
+    noSignup: "No Sign-Up Required",
+    noSignupDesc: "No account, no email. Just open a tool and start working.",
+  },
+  cta: {
+    title: "Ready to get started?",
+    subtitle: "No installs, no sign-ups, no payments — just one click away.",
+    button: "Browse All Tools",
+  },
+  common: {
+    shareTitle: "Share",
+    shareSubtitle: "Tell your friends about ToolPop!",
+    shareCopyLink: "Copy link",
+    shareCopied: "Copied!",
+  },
+  footer: {
+    apps: "Tools",
+    company: "Company",
+    about: "About",
+    contact: "Contact",
+    faq: "FAQ",
+    blog: "Blog",
+    legal: "Legal",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    copyright: "© 2026 ToolPop. All rights reserved.",
+  },
+  nav: {
+    pdf: "PDF",
+    image: "Image",
+  },
+};
+
+export default dict;

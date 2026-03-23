@@ -124,11 +124,16 @@ const fi: Dictionary = {
     favoriteAdded: "Lisätty suosikkeihin",
     favoriteRemoved: "Poistettu suosikeista",
     comingSoon: "Coming Soon",
+    share: "Jaa",
+    shareTitle: "Jaa tämä sivu",
+    shareSubtitle: "Kerro muillekin!",
+    shareCopied: "Kopioitu!",
+    shareCopyLink: "Kopioi linkki",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Ilmaiset PDF-työkalut",
+    siteTitle: "ToolPop - Ilmaiset PDF-työkalut",
     siteDescription: "Yhdistä, jaa, pakkaa ja muunna PDF-tiedostoja verkossa ilmaiseksi.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Käytämme evästeitä parantaaksemme kokemustasi.",
@@ -138,15 +143,15 @@ const fi: Dictionary = {
   privacy: {
     title: "Tietosuojakäytäntö",
     lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
-    intro: "ToolPop PDF:ssä yksityisyytesi on meille tärkeää. Tämä käytäntö selittää, mitä tietoja keräämme palvelumme käytön yhteydessä ja miten käsittelemme niitä.",
+    intro: "ToolPop:ssä yksityisyytesi on meille tärkeää. Tämä käytäntö selittää, mitä tietoja keräämme palvelumme käytön yhteydessä ja miten käsittelemme niitä.",
     sections: [
       {
         heading: "1. Keräämämme tiedot",
-        content: "ToolPop PDF ei vaadi rekisteröitymistä. Emme kerää henkilötietoja. Saatamme kuitenkin kerätä automaattisesti ei-tunnistavia tietoja palvelun parantamiseksi:\n\n• Selaimen tyyppi ja versio\n• Käyttöjärjestelmä\n• Vieraillut sivut ja käytetty aika\n• Evästeet ja vastaavat teknologiat käyttötapojen analysointiin",
+        content: "ToolPop ei vaadi rekisteröitymistä. Emme kerää henkilötietoja. Saatamme kuitenkin kerätä automaattisesti ei-tunnistavia tietoja palvelun parantamiseksi:\n\n• Selaimen tyyppi ja versio\n• Käyttöjärjestelmä\n• Vieraillut sivut ja käytetty aika\n• Evästeet ja vastaavat teknologiat käyttötapojen analysointiin",
       },
       {
         heading: "2. Tiedostojen käsittely",
-        content: "Lataamasi tiedostot käsitellään palvelimillamme ja poistetaan automaattisesti 2 tunnin kuluessa. Emme lue, tallenna tai jaa tiedostojesi sisältöä kenellekään.",
+        content: "Kaikki tiedostojen käsittely ToolPopissa tapahtuu suoraan selaimessasi. Tiedostojasi ei koskaan ladata millekään palvelimelle, eivätkä ne koskaan poistu laitteeltasi. Käytämme WebAssembly-tekniikkaa ja moderneja verkkoteknologioita paikalliseen ja turvalliseen käsittelyyn.",
       },
       {
         heading: "3. Evästeet",
@@ -166,18 +171,18 @@ const fi: Dictionary = {
       },
       {
         heading: "7. Ota yhteyttä",
-        content: "Tietosuojaan liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolbox-pdf.com.",
+        content: "Tietosuojaan liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Käyttöehdot",
     lastUpdated: "Päivitetty viimeksi: 1. maaliskuuta 2026",
-    intro: "Kiitos, että käytät ToolPop PDF:ää. Käyttämällä palveluamme hyväksyt seuraavat ehdot.",
+    intro: "Kiitos, että käytät ToolPop:ää. Käyttämällä palveluamme hyväksyt seuraavat ehdot.",
     sections: [
       {
         heading: "1. Palvelusta",
-        content: "ToolPop PDF on ilmainen verkkopalvelu, jonka avulla voit yhdistää, jakaa, muuntaa, muokata ja pakata PDF-tiedostoja suoraan selaimessasi.",
+        content: "ToolPop on ilmainen verkkotyökalu, jolla voit käsitellä PDF-tiedostoja, kuvia ja muita tiedostoja suoraan selaimessasi. Kaikki käsittely tapahtuu paikallisesti laitteellasi — tiedostoja ei koskaan ladata millekään palvelimelle.",
       },
       {
         heading: "2. Hyväksyttävä käyttö",
@@ -185,7 +190,7 @@ const fi: Dictionary = {
       },
       {
         heading: "3. Tiedostojen käsittely",
-        content: "Ladattuja tiedostoja käytetään ainoastaan pyydetyn toiminnon suorittamiseen. Ne poistetaan automaattisesti palvelimiltamme 2 tunnin kuluessa. Emme analysoi tai säilytä tiedostojasi.",
+        content: "Kaikki tiedostojen käsittely ToolPopissa tapahtuu suoraan selaimessasi. Tiedostojasi ei koskaan lähetetä millekään palvelimelle, eivätkä ne koskaan poistu laitteeltasi. Käsitellyt tulokset ovat ladattavissa suoraan selaimestasi.",
       },
       {
         heading: "4. Vastuuvapauslauseke",
@@ -205,7 +210,7 @@ const fi: Dictionary = {
       },
       {
         heading: "8. Ota yhteyttä",
-        content: "Näihin ehtoihin liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolbox-pdf.com.",
+        content: "Näihin ehtoihin liittyvissä kysymyksissä tavoitat meidät osoitteesta support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const fi: Dictionary = {
     backLabel: "Takapuoli",
   },
   about: {
-    title: "Tietoa ToolPop PDF:stä",
-    intro: "ToolPop PDF on ilmainen selainpohjainen PDF-työkalupakki, jolla voit muokata, muuntaa ja järjestää PDF-tiedostoja ilman niiden lataamista palvelimelle. Tiedostosi eivät koskaan poistu laitteeltasi.",
+    title: "Tietoa ToolPop:stä",
+    intro: "ToolPop on ilmainen selainpohjainen PDF-työkalupakki, jolla voit muokata, muuntaa ja järjestää PDF-tiedostoja ilman niiden lataamista palvelimelle. Tiedostosi eivät koskaan poistu laitteeltasi.",
     sections: [
-      { heading: "Tehtävämme", content: "Uskomme, että jokaisella on oikeus tehokkaisiin PDF-työkaluihin — ilman tilauksia, ilman rekisteröitymistä ja ilman yksityisyydestä tinkimistä. ToolPop PDF luotiin tuomaan ammattimainen asiakirjojen käsittely kaikkien ulottuville, joilla on selain." },
-      { heading: "Näin se toimii", content: "Toisin kuin perinteiset PDF-palvelut, jotka vaativat tiedostojen lataamisen etäpalvelimille, ToolPop PDF käsittelee kaiken suoraan selaimessasi käyttäen moderneja verkkoteknologioita kuten WebAssembly ja PDF.js-kirjasto. Tämä tarkoittaa, että arkaluontoiset asiakirjasi pysyvät aina laitteellasi — emme koskaan näe, tallenna tai siirrä tiedostojasi." },
-      { heading: "Mitä tarjoamme", content: "ToolPop PDF sisältää yli 40 työkalua viidessä kategoriassa:\n\n• Järjestä — Yhdistä, jaa, järjestä uudelleen, poimi ja poista sivuja\n• Muunna — Muunna PDF:n, JPG:n, PNG:n, tekstin ja muiden formaattien välillä\n• Muokkaa — Lisää tekstiä, kuvia, allekirjoituksia, vesileimoja, sivunumeroita ja merkintöjä\n• Optimoi — Pakkaa tiedostoja ja optimoi verkkokäyttöön\n• Suojaus — Salasanasuojaa, peitä arkaluontoiset tiedot ja litistä asiakirjoja\n\nKaikki työkalut ovat täysin ilmaisia ilman tiedostokokorajoituksia tai päivittäisiä käyttörajoituksia." },
-      { heading: "Teknologiamme", content: "ToolPop PDF on rakennettu Next.js:llä, Reactilla ja moderneilla verkkostandardeilla. Käytämme kirjastoja kuten pdf-lib PDF-käsittelyyn ja PDF.js renderöintiin — kaikki toimii asiakaspuolella selaimessasi. Sivusto tukee 45 kieltä, tumma tilaa ja toimii millä tahansa laitteella, jossa on moderni selain." },
+      { heading: "Tehtävämme", content: "Uskomme, että jokaisella on oikeus tehokkaisiin PDF-työkaluihin — ilman tilauksia, ilman rekisteröitymistä ja ilman yksityisyydestä tinkimistä. ToolPop luotiin tuomaan ammattimainen asiakirjojen käsittely kaikkien ulottuville, joilla on selain." },
+      { heading: "Näin se toimii", content: "Toisin kuin perinteiset PDF-palvelut, jotka vaativat tiedostojen lataamisen etäpalvelimille, ToolPop käsittelee kaiken suoraan selaimessasi käyttäen moderneja verkkoteknologioita kuten WebAssembly ja PDF.js-kirjasto. Tämä tarkoittaa, että arkaluontoiset asiakirjasi pysyvät aina laitteellasi — emme koskaan näe, tallenna tai siirrä tiedostojasi." },
+      { heading: "Mitä tarjoamme", content: "ToolPop sisältää yli 40 työkalua viidessä kategoriassa:\n\n• Järjestä — Yhdistä, jaa, järjestä uudelleen, poimi ja poista sivuja\n• Muunna — Muunna PDF:n, JPG:n, PNG:n, tekstin ja muiden formaattien välillä\n• Muokkaa — Lisää tekstiä, kuvia, allekirjoituksia, vesileimoja, sivunumeroita ja merkintöjä\n• Optimoi — Pakkaa tiedostoja ja optimoi verkkokäyttöön\n• Suojaus — Salasanasuojaa, peitä arkaluontoiset tiedot ja litistä asiakirjoja\n\nKaikki työkalut ovat täysin ilmaisia ilman tiedostokokorajoituksia tai päivittäisiä käyttörajoituksia." },
+      { heading: "Teknologiamme", content: "ToolPop on rakennettu Next.js:llä, Reactilla ja moderneilla verkkostandardeilla. Käytämme kirjastoja kuten pdf-lib PDF-käsittelyyn ja PDF.js renderöintiin — kaikki toimii asiakaspuolella selaimessasi. Sivusto tukee 45 kieltä, tumma tilaa ja toimii millä tahansa laitteella, jossa on moderni selain." },
       { heading: "Ota yhteyttä", content: "Onko sinulla kysymyksiä, palautetta tai toiveita uusista ominaisuuksista? Kuulemme mielellämme sinusta. Käy yhteystietosivullamme tai lähetä meille sähköpostia osoitteeseen." },
     ],
   },
@@ -1091,22 +1096,22 @@ const fi: Dictionary = {
   },
   faq: {
     title: "Usein kysytyt kysymykset",
-    intro: "Löydä vastaukset yleisimpiin kysymyksiin ToolPop PDF:stä. Etkö löydä kysymystäsi? Ota rohkeasti yhteyttä.",
+    intro: "Löydä vastaukset yleisimpiin kysymyksiin ToolPop:stä. Etkö löydä kysymystäsi? Ota rohkeasti yhteyttä.",
     items: [
-      { question: "Onko ToolPop PDF todella ilmainen?", answer: "Kyllä, täysin ilmainen. Kaikki työkalut ovat käytettävissä ilman rajoituksia, ilman rekisteröitymistä ja ilman piilokustannuksia. Rahoitamme palvelun hillityllä mainonnalla." },
+      { question: "Onko ToolPop todella ilmainen?", answer: "Kyllä, täysin ilmainen. Kaikki työkalut ovat käytettävissä ilman rajoituksia, ilman rekisteröitymistä ja ilman piilokustannuksia. Rahoitamme palvelun hillityllä mainonnalla." },
       { question: "Ovatko tiedostoni turvassa?", answer: "Ehdottomasti. Tiedostosi käsitellään kokonaan selaimessasi — ne eivät koskaan poistu laitteeltasi eikä niitä ladata millekään palvelimelle. Käytämme moderneja selaimen rajapintoja kaikkien PDF-toimintojen suorittamiseen paikallisesti, joten arkaluontoiset asiakirjasi pysyvät täysin yksityisinä." },
-      { question: "Pitääkö minun luoda tili?", answer: "Ei. ToolPop PDF toimii ilman rekisteröitymistä tai kirjautumista. Avaa vain työkalu, vedä tiedosto ja saat tulokset heti." },
+      { question: "Pitääkö minun luoda tili?", answer: "Ei. ToolPop toimii ilman rekisteröitymistä tai kirjautumista. Avaa vain työkalu, vedä tiedosto ja saat tulokset heti." },
       { question: "Mikä on suurin tiedostokoko?", answer: "Koska käsittely tapahtuu selaimessasi, raja riippuu laitteesi käytettävissä olevasta muistista. Useimmat nykyaikaiset laitteet käsittelevät tiedostoja 100–200 MB asti ongelmitta. Erittäin suurille tiedostoille suosittelemme pöytäkoneen tai kannettavan selainta." },
-      { question: "Mitä selaimia tuetaan?", answer: "ToolPop PDF toimii kaikissa moderneissa selaimissa mukaan lukien Chrome, Firefox, Safari, Edge ja Opera. Suosittelemme uusimman selainversion käyttöä parhaan kokemuksen saamiseksi." },
-      { question: "Voinko käyttää ToolPop PDF:ää puhelimella tai tabletilla?", answer: "Kyllä! ToolPop PDF on täysin responsiivinen ja toimii mobiililaitteilla. Voit yhdistää, jakaa, muuntaa ja muokata PDF-tiedostoja suoraan puhelimen tai tabletin selaimesta." },
+      { question: "Mitä selaimia tuetaan?", answer: "ToolPop toimii kaikissa moderneissa selaimissa mukaan lukien Chrome, Firefox, Safari, Edge ja Opera. Suosittelemme uusimman selainversion käyttöä parhaan kokemuksen saamiseksi." },
+      { question: "Voinko käyttää ToolPop:ää puhelimella tai tabletilla?", answer: "Kyllä! ToolPop on täysin responsiivinen ja toimii mobiililaitteilla. Voit yhdistää, jakaa, muuntaa ja muokata PDF-tiedostoja suoraan puhelimen tai tabletin selaimesta." },
       { question: "Miten selainpohjainen käsittely toimii?", answer: "Kun valitset tiedoston, se pysyy laitteellasi. Työkalumme käyttävät JavaScript-kirjastoja kuten pdf-lib ja PDF.js lukemaan, muokkaamaan ja luomaan PDF-tiedostoja suoraan selaimen muistissa. Käsitelty tiedosto on sitten ladattavissa — ilman palvelinyhteyttä." },
       { question: "Voinko yhdistää enemmän kuin kaksi PDF-tiedostoa?", answer: "Kyllä. Yhdistä PDF -työkalumme tukee minkä tahansa määrän tiedostojen yhdistämistä. Vedä vain kaikki yhdistettävät PDF:t, järjestä ne haluamaasi järjestykseen ja napsauta käsittelypainiketta." },
       { question: "Mitä tiedostomuotoja voin muuntaa?", answer: "Voit muuntaa PDF:n JPG:ksi, PNG:ksi ja pelkäksi tekstiksi. PDF:n luomiseen tuemme JPG-, PNG-, WEBP-, TIFF-, HEIC-kuvia, HTML-tiedostoja ja skannattuja asiakirjoja. Uusia muuntomuotoja lisätään säännöllisesti." },
-      { question: "Mikä erottaa ToolPop PDF:n muista PDF-työkaluista?", answer: "Kolme ratkaisevaa eroa: (1) Yksityisyys — tiedostosi eivät koskaan poistu laitteeltasi, toisin kuin useimmilla kilpailijoilla, jotka lataavat palvelimilleen. (2) Ei rajoituksia — ei päiväkohtaisia rajoja, ei tiedostokokorajoituksia, ei vesileimoja tuloksessa. (3) Ei tiliä tarvita — käytä mitä tahansa työkalua heti ilman rekisteröitymistä." },
+      { question: "Mikä erottaa ToolPop:n muista PDF-työkaluista?", answer: "Kolme ratkaisevaa eroa: (1) Yksityisyys — tiedostosi eivät koskaan poistu laitteeltasi, toisin kuin useimmilla kilpailijoilla, jotka lataavat palvelimilleen. (2) Ei rajoituksia — ei päiväkohtaisia rajoja, ei tiedostokokorajoituksia, ei vesileimoja tuloksessa. (3) Ei tiliä tarvita — käytä mitä tahansa työkalua heti ilman rekisteröitymistä." },
       { question: "Voinko lisätä salasanan PDF:n suojaamiseksi?", answer: "Kyllä. Käytä Suojaa PDF -työkaluamme salasanasuojauksen lisäämiseen AES-256-salauksella. Voit asettaa sekä avausalasanan että oikeudet tulostamiseen, kopioimiseen ja muokkaamiseen." },
-      { question: "Lisääkö ToolPop PDF vesileimoja tiedostoihini?", answer: "Ei koskaan. Kaikki käsitellyt tiedostot ovat puhtaita ja vapaita kaikesta ToolPop-brändäyksestä tai vesileimista. Tulos on juuri sitä, mitä ammattimaiselta työkalulta odottaisit." },
-      { question: "Onko API saatavilla?", answer: "Ei tällä hetkellä. ToolPop PDF on suunniteltu selaintyökaluksi henkilökohtaiseen käyttöön. Jos tarvitset API-pääsyä ohjelmalliseen PDF-käsittelyyn, ota yhteyttä osoitteeseen yritysratkaisuja varten." },
-      { question: "Mitä kieliä sivusto tukee?", answer: "ToolPop PDF on saatavilla 45 kielellä mukaan lukien suomi, englanti, espanja, kiina, japani, saksa, ranska, portugali, arabia, hindi ja monet muut. Käyttöliittymä tunnistaa automaattisesti selaimesi kielen, tai voit vaihtaa manuaalisesti kielivalitsimesta." },
+      { question: "Lisääkö ToolPop vesileimoja tiedostoihini?", answer: "Ei koskaan. Kaikki käsitellyt tiedostot ovat puhtaita ja vapaita kaikesta ToolPop-brändäyksestä tai vesileimista. Tulos on juuri sitä, mitä ammattimaiselta työkalulta odottaisit." },
+      { question: "Onko API saatavilla?", answer: "Ei tällä hetkellä. ToolPop on suunniteltu selaintyökaluksi henkilökohtaiseen käyttöön. Jos tarvitset API-pääsyä ohjelmalliseen PDF-käsittelyyn, ota yhteyttä osoitteeseen yritysratkaisuja varten." },
+      { question: "Mitä kieliä sivusto tukee?", answer: "ToolPop on saatavilla 45 kielellä mukaan lukien suomi, englanti, espanja, kiina, japani, saksa, ranska, portugali, arabia, hindi ja monet muut. Käyttöliittymä tunnistaa automaattisesti selaimesi kielen, tai voit vaihtaa manuaalisesti kielivalitsimesta." },
     ],
   },
   blog: {

@@ -124,11 +124,16 @@ const zh: Dictionary = {
     favoriteAdded: "已添加到收藏夹",
     favoriteRemoved: "已从收藏夹移除",
     comingSoon: "即将推出",
+    share: "分享",
+    shareTitle: "分享此页面",
+    shareSubtitle: "让更多人知道!",
+    shareCopied: "已复制!",
+    shareCopyLink: "复制链接",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - 免费PDF工具",
+    siteTitle: "ToolPop - 免费PDF工具",
     siteDescription: "在线免费合并、拆分、压缩和转换PDF文件。",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "本站使用 Cookie 来提升您的体验。",
@@ -138,15 +143,15 @@ const zh: Dictionary = {
   privacy: {
     title: "隐私政策",
     lastUpdated: "最后更新：2026年3月1日",
-    intro: "ToolPop PDF 非常重视您的隐私。本政策说明了我们在您使用服务时会收集哪些信息，以及我们如何处理这些信息。",
+    intro: "ToolPop 非常重视您的隐私。本政策说明了我们在您使用服务时会收集哪些信息，以及我们如何处理这些信息。",
     sections: [
       {
         heading: "1. 我们收集的信息",
-        content: "ToolPop PDF 无需注册即可使用，我们不会收集任何个人信息。为了改善服务体验，我们可能会自动收集以下非个人数据：\n\n• 浏览器类型和版本\n• 操作系统信息\n• 访问页面及停留时长\n• 用于分析使用习惯的 Cookie",
+        content: "ToolPop 无需注册即可使用，我们不会收集任何个人信息。为了改善服务体验，我们可能会自动收集以下非个人数据：\n\n• 浏览器类型和版本\n• 操作系统信息\n• 访问页面及停留时长\n• 用于分析使用习惯的 Cookie",
       },
       {
         heading: "2. 文件处理",
-        content: "您上传的文件在服务器端完成处理后，将在 2 小时内自动删除。我们不会查看、保存或与任何第三方共享您的文件内容。",
+        content: "ToolPop 的所有文件处理均在您的浏览器中直接完成。您的文件不会被上传到任何服务器，也不会离开您的设备。我们使用 WebAssembly 和现代 Web 技术进行本地安全处理。",
       },
       {
         heading: "3. Cookie 使用",
@@ -166,18 +171,18 @@ const zh: Dictionary = {
       },
       {
         heading: "7. 联系我们",
-        content: "如有隐私相关问题，请发送邮件至 support@toolbox-pdf.com。",
+        content: "如有隐私相关问题，请发送邮件至 support@toolpop.org。",
       },
     ],
   },
   terms: {
     title: "服务条款",
     lastUpdated: "最后更新：2026年3月1日",
-    intro: "感谢您使用 ToolPop PDF。使用本服务即表示您同意以下条款。",
+    intro: "感谢您使用 ToolPop。使用本服务即表示您同意以下条款。",
     sections: [
       {
         heading: "1. 服务简介",
-        content: "ToolPop PDF 是一款免费的在线 PDF 工具，支持在浏览器中直接完成 PDF 的合并、拆分、转换、编辑和压缩操作。",
+        content: "ToolPop 是一款免费的在线工具箱，支持在浏览器中直接处理 PDF、图片和其他文件。所有处理均在您的设备上本地完成——文件不会被上传到任何服务器。",
       },
       {
         heading: "2. 使用规范",
@@ -185,7 +190,7 @@ const zh: Dictionary = {
       },
       {
         heading: "3. 文件处理",
-        content: "上传的文件仅用于执行您请求的操作，处理完成后将在 2 小时内自动从服务器删除。我们不会对您的文件进行分析或留存。",
+        content: "ToolPop 的所有文件处理均在您的浏览器中直接完成。您的文件不会被发送到任何服务器，也不会离开您的设备。处理后的结果可直接从浏览器下载。",
       },
       {
         heading: "4. 免责声明",
@@ -205,7 +210,7 @@ const zh: Dictionary = {
       },
       {
         heading: "8. 联系我们",
-        content: "如有条款相关问题，请发送邮件至 support@toolbox-pdf.com。",
+        content: "如有条款相关问题，请发送邮件至 support@toolpop.org。",
       },
     ],
   },
@@ -1057,24 +1062,24 @@ const zh: Dictionary = {
     backLabel: "背面",
   },
   about: {
-    title: "关于 ToolPop PDF",
-    intro: "ToolPop PDF 是一款免费的在线 PDF 工具箱，支持在浏览器中直接编辑、转换和整理 PDF 文件，无需上传到服务器。你的文件始终留在本地设备上。",
+    title: "关于 ToolPop",
+    intro: "ToolPop 是一款免费的在线 PDF 工具箱，支持在浏览器中直接编辑、转换和整理 PDF 文件，无需上传到服务器。你的文件始终留在本地设备上。",
     sections: [
       {
         heading: "我们的使命",
-        content: "我们相信每个人都应该能免费使用专业的 PDF 工具——无需订阅、无需注册、无需担心隐私泄露。ToolPop PDF 让任何人只需一个浏览器，就能轻松处理各类文档。",
+        content: "我们相信每个人都应该能免费使用专业的 PDF 工具——无需订阅、无需注册、无需担心隐私泄露。ToolPop 让任何人只需一个浏览器，就能轻松处理各类文档。",
       },
       {
         heading: "工作原理",
-        content: "与传统的 PDF 服务不同，ToolPop PDF 无需将文件上传到远程服务器，所有操作都通过 WebAssembly 和 PDF.js 等现代 Web 技术直接在你的浏览器中完成。这意味着你的敏感文档始终保留在本地——我们绝不会查看、存储或传输你的文件。",
+        content: "与传统的 PDF 服务不同，ToolPop 无需将文件上传到远程服务器，所有操作都通过 WebAssembly 和 PDF.js 等现代 Web 技术直接在你的浏览器中完成。这意味着你的敏感文档始终保留在本地——我们绝不会查看、存储或传输你的文件。",
       },
       {
         heading: "功能概览",
-        content: "ToolPop PDF 提供五大类超过 40 种工具：\n\n• 整理——合并、拆分、重排、提取和删除页面\n• 转换——在 PDF、JPG、PNG、文本等格式之间互相转换\n• 编辑——添加文字、图片、签名、水印、页码和批注\n• 优化——压缩文件，优化网络传输\n• 安全——设置密码保护、涂黑敏感信息、扁平化文档\n\n所有工具完全免费，没有文件大小限制，也没有每日使用上限。",
+        content: "ToolPop 提供五大类超过 40 种工具：\n\n• 整理——合并、拆分、重排、提取和删除页面\n• 转换——在 PDF、JPG、PNG、文本等格式之间互相转换\n• 编辑——添加文字、图片、签名、水印、页码和批注\n• 优化——压缩文件，优化网络传输\n• 安全——设置密码保护、涂黑敏感信息、扁平化文档\n\n所有工具完全免费，没有文件大小限制，也没有每日使用上限。",
       },
       {
         heading: "技术架构",
-        content: "ToolPop PDF 基于 Next.js、React 和现代 Web 标准构建，使用 pdf-lib 进行 PDF 处理，PDF.js 进行渲染——所有操作均在浏览器端完成。网站支持 45 种语言、深色模式，兼容任何配备现代浏览器的设备。",
+        content: "ToolPop 基于 Next.js、React 和现代 Web 标准构建，使用 pdf-lib 进行 PDF 处理，PDF.js 进行渲染——所有操作均在浏览器端完成。网站支持 45 种语言、深色模式，兼容任何配备现代浏览器的设备。",
       },
       {
         heading: "联系我们",
@@ -1115,22 +1120,22 @@ const zh: Dictionary = {
   },
   faq: {
     title: "常见问题",
-    intro: "这里汇集了关于 ToolPop PDF 最常见的问题解答。如果没有找到你需要的答案，欢迎联系我们。",
+    intro: "这里汇集了关于 ToolPop 最常见的问题解答。如果没有找到你需要的答案，欢迎联系我们。",
     items: [
-      { question: "ToolPop PDF 真的免费吗？", answer: "是的，完全免费。所有工具均无限制使用，无需注册，没有任何隐藏费用。我们通过非侵入式广告维持服务运营。" },
+      { question: "ToolPop 真的免费吗？", answer: "是的，完全免费。所有工具均无限制使用，无需注册，没有任何隐藏费用。我们通过非侵入式广告维持服务运营。" },
       { question: "我的文件安全吗？", answer: "绝对安全。你的文件完全在浏览器中处理，不会离开你的设备，也不会上传到任何服务器。我们使用现代浏览器 API 在本地完成所有 PDF 操作，你的敏感文档始终受到保护。" },
-      { question: "需要注册账号吗？", answer: "不需要。ToolPop PDF 无需注册或登录，打开工具、拖入文件，即可获得结果。" },
+      { question: "需要注册账号吗？", answer: "不需要。ToolPop 无需注册或登录，打开工具、拖入文件，即可获得结果。" },
       { question: "最大能处理多大的文件？", answer: "由于处理在浏览器中进行，上限取决于你设备的可用内存。大多数现代设备可以顺畅处理 100-200 MB 的文件。对于超大文件，建议使用桌面或笔记本电脑的浏览器。" },
-      { question: "支持哪些浏览器？", answer: "ToolPop PDF 支持所有主流浏览器，包括 Chrome、Firefox、Safari、Edge 和 Opera。建议使用最新版本以获得最佳体验。" },
-      { question: "手机或平板上能用吗？", answer: "当然可以！ToolPop PDF 完全适配移动端，你可以直接在手机或平板的浏览器中合并、拆分、转换和编辑 PDF。" },
+      { question: "支持哪些浏览器？", answer: "ToolPop 支持所有主流浏览器，包括 Chrome、Firefox、Safari、Edge 和 Opera。建议使用最新版本以获得最佳体验。" },
+      { question: "手机或平板上能用吗？", answer: "当然可以！ToolPop 完全适配移动端，你可以直接在手机或平板的浏览器中合并、拆分、转换和编辑 PDF。" },
       { question: "浏览器端处理是怎么实现的？", answer: "当你选择文件时，文件始终留在你的设备上。我们的工具使用 pdf-lib 和 PDF.js 等 JavaScript 库，直接在浏览器内存中读取、修改和创建 PDF。处理完成后即可下载，无需与服务器交互。" },
       { question: "可以合并两个以上的 PDF 吗？", answer: "当然可以。合并工具支持任意数量的文件，只需拖入所有要合并的 PDF，调整顺序，点击处理按钮即可。" },
       { question: "支持哪些格式的转换？", answer: "你可以将 PDF 转换为 JPG、PNG 和纯文本。创建 PDF 时支持 JPG、PNG、WEBP、TIFF、HEIC 图片、HTML 文件和扫描文档。更多格式持续更新中。" },
-      { question: "ToolPop PDF 和其他 PDF 工具有什么不同？", answer: "三大核心优势：(1) 隐私——你的文件不会离开设备，不像大多数竞品需要上传到服务器；(2) 无限制——没有每日上限、没有文件大小限制、输出文件没有水印；(3) 无需注册——即开即用，无需创建账号。" },
+      { question: "ToolPop 和其他 PDF 工具有什么不同？", answer: "三大核心优势：(1) 隐私——你的文件不会离开设备，不像大多数竞品需要上传到服务器；(2) 无限制——没有每日上限、没有文件大小限制、输出文件没有水印；(3) 无需注册——即开即用，无需创建账号。" },
       { question: "能给 PDF 加密码保护吗？", answer: "可以。使用我们的 PDF 加密工具，支持 AES-256 加密。你可以设置打开密码，还可以控制打印、复制和编辑权限。" },
-      { question: "ToolPop PDF 会在我的文件上添加水印吗？", answer: "绝对不会。所有处理后的文件都是干净的，不会添加任何 ToolPop 品牌标识或水印，输出质量与专业工具一致。" },
-      { question: "有 API 可以用吗？", answer: "目前暂不提供。ToolPop PDF 定位为面向个人用户的浏览器端工具。如果你需要 API 进行批量 PDF 处理，请联系 讨论企业方案。" },
-      { question: "网站支持哪些语言？", answer: "ToolPop PDF 支持 45 种语言，包括英语、韩语、西班牙语、中文、日语、德语、法语、葡萄牙语、阿拉伯语、印地语等。界面会自动检测浏览器语言，你也可以通过语言选择器手动切换。" },
+      { question: "ToolPop 会在我的文件上添加水印吗？", answer: "绝对不会。所有处理后的文件都是干净的，不会添加任何 ToolPop 品牌标识或水印，输出质量与专业工具一致。" },
+      { question: "有 API 可以用吗？", answer: "目前暂不提供。ToolPop 定位为面向个人用户的浏览器端工具。如果你需要 API 进行批量 PDF 处理，请联系 讨论企业方案。" },
+      { question: "网站支持哪些语言？", answer: "ToolPop 支持 45 种语言，包括英语、韩语、西班牙语、中文、日语、德语、法语、葡萄牙语、阿拉伯语、印地语等。界面会自动检测浏览器语言，你也可以通过语言选择器手动切换。" },
     ],
   },
   blog: {

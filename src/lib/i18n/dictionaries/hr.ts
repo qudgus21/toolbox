@@ -124,11 +124,16 @@ const hr: Dictionary = {
     favoriteAdded: "Dodano u favorite",
     favoriteRemoved: "Uklonjeno iz favorita",
     comingSoon: "Coming Soon",
+    share: "Podijeli",
+    shareTitle: "Podijeli ovu stranicu",
+    shareSubtitle: "Reci i drugima!",
+    shareCopied: "Kopirano!",
+    shareCopyLink: "Kopiraj poveznicu",
   },
   metadata: {
-    siteTitle: "ToolPop PDF - Besplatni PDF alati",
+    siteTitle: "ToolPop - Besplatni PDF alati",
     siteDescription: "Spajajte, dijelite, komprimirajte i pretvarajte PDF datoteke na mreži besplatno.",
-    toolTitleSuffix: "- ToolPop PDF",
+    toolTitleSuffix: "- ToolPop",
   },
   cookie: {
     message: "Koristimo kolačiće za poboljšanje vašeg iskustva.",
@@ -138,15 +143,15 @@ const hr: Dictionary = {
   privacy: {
     title: "Politika privatnosti",
     lastUpdated: "Posljednje ažuriranje: 1. ožujka 2026.",
-    intro: "U ToolPop PDF-u brinemo o vašoj privatnosti. Ova politika objašnjava koje podatke prikupljamo dok koristite našu uslugu i kako s njima postupamo.",
+    intro: "U ToolPop-u brinemo o vašoj privatnosti. Ova politika objašnjava koje podatke prikupljamo dok koristite našu uslugu i kako s njima postupamo.",
     sections: [
       {
         heading: "1. Podaci koje prikupljamo",
-        content: "ToolPop PDF ne zahtijeva registraciju. Ne prikupljamo osobne podatke. Međutim, radi poboljšanja usluge možemo automatski prikupljati podatke koji vas ne identificiraju:\n\n• Vrsta i verzija preglednika\n• Operacijski sustav\n• Posjećene stranice i provedeno vrijeme\n• Kolačići i slične tehnologije za praćenje obrazaca korištenja",
+        content: "ToolPop ne zahtijeva registraciju. Ne prikupljamo osobne podatke. Međutim, radi poboljšanja usluge možemo automatski prikupljati podatke koji vas ne identificiraju:\n\n• Vrsta i verzija preglednika\n• Operacijski sustav\n• Posjećene stranice i provedeno vrijeme\n• Kolačići i slične tehnologije za praćenje obrazaca korištenja",
       },
       {
         heading: "2. Postupanje s datotekama",
-        content: "Datoteke koje učitate obrađuju se na našim poslužiteljima i automatski se brišu unutar 2 sata. Ne čitamo, ne pohranjujemo niti dijelimo sadržaj vaših datoteka s ikime.",
+        content: "Sva obrada datoteka na ToolPop-u odvija se izravno u vašem pregledniku. Vaše datoteke nikada se ne šalju na poslužitelj i nikada ne napuštaju vaš uređaj. Koristimo WebAssembly i moderne web tehnologije za lokalnu i sigurnu obradu.",
       },
       {
         heading: "3. Kolačići",
@@ -166,18 +171,18 @@ const hr: Dictionary = {
       },
       {
         heading: "7. Kontaktirajte nas",
-        content: "Za pitanja vezana uz privatnost, obratite nam se na support@toolbox-pdf.com.",
+        content: "Za pitanja vezana uz privatnost, obratite nam se na support@toolpop.org.",
       },
     ],
   },
   terms: {
     title: "Uvjeti korištenja",
     lastUpdated: "Posljednje ažuriranje: 1. ožujka 2026.",
-    intro: "Hvala što koristite ToolPop PDF. Pristupanjem ili korištenjem naše usluge prihvaćate sljedeće uvjete.",
+    intro: "Hvala što koristite ToolPop. Pristupanjem ili korištenjem naše usluge prihvaćate sljedeće uvjete.",
     sections: [
       {
         heading: "1. O usluzi",
-        content: "ToolPop PDF je besplatna mrežna usluga koja vam omogućuje spajanje, dijeljenje, pretvaranje, uređivanje i komprimiranje PDF datoteka izravno u pregledniku.",
+        content: "ToolPop je besplatan online alat koji vam omogućuje obradu PDF-ova, slika i drugih datoteka izravno u pregledniku. Sva obrada odvija se lokalno na vašem uređaju — datoteke se nikada ne šalju na poslužitelj.",
       },
       {
         heading: "2. Prihvatljivo korištenje",
@@ -185,7 +190,7 @@ const hr: Dictionary = {
       },
       {
         heading: "3. Postupanje s datotekama",
-        content: "Učitane datoteke koriste se isključivo za izvršavanje tražene radnje. Automatski se brišu s naših poslužitelja unutar 2 sata. Ne analiziramo niti zadržavamo vaše datoteke.",
+        content: "Sva obrada datoteka na ToolPop-u odvija se izravno u vašem pregledniku. Vaše datoteke nikada se ne šalju na poslužitelj i nikada ne napuštaju vaš uređaj. Obrađeni rezultati dostupni su za preuzimanje izravno iz preglednika.",
       },
       {
         heading: "4. Odricanje od odgovornosti",
@@ -205,7 +210,7 @@ const hr: Dictionary = {
       },
       {
         heading: "8. Kontaktirajte nas",
-        content: "Za pitanja o ovim uvjetima, obratite nam se na support@toolbox-pdf.com.",
+        content: "Za pitanja o ovim uvjetima, obratite nam se na support@toolpop.org.",
       },
     ],
   },
@@ -1057,13 +1062,13 @@ const hr: Dictionary = {
     backLabel: "Stražnja",
   },
   about: {
-    title: "O ToolPop PDF-u",
-    intro: "ToolPop PDF besplatan je skup alata za PDF koji radi izravno u pregledniku. Uređujte, pretvarajte i organizirajte PDF datoteke bez slanja na poslužitelj. Vaše datoteke nikad ne napuštaju vaš uređaj.",
+    title: "O ToolPop-u",
+    intro: "ToolPop besplatan je skup alata za PDF koji radi izravno u pregledniku. Uređujte, pretvarajte i organizirajte PDF datoteke bez slanja na poslužitelj. Vaše datoteke nikad ne napuštaju vaš uređaj.",
     sections: [
-      { heading: "Naša misija", content: "Vjerujemo da svatko zaslužuje pristup moćnim PDF alatima — bez pretplata, bez registracije i bez kompromisa oko privatnosti. ToolPop PDF stvoren je kako bi profesionalnu obradu dokumenata učinio dostupnom svakome tko ima web preglednik." },
-      { heading: "Kako funkcionira", content: "Za razliku od tradicionalnih PDF usluga koje zahtijevaju učitavanje datoteka na udaljene poslužitelje, ToolPop PDF obrađuje sve izravno u vašem pregledniku koristeći moderne web tehnologije poput WebAssembly i PDF.js biblioteke. To znači da vaši osjetljivi dokumenti uvijek ostaju na vašem uređaju — nikad ne vidimo, pohranjujemo niti prenosimo vaše datoteke." },
-      { heading: "Što nudimo", content: "ToolPop PDF sadrži više od 40 alata u pet kategorija:\n\n• Organizacija — spajanje, razdvajanje, preuređivanje, izvlačenje i brisanje stranica\n• Pretvorba — pretvaranje između PDF, JPG, PNG, teksta i drugih formata\n• Uređivanje — dodavanje teksta, slika, potpisa, vodenih žigova, brojeva stranica i bilješki\n• Optimizacija — kompresija datoteka i optimizacija za web\n• Sigurnost — zaštita lozinkom, cenzuriranje osjetljivih podataka i izravnavanje dokumenata\n\nSvi alati potpuno su besplatni, bez ograničenja veličine datoteke ili dnevnih limita korištenja." },
-      { heading: "Naša tehnologija", content: "ToolPop PDF izgrađen je s Next.js, React i modernim web standardima. Koristimo biblioteke poput pdf-lib za manipulaciju PDF-om i PDF.js za prikaz — sve se izvršava na strani klijenta u vašem pregledniku. Stranica podržava 45 jezika, tamni način rada i radi na svakom uređaju s modernim preglednikom." },
+      { heading: "Naša misija", content: "Vjerujemo da svatko zaslužuje pristup moćnim PDF alatima — bez pretplata, bez registracije i bez kompromisa oko privatnosti. ToolPop stvoren je kako bi profesionalnu obradu dokumenata učinio dostupnom svakome tko ima web preglednik." },
+      { heading: "Kako funkcionira", content: "Za razliku od tradicionalnih PDF usluga koje zahtijevaju učitavanje datoteka na udaljene poslužitelje, ToolPop obrađuje sve izravno u vašem pregledniku koristeći moderne web tehnologije poput WebAssembly i PDF.js biblioteke. To znači da vaši osjetljivi dokumenti uvijek ostaju na vašem uređaju — nikad ne vidimo, pohranjujemo niti prenosimo vaše datoteke." },
+      { heading: "Što nudimo", content: "ToolPop sadrži više od 40 alata u pet kategorija:\n\n• Organizacija — spajanje, razdvajanje, preuređivanje, izvlačenje i brisanje stranica\n• Pretvorba — pretvaranje između PDF, JPG, PNG, teksta i drugih formata\n• Uređivanje — dodavanje teksta, slika, potpisa, vodenih žigova, brojeva stranica i bilješki\n• Optimizacija — kompresija datoteka i optimizacija za web\n• Sigurnost — zaštita lozinkom, cenzuriranje osjetljivih podataka i izravnavanje dokumenata\n\nSvi alati potpuno su besplatni, bez ograničenja veličine datoteke ili dnevnih limita korištenja." },
+      { heading: "Naša tehnologija", content: "ToolPop izgrađen je s Next.js, React i modernim web standardima. Koristimo biblioteke poput pdf-lib za manipulaciju PDF-om i PDF.js za prikaz — sve se izvršava na strani klijenta u vašem pregledniku. Stranica podržava 45 jezika, tamni način rada i radi na svakom uređaju s modernim preglednikom." },
       { heading: "Kontaktirajte nas", content: "Imate pitanja, povratne informacije ili prijedloge za nove značajke? Rado bismo čuli vaše mišljenje. Posjetite našu stranicu za kontakt ili nam pišite." },
     ],
   },
@@ -1091,22 +1096,22 @@ const hr: Dictionary = {
   },
   faq: {
     title: "Česta pitanja",
-    intro: "Pronađite odgovore na najčešća pitanja o ToolPop PDF-u. Ne nalazite svoje pitanje? Slobodno nas kontaktirajte.",
+    intro: "Pronađite odgovore na najčešća pitanja o ToolPop-u. Ne nalazite svoje pitanje? Slobodno nas kontaktirajte.",
     items: [
-      { question: "Je li ToolPop PDF stvarno besplatan?", answer: "Da, potpuno besplatan. Svi alati dostupni su bez ograničenja, bez registracije i bez skrivenih naknada. Uslugu financiramo neupadljivim oglašavanjem." },
+      { question: "Je li ToolPop stvarno besplatan?", answer: "Da, potpuno besplatan. Svi alati dostupni su bez ograničenja, bez registracije i bez skrivenih naknada. Uslugu financiramo neupadljivim oglašavanjem." },
       { question: "Jesu li moje datoteke sigurne?", answer: "Apsolutno. Vaše datoteke obrađuju se u cijelosti u pregledniku — nikad ne napuštaju vaš uređaj niti se učitavaju na bilo koji poslužitelj. Koristimo moderne API-je preglednika za sve PDF operacije lokalno, tako da vaši osjetljivi dokumenti ostaju potpuno privatni." },
-      { question: "Moram li stvoriti račun?", answer: "Ne. ToolPop PDF radi bez ikakve registracije ili prijave. Jednostavno otvorite alat, povucite datoteku i odmah dobijete rezultat." },
+      { question: "Moram li stvoriti račun?", answer: "Ne. ToolPop radi bez ikakve registracije ili prijave. Jednostavno otvorite alat, povucite datoteku i odmah dobijete rezultat." },
       { question: "Koja je maksimalna veličina datoteke?", answer: "Budući da se obrada odvija u pregledniku, ograničenje ovisi o dostupnoj memoriji vašeg uređaja. Većina modernih uređaja bez problema obrađuje datoteke do 100–200 MB. Za vrlo velike datoteke preporučujemo korištenje preglednika na stolnom ili prijenosnom računalu." },
-      { question: "Koji preglednici su podržani?", answer: "ToolPop PDF radi na svim modernim preglednicima uključujući Chrome, Firefox, Safari, Edge i Opera. Preporučujemo korištenje najnovije verzije preglednika za najbolje iskustvo." },
-      { question: "Mogu li koristiti ToolPop PDF na telefonu ili tabletu?", answer: "Da! ToolPop PDF potpuno je prilagodljiv i radi na mobilnim uređajima. Možete spajati, razdvajati, pretvarati i uređivati PDF-ove izravno iz preglednika na telefonu ili tabletu." },
+      { question: "Koji preglednici su podržani?", answer: "ToolPop radi na svim modernim preglednicima uključujući Chrome, Firefox, Safari, Edge i Opera. Preporučujemo korištenje najnovije verzije preglednika za najbolje iskustvo." },
+      { question: "Mogu li koristiti ToolPop na telefonu ili tabletu?", answer: "Da! ToolPop potpuno je prilagodljiv i radi na mobilnim uređajima. Možete spajati, razdvajati, pretvarati i uređivati PDF-ove izravno iz preglednika na telefonu ili tabletu." },
       { question: "Kako funkcionira obrada u pregledniku?", answer: "Kad odaberete datoteku, ona ostaje na vašem uređaju. Naši alati koriste JavaScript biblioteke poput pdf-lib i PDF.js za čitanje, modificiranje i stvaranje PDF-ova izravno u memoriji preglednika. Obrađena datoteka zatim je dostupna za preuzimanje — bez komunikacije s poslužiteljem." },
       { question: "Mogu li spojiti više od dva PDF-a?", answer: "Da. Naš alat za spajanje PDF-ova podržava kombiniranje neograničenog broja datoteka. Jednostavno povucite sve PDF-ove koje želite spojiti, poredajte ih željenim redoslijedom i kliknite gumb za obradu." },
       { question: "Koje formate datoteka mogu pretvarati?", answer: "Možete pretvarati PDF u JPG, PNG i obični tekst. Za stvaranje PDF-ova podržavamo slike JPG, PNG, WEBP, TIFF, HEIC, HTML datoteke i skenirane dokumente. Novi formati pretvorbe redovito se dodaju." },
-      { question: "Po čemu se ToolPop PDF razlikuje od drugih PDF alata?", answer: "Tri ključne razlike: (1) Privatnost — vaše datoteke nikad ne napuštaju uređaj, za razliku od većine konkurenata koji ih učitavaju na svoje poslužitelje. (2) Bez ograničenja — bez dnevnih limita, bez ograničenja veličine, bez vodenih žigova na rezultatu. (3) Bez računa — koristite bilo koji alat odmah bez registracije." },
+      { question: "Po čemu se ToolPop razlikuje od drugih PDF alata?", answer: "Tri ključne razlike: (1) Privatnost — vaše datoteke nikad ne napuštaju uređaj, za razliku od većine konkurenata koji ih učitavaju na svoje poslužitelje. (2) Bez ograničenja — bez dnevnih limita, bez ograničenja veličine, bez vodenih žigova na rezultatu. (3) Bez računa — koristite bilo koji alat odmah bez registracije." },
       { question: "Mogu li dodati lozinku za zaštitu PDF-a?", answer: "Da. Koristite naš alat Zaštita PDF-a za dodavanje zaštite lozinkom s AES-256 enkripcijom. Možete postaviti lozinku za otvaranje i dozvole za ispis, kopiranje i uređivanje." },
-      { question: "Dodaje li ToolPop PDF vodene žigove na moje datoteke?", answer: "Nikad. Sve obrađene datoteke čiste su i bez ikakvog brendiranja ili vodenih žigova ToolPop-a. Rezultat je točno ono što biste očekivali od profesionalnog alata." },
-      { question: "Postoji li dostupan API?", answer: "Trenutno ne. ToolPop PDF dizajniran je kao preglednički alat za individualnu uporabu. Ako vam treba API pristup za programsku obradu PDF-ova, kontaktirajte nas za korporativna rješenja." },
-      { question: "Koje jezike stranica podržava?", answer: "ToolPop PDF dostupan je na 45 jezika uključujući hrvatski, engleski, španjolski, kineski, japanski, njemački, francuski, portugalski, arapski, hindi i mnoge druge. Sučelje automatski prepoznaje jezik preglednika ili možete ručno promijeniti putem izbornika jezika." },
+      { question: "Dodaje li ToolPop vodene žigove na moje datoteke?", answer: "Nikad. Sve obrađene datoteke čiste su i bez ikakvog brendiranja ili vodenih žigova ToolPop-a. Rezultat je točno ono što biste očekivali od profesionalnog alata." },
+      { question: "Postoji li dostupan API?", answer: "Trenutno ne. ToolPop dizajniran je kao preglednički alat za individualnu uporabu. Ako vam treba API pristup za programsku obradu PDF-ova, kontaktirajte nas za korporativna rješenja." },
+      { question: "Koje jezike stranica podržava?", answer: "ToolPop dostupan je na 45 jezika uključujući hrvatski, engleski, španjolski, kineski, japanski, njemački, francuski, portugalski, arapski, hindi i mnoge druge. Sučelje automatski prepoznaje jezik preglednika ili možete ručno promijeniti putem izbornika jezika." },
     ],
   },
   blog: {

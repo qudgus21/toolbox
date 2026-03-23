@@ -97,6 +97,11 @@ export interface Dictionary {
     favoriteAdded: string;
     favoriteRemoved: string;
     comingSoon: string;
+    share: string;
+    shareTitle: string;
+    shareSubtitle: string;
+    shareCopied: string;
+    shareCopyLink: string;
   };
   metadata: {
     siteTitle: string;
