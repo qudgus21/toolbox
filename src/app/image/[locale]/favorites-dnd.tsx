@@ -148,9 +148,7 @@ export function FavoritesDnd({
     setFavSlugs(newOrder);
     reorderAppFavorites("image", newOrder);
     requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setDisableFavTransition(false);
-      });
+      setDisableFavTransition(false);
     });
   }
 
