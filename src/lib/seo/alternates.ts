@@ -15,14 +15,14 @@ export function generateAlternates(
   defaultLocale = "en",
   basePath = "",
 ): AlternatesConfig {
-  const prefix = basePath ? `/${basePath}` : "";
+  const appPath = basePath ? `/${basePath}` : "";
   const suffix = path ? `/${path}` : "";
 
   return {
-    canonical: `${prefix}/${currentLocale}${suffix}`,
+    canonical: `/${currentLocale}${appPath}${suffix}`,
     languages: {
-      ...Object.fromEntries(locales.map((l) => [l, `${prefix}/${l}${suffix}`])),
-      "x-default": `${prefix}/${defaultLocale}${suffix}`,
+      ...Object.fromEntries(locales.map((l) => [l, `/${l}${appPath}${suffix}`])),
+      "x-default": `/${defaultLocale}${appPath}${suffix}`,
     },
   };
 }

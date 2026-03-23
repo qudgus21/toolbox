@@ -8,10 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: [
-      "https://toolpop.org/sitemap.xml",
-      "https://toolpop.org/pdf/sitemap.xml",
-      "https://toolpop.org/image/sitemap.xml",
-    ],
+    sitemap: ["https://toolpop.org/sitemap.xml"],
   };
 }

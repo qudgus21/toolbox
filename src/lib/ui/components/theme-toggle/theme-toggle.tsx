@@ -1,14 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Moon, Sun } from "lucide-react";
 import { sendEvent } from "@/lib/analytics";
+
+function detectApp(pathname: string): string {
+  if (pathname.match(/^\/[^/]+\/pdf(\/|$)/)) return "pdf";
+  if (pathname.match(/^\/[^/]+\/image(\/|$)/)) return "image";
+  return "landing";
+}
 
 interface ThemeToggleProps {
   app?: string;
 }
 
-export function ThemeToggle({ app = "landing" }: ThemeToggleProps) {
+export function ThemeToggle({ app }: ThemeToggleProps) {
+  const pathname = usePathname();
+  const resolvedApp = app ?? detectApp(pathname);
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
@@ -24,7 +33,7 @@ export function ThemeToggle({ app = "landing" }: ThemeToggleProps) {
     setTheme(next);
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
-    sendEvent("theme_toggle", { app, theme: next });
+    sendEvent("theme_toggle", { app: resolvedApp, theme: next });
   }
 
   return (
