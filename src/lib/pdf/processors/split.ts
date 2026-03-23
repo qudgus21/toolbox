@@ -127,38 +127,45 @@ async function splitBySize(
 ): Promise<PDFDocument[]> {
   const maxSizeBytes = ((options.maxSizeKB as number) ?? 5120) * 1024;
   const results: PDFDocument[] = [];
+
+  // Estimate per-page size from a single-page sample to avoid repeated save()
+  const sampleDoc = await createDocFromPages(srcDoc, [0]);
+  const sampleBytes = await sampleDoc.save();
+  const avgPageSize = Math.max(sampleBytes.length, 1024);
+
   let startIdx = 0;
 
   while (startIdx < totalPages) {
-    let lo = startIdx;
-    let hi = totalPages - 1;
-    let bestEnd = startIdx;
+    // Estimate how many pages fit within the size limit
+    const remaining = totalPages - startIdx;
+    let guess = Math.max(1, Math.floor(maxSizeBytes / avgPageSize));
+    guess = Math.min(guess, remaining);
 
-    while (lo <= hi) {
-      const mid = Math.floor((lo + hi) / 2);
-      const indices = Array.from(
-        { length: mid - startIdx + 1 },
-        (_, i) => startIdx + i,
-      );
-      const testDoc = await createDocFromPages(srcDoc, indices);
-      const testBytes = await testDoc.save();
+    // Verify with a single save, then adjust down if needed
+    let indices = Array.from({ length: guess }, (_, i) => startIdx + i);
+    let doc = await createDocFromPages(srcDoc, indices);
+    let bytes = await doc.save();
 
-      if (testBytes.length <= maxSizeBytes) {
-        bestEnd = mid;
-        lo = mid + 1;
-      } else {
-        hi = mid - 1;
+    if (bytes.length > maxSizeBytes && guess > 1) {
+      // Over limit — reduce by estimated ratio, minimum 1 page
+      const ratio = maxSizeBytes / bytes.length;
+      guess = Math.max(1, Math.floor(guess * ratio * 0.9));
+      indices = Array.from({ length: guess }, (_, i) => startIdx + i);
+      doc = await createDocFromPages(srcDoc, indices);
+      bytes = await doc.save();
+
+      // If still over limit, fall back to 1 page at a time
+      while (bytes.length > maxSizeBytes && guess > 1) {
+        guess = Math.max(1, guess - 1);
+        indices = Array.from({ length: guess }, (_, i) => startIdx + i);
+        doc = await createDocFromPages(srcDoc, indices);
+        bytes = await doc.save();
       }
     }
 
-    const indices = Array.from(
-      { length: bestEnd - startIdx + 1 },
-      (_, i) => startIdx + i,
-    );
-    const doc = await createDocFromPages(srcDoc, indices);
     results.push(doc);
-    onProgress(((bestEnd + 1) / totalPages) * 70);
-    startIdx = bestEnd + 1;
+    startIdx += guess;
+    onProgress((startIdx / totalPages) * 70);
   }
 
   return results;

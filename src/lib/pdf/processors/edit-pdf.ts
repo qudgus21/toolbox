@@ -400,11 +400,9 @@ const editPdf: ProcessorFn = async (files, options, onProgress) => {
         }
 
         case "image": {
-          const base64Data = ann.dataUrl.split(",")[1];
           const isPng = ann.dataUrl.includes("image/png");
-          const imageBytes = Uint8Array.from(atob(base64Data), (c) =>
-            c.charCodeAt(0),
-          );
+          const res = await fetch(ann.dataUrl);
+          const imageBytes = new Uint8Array(await res.arrayBuffer());
           const image = isPng
             ? await doc.embedPng(imageBytes)
             : await doc.embedJpg(imageBytes);

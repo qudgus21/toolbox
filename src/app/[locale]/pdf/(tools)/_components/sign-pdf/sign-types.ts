@@ -1,44 +1,15 @@
-// ─── Field Types ────────────────────────────────────────────
-export type SignFieldType = "signature" | "initials" | "name" | "date" | "text";
+// Re-export shared element types from lib (canonical source)
+export type {
+  SignFieldType,
+  SignCreateMethod,
+  SignatureData,
+  SignatureElement,
+  TextFieldElement,
+  SignElement,
+} from "@/lib/pdf/sign-types";
 
-export type SignCreateMethod = "draw" | "type" | "image";
-
-// ─── Signature Data (created via modal) ─────────────────────
-export interface SignatureData {
-  id: string;
-  imageDataUrl: string;
-  method: SignCreateMethod;
-  width: number;
-  height: number;
-}
-
-// ─── Element Types ──────────────────────────────────────────
-interface SignBaseElement {
-  id: string;
-  type: SignFieldType;
-  pageIndex: number;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  rotation: number;
-  opacity: number;
-}
-
-export interface SignatureElement extends SignBaseElement {
-  type: "signature" | "initials";
-  imageDataUrl: string;
-}
-
-export interface TextFieldElement extends SignBaseElement {
-  type: "name" | "date" | "text";
-  content: string;
-  fontFamily: string;
-  fontSize: number;
-  fontColor: string;
-}
-
-export type SignElement = SignatureElement | TextFieldElement;
+import type { SignElement } from "@/lib/pdf/sign-types";
+import type { SignatureData } from "@/lib/pdf/sign-types";
 
 // ─── Page Data ──────────────────────────────────────────────
 export interface PageData {
