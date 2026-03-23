@@ -146,11 +146,11 @@ export default async function LandingPage({
             </defs>
             <rect width="100%" height="100%" fill="url(#hero-grid)" />
           </svg>
-          {/* Floating shapes */}
-          <svg className="absolute top-16 left-[15%] w-6 h-6 text-purple-400/30 dark:text-purple-300/20 animate-[float_6s_ease-in-out_infinite]" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5" /></svg>
-          <svg className="absolute top-32 right-[20%] w-4 h-4 text-blue-400/25 dark:text-blue-300/15 animate-[float_8s_ease-in-out_infinite_1s]" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3" /></svg>
-          <svg className="absolute bottom-20 left-[25%] w-5 h-5 text-amber-400/25 dark:text-amber-300/15 animate-[float_7s_ease-in-out_infinite_2s]" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22" /></svg>
-          <svg className="absolute top-24 right-[35%] w-3 h-3 text-red-400/20 dark:text-red-300/15 animate-[float_9s_ease-in-out_infinite_0.5s]" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5" /></svg>
+          {/* Floating shapes — hidden on mobile for performance */}
+          <svg className="hidden sm:block absolute top-16 left-[15%] w-6 h-6 text-purple-400/30 dark:text-purple-300/20 animate-[float_6s_ease-in-out_infinite]" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5" /></svg>
+          <svg className="hidden sm:block absolute top-32 right-[20%] w-4 h-4 text-blue-400/25 dark:text-blue-300/15 animate-[float_8s_ease-in-out_infinite_1s]" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="3" /></svg>
+          <svg className="hidden sm:block absolute bottom-20 left-[25%] w-5 h-5 text-amber-400/25 dark:text-amber-300/15 animate-[float_7s_ease-in-out_infinite_2s]" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 22,22 2,22" /></svg>
+          <svg className="hidden sm:block absolute top-24 right-[35%] w-3 h-3 text-red-400/20 dark:text-red-300/15 animate-[float_9s_ease-in-out_infinite_0.5s]" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5" /></svg>
         </div>
 
         <Container size="lg" className="relative">

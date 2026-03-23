@@ -1,7 +1,4 @@
-"use client";
-
 import { forwardRef, type ElementType, type ReactNode } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export interface ToolCardProps {
@@ -19,11 +16,9 @@ export interface ToolCardProps {
 
 export const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
   ({ href, icon: _Icon, title, description, emoji, toolIcon, iconColorClasses: _colors, className, linkComponent: LinkEl = "a", ...props }, ref) => (
-    <motion.div
+    <div
       ref={ref}
-      whileHover={{ y: -4, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="h-full"
+      className="h-full transition-transform duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02]"
       {...props}
     >
       <LinkEl
@@ -45,7 +40,7 @@ export const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
           <p className="mt-1 text-sm text-foreground-muted">{description}</p>
         </div>
       </LinkEl>
-    </motion.div>
+    </div>
   ),
 );
 ToolCard.displayName = "ToolCard";
