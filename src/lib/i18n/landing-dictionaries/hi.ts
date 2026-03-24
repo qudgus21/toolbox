@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "PDF एडिट करें, मर्ज करें, कन्वर्ट करें। इमेज रिसाइज़ करें, कंप्रेस करें, बदलें। सब कुछ मुफ़्त, सीधे ब्राउज़र में।",
   },
   hero: {
-    badge: "87+ मुफ़्त ऑनलाइन टूल्स",
+    badge: "131+ मुफ़्त ऑनलाइन टूल्स",
     title: "हर ज़रूरी टूल, एक ही जगह — ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "इमेज टूल्स देखें",
       toolCount: "48 टूल्स",
     },
+    text: {
+      name: "टेक्स्ट टूल्स",
+      description:
+        "टेक्स्ट को बदलें, विश्लेषण करें, साफ़ करें, एन्कोड करें और तुरंत जनरेट करें।",
+      cta: "टेक्स्ट टूल्स",
+      toolCount: "44+ टूल्स",
+    },
   },
   popularTools: {
     sectionTitle: "लोकप्रिय टूल्स",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "सभी देखें",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "मुफ़्त टूल्स",
     languages: "45",
     languagesLabel: "भाषाएँ",
@@ -87,7 +94,8 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
+    image: "चित्र",
+    text: "टेक्स्ट",
   },
 };
 

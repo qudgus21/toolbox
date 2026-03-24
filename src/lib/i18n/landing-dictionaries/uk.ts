@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Редагуйте, об'єднуйте та конвертуйте PDF. Змінюйте розмір, стискайте та трансформуйте зображення. Все безкоштовно, прямо у браузері.",
   },
   hero: {
-    badge: "87+ безкоштовних онлайн-інструментів",
+    badge: "131+ безкоштовних онлайн-інструментів",
     title: "Усі потрібні інструменти — в одному ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Працюйте з PDF та зображеннями прямо у браузері. Без встановлення, без реєстрації.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Інструменти PDF", description: "Об'єднуйте, розділяйте, конвертуйте, редагуйте та стискайте — усе, що можна зробити з PDF.", cta: "Переглянути інструменти PDF", toolCount: "39 інструментів" },
     image: { name: "Інструменти для зображень", description: "Змінюйте розмір, обрізайте, конвертуйте, додавайте ефекти, створюйте QR-коди — усе для зображень.", cta: "Переглянути інструменти для зображень", toolCount: "48 інструментів" },
+    text: { name: "Текстові інструменти", description: "Перетворюйте, аналізуйте, очищуйте, кодуйте та генеруйте текст миттєво.", cta: "Текстові інструменти", toolCount: "44+ інструментів" },
   },
   popularTools: { sectionTitle: "Популярні інструменти", sectionSubtitle: "Переходьте одразу до найпопулярніших інструментів", viewAll: "Переглянути всі" },
-  stats: { tools: "87+", toolsLabel: "Безкоштовних інструментів", languages: "45", languagesLabel: "Мов", users: "100%", usersLabel: "У браузері", price: "₴0", priceLabel: "Назавжди безкоштовно" },
+  stats: { tools: "131+", toolsLabel: "Безкоштовних інструментів", languages: "45", languagesLabel: "Мов", users: "100%", usersLabel: "У браузері", price: "₴0", priceLabel: "Назавжди безкоштовно" },
   trust: {
     sectionTitle: "Чому ToolPop?",
     sectionSubtitle: "Безпека та зручність без компромісів",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Поділитися", shareSubtitle: "Розкажіть друзям про ToolPop!", shareCopyLink: "Копіювати посилання", shareCopied: "Скопійовано!" },
   footer: { apps: "Інструменти", company: "Компанія", about: "Про нас", contact: "Контакти", faq: "FAQ", blog: "Блог", legal: "Правова інформація", privacy: "Політика конфіденційності", terms: "Умови використання", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Безкоштовні онлайн-інструменти для PDF, зображень та іншого. Без реєстрації.", madeWith: "Зроблено з любов'ю для кожного" },
   search: { noResults: "Нічого не знайдено" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Зображення", text: "Текст" },
 };
 export default dict;

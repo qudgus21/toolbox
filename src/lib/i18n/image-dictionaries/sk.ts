@@ -19,6 +19,8 @@ const sk: ImageDictionary = {
     favorites: "Obľúbené",
     favDragHint: "Potiahnutím zmeníte poradie",
     favHint: "Pridajte obľúbené nástroje pre rýchly prístup",
+    gridView: "Zobrazenie mriežky",
+    listView: "Zobrazenie zoznamu",
   },
   trust: {
     encryption: "Bezpečné spracovanie",
@@ -304,6 +306,7 @@ const sk: ImageDictionary = {
     shareSubtitle: "Povedzte o tom ďalej!",
     shareCopied: "Skopírované!",
     shareCopyLink: "Kopírovať odkaz",
+    unknownError: "Vyskytla sa neznáma chyba",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const sk: ImageDictionary = {
       image: "Obrázok",
       watermarkImage: "Obrázok vodotlače",
       enterWatermarkText: "Zadajte text vodotlače...",
+      defaultWatermarkText: "Vodotlač",
       chooseImage: "Vybrať obrázok...",
       fontFamily: "Písmo",
       fontSize: "Veľkosť písma",

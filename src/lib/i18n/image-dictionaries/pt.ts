@@ -19,6 +19,8 @@ const pt: ImageDictionary = {
     favorites: "Favoritos",
     favDragHint: "Arraste para reordenar",
     favHint: "Adicione suas ferramentas favoritas para acesso rápido",
+    gridView: "Vista em grelha",
+    listView: "Vista em lista",
   },
   trust: {
     encryption: "Processamento seguro",
@@ -304,6 +306,7 @@ const pt: ImageDictionary = {
     shareSubtitle: "Espalhe a palavra!",
     shareCopied: "Copiado!",
     shareCopyLink: "Copiar link",
+    unknownError: "Ocorreu um erro desconhecido",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const pt: ImageDictionary = {
       image: "Imagem",
       watermarkImage: "Imagem da marca d'água",
       enterWatermarkText: "Digite o texto da marca d'água...",
+      defaultWatermarkText: "Marca d'água",
       chooseImage: "Escolher imagem...",
       fontFamily: "Fonte",
       fontSize: "Tamanho da fonte",

@@ -19,6 +19,8 @@ const ar: ImageDictionary = {
     favorites: "المفضلة",
     favDragHint: "اسحب لإعادة الترتيب",
     favHint: "أضف أدواتك المفضلة للوصول السريع",
+    gridView: "عرض شبكي",
+    listView: "عرض قائمة",
   },
   trust: {
     encryption: "معالجة آمنة",
@@ -304,6 +306,7 @@ const ar: ImageDictionary = {
     shareSubtitle: "أخبر الآخرين!",
     shareCopied: "تم النسخ!",
     shareCopyLink: "نسخ الرابط",
+    unknownError: "حدث خطأ غير معروف",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const ar: ImageDictionary = {
       image: "صورة",
       watermarkImage: "صورة العلامة المائية",
       enterWatermarkText: "أدخل نص العلامة المائية...",
+      defaultWatermarkText: "علامة مائية",
       chooseImage: "اختر صورة...",
       fontFamily: "نوع الخط",
       fontSize: "حجم الخط",

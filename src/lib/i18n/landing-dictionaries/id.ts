@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Edit, gabung, dan konversi PDF. Ubah ukuran, kompres, dan transformasi gambar. Semuanya gratis, langsung di browser.",
   },
   hero: {
-    badge: "87+ alat online gratis",
+    badge: "131+ alat online gratis",
     title: "Semua alat yang kamu butuhkan, dalam satu ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Kelola PDF dan gambar langsung di browser. Tanpa instal, tanpa daftar akun.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Alat PDF", description: "Gabung, pisah, konversi, edit, dan kompres — semua yang bisa dilakukan dengan PDF.", cta: "Jelajahi Alat PDF", toolCount: "39 alat" },
     image: { name: "Alat Gambar", description: "Ubah ukuran, potong, konversi, efek, buat kode QR — semua untuk gambar.", cta: "Jelajahi Alat Gambar", toolCount: "48 alat" },
+    text: { name: "Alat Teks", description: "Ubah, analisis, bersihkan, encode, dan buat teks secara instan.", cta: "Alat Teks", toolCount: "44+ alat" },
   },
   popularTools: { sectionTitle: "Alat Populer", sectionSubtitle: "Langsung ke alat yang paling sering digunakan", viewAll: "Lihat semua" },
-  stats: { tools: "87+", toolsLabel: "Alat Gratis", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berbasis Browser", price: "Rp0", priceLabel: "Gratis Selamanya" },
+  stats: { tools: "131+", toolsLabel: "Alat Gratis", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berbasis Browser", price: "Rp0", priceLabel: "Gratis Selamanya" },
   trust: {
     sectionTitle: "Kenapa ToolPop?",
     sectionSubtitle: "Keamanan dan kemudahan tanpa kompromi",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Bagikan", shareSubtitle: "Beritahu temanmu tentang ToolPop!", shareCopyLink: "Salin tautan", shareCopied: "Tersalin!" },
   footer: { apps: "Alat", company: "Perusahaan", about: "Tentang", contact: "Kontak", faq: "FAQ", blog: "Blog", legal: "Hukum", privacy: "Kebijakan Privasi", terms: "Syarat Layanan", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Alat online gratis untuk PDF, gambar, dan lainnya. Tanpa registrasi.", madeWith: "Dibuat dengan cinta untuk semua" },
   search: { noResults: "Tidak ada hasil" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Gambar", text: "Teks" },
 };
 export default dict;

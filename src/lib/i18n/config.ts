@@ -29,6 +29,8 @@ export interface Dictionary {
     favorites: string;
     favDragHint: string;
     favHint: string;
+    gridView: string;
+    listView: string;
   };
   trust: {
     encryption: string;
@@ -102,6 +104,12 @@ export interface Dictionary {
     shareSubtitle: string;
     shareCopied: string;
     shareCopyLink: string;
+    unknownError: string;
+    pagesSelected: string;
+    selectAll: string;
+    deselectAll: string;
+    page: string;
+    confirm: string;
   };
   metadata: {
     siteTitle: string;
@@ -969,6 +977,9 @@ export interface Dictionary {
     categoryGuide: string;
     categoryTips: string;
     categoryKnowledge: string;
+    prev: string;
+    next: string;
+    page: string;
   };
   toolContent: Record<string, {
     howTo: { title: string; steps: string[] };

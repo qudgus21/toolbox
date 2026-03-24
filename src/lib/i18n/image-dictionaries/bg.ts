@@ -19,6 +19,8 @@ const bg: ImageDictionary = {
     favorites: "Любими",
     favDragHint: "Плъзнете за пренареждане",
     favHint: "Добавете любимите си инструменти за бърз достъп",
+    gridView: "Мрежов изглед",
+    listView: "Списъчен изглед",
   },
   trust: {
     encryption: "Сигурна обработка",
@@ -304,6 +306,7 @@ const bg: ImageDictionary = {
     shareSubtitle: "Разкажете на другите!",
     shareCopied: "Копирано!",
     shareCopyLink: "Копирай линк",
+    unknownError: "Възникна неизвестна грешка",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const bg: ImageDictionary = {
       image: "Изображение",
       watermarkImage: "Изображение за воден знак",
       enterWatermarkText: "Въведете текст за воден знак...",
+      defaultWatermarkText: "Воден знак",
       chooseImage: "Изберете изображение...",
       fontFamily: "Шрифт",
       fontSize: "Размер на шрифта",

@@ -310,6 +310,85 @@ export const ogImageMetadata: Record<string, { siteTitle: string; siteDescriptio
   },
 };
 
+/** Text 앱용 OG 메타데이터 */
+export const ogTextMetadata: Record<string, { siteTitle: string; siteDescription: string; altText: string }> = {
+  ko: {
+    siteTitle: "ToolPop Text - 무료 텍스트 도구",
+    siteDescription: "텍스트 변환, 카운트, 정리, 인코딩을 온라인에서 무료로.",
+    altText: "ToolPop Text - 무료 온라인 텍스트 도구",
+  },
+  en: {
+    siteTitle: "ToolPop Text - Free Text Tools",
+    siteDescription: "Transform, count, clean, and encode text online for free.",
+    altText: "ToolPop Text - Free Online Text Tools",
+  },
+  ja: {
+    siteTitle: "ToolPop Text - 無料テキストツール",
+    siteDescription: "テキストの変換、カウント、整理、エンコードをオンラインで無料で。",
+    altText: "ToolPop Text - 無料オンラインテキストツール",
+  },
+  zh: {
+    siteTitle: "ToolPop Text - 免费文本工具",
+    siteDescription: "在线免费转换、计数、清理和编码文本。",
+    altText: "ToolPop Text - 免费在线文本工具",
+  },
+  es: {
+    siteTitle: "ToolPop Text - Herramientas de texto gratuitas",
+    siteDescription: "Transforma, cuenta, limpia y codifica texto en línea gratis.",
+    altText: "ToolPop Text - Herramientas de texto en línea gratuitas",
+  },
+  fr: {
+    siteTitle: "ToolPop Text - Outils texte gratuits",
+    siteDescription: "Transformez, comptez, nettoyez et encodez du texte en ligne gratuitement.",
+    altText: "ToolPop Text - Outils texte en ligne gratuits",
+  },
+  de: {
+    siteTitle: "ToolPop Text - Kostenlose Text-Werkzeuge",
+    siteDescription: "Text online kostenlos umwandeln, zählen, bereinigen und kodieren.",
+    altText: "ToolPop Text - Kostenlose Online-Text-Werkzeuge",
+  },
+  pt: {
+    siteTitle: "ToolPop Text - Ferramentas de Texto Gratuitas",
+    siteDescription: "Transforme, conte, limpe e codifique texto online gratuitamente.",
+    altText: "ToolPop Text - Ferramentas de texto online gratuitas",
+  },
+  it: {
+    siteTitle: "ToolPop Text - Strumenti Testo Gratuiti",
+    siteDescription: "Trasforma, conta, pulisci e codifica testo online gratuitamente.",
+    altText: "ToolPop Text - Strumenti testo online gratuiti",
+  },
+  ru: {
+    siteTitle: "ToolPop Text - Бесплатные текстовые инструменты",
+    siteDescription: "Преобразуйте, подсчитайте, очистите и закодируйте текст онлайн бесплатно.",
+    altText: "ToolPop Text - Бесплатные онлайн текстовые инструменты",
+  },
+  ar: {
+    siteTitle: "ToolPop Text - أدوات نصية مجانية",
+    siteDescription: "تحويل، عد، تنظيف وترميز النصوص عبر الإنترنت مجاناً.",
+    altText: "ToolPop Text - أدوات نصية مجانية عبر الإنترنت",
+  },
+  hi: {
+    siteTitle: "ToolPop Text - मुफ़्त टेक्स्ट उपकरण",
+    siteDescription: "ऑनलाइन मुफ़्त में टेक्स्ट को बदलें, गिनें, साफ़ करें और एन्कोड करें।",
+    altText: "ToolPop Text - मुफ़्त ऑनलाइन टेक्स्ट उपकरण",
+  },
+  vi: {
+    siteTitle: "ToolPop Text - Công cụ văn bản miễn phí",
+    siteDescription: "Chuyển đổi, đếm, làm sạch và mã hóa văn bản trực tuyến miễn phí.",
+    altText: "ToolPop Text - Công cụ văn bản trực tuyến miễn phí",
+  },
+  th: {
+    siteTitle: "ToolPop Text - เครื่องมือข้อความฟรี",
+    siteDescription: "แปลง นับ ทำความสะอาด และเข้ารหัสข้อความออนไลน์ฟรี",
+    altText: "ToolPop Text - เครื่องมือข้อความออนไลน์ฟรี",
+  },
+  tr: {
+    siteTitle: "ToolPop Text - Ücretsiz Metin Araçları",
+    siteDescription: "Metni çevrimiçi olarak ücretsiz dönüştürün, sayın, temizleyin ve kodlayın.",
+    altText: "ToolPop Text - Ücretsiz Çevrimiçi Metin Araçları",
+  },
+};
+
 /** 하단 바 "100% Free · No Upload Required" 로케일별 텍스트 */
 export const ogBottomBar: Record<string, { free: string; noUpload: string }> = {
   ko: { free: "100% 무료", noUpload: "업로드 불필요" },

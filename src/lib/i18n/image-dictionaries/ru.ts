@@ -19,6 +19,8 @@ const ru: ImageDictionary = {
     favorites: "Избранное",
     favDragHint: "Перетащите для изменения порядка",
     favHint: "Добавьте часто используемые инструменты в избранное",
+    gridView: "Сетка",
+    listView: "Список",
   },
   trust: {
     encryption: "Безопасная обработка",
@@ -304,6 +306,7 @@ const ru: ImageDictionary = {
     shareSubtitle: "Расскажите другим!",
     shareCopied: "Скопировано!",
     shareCopyLink: "Скопировать ссылку",
+    unknownError: "Произошла неизвестная ошибка",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const ru: ImageDictionary = {
       image: "Изображение",
       watermarkImage: "Изображение водяного знака",
       enterWatermarkText: "Введите текст водяного знака...",
+      defaultWatermarkText: "Водяной знак",
       chooseImage: "Выбрать изображение...",
       fontFamily: "Шрифт",
       fontSize: "Размер шрифта",

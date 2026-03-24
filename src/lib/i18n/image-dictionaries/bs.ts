@@ -12,6 +12,7 @@ const bs: ImageDictionary = {
     shareSubtitle: "Reci i drugima!",
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj link",
+    unknownError: "Došlo je do nepoznate greške",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const bs: ImageDictionary = {
       image: "Slika",
       watermarkImage: "Slika vodenog ziga",
       enterWatermarkText: "Unesite tekst vodenog ziga...",
+      defaultWatermarkText: "Vodeni žig",
       chooseImage: "Odaberite sliku...",
       fontFamily: "Porodica fontova",
       fontSize: "Velicina fonta",

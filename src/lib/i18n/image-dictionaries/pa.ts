@@ -19,6 +19,8 @@ const pa: ImageDictionary = {
     favorites: "ਮਨਪਸੰਦ",
     favDragHint: "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਖਿੱਚੋ",
     favHint: "ਤੇਜ਼ ਪਹੁੰਚ ਲਈ ਮਨਪਸੰਦ ਟੂਲ ਜੋੜੋ",
+    gridView: "ਗਰਿੱਡ ਦ੍ਰਿਸ਼",
+    listView: "ਸੂਚੀ ਦ੍ਰਿਸ਼",
   },
   trust: {
     encryption: "ਸੁਰੱਖਿਅਤ ਪ੍ਰੋਸੈੱਸਿੰਗ",
@@ -304,6 +306,7 @@ const pa: ImageDictionary = {
     shareSubtitle: "ਦੋਸਤਾਂ ਨੂੰ ਦੱਸੋ!",
     shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!",
     shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
+    unknownError: "ਇੱਕ ਅਣਜਾਣ ਗਲਤੀ ਆਈ",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const pa: ImageDictionary = {
       image: "ਤਸਵੀਰ",
       watermarkImage: "ਵਾਟਰਮਾਰਕ ਤਸਵੀਰ",
       enterWatermarkText: "ਵਾਟਰਮਾਰਕ ਟੈਕਸਟ ਲਿਖੋ...",
+      defaultWatermarkText: "ਵਾਟਰਮਾਰਕ",
       chooseImage: "ਤਸਵੀਰ ਚੁਣੋ...",
       fontFamily: "ਫੌਂਟ ਪਰਿਵਾਰ",
       fontSize: "ਫੌਂਟ ਆਕਾਰ",

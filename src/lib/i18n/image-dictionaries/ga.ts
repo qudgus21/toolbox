@@ -12,6 +12,7 @@ const ga: ImageDictionary = {
     shareSubtitle: "Inis do do chairde!",
     shareCopied: "Cóipeáilte!",
     shareCopyLink: "Cóipeáil nasc",
+    unknownError: "Tharla earráid anaithnid",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const ga: ImageDictionary = {
       image: "Iomha",
       watermarkImage: "Iomha comhartha uisce",
       enterWatermarkText: "Cuir teacs comhartha uisce isteach...",
+      defaultWatermarkText: "Comhartha uisce",
       chooseImage: "Roghnaigh iomha...",
       fontFamily: "Cloteaghlach",
       fontSize: "Meid clo",

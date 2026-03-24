@@ -12,6 +12,7 @@ const pl: ImageDictionary = {
     shareSubtitle: "Podziel się ze znajomymi!",
     shareCopied: "Skopiowano!",
     shareCopyLink: "Kopiuj link",
+    unknownError: "Wystąpił nieznany błąd",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const pl: ImageDictionary = {
       image: "Obraz",
       watermarkImage: "Obraz znaku wodnego",
       enterWatermarkText: "Wpisz tekst znaku wodnego...",
+      defaultWatermarkText: "Znak wodny",
       chooseImage: "Wybierz obraz...",
       fontFamily: "Czcionka",
       fontSize: "Rozmiar czcionki",

@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Edit, gabung dan tukar PDF. Ubah saiz, mampat dan ubah imej. Semuanya percuma, terus dalam pelayar anda.",
   },
   hero: {
-    badge: "87+ alat dalam talian percuma",
+    badge: "131+ alat dalam talian percuma",
     title: "Semua alat yang anda perlukan, dalam satu ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Urus PDF dan imej terus dalam pelayar. Tanpa pemasangan, tanpa pendaftaran.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Alat PDF", description: "Gabung, pisah, tukar, edit dan mampat — semua yang boleh dilakukan dengan PDF.", cta: "Terokai Alat PDF", toolCount: "39 alat" },
     image: { name: "Alat Imej", description: "Ubah saiz, pangkas, tukar, kesan, kod QR — semua untuk imej.", cta: "Terokai Alat Imej", toolCount: "48 alat" },
+    text: { name: "Alat Teks", description: "Tukar, analisis, bersihkan, kodkan dan jana teks dengan serta-merta.", cta: "Alat Teks", toolCount: "44+ alat" },
   },
   popularTools: { sectionTitle: "Alat Popular", sectionSubtitle: "Terus ke alat yang paling kerap digunakan", viewAll: "Lihat semua" },
-  stats: { tools: "87+", toolsLabel: "Alat Percuma", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berasaskan Pelayar", price: "RM0", priceLabel: "Percuma Selama-lamanya" },
+  stats: { tools: "131+", toolsLabel: "Alat Percuma", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berasaskan Pelayar", price: "RM0", priceLabel: "Percuma Selama-lamanya" },
   trust: {
     sectionTitle: "Kenapa ToolPop?",
     sectionSubtitle: "Keselamatan dan kemudahan tanpa kompromi",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Kongsi", shareSubtitle: "Beritahu rakan anda tentang ToolPop!", shareCopyLink: "Salin pautan", shareCopied: "Disalin!" },
   footer: { apps: "Alat", company: "Syarikat", about: "Tentang Kami", contact: "Hubungi", faq: "Soalan Lazim", blog: "Blog", legal: "Undang-undang", privacy: "Dasar Privasi", terms: "Terma Perkhidmatan", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Alat dalam talian percuma untuk PDF, imej dan lain-lain. Tanpa pendaftaran.", madeWith: "Dibuat dengan kasih untuk semua" },
   search: { noResults: "Tiada hasil ditemui" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Imej", text: "Teks" },
 };
 export default dict;

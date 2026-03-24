@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "عدّل ملفات PDF، ادمجها، وحوّلها. غيّر حجم الصور، اضغطها، وعالجها. كل شيء مجاني، مباشرة من المتصفح.",
   },
   hero: {
-    badge: "أكثر من 87 أداة مجانية",
+    badge: "أكثر من 131 أداة مجانية",
     title: "كل الأدوات التي تحتاجها، في مكان واحد — ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "استكشف أدوات الصور",
       toolCount: "48 أداة",
     },
+    text: {
+      name: "أدوات النصوص",
+      description:
+        "حوّل النصوص، حلّلها، نظّفها، شفّرها، وأنشئها فوراً.",
+      cta: "أدوات النصوص",
+      toolCount: "أكثر من 44 أداة",
+    },
   },
   popularTools: {
     sectionTitle: "الأدوات الأكثر استخداماً",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "عرض الكل",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "أداة مجانية",
     languages: "45",
     languagesLabel: "لغة",
@@ -87,7 +94,8 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
+    image: "صورة",
+    text: "نص",
   },
 };
 

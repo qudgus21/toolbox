@@ -12,6 +12,7 @@ const et: ImageDictionary = {
     shareSubtitle: "Räägi teistele!",
     shareCopied: "Kopeeritud!",
     shareCopyLink: "Kopeeri link",
+    unknownError: "Ilmnes tundmatu tõrge",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const et: ImageDictionary = {
       image: "Pilt",
       watermarkImage: "Vesimargipilt",
       enterWatermarkText: "Sisestage vesimargi tekst...",
+      defaultWatermarkText: "Vesimärk",
       chooseImage: "Valige pilt...",
       fontFamily: "Kirjatyyp",
       fontSize: "Kirja suurus",

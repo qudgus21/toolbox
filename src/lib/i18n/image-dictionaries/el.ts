@@ -12,6 +12,7 @@ const el: ImageDictionary = {
     shareSubtitle: "Πείτε το και στους άλλους!",
     shareCopied: "Αντιγράφηκε!",
     shareCopyLink: "Αντιγραφή συνδέσμου",
+    unknownError: "Παρουσιάστηκε άγνωστο σφάλμα",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const el: ImageDictionary = {
       image: "Εικόνα",
       watermarkImage: "Εικόνα υδατογραφήματος",
       enterWatermarkText: "Εισαγωγή κειμένου υδατογραφήματος...",
+      defaultWatermarkText: "Υδατογράφημα",
       chooseImage: "Επιλογή εικόνας...",
       fontFamily: "Γραμματοσειρά",
       fontSize: "Μέγεθος γραμματοσειράς",

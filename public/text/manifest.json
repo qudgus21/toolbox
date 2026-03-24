@@ -1,0 +1,21 @@
+{
+  "name": "ToolPop Text",
+  "short_name": "Text Tools",
+  "description": "Free online text tools - count, transform, clean, encode and more",
+  "start_url": "/text/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/text/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/text/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

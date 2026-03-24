@@ -12,6 +12,7 @@ const uk: ImageDictionary = {
     shareSubtitle: "Розкажіть іншим!",
     shareCopied: "Скопійовано!",
     shareCopyLink: "Скопіювати посилання",
+    unknownError: "Сталася невідома помилка",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const uk: ImageDictionary = {
       image: "Зображення",
       watermarkImage: "Зображення водяного знаку",
       enterWatermarkText: "Введіть текст водяного знаку...",
+      defaultWatermarkText: "Водяний знак",
       chooseImage: "Обрати зображення...",
       fontFamily: "Шрифт",
       fontSize: "Розмір шрифту",

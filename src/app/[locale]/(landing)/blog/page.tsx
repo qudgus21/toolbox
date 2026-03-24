@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
-import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/blog/articles";
-import { BookOpen, Lightbulb, GraduationCap } from "lucide-react";
+import { BlogList } from "./blog-list";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -41,12 +40,6 @@ export async function generateMetadata({
   };
 }
 
-const categoryIcons = {
-  guide: BookOpen,
-  tips: Lightbulb,
-  knowledge: GraduationCap,
-} as const;
-
 const categoryLabelKeys = {
   guide: "categoryGuide",
   tips: "categoryTips",
@@ -71,7 +64,13 @@ export default async function BlogPage({
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    );
+    )
+    .map((a) => ({
+      slug: a.slug,
+      category: a.category,
+      title: a.content[locale].title,
+      description: a.content[locale].description,
+    }));
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "ToolPop", url: `https://toolpop.org/${locale}` },
@@ -93,38 +92,19 @@ export default async function BlogPage({
           {dict.blog.description}
         </p>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {localeArticles.map((article) => {
-            const content = article.content[locale];
-            const Icon = categoryIcons[article.category];
-            const catLabel =
-              dict.blog[categoryLabelKeys[article.category]];
-
-            return (
-              <Link
-                key={article.slug}
-                href={`/${locale}/blog/${article.slug}`}
-                className="group flex flex-col rounded-xl border border-border bg-background p-5 transition-colors hover:border-accent/40 hover:bg-background-subtle"
-              >
-                <div className="mb-3 flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-accent" />
-                  <span className="text-xs font-medium text-accent">
-                    {catLabel}
-                  </span>
-                </div>
-                <h2 className="mb-2 text-base font-semibold text-foreground group-hover:text-accent transition-colors">
-                  {content.title}
-                </h2>
-                <p className="text-sm text-foreground-muted line-clamp-3 flex-1">
-                  {content.description}
-                </p>
-                <span className="mt-4 text-xs font-medium text-accent">
-                  {dict.blog.readMore} →
-                </span>
-              </Link>
-            );
-          })}
-        </div>
+        <BlogList
+          articles={localeArticles}
+          locale={locale}
+          readMoreLabel={dict.blog.readMore}
+          categoryLabels={{
+            guide: dict.blog[categoryLabelKeys.guide],
+            tips: dict.blog[categoryLabelKeys.tips],
+            knowledge: dict.blog[categoryLabelKeys.knowledge],
+          }}
+          prevLabel={dict.blog.prev}
+          nextLabel={dict.blog.next}
+          pageLabel={dict.blog.page}
+        />
       </Container>
     </main>
     </>

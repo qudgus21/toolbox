@@ -19,6 +19,8 @@ const ms: ImageDictionary = {
     favorites: "Kegemaran",
     favDragHint: "Seret untuk susun semula",
     favHint: "Tambah alat kegemaran anda untuk akses pantas",
+    gridView: "Paparan grid",
+    listView: "Paparan senarai",
   },
   trust: {
     encryption: "Pemprosesan Selamat",
@@ -304,6 +306,7 @@ const ms: ImageDictionary = {
     shareSubtitle: "Beritahu rakan-rakan!",
     shareCopied: "Disalin!",
     shareCopyLink: "Salin pautan",
+    unknownError: "Ralat tidak diketahui berlaku",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const ms: ImageDictionary = {
       image: "Imej",
       watermarkImage: "Imej Tera Air",
       enterWatermarkText: "Masukkan teks tera air...",
+      defaultWatermarkText: "Tera air",
       chooseImage: "Pilih imej...",
       fontFamily: "Keluarga Fon",
       fontSize: "Saiz Fon",

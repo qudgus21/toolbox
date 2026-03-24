@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Editja, għaqqad u ikkonverti PDFs. Ibdel id-daqs, ikkompressja u ibdel stampi. Kollox b'xejn, direttament fil-browser tiegħek.",
   },
   hero: {
-    badge: "87+ għodda online b'xejn",
+    badge: "131+ għodda online b'xejn",
     title: "Kull għodda li għandek bżonn, f'post wieħed — ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Aħdem bil-PDFs u l-istampi direttament fil-browser. Bla installazzjoni, bla reġistrazzjoni.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Għodod PDF", description: "Għaqqad, aqsam, ikkonverti, editja u ikkompressja — kollox li tista' tagħmel b'PDF.", cta: "Esplora l-għodod PDF", toolCount: "39 għodda" },
     image: { name: "Għodod tal-Istampi", description: "Ibdel id-daqs, aqta', ikkonverti, effetti, kodiċi QR — kollox għall-istampi.", cta: "Esplora l-għodod tal-istampi", toolCount: "48 għodda" },
+    text: { name: "Għodod tat-Test", description: "Ibdel, analizza, naddaf, ikkodifika u iġġenera test minnufih.", cta: "Għodod tat-Test", toolCount: "44+ għodda" },
   },
   popularTools: { sectionTitle: "Għodod Popolari", sectionSubtitle: "Mur direttament għall-għodod l-aktar użati", viewAll: "Ara kollox" },
-  stats: { tools: "87+", toolsLabel: "Għodod B'Xejn", languages: "45", languagesLabel: "Lingwa", users: "100%", usersLabel: "Fil-Browser", price: "€0", priceLabel: "B'Xejn Għal Dejjem" },
+  stats: { tools: "131+", toolsLabel: "Għodod B'Xejn", languages: "45", languagesLabel: "Lingwa", users: "100%", usersLabel: "Fil-Browser", price: "€0", priceLabel: "B'Xejn Għal Dejjem" },
   trust: {
     sectionTitle: "Għaliex ToolPop?",
     sectionSubtitle: "Sigurtà u konvenjenza mingħajr kompromessi",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Aqsam", shareSubtitle: "Għid lil-ħbieb tiegħek dwar ToolPop!", shareCopyLink: "Ikkopja l-link", shareCopied: "Ikkopjat!" },
   footer: { apps: "Għodod", company: "Kumpanija", about: "Dwarna", contact: "Kuntatt", faq: "FAQ", blog: "Blog", legal: "Informazzjoni Legali", privacy: "Politika tal-Privatezza", terms: "Termini tas-Servizz", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Għodda online b'xejn għal PDF, stampi u aktar. Mingħajr reġistrazzjoni.", madeWith: "Magħmul bl-imħabba għal kulħadd" },
   search: { noResults: "L-ebda riżultati" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Immaġni", text: "Test" },
 };
 export default dict;

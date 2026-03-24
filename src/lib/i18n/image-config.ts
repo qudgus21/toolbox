@@ -16,6 +16,8 @@ export interface ImageDictionary {
     favorites: string;
     favDragHint: string;
     favHint: string;
+    gridView: string;
+    listView: string;
   };
   trust: {
     encryption: string;
@@ -75,6 +77,7 @@ export interface ImageDictionary {
     shareSubtitle: string;
     shareCopied: string;
     shareCopyLink: string;
+    unknownError: string;
   };
   toolOptions: {
     resize: {
@@ -249,6 +252,7 @@ export interface ImageDictionary {
       image: string;
       watermarkImage: string;
       enterWatermarkText: string;
+      defaultWatermarkText: string;
       chooseImage: string;
       fontFamily: string;
       fontSize: string;

@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Editează, unește și convertește PDF-uri. Redimensionează, comprimă și transformă imagini. Totul gratuit, direct în browser.",
   },
   hero: {
-    badge: "87+ instrumente online gratuite",
+    badge: "131+ instrumente online gratuite",
     title: "Toate instrumentele de care ai nevoie, într-un singur ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Lucrează cu PDF-uri și imagini direct în browser. Fără instalare, fără cont.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Instrumente PDF", description: "Unește, separă, convertește, editează și comprimă — tot ce poți face cu un PDF.", cta: "Descoperă instrumentele PDF", toolCount: "39 instrumente" },
     image: { name: "Instrumente pentru imagini", description: "Redimensionează, decupează, convertește, aplică efecte, generează coduri QR — totul pentru imagini.", cta: "Descoperă instrumentele pentru imagini", toolCount: "48 instrumente" },
+    text: { name: "Instrumente text", description: "Transformă, analizează, curăță, codifică și generează text instantaneu.", cta: "Instrumente text", toolCount: "44+ instrumente" },
   },
   popularTools: { sectionTitle: "Instrumente populare", sectionSubtitle: "Accesează direct cele mai folosite instrumente", viewAll: "Vezi toate" },
-  stats: { tools: "87+", toolsLabel: "Instrumente gratuite", languages: "45", languagesLabel: "Limbi", users: "100%", usersLabel: "În browser", price: "€0", priceLabel: "Gratuit pentru totdeauna" },
+  stats: { tools: "131+", toolsLabel: "Instrumente gratuite", languages: "45", languagesLabel: "Limbi", users: "100%", usersLabel: "În browser", price: "€0", priceLabel: "Gratuit pentru totdeauna" },
   trust: {
     sectionTitle: "De ce ToolPop?",
     sectionSubtitle: "Securitate și comoditate, fără compromisuri",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Distribuie", shareSubtitle: "Spune-le prietenilor despre ToolPop!", shareCopyLink: "Copiază linkul", shareCopied: "Copiat!" },
   footer: { apps: "Instrumente", company: "Companie", about: "Despre noi", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Legal", privacy: "Politica de confidențialitate", terms: "Termeni și condiții", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Instrumente online gratuite pentru PDF, imagini și altele. Fără înregistrare.", madeWith: "Creat cu dragoste pentru toți" },
   search: { noResults: "Niciun rezultat găsit" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Imagine", text: "Text" },
 };
 export default dict;
