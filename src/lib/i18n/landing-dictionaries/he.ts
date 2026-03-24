@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "עריכה, מיזוג והמרה של PDF. שינוי גודל, דחיסה ועיבוד תמונות. הכל בחינם, ישירות בדפדפן.",
   },
   hero: {
-    badge: "87+ כלים אונליין בחינם",
+    badge: "131+ כלים אונליין בחינם",
     title: "כל הכלים שאתה צריך, במקום אחד — ToolPop",
     titleAccent: "ToolPop",
     subtitle: "עבודה עם PDF ותמונות ישירות בדפדפן. בלי התקנה, בלי הרשמה.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "כלי PDF", description: "מיזוג, פיצול, המרה, עריכה ודחיסה — כל מה שאפשר לעשות עם PDF.", cta: "גלה את כלי ה-PDF", toolCount: "39 כלים" },
     image: { name: "כלי תמונה", description: "שינוי גודל, חיתוך, המרה, אפקטים, יצירת קודי QR — הכל לתמונות.", cta: "גלה את כלי התמונה", toolCount: "48 כלים" },
+    text: { name: "כלי טקסט", description: "המירו, נתחו, נקו, קודדו וצרו טקסט ברגע.", cta: "כלי טקסט", toolCount: "44+ כלים" },
   },
   popularTools: { sectionTitle: "כלים פופולריים", sectionSubtitle: "קפצו ישר לכלים הכי בשימוש", viewAll: "הצג הכל" },
-  stats: { tools: "87+", toolsLabel: "כלים בחינם", languages: "45", languagesLabel: "שפות", users: "100%", usersLabel: "מבוסס דפדפן", price: "₪0", priceLabel: "חינם לתמיד" },
+  stats: { tools: "131+", toolsLabel: "כלים בחינם", languages: "45", languagesLabel: "שפות", users: "100%", usersLabel: "מבוסס דפדפן", price: "₪0", priceLabel: "חינם לתמיד" },
   trust: {
     sectionTitle: "למה ToolPop?",
     sectionSubtitle: "אבטחה ונוחות, בלי פשרות",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "שיתוף", shareSubtitle: "ספרו לחברים על ToolPop!", shareCopyLink: "העתק קישור", shareCopied: "הועתק!" },
   footer: { apps: "כלים", company: "החברה", about: "אודות", contact: "צור קשר", faq: "שאלות נפוצות", blog: "בלוג", legal: "משפטי", privacy: "מדיניות פרטיות", terms: "תנאי שימוש", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "כלים מקוונים חינמיים ל-PDF, תמונות ועוד. ללא הרשמה.", madeWith: "נוצר באהבה עבור כולם" },
   search: { noResults: "לא נמצאו תוצאות" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "תמונה", text: "טקסט" },
 };
 export default dict;

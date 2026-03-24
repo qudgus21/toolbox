@@ -12,6 +12,7 @@ const lt: ImageDictionary = {
     shareSubtitle: "Papasakokite kitiems!",
     shareCopied: "Nukopijuota!",
     shareCopyLink: "Kopijuoti nuorodą",
+    unknownError: "Įvyko nežinoma klaida",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const lt: ImageDictionary = {
       image: "Vaizdas",
       watermarkImage: "Vandenzenkliu vaizdas",
       enterWatermarkText: "Iveskite vandenzenkliu teksta...",
+      defaultWatermarkText: "Vandenženklis",
       chooseImage: "Pasirinkite vaizda...",
       fontFamily: "Srifto seima",
       fontSize: "Srifto dydis",

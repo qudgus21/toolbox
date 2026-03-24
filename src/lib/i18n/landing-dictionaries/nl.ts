@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Bewerk, voeg samen en converteer PDF's. Schaal, comprimeer en bewerk afbeeldingen. Alles gratis, rechtstreeks in je browser.",
   },
   hero: {
-    badge: "87+ gratis online tools",
+    badge: "131+ gratis online tools",
     title: "Alle tools die je nodig hebt, in één ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Werk met PDF's en afbeeldingen rechtstreeks in je browser. Geen installatie, geen registratie.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF-tools", description: "Samenvoegen, splitsen, converteren, bewerken en comprimeren — alles wat je met een PDF kunt doen.", cta: "Ontdek PDF-tools", toolCount: "39 tools" },
     image: { name: "Afbeeldingstools", description: "Schalen, bijsnijden, converteren, effecten toepassen, QR-codes maken — alles voor afbeeldingen.", cta: "Ontdek afbeeldingstools", toolCount: "48 tools" },
+    text: { name: "Teksttools", description: "Transformeer, analyseer, schoon op, codeer en genereer tekst in een oogwenk.", cta: "Teksttools", toolCount: "44+ tools" },
   },
   popularTools: { sectionTitle: "Populaire tools", sectionSubtitle: "Spring direct naar de meestgebruikte tools", viewAll: "Alles bekijken" },
-  stats: { tools: "87+", toolsLabel: "Gratis tools", languages: "45", languagesLabel: "Talen", users: "100%", usersLabel: "Browsergebaseerd", price: "€0", priceLabel: "Voor altijd gratis" },
+  stats: { tools: "131+", toolsLabel: "Gratis tools", languages: "45", languagesLabel: "Talen", users: "100%", usersLabel: "Browsergebaseerd", price: "€0", priceLabel: "Voor altijd gratis" },
   trust: {
     sectionTitle: "Waarom ToolPop?",
     sectionSubtitle: "Veiligheid en gemak, zonder concessies",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Delen", shareSubtitle: "Vertel je vrienden over ToolPop!", shareCopyLink: "Link kopiëren", shareCopied: "Gekopieerd!" },
   footer: { apps: "Tools", company: "Bedrijf", about: "Over ons", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Juridisch", privacy: "Privacybeleid", terms: "Gebruiksvoorwaarden", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Gratis online tools voor PDF, afbeeldingen en meer. Zonder registratie.", madeWith: "Met liefde gemaakt voor iedereen" },
   search: { noResults: "Geen resultaten gevonden" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Afbeelding", text: "Tekst" },
 };
 export default dict;

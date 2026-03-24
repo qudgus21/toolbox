@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Редактирайте, обединявайте и конвертирайте PDF файлове. Преоразмерявайте, компресирайте и трансформирайте изображения. Всичко безплатно, директно в браузъра.",
   },
   hero: {
-    badge: "87+ безплатни онлайн инструмента",
+    badge: "131+ безплатни онлайн инструмента",
     title: "Всички инструменти, от които се нуждаете, на едно място — ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Работете с PDF файлове и изображения директно в браузъра. Без инсталация, без регистрация.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF инструменти", description: "Обединяване, разделяне, конвертиране, редактиране и компресиране — всичко за PDF.", cta: "Разгледай PDF инструментите", toolCount: "39 инструмента" },
     image: { name: "Инструменти за изображения", description: "Преоразмеряване, изрязване, конвертиране, ефекти, генериране на QR кодове — всичко за изображения.", cta: "Разгледай инструментите за изображения", toolCount: "48 инструмента" },
+    text: { name: "Текстови инструменти", description: "Трансформирайте, анализирайте, почистете, кодирайте и генерирайте текст моментално.", cta: "Текстови инструменти", toolCount: "44+ инструмента" },
   },
   popularTools: { sectionTitle: "Популярни инструменти", sectionSubtitle: "Започнете веднага с най-използваните инструменти", viewAll: "Виж всички" },
-  stats: { tools: "87+", toolsLabel: "Безплатни инструмента", languages: "45", languagesLabel: "Езика", users: "100%", usersLabel: "В браузъра", price: "0 лв", priceLabel: "Безплатно завинаги" },
+  stats: { tools: "131+", toolsLabel: "Безплатни инструмента", languages: "45", languagesLabel: "Езика", users: "100%", usersLabel: "В браузъра", price: "0 лв", priceLabel: "Безплатно завинаги" },
   trust: {
     sectionTitle: "Защо ToolPop?",
     sectionSubtitle: "Сигурност и удобство без компромиси",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Споделяне", shareSubtitle: "Разкажете на приятелите си за ToolPop!", shareCopyLink: "Копирай линк", shareCopied: "Копирано!" },
   footer: { apps: "Инструменти", company: "Компания", about: "За нас", contact: "Контакт", faq: "Често задавани въпроси", blog: "Блог", legal: "Правна информация", privacy: "Политика за поверителност", terms: "Условия за ползване", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Безплатни онлайн инструменти за PDF, изображения и още. Без регистрация.", madeWith: "Направено с любов за всички" },
   search: { noResults: "Няма намерени резултати" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Изображение", text: "Текст" },
 };
 export default dict;

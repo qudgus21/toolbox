@@ -17,6 +17,8 @@ const es: Dictionary = {
     favorites: "Favoritos",
     favDragHint: "Arrastra para reordenar",
     favHint: "Añadir a favoritos",
+    gridView: "Vista de cuadrícula",
+    listView: "Vista de lista",
   },
   trust: {
     encryption: "Cifrado seguro",
@@ -129,6 +131,12 @@ const es: Dictionary = {
     shareSubtitle: "Corre la voz!",
     shareCopied: "¡Copiado!",
     shareCopyLink: "Copiar enlace",
+    unknownError: "Se produjo un error desconocido",
+    pagesSelected: "páginas seleccionadas",
+    selectAll: "Seleccionar todo",
+    deselectAll: "Deseleccionar todo",
+    page: "Página",
+    confirm: "Confirmar",
   },
   metadata: {
     siteTitle: "ToolPop - Herramientas PDF gratuitas",
@@ -1075,7 +1083,7 @@ const es: Dictionary = {
       },
       {
         heading: "Qué ofrecemos",
-        content: "ToolPop incluye más de 40 herramientas en cinco categorías:\n\n• Organizar: combinar, dividir, reordenar, extraer y eliminar páginas\n• Convertir: transformar entre PDF, JPG, PNG, texto y otros formatos\n• Editar: añadir texto, imágenes, firmas, marcas de agua, números de página y anotaciones\n• Optimizar: comprimir archivos y optimizar para la web\n• Seguridad: proteger con contraseña, censurar información sensible y aplanar documentos\n\nTodas las herramientas son completamente gratuitas, sin límites de tamaño ni restricciones de uso diario.",
+        content: "ToolPop ofrece una colección creciente de herramientas en varias categorías:\n\n• Herramientas PDF — 40+ herramientas para combinar, dividir, comprimir, convertir, editar, proteger, marcas de agua y más\n• Herramientas de imagen — 28+ herramientas para redimensionar, convertir, comprimir, recortar, rotar, marcas de agua, collage y más\n• Herramientas de texto — 45+ herramientas para contar palabras, cambiar mayúsculas/minúsculas, codificación/decodificación Base64, formateo JSON, generación de hash, pruebas de regex y más\n\nTodas las herramientas son completamente gratuitas, sin límites de tamaño ni restricciones de uso diario.",
       },
       {
         heading: "Nuestra tecnología",
@@ -1122,15 +1130,15 @@ const es: Dictionary = {
     title: "Preguntas frecuentes",
     intro: "Encuentra respuestas a las preguntas más habituales sobre ToolPop. Si no encuentras lo que buscas, no dudes en contactarnos.",
     items: [
-      { question: "¿ToolPop es realmente gratis?", answer: "Sí, totalmente gratis. Todas las herramientas están disponibles sin límites, sin necesidad de registro y sin costes ocultos. Mantenemos el servicio mediante publicidad no intrusiva." },
+      { question: "¿ToolPop es realmente gratis?", answer: "Sí, totalmente gratis. Todas las herramientas de PDF, imagen y texto están disponibles sin límites, sin necesidad de registro y sin costes ocultos. Mantenemos el servicio mediante publicidad no intrusiva." },
       { question: "¿Mis archivos están seguros y son privados?", answer: "Por supuesto. Tus archivos se procesan íntegramente en tu navegador: nunca salen de tu dispositivo ni se suben a ningún servidor. Utilizamos APIs modernas del navegador para gestionar todas las operaciones PDF de forma local, por lo que tus documentos confidenciales permanecen completamente privados." },
       { question: "¿Necesito crear una cuenta?", answer: "No. ToolPop funciona sin ningún tipo de registro o inicio de sesión. Solo abre una herramienta, arrastra tu archivo y obtén resultados al instante." },
       { question: "¿Cuál es el tamaño máximo de archivo que puedo procesar?", answer: "Como el procesamiento ocurre en tu navegador, el límite depende de la memoria disponible de tu dispositivo. La mayoría de dispositivos modernos pueden manejar archivos de hasta 100-200 MB sin problemas. Para archivos muy grandes, recomendamos usar un navegador de escritorio o portátil." },
       { question: "¿Qué navegadores son compatibles?", answer: "ToolPop funciona en todos los navegadores modernos, incluyendo Chrome, Firefox, Safari, Edge y Opera. Recomendamos usar la última versión de tu navegador para la mejor experiencia." },
-      { question: "¿Puedo usar ToolPop en mi teléfono o tablet?", answer: "¡Sí! ToolPop es totalmente responsive y funciona en dispositivos móviles. Puedes combinar, dividir, convertir y editar PDFs directamente desde el navegador de tu teléfono o tablet." },
+      { question: "¿Puedo usar ToolPop en mi teléfono o tablet?", answer: "¡Sí! ToolPop es totalmente responsive y funciona en dispositivos móviles. Puedes trabajar con PDFs, imágenes y texto directamente desde el navegador de tu teléfono o tablet." },
       { question: "¿Cómo funciona el procesamiento en el navegador?", answer: "Cuando seleccionas un archivo, este permanece en tu dispositivo. Nuestras herramientas usan librerías JavaScript como pdf-lib y PDF.js para leer, modificar y crear PDFs directamente en la memoria de tu navegador. El archivo procesado queda listo para descargar sin necesidad de comunicación con ningún servidor." },
-      { question: "¿Puedo combinar más de dos archivos PDF?", answer: "Sí. Nuestra herramienta de combinar PDF permite unir cualquier número de archivos. Simplemente arrastra todos los PDFs que quieras combinar, ordénalos como prefieras y haz clic en el botón de procesar." },
-      { question: "¿A qué formatos puedo convertir desde y hacia PDF?", answer: "Puedes convertir PDFs a JPG, PNG y texto plano. Para crear PDFs, aceptamos imágenes JPG, PNG, WEBP, TIFF, HEIC, archivos HTML y documentos escaneados. Seguimos añadiendo más formatos de conversión." },
+      { question: "¿Qué herramientas ofrece ToolPop?", answer: "Ofrecemos herramientas PDF (40+ para combinar, dividir, comprimir, convertir, editar, proteger y más), herramientas de imagen (28+ para redimensionar, convertir formatos, comprimir, recortar, rotar, marcas de agua y más) y herramientas de texto (45+ para contar palabras, cambiar mayúsculas/minúsculas, codificación/decodificación, generación de hash, formateo JSON y más). Añadimos nuevas herramientas continuamente." },
+      { question: "¿Qué formatos de archivo son compatibles?", answer: "Las herramientas PDF admiten PDF, JPG, PNG, WEBP, TIFF, HEIC, HTML y más. Las herramientas de imagen admiten JPG, PNG, WEBP, GIF, BMP, TIFF, AVIF, SVG y más. Las herramientas de texto trabajan con texto plano y admiten codificación/decodificación (Base64, URL, HTML, Unicode), generación de hash, formateo JSON y más. Los formatos compatibles se amplían regularmente." },
       { question: "¿En qué se diferencia ToolPop de otras herramientas PDF?", answer: "Tres diferencias clave: (1) Privacidad: tus archivos nunca salen de tu dispositivo, a diferencia de la mayoría de competidores que los suben a sus servidores. (2) Sin límites: sin cuotas diarias, sin restricciones de tamaño, sin marcas de agua en los archivos de salida. (3) Sin cuenta obligatoria: usa cualquier herramienta al instante sin registrarte." },
       { question: "¿Puedo añadir una contraseña para proteger mi PDF?", answer: "Sí. Usa nuestra herramienta Proteger PDF para añadir protección con contraseña mediante cifrado AES-256. Puedes establecer una contraseña de apertura y permisos para controlar la impresión, copia y edición." },
       { question: "¿ToolPop añade marcas de agua a mis archivos?", answer: "Nunca. Todos los archivos procesados están limpios y libres de cualquier marca o logotipo de ToolPop. El resultado es exactamente lo que esperarías de una herramienta profesional." },
@@ -1140,13 +1148,16 @@ const es: Dictionary = {
   },
   blog: {
     title: "Blog",
-    description: "Consejos, guías y artículos útiles sobre cómo trabajar con archivos PDF.",
+    description: "Consejos, guías e ideas para trabajar de forma más eficiente con herramientas digitales.",
     readMore: "Leer más",
     backToBlog: "Volver al blog",
     publishedOn: "Publicado el",
     categoryGuide: "Guía",
     categoryTips: "Consejos",
     categoryKnowledge: "Conocimiento",
+    prev: "Anterior",
+    next: "Siguiente",
+    page: "Página",
   },
   toolContent: {
     merge: {

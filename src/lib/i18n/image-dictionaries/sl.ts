@@ -12,6 +12,7 @@ const sl: ImageDictionary = {
     shareSubtitle: "Povej naprej!",
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj povezavo",
+    unknownError: "Prišlo je do neznane napake",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const sl: ImageDictionary = {
       image: "Slika",
       watermarkImage: "Slika vodnega znaka",
       enterWatermarkText: "Vnesite besedilo vodnega znaka...",
+      defaultWatermarkText: "Vodni žig",
       chooseImage: "Izberite sliko...",
       fontFamily: "Druzina pisav",
       fontSize: "Velikost pisave",

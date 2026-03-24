@@ -19,6 +19,8 @@ const tr: ImageDictionary = {
     favorites: "Favoriler",
     favDragHint: "Sırayı değiştirmek için sürükleyin",
     favHint: "Sık kullandığınız araçları favorilere ekleyin",
+    gridView: "Izgara görünümü",
+    listView: "Liste görünümü",
   },
   trust: {
     encryption: "Güvenli işleme",
@@ -304,6 +306,7 @@ const tr: ImageDictionary = {
     shareSubtitle: "Herkese duyurun!",
     shareCopied: "Kopyalandı!",
     shareCopyLink: "Bağlantıyı kopyala",
+    unknownError: "Bilinmeyen bir hata oluştu",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const tr: ImageDictionary = {
       image: "Görsel",
       watermarkImage: "Filigran Görseli",
       enterWatermarkText: "Filigran metnini girin...",
+      defaultWatermarkText: "Filigran",
       chooseImage: "Görsel seçin...",
       fontFamily: "Yazı Tipi",
       fontSize: "Yazı Boyutu",

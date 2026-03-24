@@ -158,6 +158,14 @@ function hasOptionsPanel(slug: string): boolean {
 // Tools with their own built-in editor (preview + options combined)
 const CUSTOM_EDITOR_TOOLS = new Set(["crop", "add-text"]);
 
+const fadeSlide = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -8 },
+};
+
+const transition = { duration: 0.35, ease: [0.4, 0, 0.2, 1] as const };
+
 function usesCustomEditor(slug: string): boolean {
   return CUSTOM_EDITOR_TOOLS.has(slug);
 }
@@ -370,9 +378,10 @@ export function ToolPageClient({
       backLabel={labels.backToAll}
       linkComponent={Link}
     >
+      <AnimatePresence mode="wait">
       {/* Idle -- no-upload tools show preview + options */}
       {stage === "idle" && isNoUploadTool && (
-        <div className="space-y-4 pb-24">
+        <motion.div key="idle-no-upload" {...fadeSlide} transition={transition} className="space-y-4 pb-24">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
             {/* Preview area */}
             <div className="flex-1 min-w-0">
@@ -402,12 +411,12 @@ export function ToolPageClient({
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Idle -- upload zone (for tools that need files) */}
       {stage === "idle" && !isNoUploadTool && (
-        <>
+        <motion.div key="idle-upload" {...fadeSlide} transition={transition}>
           {!hasProcessor(slug) && (
             <div className="mb-6 rounded-xl border border-warning/30 bg-warning-muted px-4 py-3 text-center text-sm text-foreground-muted">
               {labels.notImplemented}
@@ -426,11 +435,12 @@ export function ToolPageClient({
               <span>{labels.privacyBadge}</span>
             </div>
           )}
-        </>
+        </motion.div>
       )}
 
       {/* Loaded -- editor layout with preview + options */}
       {stage === "loaded" && !needsEditorLayout && (
+        <motion.div key="loaded-simple" {...fadeSlide} transition={transition}>
         <LoadedSimple
           files={files}
           labels={labels}
@@ -439,10 +449,11 @@ export function ToolPageClient({
           addFiles={addFiles}
           removeFile={removeFile}
         />
+        </motion.div>
       )}
 
       {stage === "loaded" && needsEditorLayout && (
-        <div className="space-y-4 pb-24">
+        <motion.div key="loaded-editor" {...fadeSlide} transition={transition} className="space-y-4 pb-24">
           {/* File info bar */}
           <div className="flex items-center justify-between rounded-lg border border-border bg-background px-4 py-2">
             <span className="text-sm text-foreground truncate">
@@ -800,8 +811,45 @@ export function ToolPageClient({
             </div>
           )}
 
-        </div>
+        </motion.div>
       )}
+
+      {/* Processing -- overlay */}
+      {stage === "processing" && (
+        <motion.div key="processing" {...fadeSlide} transition={transition}>
+          <ProcessingOverlay progress={progress} label={labels.processing} />
+        </motion.div>
+      )}
+
+      {/* Done -- result card + related tools */}
+      {stage === "done" && result && (
+        <motion.div key="done" {...fadeSlide} transition={transition}>
+          <ResultCard
+            result={result}
+            onDownload={(filename) => download(filename)}
+            onReset={reset}
+            labels={labels}
+            toolSlug={slug}
+          />
+          <RelatedTools
+            currentSlug={slug}
+            locale={locale}
+            title={labels.tryOtherTools}
+          />
+        </motion.div>
+      )}
+
+      {/* Error */}
+      {stage === "error" && (
+        <motion.div key="error" {...fadeSlide} transition={transition}>
+          <ErrorMessage
+            message={error ?? labels.unknownError ?? "Unknown error"}
+            onRetry={reset}
+            retryLabel={labels.tryAgain}
+          />
+        </motion.div>
+      )}
+      </AnimatePresence>
 
       {/* Fixed bottom action bar */}
       {(stage === "loaded" || (stage === "idle" && isNoUploadTool)) && (
@@ -828,37 +876,6 @@ export function ToolPageClient({
         </div>
       )}
 
-      {/* Processing -- overlay */}
-      {stage === "processing" && (
-        <ProcessingOverlay progress={progress} label={labels.processing} />
-      )}
-
-      {/* Done -- result card + related tools */}
-      {stage === "done" && result && (
-        <>
-          <ResultCard
-            result={result}
-            onDownload={(filename) => download(filename)}
-            onReset={reset}
-            labels={labels}
-            toolSlug={slug}
-          />
-          <RelatedTools
-            currentSlug={slug}
-            locale={locale}
-            title={labels.tryOtherTools}
-          />
-        </>
-      )}
-
-      {/* Error */}
-      {stage === "error" && (
-        <ErrorMessage
-          message={error ?? "Unknown error"}
-          onRetry={reset}
-          retryLabel={labels.tryAgain}
-        />
-      )}
     </ToolPageLayout>
   );
 }

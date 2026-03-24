@@ -19,6 +19,8 @@ const mr: ImageDictionary = {
     favorites: "आवडीचे",
     favDragHint: "क्रम बदलण्यासाठी ड्रॅग करा",
     favHint: "जलद प्रवेशासाठी आवडीची साधने जोडा",
+    gridView: "ग्रिड दृश्य",
+    listView: "यादी दृश्य",
   },
   trust: {
     encryption: "सुरक्षित प्रक्रिया",
@@ -304,6 +306,7 @@ const mr: ImageDictionary = {
     shareSubtitle: "इतरांना सांगा!",
     shareCopied: "कॉपी झाले!",
     shareCopyLink: "लिंक कॉपी करा",
+    unknownError: "अज्ञात त्रुटी आली",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const mr: ImageDictionary = {
       image: "प्रतिमा",
       watermarkImage: "वॉटरमार्क प्रतिमा",
       enterWatermarkText: "वॉटरमार्क मजकूर प्रविष्ट करा...",
+      defaultWatermarkText: "वॉटरमार्क",
       chooseImage: "प्रतिमा निवडा...",
       fontFamily: "फॉन्ट कुटुंब",
       fontSize: "फॉन्ट आकार",

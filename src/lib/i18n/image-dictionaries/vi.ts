@@ -19,6 +19,8 @@ const vi: ImageDictionary = {
     favorites: "Yêu thích",
     favDragHint: "Kéo để sắp xếp lại",
     favHint: "Thêm công cụ hay dùng vào danh sách yêu thích",
+    gridView: "Dạng lưới",
+    listView: "Dạng danh sách",
   },
   trust: {
     encryption: "Xử lý an toàn",
@@ -304,6 +306,7 @@ const vi: ImageDictionary = {
     shareSubtitle: "Giới thiệu cho bạn bè!",
     shareCopied: "Đã sao chép!",
     shareCopyLink: "Sao chép liên kết",
+    unknownError: "Đã xảy ra lỗi không xác định",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const vi: ImageDictionary = {
       image: "Hình ảnh",
       watermarkImage: "Ảnh watermark",
       enterWatermarkText: "Nhập văn bản watermark...",
+      defaultWatermarkText: "Hình mờ",
       chooseImage: "Chọn ảnh...",
       fontFamily: "Phông chữ",
       fontSize: "Cỡ chữ",

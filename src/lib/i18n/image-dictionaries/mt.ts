@@ -19,6 +19,8 @@ const mt: ImageDictionary = {
     favorites: "Favoriti",
     favDragHint: "Iġbed biex tibdel l-ordni",
     favHint: "Żid l-għodod favoriti tiegħek għal aċċess rapidu",
+    gridView: "Dehra ta' grilja",
+    listView: "Dehra ta' lista",
   },
   trust: {
     encryption: "Ipproċessar Sigur",
@@ -304,6 +306,7 @@ const mt: ImageDictionary = {
     shareSubtitle: "Għid lil-ħbieb!",
     shareCopied: "Ikkupjat!",
     shareCopyLink: "Ikkopja l-link",
+    unknownError: "Seħħ żball mhux magħruf",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const mt: ImageDictionary = {
       image: "Immaġni",
       watermarkImage: "Immaġni tal-Watermark",
       enterWatermarkText: "Daħħal test tal-watermark...",
+      defaultWatermarkText: "Watermark",
       chooseImage: "Agħżel immaġni...",
       fontFamily: "Familja tal-Font",
       fontSize: "Daqs tal-Font",

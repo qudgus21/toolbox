@@ -17,6 +17,8 @@ const zh: Dictionary = {
     favorites: "收藏夹",
     favDragHint: "拖动排序",
     favHint: "添加到收藏",
+    gridView: "网格视图",
+    listView: "列表视图",
   },
   trust: {
     encryption: "安全加密",
@@ -129,6 +131,12 @@ const zh: Dictionary = {
     shareSubtitle: "让更多人知道!",
     shareCopied: "已复制!",
     shareCopyLink: "复制链接",
+    unknownError: "发生未知错误",
+    pagesSelected: "页已选择",
+    selectAll: "全选",
+    deselectAll: "取消全选",
+    page: "页",
+    confirm: "确认",
   },
   metadata: {
     siteTitle: "ToolPop - 免费PDF工具",
@@ -1075,7 +1083,7 @@ const zh: Dictionary = {
       },
       {
         heading: "功能概览",
-        content: "ToolPop 提供五大类超过 40 种工具：\n\n• 整理——合并、拆分、重排、提取和删除页面\n• 转换——在 PDF、JPG、PNG、文本等格式之间互相转换\n• 编辑——添加文字、图片、签名、水印、页码和批注\n• 优化——压缩文件，优化网络传输\n• 安全——设置密码保护、涂黑敏感信息、扁平化文档\n\n所有工具完全免费，没有文件大小限制，也没有每日使用上限。",
+        content: "ToolPop 在多个类别中提供持续增长的工具集：\n\n• PDF 工具——40+ 种，涵盖合并、拆分、压缩、转换、编辑、保护、水印等\n• 图片工具——28+ 种，涵盖调整大小、格式转换、压缩、裁剪、旋转、水印、拼图等\n• 文本工具——45+ 种，涵盖字数统计、大小写转换、Base64 编解码、JSON 格式化、哈希生成、正则测试等\n\n所有工具完全免费，没有文件大小限制，也没有每日使用上限。",
       },
       {
         heading: "技术架构",
@@ -1122,15 +1130,16 @@ const zh: Dictionary = {
     title: "常见问题",
     intro: "这里汇集了关于 ToolPop 最常见的问题解答。如果没有找到你需要的答案，欢迎联系我们。",
     items: [
-      { question: "ToolPop 真的免费吗？", answer: "是的，完全免费。所有工具均无限制使用，无需注册，没有任何隐藏费用。我们通过非侵入式广告维持服务运营。" },
+      { question: "ToolPop 真的免费吗？", answer: "是的，完全免费。所有 PDF、图片和文本工具均无限制使用，无需注册，没有任何隐藏费用。我们通过非侵入式广告维持服务运营。" },
       { question: "我的文件安全吗？", answer: "绝对安全。你的文件完全在浏览器中处理，不会离开你的设备，也不会上传到任何服务器。我们使用现代浏览器 API 在本地完成所有 PDF 操作，你的敏感文档始终受到保护。" },
       { question: "需要注册账号吗？", answer: "不需要。ToolPop 无需注册或登录，打开工具、拖入文件，即可获得结果。" },
+      { question: "ToolPop 提供哪些工具？", answer: "我们提供 PDF 工具（40+ 种，包括合并、拆分、压缩、转换、编辑、保护等）、图片工具（28+ 种，包括调整大小、格式转换、压缩、裁剪、旋转、水印等）和文本工具（45+ 种，包括字数统计、大小写转换、编解码、哈希生成、JSON 格式化等）。新工具持续更新中。" },
       { question: "最大能处理多大的文件？", answer: "由于处理在浏览器中进行，上限取决于你设备的可用内存。大多数现代设备可以顺畅处理 100-200 MB 的文件。对于超大文件，建议使用桌面或笔记本电脑的浏览器。" },
       { question: "支持哪些浏览器？", answer: "ToolPop 支持所有主流浏览器，包括 Chrome、Firefox、Safari、Edge 和 Opera。建议使用最新版本以获得最佳体验。" },
-      { question: "手机或平板上能用吗？", answer: "当然可以！ToolPop 完全适配移动端，你可以直接在手机或平板的浏览器中合并、拆分、转换和编辑 PDF。" },
+      { question: "手机或平板上能用吗？", answer: "当然可以！ToolPop 完全适配移动端，你可以直接在手机或平板的浏览器中处理 PDF、图片和文本。" },
       { question: "浏览器端处理是怎么实现的？", answer: "当你选择文件时，文件始终留在你的设备上。我们的工具使用 pdf-lib 和 PDF.js 等 JavaScript 库，直接在浏览器内存中读取、修改和创建 PDF。处理完成后即可下载，无需与服务器交互。" },
       { question: "可以合并两个以上的 PDF 吗？", answer: "当然可以。合并工具支持任意数量的文件，只需拖入所有要合并的 PDF，调整顺序，点击处理按钮即可。" },
-      { question: "支持哪些格式的转换？", answer: "你可以将 PDF 转换为 JPG、PNG 和纯文本。创建 PDF 时支持 JPG、PNG、WEBP、TIFF、HEIC 图片、HTML 文件和扫描文档。更多格式持续更新中。" },
+      { question: "支持哪些文件格式？", answer: "PDF 工具支持 PDF、JPG、PNG、WEBP、TIFF、HEIC、HTML 等格式。图片工具支持 JPG、PNG、WEBP、GIF、BMP、TIFF、AVIF、SVG 等格式。文本工具处理纯文本，支持编解码（Base64、URL、HTML、Unicode）、哈希生成、JSON 格式化等。支持的格式持续扩展中。" },
       { question: "ToolPop 和其他 PDF 工具有什么不同？", answer: "三大核心优势：(1) 隐私——你的文件不会离开设备，不像大多数竞品需要上传到服务器；(2) 无限制——没有每日上限、没有文件大小限制、输出文件没有水印；(3) 无需注册——即开即用，无需创建账号。" },
       { question: "能给 PDF 加密码保护吗？", answer: "可以。使用我们的 PDF 加密工具，支持 AES-256 加密。你可以设置打开密码，还可以控制打印、复制和编辑权限。" },
       { question: "ToolPop 会在我的文件上添加水印吗？", answer: "绝对不会。所有处理后的文件都是干净的，不会添加任何 ToolPop 品牌标识或水印，输出质量与专业工具一致。" },
@@ -1140,13 +1149,16 @@ const zh: Dictionary = {
   },
   blog: {
     title: "博客",
-    description: "关于 PDF 文件处理的实用技巧、操作指南与深度解析。",
+    description: "助你更高效地使用数字工具的实用技巧、操作指南与深度解析。",
     readMore: "阅读全文",
     backToBlog: "返回博客",
     publishedOn: "发布于",
     categoryGuide: "指南",
     categoryTips: "技巧",
     categoryKnowledge: "知识",
+    prev: "上一页",
+    next: "下一页",
+    page: "页",
   },
   toolContent: {
     merge: {

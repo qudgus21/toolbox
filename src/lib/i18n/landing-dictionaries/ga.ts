@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Cuir in eagar, cumaisc agus tiontaigh PDFanna. Athraigh méid, comhbhrúigh agus claochlaigh íomhánna. Gach rud saor in aisce, díreach i do bhrabhsálaí.",
   },
   hero: {
-    badge: "87+ uirlis ar líne saor in aisce",
+    badge: "131+ uirlis ar líne saor in aisce",
     title: "Gach uirlis a theastaíonn uait, in aon ToolPop amháin",
     titleAccent: "ToolPop",
     subtitle: "Oibrigh le PDFanna agus íomhánna díreach i do bhrabhsálaí. Gan aon rud a shuiteáil, gan clárú.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Uirlisí PDF", description: "Cumaisc, roinn, tiontaigh, cuir in eagar agus comhbhrúigh — gach rud is féidir le PDF.", cta: "Féach ar uirlisí PDF", toolCount: "39 uirlis" },
     image: { name: "Uirlisí Íomhá", description: "Athraigh méid, bearr, tiontaigh, cuir éifeachtaí i bhfeidhm, cruthaigh cóid QR — gach rud d'íomhánna.", cta: "Féach ar uirlisí íomhá", toolCount: "48 uirlis" },
+    text: { name: "Uirlisí Téacs", description: "Athraigh, déan anailís, glan, ionchódaigh agus gin téacs láithreach.", cta: "Uirlisí Téacs", toolCount: "44+ uirlis" },
   },
   popularTools: { sectionTitle: "Uirlisí Coitianta", sectionSubtitle: "Téigh díreach chuig na huirlisí is mó úsáid", viewAll: "Féach ar fad" },
-  stats: { tools: "87+", toolsLabel: "Uirlisí Saor in Aisce", languages: "45", languagesLabel: "Teanga", users: "100%", usersLabel: "Sa Bhrabhsálaí", price: "€0", priceLabel: "Saor in Aisce Go Deo" },
+  stats: { tools: "131+", toolsLabel: "Uirlisí Saor in Aisce", languages: "45", languagesLabel: "Teanga", users: "100%", usersLabel: "Sa Bhrabhsálaí", price: "€0", priceLabel: "Saor in Aisce Go Deo" },
   trust: {
     sectionTitle: "Cén fáth ToolPop?",
     sectionSubtitle: "Slándáil agus áisiúlacht gan aon chomhréiteach",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Roinn", shareSubtitle: "Inis do do chairde faoi ToolPop!", shareCopyLink: "Cóipeáil nasc", shareCopied: "Cóipeáilte!" },
   footer: { apps: "Uirlisí", company: "Cuideachta", about: "Fúinn", contact: "Teagmháil", faq: "Ceisteanna Coitianta", blog: "Blag", legal: "Eolas Dlíthiúil", privacy: "Polasaí Príobháideachais", terms: "Téarmaí Seirbhíse", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Uirlisí ar líne saor in aisce do PDF, íomhánna agus tuilleadh. Gan clárú.", madeWith: "Déanta le grá do chách" },
   search: { noResults: "Níor aimsíodh torthaí" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Íomhá", text: "Téacs" },
 };
 export default dict;

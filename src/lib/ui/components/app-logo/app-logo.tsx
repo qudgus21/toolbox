@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-type AppType = "landing" | "pdf" | "image";
+type AppType = "landing" | "pdf" | "image" | "text";
 
 const logoConfig: Record<AppType, { from: string; to: string; accent: string; badge?: string; badgeClasses?: string }> = {
   landing: {
@@ -25,11 +25,19 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
     badge: "Image",
     badgeClasses: "bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-400",
   },
+  text: {
+    from: "#f59e0b",
+    to: "#d97706",
+    accent: "#d97706",
+    badge: "Text",
+    badgeClasses: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-400",
+  },
 };
 
 function detectApp(pathname: string): AppType {
   if (pathname.match(/^\/[^/]+\/pdf(\/|$)/)) return "pdf";
   if (pathname.match(/^\/[^/]+\/image(\/|$)/)) return "image";
+  if (pathname.match(/^\/[^/]+\/text(\/|$)/)) return "text";
   return "landing";
 }
 

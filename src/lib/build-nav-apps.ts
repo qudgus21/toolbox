@@ -12,9 +12,10 @@ export function buildNavApps({
   pdfDict?: unknown;
   imageDict?: unknown;
 }): NavApp[] {
+  const labelMap: Record<string, string> = { pdf: "PDF", image: "Image", text: "Text" };
   return apps.map((app) => ({
     slug: app.slug,
-    label: app.slug === "pdf" ? "PDF" : "Image",
+    label: labelMap[app.slug] ?? app.slug,
     href: `/${locale}/${app.slug}`,
   }));
 }

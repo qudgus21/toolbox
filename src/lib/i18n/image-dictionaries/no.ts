@@ -19,6 +19,8 @@ const no: ImageDictionary = {
     favorites: "Favoritter",
     favDragHint: "Dra for å endre rekkefølge",
     favHint: "Legg til favorittverktøyene dine for rask tilgang",
+    gridView: "Rutenettvisning",
+    listView: "Listevisning",
   },
   trust: {
     encryption: "Sikker behandling",
@@ -304,6 +306,7 @@ const no: ImageDictionary = {
     shareSubtitle: "Fortell det videre!",
     shareCopied: "Kopiert!",
     shareCopyLink: "Kopier lenke",
+    unknownError: "En ukjent feil oppstod",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const no: ImageDictionary = {
       image: "Bilde",
       watermarkImage: "Vannmerkebilde",
       enterWatermarkText: "Skriv inn vannmerketekst...",
+      defaultWatermarkText: "Vannmerke",
       chooseImage: "Velg bilde...",
       fontFamily: "Skriftfamilie",
       fontSize: "Skriftstørrelse",
