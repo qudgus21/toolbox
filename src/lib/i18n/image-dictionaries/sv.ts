@@ -12,6 +12,7 @@ const sv: ImageDictionary = {
     shareSubtitle: "Sprid ordet!",
     shareCopied: "Kopierat!",
     shareCopyLink: "Kopiera länk",
+    unknownError: "Ett okänt fel inträffade",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const sv: ImageDictionary = {
       image: "Bild",
       watermarkImage: "Vattenstämpelbild",
       enterWatermarkText: "Ange vattenstämpeltext...",
+      defaultWatermarkText: "Vattenstämpel",
       chooseImage: "Välj bild...",
       fontFamily: "Typsnitt",
       fontSize: "Teckenstorlek",

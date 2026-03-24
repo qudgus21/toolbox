@@ -19,6 +19,8 @@ const he: ImageDictionary = {
     favorites: "מועדפים",
     favDragHint: "גררו לשינוי סדר",
     favHint: "הוסיפו כלים למועדפים לגישה מהירה",
+    gridView: "תצוגת רשת",
+    listView: "תצוגת רשימה",
   },
   trust: {
     encryption: "עיבוד מאובטח",
@@ -303,6 +305,7 @@ const he: ImageDictionary = {
     shareSubtitle: "ספרו לחברים!",
     shareCopied: "הועתק!",
     shareCopyLink: "העתק קישור",
+    unknownError: "אירעה שגיאה לא ידועה",
   },
   toolOptions: {
     resize: {
@@ -477,6 +480,7 @@ const he: ImageDictionary = {
       image: "תמונה",
       watermarkImage: "תמונת סימן מים",
       enterWatermarkText: "הזינו טקסט לסימן מים...",
+      defaultWatermarkText: "סימן מים",
       chooseImage: "בחרו תמונה...",
       fontFamily: "גופן",
       fontSize: "גודל גופן",

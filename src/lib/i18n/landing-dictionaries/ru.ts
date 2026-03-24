@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "Редактируйте, объединяйте и конвертируйте PDF. Изменяйте размер, сжимайте и обрабатывайте изображения. Всё бесплатно, прямо в браузере.",
   },
   hero: {
-    badge: "87+ бесплатных онлайн-инструментов",
+    badge: "131+ бесплатных онлайн-инструментов",
     title: "Все нужные инструменты — в одном ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "Открыть инструменты для изображений",
       toolCount: "48 инструментов",
     },
+    text: {
+      name: "Текстовые инструменты",
+      description:
+        "Преобразуйте, анализируйте, очищайте, кодируйте и генерируйте текст мгновенно.",
+      cta: "Текстовые инструменты",
+      toolCount: "44+ инструментов",
+    },
   },
   popularTools: {
     sectionTitle: "Популярные инструменты",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "Показать все",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "Бесплатных инструментов",
     languages: "45",
     languagesLabel: "Языков",
@@ -87,7 +94,8 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
+    image: "Изображения",
+    text: "Текст",
   },
 };
 

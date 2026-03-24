@@ -12,6 +12,7 @@ const lv: ImageDictionary = {
     shareSubtitle: "Pastāstiet citiem!",
     shareCopied: "Nokopēts!",
     shareCopyLink: "Kopēt saiti",
+    unknownError: "Radās nezināma kļūda",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const lv: ImageDictionary = {
       image: "Attels",
       watermarkImage: "Udenszimu attels",
       enterWatermarkText: "Ievadiet udenszimu tekstu...",
+      defaultWatermarkText: "Ūdenszīme",
       chooseImage: "Izvelieties attelu...",
       fontFamily: "Fontu saime",
       fontSize: "Fonta izmers",

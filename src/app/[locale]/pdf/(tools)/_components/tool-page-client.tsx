@@ -312,7 +312,7 @@ export function ToolPageClient({
         {stage === "error" && (
           <motion.div key="error" {...fadeSlide} transition={transition}>
             <ErrorMessage
-              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? "Unknown error"}
+              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? "Unknown error"}
               onRetry={reset}
               retryLabel={labels.tryAgain}
             />
@@ -383,7 +383,14 @@ export function ToolPageClient({
             setPageSelectorFile(null);
           }}
           onClose={() => setPageSelectorFile(null)}
-          labels={{ dragToReorder: labels.dragToReorder }}
+          labels={{
+            dragToReorder: labels.dragToReorder,
+            pagesSelected: labels.pagesSelected,
+            selectAll: labels.selectAll,
+            deselectAll: labels.deselectAll,
+            page: labels.page,
+            confirm: labels.confirm,
+          }}
         />
       )}
     </ToolPageLayout>

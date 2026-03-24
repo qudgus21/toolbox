@@ -19,6 +19,8 @@ const fi: ImageDictionary = {
     favorites: "Suosikit",
     favDragHint: "Vedä järjestääksesi uudelleen",
     favHint: "Lisää suosikkityökalusi nopeaa käyttöä varten",
+    gridView: "Ruudukkonäkymä",
+    listView: "Luettelonäkymä",
   },
   trust: {
     encryption: "Turvallinen käsittely",
@@ -304,6 +306,7 @@ const fi: ImageDictionary = {
     shareSubtitle: "Kerro muillekin!",
     shareCopied: "Kopioitu!",
     shareCopyLink: "Kopioi linkki",
+    unknownError: "Tuntematon virhe tapahtui",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const fi: ImageDictionary = {
       image: "Kuva",
       watermarkImage: "Vesileimakuva",
       enterWatermarkText: "Kirjoita vesileiman teksti...",
+      defaultWatermarkText: "Vesileima",
       chooseImage: "Valitse kuva...",
       fontFamily: "Kirjasinperhe",
       fontSize: "Kirjasinkoko",

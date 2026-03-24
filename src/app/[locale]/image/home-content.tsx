@@ -299,14 +299,14 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           <div className="hidden sm:flex items-center gap-1 ml-2 rounded-full border border-border p-0.5">
             <button
               onClick={() => { setViewMode("grid"); track.viewModeToggle({ mode: "grid" }); }}
-              aria-label="Grid view"
+              aria-label={dict.home.gridView}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "grid" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <LayoutGrid className="h-4 w-4" />
             </button>
             <button
               onClick={() => { setViewMode("list"); track.viewModeToggle({ mode: "list" }); }}
-              aria-label="List view"
+              aria-label={dict.home.listView}
               className={`cursor-pointer rounded-full p-1.5 transition-colors ${viewMode === "list" ? "bg-accent text-accent-foreground" : "text-foreground-muted hover:text-foreground"}`}
             >
               <List className="h-4 w-4" />

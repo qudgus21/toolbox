@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "Modifiez, fusionnez et convertissez vos PDF. Redimensionnez, compressez et transformez vos images. Tout est gratuit, directement dans votre navigateur.",
   },
   hero: {
-    badge: "87+ outils en ligne gratuits",
+    badge: "131+ outils en ligne gratuits",
     title: "Tous les outils dont vous avez besoin, réunis dans ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "Découvrir les outils image",
       toolCount: "48 outils",
     },
+    text: {
+      name: "Outils texte",
+      description:
+        "Transformez, analysez, nettoyez, encodez et générez du texte en un instant.",
+      cta: "Outils texte",
+      toolCount: "44+ outils",
+    },
   },
   popularTools: {
     sectionTitle: "Outils populaires",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "Tout voir",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "Outils gratuits",
     languages: "45",
     languagesLabel: "Langues",
@@ -88,6 +95,7 @@ const dict: LandingDictionary = {
   nav: {
     pdf: "PDF",
     image: "Image",
+    text: "Texte",
   },
 };
 

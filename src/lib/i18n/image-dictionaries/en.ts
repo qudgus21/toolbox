@@ -19,6 +19,8 @@ const en: ImageDictionary = {
     favorites: "Favorites",
     favDragHint: "Drag to reorder",
     favHint: "Add your favorite tools for quick access",
+    gridView: "Grid view",
+    listView: "List view",
   },
   trust: {
     encryption: "Secure Processing",
@@ -318,6 +320,7 @@ const en: ImageDictionary = {
     shareSubtitle: "Spread the word!",
     shareCopied: "Copied!",
     shareCopyLink: "Copy link",
+    unknownError: "An unknown error occurred",
   },
   toolOptions: {
     resize: {
@@ -492,6 +495,7 @@ const en: ImageDictionary = {
       image: "Image",
       watermarkImage: "Watermark Image",
       enterWatermarkText: "Enter watermark text...",
+      defaultWatermarkText: "Watermark",
       chooseImage: "Choose image...",
       fontFamily: "Font Family",
       fontSize: "Font Size",

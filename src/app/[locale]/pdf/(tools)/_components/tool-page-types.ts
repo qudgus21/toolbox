@@ -55,6 +55,12 @@ export interface CommonLabels {
   shareSubtitle?: string;
   shareCopied?: string;
   shareCopyLink?: string;
+  unknownError?: string;
+  pagesSelected?: string;
+  selectAll?: string;
+  deselectAll?: string;
+  page?: string;
+  confirm?: string;
 }
 
 export interface SplitLabels {

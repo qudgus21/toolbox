@@ -19,6 +19,8 @@ const te: ImageDictionary = {
     favorites: "ఇష్టమైనవి",
     favDragHint: "క్రమం మార్చడానికి లాగండి",
     favHint: "త్వరిత యాక్సెస్ కోసం ఇష్టమైన సాధనాలను జోడించండి",
+    gridView: "గ్రిడ్ వీక్షణ",
+    listView: "జాబితా వీక్షణ",
   },
   trust: {
     encryption: "సురక్షిత ప్రాసెసింగ్",
@@ -304,6 +306,7 @@ const te: ImageDictionary = {
     shareSubtitle: "ఇతరులకు చెప్పండి!",
     shareCopied: "కాపీ అయింది!",
     shareCopyLink: "లింక్ కాపీ చేయండి",
+    unknownError: "తెలియని లోపం సంభవించింది",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const te: ImageDictionary = {
       image: "చిత్రం",
       watermarkImage: "వాటర్‌మార్క్ చిత్రం",
       enterWatermarkText: "వాటర్‌మార్క్ వచనం నమోదు చేయండి...",
+      defaultWatermarkText: "వాటర్‌మార్క్",
       chooseImage: "చిత్రం ఎంచుకోండి...",
       fontFamily: "ఫాంట్ ఫ్యామిలీ",
       fontSize: "ఫాంట్ పరిమాణం",

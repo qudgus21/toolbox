@@ -19,6 +19,8 @@ const id: ImageDictionary = {
     favorites: "Favorit",
     favDragHint: "Seret untuk mengatur ulang",
     favHint: "Tambahkan alat favorit Anda agar mudah diakses",
+    gridView: "Tampilan kotak",
+    listView: "Tampilan daftar",
   },
   trust: {
     encryption: "Pemrosesan aman",
@@ -304,6 +306,7 @@ const id: ImageDictionary = {
     shareSubtitle: "Beritahu teman-teman!",
     shareCopied: "Tersalin!",
     shareCopyLink: "Salin tautan",
+    unknownError: "Terjadi kesalahan yang tidak diketahui",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const id: ImageDictionary = {
       image: "Gambar",
       watermarkImage: "Gambar Watermark",
       enterWatermarkText: "Ketik teks watermark...",
+      defaultWatermarkText: "Tanda air",
       chooseImage: "Pilih gambar...",
       fontFamily: "Jenis Huruf",
       fontSize: "Ukuran Huruf",

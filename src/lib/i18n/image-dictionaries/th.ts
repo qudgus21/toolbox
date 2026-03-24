@@ -19,6 +19,8 @@ const th: ImageDictionary = {
     favorites: "รายการโปรด",
     favDragHint: "ลากเพื่อจัดเรียงใหม่",
     favHint: "เพิ่มเครื่องมือที่ใช้บ่อยเข้ารายการโปรด",
+    gridView: "มุมมองตาราง",
+    listView: "มุมมองรายการ",
   },
   trust: {
     encryption: "ประมวลผลอย่างปลอดภัย",
@@ -304,6 +306,7 @@ const th: ImageDictionary = {
     shareSubtitle: "บอกต่อให้เพื่อนรู้!",
     shareCopied: "คัดลอกแล้ว!",
     shareCopyLink: "คัดลอกลิงก์",
+    unknownError: "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const th: ImageDictionary = {
       image: "รูปภาพ",
       watermarkImage: "ภาพลายน้ำ",
       enterWatermarkText: "พิมพ์ข้อความลายน้ำ...",
+      defaultWatermarkText: "ลายน้ำ",
       chooseImage: "เลือกรูปภาพ...",
       fontFamily: "แบบอักษร",
       fontSize: "ขนาดตัวอักษร",

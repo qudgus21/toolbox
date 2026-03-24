@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "Edit, merge, convert PDFs. Resize, compress, transform images. All free, right in your browser.",
   },
   hero: {
-    badge: "87+ Free Online Tools",
+    badge: "131+ Free Online Tools",
     title: "Every tool you need, in one ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "Explore Image Tools",
       toolCount: "48 tools",
     },
+    text: {
+      name: "Text Tools",
+      description:
+        "Transform, analyze, clean, encode, and generate text instantly.",
+      cta: "Text Tools",
+      toolCount: "44+ tools",
+    },
   },
   popularTools: {
     sectionTitle: "Popular Tools",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "View all",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "Free Tools",
     languages: "45",
     languagesLabel: "Languages",
@@ -88,6 +95,7 @@ const dict: LandingDictionary = {
   nav: {
     pdf: "PDF",
     image: "Image",
+    text: "Text",
   },
 };
 

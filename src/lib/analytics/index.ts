@@ -7,4 +7,4 @@ export { useTrack } from "./hooks/use-track";
 export type { EventParams, EventParamValue, EventDef, EventMap, Tracker } from "./types";
 
 // Event maps
-export { commonEvents, pdfEvents, imageEvents, landingEvents } from "./events";
+export { commonEvents, pdfEvents, imageEvents, textEvents, landingEvents } from "./events";

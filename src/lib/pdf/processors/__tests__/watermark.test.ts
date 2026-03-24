@@ -357,7 +357,7 @@ describe("watermarkPdf processor", () => {
 
   it("이미지 워터마크 적용 시 PDF에 이미지 리소스 추가됨", async () => {
     const pngBytes = createMinimalPng();
-    const imgBlob = new Blob([pngBytes], { type: "image/png" });
+    const imgBlob = new Blob([pngBytes as BlobPart], { type: "image/png" });
     const imgFile = new File([imgBlob], "watermark.png", { type: "image/png" });
 
     const file = await createMarkedPdf(1);
@@ -416,7 +416,7 @@ describe("watermarkPdf processor", () => {
   it("이미지 모드 — PNG 이미지 워터마크", async () => {
     // 최소 유효 1x1 PNG 생성
     const pngBytes = createMinimalPng();
-    const imgBlob = new Blob([pngBytes], { type: "image/png" });
+    const imgBlob = new Blob([pngBytes as BlobPart], { type: "image/png" });
     const imgFile = new File([imgBlob], "watermark.png", { type: "image/png" });
 
     const file = await createMarkedPdf(2);
@@ -439,7 +439,7 @@ describe("watermarkPdf processor", () => {
 
   it("이미지 모드 — mosaic 타일 패턴", async () => {
     const pngBytes = createMinimalPng();
-    const imgBlob = new Blob([pngBytes], { type: "image/png" });
+    const imgBlob = new Blob([pngBytes as BlobPart], { type: "image/png" });
     const imgFile = new File([imgBlob], "watermark.png", { type: "image/png" });
 
     const file = await createMarkedPdf(1);
@@ -463,7 +463,7 @@ describe("watermarkPdf processor", () => {
   it("이미지 모드 — JPEG 이미지", async () => {
     // 최소 JPEG (2x2 흰색)
     const jpegBytes = createMinimalJpeg();
-    const imgBlob = new Blob([jpegBytes], { type: "image/jpeg" });
+    const imgBlob = new Blob([jpegBytes as BlobPart], { type: "image/jpeg" });
     const imgFile = new File([imgBlob], "watermark.jpg", { type: "image/jpeg" });
 
     const file = await createMarkedPdf(1);

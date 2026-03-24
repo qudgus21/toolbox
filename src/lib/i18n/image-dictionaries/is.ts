@@ -12,6 +12,7 @@ const is_: ImageDictionary = {
     shareSubtitle: "Segðu öðrum frá!",
     shareCopied: "Afritað!",
     shareCopyLink: "Afrita hlekk",
+    unknownError: "Óþekkt villa kom upp",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const is_: ImageDictionary = {
       image: "Mynd",
       watermarkImage: "Vatnsmerki mynd",
       enterWatermarkText: "Slaidu inn vatnsmerki texta...",
+      defaultWatermarkText: "Vatnsmerki",
       chooseImage: "Veldu mynd...",
       fontFamily: "Leturgeraslegt",
       fontSize: "Leturstored",
