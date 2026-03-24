@@ -19,6 +19,8 @@ const ko: ImageDictionary = {
     favorites: "즐겨찾기",
     favDragHint: "드래그해서 순서를 변경하세요",
     favHint: "자주 쓰는 도구를 즐겨찾기에 추가해 보세요",
+    gridView: "격자 보기",
+    listView: "목록 보기",
   },
   trust: {
     encryption: "안전한 처리",
@@ -317,6 +319,7 @@ const ko: ImageDictionary = {
     shareSubtitle: "친구에게 알려주세요!",
     shareCopied: "복사됨!",
     shareCopyLink: "링크 복사",
+    unknownError: "알 수 없는 오류가 발생했습니다",
   },
   toolOptions: {
     resize: {
@@ -491,6 +494,7 @@ const ko: ImageDictionary = {
       image: "이미지",
       watermarkImage: "워터마크 이미지",
       enterWatermarkText: "워터마크 텍스트 입력...",
+      defaultWatermarkText: "워터마크",
       chooseImage: "이미지 선택...",
       fontFamily: "글꼴",
       fontSize: "글꼴 크기",

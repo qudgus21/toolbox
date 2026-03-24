@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "ইমেজ টুলস দেখুন",
       toolCount: "৪৮টি টুল",
     },
+    text: {
+      name: "টেক্সট টুলস",
+      description:
+        "টেক্সট রূপান্তর, বিশ্লেষণ, পরিষ্কার, এনকোড ও তৈরি করুন মুহূর্তেই।",
+      cta: "টেক্সট টুলস",
+      toolCount: "৪৪+ টুল",
+    },
   },
   popularTools: {
     sectionTitle: "জনপ্রিয় টুলস",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "সব দেখুন",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "বিনামূল্যে টুল",
     languages: "45",
     languagesLabel: "ভাষা",
@@ -87,7 +94,8 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
+    image: "ছবি",
+    text: "টেক্সট",
   },
 };
 

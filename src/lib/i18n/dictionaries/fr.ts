@@ -17,6 +17,8 @@ const fr: Dictionary = {
     favorites: "Favoris",
     favDragHint: "Glissez pour réorganiser",
     favHint: "Ajouter aux favoris",
+    gridView: "Vue grille",
+    listView: "Vue liste",
   },
   trust: {
     encryption: "Chiffrement sécurisé",
@@ -129,6 +131,12 @@ const fr: Dictionary = {
     shareSubtitle: "Faites passer le mot !",
     shareCopied: "Copié !",
     shareCopyLink: "Copier le lien",
+    unknownError: "Une erreur inconnue s'est produite",
+    pagesSelected: "pages sélectionnées",
+    selectAll: "Tout sélectionner",
+    deselectAll: "Tout désélectionner",
+    page: "Page",
+    confirm: "Confirmer",
   },
   metadata: {
     siteTitle: "ToolPop - Outils PDF gratuits",
@@ -1075,7 +1083,7 @@ const fr: Dictionary = {
       },
       {
         heading: "Ce que nous proposons",
-        content: "ToolPop comprend plus de 40 outils répartis en cinq catégories :\n\n• Organiser — Fusionner, scinder, réordonner, extraire et supprimer des pages\n• Convertir — Transformer entre PDF, JPG, PNG, texte et autres formats\n• Modifier — Ajouter du texte, des images, des signatures, des filigranes, des numéros de page et des annotations\n• Optimiser — Compresser les fichiers et optimiser pour le web\n• Sécurité — Protéger par mot de passe, caviarder les informations sensibles et aplatir les documents\n\nTous les outils sont entièrement gratuits, sans limite de taille de fichier ni quota d'utilisation quotidien.",
+        content: "ToolPop propose une collection d'outils en constante expansion, répartis en plusieurs catégories :\n\n• Outils PDF — 40+ outils pour fusionner, scinder, compresser, convertir, modifier, protéger, filigraner et plus encore\n• Outils image — 28+ outils pour redimensionner, convertir, compresser, recadrer, pivoter, filigraner, créer des collages et plus encore\n• Outils texte — 45+ outils dont le compteur de mots, le convertisseur de casse, l'encodage/décodage Base64, le formateur JSON, le générateur de hash, le testeur de regex et plus encore\n\nTous les outils sont entièrement gratuits, sans limite de taille de fichier ni quota d'utilisation quotidien.",
       },
       {
         heading: "Notre technologie",
@@ -1122,15 +1130,15 @@ const fr: Dictionary = {
     title: "Questions fréquentes",
     intro: "Retrouvez les réponses aux questions les plus courantes sur ToolPop. Si vous ne trouvez pas votre réponse ici, n'hésitez pas à nous contacter.",
     items: [
-      { question: "ToolPop est-il vraiment gratuit ?", answer: "Oui, totalement gratuit. Tous les outils sont disponibles sans limite, sans inscription et sans frais cachés. Nous finançons le service par de la publicité non intrusive." },
+      { question: "ToolPop est-il vraiment gratuit ?", answer: "Oui, totalement gratuit. Tous les outils PDF, image et texte sont disponibles sans limite, sans inscription et sans frais cachés. Nous finançons le service par de la publicité non intrusive." },
       { question: "Mes fichiers sont-ils en sécurité et privés ?", answer: "Absolument. Vos fichiers sont traités intégralement dans votre navigateur — ils ne quittent jamais votre appareil et ne sont jamais téléversés sur un serveur. Nous utilisons les API modernes du navigateur pour gérer toutes les opérations PDF localement, vos documents sensibles restent donc totalement privés." },
       { question: "Dois-je créer un compte ?", answer: "Non. ToolPop fonctionne sans aucune inscription ni connexion. Ouvrez un outil, déposez votre fichier et obtenez le résultat instantanément." },
       { question: "Quelle est la taille maximale de fichier que je peux traiter ?", answer: "Le traitement s'effectuant dans votre navigateur, la limite dépend de la mémoire disponible de votre appareil. La plupart des appareils modernes gèrent des fichiers jusqu'à 100-200 Mo sans problème. Pour les très gros fichiers, nous recommandons d'utiliser un navigateur de bureau." },
       { question: "Quels navigateurs sont compatibles ?", answer: "ToolPop fonctionne sur tous les navigateurs modernes, notamment Chrome, Firefox, Safari, Edge et Opera. Nous recommandons d'utiliser la dernière version de votre navigateur." },
-      { question: "Puis-je utiliser ToolPop sur mon téléphone ou ma tablette ?", answer: "Oui ! ToolPop est entièrement responsive et fonctionne sur les appareils mobiles. Vous pouvez fusionner, scinder, convertir et modifier des PDF directement depuis le navigateur de votre téléphone ou tablette." },
+      { question: "Puis-je utiliser ToolPop sur mon téléphone ou ma tablette ?", answer: "Oui ! ToolPop est entièrement responsive et fonctionne sur les appareils mobiles. Vous pouvez traiter des PDF, des images et du texte directement depuis le navigateur de votre téléphone ou tablette." },
       { question: "Comment fonctionne le traitement dans le navigateur ?", answer: "Lorsque vous sélectionnez un fichier, il reste sur votre appareil. Nos outils utilisent des bibliothèques JavaScript comme pdf-lib et PDF.js pour lire, modifier et créer des PDF directement dans la mémoire de votre navigateur. Le fichier traité est ensuite disponible au téléchargement — aucune communication avec un serveur n'est nécessaire." },
-      { question: "Puis-je fusionner plus de deux fichiers PDF ?", answer: "Oui. Notre outil de fusion PDF permet de combiner autant de fichiers que souhaité. Glissez-déposez tous les PDF à fusionner, organisez-les dans l'ordre voulu et cliquez sur le bouton de traitement." },
-      { question: "Quels formats de conversion sont disponibles ?", answer: "Vous pouvez convertir des PDF en JPG, PNG et texte brut. Pour créer des PDF, nous prenons en charge les images JPG, PNG, WEBP, TIFF, HEIC, les fichiers HTML et les documents numérisés. De nouveaux formats de conversion sont ajoutés régulièrement." },
+      { question: "Quels outils propose ToolPop ?", answer: "Nous proposons des outils PDF (40+ pour fusionner, scinder, compresser, convertir, modifier, protéger et plus), des outils image (28+ pour redimensionner, convertir, compresser, recadrer, pivoter, filigraner et plus) et des outils texte (45+ pour compter les mots, changer la casse, encoder/décoder, générer des hashs, formater du JSON et plus). De nouveaux outils sont ajoutés en continu." },
+      { question: "Quels formats de fichiers sont pris en charge ?", answer: "Les outils PDF prennent en charge PDF, JPG, PNG, WEBP, TIFF, HEIC, HTML et plus. Les outils image prennent en charge JPG, PNG, WEBP, GIF, BMP, TIFF, AVIF, SVG et plus. Les outils texte traitent du texte brut et prennent en charge l'encodage/décodage (Base64, URL, HTML, Unicode), la génération de hashs, le formatage JSON et plus. Les formats pris en charge s'élargissent régulièrement." },
       { question: "En quoi ToolPop se distingue-t-il des autres outils PDF ?", answer: "Trois différences majeures : (1) Confidentialité — vos fichiers ne quittent jamais votre appareil, contrairement à la plupart des concurrents qui les téléversent sur leurs serveurs. (2) Sans limites — pas de quotas quotidiens, pas de restrictions de taille, pas de filigrane sur les fichiers de sortie. (3) Sans compte — utilisez n'importe quel outil instantanément sans vous inscrire." },
       { question: "Puis-je protéger mon PDF par un mot de passe ?", answer: "Oui. Utilisez notre outil Protéger PDF pour ajouter un mot de passe avec chiffrement AES-256. Vous pouvez définir un mot de passe d'ouverture et des permissions pour contrôler l'impression, la copie et la modification." },
       { question: "ToolPop ajoute-t-il des filigranes à mes fichiers ?", answer: "Jamais. Tous les fichiers traités sont propres et exempts de toute marque ou filigrane ToolPop. Le résultat est exactement ce que vous attendez d'un outil professionnel." },
@@ -1140,13 +1148,16 @@ const fr: Dictionary = {
   },
   blog: {
     title: "Blog",
-    description: "Astuces, guides et informations pratiques pour travailler avec vos fichiers PDF.",
+    description: "Astuces, guides et conseils pour tirer le meilleur de vos outils numériques.",
     readMore: "Lire la suite",
     backToBlog: "Retour au blog",
     publishedOn: "Publié le",
     categoryGuide: "Guide",
     categoryTips: "Astuces",
     categoryKnowledge: "Savoir",
+    prev: "Précédent",
+    next: "Suivant",
+    page: "Page",
   },
   toolContent: {
     merge: {

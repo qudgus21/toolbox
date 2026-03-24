@@ -17,6 +17,8 @@ const ko: Dictionary = {
     favorites: "즐겨찾기",
     favDragHint: "드래그하여 순서 변경",
     favHint: "즐겨찾기에 추가",
+    gridView: "격자 보기",
+    listView: "목록 보기",
   },
   trust: {
     encryption: "보안 암호화",
@@ -121,6 +123,12 @@ const ko: Dictionary = {
     encryptedFile: "암호화된 파일",
     clickToSelectPages: "클릭하여 페이지 선택",
     dragToReorder: "드래그하여 순서 변경",
+    unknownError: "알 수 없는 오류가 발생했습니다",
+    pagesSelected: "페이지 선택됨",
+    selectAll: "전체 선택",
+    deselectAll: "선택 해제",
+    page: "페이지",
+    confirm: "확인",
     favoriteAdded: "즐겨찾기에 추가했습니다",
     favoriteRemoved: "즐겨찾기에서 해제했습니다",
     comingSoon: "준비 중",
@@ -1075,7 +1083,7 @@ const ko: Dictionary = {
       },
       {
         heading: "제공하는 도구",
-        content: "ToolPop은 다양한 카테고리의 도구를 제공합니다.\n\n• PDF 도구 — 병합, 분할, 압축, 변환, 편집, 서명, 보안 등 40개 이상\n• 이미지 도구 — 리사이즈, 자르기, 변환, 필터, 워터마크, QR 코드 등 28개 이상\n\n모든 도구를 파일 크기 제한이나 일일 사용 제한 없이 완전 무료로 사용할 수 있습니다. 더 많은 도구가 계속 추가되고 있습니다.",
+        content: "ToolPop은 다양한 카테고리의 도구를 제공합니다.\n\n• PDF 도구 — 병합, 분할, 압축, 변환, 편집, 서명, 보안 등 40개 이상\n• 이미지 도구 — 리사이즈, 자르기, 변환, 필터, 워터마크, QR 코드 등 28개 이상\n• 텍스트 도구 — 글자 수 세기, 대소문자 변환, Base64 인코딩, JSON 포맷터, 해시 생성, 정규식 테스터 등 45개 이상\n\n모든 도구를 파일 크기 제한이나 일일 사용 제한 없이 완전 무료로 사용할 수 있습니다. 더 많은 도구가 계속 추가되고 있습니다.",
       },
       {
         heading: "기술 스택",
@@ -1124,7 +1132,7 @@ const ko: Dictionary = {
     items: [
       {
         question: "정말 무료인가요?",
-        answer: "네, 완전 무료입니다. PDF 편집, 이미지 변환 등 모든 도구를 제한 없이 사용할 수 있고, 회원가입도 필요 없으며, 숨겨진 비용도 없습니다. 서비스 운영에 필요한 비용은 비침해적 광고로 충당합니다.",
+        answer: "네, 완전 무료입니다. PDF, 이미지, 텍스트 등 모든 도구를 제한 없이 사용할 수 있고, 회원가입도 필요 없으며, 숨겨진 비용도 없습니다. 서비스 운영에 필요한 비용은 비침해적 광고로 충당합니다.",
       },
       {
         question: "파일이 안전한가요?",
@@ -1136,7 +1144,7 @@ const ko: Dictionary = {
       },
       {
         question: "어떤 도구를 제공하나요?",
-        answer: "PDF 도구(병합, 분할, 압축, 변환, 편집, 보호 등 40개 이상)와 이미지 도구(리사이즈, 포맷 변환, 압축, 자르기, 회전, 워터마크 등 28개 이상)를 제공합니다. 새로운 도구가 지속적으로 추가되고 있습니다.",
+        answer: "PDF 도구(병합, 분할, 압축, 변환, 편집, 보호 등 40개 이상), 이미지 도구(리사이즈, 포맷 변환, 압축, 자르기, 회전, 워터마크 등 28개 이상), 텍스트 도구(글자 수 세기, 대소문자 변환, 인코딩/디코딩, 해시 생성, JSON 포맷터 등 45개 이상)를 제공합니다. 새로운 도구가 지속적으로 추가되고 있습니다.",
       },
       {
         question: "처리할 수 있는 최대 파일 크기는 얼마인가요?",
@@ -1148,7 +1156,7 @@ const ko: Dictionary = {
       },
       {
         question: "스마트폰이나 태블릿에서도 사용할 수 있나요?",
-        answer: "네! ToolPop은 완전 반응형으로 모바일 기기에서도 잘 작동합니다. 스마트폰이나 태블릿 브라우저에서 바로 PDF 편집이나 이미지 변환을 할 수 있습니다.",
+        answer: "네! ToolPop은 완전 반응형으로 모바일 기기에서도 잘 작동합니다. 스마트폰이나 태블릿 브라우저에서 바로 PDF, 이미지, 텍스트 작업을 할 수 있습니다.",
       },
       {
         question: "브라우저 기반 처리란 어떤 방식인가요?",
@@ -1164,7 +1172,7 @@ const ko: Dictionary = {
       },
       {
         question: "어떤 파일 형식을 지원하나요?",
-        answer: "PDF 도구는 PDF, JPG, PNG, WEBP, TIFF, HEIC, HTML 등을 지원합니다. 이미지 도구는 JPG, PNG, WEBP, GIF, BMP, TIFF, AVIF, SVG 등 다양한 형식을 지원합니다. 변환 가능한 형식은 계속 추가되고 있습니다.",
+        answer: "PDF 도구는 PDF, JPG, PNG, WEBP, TIFF, HEIC, HTML 등을 지원합니다. 이미지 도구는 JPG, PNG, WEBP, GIF, BMP, TIFF, AVIF, SVG 등을 지원합니다. 텍스트 도구는 일반 텍스트를 기반으로 인코딩/디코딩(Base64, URL, HTML, 유니코드), 해시 생성, JSON 포맷팅 등을 지원합니다. 지원 형식은 계속 추가되고 있습니다.",
       },
       {
         question: "API를 사용할 수 있나요?",
@@ -1178,13 +1186,16 @@ const ko: Dictionary = {
   },
   blog: {
     title: "블로그",
-    description: "PDF 파일 작업에 유용한 팁, 가이드, 인사이트를 소개합니다.",
+    description: "디지털 도구 활용에 유용한 팁, 가이드, 인사이트를 소개합니다.",
     readMore: "자세히 보기",
     backToBlog: "블로그로 돌아가기",
     publishedOn: "게시일",
     categoryGuide: "가이드",
     categoryTips: "팁",
     categoryKnowledge: "지식",
+    prev: "이전",
+    next: "다음",
+    page: "페이지",
   },
   toolContent: {
     merge: {

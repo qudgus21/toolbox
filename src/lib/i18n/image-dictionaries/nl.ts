@@ -12,6 +12,7 @@ const nl: ImageDictionary = {
     shareSubtitle: "Vertel het verder!",
     shareCopied: "Gekopieerd!",
     shareCopyLink: "Link kopiëren",
+    unknownError: "Er is een onbekende fout opgetreden",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const nl: ImageDictionary = {
       image: "Afbeelding",
       watermarkImage: "Watermerkafbeelding",
       enterWatermarkText: "Voer watermerktekst in...",
+      defaultWatermarkText: "Watermerk",
       chooseImage: "Afbeelding kiezen...",
       fontFamily: "Lettertype",
       fontSize: "Lettergrootte",

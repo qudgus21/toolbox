@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
 import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
+import { tools as textTools } from "@/lib/text/tools";
 import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org";
@@ -39,6 +40,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Text home pages for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/text`,
+      lastModified: new Date("2026-03-24"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
+
   // PDF tool pages for each locale x tool combination
   const pdfSlugs = pdfTools.map((t) => t.slug);
   for (const locale of locales) {
@@ -59,6 +70,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}/image/${slug}`,
         lastModified: new Date("2026-03-23"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
+  }
+
+  // Text tool pages for each locale x tool combination
+  const textSlugs = textTools.map((t) => t.slug);
+  for (const locale of locales) {
+    for (const slug of textSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/text/${slug}`,
+        lastModified: new Date("2026-03-24"),
         changeFrequency: "monthly",
         priority: 0.8,
       });

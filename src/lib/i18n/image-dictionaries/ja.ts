@@ -19,6 +19,8 @@ const ja: ImageDictionary = {
     favorites: "お気に入り",
     favDragHint: "ドラッグして並べ替え",
     favHint: "よく使うツールをお気に入りに追加しましょう",
+    gridView: "グリッド表示",
+    listView: "リスト表示",
   },
   trust: {
     encryption: "安全な処理",
@@ -303,6 +305,7 @@ const ja: ImageDictionary = {
     shareSubtitle: "みんなに教えよう!",
     shareCopied: "コピーしました!",
     shareCopyLink: "リンクをコピー",
+    unknownError: "不明なエラーが発生しました",
   },
   toolOptions: {
     resize: {
@@ -477,6 +480,7 @@ const ja: ImageDictionary = {
       image: "画像",
       watermarkImage: "透かし画像",
       enterWatermarkText: "透かしテキストを入力...",
+      defaultWatermarkText: "透かし",
       chooseImage: "画像を選択...",
       fontFamily: "フォント",
       fontSize: "フォントサイズ",

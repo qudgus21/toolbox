@@ -128,7 +128,7 @@ function setupMocks() {
           const h = _h || 100;
           const bytesPerPixel = quality * 0.025;
           const padding = Math.max(0, Math.round(w * h * bytesPerPixel) - 40);
-          cb(new Blob([createMinimalJpeg(w, h, padding)], { type: "image/jpeg" }));
+          cb(new Blob([createMinimalJpeg(w, h, padding) as BlobPart], { type: "image/jpeg" }));
         },
       };
     }),
@@ -376,7 +376,7 @@ describe("compress: FlateDecode 이미지 재압축", () => {
     page.node.set(PDFName.of("Resources"), Resources);
 
     const pdfBytes = await doc.save();
-    const file = new File([pdfBytes], "flat-image.pdf", { type: "application/pdf" });
+    const file = new File([pdfBytes as BlobPart], "flat-image.pdf", { type: "application/pdf" });
 
     const { onProgress } = createProgressTracker();
     const result = await compressPdf(
@@ -418,7 +418,7 @@ describe("compress: FlateDecode 이미지 재압축", () => {
     context.register(imageStream);
 
     const pdfBytes = await doc.save();
-    const file = new File([pdfBytes], "gray-image.pdf", { type: "application/pdf" });
+    const file = new File([pdfBytes as BlobPart], "gray-image.pdf", { type: "application/pdf" });
 
     const { onProgress } = createProgressTracker();
     const result = await compressPdf(
@@ -473,7 +473,7 @@ describe("compress: FlateDecode 이미지 재압축", () => {
     context.register(imageStream);
 
     const pdfBytes = await doc.save();
-    const file = new File([pdfBytes], "predictor-image.pdf", { type: "application/pdf" });
+    const file = new File([pdfBytes as BlobPart], "predictor-image.pdf", { type: "application/pdf" });
 
     const { onProgress } = createProgressTracker();
     const result = await compressPdf(

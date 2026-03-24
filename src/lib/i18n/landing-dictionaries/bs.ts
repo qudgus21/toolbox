@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Uređujte, spajajte i konvertujte PDF-ove. Mijenjajte veličinu, kompresujte i transformišite slike. Sve besplatno, direktno u pregledniku.",
   },
   hero: {
-    badge: "87+ besplatnih online alata",
+    badge: "131+ besplatnih online alata",
     title: "Svi alati koji su vam potrebni, na jednom mjestu — ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Radite sa PDF-ovima i slikama direktno u pregledniku. Bez instalacija, bez registracije.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF alati", description: "Spajanje, dijeljenje, konverzija, uređivanje i kompresija — sve što možete uraditi sa PDF-om.", cta: "Istražite PDF alate", toolCount: "39 alata" },
     image: { name: "Alati za slike", description: "Promjena veličine, izrezivanje, konverzija, efekti, QR kodovi — sve za slike.", cta: "Istražite alate za slike", toolCount: "48 alata" },
+    text: { name: "Alati za tekst", description: "Transformišite, analizirajte, očistite, kodirajte i generirajte tekst odmah.", cta: "Alati za tekst", toolCount: "44+ alata" },
   },
   popularTools: { sectionTitle: "Popularni alati", sectionSubtitle: "Odmah do najkorištenijih alata", viewAll: "Pogledaj sve" },
-  stats: { tools: "87+", toolsLabel: "Besplatnih alata", languages: "45", languagesLabel: "Jezika", users: "100%", usersLabel: "U pregledniku", price: "0 €", priceLabel: "Zauvijek besplatno" },
+  stats: { tools: "131+", toolsLabel: "Besplatnih alata", languages: "45", languagesLabel: "Jezika", users: "100%", usersLabel: "U pregledniku", price: "0 €", priceLabel: "Zauvijek besplatno" },
   trust: {
     sectionTitle: "Zašto ToolPop?",
     sectionSubtitle: "Sigurnost i praktičnost bez kompromisa",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Podijeli", shareSubtitle: "Recite prijateljima za ToolPop!", shareCopyLink: "Kopiraj link", shareCopied: "Kopirano!" },
   footer: { apps: "Alati", company: "Kompanija", about: "O nama", contact: "Kontakt", faq: "Česta pitanja", blog: "Blog", legal: "Pravne informacije", privacy: "Politika privatnosti", terms: "Uslovi korištenja", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Besplatni online alati za PDF, slike i više. Bez registracije.", madeWith: "Napravljeno s ljubavlju za sve" },
   search: { noResults: "Nema rezultata" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Slika", text: "Tekst" },
 };
 export default dict;

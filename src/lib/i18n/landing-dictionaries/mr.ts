@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "PDF संपादित करा, एकत्र करा, रूपांतरित करा. प्रतिमांचा आकार बदला, संकुचित करा, रूपांतरित करा. सर्व मोफत, थेट ब्राउझरमध्ये.",
   },
   hero: {
-    badge: "87+ मोफत ऑनलाइन साधने",
+    badge: "131+ मोफत ऑनलाइन साधने",
     title: "तुम्हाला हवी ती प्रत्येक साधने, एकाच ToolPop मध्ये",
     titleAccent: "ToolPop",
     subtitle: "PDF आणि प्रतिमांवर थेट ब्राउझरमध्ये काम करा. इन्स्टॉल नाही, साइन-अप नाही.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF साधने", description: "एकत्र करा, विभाजित करा, रूपांतरित करा, संपादित करा आणि संकुचित करा — PDF सोबत सर्वकाही.", cta: "PDF साधने पहा", toolCount: "39 साधने" },
     image: { name: "प्रतिमा साधने", description: "आकार बदला, कापा, रूपांतरित करा, प्रभाव लावा, QR कोड तयार करा — प्रतिमांसाठी सर्वकाही.", cta: "प्रतिमा साधने पहा", toolCount: "48 साधने" },
+    text: { name: "मजकूर साधने", description: "मजकूर रूपांतरित करा, विश्लेषण करा, स्वच्छ करा, एन्कोड करा आणि लगेच तयार करा.", cta: "मजकूर साधने", toolCount: "44+ साधने" },
   },
   popularTools: { sectionTitle: "लोकप्रिय साधने", sectionSubtitle: "सर्वाधिक वापरल्या जाणाऱ्या साधनांवर थेट जा", viewAll: "सर्व पहा" },
-  stats: { tools: "87+", toolsLabel: "मोफत साधने", languages: "45", languagesLabel: "भाषा", users: "100%", usersLabel: "ब्राउझर-आधारित", price: "₹0", priceLabel: "कायमचे मोफत" },
+  stats: { tools: "131+", toolsLabel: "मोफत साधने", languages: "45", languagesLabel: "भाषा", users: "100%", usersLabel: "ब्राउझर-आधारित", price: "₹0", priceLabel: "कायमचे मोफत" },
   trust: {
     sectionTitle: "ToolPop का निवडावे?",
     sectionSubtitle: "सुरक्षितता आणि सोय, कोणत्याही तडजोडीशिवाय",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "शेअर करा", shareSubtitle: "तुमच्या मित्रांना ToolPop बद्दल सांगा!", shareCopyLink: "लिंक कॉपी करा", shareCopied: "कॉपी झाले!" },
   footer: { apps: "साधने", company: "कंपनी", about: "आमच्याबद्दल", contact: "संपर्क", faq: "वारंवार विचारले जाणारे प्रश्न", blog: "ब्लॉग", legal: "कायदेशीर", privacy: "गोपनीयता धोरण", terms: "सेवा अटी", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, इमेज आणि अधिकसाठी मोफत ऑनलाइन साधने. साइन-अप नाही.", madeWith: "सर्वांसाठी प्रेमाने बनवलेले" },
   search: { noResults: "कोणतेही परिणाम सापडले नाहीत" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "चित्र", text: "मजकूर" },
 };
 export default dict;

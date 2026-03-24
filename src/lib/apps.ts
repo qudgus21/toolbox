@@ -33,4 +33,15 @@ export const apps: AppDefinition[] = [
     href: "/image",
     popularToolSlugs: ["resize", "crop", "compress", "convert", "remove-bg", "qr-code"],
   },
+  {
+    slug: "text",
+    emoji: "📝",
+    accentFrom: "from-amber-500",
+    accentTo: "to-yellow-400",
+    accentText: "text-amber-600 dark:text-amber-400",
+    accentBg: "bg-amber-50 dark:bg-amber-950/30",
+    accentBorder: "border-amber-200 dark:border-amber-800/40",
+    href: "/text",
+    popularToolSlugs: ["word-counter", "case-converter", "find-and-replace", "base64", "json-formatter", "text-diff"],
+  },
 ];

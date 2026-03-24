@@ -19,6 +19,8 @@ const hu: ImageDictionary = {
     favorites: "Kedvencek",
     favDragHint: "Húzd a sorrend módosításához",
     favHint: "Add hozzá kedvenc eszközeidet a gyors eléréshez",
+    gridView: "Rácsnézet",
+    listView: "Listanézet",
   },
   trust: {
     encryption: "Biztonságos feldolgozás",
@@ -304,6 +306,7 @@ const hu: ImageDictionary = {
     shareSubtitle: "Mondd el másoknak is!",
     shareCopied: "Másolva!",
     shareCopyLink: "Link másolása",
+    unknownError: "Ismeretlen hiba történt",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const hu: ImageDictionary = {
       image: "Kép",
       watermarkImage: "Vízjel kép",
       enterWatermarkText: "Vízjel szöveg beírása...",
+      defaultWatermarkText: "Vízjel",
       chooseImage: "Kép kiválasztása...",
       fontFamily: "Betűtípus",
       fontSize: "Betűméret",

@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Upravujte, zlučujte a konvertujte PDF. Meňte veľkosť, komprimujte a transformujte obrázky. Všetko zadarmo, priamo v prehliadači.",
   },
   hero: {
-    badge: "87+ bezplatných online nástrojov",
+    badge: "131+ bezplatných online nástrojov",
     title: "Všetky nástroje na jednom mieste — v jednom ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Pracujte s PDF a obrázkami priamo v prehliadači. Bez inštalácie, bez registrácie.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF nástroje", description: "Zlúčenie, rozdelenie, konverzia, úprava a kompresia — všetko, čo s PDF potrebujete.", cta: "Preskúmať PDF nástroje", toolCount: "39 nástrojov" },
     image: { name: "Obrázkové nástroje", description: "Zmena veľkosti, orezanie, konverzia, efekty, QR kódy — všetko pre prácu s obrázkami.", cta: "Preskúmať obrázkové nástroje", toolCount: "48 nástrojov" },
+    text: { name: "Textové nástroje", description: "Transformujte, analyzujte, vyčistite, zakódujte a generujte text okamžite.", cta: "Textové nástroje", toolCount: "44+ nástrojov" },
   },
   popularTools: { sectionTitle: "Obľúbené nástroje", sectionSubtitle: "Skočte rovno k najpoužívanejším nástrojom", viewAll: "Zobraziť všetky" },
-  stats: { tools: "87+", toolsLabel: "Bezplatných nástrojov", languages: "45", languagesLabel: "Jazykov", users: "100%", usersLabel: "V prehliadači", price: "0 €", priceLabel: "Navždy zadarmo" },
+  stats: { tools: "131+", toolsLabel: "Bezplatných nástrojov", languages: "45", languagesLabel: "Jazykov", users: "100%", usersLabel: "V prehliadači", price: "0 €", priceLabel: "Navždy zadarmo" },
   trust: {
     sectionTitle: "Prečo ToolPop?",
     sectionSubtitle: "Bezpečnosť a pohodlie bez kompromisov",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Zdieľať", shareSubtitle: "Povedzte o ToolPop svojim priateľom!", shareCopyLink: "Kopírovať odkaz", shareCopied: "Skopírované!" },
   footer: { apps: "Nástroje", company: "Spoločnosť", about: "O nás", contact: "Kontakt", faq: "Časté otázky", blog: "Blog", legal: "Právne informácie", privacy: "Ochrana súkromia", terms: "Podmienky používania", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Bezplatné online nástroje pre PDF, obrázky a viac. Bez registrácie.", madeWith: "Vytvorené s láskou pre všetkých" },
   search: { noResults: "Žiadne výsledky" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Obrázok", text: "Text" },
 };
 export default dict;

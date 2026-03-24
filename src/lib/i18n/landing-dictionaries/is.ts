@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "Breyttu, sameinaðu og umbreyttu PDF skjölum. Breyttu stærð, þjappaðu og umbreyttu myndum. Allt ókeypis, beint í vafranum.",
   },
   hero: {
-    badge: "87+ ókeypis netverkfæri",
+    badge: "131+ ókeypis netverkfæri",
     title: "Öll verkfærin sem þú þarft, á einum stað — ToolPop",
     titleAccent: "ToolPop",
     subtitle: "Vinndu með PDF skjöl og myndir beint í vafranum. Engin uppsetning, engin nýskráning.",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF verkfæri", description: "Sameining, skipting, umbreyting, breyting og þjöppun — allt sem þú getur gert við PDF.", cta: "Skoða PDF verkfæri", toolCount: "39 verkfæri" },
     image: { name: "Myndaverkfæri", description: "Stærðarbreyting, klipping, umbreyting, áhrif, QR kóðar — allt fyrir myndir.", cta: "Skoða myndaverkfæri", toolCount: "48 verkfæri" },
+    text: { name: "Textaverkfæri", description: "Umbreyttu, greindu, hreinsaðu, kóðaðu og búðu til texta samstundis.", cta: "Textaverkfæri", toolCount: "44+ verkfæri" },
   },
   popularTools: { sectionTitle: "Vinsæl verkfæri", sectionSubtitle: "Farðu beint í mest notuðu verkfærin", viewAll: "Sjá öll" },
-  stats: { tools: "87+", toolsLabel: "Ókeypis verkfæri", languages: "45", languagesLabel: "Tungumál", users: "100%", usersLabel: "Í vafranum", price: "0 kr", priceLabel: "Alltaf ókeypis" },
+  stats: { tools: "131+", toolsLabel: "Ókeypis verkfæri", languages: "45", languagesLabel: "Tungumál", users: "100%", usersLabel: "Í vafranum", price: "0 kr", priceLabel: "Alltaf ókeypis" },
   trust: {
     sectionTitle: "Af hverju ToolPop?",
     sectionSubtitle: "Öryggi og þægindi án málamiðlana",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Deila", shareSubtitle: "Segðu vinum þínum frá ToolPop!", shareCopyLink: "Afrita hlekk", shareCopied: "Afritað!" },
   footer: { apps: "Verkfæri", company: "Fyrirtæki", about: "Um okkur", contact: "Hafa samband", faq: "Algengar spurningar", blog: "Blogg", legal: "Lagalegar upplýsingar", privacy: "Persónuverndarstefna", terms: "Þjónustuskilmálar", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Ókeypis netverkfæri fyrir PDF, myndir og fleira. Engin skráning nauðsynleg.", madeWith: "Gert af ástúð fyrir alla" },
   search: { noResults: "Engar niðurstöður fundust" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "Mynd", text: "Texti" },
 };
 export default dict;

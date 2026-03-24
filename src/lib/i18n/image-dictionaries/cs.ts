@@ -12,6 +12,7 @@ const cs: ImageDictionary = {
     shareSubtitle: "Řekněte o tom dál!",
     shareCopied: "Zkopírováno!",
     shareCopyLink: "Kopírovat odkaz",
+    unknownError: "Došlo k neznámé chybě",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const cs: ImageDictionary = {
       image: "Obrázek",
       watermarkImage: "Obrázek vodoznaku",
       enterWatermarkText: "Zadejte text vodoznaku...",
+      defaultWatermarkText: "Vodoznak",
       chooseImage: "Vybrat obrázek...",
       fontFamily: "Písmo",
       fontSize: "Velikost písma",

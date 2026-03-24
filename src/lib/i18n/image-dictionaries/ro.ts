@@ -12,6 +12,7 @@ const ro: ImageDictionary = {
     shareSubtitle: "Dă de veste!",
     shareCopied: "Copiat!",
     shareCopyLink: "Copiază linkul",
+    unknownError: "A apărut o eroare necunoscută",
   },
   toolOptions: {
     resize: {
@@ -186,6 +187,7 @@ const ro: ImageDictionary = {
       image: "Imagine",
       watermarkImage: "Imagine filigran",
       enterWatermarkText: "Introdu text filigran...",
+      defaultWatermarkText: "Filigran",
       chooseImage: "Alege imaginea...",
       fontFamily: "Familie de fonturi",
       fontSize: "Dimensiune font",

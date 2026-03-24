@@ -19,6 +19,8 @@ const fr: ImageDictionary = {
     favorites: "Favoris",
     favDragHint: "Glissez pour réorganiser",
     favHint: "Ajoutez vos outils favoris pour un accès rapide",
+    gridView: "Vue grille",
+    listView: "Vue liste",
   },
   trust: {
     encryption: "Traitement sécurisé",
@@ -304,6 +306,7 @@ const fr: ImageDictionary = {
     shareSubtitle: "Faites passer le mot !",
     shareCopied: "Copié !",
     shareCopyLink: "Copier le lien",
+    unknownError: "Une erreur inconnue s'est produite",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const fr: ImageDictionary = {
       image: "Image",
       watermarkImage: "Image du filigrane",
       enterWatermarkText: "Saisissez le texte du filigrane...",
+      defaultWatermarkText: "Filigrane",
       chooseImage: "Choisir une image...",
       fontFamily: "Police",
       fontSize: "Taille de police",

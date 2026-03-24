@@ -19,6 +19,8 @@ const zh: ImageDictionary = {
     favorites: "收藏夹",
     favDragHint: "拖拽排序",
     favHint: "把常用工具添加到收藏夹",
+    gridView: "网格视图",
+    listView: "列表视图",
   },
   trust: {
     encryption: "安全处理",
@@ -303,6 +305,7 @@ const zh: ImageDictionary = {
     shareSubtitle: "让更多人知道!",
     shareCopied: "已复制!",
     shareCopyLink: "复制链接",
+    unknownError: "发生未知错误",
   },
   toolOptions: {
     resize: {
@@ -477,6 +480,7 @@ const zh: ImageDictionary = {
       image: "图片",
       watermarkImage: "水印图片",
       enterWatermarkText: "输入水印文字...",
+      defaultWatermarkText: "水印",
       chooseImage: "选择图片...",
       fontFamily: "字体",
       fontSize: "字号",

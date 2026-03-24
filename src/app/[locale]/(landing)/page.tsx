@@ -8,6 +8,8 @@ import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { apps } from "@/lib/apps";
 import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
+import { tools as textTools } from "@/lib/text/tools";
+import { getTextDictionary } from "@/lib/i18n/get-text-dictionary";
 import { Container } from "@/lib/ui";
 import { PdfAppIcon, ImageAppIcon, appIconMap } from "@/lib/app-icons";
 import { LandingContent } from "./landing-content";
@@ -56,9 +58,10 @@ export default async function LandingPage({
 }) {
   const { locale } = await params;
   const dict = await getLandingDictionary(locale as Locale);
-  const [pdfDict, imageDict] = await Promise.all([
+  const [pdfDict, imageDict, textDict] = await Promise.all([
     getDictionary(locale as Locale),
     getImageDictionary(locale as Locale),
+    getTextDictionary(locale as Locale),
   ]);
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
@@ -66,10 +69,12 @@ export default async function LandingPage({
   ]);
 
   // Build popular tools data
+  const toolDefsMap: Record<string, { slug: string; title: string; description: string; emoji: string; comingSoon?: boolean }[]> = { pdf: pdfTools, image: imageTools, text: textTools };
+  const appDictMap: Record<string, unknown> = { pdf: pdfDict, image: imageDict, text: textDict };
   const popularTools: PopularToolInfo[] = [];
   for (const app of apps) {
-    const toolDefs = app.slug === "pdf" ? pdfTools : imageTools;
-    const appDict = app.slug === "pdf" ? pdfDict : imageDict;
+    const toolDefs = toolDefsMap[app.slug] ?? [];
+    const appDict = appDictMap[app.slug];
     for (const slug of app.popularToolSlugs) {
       const tool = toolDefs.find((t) => t.slug === slug);
       if (!tool || tool.comingSoon) continue;
@@ -88,8 +93,8 @@ export default async function LandingPage({
   // Build all tools for search
   const allTools: PopularToolInfo[] = [];
   for (const app of apps) {
-    const toolDefs = app.slug === "pdf" ? pdfTools : imageTools;
-    const appDict = app.slug === "pdf" ? pdfDict : imageDict;
+    const toolDefs = toolDefsMap[app.slug] ?? [];
+    const appDict = appDictMap[app.slug];
     for (const tool of toolDefs) {
       if (tool.comingSoon) continue;
       const toolDict = (appDict as unknown as Record<string, Record<string, Record<string, string>>>).tools?.[tool.slug];

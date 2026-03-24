@@ -1,6 +1,6 @@
 export interface BlogArticle {
   slug: string;
-  app: "pdf" | "image";
+  app: "pdf" | "image" | "text";
   category: "guide" | "tips" | "knowledge";
   publishedAt: string;
   content: Record<
@@ -2144,13 +2144,1434 @@ GPS 없이도 메타데이터는 패턴을 드러냅니다. 카메라 시리얼 
       },
     },
   },
+  {
+    slug: "understanding-character-encoding",
+    app: "text",
+    category: "knowledge",
+    publishedAt: "2026-03-20",
+    content: {
+      en: {
+        title: "Understanding Character Encoding: UTF-8, ASCII, and Unicode Explained",
+        description:
+          "A deep dive into how computers represent text — from the origins of ASCII to the triumph of UTF-8 and why character encoding still matters today.",
+        body: `## Why Characters Need Encoding
+
+Computers store everything as numbers. When you type the letter "A" on your keyboard, the computer does not store the shape of the letter — it stores a number that represents it. The system that maps characters to numbers is called a character encoding. Getting this mapping wrong is how you end up with garbled text, question marks where accents should be, or the infamous diamond-with-a-question-mark symbol that haunts poorly configured websites.
+
+Understanding encoding is not just an academic exercise. If you have ever pasted text from one application into another and watched special characters turn into gibberish, you have experienced an encoding mismatch firsthand. Knowing the basics helps you avoid these problems and fix them when they appear.
+
+## ASCII: Where It All Started
+
+The American Standard Code for Information Interchange, or ASCII, was published in 1963. It assigns numbers 0 through 127 to 128 characters, covering the English alphabet (uppercase and lowercase), digits 0 through 9, punctuation marks, and a set of control characters like tab, newline, and carriage return.
+
+ASCII was elegant in its simplicity. Seven bits were enough to represent every character, and it worked perfectly for English text. The problem was obvious: the world has far more than 128 characters. Languages like French, German, and Spanish need accented letters. Chinese, Japanese, and Korean use thousands of distinct characters. Arabic and Hebrew are written right to left. ASCII had no room for any of this.
+
+## The Code Page Era
+
+To handle characters beyond ASCII, vendors created extended character sets known as code pages. These used the 8th bit (values 128 through 255) to add 128 more characters. ISO 8859-1 (Latin-1) covered Western European languages. ISO 8859-5 handled Cyrillic. Shift_JIS and EUC-JP served Japanese text. Windows had its own variations, like Windows-1252.
+
+The fundamental problem with code pages was that the same byte value meant different characters in different encodings. Byte 0xC0 might be "A with grave accent" in Latin-1 but a completely different character in a Cyrillic encoding. If you opened a file without knowing which code page was used, you got mojibake — scrambled, unreadable text.
+
+This was not a minor inconvenience. It created real barriers to international communication, data exchange, and software development. Every application had to track which encoding each piece of text used, and mistakes were frequent.
+
+## Unicode: One Number for Every Character
+
+The Unicode Consortium set out to solve this problem permanently by assigning a unique number — called a code point — to every character in every writing system. The first version in 1991 covered roughly 7,000 characters. Today, Unicode 15.1 defines over 149,000 characters spanning 161 scripts, plus thousands of symbols, technical marks, and emoji.
+
+Unicode code points are written in the format U+XXXX, where XXXX is a hexadecimal number. U+0041 is the Latin capital letter A. U+4E16 is the Chinese character meaning "world." U+1F600 is the grinning face emoji. Every character has exactly one code point, no matter which platform or application you use.
+
+But Unicode is a character set, not an encoding. It tells you what number represents each character. It does not specify how those numbers should be stored as bytes in a file. That is where encoding formats like UTF-8, UTF-16, and UTF-32 come in.
+
+## UTF-8: The Encoding That Won
+
+UTF-8, designed by Ken Thompson and Rob Pike in 1992, encodes Unicode code points using one to four bytes. Its brilliance lies in backward compatibility: ASCII characters (U+0000 through U+007F) use exactly one byte, and that byte is identical to its ASCII value. This means any valid ASCII file is also a valid UTF-8 file with no conversion needed.
+
+Characters beyond ASCII use multi-byte sequences. Latin accented characters and many symbols use two bytes. Characters from most Asian scripts use three bytes. Emoji and rare historical scripts use four bytes. The first byte of a multi-byte sequence tells the decoder how many bytes to expect, making the format self-synchronizing — you can jump to any point in a UTF-8 stream and find the start of the next character without reading from the beginning.
+
+UTF-8 has become the dominant encoding on the internet. As of 2024, over 98 percent of all web pages use UTF-8. It is the default encoding in HTML5, JSON, XML, and most modern programming languages. When you create a new file today, UTF-8 is almost certainly the right choice.
+
+## UTF-16 and UTF-32
+
+UTF-16 uses two bytes for characters in the Basic Multilingual Plane (code points up to U+FFFF) and four bytes for characters beyond that range. Java and JavaScript use UTF-16 internally, which is why string length in these languages sometimes gives unexpected results for emoji — a single emoji might count as two "characters" because it requires a surrogate pair.
+
+UTF-32 uses exactly four bytes for every character. This makes random access simple — the 50th character is always at byte offset 200 — but wastes significant space for text that is primarily ASCII or Latin-based. UTF-32 is rarely used for file storage or transmission.
+
+## Why Encoding Still Matters
+
+Even in a world converging on UTF-8, encoding problems persist. Legacy systems still produce files in older encodings. CSV exports from some spreadsheet applications default to the system locale encoding rather than UTF-8. Database columns might be configured with a specific encoding that does not match the application layer. Email headers can specify one encoding while the body uses another.
+
+The Byte Order Mark (BOM) adds another layer of complexity. Some applications prepend the bytes EF BB BF to UTF-8 files. While the Unicode standard permits this, it causes problems with Unix tools, JSON parsers, and shell scripts that do not expect invisible bytes at the start of a file.
+
+When working with text, always verify which encoding you are using. Specify UTF-8 explicitly when creating files, opening database connections, or sending HTTP responses. When receiving text from external sources, check the declared encoding before processing.
+
+## Practical Takeaways
+
+Use UTF-8 for everything new. There is no reason to choose any other encoding for new projects, files, or databases. If you encounter garbled text, the most likely cause is an encoding mismatch — the file was written in one encoding and read in another. Tools that convert between encodings can fix existing files, but the long-term solution is always to standardize on UTF-8.
+
+Character encoding is invisible infrastructure. When it works, nobody notices. When it breaks, text becomes unreadable. Understanding how it works puts you in a position to prevent problems before they happen and diagnose them quickly when they do.`,
+      },
+      ko: {
+        title: "문자 인코딩 이해하기: UTF-8, ASCII, 유니코드 완전 정복",
+        description:
+          "컴퓨터가 텍스트를 표현하는 원리를 파헤칩니다. ASCII의 탄생부터 UTF-8의 승리까지, 문자 인코딩이 왜 지금도 중요한지 알아보세요.",
+        body: `## 문자에 인코딩이 필요한 이유
+
+컴퓨터는 모든 것을 숫자로 저장합니다. 키보드에서 "A"를 입력하면 컴퓨터는 글자의 모양이 아니라 그 글자를 나타내는 숫자를 저장합니다. 문자를 숫자에 대응시키는 체계가 바로 문자 인코딩입니다. 이 대응이 어긋나면 깨진 글자, 악센트 자리에 물음표, 혹은 설정 잘못된 웹사이트의 상징과도 같은 다이아몬드 속 물음표 기호를 만나게 됩니다.
+
+한 프로그램에서 다른 프로그램으로 텍스트를 붙여넣었더니 특수문자가 의미 불명의 기호로 변한 경험이 있다면, 인코딩 불일치를 직접 겪은 겁니다. 기본 원리를 알면 이런 문제를 예방하고, 발생했을 때 빠르게 해결할 수 있습니다.
+
+## ASCII: 모든 것의 시작
+
+ASCII(American Standard Code for Information Interchange)는 1963년에 공개되었습니다. 0부터 127까지의 숫자에 128개의 문자를 배정합니다. 영문 대소문자, 숫자 0~9, 구두점, 그리고 탭·줄바꿈·캐리지 리턴 같은 제어 문자가 포함됩니다.
+
+ASCII는 단순함 속에 우아함이 있었습니다. 7비트면 모든 문자를 표현할 수 있었고, 영어 텍스트에는 완벽했습니다. 하지만 세계에는 128개보다 훨씬 많은 문자가 있습니다. 프랑스어, 독일어, 스페인어에는 악센트 문자가 필요하고, 중국어·일본어·한국어는 수천 개의 고유한 글자를 사용합니다. 아랍어와 히브리어는 오른쪽에서 왼쪽으로 씁니다. ASCII에는 이 모든 것을 담을 여유가 없었습니다.
+
+## 코드 페이지 시대
+
+ASCII를 넘어서는 문자를 다루기 위해 각 벤더는 코드 페이지라는 확장 문자 집합을 만들었습니다. 8번째 비트(128~255)를 활용해 128개의 문자를 더 추가하는 방식입니다. ISO 8859-1(Latin-1)은 서유럽 언어를, ISO 8859-5는 키릴 문자를, Shift_JIS와 EUC-JP는 일본어를 담당했습니다. 윈도우에는 Windows-1252 같은 자체 변형이 있었습니다.
+
+코드 페이지의 근본적인 문제는 같은 바이트 값이 인코딩에 따라 다른 문자를 뜻한다는 점이었습니다. 0xC0이 Latin-1에서는 "그레이브 악센트가 붙은 A"이지만, 키릴 인코딩에서는 전혀 다른 문자입니다. 어떤 코드 페이지가 사용되었는지 모르고 파일을 열면 모지바케(문자 깨짐)가 발생합니다.
+
+이것은 사소한 불편이 아니었습니다. 국제 커뮤니케이션, 데이터 교환, 소프트웨어 개발에 실질적인 장벽을 만들었습니다.
+
+## 유니코드: 모든 문자에 하나의 번호
+
+유니코드 컨소시엄은 이 문제를 영구적으로 해결하기 위해, 모든 문자 체계의 모든 문자에 고유한 번호 — 코드 포인트 — 를 부여하기로 했습니다. 1991년 첫 버전은 약 7,000자를 다뤘고, 현재 유니코드 15.1은 161개 스크립트에 걸쳐 149,000자 이상과 수천 개의 기호, 이모지를 정의합니다.
+
+유니코드 코드 포인트는 U+XXXX 형식으로 표기합니다. U+0041은 라틴 대문자 A, U+AC00은 한글 "가", U+1F600은 활짝 웃는 이모지입니다. 플랫폼이나 애플리케이션에 관계없이 모든 문자에 정확히 하나의 코드 포인트가 대응됩니다.
+
+하지만 유니코드는 문자 집합이지, 인코딩이 아닙니다. 어떤 숫자가 어떤 문자를 나타내는지 알려줄 뿐, 그 숫자를 파일에 어떤 바이트로 저장할지는 정하지 않습니다. 그 역할을 하는 것이 UTF-8, UTF-16, UTF-32 같은 인코딩 형식입니다.
+
+## UTF-8: 승리한 인코딩
+
+UTF-8은 1992년 켄 톰프슨과 롭 파이크가 설계했으며, 유니코드 코드 포인트를 1~4바이트로 인코딩합니다. 핵심은 하위 호환성입니다. ASCII 문자(U+0000~U+007F)는 정확히 1바이트를 사용하며, 그 바이트 값은 ASCII와 동일합니다. 즉, 유효한 ASCII 파일은 변환 없이 그대로 유효한 UTF-8 파일이 됩니다.
+
+ASCII를 넘어서는 문자는 다중 바이트 시퀀스를 사용합니다. 라틴 악센트 문자와 많은 기호는 2바이트, 대부분의 아시아 문자(한글 포함)는 3바이트, 이모지와 희귀 역사 스크립트는 4바이트입니다. 첫 번째 바이트가 후속 바이트 수를 알려주므로, 스트림의 어느 지점에서든 다음 문자의 시작점을 찾을 수 있습니다.
+
+UTF-8은 인터넷에서 지배적인 인코딩이 되었습니다. 2024년 기준 전 세계 웹 페이지의 98% 이상이 UTF-8을 사용합니다. HTML5, JSON, XML, 대부분의 현대 프로그래밍 언어에서 기본 인코딩입니다. 오늘 새 파일을 만든다면 UTF-8이 거의 확실한 정답입니다.
+
+## UTF-16과 UTF-32
+
+UTF-16은 기본 다국어 평면(U+FFFF 이하)의 문자에 2바이트, 그 이상의 문자에 4바이트를 사용합니다. 자바와 자바스크립트는 내부적으로 UTF-16을 사용하는데, 이모지 하나가 서로게이트 쌍을 필요로 해서 문자열 길이가 예상과 다르게 나오는 이유가 여기에 있습니다.
+
+UTF-32는 모든 문자에 정확히 4바이트를 사용합니다. 50번째 문자가 항상 바이트 오프셋 200에 있으므로 임의 접근이 간단하지만, ASCII나 라틴 기반 텍스트에는 공간 낭비가 심합니다. 파일 저장이나 전송에 UTF-32를 쓰는 경우는 드뭅니다.
+
+## 인코딩이 여전히 중요한 이유
+
+UTF-8으로 수렴하는 세상에서도 인코딩 문제는 계속됩니다. 레거시 시스템은 여전히 오래된 인코딩으로 파일을 생성합니다. 일부 스프레드시트의 CSV 내보내기는 UTF-8이 아닌 시스템 로캘 인코딩을 기본값으로 사용합니다. 데이터베이스 컬럼의 인코딩이 애플리케이션 레이어와 맞지 않을 수 있고, 이메일 헤더와 본문의 인코딩이 다를 수도 있습니다.
+
+텍스트를 다룰 때는 항상 어떤 인코딩을 사용하고 있는지 확인하세요. 파일 생성, DB 연결, HTTP 응답 전송 시 UTF-8을 명시적으로 지정하세요. 외부에서 받은 텍스트는 처리 전에 선언된 인코딩을 반드시 확인하세요.
+
+## 핵심 정리
+
+새 프로젝트, 파일, 데이터베이스에는 UTF-8을 쓰세요. 다른 인코딩을 선택할 이유가 없습니다. 깨진 텍스트를 만났다면 인코딩 불일치가 원인일 가능성이 가장 높습니다. 인코딩 변환 도구로 기존 파일을 수정할 수 있지만, 장기적인 해결책은 항상 UTF-8 표준화입니다.
+
+문자 인코딩은 보이지 않는 인프라입니다. 제대로 작동하면 아무도 눈치채지 못하고, 깨지면 텍스트가 읽을 수 없게 됩니다. 작동 원리를 이해하면 문제를 예방하고, 발생했을 때 빠르게 진단할 수 있습니다.`,
+      },
+    },
+  },
+  {
+    slug: "regex-guide-for-beginners",
+    app: "text",
+    category: "guide",
+    publishedAt: "2026-03-22",
+    content: {
+      en: {
+        title: "Regular Expressions Made Simple: A Practical Guide",
+        description:
+          "Learn the fundamentals of regular expressions with clear explanations and practical examples you can use immediately for text searching, validation, and transformation.",
+        body: `## What Are Regular Expressions?
+
+A regular expression — regex for short — is a sequence of characters that defines a search pattern. Think of it as a small specialized language for describing text patterns. Instead of searching for a specific word, you can search for a pattern like "any word that starts with a capital letter and ends with ing" or "a sequence of exactly five digits."
+
+Regular expressions appear in almost every programming language, text editor, command-line tool, and search interface that handles text. Learning the basics gives you a powerful tool that transfers across environments and will serve you for your entire career.
+
+## Literal Characters and Metacharacters
+
+The simplest regex is just a literal string. The pattern \`hello\` matches the text "hello" wherever it appears. But the real power comes from metacharacters — characters that have special meaning in regex syntax.
+
+The dot \`.\` matches any single character except a newline. So \`h.t\` matches "hat," "hot," "hit," and even "h3t." The caret \`^\` matches the start of a line, and the dollar sign \`$\` matches the end. The pattern \`^Hello\` only matches "Hello" when it appears at the beginning of a line.
+
+Square brackets \`[]\` define a character class — a set of characters where any single one can match. \`[aeiou]\` matches any vowel. \`[0-9]\` matches any digit. \`[A-Za-z]\` matches any English letter. Adding a caret inside the brackets negates the class: \`[^0-9]\` matches any character that is not a digit.
+
+## Quantifiers
+
+Quantifiers control how many times a pattern element can repeat. The asterisk \`*\` means "zero or more times." The plus \`+\` means "one or more times." The question mark \`?\` means "zero or one time" — making the preceding element optional.
+
+Curly braces let you specify exact counts. \`a{3}\` matches exactly three consecutive "a" characters. \`a{2,5}\` matches between two and five. \`a{3,}\` matches three or more.
+
+Combining these with character classes is where patterns become truly useful. \`[0-9]{3}-[0-9]{4}\` matches a pattern like "555-1234." \`[A-Z][a-z]+\` matches a capitalized word.
+
+## Common Shorthand Classes
+
+Typing \`[0-9]\` repeatedly gets tedious, so regex provides shorthand classes. \`\\d\` matches any digit (equivalent to \`[0-9]\`). \`\\w\` matches any "word character" — letters, digits, and underscores. \`\\s\` matches any whitespace character — spaces, tabs, and newlines.
+
+Each of these has an uppercase negation. \`\\D\` matches anything that is not a digit. \`\\W\` matches non-word characters. \`\\S\` matches non-whitespace.
+
+## Grouping and Alternation
+
+Parentheses \`()\` create groups. Groups serve two purposes: they let you apply quantifiers to multi-character sequences, and they capture matched text for later reference.
+
+The pattern \`(ha)+\` matches "ha," "haha," "hahaha," and so on — the plus applies to the entire group, not just the last character. Without parentheses, \`ha+\` would match "ha," "haa," "haaa" — the plus would only apply to the "a."
+
+The pipe character \`|\` provides alternation — an "or" operation. \`cat|dog\` matches either "cat" or "dog." Combined with groups, \`(cat|dog) food\` matches "cat food" or "dog food."
+
+## Practical Examples You Can Use Today
+
+**Email validation (basic):** \`^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$\`
+This matches a string that starts with word characters, dots, plus signs, or hyphens, followed by @, a domain name, a dot, and a top-level domain of at least two letters.
+
+**Phone number extraction:** \`\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}\`
+This matches phone numbers in formats like (555) 123-4567, 555-123-4567, 555.123.4567, and 5551234567.
+
+**URL detection:** \`https?://[\\w\\-]+(\\.[\\w\\-]+)+[/\\w\\-._~:?#@!$&'()*+,;=]*\`
+This matches HTTP and HTTPS URLs with domain names and optional paths.
+
+**Date formats:** \`\\d{4}[-/]\\d{2}[-/]\\d{2}\`
+This matches dates in YYYY-MM-DD or YYYY/MM/DD format.
+
+**Remove HTML tags:** \`<[^>]+>\`
+This matches any HTML tag for removal — useful for quick text extraction, though a proper HTML parser is better for complex documents.
+
+## Anchors and Boundaries
+
+Beyond \`^\` and \`$\` for line boundaries, the word boundary \`\\b\` is extremely useful. It matches the position between a word character and a non-word character. \`\\bcat\\b\` matches "cat" as a whole word but not "category" or "concatenate."
+
+This is essential for find-and-replace operations where you need to match whole words only. Without word boundaries, replacing "he" in a document would also affect "the," "she," "here," and every other word containing those letters.
+
+## Greedy vs. Lazy Matching
+
+By default, quantifiers are greedy — they match as much text as possible. In the string "start middle end," the pattern \`start.*end\` matches the entire string because \`.*\` grabs everything it can before giving back just enough for "end" to match.
+
+Adding a question mark after a quantifier makes it lazy — it matches as little as possible. \`start.*?end\` would match "start middle end" but stop at the first "end" rather than the last.
+
+This distinction matters when extracting content between delimiters. If you are trying to match individual HTML tags, a greedy \`<.*>\` would match from the first \`<\` to the last \`>\` in the line, swallowing everything in between. A lazy \`<.*?>\` matches each tag individually.
+
+## Tips for Writing Better Regex
+
+Start simple and add complexity. Write a pattern that matches your target, test it, then refine to exclude false positives. Trying to write a perfect regex in one shot usually fails.
+
+Use online regex testers. Tools like regex101.com show real-time matches, explain each part of your pattern, and highlight capture groups. They accelerate learning enormously.
+
+Comment complex patterns. Most regex engines support a verbose mode where you can add whitespace and comments. Use it for any pattern longer than a few characters.
+
+Know when not to use regex. Parsing nested structures like HTML, JSON, or programming languages is generally a job for proper parsers, not regular expressions. Regex works best for flat patterns in text.`,
+      },
+      ko: {
+        title: "정규식 쉽게 배우기: 실전 가이드",
+        description:
+          "텍스트 검색, 유효성 검사, 변환에 바로 활용할 수 있는 정규 표현식의 기본기를 명확한 설명과 실용 예제로 배워보세요.",
+        body: `## 정규식이란?
+
+정규 표현식(regular expression), 줄여서 정규식(regex)은 검색 패턴을 정의하는 문자 시퀀스입니다. 텍스트 패턴을 서술하기 위한 작은 전용 언어라고 생각하면 됩니다. 특정 단어를 검색하는 대신 "대문자로 시작하고 ing로 끝나는 단어" 또는 "정확히 5자리 숫자"처럼 패턴을 검색할 수 있습니다.
+
+정규식은 거의 모든 프로그래밍 언어, 텍스트 에디터, 커맨드라인 도구, 텍스트 검색 인터페이스에서 지원됩니다. 기본기를 배워두면 환경을 가리지 않는 강력한 도구를 손에 넣게 됩니다.
+
+## 리터럴 문자와 메타문자
+
+가장 단순한 정규식은 그냥 문자열 그대로입니다. 패턴 \`hello\`는 텍스트에서 "hello"를 찾습니다. 하지만 진짜 힘은 메타문자 — 정규식 문법에서 특별한 의미를 가진 문자 — 에서 나옵니다.
+
+점 \`.\`은 줄바꿈을 제외한 모든 단일 문자와 매칭됩니다. \`h.t\`은 "hat", "hot", "hit", 심지어 "h3t"도 매칭합니다. 캐럿 \`^\`은 줄의 시작, 달러 \`$\`는 줄의 끝을 의미합니다. \`^Hello\`는 줄 맨 앞에 있는 "Hello"만 매칭합니다.
+
+대괄호 \`[]\`는 문자 클래스를 정의합니다. \`[aeiou]\`는 모음 하나, \`[0-9]\`는 숫자 하나, \`[A-Za-z]\`는 영문자 하나와 매칭됩니다. 대괄호 안에 캐럿을 넣으면 부정 — \`[^0-9]\`는 숫자가 아닌 문자와 매칭됩니다.
+
+## 수량자
+
+수량자는 패턴 요소의 반복 횟수를 제어합니다. \`*\`는 "0회 이상", \`+\`는 "1회 이상", \`?\`는 "0회 또는 1회"(선택 요소)를 의미합니다.
+
+중괄호로 정확한 횟수를 지정합니다. \`a{3}\`은 연속된 "a" 3개, \`a{2,5}\`는 2~5개, \`a{3,}\`은 3개 이상입니다.
+
+문자 클래스와 조합하면 진짜 유용해집니다. \`[0-9]{3}-[0-9]{4}\`는 "555-1234" 같은 패턴과 매칭됩니다. \`[A-Z][a-z]+\`는 대문자로 시작하는 단어와 매칭됩니다.
+
+## 주요 축약 클래스
+
+\`[0-9]\`를 반복 입력하기 귀찮으니 축약 클래스가 있습니다. \`\\d\`는 숫자, \`\\w\`는 단어 문자(영문자·숫자·밑줄), \`\\s\`는 공백 문자(스페이스·탭·줄바꿈)와 매칭됩니다.
+
+대문자로 쓰면 부정입니다. \`\\D\`는 숫자 아닌 것, \`\\W\`는 단어 문자 아닌 것, \`\\S\`는 공백 아닌 것입니다.
+
+## 그룹과 대안
+
+괄호 \`()\`는 그룹을 만듭니다. 수량자를 여러 문자에 한꺼번에 적용하거나, 매칭된 텍스트를 캡처해 나중에 참조할 수 있습니다.
+
+\`(ha)+\`는 "ha", "haha", "hahaha"와 매칭 — 플러스가 그룹 전체에 적용됩니다. 괄호 없이 \`ha+\`를 쓰면 "ha", "haa", "haaa"와 매칭 — 플러스가 "a"에만 적용되죠.
+
+파이프 \`|\`는 OR 연산입니다. \`cat|dog\`은 "cat" 또는 "dog"과 매칭됩니다.
+
+## 바로 쓸 수 있는 실전 예제
+
+**이메일 검증(기본):** \`^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$\`
+
+**전화번호 추출:** \`\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}\`
+
+**URL 감지:** \`https?://[\\w\\-]+(\\.[\\w\\-]+)+[/\\w\\-._~:?#@!$&'()*+,;=]*\`
+
+**날짜 형식:** \`\\d{4}[-/]\\d{2}[-/]\\d{2}\`
+
+**HTML 태그 제거:** \`<[^>]+>\`
+
+## 앵커와 경계
+
+줄 경계인 \`^\`와 \`$\` 외에 단어 경계 \`\\b\`가 매우 유용합니다. \`\\bcat\\b\`는 독립된 단어 "cat"만 매칭하고, "category"나 "concatenate"는 건드리지 않습니다.
+
+찾아 바꾸기에서 전체 단어만 매칭해야 할 때 필수입니다. 단어 경계 없이 "he"를 바꾸면 "the", "she", "here" 속의 "he"까지 바뀌어 버립니다.
+
+## 탐욕적 vs. 게으른 매칭
+
+기본적으로 수량자는 탐욕적(greedy) — 가능한 한 많은 텍스트를 매칭합니다. "start middle end"에서 \`start.*end\`는 문자열 전체를 매칭합니다. \`.*\`가 최대한 많이 잡은 뒤 "end"가 매칭될 만큼만 돌려주기 때문입니다.
+
+수량자 뒤에 \`?\`를 붙이면 게으른(lazy) 매칭 — 가능한 한 적게 매칭합니다. \`start.*?end\`는 첫 번째 "end"에서 멈춥니다.
+
+HTML 태그 추출 시 이 차이가 중요합니다. 탐욕적 \`<.*>\`은 줄의 첫 \`<\`부터 마지막 \`>\`까지 통째로 잡지만, 게으른 \`<.*?>\`은 각 태그를 개별적으로 잡습니다.
+
+## 더 나은 정규식을 쓰는 팁
+
+단순하게 시작하고 점차 복잡하게. 목표를 매칭하는 패턴을 쓰고, 테스트한 뒤, 오탐을 줄여가세요. 한 번에 완벽한 정규식을 쓰려는 시도는 대부분 실패합니다.
+
+온라인 정규식 테스터를 활용하세요. regex101.com 같은 도구에서 실시간 매칭, 패턴 설명, 캡처 그룹 하이라이팅을 확인할 수 있습니다.
+
+복잡한 패턴에는 주석을 달아두세요. 대부분의 정규식 엔진이 공백과 주석을 허용하는 verbose 모드를 지원합니다.
+
+정규식을 쓰지 말아야 할 때를 아는 것도 중요합니다. HTML, JSON, 프로그래밍 언어처럼 중첩 구조를 파싱하는 건 정규식이 아니라 전용 파서의 영역입니다. 정규식은 텍스트의 평면적 패턴에 가장 잘 맞습니다.`,
+      },
+    },
+  },
+  {
+    slug: "text-formatting-productivity",
+    app: "text",
+    category: "tips",
+    publishedAt: "2026-03-24",
+    content: {
+      en: {
+        title: "10 Text Formatting Tricks That Save Hours of Work",
+        description:
+          "Practical text formatting techniques that eliminate repetitive manual editing — from batch case conversion to smart find-and-replace patterns and whitespace cleanup.",
+        body: `## Why Text Formatting Eats Your Time
+
+Text formatting is one of those tasks that seems trivial until you have to do it at scale. Renaming a hundred file entries to consistent casing. Cleaning up a pasted dataset full of stray tabs and double spaces. Converting a list from one delimiter to another. Individually, each fix takes seconds. Collectively, they consume hours you will never get back.
+
+The good news: nearly every common text formatting task can be automated or at least drastically sped up. Here are ten techniques that will change how you work with text.
+
+## 1. Batch Case Conversion
+
+Manually capitalizing titles or converting variable names between camelCase, snake_case, and UPPER_CASE is tedious and error-prone. Use a dedicated case conversion tool instead.
+
+Title Case capitalizes the first letter of each major word. Sentence case capitalizes only the first word. UPPER CASE and lower case convert everything. camelCase and snake_case transformations handle the word boundary detection automatically.
+
+The key insight: never manually retype text just to change its casing. Paste, convert, copy — done in seconds regardless of text length.
+
+## 2. Smart Find and Replace with Regex
+
+Standard find-and-replace handles exact matches. Regular expression find-and-replace handles patterns. The difference is transformational.
+
+Need to reformat dates from MM/DD/YYYY to YYYY-MM-DD? A single regex replacement does it: find \`(\\d{2})/(\\d{2})/(\\d{4})\` and replace with \`$3-$1-$2\`. Need to wrap every line in quotes? Find \`^(.+)$\` and replace with \`"$1"\`. Want to remove all HTML tags? Find \`<[^>]+>\` and replace with nothing.
+
+Learning even basic regex patterns unlocks formatting capabilities that would otherwise require custom scripts.
+
+## 3. Whitespace Normalization
+
+Copied text from websites, PDFs, or emails often carries invisible formatting pollution: non-breaking spaces, zero-width characters, tabs mixed with spaces, trailing whitespace on every line, and inconsistent line endings.
+
+A whitespace normalizer cleans all of this in one pass. Replace multiple consecutive spaces with single spaces. Convert tabs to spaces (or vice versa). Remove trailing whitespace from every line. Normalize line endings to your platform's standard. Strip zero-width characters that cause mysterious display issues.
+
+## 4. Line Deduplication
+
+Pasted data frequently contains duplicate entries. Manually scanning hundreds or thousands of lines for duplicates is impractical. A deduplication tool removes exact duplicate lines instantly.
+
+Advanced deduplication can be case-insensitive, trim whitespace before comparing, or keep the first versus last occurrence. Some tools also highlight duplicates without removing them, letting you review before acting.
+
+## 5. Column Extraction and Rearrangement
+
+Tab-separated or comma-separated data often needs column reordering. Maybe you received a CSV with columns in the wrong order, or you only need columns 1, 3, and 7 from a twenty-column dataset.
+
+Text-based column tools let you specify which columns to keep and in what order, using the delimiter of your choice. This avoids the overhead of opening a spreadsheet application for a simple restructuring task.
+
+## 6. List Formatting
+
+Converting between list formats is surprisingly common. You have a comma-separated list that needs to become one item per line. Or a vertical list that needs to become a JSON array. Or a numbered list that needs its numbers stripped.
+
+Dedicated list formatting handles these transformations: split by delimiter, join with a different delimiter, add prefixes or suffixes to each item, sort alphabetically or numerically, reverse order, and number items sequentially.
+
+## 7. Text Wrapping and Unwrapping
+
+Hard-wrapped text — where line breaks are inserted at a fixed width — is common in emails, code comments, and plain-text documents. Converting hard-wrapped paragraphs back to continuous text (unwrapping) or rewrapping at a different width are frequent needs.
+
+Unwrapping joins lines within each paragraph while preserving paragraph breaks. Rewrapping redistributes text to a new line width. These operations are manual nightmares but trivial with the right tool.
+
+## 8. Encoding Conversion
+
+Text received from external sources sometimes arrives in the wrong encoding. Latin-1 text misinterpreted as UTF-8, or vice versa, produces garbled characters. A quick encoding conversion tool identifies the likely source encoding and converts cleanly to your target encoding.
+
+Related: escaping and unescaping HTML entities, URL encoding, and Unicode escape sequences. Text that shows \`&amp;\` instead of \`&\` or \`%20\` instead of spaces needs unescaping, not manual editing.
+
+## 9. Number and Data Formatting
+
+Formatting numbers across locales — switching between periods and commas as decimal separators, adding thousand separators, converting between number bases — comes up regularly in data processing.
+
+Similarly, reformatting phone numbers to a consistent pattern, standardizing date formats, or padding numbers with leading zeros are all tasks where a formatting tool saves significant time compared to manual editing.
+
+## 10. Text Diffing
+
+When you have two versions of a text and need to find what changed, a text diff tool highlights additions, deletions, and modifications line by line. This is faster and more accurate than reading both versions side by side.
+
+Diff tools are not just for code. Comparing contract revisions, identifying changes in configuration files, or reviewing edited copy all benefit from automated difference detection.
+
+## Building Your Text Formatting Workflow
+
+The common thread in all these techniques is the same: stop editing text character by character. Identify the pattern, apply the transformation, and move on. Every minute spent manually reformatting text is a minute not spent on work that actually requires human judgment.
+
+Build a toolkit of text formatting tools that you can reach for instantly. Bookmark them, learn their shortcuts, and use them reflexively. The time savings compound quickly — what starts as a few minutes per task becomes hours saved per week.`,
+      },
+      ko: {
+        title: "업무 시간을 아껴주는 텍스트 포맷팅 꿀팁 10가지",
+        description:
+          "반복적인 수작업 편집을 없애주는 텍스트 포맷팅 기법 — 대소문자 일괄 변환, 정규식 찾아 바꾸기, 공백 정리까지 실전 팁을 모았습니다.",
+        body: `## 텍스트 포맷팅이 시간을 잡아먹는 이유
+
+텍스트 포맷팅은 한두 건이면 별것 아닌데, 대량으로 하면 이야기가 달라집니다. 파일명 100개의 대소문자를 통일하거나, 붙여넣은 데이터에 섞인 탭과 이중 공백을 정리하거나, 구분자를 바꾸거나. 건건이는 몇 초지만 모이면 되돌릴 수 없는 시간을 잡아먹습니다.
+
+좋은 소식: 흔한 텍스트 포맷팅 작업은 거의 전부 자동화하거나 획기적으로 빠르게 할 수 있습니다. 텍스트 작업 방식을 바꿔줄 10가지 기법을 소개합니다.
+
+## 1. 대소문자 일괄 변환
+
+제목을 하나하나 대문자로 바꾸거나 camelCase와 snake_case를 왔다 갔다 하는 건 지루하고 실수하기 쉽습니다. 전용 변환 도구를 쓰세요.
+
+Title Case는 주요 단어의 첫 글자를 대문자로, Sentence case는 첫 단어만 대문자로, UPPER CASE와 lower case는 전체를 변환합니다. camelCase↔snake_case 변환은 단어 경계를 자동 감지합니다.
+
+핵심: 대소문자를 바꾸려고 텍스트를 다시 타이핑하지 마세요. 붙여넣고, 변환하고, 복사 — 텍스트 길이에 상관없이 몇 초면 끝납니다.
+
+## 2. 정규식 찾아 바꾸기
+
+일반 찾아 바꾸기는 정확한 문자열만 처리하지만, 정규식 찾아 바꾸기는 패턴을 처리합니다. 차원이 다릅니다.
+
+날짜를 MM/DD/YYYY에서 YYYY-MM-DD로 바꾸고 싶다면? 정규식 한 줄이면 됩니다: \`(\\d{2})/(\\d{2})/(\\d{4})\`를 찾아서 \`$3-$1-$2\`로 치환. 모든 줄을 따옴표로 감싸고 싶다면? \`^(.+)$\`를 \`"$1"\`로 치환. HTML 태그를 전부 지우고 싶다면? \`<[^>]+>\`를 빈 문자열로 치환.
+
+기초적인 정규식만 알아도 별도 스크립트 없이는 불가능한 포맷팅 작업을 처리할 수 있습니다.
+
+## 3. 공백 정규화
+
+웹사이트, PDF, 이메일에서 복사한 텍스트에는 보이지 않는 포맷 오염이 따라옵니다. 줄바꿈 없는 공백, 너비 없는 문자, 탭과 스페이스 혼용, 줄 끝의 불필요한 공백, 일관되지 않는 줄바꿈 문자 등.
+
+공백 정규화 도구는 이 모든 것을 한 번에 정리합니다. 연속 공백을 하나로 합치고, 탭을 스페이스로(혹은 반대로) 바꾸고, 줄 끝 공백을 제거하고, 줄바꿈 문자를 통일하고, 문제를 일으키는 너비 없는 문자를 삭제합니다.
+
+## 4. 중복 줄 제거
+
+붙여넣은 데이터에 중복 항목이 있는 경우가 잦습니다. 수백, 수천 줄을 눈으로 확인하는 건 비현실적입니다. 중복 제거 도구를 쓰면 순식간에 완료됩니다.
+
+고급 중복 제거는 대소문자 무시, 공백 트리밍 후 비교, 첫 번째/마지막 항목 유지 등을 지원합니다. 삭제 전 중복 항목만 하이라이트해서 검토할 수 있는 도구도 있습니다.
+
+## 5. 열 추출과 재배치
+
+탭이나 쉼표로 구분된 데이터의 열 순서를 바꿔야 할 때가 있습니다. CSV 열 순서가 잘못되었거나, 20개 열 중 1, 3, 7열만 필요하거나.
+
+텍스트 기반 열 도구를 쓰면 원하는 열만 골라서 원하는 순서로 뽑을 수 있습니다. 단순한 구조 변경에 스프레드시트를 여는 번거로움을 피할 수 있습니다.
+
+## 6. 목록 서식 변환
+
+목록 형식 변환은 생각보다 자주 합니다. 쉼표로 구분된 목록을 한 줄에 하나씩으로, 세로 목록을 JSON 배열로, 번호 매긴 목록에서 번호를 떼거나.
+
+목록 전용 도구로 처리하면: 구분자로 나누기, 다른 구분자로 합치기, 각 항목에 접두사/접미사 추가, 알파벳순·숫자순 정렬, 역순 정렬, 순차 번호 매기기를 깔끔하게 할 수 있습니다.
+
+## 7. 줄바꿈 래핑과 해제
+
+고정 폭 줄바꿈(hard wrap)은 이메일, 코드 주석, 일반 텍스트 문서에서 흔합니다. 줄바꿈을 풀어서 연속 텍스트로 만들거나(unwrap), 다른 폭으로 다시 감싸는 것(rewrap)은 자주 필요한 작업입니다.
+
+언래핑은 문단 안의 줄을 합치되 문단 구분은 유지합니다. 리래핑은 새로운 줄 폭에 맞춰 텍스트를 재배치합니다. 수작업으로는 악몽이지만 도구를 쓰면 순식간입니다.
+
+## 8. 인코딩 변환
+
+외부에서 받은 텍스트가 잘못된 인코딩으로 해석되어 글자가 깨지는 경우가 있습니다. 인코딩 변환 도구로 원본 인코딩을 파악하고 원하는 인코딩으로 깔끔하게 바꿀 수 있습니다.
+
+관련 작업: HTML 엔티티 이스케이프/언이스케이프, URL 인코딩, 유니코드 이스케이프 시퀀스. \`&amp;\`가 \`&\` 대신, \`%20\`이 스페이스 대신 보이는 텍스트는 언이스케이핑이 필요합니다.
+
+## 9. 숫자와 데이터 포맷
+
+로캘별 숫자 형식 전환 — 소수점에 점 또는 쉼표 사용, 천 단위 구분자, 진법 변환 — 은 데이터 처리에서 자주 나옵니다.
+
+전화번호 형식 통일, 날짜 형식 표준화, 숫자 앞 0 채우기 같은 작업도 포맷팅 도구를 쓰면 수작업 대비 시간이 크게 절약됩니다.
+
+## 10. 텍스트 비교(Diff)
+
+두 버전의 텍스트에서 뭐가 달라졌는지 찾아야 할 때, diff 도구가 줄 단위로 추가·삭제·변경 사항을 하이라이트해 줍니다. 양쪽을 나란히 놓고 읽는 것보다 빠르고 정확합니다.
+
+Diff는 코드만의 도구가 아닙니다. 계약서 수정 사항 비교, 설정 파일 변경 확인, 편집된 원고 검토 — 자동 차이 감지가 모두 도움이 됩니다.
+
+## 텍스트 포맷팅 워크플로 만들기
+
+모든 기법의 공통점은 같습니다: 글자 하나하나 수작업으로 고치지 마세요. 패턴을 파악하고, 변환을 적용하고, 다음으로 넘어가세요. 수동 포맷팅에 쓰는 매 분은 진짜 판단이 필요한 일에 쓸 수 있는 시간입니다.
+
+바로 꺼내 쓸 수 있는 텍스트 포맷팅 도구 모음을 구축하세요. 북마크하고, 단축키를 익히고, 반사적으로 사용하세요. 절약되는 시간은 금세 쌓입니다 — 작업당 몇 분이 주당 몇 시간이 됩니다.`,
+      },
+    },
+  },
+  {
+    slug: "json-guide-for-developers",
+    app: "text",
+    category: "guide",
+    publishedAt: "2026-03-25",
+    content: {
+      en: {
+        title: "JSON Formatting, Validation, and Debugging: A Practical Guide",
+        description:
+          "Master JSON formatting, validation, and common pitfalls. Learn how to debug malformed JSON, prettify minified data, and work with complex nested structures efficiently.",
+        body: `## Why JSON Matters
+
+JSON (JavaScript Object Notation) has become the lingua franca of data exchange on the web. APIs return JSON. Configuration files use JSON. Databases store JSON. If you work with software in any capacity, you encounter JSON daily — and when it breaks, everything downstream breaks with it.
+
+The format itself is deceptively simple: objects with key-value pairs, arrays, strings, numbers, booleans, and null. But simplicity does not mean immunity to errors. A single misplaced comma, an unescaped quote, or a trailing comma that your editor did not flag can turn valid JSON into a cryptic parse error.
+
+## Common JSON Errors and How to Fix Them
+
+### Trailing Commas
+
+The most frequent JSON error is the trailing comma. JavaScript allows trailing commas in arrays and objects, so developers writing JSON by hand often carry this habit over. But the JSON specification strictly forbids them.
+
+\`\`\`json
+// Invalid — trailing comma after "blue"
+{ "colors": ["red", "green", "blue",] }
+
+// Valid
+{ "colors": ["red", "green", "blue"] }
+\`\`\`
+
+### Single Quotes
+
+JSON requires double quotes for strings and keys. Single quotes, which are perfectly valid in JavaScript, Python, and many other languages, cause immediate parse failures in JSON.
+
+\`\`\`json
+// Invalid
+{ 'name': 'Alice' }
+
+// Valid
+{ "name": "Alice" }
+\`\`\`
+
+### Unescaped Special Characters
+
+Strings in JSON must escape certain characters: double quotes (\`\\"\`), backslashes (\`\\\\\`), and control characters like newlines (\`\\n\`) and tabs (\`\\t\`). Pasting raw text into a JSON value without escaping these characters is a common source of errors.
+
+### Comments
+
+JSON does not support comments. No single-line \`//\`, no multi-line \`/* */\`. If you need comments in a configuration file, consider JSONC (JSON with Comments) or YAML instead.
+
+## Formatting Minified JSON
+
+Production APIs typically return minified JSON — all whitespace stripped to minimize payload size. This is efficient for machines but unreadable for humans. A 500-character single-line blob of JSON becomes instantly comprehensible when formatted with proper indentation.
+
+Good JSON formatters do more than add whitespace. They validate the structure as they parse, catch errors before you waste time debugging downstream, and let you collapse and expand nested sections to focus on the data you care about.
+
+Indentation style is a matter of preference. Two spaces, four spaces, and tabs are all common. The important thing is consistency within a project.
+
+## Working with Nested JSON
+
+Deeply nested JSON structures are common in API responses. A user object might contain an address object, which contains a coordinates object, which contains latitude and longitude values. Navigating five or six levels deep in a minified response is nearly impossible without formatting.
+
+When debugging nested JSON, start from the outside and work inward. Verify the top-level structure first, then drill into the specific path you need. Many formatters support JSONPath or dot-notation to extract specific values from complex structures.
+
+## Minifying JSON
+
+The opposite of formatting — minification strips all unnecessary whitespace to produce the smallest possible representation. This matters when JSON is transmitted over a network, stored in a database field with size constraints, or embedded in a URL query parameter.
+
+A well-structured 50 KB formatted JSON file might shrink to 35 KB when minified. For high-traffic APIs serving millions of requests, this difference adds up to significant bandwidth savings.
+
+## Validating JSON Against a Schema
+
+Beyond syntax validation, JSON Schema lets you verify that data meets specific structural requirements. A schema can enforce that certain fields exist, values fall within expected ranges, arrays have a minimum number of elements, and string values match specific patterns.
+
+Schema validation catches errors that syntax validation misses. A JSON file can be syntactically perfect but semantically wrong — the right format but the wrong data. Integrating schema validation into your workflow prevents these issues from reaching production.
+
+## JSON in Different Contexts
+
+### API Development
+
+When building or consuming APIs, consistent JSON formatting makes debugging easier. Agree on conventions: camelCase or snake_case for keys, ISO 8601 for dates, consistent null handling. Document these conventions and validate against them.
+
+### Configuration Files
+
+JSON configuration files benefit from formatting with comments (using JSONC) and consistent key ordering. Alphabetizing keys makes it easier to find settings and reduces merge conflicts in version control.
+
+### Data Processing
+
+When processing large JSON datasets, streaming parsers handle files that do not fit in memory. For smaller files, formatting the output makes spot-checking results much faster than scanning raw data.
+
+## Practical Tips
+
+Keep a JSON formatter bookmarked or installed as a browser extension. When an API returns an error, paste the response into a formatter before reading it — structured data is always easier to diagnose than a wall of text.
+
+Learn your editor's JSON support. Most modern editors validate JSON syntax in real time, highlight matching brackets, and offer fold/unfold for nested structures. These features save significant debugging time when you use them habitually.
+
+When generating JSON programmatically, always use a proper serialization library rather than string concatenation. Building JSON by concatenating strings invites escaping errors, encoding issues, and malformed output that passes casual inspection but fails in edge cases.`,
+      },
+      ko: {
+        title: "JSON 포맷팅, 검증, 디버깅 실용 가이드",
+        description:
+          "JSON 포맷팅과 검증의 핵심을 정리했습니다. 잘못된 JSON 디버깅, 압축된 데이터 정리, 복잡한 중첩 구조 다루기까지 — 실무에 바로 쓸 수 있는 JSON 가이드.",
+        body: `## JSON이 중요한 이유
+
+JSON(JavaScript Object Notation)은 웹 데이터 교환의 표준어가 되었습니다. API 응답이 JSON이고, 설정 파일이 JSON이며, 데이터베이스에도 JSON이 들어갑니다. 소프트웨어와 조금이라도 관련된 일을 한다면 매일 JSON을 접하게 됩니다. 그리고 JSON이 깨지면, 그 뒤에 연결된 모든 것이 함께 깨집니다.
+
+형식 자체는 단순합니다. 키-값 쌍의 객체, 배열, 문자열, 숫자, 불리언, null. 하지만 단순하다고 에러가 안 나는 건 아닙니다. 쉼표 하나, 이스케이프 안 된 따옴표 하나가 유효한 JSON을 알 수 없는 파싱 에러로 바꿔 놓습니다.
+
+## 흔한 JSON 에러와 해결법
+
+### 후행 쉼표
+
+가장 빈번한 에러는 후행 쉼표입니다. JavaScript에서는 배열과 객체 끝에 쉼표가 허용되기 때문에, JSON을 직접 작성할 때 이 습관이 자연스럽게 따라옵니다. 하지만 JSON 사양은 후행 쉼표를 엄격히 금지합니다.
+
+\`\`\`json
+// 잘못됨 — "blue" 뒤 쉼표
+{ "colors": ["red", "green", "blue",] }
+
+// 올바름
+{ "colors": ["red", "green", "blue"] }
+\`\`\`
+
+### 작은따옴표
+
+JSON은 문자열과 키 모두 큰따옴표만 허용합니다. JavaScript나 Python에서 유효한 작은따옴표는 JSON에서 즉시 파싱 실패를 일으킵니다.
+
+### 이스케이프 안 된 특수 문자
+
+JSON 문자열 안에서 큰따옴표(\`\\"\`), 백슬래시(\`\\\\\`), 줄 바꿈(\`\\n\`), 탭(\`\\t\`) 등은 반드시 이스케이프해야 합니다. 일반 텍스트를 JSON 값에 그대로 붙여 넣으면 에러가 납니다.
+
+### 주석
+
+JSON은 주석을 지원하지 않습니다. \`//\`도 \`/* */\`도 안 됩니다. 설정 파일에 주석이 필요하다면 JSONC나 YAML을 고려하세요.
+
+## 압축된 JSON 포맷팅
+
+프로덕션 API는 보통 공백을 모두 제거한 압축 JSON을 반환합니다. 기계에게는 효율적이지만 사람이 읽기에는 불가능에 가깝습니다. 500자짜리 한 줄 JSON도 들여쓰기를 적용하면 즉시 구조가 보입니다.
+
+좋은 포맷터는 공백만 추가하는 게 아닙니다. 파싱하면서 구조를 검증하고, 뒤에서 시간 낭비할 에러를 미리 잡아주며, 중첩된 섹션을 접었다 펼 수 있게 해줍니다.
+
+들여쓰기 스타일은 취향 차이입니다. 스페이스 2칸, 4칸, 탭 — 프로젝트 안에서만 일관되면 됩니다.
+
+## 중첩 JSON 다루기
+
+API 응답에서 5~6단계 깊이의 중첩은 흔합니다. 사용자 객체 안에 주소가 있고, 주소 안에 좌표가 있고, 좌표 안에 위도와 경도가 있는 식입니다. 압축된 상태에서 이걸 탐색하는 건 사실상 불가능합니다.
+
+중첩 JSON을 디버깅할 때는 바깥에서 안쪽으로 진행하세요. 최상위 구조를 먼저 확인하고, 필요한 경로로 파고드는 방식입니다.
+
+## JSON 압축(Minification)
+
+포맷팅의 반대가 압축입니다. 불필요한 공백을 모두 제거해서 가능한 가장 작은 형태로 만듭니다. 네트워크로 전송하거나, 크기 제한이 있는 DB 필드에 저장하거나, URL 쿼리 파라미터에 삽입할 때 필요합니다.
+
+잘 구성된 50KB JSON 파일이 압축하면 35KB까지 줄어들 수 있습니다. 수백만 요청을 처리하는 API에서는 이 차이가 상당한 대역폭 절감으로 이어집니다.
+
+## JSON 스키마 검증
+
+문법 검증을 넘어, JSON Schema를 사용하면 데이터가 특정 구조 요구 사항을 충족하는지 확인할 수 있습니다. 필수 필드 존재 여부, 값의 범위, 배열 최소 요소 수, 문자열 패턴 매칭 등을 강제할 수 있습니다.
+
+스키마 검증은 문법 검증이 놓치는 에러를 잡습니다. JSON이 문법적으로는 완벽하지만 의미적으로 틀린 경우 — 형식은 맞는데 데이터가 잘못된 경우 — 는 스키마 없이는 감지할 수 없습니다.
+
+## 맥락별 JSON 활용
+
+### API 개발
+
+API를 만들거나 사용할 때, 일관된 JSON 포맷팅은 디버깅을 수월하게 만듭니다. 키 이름 규칙(camelCase vs snake_case), 날짜 형식(ISO 8601), null 처리 방식을 팀 내에서 통일하세요.
+
+### 설정 파일
+
+JSON 설정 파일은 키를 알파벳순으로 정렬하면 설정을 찾기 쉽고, 버전 관리에서 머지 충돌도 줄어듭니다.
+
+### 데이터 처리
+
+대용량 JSON 데이터셋은 스트리밍 파서로 메모리에 한꺼번에 올리지 않고 처리할 수 있습니다. 작은 파일이라면 출력을 포맷팅해서 확인하는 게 날것 그대로 스캔하는 것보다 훨씬 빠릅니다.
+
+## 실용 팁
+
+JSON 포맷터를 브라우저 즐겨찾기에 추가하세요. API가 에러를 반환하면 응답을 먼저 포맷터에 넣어 구조화한 다음 읽으세요. 텍스트 벽을 눈으로 훑는 것보다 항상 빠릅니다.
+
+JSON을 프로그래밍으로 생성할 때는 반드시 직렬화 라이브러리를 사용하세요. 문자열 연결로 JSON을 만들면 이스케이프 에러, 인코딩 문제, 겉보기엔 괜찮지만 엣지 케이스에서 실패하는 잘못된 출력이 나올 수 있습니다.`,
+      },
+    },
+  },
+  {
+    slug: "hash-functions-explained",
+    app: "text",
+    category: "knowledge",
+    publishedAt: "2026-03-25",
+    content: {
+      en: {
+        title: "Hash Functions Explained: MD5, SHA-1, SHA-256, and Beyond",
+        description:
+          "Understand how cryptographic hash functions work, why they matter for security and data integrity, and when to use each algorithm from MD5 to SHA-256.",
+        body: `## What Is a Hash Function?
+
+A hash function takes an input of any size — a single character, a paragraph, or an entire file — and produces a fixed-length output called a digest or hash. The same input always produces the same hash. Even a tiny change in the input produces a completely different hash. And crucially, you cannot reverse the process: given a hash, there is no mathematical way to recover the original input.
+
+These properties make hash functions indispensable in software engineering, security, and data management. They verify file integrity, store passwords safely, detect duplicates, and underpin digital signatures and blockchain technology.
+
+## How Hashing Works
+
+When you hash a string like "hello", the algorithm processes it through a series of mathematical transformations — bitwise operations, modular arithmetic, and compression functions — to produce a fixed-length output. For SHA-256, the result is always 256 bits (64 hexadecimal characters), regardless of whether the input is 5 characters or 5 million.
+
+The key properties that define a good hash function are:
+
+**Deterministic**: The same input always gives the same output. Hash "hello" a million times and you get the same result every time.
+
+**Avalanche effect**: Change a single bit in the input and roughly half the output bits change. "hello" and "Hello" produce hashes that look completely unrelated.
+
+**Pre-image resistance**: Given a hash value, it is computationally infeasible to find an input that produces it.
+
+**Collision resistance**: It is extremely difficult to find two different inputs that produce the same hash.
+
+## Common Hash Algorithms
+
+### MD5
+
+MD5 produces a 128-bit (32-character hex) digest. Created in 1991 by Ronald Rivest, it was widely used for file integrity checks and password storage for over a decade. However, MD5 is now considered cryptographically broken — researchers have demonstrated practical collision attacks, meaning they can create two different files with the same MD5 hash.
+
+MD5 remains acceptable for non-security purposes: checksums to verify file downloads, deduplication keys, or cache invalidation identifiers. But it should never be used for password hashing, digital signatures, or any application where collision resistance matters.
+
+### SHA-1
+
+SHA-1 produces a 160-bit (40-character hex) digest. Developed by the NSA and published in 1995, it was the standard hash function for digital certificates, Git commits, and many security protocols. In 2017, Google demonstrated the first practical SHA-1 collision (the "SHAttered" attack), and the algorithm is now deprecated for security use.
+
+Git still uses SHA-1 for commit identifiers, though it is migrating to SHA-256. For new projects, SHA-1 should be avoided in favor of SHA-2 family algorithms.
+
+### SHA-256
+
+SHA-256, part of the SHA-2 family, produces a 256-bit (64-character hex) digest. It is currently the most widely used cryptographic hash function. No practical attacks against SHA-256 are known, and it is the backbone of Bitcoin's proof-of-work system, TLS certificates, and countless security protocols.
+
+SHA-256 strikes a good balance between security and performance. For most applications, it is the recommended default choice.
+
+### SHA-512
+
+SHA-512 produces a 512-bit (128-character hex) digest. It offers a larger security margin than SHA-256 and can actually be faster on 64-bit processors due to its use of 64-bit operations. It is a good choice when you need extra security headroom or are working on 64-bit systems.
+
+## Practical Applications
+
+### File Integrity Verification
+
+When you download software, the publisher often provides a SHA-256 hash. After downloading, you compute the hash of your file and compare it to the published value. If they match, the file has not been corrupted or tampered with during transfer.
+
+### Password Storage
+
+Passwords should never be stored in plain text. Instead, applications hash the password and store only the hash. When a user logs in, the application hashes the submitted password and compares it to the stored hash. Even if the database is compromised, attackers get hashes, not passwords.
+
+For password hashing specifically, algorithms like bcrypt, scrypt, or Argon2 are preferred over raw SHA-256 because they are deliberately slow and incorporate salting, which protects against rainbow table attacks.
+
+### Data Deduplication
+
+Hashing allows efficient duplicate detection. Rather than comparing potentially massive files byte by byte, compute their hashes and compare those. Identical hashes (with a good algorithm) mean identical content. Cloud storage services use this technique to avoid storing the same file multiple times.
+
+### Digital Signatures
+
+Digital signatures combine hashing with asymmetric cryptography. Rather than signing an entire document (which would be slow), the signer hashes the document and signs only the hash. The recipient hashes the document independently and verifies the signature against their computed hash. This is both faster and proves the document has not been modified.
+
+## Choosing the Right Algorithm
+
+For security-critical applications (digital signatures, certificates, authentication): use SHA-256 or SHA-512. These have no known practical attacks and are widely supported.
+
+For integrity checks (file verification, cache keys, deduplication): SHA-256 is ideal, but MD5 is acceptable when security is not a concern and speed matters.
+
+For password storage: use bcrypt, scrypt, or Argon2 — not a general-purpose hash function.
+
+For legacy compatibility: if you must interact with systems using MD5 or SHA-1, use them for that purpose but plan a migration path to stronger algorithms.
+
+The bottom line: when in doubt, use SHA-256. It is fast, secure, and universally supported.`,
+      },
+      ko: {
+        title: "해시 함수의 이해: MD5, SHA-1, SHA-256 그리고 그 너머",
+        description:
+          "암호학적 해시 함수의 작동 원리, 보안과 데이터 무결성에서의 역할, 그리고 MD5부터 SHA-256까지 각 알고리즘의 적절한 사용 시점을 정리했습니다.",
+        body: `## 해시 함수란?
+
+해시 함수는 어떤 크기의 입력이든 — 글자 하나, 문단 하나, 파일 전체 — 받아서 고정 길이의 출력(다이제스트 또는 해시)을 만들어냅니다. 같은 입력은 항상 같은 해시를 생성합니다. 입력이 아주 조금만 바뀌어도 완전히 다른 해시가 나옵니다. 그리고 결정적으로, 해시에서 원래 입력을 역산할 수 있는 수학적 방법은 없습니다.
+
+이런 특성 덕분에 해시 함수는 소프트웨어 개발, 보안, 데이터 관리에서 빠질 수 없는 도구입니다. 파일 무결성 검증, 비밀번호 안전 저장, 중복 감지, 디지털 서명, 블록체인의 기반이 됩니다.
+
+## 해시의 작동 원리
+
+"hello"라는 문자열을 해싱하면, 알고리즘이 비트 연산, 모듈러 연산, 압축 함수 등의 수학적 변환을 거쳐 고정 길이 출력을 만들어냅니다. SHA-256의 경우 입력이 5글자든 500만 글자든 결과는 항상 256비트(16진수 64자)입니다.
+
+좋은 해시 함수의 핵심 속성은 다음과 같습니다.
+
+**결정적**: 같은 입력은 항상 같은 출력. "hello"를 백만 번 해싱해도 매번 같은 결과입니다.
+
+**눈사태 효과**: 입력에서 1비트만 바꿔도 출력 비트의 약 절반이 변합니다. "hello"와 "Hello"의 해시는 전혀 상관없어 보입니다.
+
+**역상 저항성**: 해시값이 주어졌을 때, 그 값을 생성하는 입력을 찾는 것이 계산적으로 불가능합니다.
+
+**충돌 저항성**: 같은 해시를 생성하는 서로 다른 두 입력을 찾기가 극도로 어렵습니다.
+
+## 주요 해시 알고리즘
+
+### MD5
+
+MD5는 128비트(16진수 32자) 다이제스트를 생성합니다. 1991년 로널드 리베스트가 만들었으며, 10년 넘게 파일 무결성 확인과 비밀번호 저장에 널리 사용되었습니다. 그러나 지금은 암호학적으로 깨진 것으로 간주됩니다. 연구자들이 같은 MD5 해시를 가진 서로 다른 파일 두 개를 만드는 실용적 충돌 공격을 시연했습니다.
+
+MD5는 보안과 무관한 용도 — 파일 다운로드 체크섬, 중복 제거 키, 캐시 무효화 식별자 — 에는 여전히 사용할 수 있습니다. 하지만 비밀번호 해싱, 디지털 서명 등 충돌 저항성이 필요한 곳에는 절대 쓰면 안 됩니다.
+
+### SHA-1
+
+SHA-1은 160비트(16진수 40자) 다이제스트를 생성합니다. NSA가 개발해서 1995년에 공개했으며, 디지털 인증서, Git 커밋 등에서 표준 해시 함수로 쓰였습니다. 2017년 구글이 최초의 실용적 SHA-1 충돌("SHAttered" 공격)을 시연한 후, 보안 용도에서는 더 이상 사용하지 않습니다.
+
+Git은 아직 커밋 식별에 SHA-1을 쓰지만 SHA-256으로 전환 중입니다. 새 프로젝트에서는 SHA-2 계열 알고리즘을 사용하세요.
+
+### SHA-256
+
+SHA-2 계열에 속하는 SHA-256은 256비트(16진수 64자) 다이제스트를 생성합니다. 현재 가장 널리 사용되는 암호학적 해시 함수입니다. SHA-256에 대한 실용적 공격은 알려진 바 없으며, 비트코인 작업증명, TLS 인증서 등 수많은 보안 프로토콜의 핵심입니다.
+
+보안과 성능의 균형이 좋아서 대부분의 용도에서 기본 선택으로 권장됩니다.
+
+### SHA-512
+
+SHA-512는 512비트(16진수 128자) 다이제스트를 생성합니다. SHA-256보다 큰 보안 마진을 제공하며, 64비트 연산을 사용하기 때문에 64비트 프로세서에서는 오히려 더 빠를 수 있습니다.
+
+## 실용적 활용
+
+### 파일 무결성 검증
+
+소프트웨어를 다운로드할 때 배포자가 SHA-256 해시를 함께 제공하는 경우가 많습니다. 다운로드 후 파일의 해시를 계산해서 공개된 값과 비교합니다. 일치하면 전송 중 파일이 손상되거나 변조되지 않은 것입니다.
+
+### 비밀번호 저장
+
+비밀번호는 절대 평문으로 저장하면 안 됩니다. 비밀번호를 해싱해서 해시만 저장합니다. 로그인할 때 입력된 비밀번호를 해싱해서 저장된 해시와 비교합니다. 데이터베이스가 유출되어도 공격자가 얻는 건 해시뿐입니다.
+
+비밀번호 해싱에는 SHA-256보다 bcrypt, scrypt, Argon2 같은 전용 알고리즘이 권장됩니다. 의도적으로 느리게 설계되었고, 솔팅을 포함해서 레인보우 테이블 공격을 방어합니다.
+
+### 데이터 중복 제거
+
+해싱으로 효율적인 중복 감지가 가능합니다. 대용량 파일을 바이트 단위로 비교하는 대신, 해시를 계산해서 비교합니다. 좋은 알고리즘에서 해시가 같으면 내용도 같습니다. 클라우드 스토리지 서비스가 같은 파일을 여러 번 저장하지 않도록 이 기법을 사용합니다.
+
+### 디지털 서명
+
+디지털 서명은 해싱과 비대칭 암호화를 결합합니다. 문서 전체를 서명하는 대신(느림), 문서를 해싱하고 해시만 서명합니다. 수신자는 독립적으로 문서를 해싱해서 서명을 검증합니다. 빠르면서도 문서가 수정되지 않았음을 증명할 수 있습니다.
+
+## 알고리즘 선택 기준
+
+보안이 중요한 곳(디지털 서명, 인증서, 인증)에는 SHA-256 또는 SHA-512를 사용하세요.
+
+무결성 확인(파일 검증, 캐시 키, 중복 제거)에는 SHA-256이 적합합니다. 보안이 관계없고 속도가 중요하면 MD5도 괜찮습니다.
+
+비밀번호 저장에는 범용 해시 함수가 아닌 bcrypt, scrypt, Argon2를 사용하세요.
+
+판단이 어려우면 SHA-256을 선택하세요. 빠르고, 안전하며, 어디서든 지원됩니다.`,
+      },
+    },
+  },
+  {
+    slug: "text-encoding-toolkit",
+    app: "text",
+    category: "guide",
+    publishedAt: "2026-03-25",
+    content: {
+      en: {
+        title: "Base64, URL Encoding, and HTML Entities: A Developer's Toolkit",
+        description:
+          "A practical guide to the most common text encoding schemes — Base64, URL encoding, and HTML entities. Learn when and why each encoding is needed, and how to avoid common pitfalls.",
+        body: `## Why Text Encoding Exists
+
+Computers transmit data as bytes, but not all byte values are safe in every context. URLs cannot contain spaces. HTML interprets angle brackets as tags. Email systems may corrupt binary data. Text encoding schemes solve these problems by transforming unsafe characters into safe representations that can be decoded back to the original.
+
+Understanding these encodings is not optional for web developers. Incorrect encoding causes broken links, garbled text, security vulnerabilities (XSS attacks), and silent data corruption that surfaces only in production.
+
+## Base64 Encoding
+
+### What It Does
+
+Base64 converts binary data into a string of 64 ASCII characters (A-Z, a-z, 0-9, +, /). Every three bytes of input become four Base64 characters, making the encoded output about 33% larger than the original.
+
+### When to Use It
+
+Base64 is essential when you need to embed binary data in a text-only context. Common use cases include:
+
+- Embedding images directly in HTML or CSS using data URIs
+- Sending binary attachments in email (MIME encoding)
+- Storing binary data in JSON, which only supports text values
+- Passing binary data through APIs that expect text
+
+### How It Works
+
+Base64 takes input bytes in groups of three (24 bits), splits them into four 6-bit groups, and maps each group to one of 64 characters. If the input length is not a multiple of three, padding characters (=) are added to complete the final group.
+
+For example, the text "Hi" (two bytes) becomes "SGk=" in Base64. The "=" is padding because two bytes do not fill a complete three-byte group.
+
+### Common Pitfalls
+
+Base64 is encoding, not encryption. It provides zero security — anyone can decode it instantly. Never use Base64 to "hide" sensitive data.
+
+Base64 increases data size by approximately 33%. For large files, this overhead adds up. If you are Base64-encoding images for a web page, consider whether serving the image as a separate file would be more efficient.
+
+URL-safe Base64 replaces "+" with "-" and "/" with "_" to avoid conflicts with URL syntax. Use this variant when Base64 data appears in URLs or filenames.
+
+## URL Encoding (Percent Encoding)
+
+### What It Does
+
+URL encoding replaces unsafe characters with a percent sign followed by two hexadecimal digits representing the character's byte value. A space becomes %20, an ampersand becomes %26, and a forward slash becomes %2F.
+
+### When to Use It
+
+Any data placed into a URL must be properly encoded. This includes:
+
+- Query parameter values: \`?search=hello%20world\`
+- Path segments containing special characters
+- Form data submitted via GET requests
+- Any user input that becomes part of a URL
+
+### Reserved vs. Unreserved Characters
+
+URL syntax reserves certain characters for structural purposes. Ampersands (&) separate query parameters. Equals signs (=) separate keys from values. Question marks (?) begin the query string. These characters must be encoded when they appear as data rather than structure.
+
+Unreserved characters — letters, digits, hyphens, underscores, periods, and tildes — never need encoding.
+
+### Double Encoding
+
+A common mistake is encoding data that is already encoded, turning %20 into %2520. This happens when encoding functions are applied more than once, or when a framework automatically encodes data that you have already manually encoded. The result is URLs that look wrong and break when decoded.
+
+Always know which layer of your application is responsible for encoding, and encode exactly once.
+
+## HTML Entities
+
+### What It Does
+
+HTML entity encoding replaces characters that have special meaning in HTML with named or numeric references. The less-than sign (<) becomes \`&lt;\`, the greater-than sign (>) becomes \`&gt;\`, the ampersand (&) becomes \`&amp;\`, and double quotes (") become \`&quot;\`.
+
+### When to Use It
+
+HTML encoding is critical whenever untrusted text is inserted into an HTML document. Without encoding, user-supplied text containing angle brackets could be interpreted as HTML tags, leading to cross-site scripting (XSS) attacks.
+
+Common contexts requiring HTML encoding:
+
+- Displaying user-generated content on a web page
+- Inserting dynamic values into HTML attributes
+- Showing code snippets in documentation or tutorials
+- Any text that originates outside your application
+
+### Named vs. Numeric Entities
+
+HTML supports both named entities (\`&amp;\`, \`&lt;\`, \`&copy;\`) and numeric entities (\`&#38;\`, \`&#60;\`, \`&#169;\`). Named entities are more readable but limited to a predefined set. Numeric entities can represent any Unicode character using decimal (\`&#8364;\` for €) or hexadecimal (\`&#x20AC;\` for €) notation.
+
+### Encoding vs. Escaping
+
+The terms are often used interchangeably, but there is a subtle difference. Encoding transforms data for transmission in a specific format. Escaping prevents special characters from being interpreted as syntax. In practice, HTML entity encoding serves both purposes — it makes text safe for HTML contexts and preserves the original characters for display.
+
+## Combining Encodings
+
+Real-world data often passes through multiple encoding layers. A user submits a search query containing an ampersand. The browser URL-encodes it for the HTTP request. The server decodes it and includes it in an HTML response using HTML entity encoding. If the response includes a JSON API call, the data might be JSON-escaped as well.
+
+Each encoding layer must be applied and removed in the correct order. Mixing up the sequence — HTML-encoding before URL-encoding, or forgetting to decode one layer — produces garbled output that is difficult to debug.
+
+## Security Implications
+
+Encoding is a first line of defense against injection attacks. SQL injection, XSS, and command injection all exploit situations where data is interpreted as code. Proper encoding ensures that data remains data, regardless of what characters it contains.
+
+Context matters. HTML encoding protects against XSS in HTML contexts but not in JavaScript contexts. URL encoding protects URLs but not HTML attributes. Always encode for the specific context where the data will be used.
+
+## Practical Workflow
+
+When working with text that crosses context boundaries, follow this checklist:
+
+1. Identify the target context (URL, HTML, JSON, SQL)
+2. Determine which characters are special in that context
+3. Apply the appropriate encoding once, at the boundary
+4. Decode only when transitioning back to a raw text context
+5. Never trust that data is "already encoded" — verify or re-encode at the boundary
+
+Having reliable encoding and decoding tools readily available saves debugging time and prevents security vulnerabilities. Bookmark them, learn the common patterns, and apply them consistently.`,
+      },
+      ko: {
+        title: "Base64, URL 인코딩, HTML 엔티티: 개발자 필수 도구",
+        description:
+          "가장 많이 쓰이는 텍스트 인코딩 방식을 실용적으로 정리합니다. Base64, URL 인코딩, HTML 엔티티 — 각각 언제 왜 필요한지, 흔한 실수는 어떻게 피하는지.",
+        body: `## 텍스트 인코딩이 존재하는 이유
+
+컴퓨터는 데이터를 바이트로 전송하지만, 모든 바이트값이 모든 맥락에서 안전한 건 아닙니다. URL에는 공백이 들어갈 수 없고, HTML은 꺾쇠괄호를 태그로 해석하고, 이메일 시스템은 바이너리 데이터를 손상시킬 수 있습니다. 텍스트 인코딩은 안전하지 않은 문자를 안전한 표현으로 변환해서, 나중에 원본으로 되돌릴 수 있게 합니다.
+
+웹 개발자에게 이 인코딩들은 선택이 아닌 필수입니다. 잘못된 인코딩은 깨진 링크, 글자 깨짐, 보안 취약점(XSS 공격), 프로덕션에서야 발견되는 데이터 손상의 원인이 됩니다.
+
+## Base64 인코딩
+
+### 하는 일
+
+Base64는 바이너리 데이터를 64개의 ASCII 문자(A-Z, a-z, 0-9, +, /)로 이루어진 문자열로 변환합니다. 입력 3바이트가 Base64 4문자가 되므로, 인코딩된 출력은 원본보다 약 33% 커집니다.
+
+### 사용 시점
+
+텍스트만 허용되는 맥락에 바이너리 데이터를 넣어야 할 때 Base64를 사용합니다.
+
+- data URI로 HTML이나 CSS에 이미지 직접 삽입
+- 이메일의 바이너리 첨부 파일 전송(MIME)
+- 텍스트만 지원하는 JSON에 바이너리 데이터 저장
+- 텍스트 기반 API를 통한 바이너리 데이터 전달
+
+### 작동 원리
+
+입력 바이트를 3개씩(24비트) 묶어 6비트 4그룹으로 나누고, 각 그룹을 64개 문자 중 하나에 매핑합니다. 입력 길이가 3의 배수가 아니면 패딩 문자(=)를 추가합니다.
+
+예를 들어 "Hi"(2바이트)는 Base64로 "SGk="가 됩니다. "="는 2바이트가 3바이트 그룹을 채우지 못해서 추가된 패딩입니다.
+
+### 흔한 실수
+
+Base64는 인코딩이지 암호화가 아닙니다. 보안은 전혀 제공하지 않으며 누구나 즉시 디코딩할 수 있습니다. 민감한 데이터를 "숨기는" 용도로 쓰면 안 됩니다.
+
+Base64는 데이터 크기를 약 33% 늘립니다. 큰 파일에서는 이 오버헤드가 무시 못 할 수준이 됩니다.
+
+URL에서 Base64 데이터를 사용할 때는 URL-safe 변형("+"를 "-"로, "/"를 "_"로 대체)을 사용하세요.
+
+## URL 인코딩 (퍼센트 인코딩)
+
+### 하는 일
+
+URL 인코딩은 안전하지 않은 문자를 퍼센트 기호와 16진수 두 자리로 대체합니다. 공백은 %20, 앰퍼샌드는 %26, 슬래시는 %2F가 됩니다.
+
+### 사용 시점
+
+URL에 넣는 모든 데이터는 적절히 인코딩해야 합니다.
+
+- 쿼리 파라미터 값: \`?search=hello%20world\`
+- 특수 문자가 포함된 경로 세그먼트
+- GET 요청으로 전송되는 폼 데이터
+- URL의 일부가 되는 모든 사용자 입력
+
+### 예약 문자와 비예약 문자
+
+URL 구문은 특정 문자를 구조적 용도로 예약합니다. 앰퍼샌드(&)는 쿼리 파라미터를 구분하고, 등호(=)는 키와 값을 구분하고, 물음표(?)는 쿼리 문자열을 시작합니다. 이 문자들이 구조가 아니라 데이터로 나타날 때는 인코딩해야 합니다.
+
+비예약 문자 — 문자, 숫자, 하이픈, 밑줄, 마침표, 틸드 — 는 인코딩이 필요 없습니다.
+
+### 이중 인코딩
+
+흔한 실수 중 하나가 이미 인코딩된 데이터를 다시 인코딩하는 것입니다. %20이 %2520이 됩니다. 인코딩 함수를 두 번 적용하거나, 프레임워크가 자동 인코딩하는 데이터를 수동으로도 인코딩했을 때 발생합니다.
+
+어떤 계층이 인코딩을 담당하는지 파악하고, 정확히 한 번만 인코딩하세요.
+
+## HTML 엔티티
+
+### 하는 일
+
+HTML 엔티티 인코딩은 HTML에서 특별한 의미를 가진 문자를 이름 또는 숫자 참조로 대체합니다. <는 \`&lt;\`, >는 \`&gt;\`, &는 \`&amp;\`, "는 \`&quot;\`가 됩니다.
+
+### 사용 시점
+
+신뢰할 수 없는 텍스트를 HTML 문서에 삽입할 때 HTML 인코딩은 필수입니다. 인코딩 없이 꺾쇠괄호가 포함된 사용자 입력을 넣으면 HTML 태그로 해석되어 XSS 공격으로 이어질 수 있습니다.
+
+- 사용자 생성 콘텐츠를 웹 페이지에 표시할 때
+- HTML 속성에 동적 값을 삽입할 때
+- 문서나 튜토리얼에서 코드 조각을 보여줄 때
+- 애플리케이션 외부에서 온 모든 텍스트
+
+### 이름 엔티티 vs 숫자 엔티티
+
+HTML은 이름 엔티티(\`&amp;\`, \`&lt;\`, \`&copy;\`)와 숫자 엔티티(\`&#38;\`, \`&#60;\`, \`&#169;\`)를 모두 지원합니다. 이름 엔티티는 읽기 쉽지만 정해진 집합으로 제한됩니다. 숫자 엔티티는 10진수(\`&#8364;\`)나 16진수(\`&#x20AC;\`) 표기로 모든 유니코드 문자를 표현할 수 있습니다.
+
+## 인코딩 결합
+
+실제 데이터는 여러 인코딩 계층을 거치는 경우가 많습니다. 사용자가 앰퍼샌드가 포함된 검색어를 입력합니다. 브라우저가 HTTP 요청을 위해 URL 인코딩합니다. 서버가 디코딩한 후 HTML 응답에 HTML 엔티티 인코딩으로 포함합니다. JSON API 호출이 들어 있다면 JSON 이스케이프도 추가됩니다.
+
+각 인코딩 계층은 올바른 순서로 적용되고 제거되어야 합니다. 순서가 섞이거나 한 계층의 디코딩을 빠뜨리면, 디버깅하기 어려운 깨진 출력이 만들어집니다.
+
+## 보안 함의
+
+인코딩은 인젝션 공격에 대한 첫 번째 방어선입니다. SQL 인젝션, XSS, 명령어 인젝션 모두 데이터가 코드로 해석되는 상황을 악용합니다. 올바른 인코딩은 데이터가 어떤 문자를 포함하든 데이터로만 남게 보장합니다.
+
+맥락이 중요합니다. HTML 인코딩은 HTML 맥락에서 XSS를 방지하지만 JavaScript 맥락에서는 안 됩니다. URL 인코딩은 URL을 보호하지만 HTML 속성은 아닙니다. 데이터가 사용될 특정 맥락에 맞는 인코딩을 항상 적용하세요.
+
+## 실용 워크플로
+
+텍스트가 맥락 경계를 넘을 때는 이 체크리스트를 따르세요.
+
+1. 대상 맥락을 파악한다 (URL, HTML, JSON, SQL)
+2. 해당 맥락에서 특별한 문자가 무엇인지 확인한다
+3. 경계에서 적절한 인코딩을 정확히 한 번 적용한다
+4. 원시 텍스트 맥락으로 돌아갈 때만 디코딩한다
+5. "이미 인코딩되어 있겠지"를 믿지 말고 경계에서 검증하거나 다시 인코딩한다
+
+신뢰할 수 있는 인코딩/디코딩 도구를 가까이 두면 디버깅 시간을 줄이고 보안 취약점을 예방할 수 있습니다.`,
+      },
+    },
+  },
+  {
+    slug: "clean-text-data-like-a-pro",
+    app: "text",
+    category: "tips",
+    publishedAt: "2026-03-25",
+    content: {
+      en: {
+        title: "Clean Text Data Like a Pro: 10 Techniques That Save Hours",
+        description:
+          "Practical text cleaning techniques for developers, data analysts, and content creators. From stripping invisible characters to normalizing whitespace, these methods handle the messy reality of real-world text data.",
+        body: `## The Hidden Mess in Text Data
+
+Text data is never as clean as it looks. Copy text from a web page and you get hidden formatting characters. Export from a spreadsheet and you get inconsistent line endings. Receive text from users and you get a mix of smart quotes, zero-width spaces, accented characters, and emoji. These invisible contaminants break string comparisons, corrupt database queries, and cause mysterious bugs that work fine on your machine but fail in production.
+
+Cleaning text data is not glamorous work, but it is essential. The techniques below address the most common problems and can be applied in sequence to transform messy input into reliable, consistent text.
+
+## 1. Normalize Line Endings
+
+Different operating systems use different line ending conventions. Windows uses CRLF (carriage return + line feed, \\r\\n). Unix and macOS use LF (\\n). Old Mac systems used CR (\\r). When text from multiple sources is combined, mixed line endings cause parsing failures, incorrect line counts, and display issues.
+
+The fix is simple: convert all line endings to a single standard. LF is the most common choice for modern systems. This should be the first step in any text cleaning pipeline because other operations (line counting, splitting, deduplication) depend on consistent line endings.
+
+## 2. Strip Invisible Characters
+
+Unicode includes dozens of invisible characters beyond the obvious space and tab. Zero-width spaces (U+200B), zero-width joiners (U+200D), byte order marks (U+FEFF), soft hyphens (U+00AD), and various control characters can lurk in text without being visible in most editors.
+
+These characters cause problems when strings that look identical are actually different. Two names that appear the same in a UI fail an equality check because one contains a zero-width space. A URL looks correct but does not work because of an invisible character in the path.
+
+Stripping all non-printable Unicode characters (except standard whitespace) is a safe first step for most text processing tasks.
+
+## 3. Collapse and Normalize Whitespace
+
+Users type multiple spaces. Copy-paste introduces non-breaking spaces (U+00A0). Tab-space mixtures create alignment problems. Leading and trailing whitespace on lines accumulates silently.
+
+Normalizing whitespace means: replace non-breaking spaces with regular spaces, collapse runs of multiple spaces into single spaces, trim leading and trailing whitespace from each line, and convert tabs to spaces (or vice versa) based on your requirements.
+
+## 4. Remove Duplicate Lines
+
+Data exports, log files, and collected text often contain exact duplicates. Whether you want to identify them or remove them depends on the use case, but having the ability to do both is essential.
+
+Removing duplicates while preserving original order is important — simply sorting and deduplicating changes the meaning of ordered data. A good deduplication tool preserves the first occurrence of each line and removes subsequent repeats.
+
+For near-duplicates (lines that differ only in whitespace or capitalization), normalize the text before comparing but output the original version.
+
+## 5. Remove Empty Lines
+
+Multiple consecutive empty lines are common in pasted text and exported data. They add visual noise and inflate line counts. Removing all empty lines or collapsing consecutive empty lines into a single one keeps the text clean while preserving paragraph structure.
+
+Be careful not to remove lines that appear empty but contain whitespace. Trim lines first, then remove truly empty ones.
+
+## 6. Remove HTML Tags
+
+Text scraped from web pages or copied from rich text editors often carries HTML markup that needs to go. Simple tag stripping works for most cases, but be aware of edge cases: self-closing tags, attributes with angle brackets in values, script and style blocks that contain text that should not appear in the output.
+
+For basic cleanup, a regex that removes everything between < and > handles 90% of cases. For complete safety, use a proper HTML parser that correctly handles nested tags, entities, and edge cases.
+
+After stripping tags, decode any remaining HTML entities (&amp; to &, &lt; to <, etc.) to get clean plain text.
+
+## 7. Normalize Accented Characters
+
+When working with multilingual text, accented characters can exist in multiple Unicode forms. The letter "é" can be a single code point (U+00E9, precomposed) or two code points (e + combining acute accent, decomposed). These look identical on screen but are different bytes, which breaks string matching and sorting.
+
+Unicode normalization (NFC or NFD form) ensures consistent representation. NFC composes characters where possible, which is the most common choice for data storage. NFD decomposes them, which is useful for searching and sorting.
+
+For cases where you need ASCII-only text — slugs, filenames, identifiers — stripping accents entirely (converting é to e, ñ to n, ü to u) may be appropriate, though this loses information and should be used cautiously with non-Latin scripts.
+
+## 8. Remove Special Characters
+
+Depending on the context, you may need to strip punctuation, symbols, or non-alphanumeric characters. Cleaning data for search indexing, preparing text for machine learning, or creating URL slugs all require different levels of special character removal.
+
+Be deliberate about what you remove. Stripping all punctuation from text that contains email addresses destroys the @ signs. Removing hyphens from phone numbers changes their meaning. Define precisely which characters to keep and which to remove based on your downstream use case.
+
+## 9. Fix Encoding Issues
+
+Mojibake — garbled text caused by encoding mismatches — is still a common problem. Text encoded in UTF-8 but interpreted as Latin-1 produces recognizable patterns: é becomes Ã©, — becomes â€", and so on. These patterns are fixable if you can identify the original encoding.
+
+The best approach is to prevent encoding issues: always specify encoding explicitly when reading or writing text files, use UTF-8 as the default, and verify encoding assumptions early in your data pipeline.
+
+## 10. Remove or Replace Emojis
+
+Emojis are multi-byte Unicode sequences that cause issues in systems expecting basic text. Some databases truncate text at the first emoji. Some APIs reject payloads containing emoji characters. Some display systems render them inconsistently.
+
+When emojis are not needed, removing them cleanly requires handling the full range of emoji code points, including multi-character sequences (family emojis, skin tone modifiers) that span several Unicode code points.
+
+## Building a Cleaning Pipeline
+
+The order of operations matters. A recommended sequence:
+
+1. Fix encoding issues first (everything else depends on correct encoding)
+2. Normalize line endings
+3. Strip invisible characters
+4. Normalize whitespace and trim lines
+5. Remove empty lines
+6. Apply content-specific cleaning (HTML tags, special characters, accents)
+7. Remove duplicates if needed
+
+Each step produces cleaner input for the next. Running these operations in the wrong order — removing duplicates before normalizing whitespace, for example — produces inferior results because lines that differ only in whitespace are not recognized as duplicates.
+
+Keep the original data intact and produce cleaned output separately. Text cleaning is not always reversible, and requirements change. Having the raw source lets you adjust and rerun the pipeline as needed.`,
+      },
+      ko: {
+        title: "텍스트 데이터 정리의 기술: 시간을 아끼는 10가지 기법",
+        description:
+          "개발자, 데이터 분석가, 콘텐츠 제작자를 위한 텍스트 정리 기법. 보이지 않는 문자 제거부터 공백 정규화까지, 현실의 지저분한 텍스트 데이터를 다루는 실전 방법.",
+        body: `## 텍스트 데이터 속 숨겨진 오염
+
+텍스트 데이터는 보이는 것만큼 깨끗한 적이 없습니다. 웹 페이지에서 복사하면 숨겨진 서식 문자가 따라옵니다. 스프레드시트에서 내보내면 줄 바꿈이 들쭉날쭉합니다. 사용자에게 텍스트를 받으면 스마트 따옴표, 제로 너비 공백, 악센트 문자, 이모지가 뒤섞여 들어옵니다. 이런 보이지 않는 오염물질이 문자열 비교를 깨뜨리고, DB 쿼리를 오류 내고, 내 컴퓨터에서는 잘 되는데 프로덕션에서만 실패하는 미스터리 버그를 만듭니다.
+
+텍스트 데이터 정리는 화려한 작업이 아니지만 필수적입니다. 아래 기법들은 가장 흔한 문제를 다루며, 순서대로 적용하면 지저분한 입력을 일관된 텍스트로 변환할 수 있습니다.
+
+## 1. 줄 바꿈 통일
+
+운영체제마다 줄 바꿈 규칙이 다릅니다. Windows는 CRLF(\\r\\n), Unix/macOS는 LF(\\n), 구형 Mac은 CR(\\r)을 사용합니다. 여러 출처의 텍스트가 합쳐지면 줄 바꿈이 섞여서 파싱 오류, 줄 수 오류, 표시 문제가 발생합니다.
+
+해결은 간단합니다. 모든 줄 바꿈을 LF 하나로 통일하세요. 다른 작업(줄 수 세기, 분할, 중복 제거)이 일관된 줄 바꿈에 의존하므로, 이것이 모든 텍스트 정리의 첫 단계여야 합니다.
+
+## 2. 보이지 않는 문자 제거
+
+유니코드에는 공백과 탭 외에도 수십 가지 보이지 않는 문자가 있습니다. 제로 너비 공백(U+200B), 제로 너비 결합자(U+200D), 바이트 순서 표시(U+FEFF), 소프트 하이픈(U+00AD) 등이 대부분의 편집기에서 보이지 않은 채 텍스트에 숨어 있을 수 있습니다.
+
+이 문자들은 화면에서 같아 보이는 문자열이 실제로는 다른 문제를 일으킵니다. UI에서 똑같이 보이는 두 이름이 동일성 검사에 실패합니다. URL이 정확해 보이는데 경로에 보이지 않는 문자가 있어서 작동하지 않습니다.
+
+## 3. 공백 정규화
+
+사용자가 스페이스를 여러 번 입력합니다. 복사-붙여넣기로 깨지지 않는 공백(U+00A0)이 들어옵니다. 탭과 스페이스가 섞여서 정렬이 어긋납니다. 줄 앞뒤의 공백이 조용히 쌓입니다.
+
+공백 정규화란: 깨지지 않는 공백을 일반 공백으로 교체하고, 연속된 공백을 하나로 합치고, 각 줄의 앞뒤 공백을 제거하고, 탭과 스페이스를 용도에 맞게 통일하는 것입니다.
+
+## 4. 중복 줄 제거
+
+데이터 내보내기, 로그 파일, 수집된 텍스트에는 정확히 같은 줄이 반복되는 경우가 많습니다. 중복을 제거할 때는 원래 순서를 보존하는 것이 중요합니다. 단순 정렬 후 중복 제거는 순서가 있는 데이터의 의미를 바꿔 버립니다.
+
+공백이나 대소문자만 다른 유사 중복을 처리할 때는 비교 전에 정규화하되, 출력은 원본 버전을 사용하세요.
+
+## 5. 빈 줄 제거
+
+붙여 넣은 텍스트나 내보낸 데이터에는 연속된 빈 줄이 흔합니다. 모든 빈 줄을 제거하거나 연속된 빈 줄을 하나로 합치면 문단 구조를 유지하면서 텍스트가 깔끔해집니다.
+
+빈 것처럼 보이지만 공백이 포함된 줄에 주의하세요. 줄을 먼저 트림한 다음 진짜 빈 줄을 제거하세요.
+
+## 6. HTML 태그 제거
+
+웹 페이지에서 스크래핑하거나 리치 텍스트 편집기에서 복사한 텍스트에는 HTML 마크업이 섞여 있는 경우가 많습니다. 기본적인 태그 제거는 < 와 > 사이의 모든 것을 제거하는 정규식으로 대부분 처리됩니다.
+
+태그 제거 후 남아 있는 HTML 엔티티(&amp;를 &로, &lt;를 <로 등)도 디코딩해서 깨끗한 일반 텍스트를 만드세요.
+
+## 7. 악센트 문자 정규화
+
+다국어 텍스트에서 악센트 문자는 여러 유니코드 형태로 존재할 수 있습니다. "é"가 단일 코드 포인트(U+00E9)일 수도 있고, e + 결합 악센트 두 코드 포인트일 수도 있습니다. 화면에서는 같아 보이지만 바이트가 다르기 때문에 문자열 매칭과 정렬이 깨집니다.
+
+유니코드 정규화(NFC 또는 NFD)로 일관된 표현을 보장합니다. NFC는 가능한 곳에서 문자를 합성하며 데이터 저장에 가장 흔히 사용됩니다.
+
+슬러그, 파일명, 식별자처럼 ASCII만 필요한 경우에는 악센트를 완전히 제거(é→e, ñ→n, ü→u)할 수 있지만, 정보 손실이 있으므로 주의해서 사용하세요.
+
+## 8. 특수 문자 제거
+
+검색 인덱싱용 데이터 정리, 머신러닝을 위한 텍스트 전처리, URL 슬러그 생성 등 맥락에 따라 구두점이나 기호를 제거해야 할 수 있습니다.
+
+제거 대상을 신중하게 정하세요. 이메일 주소가 포함된 텍스트에서 구두점을 전부 없애면 @가 사라집니다. 전화번호에서 하이픈을 제거하면 의미가 달라집니다. 다음 단계에서 필요한 문자가 무엇인지 정확히 파악한 후 제거하세요.
+
+## 9. 인코딩 문제 수정
+
+모지바케 — 인코딩 불일치로 인한 글자 깨짐 — 는 여전히 흔한 문제입니다. UTF-8로 인코딩된 텍스트를 Latin-1로 해석하면 특유의 패턴이 나타납니다. 원래 인코딩을 파악할 수 있다면 이 패턴은 복구 가능합니다.
+
+예방이 최선입니다. 텍스트 파일을 읽고 쓸 때 항상 인코딩을 명시하고, UTF-8을 기본으로 사용하며, 데이터 파이프라인 초반에 인코딩 가정을 검증하세요.
+
+## 10. 이모지 제거 또는 대체
+
+이모지는 멀티바이트 유니코드 시퀀스로, 기본 텍스트만 기대하는 시스템에서 문제를 일으킵니다. 일부 DB는 첫 이모지에서 텍스트를 잘라버리고, 일부 API는 이모지가 포함된 페이로드를 거부하고, 표시 시스템마다 렌더링이 달라집니다.
+
+이모지를 깨끗하게 제거하려면 가족 이모지, 피부색 수정자 등 여러 유니코드 코드 포인트에 걸친 다중 문자 시퀀스까지 처리해야 합니다.
+
+## 정리 파이프라인 구축
+
+작업 순서가 중요합니다. 권장 순서:
+
+1. 인코딩 문제 먼저 수정 (나머지 모든 것이 올바른 인코딩에 의존)
+2. 줄 바꿈 통일
+3. 보이지 않는 문자 제거
+4. 공백 정규화 및 줄 트림
+5. 빈 줄 제거
+6. 내용별 정리 적용 (HTML 태그, 특수 문자, 악센트)
+7. 필요 시 중복 제거
+
+각 단계가 다음 단계에 더 깨끗한 입력을 제공합니다. 순서가 잘못되면 — 예를 들어 공백 정규화 전에 중복을 제거하면 — 공백만 다른 줄이 중복으로 인식되지 않아 결과가 나빠집니다.
+
+원본 데이터는 그대로 보관하고 정리된 출력을 별도로 만드세요. 텍스트 정리는 항상 되돌릴 수 있는 게 아니며, 요구 사항은 바뀝니다. 원시 소스가 있으면 필요에 따라 파이프라인을 조정하고 다시 실행할 수 있습니다.`,
+      },
+    },
+  },
+  {
+    slug: "generate-secure-passwords",
+    app: "text",
+    category: "knowledge",
+    publishedAt: "2026-03-25",
+    content: {
+      en: {
+        title: "The Science of Secure Passwords: How Randomness Defeats Hackers",
+        description:
+          "Learn why password strength depends on randomness rather than complexity rules, how password attacks work, and practical strategies for generating and managing truly secure passwords.",
+        body: `## Why Most Passwords Are Weak
+
+The average person reuses the same password across multiple sites, substitutes obvious characters (@ for a, 3 for e), and considers "P@ssw0rd123!" a strong password. Unfortunately, attackers know all of these patterns. Modern password cracking tools test billions of combinations per second and incorporate dictionaries of common passwords, known substitution patterns, and leaked password databases.
+
+A password is only as strong as the difficulty of guessing it. That difficulty comes from one source: genuine randomness. Not cleverness, not length alone, not complexity rules — randomness.
+
+## How Password Attacks Work
+
+### Brute Force
+
+Brute force testing tries every possible combination of characters. For a password using lowercase letters only, there are 26 choices per character. An 8-character lowercase password has 26^8 (about 209 billion) possibilities. This sounds large, but a modern GPU can test billions of hashes per second, cracking such a password in minutes.
+
+Adding uppercase letters, digits, and symbols increases the character set but follows the same math. The real defense is length multiplied by character set size — the total number of possible passwords.
+
+### Dictionary Attacks
+
+Dictionary attacks start with lists of common passwords ("password", "123456", "qwerty"), common words, names, and previously leaked passwords. They then apply common transformations: capitalizing the first letter, appending numbers, replacing characters with look-alikes. This approach cracks passwords that feel creative to humans but follow predictable patterns.
+
+### Credential Stuffing
+
+When a service gets breached and passwords leak, attackers try those same email/password combinations on other services. Because most people reuse passwords, this works alarmingly often. The defense is simple: never use the same password twice.
+
+## What Makes a Password Strong
+
+### Entropy
+
+Password strength is measured in bits of entropy — a mathematical measure of unpredictability. Each bit of entropy doubles the number of possible passwords. A password with 40 bits of entropy has about one trillion possibilities. A password with 80 bits has about one sextillion possibilities.
+
+For practical security in 2026, aim for at least 80 bits of entropy for important accounts and 60 bits for less critical ones.
+
+### Character Set Size
+
+Using only lowercase letters gives 26 options per character. Adding uppercase doubles it to 52. Adding digits gives 62. Adding common symbols pushes it to 90 or more. Each additional character multiplied by the set size exponentially increases the total possibilities.
+
+A 12-character password using the full 90+ character set provides more entropy than a 20-character password using only lowercase letters.
+
+### Length
+
+Length has a multiplicative effect on entropy. Each additional character multiplies the total possibilities by the character set size. A 16-character random password is astronomically harder to crack than an 8-character one, even with the same character set.
+
+The most efficient approach combines reasonable length (12-16 characters) with a broad character set (letters, digits, symbols).
+
+## Random Password Generation
+
+Truly random passwords cannot be generated by humans. We are biased toward patterns, familiar sequences, and keyboard layouts. Even when trying to be random, humans produce passwords with significantly less entropy than true randomness.
+
+Cryptographically secure random number generators (CSPRNGs) produce genuine randomness suitable for password generation. These algorithms draw from hardware entropy sources (mouse movements, disk timing, electrical noise) and produce output that is mathematically unprovable to predict.
+
+When generating a random password:
+
+- Use a CSPRNG, not Math.random() or similar pseudo-random functions
+- Specify the character set explicitly (uppercase, lowercase, digits, symbols)
+- Set the length based on your entropy requirements
+- Generate a new independent password for each account
+
+## Passphrase Approach
+
+An alternative to random character passwords is the passphrase: several randomly selected words joined together. "correct-horse-battery-staple" is easier to remember than "j7#Kx9$mR2&p" while providing comparable entropy, assuming the words are truly randomly selected from a large dictionary.
+
+The key requirement is the same: genuine randomness. A passphrase of four words randomly selected from a 7,776-word dictionary (the Diceware approach) provides about 51 bits of entropy. Six words provide about 77 bits. These numbers assume the attacker knows your method — the security comes from the randomness of selection, not from keeping the method secret.
+
+Do not pick words that form a meaningful phrase or relate to each other. "my-dog-loves-walks" is a terrible passphrase because the words are related and predictable. "quantum-mailbox-furnace-eleven" is much better because the combination is arbitrary.
+
+## Password Managers
+
+The practical problem with unique random passwords is remembering them. You cannot memorize 50 different 16-character random strings. Password managers solve this by storing all your passwords in an encrypted vault protected by a single master password.
+
+Your master password is the one password you need to make truly strong — at least 80 bits of entropy, either a long random string or a 6+ word passphrase. Everything else is generated and stored by the manager.
+
+## Common Mistakes
+
+**Adding a number to a weak password**: "password1" is not meaningfully stronger than "password". Attackers test these variations automatically.
+
+**Personal information**: Birthdays, pet names, addresses, and phone numbers are easily discovered and commonly used in targeted attacks.
+
+**Keyboard patterns**: "qwertyuiop", "1qaz2wsx", and similar patterns are in every attacker's dictionary.
+
+**Short passwords with special characters**: "A1@b" has very little entropy despite using all character types. Length matters more than character variety.
+
+**Rotating passwords on a schedule**: Forced password changes lead to predictable patterns (Password1, Password2, Password3). Change passwords when compromised, not on a calendar.
+
+## Practical Recommendations
+
+Use a password manager for everything. Generate random passwords of at least 16 characters using all character types. Use a strong passphrase as your master password. Enable two-factor authentication wherever available — it adds a second layer that protects you even if a password is compromised.
+
+For the few passwords you must memorize (master password, device unlock), use the passphrase method with at least six randomly selected words. Write them down and store the paper securely until you have memorized them, then destroy the paper.
+
+Security is not about creating one perfect password. It is about making every password unique, random, and long enough that cracking it is not worth the attacker's time.`,
+      },
+      ko: {
+        title: "안전한 비밀번호의 과학: 무작위성이 해커를 이기는 원리",
+        description:
+          "비밀번호 강도가 복잡성 규칙이 아닌 무작위성에 달려 있는 이유, 비밀번호 공격의 작동 방식, 그리고 진정으로 안전한 비밀번호를 생성하고 관리하는 전략을 정리했습니다.",
+        body: `## 대부분의 비밀번호가 약한 이유
+
+보통 사람은 여러 사이트에서 같은 비밀번호를 재사용하고, 뻔한 문자 치환(@를 a 대신, 3을 e 대신)을 하고, "P@ssw0rd123!"이 강한 비밀번호라고 생각합니다. 안타깝게도 공격자는 이 패턴을 전부 알고 있습니다. 현대의 비밀번호 크래킹 도구는 초당 수십억 개의 조합을 테스트하며, 흔한 비밀번호 사전, 알려진 치환 패턴, 유출된 비밀번호 데이터베이스를 활용합니다.
+
+비밀번호의 강도는 오직 한 가지에 달려 있습니다: 진짜 무작위성. 영리함이 아니라, 길이만이 아니라, 복잡성 규칙이 아니라 — 무작위성입니다.
+
+## 비밀번호 공격의 작동 방식
+
+### 무차별 대입(Brute Force)
+
+가능한 모든 문자 조합을 시도합니다. 소문자만 사용하는 8글자 비밀번호는 26^8(약 2090억) 가지입니다. 많아 보이지만 최신 GPU는 초당 수십억 개의 해시를 테스트할 수 있어서, 이런 비밀번호는 몇 분이면 깨집니다.
+
+대문자, 숫자, 기호를 추가하면 문자 집합이 커지지만 수학은 같습니다. 진짜 방어는 길이와 문자 집합 크기의 곱 — 가능한 비밀번호의 총 수입니다.
+
+### 사전 공격
+
+흔한 비밀번호("password", "123456", "qwerty"), 일반 단어, 이름, 이전에 유출된 비밀번호 목록으로 시작합니다. 그다음 첫 글자 대문자화, 숫자 추가, 문자 치환 같은 흔한 변형을 적용합니다. 사람에게는 창의적으로 느껴지지만 예측 가능한 패턴을 따르는 비밀번호가 이렇게 깨집니다.
+
+### 크리덴셜 스터핑
+
+서비스가 해킹되어 비밀번호가 유출되면, 공격자는 같은 이메일/비밀번호 조합을 다른 서비스에서 시도합니다. 대부분의 사람이 비밀번호를 재사용하기 때문에, 놀라울 정도로 잘 작동합니다. 방어는 간단합니다: 같은 비밀번호를 두 번 쓰지 마세요.
+
+## 강한 비밀번호의 조건
+
+### 엔트로피
+
+비밀번호 강도는 엔트로피 비트 수로 측정됩니다. 엔트로피 1비트가 늘 때마다 가능한 비밀번호 수가 두 배가 됩니다. 40비트 엔트로피는 약 1조 가지, 80비트는 약 100경 가지 가능성입니다.
+
+2026년 기준 실용적 보안을 위해 중요한 계정은 최소 80비트, 덜 중요한 계정은 60비트 이상을 목표로 하세요.
+
+### 문자 집합 크기
+
+소문자만 쓰면 문자당 26가지 선택지입니다. 대문자를 더하면 52, 숫자를 더하면 62, 기호까지 넣으면 90 이상이 됩니다. 문자 집합이 클수록 같은 길이에서도 가능한 조합이 기하급수적으로 늘어납니다.
+
+90+ 문자 집합의 12글자 비밀번호가 소문자만 쓴 20글자 비밀번호보다 엔트로피가 더 높습니다.
+
+### 길이
+
+길이는 엔트로피에 곱셈 효과를 줍니다. 문자 하나가 추가될 때마다 전체 가능성이 문자 집합 크기만큼 곱해집니다. 16글자 무작위 비밀번호는 8글자보다 천문학적으로 깨기 어렵습니다.
+
+적절한 길이(12~16자)와 넓은 문자 집합(문자, 숫자, 기호)을 조합하는 것이 가장 효율적입니다.
+
+## 무작위 비밀번호 생성
+
+진정한 무작위 비밀번호는 사람이 만들 수 없습니다. 우리는 패턴, 익숙한 시퀀스, 키보드 배열 쪽으로 편향되어 있습니다. 무작위로 만들려고 해도 사람이 만든 비밀번호는 진정한 무작위보다 엔트로피가 현저히 낮습니다.
+
+암호학적으로 안전한 난수 생성기(CSPRNG)가 비밀번호 생성에 적합한 진정한 무작위성을 제공합니다. 이 알고리즘은 하드웨어 엔트로피 소스에서 추출하여 수학적으로 예측 불가능한 출력을 만듭니다.
+
+무작위 비밀번호를 생성할 때:
+
+- Math.random() 같은 유사 난수가 아닌 CSPRNG을 사용하세요
+- 문자 집합(대문자, 소문자, 숫자, 기호)을 명시적으로 지정하세요
+- 엔트로피 요구 사항에 따라 길이를 설정하세요
+- 계정마다 새로운 독립 비밀번호를 생성하세요
+
+## 패스프레이즈 방식
+
+무작위 문자 비밀번호의 대안은 패스프레이즈입니다. 무작위로 선택된 여러 단어를 연결하는 방식입니다. "correct-horse-battery-staple"은 "j7#Kx9$mR2&p"보다 외우기 쉬우면서 비슷한 수준의 엔트로피를 제공합니다(단어가 진정 무작위로 선택된 경우).
+
+핵심 요구 사항은 같습니다: 진짜 무작위성. 7,776개 단어 사전에서 무작위로 4단어를 선택하면(Diceware 방식) 약 51비트 엔트로피를 제공합니다. 6단어면 약 77비트입니다.
+
+의미 있는 문장을 이루거나 서로 관련된 단어를 고르면 안 됩니다. "my-dog-loves-walks"는 단어들이 관련되어 예측 가능하므로 나쁜 패스프레이즈입니다. "quantum-mailbox-furnace-eleven"은 조합이 자의적이므로 훨씬 낫습니다.
+
+## 비밀번호 관리자
+
+고유한 무작위 비밀번호의 현실적 문제는 기억입니다. 16글자 무작위 문자열 50개를 외울 수는 없습니다. 비밀번호 관리자는 모든 비밀번호를 하나의 마스터 비밀번호로 보호되는 암호화 금고에 저장합니다.
+
+마스터 비밀번호만 정말 강하게 만드세요 — 최소 80비트 엔트로피, 긴 무작위 문자열이나 6단어 이상의 패스프레이즈. 나머지는 관리자가 생성하고 저장합니다.
+
+## 흔한 실수
+
+**약한 비밀번호에 숫자 추가**: "password1"은 "password"보다 의미 있게 강해지지 않습니다. 공격자는 이런 변형을 자동으로 테스트합니다.
+
+**개인 정보**: 생일, 반려동물 이름, 주소, 전화번호는 쉽게 알아낼 수 있고, 표적 공격에 흔히 사용됩니다.
+
+**키보드 패턴**: "qwertyuiop", "1qaz2wsx" 같은 패턴은 모든 공격자의 사전에 들어 있습니다.
+
+**특수 문자가 포함된 짧은 비밀번호**: "A1@b"는 모든 문자 유형을 사용해도 엔트로피가 매우 낮습니다. 문자 다양성보다 길이가 더 중요합니다.
+
+**주기적 비밀번호 변경**: 강제 변경은 예측 가능한 패턴(Password1, Password2, Password3)을 만듭니다. 일정에 따라가 아니라 유출되었을 때 변경하세요.
+
+## 실용적 권장 사항
+
+모든 곳에 비밀번호 관리자를 사용하세요. 모든 문자 유형을 포함한 최소 16글자 무작위 비밀번호를 생성하세요. 마스터 비밀번호는 강한 패스프레이즈를 사용하세요. 가능한 곳마다 이중 인증을 활성화하세요 — 비밀번호가 유출되더라도 보호하는 두 번째 방어선입니다.
+
+보안은 완벽한 비밀번호 하나를 만드는 게 아닙니다. 모든 비밀번호를 고유하고, 무작위로, 깨는 데 공격자의 시간을 쏟을 가치가 없을 만큼 충분히 길게 만드는 것입니다.`,
+      },
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   return articles.find((a) => a.slug === slug);
 }
 
-export function getArticlesByApp(app: "pdf" | "image"): BlogArticle[] {
+export function getArticlesByApp(app: "pdf" | "image" | "text"): BlogArticle[] {
   return articles.filter((a) => a.app === app);
 }
 

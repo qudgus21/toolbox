@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "PDFの編集・結合・変換、画像のリサイズ・圧縮・加工。すべて無料、ブラウザだけで完結。",
   },
   hero: {
-    badge: "87以上の無料オンラインツール",
+    badge: "131以上の無料オンラインツール",
     title: "必要なツールがすべて揃う、ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -29,6 +29,13 @@ const dict: LandingDictionary = {
       cta: "画像ツールを見る",
       toolCount: "48ツール",
     },
+    text: {
+      name: "テキストツール",
+      description:
+        "変換、分析、整形、エンコード、生成 — テキスト処理をその場で。",
+      cta: "テキストツールを見る",
+      toolCount: "44以上のツール",
+    },
   },
   popularTools: {
     sectionTitle: "人気のツール",
@@ -36,7 +43,7 @@ const dict: LandingDictionary = {
     viewAll: "すべて見る",
   },
   stats: {
-    tools: "87+",
+    tools: "131+",
     toolsLabel: "無料ツール",
     languages: "45",
     languagesLabel: "対応言語",
@@ -87,7 +94,8 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
+    image: "画像",
+    text: "テキスト",
   },
 };
 

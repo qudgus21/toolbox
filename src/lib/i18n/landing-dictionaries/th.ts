@@ -6,7 +6,7 @@ const dict: LandingDictionary = {
     description: "แก้ไข รวม แปลงไฟล์ PDF ปรับขนาด บีบอัด แปลงรูปภาพ ทั้งหมดฟรี ใช้ได้เลยบนเบราว์เซอร์",
   },
   hero: {
-    badge: "87+ เครื่องมือออนไลน์ฟรี",
+    badge: "131+ เครื่องมือออนไลน์ฟรี",
     title: "ทุกเครื่องมือที่คุณต้องการ รวมไว้ใน ToolPop",
     titleAccent: "ToolPop",
     subtitle: "จัดการ PDF และรูปภาพได้เลยบนเบราว์เซอร์ ไม่ต้องติดตั้ง ไม่ต้องสมัคร",
@@ -15,9 +15,10 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "เครื่องมือ PDF", description: "รวม แยก แปลง แก้ไข และบีบอัด — ทำได้ทุกอย่างกับไฟล์ PDF", cta: "ดูเครื่องมือ PDF", toolCount: "39 เครื่องมือ" },
     image: { name: "เครื่องมือรูปภาพ", description: "ปรับขนาด ครอป แปลงไฟล์ ใส่เอฟเฟกต์ สร้าง QR Code — ครบทุกอย่างสำหรับรูปภาพ", cta: "ดูเครื่องมือรูปภาพ", toolCount: "48 เครื่องมือ" },
+    text: { name: "เครื่องมือข้อความ", description: "แปลง วิเคราะห์ จัดระเบียบ เข้ารหัส และสร้างข้อความได้ทันที", cta: "เครื่องมือข้อความ", toolCount: "44+ เครื่องมือ" },
   },
   popularTools: { sectionTitle: "เครื่องมือยอดนิยม", sectionSubtitle: "เข้าถึงเครื่องมือที่ใช้กันมากที่สุดได้ทันที", viewAll: "ดูทั้งหมด" },
-  stats: { tools: "87+", toolsLabel: "เครื่องมือฟรี", languages: "45", languagesLabel: "ภาษา", users: "100%", usersLabel: "ทำงานบนเบราว์เซอร์", price: "฿0", priceLabel: "ฟรีตลอดไป" },
+  stats: { tools: "131+", toolsLabel: "เครื่องมือฟรี", languages: "45", languagesLabel: "ภาษา", users: "100%", usersLabel: "ทำงานบนเบราว์เซอร์", price: "฿0", priceLabel: "ฟรีตลอดไป" },
   trust: {
     sectionTitle: "ทำไมต้อง ToolPop?",
     sectionSubtitle: "ปลอดภัยและสะดวก โดยไม่ต้องแลกอะไร",
@@ -34,6 +35,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "แชร์", shareSubtitle: "บอกเพื่อนๆ เกี่ยวกับ ToolPop!", shareCopyLink: "คัดลอกลิงก์", shareCopied: "คัดลอกแล้ว!" },
   footer: { apps: "เครื่องมือ", company: "บริษัท", about: "เกี่ยวกับเรา", contact: "ติดต่อ", faq: "FAQ", blog: "บล็อก", legal: "ข้อกฎหมาย", privacy: "นโยบายความเป็นส่วนตัว", terms: "ข้อกำหนดการใช้งาน", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "เครื่องมือออนไลน์ฟรีสำหรับ PDF รูปภาพ และอื่นๆ ไม่ต้องสมัครสมาชิก", madeWith: "สร้างด้วยใจเพื่อทุกคน" },
   search: { noResults: "ไม่พบผลลัพธ์" },
-  nav: { pdf: "PDF", image: "Image" },
+  nav: { pdf: "PDF", image: "รูปภาพ", text: "ข้อความ" },
 };
 export default dict;

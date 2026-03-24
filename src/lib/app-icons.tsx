@@ -43,10 +43,35 @@ export const ImageAppIcon: FC<IconProps> = (props) => (
   </svg>
 );
 
+/** Text app icon — document with text cursor and "TXT" badge */
+export const TextAppIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Main document */}
+    <path
+      d="M10,3 H30 L38,11 V43 Q38,45 36,45 H12 Q10,45 10,43 V3Z"
+      fill="#FEF3C7"
+      stroke="#F59E0B"
+      strokeWidth="1.8"
+    />
+    {/* Fold */}
+    <path d="M30,3 V11 H38" fill="#F59E0B" opacity="0.25" />
+    <path d="M30,3 V11 H38" fill="none" stroke="#F59E0B" strokeWidth="1.8" strokeLinejoin="round" />
+    {/* Text lines */}
+    <line x1="15" y1="18" x2="33" y2="18" stroke="#F59E0B" strokeWidth="1.2" opacity="0.3" strokeLinecap="round" />
+    <line x1="15" y1="22.5" x2="29" y2="22.5" stroke="#F59E0B" strokeWidth="1.2" opacity="0.3" strokeLinecap="round" />
+    {/* Text cursor */}
+    <line x1="26" y1="25" x2="26" y2="32" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+    {/* TXT badge */}
+    <rect x="17" y="32" width="22" height="12" rx="3" fill="#F59E0B" />
+    <text x="28" y="41" textAnchor="middle" fontSize="7.5" fontWeight="800" fontFamily="system-ui,sans-serif" fill="white">TXT</text>
+  </svg>
+);
+
 /** Map app slugs to icons */
 export const appIconMap: Record<string, FC<IconProps>> = {
   pdf: PdfAppIcon,
   image: ImageAppIcon,
+  text: TextAppIcon,
 };
 
 export function getAppIcon(slug: string): FC<IconProps> | undefined {

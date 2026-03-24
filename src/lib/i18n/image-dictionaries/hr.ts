@@ -19,6 +19,8 @@ const hr: ImageDictionary = {
     favorites: "Favoriti",
     favDragHint: "Povucite za promjenu redoslijeda",
     favHint: "Dodajte omiljene alate za brzi pristup",
+    gridView: "Mrežni prikaz",
+    listView: "Prikaz popisa",
   },
   trust: {
     encryption: "Sigurna obrada",
@@ -304,6 +306,7 @@ const hr: ImageDictionary = {
     shareSubtitle: "Reci i drugima!",
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj poveznicu",
+    unknownError: "Došlo je do nepoznate pogreške",
   },
   toolOptions: {
     resize: {
@@ -478,6 +481,7 @@ const hr: ImageDictionary = {
       image: "Slika",
       watermarkImage: "Slika vodenog žiga",
       enterWatermarkText: "Unesite tekst vodenog žiga...",
+      defaultWatermarkText: "Vodeni žig",
       chooseImage: "Odaberite sliku...",
       fontFamily: "Font",
       fontSize: "Veličina fonta",
