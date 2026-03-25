@@ -355,8 +355,6 @@ const sv: TextDictionary = {
     sentences: "Meningar",
     paragraphs: "Stycken",
     lines: "Rader",
-    readingTime: "Lästid",
-    speakingTime: "Taltid",
     totalCharacters: "Totalt tecken",
     bytes: "Bytes",
     letters: "Bokstäver",

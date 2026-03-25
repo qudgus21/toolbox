@@ -355,8 +355,6 @@ const el: TextDictionary = {
     sentences: "Προτάσεις",
     paragraphs: "Παράγραφοι",
     lines: "Γραμμές",
-    readingTime: "Χρόνος ανάγνωσης",
-    speakingTime: "Χρόνος ομιλίας",
     totalCharacters: "Σύνολο χαρακτήρων",
     bytes: "Bytes",
     letters: "Γράμματα",

@@ -111,10 +111,6 @@ export function TextToolPageClient({
   }, [isGenerateButton]);
 
   const inputLabels = {
-    characterCount: labels.characterCount,
-    wordCount: labels.wordCount,
-    lineCount: labels.lineCount,
-    paste: labels.paste,
     clear: labels.clear,
   };
 
@@ -175,7 +171,6 @@ export function TextToolPageClient({
               onChange={setInput}
               label={dualInput ? `${labels.input} (A)` : labels.input}
               placeholder={labels.inputPlaceholder}
-              showStats
               labels={inputLabels}
             />
             {dualInput && (
@@ -184,7 +179,6 @@ export function TextToolPageClient({
                 onChange={setInput2}
                 label={`${labels.input} (B)`}
                 placeholder={labels.inputPlaceholder}
-                showStats
                 labels={inputLabels}
               />
             )}

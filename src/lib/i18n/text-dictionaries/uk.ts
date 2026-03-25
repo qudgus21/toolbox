@@ -355,8 +355,6 @@ const uk: TextDictionary = {
     sentences: "Речення",
     paragraphs: "Абзаци",
     lines: "Рядки",
-    readingTime: "Час читання",
-    speakingTime: "Час мовлення",
     totalCharacters: "Усього символів",
     bytes: "Байти",
     letters: "Літери",

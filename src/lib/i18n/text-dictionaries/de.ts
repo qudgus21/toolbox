@@ -355,8 +355,6 @@ const de: TextDictionary = {
     sentences: "Sätze",
     paragraphs: "Absätze",
     lines: "Zeilen",
-    readingTime: "Lesezeit",
-    speakingTime: "Sprechzeit",
     totalCharacters: "Zeichen gesamt",
     bytes: "Bytes",
     letters: "Buchstaben",

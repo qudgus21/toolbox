@@ -354,8 +354,6 @@ const ja: TextDictionary = {
     sentences: "文数",
     paragraphs: "段落数",
     lines: "行数",
-    readingTime: "読了時間",
-    speakingTime: "音読時間",
     totalCharacters: "総文字数",
     bytes: "バイト",
     letters: "文字",

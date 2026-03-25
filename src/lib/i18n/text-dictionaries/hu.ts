@@ -355,8 +355,6 @@ const hu: TextDictionary = {
     sentences: "Mondatok",
     paragraphs: "Bekezdések",
     lines: "Sorok",
-    readingTime: "Olvasási idő",
-    speakingTime: "Beszédidő",
     totalCharacters: "Összes karakter",
     bytes: "Bájt",
     letters: "Betűk",

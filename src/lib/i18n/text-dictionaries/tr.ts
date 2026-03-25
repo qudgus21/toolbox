@@ -187,8 +187,6 @@ const tr: TextDictionary = {
     sentences: "Cümle",
     paragraphs: "Paragraf",
     lines: "Satır",
-    readingTime: "Okuma süresi",
-    speakingTime: "Konuşma süresi",
     totalCharacters: "Toplam karakter",
     bytes: "Bayt",
     letters: "Harf",

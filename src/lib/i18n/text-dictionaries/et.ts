@@ -355,8 +355,6 @@ const et: TextDictionary = {
     sentences: "Laused",
     paragraphs: "Lõigud",
     lines: "Read",
-    readingTime: "Lugemisaeg",
-    speakingTime: "Kõneaeg",
     totalCharacters: "Tähemärke kokku",
     bytes: "Baidid",
     letters: "Tähed",

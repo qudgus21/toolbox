@@ -219,8 +219,6 @@ const pt: TextDictionary = {
     sentences: "Frases",
     paragraphs: "Parágrafos",
     lines: "Linhas",
-    readingTime: "Tempo de leitura",
-    speakingTime: "Tempo de fala",
     totalCharacters: "Total de caracteres",
     bytes: "Bytes",
     letters: "Letras",
