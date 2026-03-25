@@ -26,7 +26,7 @@ export async function generateMetadata({
         "x-default": "/en/privacy",
       },
     },
-    openGraph: { title, description: dict.privacy.intro, url: `/${locale}/privacy`, type: "website", locale },
+    openGraph: { title, description: dict.privacy.intro, url: `/${locale}/privacy`, type: "website", locale, siteName: "ToolPop" },
     twitter: { card: "summary_large_image", title, description: dict.privacy.intro },
   };
 }

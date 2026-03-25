@@ -20,7 +20,7 @@ export default function RootLayout({
               name: "ToolPop",
               url: "https://toolpop.org",
               logo: "https://toolpop.org/icon-512.png",
-              description: "Free online PDF and image tools",
+              description: "Free online PDF, image, and text tools",
             }),
           }}
         />
