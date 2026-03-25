@@ -355,8 +355,6 @@ const lt: TextDictionary = {
     sentences: "Sakiniai",
     paragraphs: "Pastraipos",
     lines: "Eilutės",
-    readingTime: "Skaitymo laikas",
-    speakingTime: "Kalbėjimo laikas",
     totalCharacters: "Iš viso simbolių",
     bytes: "Baitai",
     letters: "Raidės",

@@ -187,8 +187,6 @@ const hi: TextDictionary = {
     sentences: "वाक्य",
     paragraphs: "अनुच्छेद",
     lines: "पंक्तियाँ",
-    readingTime: "पढ़ने का समय",
-    speakingTime: "बोलने का समय",
     totalCharacters: "कुल अक्षर",
     bytes: "बाइट्स",
     letters: "अक्षर",

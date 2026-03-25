@@ -187,8 +187,6 @@ const nl: TextDictionary = {
     sentences: "Zinnen",
     paragraphs: "Alinea's",
     lines: "Regels",
-    readingTime: "Leestijd",
-    speakingTime: "Spreektijd",
     totalCharacters: "Totaal tekens",
     bytes: "Bytes",
     letters: "Letters",

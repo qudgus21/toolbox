@@ -355,8 +355,6 @@ const km: TextDictionary = {
     sentences: "ប្រយោគ",
     paragraphs: "កថាខណ្ឌ",
     lines: "បន្ទាត់",
-    readingTime: "ពេលអាន",
-    speakingTime: "ពេលនិយាយ",
     totalCharacters: "តួអក្សរសរុប",
     bytes: "បៃ",
     letters: "អក្សរ",

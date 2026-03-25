@@ -355,8 +355,6 @@ const ga: TextDictionary = {
     sentences: "Abairtí",
     paragraphs: "Paragraif",
     lines: "Línte",
-    readingTime: "Am léitheoireachta",
-    speakingTime: "Am cainte",
     totalCharacters: "Carachtair iomlán",
     bytes: "Beart",
     letters: "Litreacha",

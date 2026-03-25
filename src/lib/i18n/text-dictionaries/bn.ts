@@ -355,8 +355,6 @@ const bn: TextDictionary = {
     sentences: "বাক্য",
     paragraphs: "অনুচ্ছেদ",
     lines: "লাইন",
-    readingTime: "পড়ার সময়",
-    speakingTime: "বলার সময়",
     totalCharacters: "মোট অক্ষর",
     bytes: "বাইট",
     letters: "বর্ণ",

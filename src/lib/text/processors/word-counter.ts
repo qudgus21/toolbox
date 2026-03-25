@@ -7,8 +7,6 @@ export function process(
   input: string,
   _options?: Record<string, unknown>
 ): TextResult {
-  const msg = (_options?._messages as Record<string, string>) ?? {};
-
   if (!input) {
     return {
       output: input,
@@ -19,8 +17,6 @@ export function process(
         sentences: 0,
         paragraphs: 0,
         lines: 0,
-        readingTime: `0 ${msg.sec ?? "sec"}`,
-        speakingTime: `0 ${msg.sec ?? "sec"}`,
       },
     };
   }
@@ -44,23 +40,6 @@ export function process(
     .filter((p) => p.trim().length > 0).length;
   const lines = input.split(/\n/).length;
 
-  const readingMinutes = words / 200;
-  const speakingMinutes = words / 130;
-
-  const secLabel = msg.sec ?? "sec";
-  const minLabel = msg.min ?? "min";
-
-  function formatTime(minutes: number): string {
-    if (minutes < 1) {
-      const seconds = Math.ceil(minutes * 60);
-      return `${seconds} ${secLabel}`;
-    }
-    const mins = Math.floor(minutes);
-    const secs = Math.round((minutes - mins) * 60);
-    if (secs === 0) return `${mins} ${minLabel}`;
-    return `${mins} ${minLabel} ${secs} ${secLabel}`;
-  }
-
   return {
     output: input,
     stats: {
@@ -70,8 +49,6 @@ export function process(
       sentences,
       paragraphs,
       lines,
-      readingTime: formatTime(readingMinutes),
-      speakingTime: formatTime(speakingMinutes),
     },
   };
 }

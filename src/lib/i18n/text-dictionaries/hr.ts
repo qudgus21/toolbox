@@ -355,8 +355,6 @@ const hr: TextDictionary = {
     sentences: "Rečenice",
     paragraphs: "Odlomci",
     lines: "Retci",
-    readingTime: "Vrijeme čitanja",
-    speakingTime: "Vrijeme govora",
     totalCharacters: "Ukupno znakova",
     bytes: "Bajtovi",
     letters: "Slova",

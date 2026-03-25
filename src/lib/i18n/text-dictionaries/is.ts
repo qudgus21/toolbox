@@ -355,8 +355,6 @@ const is: TextDictionary = {
     sentences: "Setningar",
     paragraphs: "Málsgreinar",
     lines: "Línur",
-    readingTime: "Lestrartími",
-    speakingTime: "Taltími",
     totalCharacters: "Stafir samtals",
     bytes: "Bæti",
     letters: "Bókstafir",

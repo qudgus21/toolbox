@@ -355,8 +355,6 @@ const bg: TextDictionary = {
     sentences: "Изречения",
     paragraphs: "Абзаци",
     lines: "Редове",
-    readingTime: "Време за четене",
-    speakingTime: "Време за говорене",
     totalCharacters: "Общо символи",
     bytes: "Байтове",
     letters: "Букви",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef } from "react";
-import { ClipboardPaste, X, Type } from "lucide-react";
+import { X, Type } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface TextInputAreaProps {
@@ -10,25 +10,10 @@ interface TextInputAreaProps {
   label?: string;
   placeholder?: string;
   readOnly?: boolean;
-  showStats?: boolean;
   labels: {
-    characterCount: string;
-    wordCount: string;
-    lineCount: string;
-    paste: string;
     clear: string;
   };
   className?: string;
-}
-
-function countWords(text: string): number {
-  if (!text.trim()) return 0;
-  return text.trim().split(/\s+/).length;
-}
-
-function countLines(text: string): number {
-  if (!text) return 0;
-  return text.split("\n").length;
 }
 
 export function TextInputArea({
@@ -37,30 +22,15 @@ export function TextInputArea({
   label,
   placeholder,
   readOnly = false,
-  showStats = true,
   labels,
   className,
 }: TextInputAreaProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handlePaste = useCallback(async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      onChange(text);
-      textareaRef.current?.focus();
-    } catch {
-      // clipboard permission denied — ignore
-    }
-  }, [onChange]);
-
   const handleClear = useCallback(() => {
     onChange("");
     textareaRef.current?.focus();
   }, [onChange]);
-
-  const charCount = value.length;
-  const wordCount = countWords(value);
-  const lineCount = countLines(value);
 
   return (
     <div
@@ -78,29 +48,16 @@ export function TextInputArea({
           {label}
         </span>
         <div className="flex items-center gap-0.5">
-          {!readOnly && (
-            <>
-              <button
-                type="button"
-                onClick={handlePaste}
-                className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-foreground-muted hover:text-accent hover:bg-accent/8 transition-all duration-150 cursor-pointer"
-                title={labels.paste}
-              >
-                <ClipboardPaste className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">{labels.paste}</span>
-              </button>
-              {value && (
-                <button
-                  type="button"
-                  onClick={handleClear}
-                  className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-foreground-muted hover:text-red-500 hover:bg-red-500/8 transition-all duration-150 cursor-pointer"
-                  title={labels.clear}
-                >
-                  <X className="h-3.5 w-3.5" />
-                  <span className="hidden sm:inline">{labels.clear}</span>
-                </button>
-              )}
-            </>
+          {!readOnly && value && (
+            <button
+              type="button"
+              onClick={handleClear}
+              className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-xs font-medium text-foreground-muted hover:text-red-500 hover:bg-red-500/8 transition-all duration-150 cursor-pointer"
+              title={labels.clear}
+            >
+              <X className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">{labels.clear}</span>
+            </button>
           )}
         </div>
       </div>
@@ -118,21 +75,6 @@ export function TextInputArea({
         )}
         spellCheck={false}
       />
-
-      {/* Stats bar */}
-      {showStats && (
-        <div className="flex items-center gap-4 border-t border-border/40 bg-gradient-to-r from-background-subtle/60 to-transparent px-4 py-2 text-xs font-medium text-foreground-subtle">
-          <span className="tabular-nums">
-            {labels.characterCount}: <span className="text-foreground-muted">{charCount.toLocaleString()}</span>
-          </span>
-          <span className="tabular-nums">
-            {labels.wordCount}: <span className="text-foreground-muted">{wordCount.toLocaleString()}</span>
-          </span>
-          <span className="tabular-nums">
-            {labels.lineCount}: <span className="text-foreground-muted">{lineCount.toLocaleString()}</span>
-          </span>
-        </div>
-      )}
     </div>
   );
 }

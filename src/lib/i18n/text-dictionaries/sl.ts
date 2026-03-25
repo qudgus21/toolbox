@@ -355,8 +355,6 @@ const sl: TextDictionary = {
     sentences: "Stavki",
     paragraphs: "Odstavki",
     lines: "Vrstice",
-    readingTime: "Čas branja",
-    speakingTime: "Čas govora",
     totalCharacters: "Skupaj znakov",
     bytes: "Bajti",
     letters: "Črke",

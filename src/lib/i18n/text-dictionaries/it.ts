@@ -187,8 +187,6 @@ const it: TextDictionary = {
     sentences: "Frasi",
     paragraphs: "Paragrafi",
     lines: "Righe",
-    readingTime: "Tempo di lettura",
-    speakingTime: "Tempo di parlato",
     totalCharacters: "Totale caratteri",
     bytes: "Byte",
     letters: "Lettere",
