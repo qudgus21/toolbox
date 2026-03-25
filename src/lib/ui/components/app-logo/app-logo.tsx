@@ -27,8 +27,8 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
   },
   text: {
     from: "#f59e0b",
-    to: "#d97706",
-    accent: "#d97706",
+    to: "#b45309",
+    accent: "#b45309",
     badge: "Text",
     badgeClasses: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-400",
   },
