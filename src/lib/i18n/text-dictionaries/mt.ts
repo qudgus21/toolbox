@@ -355,8 +355,6 @@ const mt: TextDictionary = {
     sentences: "Sentenzi",
     paragraphs: "Paragrafi",
     lines: "Linji",
-    readingTime: "Ħin tal-qari",
-    speakingTime: "Ħin tat-taħdit",
     totalCharacters: "Total karattri",
     bytes: "Bytes",
     letters: "Ittri",

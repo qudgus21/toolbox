@@ -187,8 +187,6 @@ const ar: TextDictionary = {
     sentences: "الجمل",
     paragraphs: "الفقرات",
     lines: "الأسطر",
-    readingTime: "وقت القراءة",
-    speakingTime: "وقت التحدث",
     totalCharacters: "إجمالي الأحرف",
     bytes: "بايت",
     letters: "حروف",

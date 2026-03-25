@@ -187,8 +187,6 @@ const id: TextDictionary = {
     sentences: "Kalimat",
     paragraphs: "Paragraf",
     lines: "Baris",
-    readingTime: "Waktu baca",
-    speakingTime: "Waktu bicara",
     totalCharacters: "Total karakter",
     bytes: "Byte",
     letters: "Huruf",

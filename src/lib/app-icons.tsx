@@ -67,11 +67,29 @@ export const TextAppIcon: FC<IconProps> = (props) => (
   </svg>
 );
 
+/** Converter app icon — exchange arrows with "CVT" badge */
+export const ConverterAppIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    {/* Circle background */}
+    <circle cx="24" cy="24" r="20" fill="#D1FAE5" stroke="#10B981" strokeWidth="1.8" />
+    {/* Arrow right */}
+    <path d="M12 18h18" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26 14l4 4-4 4" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* Arrow left */}
+    <path d="M36 30H18" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
+    <path d="M22 26l-4 4 4 4" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    {/* CVT badge */}
+    <rect x="17" y="36" width="22" height="10" rx="3" fill="#10B981" />
+    <text x="28" y="43.5" textAnchor="middle" fontSize="6.5" fontWeight="800" fontFamily="system-ui,sans-serif" fill="white">CVT</text>
+  </svg>
+);
+
 /** Map app slugs to icons */
 export const appIconMap: Record<string, FC<IconProps>> = {
   pdf: PdfAppIcon,
   image: ImageAppIcon,
   text: TextAppIcon,
+  converter: ConverterAppIcon,
 };
 
 export function getAppIcon(slug: string): FC<IconProps> | undefined {

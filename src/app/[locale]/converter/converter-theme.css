@@ -1,0 +1,23 @@
+/* Converter App — Emerald accent override */
+[data-app="converter"] {
+  --color-accent: #059669;
+  --color-accent-foreground: var(--primitive-white);
+  --color-accent-hover: #047857;
+  --color-accent-muted: #ecfdf5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-app="converter"] {
+    --color-accent: #34d399;
+    --color-accent-foreground: var(--primitive-zinc-950);
+    --color-accent-hover: #6ee7b7;
+    --color-accent-muted: rgba(52, 211, 153, 0.15);
+  }
+}
+
+[data-theme="dark"] [data-app="converter"] {
+  --color-accent: #6ee7b7;
+  --color-accent-foreground: var(--primitive-zinc-950);
+  --color-accent-hover: #a7f3d0;
+  --color-accent-muted: rgba(110, 231, 183, 0.15);
+}

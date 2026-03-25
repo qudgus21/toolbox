@@ -187,8 +187,6 @@ const vi: TextDictionary = {
     sentences: "Câu",
     paragraphs: "Đoạn",
     lines: "Dòng",
-    readingTime: "Thời gian đọc",
-    speakingTime: "Thời gian nói",
     totalCharacters: "Tổng ký tự",
     bytes: "Byte",
     letters: "Chữ cái",

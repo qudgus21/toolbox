@@ -355,8 +355,6 @@ const es: TextDictionary = {
     sentences: "Oraciones",
     paragraphs: "Párrafos",
     lines: "Líneas",
-    readingTime: "Tiempo de lectura",
-    speakingTime: "Tiempo de habla",
     totalCharacters: "Total de caracteres",
     bytes: "Bytes",
     letters: "Letras",

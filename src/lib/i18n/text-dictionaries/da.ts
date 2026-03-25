@@ -355,8 +355,6 @@ const da: TextDictionary = {
     sentences: "Sætninger",
     paragraphs: "Afsnit",
     lines: "Linjer",
-    readingTime: "Læsetid",
-    speakingTime: "Taletid",
     totalCharacters: "Tegn i alt",
     bytes: "Bytes",
     letters: "Bogstaver",

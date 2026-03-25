@@ -355,8 +355,6 @@ const te: TextDictionary = {
     sentences: "వాక్యాలు",
     paragraphs: "పేరాగ్రాఫ్‌లు",
     lines: "పంక్తులు",
-    readingTime: "చదివే సమయం",
-    speakingTime: "మాట్లాడే సమయం",
     totalCharacters: "మొత్తం అక్షరాలు",
     bytes: "బైట్లు",
     letters: "అక్షరాలు",

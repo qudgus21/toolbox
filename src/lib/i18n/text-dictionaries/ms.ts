@@ -355,8 +355,6 @@ const ms: TextDictionary = {
     sentences: "Ayat",
     paragraphs: "Perenggan",
     lines: "Baris",
-    readingTime: "Masa membaca",
-    speakingTime: "Masa bertutur",
     totalCharacters: "Jumlah aksara",
     bytes: "Bait",
     letters: "Huruf",

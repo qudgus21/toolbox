@@ -355,8 +355,6 @@ const lv: TextDictionary = {
     sentences: "Teikumi",
     paragraphs: "Rindkopas",
     lines: "Rindas",
-    readingTime: "Lasīšanas laiks",
-    speakingTime: "Runāšanas laiks",
     totalCharacters: "Kopā rakstzīmju",
     bytes: "Baiti",
     letters: "Burti",

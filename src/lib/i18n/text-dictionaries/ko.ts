@@ -355,8 +355,6 @@ const ko: TextDictionary = {
     sentences: "문장 수",
     paragraphs: "문단 수",
     lines: "줄 수",
-    readingTime: "읽기 시간",
-    speakingTime: "말하기 시간",
     // character-counter
     totalCharacters: "전체 글자 수",
     bytes: "바이트",

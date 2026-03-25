@@ -3,22 +3,23 @@ import type { LandingDictionary } from "../landing-config";
 const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — Kostenlose Online-Tools",
-    description: "PDFs bearbeiten, zusammenfügen und konvertieren. Bilder skalieren, komprimieren und transformieren. Alles kostenlos, direkt im Browser.",
+    description: "PDFs bearbeiten, Bilder transformieren, Einheiten umrechnen und mehr. Alles kostenlos, direkt im Browser.",
   },
   hero: {
-    badge: "131+ kostenlose Online-Tools",
+    badge: "176+ kostenlose Online-Tools",
     title: "Alle Tools, die du brauchst — in einem ToolPop",
     titleAccent: "ToolPop",
-    subtitle: "Arbeite mit PDFs und Bildern direkt im Browser. Ohne Installation, ohne Anmeldung.",
+    subtitle: "Arbeite mit PDFs, Bildern, Texten und Umrechnungen direkt im Browser. Ohne Installation, ohne Anmeldung.",
     searchPlaceholder: "Welches Tool suchst du?",
   },
   apps: {
     pdf: { name: "PDF-Tools", description: "Zusammenfügen, teilen, konvertieren, bearbeiten und komprimieren — alles rund um PDFs.", cta: "PDF-Tools entdecken", toolCount: "39 Tools" },
     image: { name: "Bild-Tools", description: "Skalieren, zuschneiden, konvertieren, Effekte anwenden, QR-Codes erstellen — alles für Bilder.", cta: "Bild-Tools entdecken", toolCount: "48 Tools" },
     text: { name: "Text-Tools", description: "Texte umwandeln, analysieren, bereinigen, kodieren und generieren — sofort.", cta: "Text-Tools", toolCount: "44+ Tools" },
+    converter: { name: "Umrechner", description: "Einheiten, Farben, Datenformate, Daten und mehr sofort umrechnen.", cta: "Umrechner", toolCount: "45 Tools" },
   },
   popularTools: { sectionTitle: "Beliebte Tools", sectionSubtitle: "Direkt zu den meistgenutzten Tools", viewAll: "Alle anzeigen" },
-  stats: { tools: "131+", toolsLabel: "Kostenlose Tools", languages: "45", languagesLabel: "Sprachen", users: "100%", usersLabel: "Browserbasiert", price: "€0", priceLabel: "Für immer kostenlos" },
+  stats: { tools: "176+", toolsLabel: "Kostenlose Tools", languages: "45", languagesLabel: "Sprachen", users: "100%", usersLabel: "Browserbasiert", price: "€0", priceLabel: "Für immer kostenlos" },
   trust: {
     sectionTitle: "Warum ToolPop?",
     sectionSubtitle: "Sicherheit und Komfort — ohne Kompromisse",
@@ -35,6 +36,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Teilen", shareSubtitle: "Erzähl deinen Freunden von ToolPop!", shareCopyLink: "Link kopieren", shareCopied: "Kopiert!" },
   footer: { apps: "Tools", company: "Unternehmen", about: "Über uns", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Rechtliches", privacy: "Datenschutz", terms: "Nutzungsbedingungen", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Kostenlose Online-Tools für PDF, Bilder und mehr. Ohne Anmeldung.", madeWith: "Mit Liebe für alle gemacht" },
   search: { noResults: "Keine Ergebnisse gefunden" },
-  nav: { pdf: "PDF", image: "Bild", text: "Text" },
+  nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Umrechner" },
 };
 export default dict;

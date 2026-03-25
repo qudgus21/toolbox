@@ -1,6 +1,6 @@
 export interface BlogArticle {
   slug: string;
-  app: "pdf" | "image" | "text";
+  app: "pdf" | "image" | "text" | "converter";
   category: "guide" | "tips" | "knowledge";
   publishedAt: string;
   content: Record<
@@ -3562,6 +3562,363 @@ Security is not about creating one perfect password. It is about making every pa
 모든 곳에 비밀번호 관리자를 사용하세요. 모든 문자 유형을 포함한 최소 16글자 무작위 비밀번호를 생성하세요. 마스터 비밀번호는 강한 패스프레이즈를 사용하세요. 가능한 곳마다 이중 인증을 활성화하세요 — 비밀번호가 유출되더라도 보호하는 두 번째 방어선입니다.
 
 보안은 완벽한 비밀번호 하나를 만드는 게 아닙니다. 모든 비밀번호를 고유하고, 무작위로, 깨는 데 공격자의 시간을 쏟을 가치가 없을 만큼 충분히 길게 만드는 것입니다.`,
+      },
+    },
+  },
+  {
+    slug: "unit-conversion-guide",
+    app: "converter",
+    category: "guide",
+    publishedAt: "2026-03-20",
+    content: {
+      en: {
+        title:
+          "The Complete Guide to Unit Conversion: From Metric to Imperial and Beyond",
+        description:
+          "Master unit conversion with our comprehensive guide covering length, weight, temperature, volume, and more.",
+        body: `## Two Systems, One World
+
+Most of the world uses the metric system — meters, kilograms, liters, and degrees Celsius. The United States, along with a handful of other countries, primarily uses the imperial system — feet, pounds, gallons, and degrees Fahrenheit. Whether you are cooking a recipe from another country, shopping internationally, or working on a science project, you will inevitably need to convert between these two systems.
+
+The metric system is built on powers of ten, which makes internal conversions straightforward. One kilometer equals 1,000 meters. One kilogram equals 1,000 grams. The imperial system, by contrast, relies on seemingly arbitrary relationships: 12 inches in a foot, 3 feet in a yard, 5,280 feet in a mile. This inconsistency is exactly why conversion tools exist.
+
+## Common Length and Weight Conversions
+
+For length, the most frequently needed conversions are between inches and centimeters (1 inch = 2.54 cm), feet and meters (1 foot = 0.3048 m), and miles and kilometers (1 mile = 1.609 km). A quick mental shortcut: multiply miles by 1.6 to get approximate kilometers.
+
+For weight, the key relationship is between pounds and kilograms (1 pound = 0.4536 kg). If you need a rough estimate, divide pounds by 2.2 to get kilograms. Ounces to grams is another common conversion: 1 ounce equals approximately 28.35 grams.
+
+## Temperature: The Tricky One
+
+Temperature conversion trips people up because it is not a simple multiplication. To convert Fahrenheit to Celsius, subtract 32 and multiply by 5/9. To go from Celsius to Fahrenheit, multiply by 9/5 and add 32. Some handy reference points to memorize: 0°C = 32°F (freezing point of water), 100°C = 212°F (boiling point), and 37°C = 98.6°F (normal body temperature).
+
+## Volume Conversions
+
+Volume gets confusing because the US gallon and the imperial gallon are different sizes. A US gallon is about 3.785 liters, while an imperial gallon is approximately 4.546 liters. For cooking, teaspoons (5 mL), tablespoons (15 mL), and cups (about 237 mL in the US) are the units you will convert most often.
+
+## Tips for Remembering Conversions
+
+Rather than memorizing exact numbers, anchor a few key reference points. A meter is roughly a yard plus 10 percent. A kilogram is about 2.2 pounds. Room temperature is around 20–22°C or 68–72°F. From these anchors, you can estimate most everyday conversions with reasonable accuracy.
+
+## Let Tools Do the Math
+
+For anything beyond rough estimates, a dedicated converter tool eliminates errors. ToolPop's unit converter handles length, weight, temperature, volume, area, speed, and more — all instantly in your browser with no installation needed. Bookmark it, and you will never struggle with unit conversion again.`,
+      },
+      ko: {
+        title: "단위 변환 완벽 가이드: 미터법에서 야드파운드법까지",
+        description:
+          "길이, 무게, 온도, 부피 등 다양한 단위 변환을 완벽하게 마스터하세요.",
+        body: `## 전 세계가 쓰는 두 가지 체계
+
+전 세계 대부분의 나라는 미터법을 사용합니다. 미터, 킬로그램, 리터, 섭씨. 반면 미국을 비롯한 일부 국가는 야드파운드법을 고집합니다. 피트, 파운드, 갤런, 화씨. 해외 쇼핑, 외국 레시피, 영어권 자료를 볼 때마다 단위 변환이 필요해지는 이유입니다.
+
+미터법은 10의 거듭제곱으로 구성되어 있어 체계 내 변환이 직관적입니다. 1킬로미터는 1,000미터, 1킬로그램은 1,000그램. 반면 야드파운드법은 1피트가 12인치, 1야드가 3피트, 1마일이 5,280피트처럼 관계가 들쭉날쭉합니다. 변환 도구가 꼭 필요한 이유죠.
+
+## 자주 쓰는 길이·무게 변환
+
+길이에서 가장 많이 쓰이는 변환은 인치 ↔ 센티미터(1인치 = 2.54cm), 피트 ↔ 미터(1피트 = 0.3048m), 마일 ↔ 킬로미터(1마일 = 1.609km)입니다. 빠른 암산법이 있습니다. 마일에 1.6을 곱하면 대략적인 킬로미터 값이 나옵니다.
+
+무게는 파운드 ↔ 킬로그램(1파운드 = 0.4536kg) 변환이 핵심입니다. 대략적으로 파운드를 2.2로 나누면 킬로그램이 됩니다. 온스 ↔ 그램도 자주 쓰입니다. 1온스는 약 28.35그램입니다.
+
+## 온도: 가장 헷갈리는 변환
+
+온도 변환은 단순 곱셈이 아니라서 까다롭습니다. 화씨를 섭씨로 바꾸려면 32를 빼고 5/9를 곱합니다. 섭씨를 화씨로 바꾸려면 9/5를 곱하고 32를 더합니다. 외워두면 좋은 기준점이 있습니다. 0°C = 32°F(물의 어는점), 100°C = 212°F(물의 끓는점), 37°C = 98.6°F(정상 체온).
+
+## 부피 변환
+
+부피는 미국 갤런과 영국 갤런이 다르기 때문에 혼동하기 쉽습니다. 미국 갤런은 약 3.785리터, 영국 갤런은 약 4.546리터입니다. 요리할 때는 티스푼(5mL), 테이블스푼(15mL), 컵(미국 기준 약 237mL) 변환을 가장 많이 하게 됩니다.
+
+## 변환을 쉽게 기억하는 법
+
+정확한 숫자를 모두 외우기보다, 몇 가지 기준점을 잡아두세요. 1미터는 1야드보다 약 10% 긴 정도. 1킬로그램은 약 2.2파운드. 실내 적정 온도는 20~22°C, 즉 68~72°F. 이 기준점만 알면 일상적인 변환 대부분을 합리적인 수준으로 추정할 수 있습니다.
+
+## 정확한 변환은 도구에 맡기세요
+
+대략적인 추정을 넘어서는 정확한 변환이 필요하다면, 전용 변환 도구를 쓰는 게 가장 확실합니다. ToolPop의 단위 변환기는 길이, 무게, 온도, 부피, 면적, 속도 등을 브라우저에서 바로 변환해 줍니다. 설치도, 회원가입도 필요 없습니다.`,
+      },
+    },
+  },
+  {
+    slug: "color-formats-explained",
+    app: "converter",
+    category: "knowledge",
+    publishedAt: "2026-03-18",
+    content: {
+      en: {
+        title:
+          "HEX, RGB, HSL Explained: Understanding Color Formats for Web Design",
+        description:
+          "Learn the differences between HEX, RGB, HSL, and other color formats used in web design and digital art.",
+        body: `## Why So Many Color Formats?
+
+If you have ever worked with CSS, a design tool, or image editing software, you have encountered multiple ways to represent the same color. A vivid red might appear as #FF0000, rgb(255, 0, 0), or hsl(0, 100%, 50%). They all describe the same color — so why do different formats exist? Each one was designed for a specific purpose, and understanding their strengths will make you a more effective designer or developer.
+
+## HEX: The Web Standard
+
+HEX color codes are the most recognized color format on the web. A HEX code like #3A86FF consists of three pairs of hexadecimal digits representing red, green, and blue channels, each ranging from 00 to FF (0 to 255 in decimal). An optional fourth pair adds alpha transparency, like #3A86FF80 for 50% opacity.
+
+HEX codes are compact and easy to copy-paste, which is why designers and developers use them so frequently. However, they are not human-readable — glancing at #3A86FF tells you very little about what the color actually looks like.
+
+## RGB: Direct Channel Control
+
+RGB stands for Red, Green, Blue and directly represents how screens produce color by mixing light. The notation rgb(58, 134, 255) specifies the intensity of each channel from 0 to 255. Modern CSS also supports the rgba() function for transparency: rgba(58, 134, 255, 0.5).
+
+RGB is the native language of displays, making it the natural choice for programmatic color manipulation. If you need to adjust a single channel — make something slightly more blue, for example — RGB makes this straightforward.
+
+## HSL: Designed for Humans
+
+HSL stands for Hue, Saturation, Lightness, and it models color the way humans actually think about it. Hue is a degree on the color wheel (0–360), saturation is how vivid the color is (0–100%), and lightness is how bright it is (0–100%).
+
+HSL shines when you need to create color palettes. Want a darker version of your brand color? Lower the lightness. Want a muted variant? Reduce the saturation. These adjustments are intuitive in HSL but require awkward calculations in HEX or RGB.
+
+## HSV/HSB: The Designer's Variant
+
+HSV (Hue, Saturation, Value) — sometimes called HSB (Brightness) — is closely related to HSL but handles brightness differently. In HSV, a value of 100% always means the most vivid version of the color, while in HSL, 100% lightness always means white. Most color pickers in design tools like Figma and Photoshop use HSV because its brightness model feels more natural when visually selecting colors.
+
+## CMYK: For Print
+
+While HEX, RGB, and HSL are screen-based (additive color), CMYK (Cyan, Magenta, Yellow, Key/Black) is a subtractive model used in printing. Screens start with black and add light; printers start with white paper and add ink. If your work will be printed, you need to consider CMYK, as some vibrant screen colors cannot be reproduced with ink.
+
+## Choosing the Right Format
+
+Use HEX for quick, compact color references in CSS and sharing with others. Use RGB when you need to manipulate individual color channels programmatically. Use HSL when building color systems, themes, or accessible palettes — its intuitive model makes creating consistent variations effortless. And when converting between any of these formats, a dedicated color converter tool ensures precision every time.`,
+      },
+      ko: {
+        title:
+          "HEX, RGB, HSL 완전 정복: 웹 디자인 색상 포맷 이해하기",
+        description:
+          "웹 디자인과 디지털 아트에서 쓰이는 HEX, RGB, HSL 등 색상 포맷의 차이점을 알아보세요.",
+        body: `## 왜 색상 포맷이 이렇게 많을까?
+
+CSS나 디자인 도구, 이미지 편집 소프트웨어를 다뤄봤다면 같은 색상을 여러 방식으로 표현하는 걸 보셨을 겁니다. 선명한 빨강이 #FF0000일 수도, rgb(255, 0, 0)일 수도, hsl(0, 100%, 50%)일 수도 있죠. 전부 같은 색인데 왜 다른 포맷이 존재할까요? 각 포맷은 고유한 목적에 맞게 설계되었고, 이를 이해하면 디자인과 개발 작업이 훨씬 수월해집니다.
+
+## HEX: 웹의 표준
+
+HEX 컬러 코드는 웹에서 가장 널리 쓰이는 색상 표기법입니다. #3A86FF처럼 16진수 두 자리씩 세 쌍으로 빨강, 초록, 파랑 채널을 나타내며, 각각 00부터 FF까지(10진수로 0~255) 값을 가집니다. 네 번째 쌍을 추가하면 투명도도 지정할 수 있습니다.
+
+HEX 코드는 간결하고 복사·붙여넣기가 편해서 자주 쓰입니다. 다만 사람이 읽기에는 직관적이지 않습니다. #3A86FF만 보고 어떤 색인지 바로 떠올리기 어렵죠.
+
+## RGB: 화면의 기본 언어
+
+RGB는 Red, Green, Blue의 약자로 화면이 빛을 섞어 색을 만드는 방식을 그대로 반영합니다. rgb(58, 134, 255)는 각 채널의 강도를 0에서 255 사이로 지정합니다. rgba()를 쓰면 투명도도 조절할 수 있습니다.
+
+RGB는 디스플레이의 원래 언어이므로, 프로그래밍으로 색상을 조작할 때 자연스럽습니다. 특정 채널만 살짝 조정하고 싶을 때 — 예를 들어 파랑을 조금 더 넣고 싶을 때 — RGB가 가장 직관적입니다.
+
+## HSL: 사람을 위한 포맷
+
+HSL은 Hue(색상), Saturation(채도), Lightness(명도)의 약자로, 사람이 색을 인식하는 방식에 가깝게 설계되었습니다. 색상은 색상환의 각도(0~360), 채도는 색의 선명함(0~100%), 명도는 밝기(0~100%)입니다.
+
+HSL은 컬러 팔레트를 만들 때 빛을 발합니다. 브랜드 색상을 좀 더 어둡게? 명도를 내리면 됩니다. 차분한 톤으로? 채도를 줄이면 됩니다. HSL에서는 직관적인 이 조정이 HEX나 RGB에서는 번거로운 계산을 요구합니다.
+
+## HSV/HSB: 디자이너의 선택
+
+HSV(Hue, Saturation, Value) — HSB(Brightness)라고도 부릅니다 — 는 HSL과 비슷하지만 밝기 처리 방식이 다릅니다. HSV에서 Value 100%는 해당 색의 가장 선명한 상태를 뜻하고, HSL에서 Lightness 100%는 항상 흰색입니다. Figma나 Photoshop 같은 디자인 도구의 컬러 피커 대부분이 HSV를 쓰는 이유가 여기 있습니다.
+
+## CMYK: 인쇄를 위한 포맷
+
+HEX, RGB, HSL이 빛을 더하는 가산혼합이라면, CMYK(Cyan, Magenta, Yellow, Key/Black)는 잉크를 겹치는 감산혼합 모델입니다. 화면은 검정에서 빛을 더하고, 프린터는 흰 종이에 잉크를 올립니다. 화면에서 선명하게 보이는 색이 인쇄하면 탁해지는 경우가 있는 건 이 차이 때문입니다.
+
+## 상황에 맞는 포맷 선택법
+
+CSS에서 빠르게 색을 지정하고 공유할 때는 HEX. 프로그래밍으로 개별 채널을 조작할 때는 RGB. 색상 시스템이나 테마, 접근성을 고려한 팔레트를 구성할 때는 HSL이 적합합니다. 포맷 간 변환이 필요하다면, 전용 색상 변환 도구를 쓰면 오차 없이 정확하게 변환할 수 있습니다.`,
+      },
+    },
+  },
+  {
+    slug: "json-data-conversion",
+    app: "converter",
+    category: "tips",
+    publishedAt: "2026-03-15",
+    content: {
+      en: {
+        title:
+          "JSON to YAML, CSV, XML: Quick Tips for Data Format Conversion",
+        description:
+          "Practical tips for converting between popular data formats like JSON, YAML, CSV, and XML.",
+        body: `## Every Format Has Its Place
+
+Data comes in many shapes. JSON dominates web APIs. YAML powers configuration files for Docker, Kubernetes, and CI/CD pipelines. CSV remains the universal language of spreadsheets and tabular data. XML still underpins enterprise systems, RSS feeds, and document standards like SVG. Knowing when and how to convert between these formats is an everyday skill for developers, analysts, and system administrators.
+
+## JSON: The API Standard
+
+JSON (JavaScript Object Notation) is lightweight, human-readable, and natively supported in virtually every programming language. Its nested key-value structure handles complex, hierarchical data well. If you are working with REST APIs, browser storage, or NoSQL databases, JSON is almost certainly your default format.
+
+One limitation: JSON does not support comments. If you need annotated configuration files, YAML or JSON5 may be a better fit.
+
+## YAML: Configuration Made Readable
+
+YAML (YAML Ain't Markup Language) uses indentation instead of braces, making it visually cleaner for configuration files. It supports comments, multi-line strings, and anchors for reusing values. Kubernetes manifests, GitHub Actions workflows, and Ansible playbooks all rely on YAML.
+
+When converting JSON to YAML, watch out for indentation errors — a single misplaced space can break your file. Also, YAML interprets some values unexpectedly: "no" becomes a boolean false, and "3.0" might become a float. Quoting strings explicitly avoids these surprises.
+
+## CSV: Simple and Universal
+
+CSV (Comma-Separated Values) is the go-to format for flat, tabular data. Every spreadsheet application, database tool, and data analysis library can import and export CSV. It is also extremely compact — no structural overhead like tags or braces.
+
+The biggest pitfall when converting to CSV is losing hierarchical structure. JSON and XML support nesting; CSV does not. When flattening nested data into CSV, you must decide how to handle arrays and nested objects — common approaches include dot notation for keys (user.address.city) or splitting into multiple CSV files.
+
+## XML: The Enterprise Workhorse
+
+XML (eXtensible Markup Language) uses opening and closing tags to structure data. It is verbose compared to JSON but offers features like schemas (XSD), namespaces, and attributes that make it powerful for complex, formally validated data structures.
+
+When converting between JSON and XML, remember that XML has concepts without direct JSON equivalents — attributes versus elements, for example. Most conversion tools map attributes using a convention like "@attributeName" in JSON, but verify this matches your target system's expectations.
+
+## Practical Conversion Tips
+
+**Validate before converting.** Malformed input produces garbage output. Run your JSON through a linter or your XML through a well-formedness check first.
+
+**Preserve data types intentionally.** CSV treats everything as strings. When converting from JSON to CSV and back, numbers, booleans, and nulls may lose their types.
+
+**Handle encoding consistently.** UTF-8 is the safest default. CSV files from Excel are often encoded in Windows-1252, which can corrupt non-ASCII characters if not handled properly.
+
+**Use a reliable tool.** Manual format conversion is tedious and error-prone. ToolPop's data format converters handle JSON, YAML, CSV, and XML transformations instantly, preserving structure and formatting so you can focus on the data itself.`,
+      },
+      ko: {
+        title:
+          "JSON ↔ YAML, CSV, XML: 데이터 형식 변환 실전 팁",
+        description:
+          "JSON, YAML, CSV, XML 등 주요 데이터 형식 간 변환 시 알아두면 좋은 실전 팁을 정리했습니다.",
+        body: `## 각 형식에는 이유가 있다
+
+데이터는 다양한 형태로 존재합니다. JSON은 웹 API의 표준이고, YAML은 Docker, Kubernetes, CI/CD 파이프라인의 설정 파일에 쓰입니다. CSV는 스프레드시트와 표 형태 데이터의 만국 공통어이고, XML은 엔터프라이즈 시스템, RSS 피드, SVG 같은 문서 표준의 기반입니다. 이들 사이를 자유롭게 변환하는 건 개발자, 분석가, 시스템 관리자의 필수 기술입니다.
+
+## JSON: API의 기본 언어
+
+JSON(JavaScript Object Notation)은 가볍고 사람이 읽기 쉬우며, 거의 모든 프로그래밍 언어에서 기본 지원됩니다. 중첩된 키-값 구조 덕분에 복잡한 계층형 데이터도 잘 표현합니다. REST API, 브라우저 스토리지, NoSQL 데이터베이스를 다룬다면 JSON이 기본 선택지입니다.
+
+한 가지 단점이 있습니다. JSON은 주석을 지원하지 않습니다. 설정 파일에 설명을 달아야 한다면 YAML이나 JSON5가 더 낫습니다.
+
+## YAML: 읽기 쉬운 설정 파일
+
+YAML은 중괄호 대신 들여쓰기로 구조를 표현해서 설정 파일에서 시각적으로 훨씬 깔끔합니다. 주석, 여러 줄 문자열, 값을 재사용하는 앵커 기능도 지원합니다. Kubernetes 매니페스트, GitHub Actions 워크플로, Ansible 플레이북이 모두 YAML 기반입니다.
+
+JSON을 YAML로 변환할 때 주의할 점이 있습니다. 들여쓰기 오류 — 공백 하나 차이로 파일 전체가 깨질 수 있습니다. 또한 YAML은 일부 값을 예상과 다르게 해석합니다. "no"는 불리언 false가 되고, "3.0"은 실수로 바뀔 수 있습니다. 문자열을 명시적으로 따옴표로 감싸면 이런 문제를 피할 수 있습니다.
+
+## CSV: 단순하고 보편적
+
+CSV(Comma-Separated Values)는 평면적 표 형태 데이터의 기본 형식입니다. 모든 스프레드시트 앱, 데이터베이스 도구, 데이터 분석 라이브러리가 CSV를 가져오고 내보낼 수 있습니다. 태그나 중괄호 같은 구조적 오버헤드가 없어서 극도로 가볍기도 합니다.
+
+CSV로 변환할 때 가장 큰 함정은 계층 구조가 사라진다는 점입니다. JSON과 XML은 중첩을 지원하지만 CSV는 그렇지 않습니다. 중첩 데이터를 CSV로 평탄화할 때는 배열과 중첩 객체를 어떻게 처리할지 결정해야 합니다. 키에 점 표기법(user.address.city)을 쓰거나, 여러 CSV 파일로 분리하는 방법이 일반적입니다.
+
+## XML: 엔터프라이즈의 주력
+
+XML은 여는 태그와 닫는 태그로 데이터를 구조화합니다. JSON보다 장황하지만, 스키마(XSD), 네임스페이스, 속성(attribute) 같은 기능 덕분에 복잡하고 엄격한 검증이 필요한 데이터 구조에 강합니다.
+
+JSON과 XML을 서로 변환할 때 기억할 점이 있습니다. XML의 속성(attribute)과 요소(element) 구분은 JSON에 직접적인 대응 개념이 없습니다. 대부분의 변환 도구는 JSON에서 "@속성명" 같은 규칙으로 매핑하지만, 대상 시스템의 기대 형식과 맞는지 반드시 확인하세요.
+
+## 실전 변환 팁
+
+**변환 전에 검증부터.** 잘못된 입력은 엉뚱한 출력을 만듭니다. JSON은 린터로, XML은 문법 검사기로 먼저 확인하세요.
+
+**데이터 타입을 의식적으로 유지하세요.** CSV는 모든 걸 문자열로 취급합니다. JSON을 CSV로 변환했다가 다시 JSON으로 되돌리면 숫자, 불리언, null의 타입 정보가 사라질 수 있습니다.
+
+**인코딩을 통일하세요.** UTF-8이 가장 안전합니다. Excel에서 내보낸 CSV는 Windows-1252 인코딩인 경우가 많아, 한글이나 특수 문자가 깨질 수 있습니다.
+
+**믿을 수 있는 도구를 쓰세요.** 수동 변환은 번거롭고 실수가 잦습니다. ToolPop의 데이터 형식 변환기는 JSON, YAML, CSV, XML 변환을 즉시 처리하며, 구조와 포맷을 보존해 줍니다.`,
+      },
+    },
+  },
+  {
+    slug: "css-units-px-rem-em",
+    app: "converter",
+    category: "guide",
+    publishedAt: "2026-03-12",
+    content: {
+      en: {
+        title:
+          "px vs rem vs em: Choosing the Right CSS Unit for Responsive Design",
+        description:
+          "Understand the differences between px, rem, and em units in CSS and when to use each for responsive web design.",
+        body: `## Why CSS Units Matter
+
+Choosing the right CSS unit is not just a matter of preference — it directly affects your site's responsiveness, accessibility, and maintainability. The three most common units for sizing text and spacing in web design are px, rem, and em. Each behaves differently, and using the wrong one can lead to rigid layouts that break on different screen sizes or fail users who need larger text.
+
+## px: The Absolute Unit
+
+A pixel (px) is the most straightforward CSS unit. One px corresponds to one device pixel on a standard display (though on high-DPI screens, CSS pixels are scaled). Setting font-size: 16px means the text will always render at 16 CSS pixels, regardless of any parent or root settings.
+
+The advantage of px is predictability. You get exactly what you specify. The downside is inflexibility. If a user changes their browser's default font size for accessibility — say from 16px to 20px — text sized in px ignores that preference entirely. For this reason, using px for font sizes is generally discouraged in modern web development.
+
+Where px still makes sense: borders, shadows, and fine decorative details where you want precise, unchanging dimensions.
+
+## rem: Relative to the Root
+
+The rem unit (root em) is relative to the root element's font size, which is the html element. If the html font size is the browser default of 16px, then 1rem equals 16px, 1.5rem equals 24px, and 0.875rem equals 14px.
+
+The key benefit of rem is that it respects the user's font size preference. If someone sets their browser default to 20px, all rem-based sizes scale proportionally. This makes rem the recommended unit for font sizes, spacing, and layout dimensions in most modern design systems.
+
+A common technique is to set the root font size to 62.5% (10px on a 16px default), making calculations simpler: 1.6rem = 16px, 2.4rem = 24px. However, this approach can cause issues if other libraries expect the default 16px root, so use it with caution.
+
+## em: Relative to the Parent
+
+The em unit is relative to the font size of the element's parent (or the element itself when used for font-size). If a parent has font-size: 20px, then 1em inside that parent equals 20px.
+
+This compounding behavior is both em's strength and its biggest pitfall. Nested elements accumulate em values: if you set font-size: 1.2em on multiple nested elements, the text grows (or shrinks) with each level of nesting. This can produce unexpected results in deeply nested components.
+
+Where em excels: component-level sizing that should scale with the component's own font size. For example, setting padding: 0.5em on a button ensures the padding scales proportionally whether the button text is 14px or 24px.
+
+## Practical Guidelines
+
+**Use rem for global sizing.** Font sizes, margins, padding, and max-widths on layout containers work best in rem. This ensures consistent scaling across the entire page.
+
+**Use em for component-internal spacing.** Padding, margins, and icon sizes within a component benefit from em because they scale with the component's text size.
+
+**Use px sparingly.** Reserve px for borders, box-shadows, outlines, and other decorative properties where scaling is undesirable.
+
+**Avoid mixing units unnecessarily.** Consistency within a project reduces cognitive overhead. Pick rem as your primary unit and reach for em or px only when the context demands it.
+
+## Accessibility First
+
+The underlying reason to prefer rem over px for text is accessibility. Roughly 1 in 5 users adjusts their default browser font size. When you set text in px, you override their choice. When you use rem, your design adapts automatically. Responsive design is not just about screen widths — it is about respecting every user's ability to read your content comfortably.
+
+A reliable px-to-rem converter takes the guesswork out of migrating from px-based designs. Enter your pixel value, and you get the exact rem equivalent based on any root font size — making the transition to accessible, responsive CSS painless.`,
+      },
+      ko: {
+        title:
+          "px vs rem vs em: 반응형 디자인을 위한 CSS 단위 선택 가이드",
+        description:
+          "CSS에서 px, rem, em 단위의 차이점과 반응형 웹 디자인에서의 올바른 활용법을 알아보세요.",
+        body: `## CSS 단위가 중요한 이유
+
+CSS 단위 선택은 단순한 취향 문제가 아닙니다. 사이트의 반응성, 접근성, 유지보수성에 직접 영향을 미칩니다. 웹 디자인에서 텍스트 크기와 여백 설정에 가장 많이 쓰이는 세 가지 단위는 px, rem, em입니다. 각각 동작 방식이 다르고, 잘못 쓰면 화면 크기에 따라 깨지거나 큰 글꼴이 필요한 사용자를 외면하는 딱딱한 레이아웃이 됩니다.
+
+## px: 절대 단위
+
+픽셀(px)은 가장 직관적인 CSS 단위입니다. 1px은 표준 디스플레이에서 1 디바이스 픽셀에 해당합니다(고해상도 화면에서는 CSS 픽셀이 스케일링됩니다). font-size: 16px로 지정하면 부모나 루트 설정과 관계없이 항상 16 CSS 픽셀로 렌더링됩니다.
+
+px의 장점은 예측 가능성입니다. 지정한 그대로 나옵니다. 단점은 유연하지 않다는 것입니다. 사용자가 접근성을 위해 브라우저 기본 글꼴 크기를 16px에서 20px로 바꿔도, px로 지정된 텍스트는 그 설정을 완전히 무시합니다. 그래서 현대 웹 개발에서 글꼴 크기에 px를 쓰는 건 권장되지 않습니다.
+
+px가 적합한 곳: 테두리, 그림자, 정밀한 장식 요소처럼 크기가 변하면 안 되는 곳.
+
+## rem: 루트 기준 상대 단위
+
+rem(root em)은 루트 요소, 즉 html 요소의 글꼴 크기를 기준으로 합니다. html 글꼴 크기가 브라우저 기본값인 16px이면, 1rem은 16px, 1.5rem은 24px, 0.875rem은 14px입니다.
+
+rem의 핵심 장점은 사용자의 글꼴 크기 설정을 존중한다는 것입니다. 누군가 브라우저 기본값을 20px로 바꾸면, rem 기반 크기가 모두 비례해서 커집니다. 그래서 대부분의 현대 디자인 시스템에서 글꼴 크기, 여백, 레이아웃 크기에 rem을 권장합니다.
+
+자주 쓰이는 기법으로 루트 글꼴 크기를 62.5%(기본 16px 기준 10px)로 설정해서 계산을 쉽게 만드는 방법이 있습니다. 1.6rem = 16px, 2.4rem = 24px. 다만 다른 라이브러리가 기본 16px을 기대하는 경우 문제가 생길 수 있어 주의가 필요합니다.
+
+## em: 부모 기준 상대 단위
+
+em은 부모 요소의 글꼴 크기를 기준으로 합니다(font-size 속성에 쓰일 때는 요소 자신의 부모 기준). 부모의 font-size가 20px이면, 그 안에서 1em은 20px입니다.
+
+이 누적 특성이 em의 강점이자 최대 함정입니다. 중첩된 요소에 font-size: 1.2em을 반복 적용하면, 단계마다 텍스트가 점점 커집니다(또는 작아집니다). 깊게 중첩된 컴포넌트에서 예상치 못한 결과가 나올 수 있습니다.
+
+em이 빛나는 곳: 컴포넌트 자체 글꼴 크기에 맞춰 스케일링되어야 하는 컴포넌트 내부 여백. 예를 들어 버튼에 padding: 0.5em을 주면, 버튼 텍스트가 14px이든 24px이든 여백이 비례해서 조정됩니다.
+
+## 실전 가이드라인
+
+**전역 크기에는 rem.** 글꼴 크기, 마진, 패딩, 레이아웃 컨테이너의 max-width는 rem이 적합합니다. 페이지 전체에서 일관된 스케일링을 보장합니다.
+
+**컴포넌트 내부 여백에는 em.** 컴포넌트 안의 패딩, 마진, 아이콘 크기는 em이 유리합니다. 텍스트 크기에 맞춰 자연스럽게 조정됩니다.
+
+**px는 제한적으로.** 테두리, 박스 쉐도우, 아웃라인 등 스케일링이 바람직하지 않은 장식 속성에만 사용하세요.
+
+## 접근성이 먼저
+
+글꼴 크기에 px 대신 rem을 권장하는 근본적 이유는 접근성입니다. 사용자의 약 20%가 브라우저 기본 글꼴 크기를 조정합니다. px로 텍스트를 지정하면 이 선택을 무시하게 되고, rem을 쓰면 디자인이 자동으로 적응합니다. 반응형 디자인은 화면 너비만의 문제가 아닙니다. 모든 사용자가 콘텐츠를 편하게 읽을 수 있도록 배려하는 것입니다.
+
+px-to-rem 변환기를 활용하면 px 기반 디자인에서 rem으로의 전환이 훨씬 수월해집니다. 픽셀 값을 입력하면 루트 글꼴 크기에 맞는 정확한 rem 값을 바로 얻을 수 있습니다.`,
       },
     },
   },

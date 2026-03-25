@@ -355,8 +355,6 @@ const mr: TextDictionary = {
     sentences: "वाक्ये",
     paragraphs: "परिच्छेद",
     lines: "ओळी",
-    readingTime: "वाचन वेळ",
-    speakingTime: "बोलण्याचा वेळ",
     totalCharacters: "एकूण अक्षरे",
     bytes: "बाइट्स",
     letters: "अक्षरे",

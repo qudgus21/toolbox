@@ -355,8 +355,6 @@ const fr: TextDictionary = {
     sentences: "Phrases",
     paragraphs: "Paragraphes",
     lines: "Lignes",
-    readingTime: "Temps de lecture",
-    speakingTime: "Temps de parole",
     totalCharacters: "Total caractères",
     bytes: "Octets",
     letters: "Lettres",

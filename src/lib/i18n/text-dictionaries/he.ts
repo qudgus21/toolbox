@@ -355,8 +355,6 @@ const he: TextDictionary = {
     sentences: "משפטים",
     paragraphs: "פסקאות",
     lines: "שורות",
-    readingTime: "זמן קריאה",
-    speakingTime: "זמן דיבור",
     totalCharacters: "סה״כ תווים",
     bytes: "בייטים",
     letters: "אותיות",
