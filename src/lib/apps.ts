@@ -44,4 +44,15 @@ export const apps: AppDefinition[] = [
     href: "/text",
     popularToolSlugs: ["word-counter", "case-converter", "find-and-replace", "base64", "json-formatter", "text-diff"],
   },
+  {
+    slug: "converter",
+    emoji: "🔄",
+    accentFrom: "from-emerald-500",
+    accentTo: "to-green-400",
+    accentText: "text-emerald-600 dark:text-emerald-400",
+    accentBg: "bg-emerald-50 dark:bg-emerald-950/30",
+    accentBorder: "border-emerald-200 dark:border-emerald-800/40",
+    href: "/converter",
+    popularToolSlugs: ["length", "weight", "temperature", "color-converter", "json-yaml", "px-rem"],
+  },
 ];

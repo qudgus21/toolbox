@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — বিনামূল্যে অনলাইন টুলস",
     description:
-      "PDF এডিট, মার্জ ও কনভার্ট করুন। ছবি রিসাইজ, কমপ্রেস ও রূপান্তর করুন। সব কিছু বিনামূল্যে, সরাসরি ব্রাউজারে।",
+      "PDF এডিট, মার্জ ও কনভার্ট করুন। ছবি রিসাইজ, কমপ্রেস ও রূপান্তর করুন। ইউনিট, রঙ ও ডেটা ফরম্যাট কনভার্ট করুন। সব কিছু বিনামূল্যে, সরাসরি ব্রাউজারে।",
   },
   hero: {
-    badge: "৮৭+ বিনামূল্যে অনলাইন টুল",
+    badge: "১৭৬+ বিনামূল্যে অনলাইন টুল",
     title: "প্রয়োজনীয় সব টুল, এক জায়গায় — ToolPop",
     titleAccent: "ToolPop",
     subtitle:
-      "ব্রাউজারেই PDF ও ছবি নিয়ে কাজ করুন। ইনস্টল নেই, সাইন-আপ নেই।",
+      "ব্রাউজারেই PDF, ছবি ও কনভার্টার নিয়ে কাজ করুন। ইনস্টল নেই, সাইন-আপ নেই।",
     searchPlaceholder: "কোন টুল খুঁজছেন?",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "টেক্সট টুলস",
       toolCount: "৪৪+ টুল",
     },
+    converter: {
+      name: "কনভার্টার টুলস",
+      description:
+        "ইউনিট, রঙ, ডেটা ফরম্যাট, তারিখ এবং আরও অনেক কিছু রূপান্তর করুন।",
+      cta: "কনভার্টার",
+      toolCount: "৪৫টি টুল",
+    },
   },
   popularTools: {
     sectionTitle: "জনপ্রিয় টুলস",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "সব দেখুন",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "বিনামূল্যে টুল",
     languages: "45",
     languagesLabel: "ভাষা",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "ছবি",
     text: "টেক্সট",
+    converter: "কনভার্টার",
   },
 };
 

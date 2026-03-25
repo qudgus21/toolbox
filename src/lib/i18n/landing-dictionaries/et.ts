@@ -3,22 +3,23 @@ import type { LandingDictionary } from "../landing-config";
 const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — Tasuta veebitööriistad",
-    description: "Muuda, ühenda ja teisenda PDF-e. Muuda pilte, tihenda ja töötle neid. Kõik tasuta, otse brauseris.",
+    description: "Muuda, ühenda ja teisenda PDF-e. Muuda pilte, tihenda ja töötle neid. Teisenda ühikuid, värve ja andmevorminguid. Kõik tasuta, otse brauseris.",
   },
   hero: {
-    badge: "131+ tasuta veebitööriista",
+    badge: "176+ tasuta veebitööriista",
     title: "Kõik vajalikud tööriistad ühes kohas — ToolPop",
     titleAccent: "ToolPop",
-    subtitle: "Töötle PDF-e ja pilte otse brauseris. Midagi ei pea installima ega kontot looma.",
+    subtitle: "Töötle PDF-e, pilte ja teisendajaid otse brauseris. Midagi ei pea installima ega kontot looma.",
     searchPlaceholder: "Millist tööriista otsid?",
   },
   apps: {
     pdf: { name: "PDF tööriistad", description: "Ühendamine, poolitamine, teisendamine, muutmine ja tihendamine — kõik, mida PDF-iga teha saab.", cta: "Avasta PDF tööriistad", toolCount: "39 tööriista" },
     image: { name: "Pilditööriistad", description: "Suuruse muutmine, kärpimine, teisendamine, efektid, QR-koodid — kõik piltide jaoks.", cta: "Avasta pilditööriistad", toolCount: "48 tööriista" },
     text: { name: "Tekstitööriistad", description: "Teisenda, analüüsi, puhasta, kodeeri ja genereeri teksti koheselt.", cta: "Tekstitööriistad", toolCount: "44+ tööriista" },
+    converter: { name: "Teisendusriistad", description: "Teisendage ühikuid, värve, andmevorminguid, kuupäevi ja palju muud.", cta: "Teisendajad", toolCount: "45 tööriista" },
   },
   popularTools: { sectionTitle: "Populaarsed tööriistad", sectionSubtitle: "Liigu kohe enimkasutatud tööriistade juurde", viewAll: "Vaata kõiki" },
-  stats: { tools: "131+", toolsLabel: "Tasuta tööriista", languages: "45", languagesLabel: "Keelt", users: "100%", usersLabel: "Brauseripõhine", price: "0 €", priceLabel: "Igavesti tasuta" },
+  stats: { tools: "176+", toolsLabel: "Tasuta tööriista", languages: "45", languagesLabel: "Keelt", users: "100%", usersLabel: "Brauseripõhine", price: "0 €", priceLabel: "Igavesti tasuta" },
   trust: {
     sectionTitle: "Miks ToolPop?",
     sectionSubtitle: "Turvalisus ja mugavus ilma kompromissideta",
@@ -35,6 +36,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "Jaga", shareSubtitle: "Räägi sõpradele ToolPop-ist!", shareCopyLink: "Kopeeri link", shareCopied: "Kopeeritud!" },
   footer: { apps: "Tööriistad", company: "Ettevõte", about: "Meist", contact: "Kontakt", faq: "KKK", blog: "Blogi", legal: "Õiguslik teave", privacy: "Privaatsuspoliitika", terms: "Kasutustingimused", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Tasuta veebitööriistad PDF-ide, piltide ja muu jaoks. Ilma registreerimata.", madeWith: "Loodud armastusega kõigile" },
   search: { noResults: "Tulemusi ei leitud" },
-  nav: { pdf: "PDF", image: "Pilt", text: "Tekst" },
+  nav: { pdf: "PDF", image: "Pilt", text: "Tekst", converter: "Teisendaja" },
 };
 export default dict;

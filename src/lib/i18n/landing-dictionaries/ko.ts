@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — 무료 온라인 도구 모음",
     description:
-      "PDF 편집, 병합, 변환부터 이미지 리사이즈, 압축, 변환까지. 설치 없이 브라우저에서 바로 사용하세요.",
+      "PDF 편집, 이미지 변환, 단위 변환까지 — 설치 없이 브라우저에서 바로 사용하세요.",
   },
   hero: {
-    badge: "131개 이상의 무료 온라인 도구",
+    badge: "176개 이상의 무료 온라인 도구",
     title: "필요한 모든 도구, ToolPop 하나로",
     titleAccent: "ToolPop",
     subtitle:
-      "PDF와 이미지 작업을 브라우저에서 바로. 설치도, 회원가입도 필요 없습니다.",
+      "PDF, 이미지, 텍스트, 변환 작업을 브라우저에서 바로. 설치도, 회원가입도 필요 없습니다.",
     searchPlaceholder: "어떤 도구를 찾고 계신가요?",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "텍스트 도구 보기",
       toolCount: "44개 이상 도구",
     },
+    converter: {
+      name: "변환 도구",
+      description:
+        "단위, 색상, 데이터 형식, 날짜 등을 즉시 변환하세요.",
+      cta: "변환 도구",
+      toolCount: "45개 도구",
+    },
   },
   popularTools: {
     sectionTitle: "인기 도구",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "모두 보기",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "무료 도구",
     languages: "45",
     languagesLabel: "지원 언어",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "Image",
     text: "Text",
+    converter: "변환",
   },
 };
 

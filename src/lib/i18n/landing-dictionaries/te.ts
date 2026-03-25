@@ -3,22 +3,23 @@ import type { LandingDictionary } from "../landing-config";
 const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — ఉచిత ఆన్‌లైన్ టూల్స్",
-    description: "PDFలను ఎడిట్ చేయండి, విలీనం చేయండి, మార్చండి. చిత్రాల పరిమాణం మార్చండి, కంప్రెస్ చేయండి, రూపాంతరం చేయండి. అన్నీ ఉచితం, నేరుగా బ్రౌజర్‌లో.",
+    description: "PDFలను ఎడిట్ చేయండి, విలీనం చేయండి, మార్చండి. చిత్రాల పరిమాణం మార్చండి, కంప్రెస్ చేయండి, రూపాంతరం చేయండి. యూనిట్లు, రంగులు మరియు డేటా ఫార్మాట్‌లను మార్చండి. అన్నీ ఉచితం, నేరుగా బ్రౌజర్‌లో.",
   },
   hero: {
-    badge: "131+ ఉచిత ఆన్‌లైన్ టూల్స్",
+    badge: "176+ ఉచిత ఆన్‌లైన్ టూల్స్",
     title: "మీకు కావలసిన ప్రతి టూల్, ఒకే ToolPop లో",
     titleAccent: "ToolPop",
-    subtitle: "PDFలు మరియు చిత్రాలతో నేరుగా బ్రౌజర్‌లో పని చేయండి. ఇన్‌స్టాల్ అవసరం లేదు, సైన్-అప్ అవసరం లేదు.",
+    subtitle: "PDFలు, చిత్రాలు మరియు కన్వర్టర్‌లతో నేరుగా బ్రౌజర్‌లో పని చేయండి. ఇన్‌స్టాల్ అవసరం లేదు, సైన్-అప్ అవసరం లేదు.",
     searchPlaceholder: "ఏ టూల్ కోసం వెతుకుతున్నారు?",
   },
   apps: {
     pdf: { name: "PDF టూల్స్", description: "విలీనం, విభజన, మార్పిడి, ఎడిటింగ్ మరియు కంప్రెషన్ — PDF తో చేయగలిగినదంతా.", cta: "PDF టూల్స్ చూడండి", toolCount: "39 టూల్స్" },
     image: { name: "ఇమేజ్ టూల్స్", description: "పరిమాణం మార్పు, కత్తిరింపు, మార్పిడి, ఎఫెక్ట్‌లు, QR కోడ్‌లు — చిత్రాల కోసం అన్నీ.", cta: "ఇమేజ్ టూల్స్ చూడండి", toolCount: "48 టూల్స్" },
     text: { name: "టెక్స్ట్ టూల్స్", description: "టెక్స్ట్‌ను మార్చండి, విశ్లేషించండి, శుభ్రం చేయండి, ఎన్‌కోడ్ చేయండి మరియు తక్షణంగా రూపొందించండి.", cta: "టెక్స్ట్ టూల్స్", toolCount: "44+ టూల్స్" },
+    converter: { name: "కన్వర్టర్ సాధనాలు", description: "యూనిట్లు, రంగులు, డేటా ఫార్మాట్‌లు, తేదీలు మరియు మరిన్నింటిని మార్చండి.", cta: "కన్వర్టర్‌లు", toolCount: "45 సాధనాలు" },
   },
   popularTools: { sectionTitle: "ప్రముఖ టూల్స్", sectionSubtitle: "అత్యధికంగా ఉపయోగించే టూల్స్‌కు నేరుగా వెళ్ళండి", viewAll: "అన్నీ చూడండి" },
-  stats: { tools: "131+", toolsLabel: "ఉచిత టూల్స్", languages: "45", languagesLabel: "భాషలు", users: "100%", usersLabel: "బ్రౌజర్-ఆధారిత", price: "₹0", priceLabel: "ఎల్లప్పుడూ ఉచితం" },
+  stats: { tools: "176+", toolsLabel: "ఉచిత టూల్స్", languages: "45", languagesLabel: "భాషలు", users: "100%", usersLabel: "బ్రౌజర్-ఆధారిత", price: "₹0", priceLabel: "ఎల్లప్పుడూ ఉచితం" },
   trust: {
     sectionTitle: "ToolPop ఎందుకు?",
     sectionSubtitle: "భద్రత మరియు సౌలభ్యం, ఎటువంటి రాజీ లేకుండా",
@@ -35,6 +36,6 @@ const dict: LandingDictionary = {
   common: { shareTitle: "షేర్ చేయండి", shareSubtitle: "మీ స్నేహితులకు ToolPop గురించి చెప్పండి!", shareCopyLink: "లింక్ కాపీ చేయండి", shareCopied: "కాపీ అయింది!" },
   footer: { apps: "టూల్స్", company: "కంపెనీ", about: "మా గురించి", contact: "సంప్రదించండి", faq: "తరచుగా అడిగే ప్రశ్నలు", blog: "బ్లాగ్", legal: "చట్టపరమైన", privacy: "గోప్యతా విధానం", terms: "సేవా నిబంధనలు", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, చిత్రాలు మరియు మరిన్నింటికి ఉచిత ఆన్‌లైన్ సాధనాలు. సైన్-అప్ అవసరం లేదు.", madeWith: "అందరికోసం ప్రేమతో తయారు చేయబడింది" },
   search: { noResults: "ఫలితాలు కనుగొనబడలేదు" },
-  nav: { pdf: "PDF", image: "చిత్రం", text: "టెక్స్ట్" },
+  nav: { pdf: "PDF", image: "చిత్రం", text: "టెక్స్ట్", converter: "కన్వర్టర్" },
 };
 export default dict;

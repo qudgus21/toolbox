@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — मुफ़्त ऑनलाइन टूल्स",
     description:
-      "PDF एडिट करें, मर्ज करें, कन्वर्ट करें। इमेज रिसाइज़ करें, कंप्रेस करें, बदलें। सब कुछ मुफ़्त, सीधे ब्राउज़र में।",
+      "PDF एडिट करें, इमेज बदलें, यूनिट कन्वर्ट करें और भी बहुत कुछ। सब कुछ मुफ़्त, सीधे ब्राउज़र में।",
   },
   hero: {
-    badge: "131+ मुफ़्त ऑनलाइन टूल्स",
+    badge: "176+ मुफ़्त ऑनलाइन टूल्स",
     title: "हर ज़रूरी टूल, एक ही जगह — ToolPop",
     titleAccent: "ToolPop",
     subtitle:
-      "PDF और इमेज को सीधे ब्राउज़र में प्रोसेस करें। कुछ इंस्टॉल नहीं, कोई साइन-अप नहीं।",
+      "PDF, इमेज, टेक्स्ट और कनवर्ज़न को सीधे ब्राउज़र में प्रोसेस करें। कुछ इंस्टॉल नहीं, कोई साइन-अप नहीं।",
     searchPlaceholder: "कौन सा टूल ढूंढ रहे हैं?",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "टेक्स्ट टूल्स",
       toolCount: "44+ टूल्स",
     },
+    converter: {
+      name: "कनवर्टर टूल्स",
+      description:
+        "यूनिट, रंग, डेटा फ़ॉर्मेट, तारीख़ और बहुत कुछ तुरंत बदलें।",
+      cta: "कनवर्टर",
+      toolCount: "45 टूल्स",
+    },
   },
   popularTools: {
     sectionTitle: "लोकप्रिय टूल्स",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "सभी देखें",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "मुफ़्त टूल्स",
     languages: "45",
     languagesLabel: "भाषाएँ",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "चित्र",
     text: "टेक्स्ट",
+    converter: "कनवर्टर",
   },
 };
 
