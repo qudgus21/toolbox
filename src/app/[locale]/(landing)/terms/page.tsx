@@ -26,7 +26,7 @@ export async function generateMetadata({
         "x-default": "/en/terms",
       },
     },
-    openGraph: { title, description: dict.terms.intro, url: `/${locale}/terms`, type: "website", locale },
+    openGraph: { title, description: dict.terms.intro, url: `/${locale}/terms`, type: "website", locale, siteName: "ToolPop" },
     twitter: { card: "summary_large_image", title, description: dict.terms.intro },
   };
 }

@@ -35,6 +35,7 @@ export async function generateMetadata({
       url: `/${locale}/blog`,
       type: "website",
       locale,
+      siteName: "ToolPop",
     },
     twitter: { card: "summary_large_image", title, description: dict.blog.description },
   };
