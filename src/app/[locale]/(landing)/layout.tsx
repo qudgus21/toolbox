@@ -12,7 +12,10 @@ export async function generateMetadata({
   const dict = await getLandingDictionary(locale as Locale);
 
   return {
-    title: { absolute: dict.meta.title },
+    title: {
+      default: dict.meta.title,
+      template: `%s | ToolPop`,
+    },
     description: dict.meta.description,
     icons: {
       icon: [
