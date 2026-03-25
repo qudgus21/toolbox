@@ -355,8 +355,6 @@ const sk: TextDictionary = {
     sentences: "Vety",
     paragraphs: "Odseky",
     lines: "Riadky",
-    readingTime: "Čas čítania",
-    speakingTime: "Čas hovorenia",
     totalCharacters: "Celkom znakov",
     bytes: "Bajty",
     letters: "Písmená",

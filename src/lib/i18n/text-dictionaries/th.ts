@@ -187,8 +187,6 @@ const th: TextDictionary = {
     sentences: "ประโยค",
     paragraphs: "ย่อหน้า",
     lines: "บรรทัด",
-    readingTime: "เวลาอ่าน",
-    speakingTime: "เวลาพูด",
     totalCharacters: "อักขระทั้งหมด",
     bytes: "ไบต์",
     letters: "ตัวอักษร",

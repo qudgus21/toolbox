@@ -354,8 +354,6 @@ const zh: TextDictionary = {
     sentences: "句数",
     paragraphs: "段落数",
     lines: "行数",
-    readingTime: "阅读时间",
-    speakingTime: "朗读时间",
     totalCharacters: "总字符数",
     bytes: "字节",
     letters: "字母",

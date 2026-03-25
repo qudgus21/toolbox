@@ -376,8 +376,6 @@ const en: TextDictionary = {
     sentences: "Sentences",
     paragraphs: "Paragraphs",
     lines: "Lines",
-    readingTime: "Reading Time",
-    speakingTime: "Speaking Time",
     totalCharacters: "Total Characters",
     bytes: "Bytes",
     letters: "Letters",

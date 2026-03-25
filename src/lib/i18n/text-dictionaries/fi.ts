@@ -355,8 +355,6 @@ const fi: TextDictionary = {
     sentences: "Lauseet",
     paragraphs: "Kappaleet",
     lines: "Rivit",
-    readingTime: "Lukuaika",
-    speakingTime: "Puheaika",
     totalCharacters: "Merkkejä yhteensä",
     bytes: "Tavut",
     letters: "Kirjaimet",

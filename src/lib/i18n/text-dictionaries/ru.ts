@@ -188,8 +188,6 @@ const ru: TextDictionary = {
     sentences: "Предложения",
     paragraphs: "Абзацы",
     lines: "Строки",
-    readingTime: "Время чтения",
-    speakingTime: "Время речи",
     totalCharacters: "Всего символов",
     bytes: "Байты",
     letters: "Буквы",

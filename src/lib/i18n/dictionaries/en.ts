@@ -1071,7 +1071,7 @@ const en: Dictionary = {
   },
   about: {
     title: "About ToolPop",
-    intro: "ToolPop is a free online toolkit for processing PDFs, images, and more — right in your browser. No uploads, no sign-ups, no limits. Your files never leave your device.",
+    intro: "ToolPop is a free online toolkit for processing PDFs, images, text, and conversions — right in your browser. No uploads, no sign-ups, no limits. Your files never leave your device.",
     sections: [
       {
         heading: "Our Mission",
@@ -1083,7 +1083,7 @@ const en: Dictionary = {
       },
       {
         heading: "What We Offer",
-        content: "ToolPop provides a growing collection of tools across multiple categories:\n\n• PDF Tools — 40+ tools including merge, split, compress, convert, edit, protect, watermark, and more\n• Image Tools — 28+ tools including resize, convert, compress, crop, rotate, watermark, collage, and more\n• Text Tools — 45+ tools including word counter, case converter, Base64 encode/decode, JSON formatter, hash generator, regex tester, and more\n\nAll tools are completely free with no file size limits or daily usage caps.",
+        content: "ToolPop provides a growing collection of tools across multiple categories:\n\n• PDF Tools — 40+ tools including merge, split, compress, convert, edit, protect, watermark, and more\n• Image Tools — 28+ tools including resize, convert, compress, crop, rotate, watermark, collage, and more\n• Text Tools — 45+ tools including word counter, case converter, Base64 encode/decode, JSON formatter, hash generator, regex tester, and more\n• Converter Tools — 45+ tools including unit conversion, color conversion, data format conversion, CSS units, date/time, and more\n\nAll tools are completely free with no file size limits or daily usage caps.",
       },
       {
         heading: "Our Technology",
@@ -1132,7 +1132,7 @@ const en: Dictionary = {
     items: [
       {
         question: "Is ToolPop really free?",
-        answer: "Yes, completely free. All PDF, image, and text tools are available without limits, no sign-up required, and no hidden fees. We support the service through non-intrusive advertising.",
+        answer: "Yes, completely free. All PDF, image, text, and converter tools are available without limits, no sign-up required, and no hidden fees. We support the service through non-intrusive advertising.",
       },
       {
         question: "Are my files safe and private?",
@@ -1144,7 +1144,7 @@ const en: Dictionary = {
       },
       {
         question: "What tools does ToolPop offer?",
-        answer: "We offer PDF tools (40+ including merge, split, compress, convert, edit, protect, and more), image tools (28+ including resize, format conversion, compress, crop, rotate, watermark, and more), and text tools (45+ including word counter, case converter, encoding/decoding, hash generator, JSON formatter, and more). New tools are being added continuously.",
+        answer: "We offer PDF tools (40+ including merge, split, compress, convert, edit, protect, and more), image tools (28+ including resize, format conversion, compress, crop, rotate, watermark, and more), text tools (45+ including word counter, case converter, encoding/decoding, hash generator, JSON formatter, and more), and converter tools (45+ including unit conversion, color conversion, data format conversion, CSS units, date/time tools, and more). New tools are being added continuously.",
       },
       {
         question: "What is the maximum file size I can process?",
@@ -1156,7 +1156,7 @@ const en: Dictionary = {
       },
       {
         question: "Can I use ToolPop on my phone or tablet?",
-        answer: "Yes! ToolPop is fully responsive and works on mobile devices. You can process PDFs, images, and text right from your phone or tablet browser.",
+        answer: "Yes! ToolPop is fully responsive and works on mobile devices. You can process PDFs, images, text, and use converter tools right from your phone or tablet browser.",
       },
       {
         question: "How does browser-based processing work?",

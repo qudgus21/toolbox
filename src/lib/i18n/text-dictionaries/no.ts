@@ -355,8 +355,6 @@ const no: TextDictionary = {
     sentences: "Setninger",
     paragraphs: "Avsnitt",
     lines: "Linjer",
-    readingTime: "Lesetid",
-    speakingTime: "Taletid",
     totalCharacters: "Totalt tegn",
     bytes: "Bytes",
     letters: "Bokstaver",

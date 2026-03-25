@@ -355,8 +355,6 @@ const ro: TextDictionary = {
     sentences: "Propoziții",
     paragraphs: "Paragrafe",
     lines: "Rânduri",
-    readingTime: "Timp de citire",
-    speakingTime: "Timp de vorbire",
     totalCharacters: "Total caractere",
     bytes: "Octeți",
     letters: "Litere",

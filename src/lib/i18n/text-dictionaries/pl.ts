@@ -187,8 +187,6 @@ const pl: TextDictionary = {
     sentences: "Zdania",
     paragraphs: "Akapity",
     lines: "Wiersze",
-    readingTime: "Czas czytania",
-    speakingTime: "Czas mówienia",
     totalCharacters: "Łącznie znaków",
     bytes: "Bajty",
     letters: "Litery",

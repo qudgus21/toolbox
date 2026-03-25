@@ -355,8 +355,6 @@ const pa: TextDictionary = {
     sentences: "ਵਾਕ",
     paragraphs: "ਪੈਰੇ",
     lines: "ਲਾਈਨਾਂ",
-    readingTime: "ਪੜ੍ਹਨ ਦਾ ਸਮਾਂ",
-    speakingTime: "ਬੋਲਣ ਦਾ ਸਮਾਂ",
     totalCharacters: "ਕੁੱਲ ਅੱਖਰ",
     bytes: "ਬਾਈਟਸ",
     letters: "ਅੱਖਰ",

@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — 免费在线工具箱",
     description:
-      "编辑、合并、转换PDF，调整、压缩、处理图片。完全免费，浏览器直接使用。",
+      "编辑PDF、处理图片、转换单位等——完全免费，浏览器直接使用。",
   },
   hero: {
-    badge: "131+ 款免费在线工具",
+    badge: "176+ 款免费在线工具",
     title: "你需要的所有工具，尽在 ToolPop",
     titleAccent: "ToolPop",
     subtitle:
-      "在浏览器中直接处理PDF和图片，无需安装软件，无需注册账号。",
+      "在浏览器中处理PDF、图片、文本和各种转换，无需安装软件，无需注册账号。",
     searchPlaceholder: "搜索你需要的工具",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "查看文本工具",
       toolCount: "44+ 款工具",
     },
+    converter: {
+      name: "转换工具",
+      description:
+        "即时转换单位、颜色、数据格式、日期等。",
+      cta: "转换工具",
+      toolCount: "45个工具",
+    },
   },
   popularTools: {
     sectionTitle: "热门工具",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "查看全部",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "免费工具",
     languages: "45",
     languagesLabel: "支持语言",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "图片",
     text: "文本",
+    converter: "转换",
   },
 };
 

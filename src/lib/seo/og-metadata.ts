@@ -411,3 +411,231 @@ export const ogBottomBar: Record<string, { free: string; noUpload: string }> = {
 export function getOgBottomBar(locale: string) {
   return ogBottomBar[locale] ?? ogBottomBar.en;
 }
+
+export const ogConverterMetadata: Record<string, { siteTitle: string; siteDescription: string; altText: string }> = {
+  ko: {
+    siteTitle: "ToolPop Converter - 무료 변환기",
+    siteDescription: "단위, 색상, 데이터 형식, 날짜를 온라인에서 무료로 변환하세요.",
+    altText: "ToolPop Converter - 무료 온라인 변환기",
+  },
+  en: {
+    siteTitle: "ToolPop Converter - Free Online Converters",
+    siteDescription: "Convert units, colors, data formats, and dates online for free.",
+    altText: "ToolPop Converter - Free Online Converters",
+  },
+  ja: {
+    siteTitle: "ToolPop Converter - 無料変換ツール",
+    siteDescription: "単位、色、データ形式、日付をオンラインで無料変換。",
+    altText: "ToolPop Converter - 無料オンライン変換ツール",
+  },
+  zh: {
+    siteTitle: "ToolPop Converter - 免费在线转换器",
+    siteDescription: "在线免费转换单位、颜色、数据格式和日期。",
+    altText: "ToolPop Converter - 免费在线转换器",
+  },
+  es: {
+    siteTitle: "ToolPop Converter - Convertidores gratuitos",
+    siteDescription: "Convierte unidades, colores, formatos de datos y fechas en línea gratis.",
+    altText: "ToolPop Converter - Convertidores en línea gratuitos",
+  },
+  fr: {
+    siteTitle: "ToolPop Converter - Convertisseurs gratuits",
+    siteDescription: "Convertissez unités, couleurs, formats de données et dates en ligne gratuitement.",
+    altText: "ToolPop Converter - Convertisseurs en ligne gratuits",
+  },
+  de: {
+    siteTitle: "ToolPop Converter - Kostenlose Konverter",
+    siteDescription: "Einheiten, Farben, Datenformate und Daten online kostenlos konvertieren.",
+    altText: "ToolPop Converter - Kostenlose Online-Konverter",
+  },
+  pt: {
+    siteTitle: "ToolPop Converter - Conversores Gratuitos",
+    siteDescription: "Converta unidades, cores, formatos de dados e datas online gratuitamente.",
+    altText: "ToolPop Converter - Conversores online gratuitos",
+  },
+  it: {
+    siteTitle: "ToolPop Converter - Convertitori Gratuiti",
+    siteDescription: "Converti unità, colori, formati dati e date online gratuitamente.",
+    altText: "ToolPop Converter - Convertitori online gratuiti",
+  },
+  ru: {
+    siteTitle: "ToolPop Converter - Бесплатные конвертеры",
+    siteDescription: "Конвертируйте единицы, цвета, форматы данных и даты онлайн бесплатно.",
+    altText: "ToolPop Converter - Бесплатные онлайн конвертеры",
+  },
+  ar: {
+    siteTitle: "ToolPop Converter - محولات مجانية",
+    siteDescription: "تحويل الوحدات والألوان وتنسيقات البيانات والتواريخ عبر الإنترنت مجاناً.",
+    altText: "ToolPop Converter - محولات مجانية عبر الإنترنت",
+  },
+  hi: {
+    siteTitle: "ToolPop Converter - मुफ़्त कनवर्टर",
+    siteDescription: "ऑनलाइन मुफ़्त में इकाइयों, रंगों, डेटा प्रारूपों और तारीखों को बदलें।",
+    altText: "ToolPop Converter - मुफ़्त ऑनलाइन कनवर्टर",
+  },
+  vi: {
+    siteTitle: "ToolPop Converter - Công cụ chuyển đổi miễn phí",
+    siteDescription: "Chuyển đổi đơn vị, màu sắc, định dạng dữ liệu và ngày tháng trực tuyến miễn phí.",
+    altText: "ToolPop Converter - Công cụ chuyển đổi trực tuyến miễn phí",
+  },
+  th: {
+    siteTitle: "ToolPop Converter - ตัวแปลงฟรี",
+    siteDescription: "แปลงหน่วย สี รูปแบบข้อมูล และวันที่ออนไลน์ฟรี",
+    altText: "ToolPop Converter - ตัวแปลงออนไลน์ฟรี",
+  },
+  tr: {
+    siteTitle: "ToolPop Converter - Ücretsiz Dönüştürücüler",
+    siteDescription: "Birimleri, renkleri, veri formatlarını ve tarihleri çevrimiçi ücretsiz dönüştürün.",
+    altText: "ToolPop Converter - Ücretsiz Çevrimiçi Dönüştürücüler",
+  },
+  nl: {
+    siteTitle: "ToolPop Converter - Gratis converters",
+    siteDescription: "Converteer eenheden, kleuren, gegevensformaten en datums gratis online.",
+    altText: "ToolPop Converter - Gratis online converters",
+  },
+  pl: {
+    siteTitle: "ToolPop Converter - Darmowe konwertery",
+    siteDescription: "Konwertuj jednostki, kolory, formaty danych i daty online za darmo.",
+    altText: "ToolPop Converter - Darmowe konwertery online",
+  },
+  uk: {
+    siteTitle: "ToolPop Converter - Безкоштовні конвертери",
+    siteDescription: "Конвертуйте одиниці, кольори, формати даних і дати онлайн безкоштовно.",
+    altText: "ToolPop Converter - Безкоштовні онлайн конвертери",
+  },
+  ro: {
+    siteTitle: "ToolPop Converter - Convertoare gratuite",
+    siteDescription: "Convertește unități, culori, formate de date și date online gratuit.",
+    altText: "ToolPop Converter - Convertoare online gratuite",
+  },
+  el: {
+    siteTitle: "ToolPop Converter - Δωρεάν μετατροπείς",
+    siteDescription: "Μετατρέψτε μονάδες, χρώματα, μορφές δεδομένων και ημερομηνίες online δωρεάν.",
+    altText: "ToolPop Converter - Δωρεάν online μετατροπείς",
+  },
+  cs: {
+    siteTitle: "ToolPop Converter - Bezplatné převodníky",
+    siteDescription: "Převeďte jednotky, barvy, datové formáty a data online zdarma.",
+    altText: "ToolPop Converter - Bezplatné online převodníky",
+  },
+  sv: {
+    siteTitle: "ToolPop Converter - Gratis konverterare",
+    siteDescription: "Konvertera enheter, färger, dataformat och datum online gratis.",
+    altText: "ToolPop Converter - Gratis online konverterare",
+  },
+  hu: {
+    siteTitle: "ToolPop Converter - Ingyenes átalakítók",
+    siteDescription: "Egységek, színek, adatformátumok és dátumok ingyenes online konvertálása.",
+    altText: "ToolPop Converter - Ingyenes online átalakítók",
+  },
+  he: {
+    siteTitle: "ToolPop Converter - ממירים חינמיים",
+    siteDescription: "המרת יחידות, צבעים, פורמטי נתונים ותאריכים באינטרנט בחינם.",
+    altText: "ToolPop Converter - ממירים מקוונים חינמיים",
+  },
+  da: {
+    siteTitle: "ToolPop Converter - Gratis konvertere",
+    siteDescription: "Konverter enheder, farver, dataformater og datoer online gratis.",
+    altText: "ToolPop Converter - Gratis online konvertere",
+  },
+  fi: {
+    siteTitle: "ToolPop Converter - Ilmaiset muuntimet",
+    siteDescription: "Muunna yksiköitä, värejä, tietomuotoja ja päivämääriä verkossa ilmaiseksi.",
+    altText: "ToolPop Converter - Ilmaiset verkkomuuntimet",
+  },
+  no: {
+    siteTitle: "ToolPop Converter - Gratis konverterere",
+    siteDescription: "Konverter enheter, farger, dataformater og datoer på nettet gratis.",
+    altText: "ToolPop Converter - Gratis nettbaserte konverterere",
+  },
+  bg: {
+    siteTitle: "ToolPop Converter - Безплатни конвертори",
+    siteDescription: "Конвертирайте единици, цветове, формати данни и дати онлайн безплатно.",
+    altText: "ToolPop Converter - Безплатни онлайн конвертори",
+  },
+  hr: {
+    siteTitle: "ToolPop Converter - Besplatni pretvarači",
+    siteDescription: "Pretvarajte jedinice, boje, formate podataka i datume online besplatno.",
+    altText: "ToolPop Converter - Besplatni online pretvarači",
+  },
+  sk: {
+    siteTitle: "ToolPop Converter - Bezplatné konvertory",
+    siteDescription: "Konvertujte jednotky, farby, dátové formáty a dátumy online zadarmo.",
+    altText: "ToolPop Converter - Bezplatné online konvertory",
+  },
+  sl: {
+    siteTitle: "ToolPop Converter - Brezplačni pretvorniki",
+    siteDescription: "Pretvorite enote, barve, podatkovne formate in datume na spletu brezplačno.",
+    altText: "ToolPop Converter - Brezplačni spletni pretvorniki",
+  },
+  lt: {
+    siteTitle: "ToolPop Converter - Nemokami konverteriai",
+    siteDescription: "Konvertuokite vienetus, spalvas, duomenų formatus ir datas internetu nemokamai.",
+    altText: "ToolPop Converter - Nemokami internetiniai konverteriai",
+  },
+  lv: {
+    siteTitle: "ToolPop Converter - Bezmaksas konvertori",
+    siteDescription: "Konvertējiet vienības, krāsas, datu formātus un datumus tiešsaistē bez maksas.",
+    altText: "ToolPop Converter - Bezmaksas tiešsaistes konvertori",
+  },
+  et: {
+    siteTitle: "ToolPop Converter - Tasuta teisendajad",
+    siteDescription: "Teisendage ühikuid, värve, andmevorminguid ja kuupäevi veebis tasuta.",
+    altText: "ToolPop Converter - Tasuta veebipõhised teisendajad",
+  },
+  ga: {
+    siteTitle: "ToolPop Converter - Tiontairí saor in aisce",
+    siteDescription: "Tiontaigh aonaid, dathanna, formáidí sonraí agus dátaí ar líne saor in aisce.",
+    altText: "ToolPop Converter - Tiontairí ar líne saor in aisce",
+  },
+  is: {
+    siteTitle: "ToolPop Converter - Ókeypis breytir",
+    siteDescription: "Breyttu einingum, litum, gagnasniðum og dagsetningum á netinu ókeypis.",
+    altText: "ToolPop Converter - Ókeypis netbreytir",
+  },
+  bs: {
+    siteTitle: "ToolPop Converter - Besplatni pretvarači",
+    siteDescription: "Pretvarajte jedinice, boje, formate podataka i datume online besplatno.",
+    altText: "ToolPop Converter - Besplatni online pretvarači",
+  },
+  mt: {
+    siteTitle: "ToolPop Converter - Konvertituri b'xejn",
+    siteDescription: "Ikkonverti unitajiet, kuluri, formati tad-data u dati online b'xejn.",
+    altText: "ToolPop Converter - Konvertituri online b'xejn",
+  },
+  id: {
+    siteTitle: "ToolPop Converter - Konverter Gratis",
+    siteDescription: "Konversi satuan, warna, format data, dan tanggal secara online gratis.",
+    altText: "ToolPop Converter - Konverter online gratis",
+  },
+  ms: {
+    siteTitle: "ToolPop Converter - Penukar Percuma",
+    siteDescription: "Tukar unit, warna, format data dan tarikh dalam talian secara percuma.",
+    altText: "ToolPop Converter - Penukar dalam talian percuma",
+  },
+  mr: {
+    siteTitle: "ToolPop Converter - विनामूल्य कन्व्हर्टर",
+    siteDescription: "एकके, रंग, डेटा फॉरमॅट आणि तारखा विनामूल्य ऑनलाइन रूपांतरित करा.",
+    altText: "ToolPop Converter - विनामूल्य ऑनलाइन कन्व्हर्टर",
+  },
+  bn: {
+    siteTitle: "ToolPop Converter - বিনামূল্যে কনভার্টার",
+    siteDescription: "একক, রঙ, ডেটা ফরম্যাট এবং তারিখ বিনামূল্যে অনলাইনে রূপান্তর করুন।",
+    altText: "ToolPop Converter - বিনামূল্যে অনলাইন কনভার্টার",
+  },
+  pa: {
+    siteTitle: "ToolPop Converter - ਮੁਫ਼ਤ ਕਨਵਰਟਰ",
+    siteDescription: "ਇਕਾਈਆਂ, ਰੰਗ, ਡਾਟਾ ਫਾਰਮੈਟ ਅਤੇ ਤਾਰੀਖਾਂ ਨੂੰ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਬਦਲੋ।",
+    altText: "ToolPop Converter - ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਕਨਵਰਟਰ",
+  },
+  te: {
+    siteTitle: "ToolPop Converter - ఉచిత కన్వర్టర్",
+    siteDescription: "యూనిట్లు, రంగులు, డేటా ఫార్మాట్లు మరియు తేదీలను ఉచితంగా ఆన్‌లైన్‌లో మార్చండి.",
+    altText: "ToolPop Converter - ఉచిత ఆన్‌లైన్ కన్వర్టర్",
+  },
+  km: {
+    siteTitle: "ToolPop Converter - កម្មវិធីបំលែងឥតគិតថ្លៃ",
+    siteDescription: "បំលែងឯកតា ពណ៌ ទម្រង់ទិន្នន័យ និងកាលបរិច្ឆេដតាមអ៊ីនធឺណិតដោយឥតគិតថ្លៃ។",
+    altText: "ToolPop Converter - កម្មវិធីបំលែងអនឡាញឥតគិតថ្លៃ",
+  },
+};

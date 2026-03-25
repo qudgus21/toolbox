@@ -3,6 +3,7 @@ import { locales } from "@/lib/i18n";
 import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
 import { tools as textTools } from "@/lib/text/tools";
+import { tools as converterTools } from "@/lib/converter/tools";
 import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org";
@@ -83,6 +84,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}/text/${slug}`,
         lastModified: new Date("2026-03-24"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
+  }
+
+  // Converter home pages for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/converter`,
+      lastModified: new Date("2026-03-25"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
+
+  // Converter tool pages for each locale x tool combination
+  const converterSlugs = converterTools.map((t) => t.slug);
+  for (const locale of locales) {
+    for (const slug of converterSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/converter/${slug}`,
+        lastModified: new Date("2026-03-25"),
         changeFrequency: "monthly",
         priority: 0.8,
       });

@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — Free Online Tools",
     description:
-      "Edit, merge, convert PDFs. Resize, compress, transform images. All free, right in your browser.",
+      "Edit PDFs, transform images, convert units and more — all free, right in your browser.",
   },
   hero: {
-    badge: "131+ Free Online Tools",
+    badge: "176+ Free Online Tools",
     title: "Every tool you need, in one ToolPop",
     titleAccent: "ToolPop",
     subtitle:
-      "Work with PDFs and images right in your browser. No installs, no sign-ups.",
+      "Work with PDFs, images, text, and conversions right in your browser. No installs, no sign-ups.",
     searchPlaceholder: "What tool are you looking for?",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "Text Tools",
       toolCount: "44+ tools",
     },
+    converter: {
+      name: "Converter Tools",
+      description:
+        "Convert units, colors, data formats, dates, and more — instantly.",
+      cta: "Converter Tools",
+      toolCount: "45 tools",
+    },
   },
   popularTools: {
     sectionTitle: "Popular Tools",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "View all",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "Free Tools",
     languages: "45",
     languagesLabel: "Languages",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "Image",
     text: "Text",
+    converter: "Converter",
   },
 };
 

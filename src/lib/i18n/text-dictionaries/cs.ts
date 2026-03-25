@@ -355,8 +355,6 @@ const cs: TextDictionary = {
     sentences: "Věty",
     paragraphs: "Odstavce",
     lines: "Řádky",
-    readingTime: "Doba čtení",
-    speakingTime: "Doba mluvení",
     totalCharacters: "Celkem znaků",
     bytes: "Bajty",
     letters: "Písmena",

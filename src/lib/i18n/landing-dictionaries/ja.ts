@@ -4,14 +4,14 @@ const dict: LandingDictionary = {
   meta: {
     title: "ToolPop — 無料オンラインツール",
     description:
-      "PDFの編集・結合・変換、画像のリサイズ・圧縮・加工。すべて無料、ブラウザだけで完結。",
+      "PDF編集、画像加工、単位変換など — すべて無料、ブラウザだけで完結。",
   },
   hero: {
-    badge: "131以上の無料オンラインツール",
+    badge: "176以上の無料オンラインツール",
     title: "必要なツールがすべて揃う、ToolPop",
     titleAccent: "ToolPop",
     subtitle:
-      "PDFも画像もブラウザ上で直接処理。インストール不要、会員登録も不要。",
+      "PDF、画像、テキスト、変換ツールをブラウザ上で直接処理。インストール不要、会員登録も不要。",
     searchPlaceholder: "お探しのツールは？",
   },
   apps: {
@@ -36,6 +36,13 @@ const dict: LandingDictionary = {
       cta: "テキストツールを見る",
       toolCount: "44以上のツール",
     },
+    converter: {
+      name: "変換ツール",
+      description:
+        "単位・色・データ形式・日付などを瞬時に変換。",
+      cta: "変換ツール",
+      toolCount: "45種類",
+    },
   },
   popularTools: {
     sectionTitle: "人気のツール",
@@ -43,7 +50,7 @@ const dict: LandingDictionary = {
     viewAll: "すべて見る",
   },
   stats: {
-    tools: "131+",
+    tools: "176+",
     toolsLabel: "無料ツール",
     languages: "45",
     languagesLabel: "対応言語",
@@ -96,6 +103,7 @@ const dict: LandingDictionary = {
     pdf: "PDF",
     image: "画像",
     text: "テキスト",
+    converter: "変換",
   },
 };
 
