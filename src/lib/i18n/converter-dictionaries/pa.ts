@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "ਤੁਹਾਨੂੰ ਲੋੜੀਂਦਾ ਹਰ ਕਨਵਰਟਰ",
-    titleAccent: "ਕਨਵਰਟਰ",
+    title: "ਤੁਹਾਨੂੰ ਲੋੜੀਂਦੇ ਸਾਰੇ ਪਰਿਵਰਤਨ ਟੂਲ",
+    titleAccent: "ਪਰਿਵਰਤਨ",
     description:
-      "ਯੂਨਿਟਾਂ, ਰੰਗ, ਡੇਟਾ ਫਾਰਮੈਟ, ਤਾਰੀਖਾਂ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ — ਆਪਣੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਤੁਰੰਤ ਬਦਲੋ।",
+      "ਯੂਨਿਟ, ਰੰਗ, ਡਾਟਾ ਫਾਰਮੈਟ, ਮਿਤੀ ਬਦਲੋ। ਸਭ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਹੀ ਹੁੰਦਾ ਹੈ।",
     tabAll: "ਸਭ",
     categoryUnit: "ਯੂਨਿਟਾਂ",
     categoryNumber: "ਨੰਬਰ",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "px, rem, em, %, vw, vh ਅਤੇ ਹੋਰ CSS ਯੂਨਿਟਾਂ ਵਿਚਕਾਰ ਬਦਲੋ।",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS ਛੋਟਾ / ਸੁੰਦਰ ਬਣਾਓ",
       description:
         "ਉਤਪਾਦਨ ਜਾਂ ਪੜ੍ਹਨਯੋਗਤਾ ਲਈ CSS ਕੋਡ ਨੂੰ ਛੋਟਾ ਜਾਂ ਸੁੰਦਰ ਬਣਾਓ।",
     },

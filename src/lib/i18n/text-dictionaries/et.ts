@@ -220,7 +220,7 @@ const et: TextDictionary = {
     legal: "Õiguslik teave",
     privacy: "Privaatsuspoliitika",
     terms: "Kasutustingimused",
-    copyright: "All rights reserved.",
+    copyright: "Kõik õigused kaitstud.",
     company: "Ettevõte",
     about: "Meist",
     contact: "Kontakt",

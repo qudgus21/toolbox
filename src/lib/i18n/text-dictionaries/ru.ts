@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const ru: TextDictionary = {
   home: {
     title: "Все текстовые инструменты в одном месте",
-    titleAccent: "Текст",
+    titleAccent: "текстовые",
     description: "Подсчёт слов, преобразование регистра, кодирование и многое другое. Всё прямо в браузере.",
     tabAll: "Все",
     categoryCount: "Анализ",

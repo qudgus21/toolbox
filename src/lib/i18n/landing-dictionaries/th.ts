@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "เครื่องมือ PDF", description: "รวม แยก แปลง แก้ไข และบีบอัด — ทำได้ทุกอย่างกับไฟล์ PDF", cta: "ดูเครื่องมือ PDF", toolCount: "39 เครื่องมือ" },
     image: { name: "เครื่องมือรูปภาพ", description: "ปรับขนาด ครอป แปลงไฟล์ ใส่เอฟเฟกต์ สร้าง QR Code — ครบทุกอย่างสำหรับรูปภาพ", cta: "ดูเครื่องมือรูปภาพ", toolCount: "48 เครื่องมือ" },
-    text: { name: "เครื่องมือข้อความ", description: "แปลง วิเคราะห์ จัดระเบียบ เข้ารหัส และสร้างข้อความได้ทันที", cta: "เครื่องมือข้อความ", toolCount: "44+ เครื่องมือ" },
-    converter: { name: "เครื่องมือแปลง", description: "แปลงหน่วย สี รูปแบบข้อมูล วันที่ และอื่นๆ ได้ทันที", cta: "ตัวแปลง", toolCount: "45 เครื่องมือ" },
+    text: { name: "เครื่องมือข้อความ", description: "แปลง วิเคราะห์ จัดระเบียบ เข้ารหัส และสร้างข้อความได้ทันที", cta: "ดูเครื่องมือข้อความ", toolCount: "44+ เครื่องมือ" },
+    converter: { name: "เครื่องมือแปลง", description: "แปลงหน่วย สี รูปแบบข้อมูล วันที่ และอื่นๆ ได้ทันที", cta: "ดูตัวแปลง", toolCount: "45 เครื่องมือ" },
+    calculator: { name: "เครื่องคิดเลข", description: "คณิตศาสตร์ การเงิน สุขภาพ และการคำนวณในชีวิตประจำวัน — เร็วและฟรี", cta: "ดูเครื่องคิดเลข", toolCount: "30+ เครื่องมือ" },
   },
   popularTools: { sectionTitle: "เครื่องมือยอดนิยม", sectionSubtitle: "เข้าถึงเครื่องมือที่ใช้กันมากที่สุดได้ทันที", viewAll: "ดูทั้งหมด" },
   stats: { tools: "176+", toolsLabel: "เครื่องมือฟรี", languages: "45", languagesLabel: "ภาษา", users: "100%", usersLabel: "ทำงานบนเบราว์เซอร์", price: "฿0", priceLabel: "ฟรีตลอดไป" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "พร้อมเริ่มต้นหรือยัง?", subtitle: "ไม่ต้องติดตั้ง ไม่ต้องสมัคร ไม่ต้องจ่าย — แค่คลิกเดียว", button: "ดูเครื่องมือทั้งหมด" },
   common: { shareTitle: "แชร์", shareSubtitle: "บอกเพื่อนๆ เกี่ยวกับ ToolPop!", shareCopyLink: "คัดลอกลิงก์", shareCopied: "คัดลอกแล้ว!" },
-  footer: { apps: "เครื่องมือ", company: "บริษัท", about: "เกี่ยวกับเรา", contact: "ติดต่อ", faq: "FAQ", blog: "บล็อก", legal: "ข้อกฎหมาย", privacy: "นโยบายความเป็นส่วนตัว", terms: "ข้อกำหนดการใช้งาน", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "เครื่องมือออนไลน์ฟรีสำหรับ PDF รูปภาพ และอื่นๆ ไม่ต้องสมัครสมาชิก", madeWith: "สร้างด้วยใจเพื่อทุกคน" },
+  footer: { apps: "เครื่องมือ", company: "บริษัท", about: "เกี่ยวกับเรา", contact: "ติดต่อ", faq: "FAQ", blog: "บล็อก", legal: "ข้อกฎหมาย", privacy: "นโยบายความเป็นส่วนตัว", terms: "ข้อกำหนดการใช้งาน", copyright: "© 2026 ToolPop. สงวนลิขสิทธิ์ทั้งหมด.", tagline: "เครื่องมือออนไลน์ฟรีสำหรับ PDF รูปภาพ และอื่นๆ ไม่ต้องสมัครสมาชิก", madeWith: "สร้างด้วยใจเพื่อทุกคน" },
   search: { noResults: "ไม่พบผลลัพธ์" },
-  nav: { pdf: "PDF", image: "รูปภาพ", text: "ข้อความ", converter: "แปลง" },
+  nav: { pdf: "PDF", image: "รูปภาพ", text: "ข้อความ", converter: "แปลง", calculator: "คำนวณ" },
 };
 export default dict;

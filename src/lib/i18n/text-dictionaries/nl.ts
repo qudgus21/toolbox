@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const nl: TextDictionary = {
   home: {
     title: "Alle teksttools die je nodig hebt",
-    titleAccent: "Tekst",
+    titleAccent: "tekst",
     description: "Woorden tellen, hoofdletters wijzigen, coderen en meer. Alles direct in je browser.",
     tabAll: "Alles",
     categoryCount: "Analyse",

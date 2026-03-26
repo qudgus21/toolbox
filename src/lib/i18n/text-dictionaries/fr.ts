@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const fr: TextDictionary = {
   home: {
     title: "Tous les outils texte dont vous avez besoin",
-    titleAccent: "Texte",
+    titleAccent: "texte",
     description:
       "Compteur de mots, conversion de casse, encodage et plus encore. Tout se passe dans votre navigateur.",
     tabAll: "Tout",

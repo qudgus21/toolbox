@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "మీకు కావలసిన ప్రతి కన్వర్టర్",
-    titleAccent: "కన్వర్టర్",
+    title: "మీకు కావలసిన ప్రతి మార్పిడి సాధనం",
+    titleAccent: "మార్పిడి",
     description:
-      "యూనిట్లు, రంగులు, డేటా ఫార్మాట్లు, తేదీలు మరియు మరిన్ని — మీ బ్రౌజర్‌లో తక్షణంగా మార్చండి.",
+      "యూనిట్లు, రంగులు, డేటా ఫార్మాట్లు, తేదీలు మార్చండి. అంతా బ్రౌజర్‌లోనే జరుగుతుంది.",
     tabAll: "అన్నీ",
     categoryUnit: "యూనిట్లు",
     categoryNumber: "సంఖ్యలు",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "px, rem, em, %, vw, vh మరియు ఇతర CSS యూనిట్ల మధ్య మార్చండి.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS కుదింపు / అందమైన చేయు",
       description:
         "ఉత్పత్తి లేదా చదవగలిగేలా CSS కోడ్‌ను కుదించండి లేదా అందంగా చేయండి.",
     },

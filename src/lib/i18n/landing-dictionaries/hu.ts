@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF eszközök", description: "Egyesítés, felosztás, konvertálás, szerkesztés és tömörítés — minden, amit PDF-fel tehetsz.", cta: "PDF eszközök felfedezése", toolCount: "39 eszköz" },
     image: { name: "Képeszközök", description: "Átméretezés, vágás, konvertálás, effektek, QR-kód generálás — minden a képekhez.", cta: "Képeszközök felfedezése", toolCount: "48 eszköz" },
-    text: { name: "Szövegeszközök", description: "Alakítsd át, elemezd, tisztítsd meg, kódold és generáld a szöveget azonnal.", cta: "Szövegeszközök", toolCount: "44+ eszköz" },
-    converter: { name: "Konvertáló eszközök", description: "Konvertáljon mértékegységeket, színeket, adatformátumokat, dátumokat és még sok mást.", cta: "Konverterek", toolCount: "45 eszköz" },
+    text: { name: "Szövegeszközök", description: "Alakítsd át, elemezd, tisztítsd meg, kódold és generáld a szöveget azonnal.", cta: "Szövegeszközök felfedezése", toolCount: "44+ eszköz" },
+    converter: { name: "Konvertáló eszközök", description: "Konvertáljon mértékegységeket, színeket, adatformátumokat, dátumokat és még sok mást.", cta: "Konverterek felfedezése", toolCount: "45 eszköz" },
+    calculator: { name: "Számológépek", description: "Matematika, pénzügy, egészség és mindennapos számítások — gyorsan és ingyen.", cta: "Számológépek felfedezése", toolCount: "30+ eszköz" },
   },
   popularTools: { sectionTitle: "Népszerű eszközök", sectionSubtitle: "Ugorj bele a leggyakrabban használt eszközökbe", viewAll: "Összes megtekintése" },
   stats: { tools: "176+", toolsLabel: "Ingyenes eszköz", languages: "45", languagesLabel: "Nyelv", users: "100%", usersLabel: "Böngészőalapú", price: "0 Ft", priceLabel: "Örökké ingyenes" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Készen állsz?", subtitle: "Nincs telepítés, nincs regisztráció, nincs fizetés — egyetlen kattintás választ el.", button: "Összes eszköz böngészése" },
   common: { shareTitle: "Megosztás", shareSubtitle: "Szólj a barátaidnak a ToolPop-ról!", shareCopyLink: "Link másolása", shareCopied: "Másolva!" },
-  footer: { apps: "Eszközök", company: "Cég", about: "Rólunk", contact: "Kapcsolat", faq: "GYIK", blog: "Blog", legal: "Jogi információk", privacy: "Adatvédelmi szabályzat", terms: "Felhasználási feltételek", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Ingyenes online eszközök PDF-ekhez, képekhez és sok máshoz. Regisztráció nélkül.", madeWith: "Szeretettel készítve mindenkinek" },
+  footer: { apps: "Eszközök", company: "Cég", about: "Rólunk", contact: "Kapcsolat", faq: "GYIK", blog: "Blog", legal: "Jogi információk", privacy: "Adatvédelmi szabályzat", terms: "Felhasználási feltételek", copyright: "© 2026 ToolPop. Minden jog fenntartva.", tagline: "Ingyenes online eszközök PDF-ekhez, képekhez és sok máshoz. Regisztráció nélkül.", madeWith: "Szeretettel készítve mindenkinek" },
   search: { noResults: "Nincs találat" },
-  nav: { pdf: "PDF", image: "Kép", text: "Szöveg", converter: "Konverter" },
+  nav: { pdf: "PDF", image: "Kép", text: "Szöveg", converter: "Konverter", calculator: "Számológép" },
 };
 export default dict;

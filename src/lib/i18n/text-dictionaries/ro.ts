@@ -220,7 +220,7 @@ const ro: TextDictionary = {
     legal: "Legal",
     privacy: "Politica de confidențialitate",
     terms: "Termeni și condiții",
-    copyright: "All rights reserved.",
+    copyright: "Toate drepturile rezervate.",
     company: "Companie",
     about: "Despre noi",
     contact: "Contact",

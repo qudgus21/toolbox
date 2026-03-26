@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Vsi pretvorniki, ki jih potrebujete",
-    titleAccent: "pretvorniki",
+    title: "Vsa orodja za pretvorbo, ki jih potrebujete",
+    titleAccent: "pretvorbo",
     description:
-      "Pretvarjajte enote, barve, podatkovne formate, datume in več — takoj v brskalniku.",
+      "Pretvarjajte enote, barve, podatkovne formate, datume in več. Vse neposredno v brskalniku.",
     tabAll: "Vse",
     categoryUnit: "Enote",
     categoryNumber: "Števila",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Pretvarjajte med px, rem, em, %, vw, vh in drugimi CSS enotami.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS minimizator / oblikovalec",
       description:
         "Minimizirajte ali oblikujte CSS kodo za produkcijo ali berljivost.",
     },

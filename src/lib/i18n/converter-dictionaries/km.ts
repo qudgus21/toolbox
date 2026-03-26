@@ -5,7 +5,7 @@ const dict: ConverterDictionary = {
     title: "ឧបករណ៍បម្លែងទាំងអស់ដែលអ្នកត្រូវការ",
     titleAccent: "បម្លែង",
     description:
-      "បម្លែងឯកតា ពណ៌ ទម្រង់ទិន្នន័យ កាលបរិច្ឆេទ និងច្រើនទៀត — ភ្លាមៗនៅក្នុងកម្មវិធីរុករក។",
+      "បម្លែងឯកតា ពណ៌ ទម្រង់ទិន្នន័យ កាលបរិច្ឆេដ។ ទាំងអស់ដំណើរការនៅក្នុងកម្មវិធីរុករក។",
     tabAll: "ទាំងអស់",
     categoryUnit: "ឯកតា",
     categoryNumber: "លេខ",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "បម្លែងរវាង px rem em % vw vh និងឯកតា CSS ផ្សេងទៀត។",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS បង្រួម / ធ្វើឲ្យស្អាត",
       description:
         "បង្រួម ឬធ្វើឲ្យកូដ CSS ស្រស់ស្អាតសម្រាប់ផលិតកម្ម ឬអាចអានបាន។",
     },
@@ -439,7 +439,7 @@ const dict: ConverterDictionary = {
     columns: "ជួរឈរ",
     elements: "ធាតុ",
     keys: "គន្លឹះ",
-    interfaces: "Interface",
+    interfaces: "ចំណុចប្រទាក់",
     properties: "លក្ខណសម្បត្តិ",
     originalSize: "ទំហំដើម",
     resultSize: "ទំហំលទ្ធផល",

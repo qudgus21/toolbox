@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const no: ImageDictionary = {
   home: {
-    title: "Alle bildeverktøy du trenger",
+    title: "Alle Bilde-verktøy du trenger",
     titleAccent: "Bilde",
     description:
       "Endre størrelse, konvertere, legge til effekter og mer. Alt behandles direkte i nettleseren din.",
@@ -386,10 +386,10 @@ const no: ImageDictionary = {
       alignment: "Justering",
       xPosition: "X-posisjon",
       yPosition: "Y-posisjon",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Legg til",
+      noItems: "Klikk + for å legge til tekst",
+      bgColor: "Bakgrunn",
+      transparent: "Ingen",
     },
     addBorder: {
       borderWidth: "Rammebredde",

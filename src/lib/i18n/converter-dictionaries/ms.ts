@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Semua Penukar yang anda perlukan",
-    titleAccent: "Penukar",
+    title: "Semua alat penukaran yang anda perlukan",
+    titleAccent: "penukaran",
     description:
-      "Tukar unit, warna, format data, tarikh dan banyak lagi — terus dalam pelayar anda.",
+      "Tukar unit, warna, format data, tarikh dan lagi. Semuanya diproses dalam pelayar anda.",
     tabAll: "Semua",
     categoryUnit: "Unit",
     categoryNumber: "Nombor",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Tukar antara px, rem, em, %, vw, vh dan unit CSS lain.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "Peminifikasi / Pencantik CSS",
       description:
         "Kecilkan atau cantikkan kod CSS untuk pengeluaran atau kebolehbacaan.",
     },

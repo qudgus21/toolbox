@@ -4,3 +4,4 @@ export { imageEvents } from "./image";
 export { textEvents } from "./text";
 export { landingEvents } from "./landing";
 export { converterEvents } from "./converter";
+export { calculatorEvents } from "./calculator";

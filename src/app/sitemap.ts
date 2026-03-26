@@ -4,6 +4,7 @@ import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
 import { tools as textTools } from "@/lib/text/tools";
 import { tools as converterTools } from "@/lib/converter/tools";
+import { tools as calculatorTools } from "@/lib/calculator/tools";
 import { articles } from "@/lib/blog/articles";
 
 const BASE_URL = "https://toolpop.org";
@@ -107,6 +108,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}/converter/${slug}`,
         lastModified: new Date("2026-03-25"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      });
+    }
+  }
+
+  // Calculator home pages for each locale
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/calculator`,
+      lastModified: new Date("2026-03-26"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
+
+  // Calculator tool pages for each locale x tool combination
+  const calculatorSlugs = calculatorTools.map((t) => t.slug);
+  for (const locale of locales) {
+    for (const slug of calculatorSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/calculator/${slug}`,
+        lastModified: new Date("2026-03-26"),
         changeFrequency: "monthly",
         priority: 0.8,
       });

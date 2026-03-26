@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Alle konvertere samlet ét sted",
-    titleAccent: "konvertere",
+    title: "Alle konverteringsværktøjer du har brug for",
+    titleAccent: "konverterings",
     description:
-      "Konvertér enheder, farver, dataformater, datoer og meget mere — direkte i browseren.",
+      "Konverter enheder, farver, dataformater, datoer og mere. Alt sker direkte i din browser.",
     tabAll: "Alle",
     categoryUnit: "Enheder",
     categoryNumber: "Tal",
@@ -303,7 +303,7 @@ const dict: ConverterDictionary = {
     shareSubtitle: "Del denne nyttige konverter med andre",
     shareCopied: "Link kopieret!",
     shareCopyLink: "Kopiér link",
-    downloadAsFile: "Download",
+    downloadAsFile: "Hent som fil",
     options: "Indstillinger",
     input: "Input",
     output: "Output",

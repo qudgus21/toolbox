@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const te: ImageDictionary = {
   home: {
-    title: "చిత్రాలకు అవసరమైన ప్రతి సాధనం",
+    title: "చిత్రం సాధనాలు అన్నీ ఒకే చోట",
     titleAccent: "చిత్రం",
     description:
       "పరిమాణం మార్చండి, ఫార్మాట్ మార్చండి, ఎఫెక్ట్‌లు వర్తింపజేయండి మరియు మరిన్ని. అన్నీ మీ బ్రౌజర్‌లోనే ప్రాసెస్ అవుతాయి.",
@@ -386,10 +386,10 @@ const te: ImageDictionary = {
       alignment: "అమరిక",
       xPosition: "X స్థానం",
       yPosition: "Y స్థానం",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "జోడించు",
+      noItems: "టెక్స్ట్ జోడించడానికి + నొక్కండి",
+      bgColor: "నేపథ్యం",
+      transparent: "ఏమీ లేదు",
     },
     addBorder: {
       borderWidth: "బోర్డర్ వెడల్పు",

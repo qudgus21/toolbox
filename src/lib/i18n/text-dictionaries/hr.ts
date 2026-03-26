@@ -220,7 +220,7 @@ const hr: TextDictionary = {
     legal: "Pravne informacije",
     privacy: "Pravila privatnosti",
     terms: "Uvjeti korištenja",
-    copyright: "All rights reserved.",
+    copyright: "Sva prava pridržana.",
     company: "Tvrtka",
     about: "O nama",
     contact: "Kontakt",

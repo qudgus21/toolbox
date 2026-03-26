@@ -220,7 +220,7 @@ const he: TextDictionary = {
     legal: "משפטי",
     privacy: "מדיניות פרטיות",
     terms: "תנאי שימוש",
-    copyright: "All rights reserved.",
+    copyright: "כל הזכויות שמורות.",
     company: "חברה",
     about: "אודות",
     contact: "צור קשר",

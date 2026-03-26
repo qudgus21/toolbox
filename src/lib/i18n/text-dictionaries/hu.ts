@@ -220,7 +220,7 @@ const hu: TextDictionary = {
     legal: "Jogi információk",
     privacy: "Adatvédelmi irányelvek",
     terms: "Felhasználási feltételek",
-    copyright: "All rights reserved.",
+    copyright: "Minden jog fenntartva.",
     company: "Cég",
     about: "Rólunk",
     contact: "Kapcsolat",

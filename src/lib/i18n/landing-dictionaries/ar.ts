@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "أدوات النصوص",
       description:
         "حوّل النصوص، حلّلها، نظّفها، شفّرها، وأنشئها فوراً.",
-      cta: "أدوات النصوص",
+      cta: "استكشف أدوات النصوص",
       toolCount: "أكثر من 44 أداة",
     },
     converter: {
       name: "أدوات التحويل",
       description:
         "حوّل الوحدات والألوان وصيغ البيانات والتواريخ والمزيد فوراً.",
-      cta: "أدوات التحويل",
+      cta: "استكشف أدوات التحويل",
       toolCount: "45 أداة",
+    },
+    calculator: {
+      name: "الآلات الحاسبة",
+      description:
+        "رياضيات، مالية، صحة وحسابات يومية — سريعة ومجانية.",
+      cta: "استكشف الآلات الحاسبة",
+      toolCount: "أكثر من 30 أداة",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "قانوني",
     privacy: "سياسة الخصوصية",
     terms: "شروط الاستخدام",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. جميع الحقوق محفوظة.",
     tagline: "أدوات مجانية عبر الإنترنت لملفات PDF والصور والمزيد. بدون تسجيل.",
     madeWith: "صُنع بحب للجميع",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "صورة",
     text: "نص",
     converter: "المحوّل",
+    calculator: "الحاسبة",
   },
 };
 

@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const hu: ImageDictionary = {
   home: {
-    title: "Minden képszerkesztő eszköz egy helyen",
+    title: "Minden Kép-szerkesztő eszköz egy helyen",
     titleAccent: "Kép",
     description:
       "Átméretezés, konvertálás, effektek alkalmazása. Minden a böngésződben történik.",
@@ -386,10 +386,10 @@ const hu: ImageDictionary = {
       alignment: "Igazítás",
       xPosition: "X pozíció",
       yPosition: "Y pozíció",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Hozzáadás",
+      noItems: "Kattintson a + gombra szöveg hozzáadásához",
+      bgColor: "Háttér",
+      transparent: "Nincs",
     },
     addBorder: {
       borderWidth: "Keret vastagsága",

@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Alat PDF", description: "Gabung, pisah, konversi, edit, dan kompres — semua yang bisa dilakukan dengan PDF.", cta: "Jelajahi Alat PDF", toolCount: "39 alat" },
     image: { name: "Alat Gambar", description: "Ubah ukuran, potong, konversi, efek, buat kode QR — semua untuk gambar.", cta: "Jelajahi Alat Gambar", toolCount: "48 alat" },
-    text: { name: "Alat Teks", description: "Ubah, analisis, bersihkan, encode, dan buat teks secara instan.", cta: "Alat Teks", toolCount: "44+ alat" },
-    converter: { name: "Alat Konversi", description: "Konversi satuan, warna, format data, tanggal, dan lainnya secara instan.", cta: "Konverter", toolCount: "45 alat" },
+    text: { name: "Alat Teks", description: "Ubah, analisis, bersihkan, encode, dan buat teks secara instan.", cta: "Jelajahi Alat Teks", toolCount: "44+ alat" },
+    converter: { name: "Alat Konversi", description: "Konversi satuan, warna, format data, tanggal, dan lainnya secara instan.", cta: "Jelajahi Konverter", toolCount: "45 alat" },
+    calculator: { name: "Kalkulator", description: "Matematika, keuangan, kesehatan, dan kalkulator sehari-hari — cepat dan gratis.", cta: "Jelajahi Kalkulator", toolCount: "30+ alat" },
   },
   popularTools: { sectionTitle: "Alat Populer", sectionSubtitle: "Langsung ke alat yang paling sering digunakan", viewAll: "Lihat semua" },
   stats: { tools: "176+", toolsLabel: "Alat Gratis", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berbasis Browser", price: "Rp0", priceLabel: "Gratis Selamanya" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Siap mulai?", subtitle: "Tanpa instal, tanpa daftar, tanpa bayar — cukup satu klik.", button: "Jelajahi Semua Alat" },
   common: { shareTitle: "Bagikan", shareSubtitle: "Beritahu temanmu tentang ToolPop!", shareCopyLink: "Salin tautan", shareCopied: "Tersalin!" },
-  footer: { apps: "Alat", company: "Perusahaan", about: "Tentang", contact: "Kontak", faq: "FAQ", blog: "Blog", legal: "Hukum", privacy: "Kebijakan Privasi", terms: "Syarat Layanan", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Alat online gratis untuk PDF, gambar, dan lainnya. Tanpa registrasi.", madeWith: "Dibuat dengan cinta untuk semua" },
+  footer: { apps: "Alat", company: "Perusahaan", about: "Tentang", contact: "Kontak", faq: "FAQ", blog: "Blog", legal: "Hukum", privacy: "Kebijakan Privasi", terms: "Syarat Layanan", copyright: "© 2026 ToolPop. Semua hak dilindungi.", tagline: "Alat online gratis untuk PDF, gambar, dan lainnya. Tanpa registrasi.", madeWith: "Dibuat dengan cinta untuk semua" },
   search: { noResults: "Tidak ada hasil" },
-  nav: { pdf: "PDF", image: "Gambar", text: "Teks", converter: "Konverter" },
+  nav: { pdf: "PDF", image: "Gambar", text: "Teks", converter: "Konverter", calculator: "Kalkulator" },
 };
 export default dict;

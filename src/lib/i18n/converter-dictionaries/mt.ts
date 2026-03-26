@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Kull Konvertitur li għandek bżonn",
-    titleAccent: "Konvertitur",
+    title: "L-għodod kollha ta' konverżjoni li għandek bżonn",
+    titleAccent: "konverżjoni",
     description:
-      "Ikkonverti unitajiet, kuluri, formats tad-data, dati, u aktar — minnufih fil-browser tiegħek.",
+      "Ikkonverti unitajiet, kuluri, formats tad-data, dati u aktar. Kollox fil-browser tiegħek.",
     tabAll: "Kollox",
     categoryUnit: "Unitajiet",
     categoryNumber: "Numri",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Ikkonverti bejn px, rem, em, %, vw, vh u unitajiet CSS oħra.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS Tnaqqis / Sebbaħ",
       description:
         "Naqqas jew sebbaħ kodiċi CSS għall-produzzjoni jew għal-leġġibilità.",
     },

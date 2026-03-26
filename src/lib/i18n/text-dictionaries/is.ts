@@ -220,7 +220,7 @@ const is: TextDictionary = {
     legal: "Lagalegt",
     privacy: "Persónuverndarstefna",
     terms: "Þjónustuskilmálar",
-    copyright: "All rights reserved.",
+    copyright: "Öll réttindi áskilin.",
     company: "Fyrirtæki",
     about: "Um okkur",
     contact: "Hafa samband",

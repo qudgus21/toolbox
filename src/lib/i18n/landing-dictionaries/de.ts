@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF-Tools", description: "Zusammenfügen, teilen, konvertieren, bearbeiten und komprimieren — alles rund um PDFs.", cta: "PDF-Tools entdecken", toolCount: "39 Tools" },
     image: { name: "Bild-Tools", description: "Skalieren, zuschneiden, konvertieren, Effekte anwenden, QR-Codes erstellen — alles für Bilder.", cta: "Bild-Tools entdecken", toolCount: "48 Tools" },
-    text: { name: "Text-Tools", description: "Texte umwandeln, analysieren, bereinigen, kodieren und generieren — sofort.", cta: "Text-Tools", toolCount: "44+ Tools" },
-    converter: { name: "Umrechner", description: "Einheiten, Farben, Datenformate, Daten und mehr sofort umrechnen.", cta: "Umrechner", toolCount: "45 Tools" },
+    text: { name: "Text-Tools", description: "Texte umwandeln, analysieren, bereinigen, kodieren und generieren — sofort.", cta: "Text-Tools entdecken", toolCount: "44+ Tools" },
+    converter: { name: "Umrechner", description: "Einheiten, Farben, Datenformate, Daten und mehr sofort umrechnen.", cta: "Umrechner entdecken", toolCount: "45 Tools" },
+    calculator: { name: "Rechner", description: "Mathe, Finanzen, Gesundheit und Alltagsrechner — schnell und kostenlos.", cta: "Rechner entdecken", toolCount: "30+ Tools" },
   },
   popularTools: { sectionTitle: "Beliebte Tools", sectionSubtitle: "Direkt zu den meistgenutzten Tools", viewAll: "Alle anzeigen" },
   stats: { tools: "176+", toolsLabel: "Kostenlose Tools", languages: "45", languagesLabel: "Sprachen", users: "100%", usersLabel: "Browserbasiert", price: "€0", priceLabel: "Für immer kostenlos" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Bereit loszulegen?", subtitle: "Keine Installation, keine Anmeldung, keine Kosten — nur ein Klick entfernt.", button: "Alle Tools ansehen" },
   common: { shareTitle: "Teilen", shareSubtitle: "Erzähl deinen Freunden von ToolPop!", shareCopyLink: "Link kopieren", shareCopied: "Kopiert!" },
-  footer: { apps: "Tools", company: "Unternehmen", about: "Über uns", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Rechtliches", privacy: "Datenschutz", terms: "Nutzungsbedingungen", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Kostenlose Online-Tools für PDF, Bilder und mehr. Ohne Anmeldung.", madeWith: "Mit Liebe für alle gemacht" },
+  footer: { apps: "Werkzeuge", company: "Unternehmen", about: "Über uns", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Rechtliches", privacy: "Datenschutz", terms: "Nutzungsbedingungen", copyright: "© 2026 ToolPop. Alle Rechte vorbehalten.", tagline: "Kostenlose Online-Tools für PDF, Bilder und mehr. Ohne Anmeldung.", madeWith: "Mit Liebe für alle gemacht" },
   search: { noResults: "Keine Ergebnisse gefunden" },
-  nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Umrechner" },
+  nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Umrechner", calculator: "Rechner" },
 };
 export default dict;

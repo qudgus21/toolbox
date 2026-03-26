@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-type AppType = "landing" | "pdf" | "image" | "text" | "converter";
+type AppType = "landing" | "pdf" | "image" | "text" | "converter" | "calculator";
 
 const logoConfig: Record<AppType, { from: string; to: string; accent: string; badge?: string; badgeClasses?: string }> = {
   landing: {
@@ -39,6 +39,13 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
     badge: "CVT",
     badgeClasses: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400",
   },
+  calculator: {
+    from: "#7c3aed",
+    to: "#a78bfa",
+    accent: "#7c3aed",
+    badge: "CALC",
+    badgeClasses: "bg-violet-50 text-violet-700 dark:bg-violet-950 dark:text-violet-400",
+  },
 };
 
 function detectApp(pathname: string): AppType {
@@ -46,6 +53,7 @@ function detectApp(pathname: string): AppType {
   if (pathname.match(/^\/[^/]+\/image(\/|$)/)) return "image";
   if (pathname.match(/^\/[^/]+\/text(\/|$)/)) return "text";
   if (pathname.match(/^\/[^/]+\/converter(\/|$)/)) return "converter";
+  if (pathname.match(/^\/[^/]+\/calculator(\/|$)/)) return "calculator";
   return "landing";
 }
 

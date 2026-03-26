@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF साधने", description: "एकत्र करा, विभाजित करा, रूपांतरित करा, संपादित करा आणि संकुचित करा — PDF सोबत सर्वकाही.", cta: "PDF साधने पहा", toolCount: "39 साधने" },
     image: { name: "प्रतिमा साधने", description: "आकार बदला, कापा, रूपांतरित करा, प्रभाव लावा, QR कोड तयार करा — प्रतिमांसाठी सर्वकाही.", cta: "प्रतिमा साधने पहा", toolCount: "48 साधने" },
-    text: { name: "मजकूर साधने", description: "मजकूर रूपांतरित करा, विश्लेषण करा, स्वच्छ करा, एन्कोड करा आणि लगेच तयार करा.", cta: "मजकूर साधने", toolCount: "44+ साधने" },
-    converter: { name: "कन्व्हर्टर साधने", description: "एकके, रंग, डेटा फॉरमॅट, तारखा आणि बरेच काही रूपांतरित करा.", cta: "कन्व्हर्टर", toolCount: "४५ साधने" },
+    text: { name: "मजकूर साधने", description: "मजकूर रूपांतरित करा, विश्लेषण करा, स्वच्छ करा, एन्कोड करा आणि लगेच तयार करा.", cta: "मजकूर साधने पहा", toolCount: "44+ साधने" },
+    converter: { name: "कन्व्हर्टर साधने", description: "एकके, रंग, डेटा फॉरमॅट, तारखा आणि बरेच काही रूपांतरित करा.", cta: "कन्व्हर्टर साधने पहा", toolCount: "४५ साधने" },
+    calculator: { name: "कॅल्क्युलेटर साधने", description: "गणित, वित्त, आरोग्य आणि दैनंदिन गणना — जलद आणि मोफत.", cta: "कॅल्क्युलेटर साधने पहा", toolCount: "३०+ साधने" },
   },
   popularTools: { sectionTitle: "लोकप्रिय साधने", sectionSubtitle: "सर्वाधिक वापरल्या जाणाऱ्या साधनांवर थेट जा", viewAll: "सर्व पहा" },
   stats: { tools: "176+", toolsLabel: "मोफत साधने", languages: "45", languagesLabel: "भाषा", users: "100%", usersLabel: "ब्राउझर-आधारित", price: "₹0", priceLabel: "कायमचे मोफत" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "सुरू करायला तयार आहात?", subtitle: "इन्स्टॉल नाही, साइन-अप नाही, पेमेंट नाही — फक्त एक क्लिक.", button: "सर्व साधने पहा" },
   common: { shareTitle: "शेअर करा", shareSubtitle: "तुमच्या मित्रांना ToolPop बद्दल सांगा!", shareCopyLink: "लिंक कॉपी करा", shareCopied: "कॉपी झाले!" },
-  footer: { apps: "साधने", company: "कंपनी", about: "आमच्याबद्दल", contact: "संपर्क", faq: "वारंवार विचारले जाणारे प्रश्न", blog: "ब्लॉग", legal: "कायदेशीर", privacy: "गोपनीयता धोरण", terms: "सेवा अटी", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, इमेज आणि अधिकसाठी मोफत ऑनलाइन साधने. साइन-अप नाही.", madeWith: "सर्वांसाठी प्रेमाने बनवलेले" },
+  footer: { apps: "साधने", company: "कंपनी", about: "आमच्याबद्दल", contact: "संपर्क", faq: "वारंवार विचारले जाणारे प्रश्न", blog: "ब्लॉग", legal: "कायदेशीर", privacy: "गोपनीयता धोरण", terms: "सेवा अटी", copyright: "© 2026 ToolPop. सर्व हक्क राखीव.", tagline: "PDF, इमेज आणि अधिकसाठी मोफत ऑनलाइन साधने. साइन-अप नाही.", madeWith: "सर्वांसाठी प्रेमाने बनवलेले" },
   search: { noResults: "कोणतेही परिणाम सापडले नाहीत" },
-  nav: { pdf: "PDF", image: "चित्र", text: "मजकूर", converter: "कन्व्हर्टर" },
+  nav: { pdf: "PDF", image: "चित्र", text: "मजकूर", converter: "कन्व्हर्टर", calculator: "कॅल्क्युलेटर" },
 };
 export default dict;

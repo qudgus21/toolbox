@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "টেক্সট টুলস",
       description:
         "টেক্সট রূপান্তর, বিশ্লেষণ, পরিষ্কার, এনকোড ও তৈরি করুন মুহূর্তেই।",
-      cta: "টেক্সট টুলস",
+      cta: "টেক্সট টুলস দেখুন",
       toolCount: "৪৪+ টুল",
     },
     converter: {
       name: "কনভার্টার টুলস",
       description:
         "ইউনিট, রঙ, ডেটা ফরম্যাট, তারিখ এবং আরও অনেক কিছু রূপান্তর করুন।",
-      cta: "কনভার্টার",
+      cta: "কনভার্টার টুলস দেখুন",
       toolCount: "৪৫টি টুল",
+    },
+    calculator: {
+      name: "ক্যালকুলেটর টুলস",
+      description:
+        "গণিত, অর্থায়ন, স্বাস্থ্য ও দৈনন্দিন হিসাব — দ্রুত ও বিনামূল্যে।",
+      cta: "ক্যালকুলেটর টুলস দেখুন",
+      toolCount: "৩০+ টুল",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "আইনি তথ্য",
     privacy: "গোপনীয়তা নীতি",
     terms: "সেবার শর্তাবলি",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. সর্বস্বত্ব সংরক্ষিত।",
     tagline: "PDF, ইমেজ এবং আরও অনেক কিছুর জন্য বিনামূল্যে অনলাইন টুল। সাইন-আপ ছাড়াই।",
     madeWith: "সবার জন্য ভালোবাসা দিয়ে তৈরি",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "ছবি",
     text: "টেক্সট",
     converter: "কনভার্টার",
+    calculator: "ক্যালকুলেটর",
   },
 };
 

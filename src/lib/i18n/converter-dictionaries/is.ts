@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Allir umreiknar á einum stað",
-    titleAccent: "umreiknar",
+    title: "Öll umbreytingatól sem þú þarft",
+    titleAccent: "umbreytinga",
     description:
-      "Umreiknaðu einingar, liti, gagnasniðmát, dagsetningar og fleira — beint í vafranum.",
+      "Umbreyttu einingum, litum, gagnasniðum, dagsetningum og fleira. Allt beint í vafranum.",
     tabAll: "Allt",
     categoryUnit: "Einingar",
     categoryNumber: "Tölur",
