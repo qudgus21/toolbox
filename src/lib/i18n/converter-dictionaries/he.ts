@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "כל הממירים שתצטרכו",
-    titleAccent: "הממירים",
+    title: "כל כלי ההמרה שתצטרכו",
+    titleAccent: "ההמרה",
     description:
-      "המרת יחידות, צבעים, פורמטים, תאריכים ועוד — ישירות בדפדפן.",
+      "המירו יחידות, צבעים, פורמטים, תאריכים ועוד. הכל ישירות בדפדפן.",
     tabAll: "הכל",
     categoryUnit: "יחידות",
     categoryNumber: "מספרים",

@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF ਟੂਲ", description: "ਮਿਲਾਓ, ਵੰਡੋ, ਬਦਲੋ, ਸੰਪਾਦਿਤ ਕਰੋ ਅਤੇ ਕੰਪ੍ਰੈੱਸ ਕਰੋ — PDF ਨਾਲ ਸਭ ਕੁਝ ਕਰੋ।", cta: "PDF ਟੂਲ ਵੇਖੋ", toolCount: "39 ਟੂਲ" },
     image: { name: "ਤਸਵੀਰ ਟੂਲ", description: "ਆਕਾਰ ਬਦਲੋ, ਕੱਟੋ, ਬਦਲੋ, ਇਫੈਕਟ ਲਾਓ, QR ਕੋਡ ਬਣਾਓ — ਤਸਵੀਰਾਂ ਲਈ ਸਭ ਕੁਝ।", cta: "ਤਸਵੀਰ ਟੂਲ ਵੇਖੋ", toolCount: "48 ਟੂਲ" },
-    text: { name: "ਟੈਕਸਟ ਟੂਲ", description: "ਟੈਕਸਟ ਨੂੰ ਬਦਲੋ, ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ, ਸਾਫ਼ ਕਰੋ, ਏਨਕੋਡ ਕਰੋ ਅਤੇ ਤੁਰੰਤ ਬਣਾਓ।", cta: "ਟੈਕਸਟ ਟੂਲ", toolCount: "44+ ਟੂਲ" },
-    converter: { name: "ਕਨਵਰਟਰ ਟੂਲ", description: "ਯੂਨਿਟ, ਰੰਗ, ਡੇਟਾ ਫਾਰਮੈਟ, ਤਾਰੀਖ਼ਾਂ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਤੁਰੰਤ ਬਦਲੋ।", cta: "ਕਨਵਰਟਰ", toolCount: "45 ਟੂਲ" },
+    text: { name: "ਟੈਕਸਟ ਟੂਲ", description: "ਟੈਕਸਟ ਨੂੰ ਬਦਲੋ, ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ, ਸਾਫ਼ ਕਰੋ, ਏਨਕੋਡ ਕਰੋ ਅਤੇ ਤੁਰੰਤ ਬਣਾਓ।", cta: "ਟੈਕਸਟ ਟੂਲ ਵੇਖੋ", toolCount: "44+ ਟੂਲ" },
+    converter: { name: "ਕਨਵਰਟਰ ਟੂਲ", description: "ਯੂਨਿਟ, ਰੰਗ, ਡੇਟਾ ਫਾਰਮੈਟ, ਤਾਰੀਖ਼ਾਂ ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਤੁਰੰਤ ਬਦਲੋ।", cta: "ਕਨਵਰਟਰ ਟੂਲ ਵੇਖੋ", toolCount: "45 ਟੂਲ" },
+    calculator: { name: "ਕੈਲਕੁਲੇਟਰ ਟੂਲ", description: "ਗਣਿਤ, ਵਿੱਤ, ਸਿਹਤ ਅਤੇ ਰੋਜ਼ਾਨਾ ਹਿਸਾਬ — ਤੇਜ਼ ਅਤੇ ਮੁਫ਼ਤ।", cta: "ਕੈਲਕੁਲੇਟਰ ਟੂਲ ਵੇਖੋ", toolCount: "30+ ਟੂਲ" },
   },
   popularTools: { sectionTitle: "ਪ੍ਰਸਿੱਧ ਟੂਲ", sectionSubtitle: "ਸਭ ਤੋਂ ਵੱਧ ਵਰਤੇ ਜਾਣ ਵਾਲੇ ਟੂਲਾਂ ਤੇ ਸਿੱਧੇ ਜਾਓ", viewAll: "ਸਭ ਵੇਖੋ" },
   stats: { tools: "176+", toolsLabel: "ਮੁਫ਼ਤ ਟੂਲ", languages: "45", languagesLabel: "ਭਾਸ਼ਾਵਾਂ", users: "100%", usersLabel: "ਬ੍ਰਾਊਜ਼ਰ-ਅਧਾਰਿਤ", price: "₹0", priceLabel: "ਹਮੇਸ਼ਾ ਮੁਫ਼ਤ" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?", subtitle: "ਕੋਈ ਇੰਸਟਾਲ ਨਹੀਂ, ਕੋਈ ਸਾਈਨ-ਅੱਪ ਨਹੀਂ, ਕੋਈ ਭੁਗਤਾਨ ਨਹੀਂ — ਬੱਸ ਇੱਕ ਕਲਿੱਕ।", button: "ਸਾਰੇ ਟੂਲ ਵੇਖੋ" },
   common: { shareTitle: "ਸਾਂਝਾ ਕਰੋ", shareSubtitle: "ਆਪਣੇ ਦੋਸਤਾਂ ਨੂੰ ToolPop ਬਾਰੇ ਦੱਸੋ!", shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ", shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!" },
-  footer: { apps: "ਟੂਲ", company: "ਕੰਪਨੀ", about: "ਸਾਡੇ ਬਾਰੇ", contact: "ਸੰਪਰਕ", faq: "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ", blog: "ਬਲੌਗ", legal: "ਕਾਨੂੰਨੀ", privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ", terms: "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "PDF, ਚਿੱਤਰਾਂ ਅਤੇ ਹੋਰ ਲਈ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ। ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ।", madeWith: "ਸਭ ਲਈ ਪਿਆਰ ਨਾਲ ਬਣਾਇਆ" },
+  footer: { apps: "ਟੂਲ", company: "ਕੰਪਨੀ", about: "ਸਾਡੇ ਬਾਰੇ", contact: "ਸੰਪਰਕ", faq: "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ", blog: "ਬਲੌਗ", legal: "ਕਾਨੂੰਨੀ", privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ", terms: "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ", copyright: "© 2026 ToolPop. ਸਾਰੇ ਅਧਿਕਾਰ ਸੁਰੱਖਿਅਤ ਹਨ।", tagline: "PDF, ਚਿੱਤਰਾਂ ਅਤੇ ਹੋਰ ਲਈ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ। ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ।", madeWith: "ਸਭ ਲਈ ਪਿਆਰ ਨਾਲ ਬਣਾਇਆ" },
   search: { noResults: "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ ਮਿਲੇ" },
-  nav: { pdf: "PDF", image: "ਤਸਵੀਰ", text: "ਟੈਕਸਟ", converter: "ਕਨਵਰਟਰ" },
+  nav: { pdf: "PDF", image: "ਤਸਵੀਰ", text: "ਟੈਕਸਟ", converter: "ਕਨਵਰਟਰ", calculator: "ਕੈਲਕੁਲੇਟਰ" },
 };
 export default dict;

@@ -219,7 +219,7 @@ const ja: TextDictionary = {
     legal: "法的情報",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
-    copyright: "All rights reserved.",
+    copyright: "全著作権所有.",
     company: "会社情報",
     about: "概要",
     contact: "お問い合わせ",

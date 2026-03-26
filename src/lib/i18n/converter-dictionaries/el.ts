@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Όλοι οι μετατροπείς σε ένα μέρος",
-    titleAccent: "μετατροπείς",
+    title: "Όλα τα εργαλεία μετατροπής που χρειάζεστε",
+    titleAccent: "μετατροπής",
     description:
-      "Μετατρέψτε μονάδες, χρώματα, μορφές δεδομένων, ημερομηνίες και πολλά ακόμα — απευθείας στον browser σας.",
+      "Μετατρέψτε μονάδες, χρώματα, μορφές δεδομένων, ημερομηνίες. Όλα μέσα στο πρόγραμμα περιήγησης.",
     tabAll: "Όλα",
     categoryUnit: "Μονάδες",
     categoryNumber: "Αριθμοί",

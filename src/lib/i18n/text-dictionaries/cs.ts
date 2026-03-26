@@ -220,7 +220,7 @@ const cs: TextDictionary = {
     legal: "Právní informace",
     privacy: "Zásady ochrany soukromí",
     terms: "Podmínky služby",
-    copyright: "All rights reserved.",
+    copyright: "Všechna práva vyhrazena.",
     company: "Společnost",
     about: "O nás",
     contact: "Kontakt",

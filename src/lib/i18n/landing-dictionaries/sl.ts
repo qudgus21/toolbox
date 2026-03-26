@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF orodja", description: "Združevanje, razdeljevanje, pretvarjanje, urejanje in stiskanje — vse za delo s PDF-ji.", cta: "Razišči PDF orodja", toolCount: "39 orodij" },
     image: { name: "Slikovna orodja", description: "Spreminjanje velikosti, obrezovanje, pretvarjanje, učinki, QR kode — vse za slike.", cta: "Razišči slikovna orodja", toolCount: "48 orodij" },
-    text: { name: "Besedilna orodja", description: "Preoblikujte, analizirajte, očistite, kodirajte in generirajte besedilo v hipu.", cta: "Besedilna orodja", toolCount: "44+ orodij" },
-    converter: { name: "Orodja za pretvorbo", description: "Pretvorite enote, barve, podatkovne formate, datume in še več.", cta: "Pretvorniki", toolCount: "45 orodij" },
+    text: { name: "Besedilna orodja", description: "Preoblikujte, analizirajte, očistite, kodirajte in generirajte besedilo v hipu.", cta: "Razišči besedilna orodja", toolCount: "44+ orodij" },
+    converter: { name: "Orodja za pretvorbo", description: "Pretvorite enote, barve, podatkovne formate, datume in še več.", cta: "Razišči pretvornike", toolCount: "45 orodij" },
+    calculator: { name: "Kalkulatorji", description: "Matematika, finance, zdravje in vsakodnevni izračuni — hitro in brezplačno.", cta: "Razišči kalkulatorje", toolCount: "30+ orodij" },
   },
   popularTools: { sectionTitle: "Priljubljena orodja", sectionSubtitle: "Hitro do najpogosteje uporabljenih orodij", viewAll: "Prikaži vsa" },
   stats: { tools: "176+", toolsLabel: "Brezplačnih orodij", languages: "45", languagesLabel: "Jezikov", users: "100%", usersLabel: "V brskalniku", price: "0 €", priceLabel: "Za vedno brezplačno" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Pripravljeni za začetek?", subtitle: "Brez namestitev, brez registracije, brez plačil — le en klik stran.", button: "Prebrskaj vsa orodja" },
   common: { shareTitle: "Deli", shareSubtitle: "Povejte prijateljem za ToolPop!", shareCopyLink: "Kopiraj povezavo", shareCopied: "Kopirano!" },
-  footer: { apps: "Orodja", company: "Podjetje", about: "O nas", contact: "Kontakt", faq: "Pogosta vprašanja", blog: "Blog", legal: "Pravne informacije", privacy: "Politika zasebnosti", terms: "Pogoji uporabe", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Brezplačna spletna orodja za PDF, slike in več. Brez registracije.", madeWith: "Ustvarjeno z ljubeznijo za vse" },
+  footer: { apps: "Orodja", company: "Podjetje", about: "O nas", contact: "Kontakt", faq: "Pogosta vprašanja", blog: "Blog", legal: "Pravne informacije", privacy: "Politika zasebnosti", terms: "Pogoji uporabe", copyright: "© 2026 ToolPop. Vse pravice pridržane.", tagline: "Brezplačna spletna orodja za PDF, slike in več. Brez registracije.", madeWith: "Ustvarjeno z ljubeznijo za vse" },
   search: { noResults: "Ni rezultatov" },
-  nav: { pdf: "PDF", image: "Slika", text: "Besedilo", converter: "Pretvornik" },
+  nav: { pdf: "PDF", image: "Slika", text: "Besedilo", converter: "Pretvornik", calculator: "Kalkulator" },
 };
 export default dict;

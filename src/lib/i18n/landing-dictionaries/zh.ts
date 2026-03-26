@@ -40,8 +40,15 @@ const dict: LandingDictionary = {
       name: "转换工具",
       description:
         "即时转换单位、颜色、数据格式、日期等。",
-      cta: "转换工具",
+      cta: "查看转换工具",
       toolCount: "45个工具",
+    },
+    calculator: {
+      name: "计算工具",
+      description:
+        "数学、金融、健康、日常计算——快速又准确。",
+      cta: "查看计算工具",
+      toolCount: "30+款工具",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "法律信息",
     privacy: "隐私政策",
     terms: "服务条款",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. 版权所有。",
     tagline: "免费在线PDF、图片等工具，无需注册即可使用。",
     madeWith: "用心为每个人打造",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "图片",
     text: "文本",
     converter: "转换",
+    calculator: "计算",
   },
 };
 

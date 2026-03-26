@@ -219,7 +219,7 @@ const zh: TextDictionary = {
     legal: "法律信息",
     privacy: "隐私政策",
     terms: "服务条款",
-    copyright: "All rights reserved.",
+    copyright: "版权所有.",
     company: "公司",
     about: "关于",
     contact: "联系我们",

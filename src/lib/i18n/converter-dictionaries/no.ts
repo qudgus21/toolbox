@@ -3,9 +3,9 @@ import type { ConverterDictionary } from "../converter-config";
 const dict: ConverterDictionary = {
   home: {
     title: "Alle konverteringsverktøy du trenger",
-    titleAccent: "konverteringsverktøy",
+    titleAccent: "konverterings",
     description:
-      "Konverter enheter, farger, dataformater, datoer og mer — direkte i nettleseren din.",
+      "Konverter enheter, farger, dataformater, datoer og mer. Alt skjer rett i nettleseren.",
     tabAll: "Alle",
     categoryUnit: "Enheter",
     categoryNumber: "Tall",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Konverter mellom px, rem, em, %, vw, vh og andre CSS-enheter.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS-minifiserer / formatterer",
       description:
         "Minifiser eller formater CSS-kode for produksjon eller lesbarhet.",
     },

@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Alat PDF", description: "Gabung, pisah, tukar, edit dan mampat — semua yang boleh dilakukan dengan PDF.", cta: "Terokai Alat PDF", toolCount: "39 alat" },
     image: { name: "Alat Imej", description: "Ubah saiz, pangkas, tukar, kesan, kod QR — semua untuk imej.", cta: "Terokai Alat Imej", toolCount: "48 alat" },
-    text: { name: "Alat Teks", description: "Tukar, analisis, bersihkan, kodkan dan jana teks dengan serta-merta.", cta: "Alat Teks", toolCount: "44+ alat" },
-    converter: { name: "Alat Penukaran", description: "Tukar unit, warna, format data, tarikh dan banyak lagi secara serta-merta.", cta: "Penukar", toolCount: "45 alat" },
+    text: { name: "Alat Teks", description: "Tukar, analisis, bersihkan, kodkan dan jana teks dengan serta-merta.", cta: "Terokai Alat Teks", toolCount: "44+ alat" },
+    converter: { name: "Alat Penukaran", description: "Tukar unit, warna, format data, tarikh dan banyak lagi secara serta-merta.", cta: "Terokai Penukar", toolCount: "45 alat" },
+    calculator: { name: "Kalkulator", description: "Matematik, kewangan, kesihatan dan pengiraan harian — pantas dan percuma.", cta: "Terokai Kalkulator", toolCount: "30+ alat" },
   },
   popularTools: { sectionTitle: "Alat Popular", sectionSubtitle: "Terus ke alat yang paling kerap digunakan", viewAll: "Lihat semua" },
   stats: { tools: "176+", toolsLabel: "Alat Percuma", languages: "45", languagesLabel: "Bahasa", users: "100%", usersLabel: "Berasaskan Pelayar", price: "RM0", priceLabel: "Percuma Selama-lamanya" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Bersedia untuk mula?", subtitle: "Tanpa pemasangan, tanpa pendaftaran, tanpa bayaran — hanya satu klik sahaja.", button: "Lihat Semua Alat" },
   common: { shareTitle: "Kongsi", shareSubtitle: "Beritahu rakan anda tentang ToolPop!", shareCopyLink: "Salin pautan", shareCopied: "Disalin!" },
-  footer: { apps: "Alat", company: "Syarikat", about: "Tentang Kami", contact: "Hubungi", faq: "Soalan Lazim", blog: "Blog", legal: "Undang-undang", privacy: "Dasar Privasi", terms: "Terma Perkhidmatan", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Alat dalam talian percuma untuk PDF, imej dan lain-lain. Tanpa pendaftaran.", madeWith: "Dibuat dengan kasih untuk semua" },
+  footer: { apps: "Alat", company: "Syarikat", about: "Tentang Kami", contact: "Hubungi", faq: "Soalan Lazim", blog: "Blog", legal: "Undang-undang", privacy: "Dasar Privasi", terms: "Terma Perkhidmatan", copyright: "© 2026 ToolPop. Hak cipta terpelihara.", tagline: "Alat dalam talian percuma untuk PDF, imej dan lain-lain. Tanpa pendaftaran.", madeWith: "Dibuat dengan kasih untuk semua" },
   search: { noResults: "Tiada hasil ditemui" },
-  nav: { pdf: "PDF", image: "Imej", text: "Teks", converter: "Penukar" },
+  nav: { pdf: "PDF", image: "Imej", text: "Teks", converter: "Penukar", calculator: "Kalkulator" },
 };
 export default dict;

@@ -52,6 +52,8 @@ user-invocable: true
 - `text` → `src/app/[locale]/text/`, `src/lib/text/`, `src/lib/i18n/text-*`
 - `pdf` → `src/app/[locale]/pdf/`, `src/lib/pdf/`, `src/lib/i18n/dictionaries/`
 - `image` → `src/app/[locale]/image/`, `src/lib/image/`, `src/lib/i18n/image-*`
+- `converter` → `src/app/[locale]/converter/`, `src/lib/converter/`, `src/lib/i18n/converter-*`
+- `calculator` → `src/app/[locale]/calculator/`, `src/lib/calculator/`, `src/lib/i18n/calculator-*`
 - `landing` → `src/app/[locale]/(landing)/`, `src/lib/i18n/landing-*`
 - `all` 또는 인자 없음 → 전체 스캔
 
@@ -139,6 +141,52 @@ ko.ts와 en.ts 외의 모든 로케일 파일에서:
 ```
 - en.ts에 있는 키가 다른 로케일에도 모두 있는지 확인
 - 키 자체가 누락된 경우 → 키 추가 + 번역
+```
+
+### 검사 10: `...en` 스프레드를 통한 섹션 미번역 검사 (핵심!)
+```
+각 로케일 딕셔너리 파일이 `...en` 스프레드로 영어 원본을 통째로 상속받아
+해당 언어로 번역되지 않은 섹션이 있는지 탐지한다.
+
+예시 — el (그리스어) Image 딕셔너리:
+  const el: ImageDictionary = {
+    ...en,              ← home 섹션 자체가 없음 → 영어 그대로 노출!
+    common: { ...en.common, options: "Επιλογές", ... },
+  };
+
+방법:
+1. 각 앱의 딕셔너리 디렉토리에서 모든 로케일 파일 스캔
+2. 파일 내 `...en` 또는 `...en.sectionName` 스프레드 패턴 탐지
+3. 다음 핵심 섹션이 해당 로케일에서 직접 정의되어 있는지 확인:
+   - `home` (title, titleAccent, description 등 히어로 섹션)
+   - `tools` (도구별 title, description)
+   - `common` (공통 UI 라벨)
+   - `trust` (신뢰 배지 텍스트)
+4. 섹션이 누락(= ...en에서 상속)되어 있으면 → 해당 언어로 전체 번역 필요
+
+탐지 후 조치:
+- 누락 섹션을 en.ts에서 복사
+- Agent를 사용하여 해당 언어로 자연스럽게 번역
+- 번역 후 `...en` 스프레드에서 해당 섹션 제거 (직접 정의로 교체)
+```
+
+### 검사 11: 잘못된 언어로 번역된 텍스트 탐지
+```
+각 로케일의 딕셔너리 값이 실제로 해당 언어로 작성되어 있는지 확인한다.
+en과 동일하지는 않지만, 다른 언어(예: 독일어 파일에 프랑스어)로 되어 있는 경우도 잡아낸다.
+
+방법:
+1. 각 로케일 파일의 모든 사용자 노출 문자열 값을 추출
+2. 해당 로케일의 문자 체계(script)와 비교:
+   - 키릴 문자 로케일(ru, uk, bg): 라틴 문자가 과반이면 의심
+   - 아랍 문자 로케일(ar): 아랍 문자가 없으면 의심
+   - 한자 로케일(zh, ja): CJK 문자가 없으면 의심
+   - 데바나가리(hi, mr), 벵골(bn), 구르무키(pa), 텔루구(te) 등도 동일
+   - 라틴 문자 로케일 간(es, fr, de, pt 등)은 문자 체계로 구분 불가
+     → 이 경우 en.ts 값과의 동일성 검사(검사 8)에 의존
+3. 문자 체계 불일치 발견 시 → 해당 언어로 재번역
+
+주의: 기술 용어(PDF, URL, JSON 등)는 라틴 문자가 정상이므로 제외
 ```
 
 ---
@@ -292,6 +340,10 @@ pnpm build
 - [ ] 새로 추가된 도구의 딕셔너리 키가 모든 로케일에 있는가?
 - [ ] metadata/JSON-LD의 텍스트가 딕셔너리에서 오는가?
 - [ ] **43개 로케일에 영어가 그대로 남아있지 않은가?** (가장 흔한 실수!)
+- [ ] **`...en` 스프레드로 섹션 통째 상속받아 영어가 노출되지 않는가?** (검사 10)
+- [ ] **각 로케일의 문자 체계가 맞는가?** 키릴 로케일에 라틴, 아랍 로케일에 라틴 등 (검사 11)
+- [ ] **titleAccent가 title 문자열 안에 정확히 포함되어 하이라이트가 동작하는가?**
+- [ ] **5개 앱(PDF, Image, Text, Converter, Calculator) 히어로 패턴이 일관적인가?**
 - [ ] **번역이 번역투가 아닌가?** 해당 언어 네이티브 서비스처럼 자연스러운가?
 
 ---

@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "প্রয়োজনীয় সব কনভার্টার এক জায়গায়",
-    titleAccent: "কনভার্টার",
+    title: "আপনার প্রয়োজনীয় সব রূপান্তর টুল",
+    titleAccent: "রূপান্তর",
     description:
-      "ইউনিট, রঙ, ডেটা ফরম্যাট, তারিখ এবং আরও অনেক কিছু রূপান্তর করুন — সরাসরি ব্রাউজারে।",
+      "ইউনিট, রঙ, ডেটা ফরম্যাট, তারিখ রূপান্তর করুন। সব ব্রাউজারেই হয়ে যায়।",
     tabAll: "সব",
     categoryUnit: "একক",
     categoryNumber: "সংখ্যা",

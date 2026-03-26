@@ -220,7 +220,7 @@ const sl: TextDictionary = {
     legal: "Pravne informacije",
     privacy: "Politika zasebnosti",
     terms: "Pogoji uporabe",
-    copyright: "All rights reserved.",
+    copyright: "Vse pravice pridržane.",
     company: "Podjetje",
     about: "O nas",
     contact: "Kontakt",

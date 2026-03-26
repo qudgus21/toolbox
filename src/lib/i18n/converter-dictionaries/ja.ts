@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "あらゆる変換ツールをひとつに",
-    titleAccent: "変換ツール",
+    title: "変換作業に必要なすべてのツール",
+    titleAccent: "変換",
     description:
-      "単位・色・データ形式・日付など、さまざまな変換をブラウザ上で即座に実行できます。",
+      "単位、色、データ形式、日付の変換まで。ブラウザだけで完結します。",
     tabAll: "すべて",
     categoryUnit: "単位",
     categoryNumber: "数値",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "法的情報",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. 全著作権所有.",
     company: "会社情報",
     about: "概要",
     contact: "お問い合わせ",
@@ -411,9 +411,9 @@ const dict: ConverterDictionary = {
     decimalToPercent: "小数 → パーセント",
     percentToDecimal: "パーセント → 小数",
     fractionToPercent: "分数 → パーセント",
-    dd: "Decimal Degrees (DD)",
-    dms: "Degrees Minutes Seconds (DMS)",
-    ddm: "Degrees Decimal Minutes (DDM)",
+    dd: "十進度 (DD)",
+    dms: "度分秒 (DMS)",
+    ddm: "度十進分 (DDM)",
     iso: "ISO 8601",
     us: "US (MM/DD/YYYY)",
     eu: "EU (DD/MM/YYYY)",

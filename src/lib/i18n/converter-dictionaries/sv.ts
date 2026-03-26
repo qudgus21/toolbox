@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Alla Konverterare du behöver",
-    titleAccent: "Konverterare",
+    title: "Alla konverteringsverktyg du behöver",
+    titleAccent: "konverterings",
     description:
-      "Konvertera enheter, färger, dataformat, datum och mer — direkt i din webbläsare.",
+      "Konvertera enheter, färger, dataformat, datum och mer. Allt direkt i webbläsaren.",
     tabAll: "Alla",
     categoryUnit: "Enheter",
     categoryNumber: "Tal",
@@ -135,7 +135,7 @@ const dict: ConverterDictionary = {
         "Generera komplementära, triadiska och analoga färgpaletter.",
     },
     "gradient-generator": {
-      title: "CSS Gradient Generator",
+      title: "CSS-gradientgenerator",
       description:
         "Skapa linjära, radiella och koniska CSS-gradienter med förhandsgranskning.",
     },
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Konvertera mellan px, rem, em, %, vw, vh och andra CSS-enheter.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS-minifierare / formaterare",
       description:
         "Minifiera eller formatera CSS-kod för produktion eller läsbarhet.",
     },

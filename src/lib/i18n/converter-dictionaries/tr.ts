@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "İhtiyacınız olan tüm Dönüştürücüler",
-    titleAccent: "Dönüştürücüler",
+    title: "İhtiyacın olan tüm dönüştürme araçları",
+    titleAccent: "dönüştürme",
     description:
-      "Birim, renk, veri formatı, tarih ve daha fazlasını anında tarayıcınızda dönüştürün.",
+      "Birim, renk, veri formatı, tarih dönüştür. Her şey tarayıcında işlenir.",
     tabAll: "Tümü",
     categoryUnit: "Birimler",
     categoryNumber: "Sayılar",

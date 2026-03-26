@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const mt: ImageDictionary = {
   home: {
-    title: "Kull għodda li għandek bżonn għall-immaġni",
+    title: "Kull għodda Immaġni li għandek bżonn",
     titleAccent: "Immaġni",
     description:
       "Ibdel id-daqs, ikkonverti, applika effetti, u aktar. Kollox jiġi pproċessat fil-browser tiegħek.",
@@ -167,7 +167,7 @@ const mt: ImageDictionary = {
       description: "Applika pixelazzjoni mosajk fuq żoni magħżula",
     },
     blur: {
-      title: "Blur",
+      title: "Debboli",
       description: "Applika effett blur fuq l-immaġni kollha jew parti minnha",
     },
     filters: {
@@ -203,7 +203,7 @@ const mt: ImageDictionary = {
       description: "Naqqas id-daqs tal-fajl filwaqt li żżomm il-kwalità viżwali",
     },
     watermark: {
-      title: "Watermark",
+      title: "Marka tal-Ilma",
       description: "Żid watermarks ta' test jew logo fuq l-immaġni tiegħek",
     },
     "image-to-icon": {
@@ -386,10 +386,10 @@ const mt: ImageDictionary = {
       alignment: "Allinjament",
       xPosition: "Pożizzjoni X",
       yPosition: "Pożizzjoni Y",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Żid",
+      noItems: "Ikklikkja + biex iżżid test",
+      bgColor: "Sfond",
+      transparent: "Xejn",
     },
     addBorder: {
       borderWidth: "Wisa' tal-Burdura",

@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF-tools", description: "Samenvoegen, splitsen, converteren, bewerken en comprimeren — alles wat je met een PDF kunt doen.", cta: "Ontdek PDF-tools", toolCount: "39 tools" },
     image: { name: "Afbeeldingstools", description: "Schalen, bijsnijden, converteren, effecten toepassen, QR-codes maken — alles voor afbeeldingen.", cta: "Ontdek afbeeldingstools", toolCount: "48 tools" },
-    text: { name: "Teksttools", description: "Transformeer, analyseer, schoon op, codeer en genereer tekst in een oogwenk.", cta: "Teksttools", toolCount: "44+ tools" },
-    converter: { name: "Conversietools", description: "Converteer eenheden, kleuren, dataformaten, datums en meer.", cta: "Converters", toolCount: "45 tools" },
+    text: { name: "Teksttools", description: "Transformeer, analyseer, schoon op, codeer en genereer tekst in een oogwenk.", cta: "Ontdek teksttools", toolCount: "44+ tools" },
+    converter: { name: "Conversietools", description: "Converteer eenheden, kleuren, dataformaten, datums en meer.", cta: "Ontdek converters", toolCount: "45 tools" },
+    calculator: { name: "Rekenmachines", description: "Wiskunde, financiën, gezondheid en dagelijkse berekeningen — snel en gratis.", cta: "Ontdek rekenmachines", toolCount: "30+ tools" },
   },
   popularTools: { sectionTitle: "Populaire tools", sectionSubtitle: "Spring direct naar de meestgebruikte tools", viewAll: "Alles bekijken" },
   stats: { tools: "176+", toolsLabel: "Gratis tools", languages: "45", languagesLabel: "Talen", users: "100%", usersLabel: "Browsergebaseerd", price: "€0", priceLabel: "Voor altijd gratis" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Klaar om te beginnen?", subtitle: "Geen installatie, geen registratie, geen kosten — slechts één klik verwijderd.", button: "Bekijk alle tools" },
   common: { shareTitle: "Delen", shareSubtitle: "Vertel je vrienden over ToolPop!", shareCopyLink: "Link kopiëren", shareCopied: "Gekopieerd!" },
-  footer: { apps: "Tools", company: "Bedrijf", about: "Over ons", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Juridisch", privacy: "Privacybeleid", terms: "Gebruiksvoorwaarden", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Gratis online tools voor PDF, afbeeldingen en meer. Zonder registratie.", madeWith: "Met liefde gemaakt voor iedereen" },
+  footer: { apps: "Tools", company: "Bedrijf", about: "Over ons", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Juridisch", privacy: "Privacybeleid", terms: "Gebruiksvoorwaarden", copyright: "© 2026 ToolPop. Alle rechten voorbehouden.", tagline: "Gratis online tools voor PDF, afbeeldingen en meer. Zonder registratie.", madeWith: "Met liefde gemaakt voor iedereen" },
   search: { noResults: "Geen resultaten gevonden" },
-  nav: { pdf: "PDF", image: "Afbeelding", text: "Tekst", converter: "Converter" },
+  nav: { pdf: "PDF", image: "Afbeelding", text: "Tekst", converter: "Converter", calculator: "Rekenmachine" },
 };
 export default dict;

@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Всички конвертори на едно място",
-    titleAccent: "конвертори",
+    title: "Всички инструменти за конвертиране на едно място",
+    titleAccent: "конвертиране",
     description:
-      "Конвертирайте единици, цветове, формати на данни, дати и още — директно в браузъра.",
+      "Конвертирайте единици, цветове, формати, дати и още. Всичко директно в браузъра.",
     tabAll: "Всички",
     categoryUnit: "Единици",
     categoryNumber: "Числа",

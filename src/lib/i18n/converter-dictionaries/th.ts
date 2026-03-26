@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "ตัวแปลงหน่วยครบทุกอย่าง",
-    titleAccent: "ตัวแปลงหน่วย",
+    title: "เครื่องมือแปลงหน่วยครบทุกอย่างที่คุณต้องการ",
+    titleAccent: "แปลงหน่วย",
     description:
-      "แปลงหน่วย สี รูปแบบข้อมูล วันที่ และอื่นๆ — ได้ทันทีบนเบราว์เซอร์",
+      "แปลงหน่วย สี รูปแบบข้อมูล วันที่ และอื่นๆ ทั้งหมดประมวลผลในเบราว์เซอร์",
     tabAll: "ทั้งหมด",
     categoryUnit: "หน่วย",
     categoryNumber: "ตัวเลข",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "กฎหมาย",
     privacy: "นโยบายความเป็นส่วนตัว",
     terms: "ข้อกำหนดการใช้งาน",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. สงวนลิขสิทธิ์ทั้งหมด",
     company: "บริษัท",
     about: "เกี่ยวกับ",
     contact: "ติดต่อ",
@@ -439,7 +439,7 @@ const dict: ConverterDictionary = {
     columns: "คอลัมน์",
     elements: "องค์ประกอบ",
     keys: "คีย์",
-    interfaces: "Interface",
+    interfaces: "อินเทอร์เฟซ",
     properties: "คุณสมบัติ",
     originalSize: "ขนาดเดิม",
     resultSize: "ขนาดผลลัพธ์",

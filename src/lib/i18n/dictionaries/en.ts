@@ -2,9 +2,10 @@ import type { Dictionary } from "../config";
 
 const en: Dictionary = {
   home: {
-    title: "Every tool you need to work with",
-    titleAccent: "PDFs",
-    description: "Merge, split, compress, and convert PDF files. Free, fast, and easy to use.",
+    title: "Every PDF tool you need",
+    titleAccent: "PDF",
+    description:
+      "Merge, split, compress, and convert PDF files. All processed right in your browser.",
     tabAll: "All",
     categoryOrganize: "Organize",
     categoryConvert: "Convert",

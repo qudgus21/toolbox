@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "टेक्स्ट टूल्स",
       description:
         "टेक्स्ट को बदलें, विश्लेषण करें, साफ़ करें, एन्कोड करें और तुरंत जनरेट करें।",
-      cta: "टेक्स्ट टूल्स",
+      cta: "टेक्स्ट टूल्स देखें",
       toolCount: "44+ टूल्स",
     },
     converter: {
       name: "कनवर्टर टूल्स",
       description:
         "यूनिट, रंग, डेटा फ़ॉर्मेट, तारीख़ और बहुत कुछ तुरंत बदलें।",
-      cta: "कनवर्टर",
+      cta: "कनवर्टर टूल्स देखें",
       toolCount: "45 टूल्स",
+    },
+    calculator: {
+      name: "कैलकुलेटर टूल्स",
+      description:
+        "गणित, फ़ाइनांस, स्वास्थ्य और रोज़मर्रा की गणना — तेज़ और मुफ़्त।",
+      cta: "कैलकुलेटर टूल्स देखें",
+      toolCount: "30+ टूल्स",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "कानूनी",
     privacy: "गोपनीयता नीति",
     terms: "सेवा की शर्तें",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. सर्वाधिकार सुरक्षित।",
     tagline: "PDF, इमेज और अन्य के लिए मुफ्त ऑनलाइन टूल। साइन-अप की जरूरत नहीं।",
     madeWith: "सबके लिए प्यार से बनाया गया",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "चित्र",
     text: "टेक्स्ट",
     converter: "कनवर्टर",
+    calculator: "कैलकुलेटर",
   },
 };
 

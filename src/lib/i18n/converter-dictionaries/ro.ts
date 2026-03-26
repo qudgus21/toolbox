@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Toate convertoarele de care ai nevoie",
-    titleAccent: "convertoarele",
+    title: "Toate instrumentele de conversie de care ai nevoie",
+    titleAccent: "conversie",
     description:
-      "Convertește unități, culori, formate de date, date calendaristice și multe altele — instant, direct în browser.",
+      "Convertește unități, culori, formate, date și mai mult. Totul direct în browser.",
     tabAll: "Toate",
     categoryUnit: "Unități",
     categoryNumber: "Numere",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Convertește între px, rem, em, %, vw, vh și alte unități CSS.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS minificare / formatare",
       description:
         "Minifică sau formatează codul CSS pentru producție sau lizibilitate.",
     },

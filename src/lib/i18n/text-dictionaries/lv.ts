@@ -220,7 +220,7 @@ const lv: TextDictionary = {
     legal: "Juridiskā informācija",
     privacy: "Privātuma politika",
     terms: "Lietošanas noteikumi",
-    copyright: "All rights reserved.",
+    copyright: "Visas tiesības aizsargātas.",
     company: "Uzņēmums",
     about: "Par mums",
     contact: "Kontakti",

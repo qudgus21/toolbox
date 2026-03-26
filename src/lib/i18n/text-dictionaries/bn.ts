@@ -220,7 +220,7 @@ const bn: TextDictionary = {
     legal: "আইনি",
     privacy: "গোপনীয়তা নীতি",
     terms: "ব্যবহারের শর্তাবলী",
-    copyright: "All rights reserved.",
+    copyright: "সমস্ত অধিকার সংরক্ষিত.",
     company: "কোম্পানি",
     about: "আমাদের সম্পর্কে",
     contact: "যোগাযোগ",

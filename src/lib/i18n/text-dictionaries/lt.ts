@@ -220,7 +220,7 @@ const lt: TextDictionary = {
     legal: "Teisinė informacija",
     privacy: "Privatumo politika",
     terms: "Naudojimo sąlygos",
-    copyright: "All rights reserved.",
+    copyright: "Visos teisės saugomos.",
     company: "Įmonė",
     about: "Apie mus",
     contact: "Kontaktai",

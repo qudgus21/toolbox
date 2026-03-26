@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Semua konverter yang Anda butuhkan",
-    titleAccent: "konverter",
+    title: "Semua alat konversi yang kamu butuhkan",
+    titleAccent: "konversi",
     description:
-      "Konversi satuan, warna, format data, tanggal, dan lainnya — langsung di browser Anda.",
+      "Konversi satuan, warna, format data, tanggal, dan lainnya. Semua diproses langsung di browser.",
     tabAll: "Semua",
     categoryUnit: "Satuan",
     categoryNumber: "Angka",
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Konversi antara px, rem, em, %, vw, vh, dan satuan CSS lainnya.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS Minifikasi / Perapian",
       description:
         "Minifikasi atau rapikan kode CSS untuk produksi atau keterbacaan.",
     },
@@ -439,7 +439,7 @@ const dict: ConverterDictionary = {
     columns: "Kolom",
     elements: "Elemen",
     keys: "Kunci",
-    interfaces: "Interface",
+    interfaces: "Antarmuka",
     properties: "Properti",
     originalSize: "Ukuran asli",
     resultSize: "Ukuran hasil",

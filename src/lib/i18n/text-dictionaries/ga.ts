@@ -220,7 +220,7 @@ const ga: TextDictionary = {
     legal: "Dlí",
     privacy: "Polasaí príobháideachais",
     terms: "Téarmaí seirbhíse",
-    copyright: "All rights reserved.",
+    copyright: "Gach ceart ar cosaint.",
     company: "Cuideachta",
     about: "Fúinn",
     contact: "Teagmháil",

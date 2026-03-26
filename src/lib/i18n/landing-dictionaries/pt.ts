@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "Ferramentas de texto",
       description:
         "Transforme, analise, limpe, codifique e gere texto na hora.",
-      cta: "Ferramentas de texto",
+      cta: "Ver ferramentas de texto",
       toolCount: "44+ ferramentas",
     },
     converter: {
       name: "Ferramentas de conversão",
       description:
         "Converta unidades, cores, formatos de dados, datas e muito mais.",
-      cta: "Conversores",
+      cta: "Ver conversores",
       toolCount: "45 ferramentas",
+    },
+    calculator: {
+      name: "Calculadoras",
+      description:
+        "Matemática, finanças, saúde e calculadoras do dia a dia — rápidas e gratuitas.",
+      cta: "Ver calculadoras",
+      toolCount: "30+ ferramentas",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "Jurídico",
     privacy: "Política de privacidade",
     terms: "Termos de uso",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. Todos os direitos reservados.",
     tagline: "Ferramentas online gratuitas para PDF, imagens e mais. Sem cadastro.",
     madeWith: "Feito com carinho para todos",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "Imagem",
     text: "Texto",
     converter: "Conversor",
+    calculator: "Calculadora",
   },
 };
 
