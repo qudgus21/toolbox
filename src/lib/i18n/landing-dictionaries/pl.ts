@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Narzędzia PDF", description: "Łącz, dziel, konwertuj, edytuj i kompresuj — wszystko, co możesz zrobić z PDF-em.", cta: "Odkryj narzędzia PDF", toolCount: "39 narzędzi" },
     image: { name: "Narzędzia graficzne", description: "Zmieniaj rozmiar, przycinaj, konwertuj, dodawaj efekty, generuj kody QR — wszystko do obróbki obrazów.", cta: "Odkryj narzędzia graficzne", toolCount: "48 narzędzi" },
-    text: { name: "Narzędzia tekstowe", description: "Przekształcaj, analizuj, oczyszczaj, koduj i generuj tekst błyskawicznie.", cta: "Narzędzia tekstowe", toolCount: "44+ narzędzi" },
-    converter: { name: "Narzędzia konwersji", description: "Konwertuj jednostki, kolory, formaty danych, daty i wiele więcej.", cta: "Konwertery", toolCount: "45 narzędzi" },
+    text: { name: "Narzędzia tekstowe", description: "Przekształcaj, analizuj, oczyszczaj, koduj i generuj tekst błyskawicznie.", cta: "Odkryj narzędzia tekstowe", toolCount: "44+ narzędzi" },
+    converter: { name: "Narzędzia konwersji", description: "Konwertuj jednostki, kolory, formaty danych, daty i wiele więcej.", cta: "Odkryj konwertery", toolCount: "45 narzędzi" },
+    calculator: { name: "Kalkulatory", description: "Matematyka, finanse, zdrowie i codzienne obliczenia — szybko i za darmo.", cta: "Odkryj kalkulatory", toolCount: "30+ narzędzi" },
   },
   popularTools: { sectionTitle: "Popularne narzędzia", sectionSubtitle: "Przejdź od razu do najczęściej używanych narzędzi", viewAll: "Zobacz wszystkie" },
   stats: { tools: "176+", toolsLabel: "Darmowych narzędzi", languages: "45", languagesLabel: "Języków", users: "100%", usersLabel: "W przeglądarce", price: "€0", priceLabel: "Na zawsze za darmo" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Gotowy, żeby zacząć?", subtitle: "Bez instalacji, bez rejestracji, bez opłat — wystarczy jedno kliknięcie.", button: "Przeglądaj wszystkie narzędzia" },
   common: { shareTitle: "Udostępnij", shareSubtitle: "Powiedz znajomym o ToolPop!", shareCopyLink: "Kopiuj link", shareCopied: "Skopiowano!" },
-  footer: { apps: "Narzędzia", company: "Firma", about: "O nas", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Prawne", privacy: "Polityka prywatności", terms: "Regulamin", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Darmowe narzędzia online do PDF, obrazów i nie tylko. Bez rejestracji.", madeWith: "Stworzone z miłością dla wszystkich" },
+  footer: { apps: "Narzędzia", company: "Firma", about: "O nas", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Prawne", privacy: "Polityka prywatności", terms: "Regulamin", copyright: "© 2026 ToolPop. Wszelkie prawa zastrzeżone.", tagline: "Darmowe narzędzia online do PDF, obrazów i nie tylko. Bez rejestracji.", madeWith: "Stworzone z miłością dla wszystkich" },
   search: { noResults: "Brak wyników" },
-  nav: { pdf: "PDF", image: "Obraz", text: "Tekst", converter: "Konwerter" },
+  nav: { pdf: "PDF", image: "Obraz", text: "Tekst", converter: "Konwerter", calculator: "Kalkulator" },
 };
 export default dict;

@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const fi: ImageDictionary = {
   home: {
-    title: "Kaikki kuvanmuokkaustyökalut yhdessä paikassa",
+    title: "Kaikki Kuva-muokkaustyökalut yhdessä paikassa",
     titleAccent: "Kuva",
     description:
       "Muuta kokoa, muunna, lisää tehosteita ja paljon muuta. Kaikki käsitellään suoraan selaimessasi.",
@@ -386,10 +386,10 @@ const fi: ImageDictionary = {
       alignment: "Tasaus",
       xPosition: "X-sijainti",
       yPosition: "Y-sijainti",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Lisää",
+      noItems: "Napsauta + lisätäksesi tekstiä",
+      bgColor: "Tausta",
+      transparent: "Ei mitään",
     },
     addBorder: {
       borderWidth: "Kehyksen leveys",

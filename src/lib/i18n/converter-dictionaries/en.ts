@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Every Converter you need",
-    titleAccent: "Converter",
+    title: "Every Conversion tool you need",
+    titleAccent: "Conversion",
     description:
-      "Convert units, colors, data formats, dates, and more — instantly in your browser.",
+      "Convert units, colors, data formats, dates, and more. All processed right in your browser.",
     tabAll: "All",
     categoryUnit: "Units",
     categoryNumber: "Numbers",

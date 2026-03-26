@@ -220,7 +220,7 @@ const el: TextDictionary = {
     legal: "Νομικά",
     privacy: "Πολιτική απορρήτου",
     terms: "Όροι χρήσης",
-    copyright: "All rights reserved.",
+    copyright: "Με επιφύλαξη παντός δικαιώματος.",
     company: "Εταιρεία",
     about: "Σχετικά",
     contact: "Επικοινωνία",

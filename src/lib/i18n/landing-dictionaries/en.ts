@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "Text Tools",
       description:
         "Transform, analyze, clean, encode, and generate text instantly.",
-      cta: "Text Tools",
+      cta: "Explore Text Tools",
       toolCount: "44+ tools",
     },
     converter: {
       name: "Converter Tools",
       description:
         "Convert units, colors, data formats, dates, and more — instantly.",
-      cta: "Converter Tools",
+      cta: "Explore Converter Tools",
       toolCount: "45 tools",
+    },
+    calculator: {
+      name: "Calculator Tools",
+      description:
+        "Math, finance, health, and everyday calculators — fast and free.",
+      cta: "Explore Calculator Tools",
+      toolCount: "30+ tools",
     },
   },
   popularTools: {
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "Image",
     text: "Text",
     converter: "Converter",
+    calculator: "Calculator",
   },
 };
 

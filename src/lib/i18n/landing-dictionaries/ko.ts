@@ -40,8 +40,15 @@ const dict: LandingDictionary = {
       name: "변환 도구",
       description:
         "단위, 색상, 데이터 형식, 날짜 등을 즉시 변환하세요.",
-      cta: "변환 도구",
+      cta: "변환 도구 보기",
       toolCount: "45개 도구",
+    },
+    calculator: {
+      name: "계산기 도구",
+      description:
+        "수학, 금융, 건강, 일상 계산까지 — 빠르고 정확하게.",
+      cta: "계산기 도구 보기",
+      toolCount: "30개 이상 도구",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "법률",
     privacy: "개인정보 처리방침",
     terms: "이용약관",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. 모든 권리 보유.",
     tagline: "PDF, 이미지 등 다양한 온라인 도구를 무료로. 가입 없이 바로 사용하세요.",
     madeWith: "모두를 위해 만들었습니다",
   },
@@ -101,9 +108,10 @@ const dict: LandingDictionary = {
   },
   nav: {
     pdf: "PDF",
-    image: "Image",
-    text: "Text",
+    image: "이미지",
+    text: "텍스트",
     converter: "변환",
+    calculator: "계산기",
   },
 };
 

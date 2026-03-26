@@ -3,9 +3,9 @@ import type { ConverterDictionary } from "../converter-config";
 const dict: ConverterDictionary = {
   home: {
     title: "你需要的所有转换工具",
-    titleAccent: "转换工具",
+    titleAccent: "转换",
     description:
-      "单位、颜色、数据格式、日期等各类转换，浏览器内即时完成。",
+      "单位、颜色、数据格式、日期转换，全部在浏览器中完成。",
     tabAll: "全部",
     categoryUnit: "单位",
     categoryNumber: "数字",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "法律信息",
     privacy: "隐私政策",
     terms: "服务条款",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. 保留所有权利。",
     company: "关于我们",
     about: "简介",
     contact: "联系我们",
@@ -411,9 +411,9 @@ const dict: ConverterDictionary = {
     decimalToPercent: "小数 → 百分比",
     percentToDecimal: "百分比 → 小数",
     fractionToPercent: "分数 → 百分比",
-    dd: "Decimal Degrees (DD)",
-    dms: "Degrees Minutes Seconds (DMS)",
-    ddm: "Degrees Decimal Minutes (DDM)",
+    dd: "十进制度 (DD)",
+    dms: "度分秒 (DMS)",
+    ddm: "度十进分 (DDM)",
     iso: "ISO 8601",
     us: "US (MM/DD/YYYY)",
     eu: "EU (DD/MM/YYYY)",

@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Alle Converters die je nodig hebt",
-    titleAccent: "Converters",
+    title: "Alle conversietools die je nodig hebt",
+    titleAccent: "conversie",
     description:
-      "Converteer eenheden, kleuren, dataformaten, datums en meer — direct in je browser.",
+      "Converteer eenheden, kleuren, dataformaten, datums en meer. Alles in je browser.",
     tabAll: "Alles",
     categoryUnit: "Eenheden",
     categoryNumber: "Getallen",
@@ -135,7 +135,7 @@ const dict: ConverterDictionary = {
         "Genereer complementaire, triadische en analoge kleurpaletten.",
     },
     "gradient-generator": {
-      title: "CSS Gradient Generator",
+      title: "CSS-gradiëntgenerator",
       description:
         "Maak lineaire, radiale en conische CSS-gradiënten met live preview.",
     },
@@ -155,7 +155,7 @@ const dict: ConverterDictionary = {
         "Converteer tijd tussen verschillende tijdzones wereldwijd.",
     },
     "unix-timestamp": {
-      title: "Unix Timestamp Converter",
+      title: "Unix Timestamp-converter",
       description:
         "Converteer tussen Unix-timestamps en leesbare datums.",
     },
@@ -230,7 +230,7 @@ const dict: ConverterDictionary = {
         "Converteer tussen px, rem, em, %, vw, vh en andere CSS-eenheden.",
     },
     "css-minifier": {
-      title: "CSS Minifier / Beautifier",
+      title: "CSS-minimaliseerder / formatteerder",
       description:
         "Minimaliseer of formatteer CSS-code voor productie of leesbaarheid.",
     },

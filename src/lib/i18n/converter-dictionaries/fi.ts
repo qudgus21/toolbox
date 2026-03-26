@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Kaikki tarvitsemasi Muuntimet",
-    titleAccent: "Muuntimet",
+    title: "Kaikki tarvitsemasi muunnostyökalut",
+    titleAccent: "muunnos",
     description:
-      "Muunna yksiköitä, värejä, tiedostomuotoja, päivämääriä ja paljon muuta — suoraan selaimessasi.",
+      "Muunna yksiköitä, värejä, tietomuotoja, päivämääriä ja muuta. Kaikki suoraan selaimessa.",
     tabAll: "Kaikki",
     categoryUnit: "Yksiköt",
     categoryNumber: "Luvut",

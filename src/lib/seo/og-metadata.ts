@@ -639,3 +639,231 @@ export const ogConverterMetadata: Record<string, { siteTitle: string; siteDescri
     altText: "ToolPop Converter - កម្មវិធីបំលែងអនឡាញឥតគិតថ្លៃ",
   },
 };
+
+export const ogCalculatorMetadata: Record<string, { siteTitle: string; siteDescription: string; altText: string }> = {
+  ko: {
+    siteTitle: "ToolPop Calculator - 무료 계산기",
+    siteDescription: "복리, BMI, 대출, 퍼센트 등 다양한 계산을 온라인에서 무료로 하세요.",
+    altText: "ToolPop Calculator - 무료 온라인 계산기",
+  },
+  en: {
+    siteTitle: "ToolPop Calculator - Free Online Calculators",
+    siteDescription: "Calculate compound interest, BMI, loans, percentages, and more online for free.",
+    altText: "ToolPop Calculator - Free Online Calculators",
+  },
+  ja: {
+    siteTitle: "ToolPop Calculator - 無料計算ツール",
+    siteDescription: "複利、BMI、ローン、パーセントなどをオンラインで無料計算。",
+    altText: "ToolPop Calculator - 無料オンライン計算ツール",
+  },
+  zh: {
+    siteTitle: "ToolPop Calculator - 免费在线计算器",
+    siteDescription: "在线免费计算复利、BMI、贷款、百分比等。",
+    altText: "ToolPop Calculator - 免费在线计算器",
+  },
+  es: {
+    siteTitle: "ToolPop Calculator - Calculadoras gratuitas",
+    siteDescription: "Calcula interés compuesto, IMC, préstamos, porcentajes y más en línea gratis.",
+    altText: "ToolPop Calculator - Calculadoras en línea gratuitas",
+  },
+  fr: {
+    siteTitle: "ToolPop Calculator - Calculatrices gratuites",
+    siteDescription: "Calculez intérêts composés, IMC, prêts, pourcentages et plus en ligne gratuitement.",
+    altText: "ToolPop Calculator - Calculatrices en ligne gratuites",
+  },
+  de: {
+    siteTitle: "ToolPop Calculator - Kostenlose Rechner",
+    siteDescription: "Zinseszins, BMI, Kredite, Prozente und mehr online kostenlos berechnen.",
+    altText: "ToolPop Calculator - Kostenlose Online-Rechner",
+  },
+  pt: {
+    siteTitle: "ToolPop Calculator - Calculadoras Gratuitas",
+    siteDescription: "Calcule juros compostos, IMC, empréstimos, porcentagens e mais online gratuitamente.",
+    altText: "ToolPop Calculator - Calculadoras online gratuitas",
+  },
+  it: {
+    siteTitle: "ToolPop Calculator - Calcolatrici Gratuite",
+    siteDescription: "Calcola interessi composti, BMI, prestiti, percentuali e altro online gratuitamente.",
+    altText: "ToolPop Calculator - Calcolatrici online gratuite",
+  },
+  ru: {
+    siteTitle: "ToolPop Calculator - Бесплатные калькуляторы",
+    siteDescription: "Рассчитайте сложные проценты, ИМТ, кредиты, проценты и многое другое онлайн бесплатно.",
+    altText: "ToolPop Calculator - Бесплатные онлайн калькуляторы",
+  },
+  ar: {
+    siteTitle: "ToolPop Calculator - آلات حاسبة مجانية",
+    siteDescription: "احسب الفائدة المركبة ومؤشر كتلة الجسم والقروض والنسب المئوية والمزيد عبر الإنترنت مجاناً.",
+    altText: "ToolPop Calculator - آلات حاسبة مجانية عبر الإنترنت",
+  },
+  hi: {
+    siteTitle: "ToolPop Calculator - मुफ़्त कैलकुलेटर",
+    siteDescription: "चक्रवृद्धि ब्याज, BMI, ऋण, प्रतिशत और अधिक की ऑनलाइन मुफ़्त गणना करें।",
+    altText: "ToolPop Calculator - मुफ़्त ऑनलाइन कैलकुलेटर",
+  },
+  vi: {
+    siteTitle: "ToolPop Calculator - Máy tính miễn phí",
+    siteDescription: "Tính lãi kép, BMI, khoản vay, phần trăm và nhiều hơn trực tuyến miễn phí.",
+    altText: "ToolPop Calculator - Máy tính trực tuyến miễn phí",
+  },
+  th: {
+    siteTitle: "ToolPop Calculator - เครื่องคิดเลขฟรี",
+    siteDescription: "คำนวณดอกเบี้ยทบต้น BMI สินเชื่อ เปอร์เซ็นต์ และอื่นๆ ออนไลน์ฟรี",
+    altText: "ToolPop Calculator - เครื่องคิดเลขออนไลน์ฟรี",
+  },
+  tr: {
+    siteTitle: "ToolPop Calculator - Ücretsiz Hesap Makineleri",
+    siteDescription: "Bileşik faiz, VKİ, kredi, yüzde ve daha fazlasını çevrimiçi ücretsiz hesaplayın.",
+    altText: "ToolPop Calculator - Ücretsiz Çevrimiçi Hesap Makineleri",
+  },
+  nl: {
+    siteTitle: "ToolPop Calculator - Gratis rekenmachines",
+    siteDescription: "Bereken samengestelde rente, BMI, leningen, percentages en meer gratis online.",
+    altText: "ToolPop Calculator - Gratis online rekenmachines",
+  },
+  pl: {
+    siteTitle: "ToolPop Calculator - Darmowe kalkulatory",
+    siteDescription: "Oblicz procent składany, BMI, pożyczki, procenty i więcej online za darmo.",
+    altText: "ToolPop Calculator - Darmowe kalkulatory online",
+  },
+  uk: {
+    siteTitle: "ToolPop Calculator - Безкоштовні калькулятори",
+    siteDescription: "Розрахуйте складні відсотки, ІМТ, кредити, відсотки та інше онлайн безкоштовно.",
+    altText: "ToolPop Calculator - Безкоштовні онлайн калькулятори",
+  },
+  ro: {
+    siteTitle: "ToolPop Calculator - Calculatoare gratuite",
+    siteDescription: "Calculează dobânda compusă, IMC, împrumuturi, procente și mai mult online gratuit.",
+    altText: "ToolPop Calculator - Calculatoare online gratuite",
+  },
+  el: {
+    siteTitle: "ToolPop Calculator - Δωρεάν αριθμομηχανές",
+    siteDescription: "Υπολογίστε σύνθετο τόκο, ΔΜΣ, δάνεια, ποσοστά και άλλα online δωρεάν.",
+    altText: "ToolPop Calculator - Δωρεάν online αριθμομηχανές",
+  },
+  cs: {
+    siteTitle: "ToolPop Calculator - Bezplatné kalkulačky",
+    siteDescription: "Vypočítejte složený úrok, BMI, půjčky, procenta a více online zdarma.",
+    altText: "ToolPop Calculator - Bezplatné online kalkulačky",
+  },
+  sv: {
+    siteTitle: "ToolPop Calculator - Gratis kalkylatorer",
+    siteDescription: "Beräkna ränta på ränta, BMI, lån, procent och mer online gratis.",
+    altText: "ToolPop Calculator - Gratis online kalkylatorer",
+  },
+  hu: {
+    siteTitle: "ToolPop Calculator - Ingyenes számológépek",
+    siteDescription: "Számítsa ki a kamatos kamatot, BMI-t, hiteleket, százalékokat és többet ingyenesen online.",
+    altText: "ToolPop Calculator - Ingyenes online számológépek",
+  },
+  he: {
+    siteTitle: "ToolPop Calculator - מחשבונים חינמיים",
+    siteDescription: "חשבו ריבית דריבית, BMI, הלוואות, אחוזים ועוד באינטרנט בחינם.",
+    altText: "ToolPop Calculator - מחשבונים מקוונים חינמיים",
+  },
+  da: {
+    siteTitle: "ToolPop Calculator - Gratis lommeregnere",
+    siteDescription: "Beregn renters rente, BMI, lån, procenter og mere online gratis.",
+    altText: "ToolPop Calculator - Gratis online lommeregnere",
+  },
+  fi: {
+    siteTitle: "ToolPop Calculator - Ilmaiset laskimet",
+    siteDescription: "Laske korkoa korolle, BMI, lainat, prosentit ja muuta verkossa ilmaiseksi.",
+    altText: "ToolPop Calculator - Ilmaiset verkkolaskimet",
+  },
+  no: {
+    siteTitle: "ToolPop Calculator - Gratis kalkulatorer",
+    siteDescription: "Beregn rentes rente, BMI, lån, prosent og mer på nettet gratis.",
+    altText: "ToolPop Calculator - Gratis nettbaserte kalkulatorer",
+  },
+  bg: {
+    siteTitle: "ToolPop Calculator - Безплатни калкулатори",
+    siteDescription: "Изчислете сложна лихва, BMI, заеми, проценти и още онлайн безплатно.",
+    altText: "ToolPop Calculator - Безплатни онлайн калкулатори",
+  },
+  hr: {
+    siteTitle: "ToolPop Calculator - Besplatni kalkulatori",
+    siteDescription: "Izračunajte složenu kamatu, BMI, zajmove, postotke i više online besplatno.",
+    altText: "ToolPop Calculator - Besplatni online kalkulatori",
+  },
+  sk: {
+    siteTitle: "ToolPop Calculator - Bezplatné kalkulačky",
+    siteDescription: "Vypočítajte zložený úrok, BMI, pôžičky, percentá a viac online zadarmo.",
+    altText: "ToolPop Calculator - Bezplatné online kalkulačky",
+  },
+  sl: {
+    siteTitle: "ToolPop Calculator - Brezplačni kalkulatorji",
+    siteDescription: "Izračunajte obrestno obrestovanje, ITM, posojila, odstotke in več na spletu brezplačno.",
+    altText: "ToolPop Calculator - Brezplačni spletni kalkulatorji",
+  },
+  lt: {
+    siteTitle: "ToolPop Calculator - Nemokami skaičiuotuvai",
+    siteDescription: "Apskaičiuokite sudėtines palūkanas, KMI, paskolas, procentus ir daugiau internetu nemokamai.",
+    altText: "ToolPop Calculator - Nemokami internetiniai skaičiuotuvai",
+  },
+  lv: {
+    siteTitle: "ToolPop Calculator - Bezmaksas kalkulatori",
+    siteDescription: "Aprēķiniet saliktos procentus, ĶMI, aizdevumus, procentus un vairāk tiešsaistē bez maksas.",
+    altText: "ToolPop Calculator - Bezmaksas tiešsaistes kalkulatori",
+  },
+  et: {
+    siteTitle: "ToolPop Calculator - Tasuta kalkulaatorid",
+    siteDescription: "Arvutage liitintressi, KMI-d, laene, protsente ja muud veebis tasuta.",
+    altText: "ToolPop Calculator - Tasuta veebipõhised kalkulaatorid",
+  },
+  ga: {
+    siteTitle: "ToolPop Calculator - Áireamháin saor in aisce",
+    siteDescription: "Ríomh ús comhshuite, BMI, iasachtaí, céatadáin agus níos mó ar líne saor in aisce.",
+    altText: "ToolPop Calculator - Áireamháin ar líne saor in aisce",
+  },
+  is: {
+    siteTitle: "ToolPop Calculator - Ókeypis reiknivélar",
+    siteDescription: "Reiknaðu vaxtavexti, BMI, lán, prósentur og fleira á netinu ókeypis.",
+    altText: "ToolPop Calculator - Ókeypis netreiknivélar",
+  },
+  bs: {
+    siteTitle: "ToolPop Calculator - Besplatni kalkulatori",
+    siteDescription: "Izračunajte složenu kamatu, BMI, zajmove, postotke i više online besplatno.",
+    altText: "ToolPop Calculator - Besplatni online kalkulatori",
+  },
+  mt: {
+    siteTitle: "ToolPop Calculator - Kalkulaturi b'xejn",
+    siteDescription: "Ikkalkula imgħax kompost, BMI, self, perċentwali u aktar online b'xejn.",
+    altText: "ToolPop Calculator - Kalkulaturi online b'xejn",
+  },
+  id: {
+    siteTitle: "ToolPop Calculator - Kalkulator Gratis",
+    siteDescription: "Hitung bunga majemuk, BMI, pinjaman, persentase, dan lainnya secara online gratis.",
+    altText: "ToolPop Calculator - Kalkulator online gratis",
+  },
+  ms: {
+    siteTitle: "ToolPop Calculator - Kalkulator Percuma",
+    siteDescription: "Kira faedah kompaun, BMI, pinjaman, peratusan dan lagi dalam talian secara percuma.",
+    altText: "ToolPop Calculator - Kalkulator dalam talian percuma",
+  },
+  mr: {
+    siteTitle: "ToolPop Calculator - विनामूल्य कॅल्क्युलेटर",
+    siteDescription: "चक्रवाढ व्याज, BMI, कर्ज, टक्केवारी आणि अधिक विनामूल्य ऑनलाइन गणना करा.",
+    altText: "ToolPop Calculator - विनामूल्य ऑनलाइन कॅल्क्युलेटर",
+  },
+  bn: {
+    siteTitle: "ToolPop Calculator - বিনামূল্যে ক্যালকুলেটর",
+    siteDescription: "চক্রবৃদ্ধি সুদ, BMI, ঋণ, শতাংশ এবং আরও বিনামূল্যে অনলাইনে গণনা করুন।",
+    altText: "ToolPop Calculator - বিনামূল্যে অনলাইন ক্যালকুলেটর",
+  },
+  pa: {
+    siteTitle: "ToolPop Calculator - ਮੁਫ਼ਤ ਕੈਲਕੁਲੇਟਰ",
+    siteDescription: "ਚੱਕਰਵਿਆਜ, BMI, ਕਰਜ਼ੇ, ਪ੍ਰਤੀਸ਼ਤ ਅਤੇ ਹੋਰ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਗਿਣੋ।",
+    altText: "ToolPop Calculator - ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਕੈਲਕੁਲੇਟਰ",
+  },
+  te: {
+    siteTitle: "ToolPop Calculator - ఉచిత కాలిక్యులేటర్",
+    siteDescription: "చక్రవడ్డీ, BMI, రుణాలు, శాతాలు మరియు మరిన్ని ఉచితంగా ఆన్‌లైన్‌లో లెక్కించండి.",
+    altText: "ToolPop Calculator - ఉచిత ఆన్‌లైన్ కాలిక్యులేటర్",
+  },
+  km: {
+    siteTitle: "ToolPop Calculator - ម៉ាស៊ីនគិតលេខឥតគិតថ្លៃ",
+    siteDescription: "គណនាការប្រាក់សរុប BMI ប្រាក់កម្ចី ភាគរយ និងច្រើនទៀតតាមអ៊ីនធឺណិតដោយឥតគិតថ្លៃ។",
+    altText: "ToolPop Calculator - ម៉ាស៊ីនគិតលេខអនឡាញឥតគិតថ្លៃ",
+  },
+};

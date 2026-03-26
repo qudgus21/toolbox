@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF alati", description: "Spajanje, razdvajanje, pretvaranje, uređivanje i komprimiranje — sve što možete s PDF-om.", cta: "Istraži PDF alate", toolCount: "39 alata" },
     image: { name: "Alati za slike", description: "Promjena veličine, izrezivanje, pretvaranje, efekti, generiranje QR kodova — sve za slike.", cta: "Istraži alate za slike", toolCount: "48 alata" },
-    text: { name: "Alati za tekst", description: "Transformirajte, analizirajte, očistite, kodirajte i generirajte tekst odmah.", cta: "Alati za tekst", toolCount: "44+ alata" },
-    converter: { name: "Alati za pretvorbu", description: "Pretvorite jedinice, boje, formate podataka, datume i još mnogo toga.", cta: "Pretvarači", toolCount: "45 alata" },
+    text: { name: "Alati za tekst", description: "Transformirajte, analizirajte, očistite, kodirajte i generirajte tekst odmah.", cta: "Istraži alate za tekst", toolCount: "44+ alata" },
+    converter: { name: "Alati za pretvorbu", description: "Pretvorite jedinice, boje, formate podataka, datume i još mnogo toga.", cta: "Istraži pretvarače", toolCount: "45 alata" },
+    calculator: { name: "Kalkulatori", description: "Matematika, financije, zdravlje i svakodnevni izračuni — brzo i besplatno.", cta: "Istraži kalkulatore", toolCount: "30+ alata" },
   },
   popularTools: { sectionTitle: "Popularni alati", sectionSubtitle: "Krenite odmah s najkorištenijim alatima", viewAll: "Prikaži sve" },
   stats: { tools: "176+", toolsLabel: "Besplatnih alata", languages: "45", languagesLabel: "Jezika", users: "100%", usersLabel: "U pregledniku", price: "0 €", priceLabel: "Zauvijek besplatno" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Spremni za početak?", subtitle: "Bez instalacije, bez registracije, bez plaćanja — samo jedan klik.", button: "Pregledaj sve alate" },
   common: { shareTitle: "Podijeli", shareSubtitle: "Recite prijateljima za ToolPop!", shareCopyLink: "Kopiraj poveznicu", shareCopied: "Kopirano!" },
-  footer: { apps: "Alati", company: "Tvrtka", about: "O nama", contact: "Kontakt", faq: "Česta pitanja", blog: "Blog", legal: "Pravne informacije", privacy: "Pravila privatnosti", terms: "Uvjeti korištenja", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Besplatni online alati za PDF, slike i više. Bez registracije.", madeWith: "Napravljeno s ljubavlju za sve" },
+  footer: { apps: "Alati", company: "Tvrtka", about: "O nama", contact: "Kontakt", faq: "Česta pitanja", blog: "Blog", legal: "Pravne informacije", privacy: "Pravila privatnosti", terms: "Uvjeti korištenja", copyright: "© 2026 ToolPop. Sva prava pridržana.", tagline: "Besplatni online alati za PDF, slike i više. Bez registracije.", madeWith: "Napravljeno s ljubavlju za sve" },
   search: { noResults: "Nema rezultata" },
-  nav: { pdf: "PDF", image: "Slika", text: "Tekst", converter: "Pretvarač" },
+  nav: { pdf: "PDF", image: "Slika", text: "Tekst", converter: "Pretvarač", calculator: "Kalkulator" },
 };
 export default dict;

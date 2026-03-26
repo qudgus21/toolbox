@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Все нужные конвертеры",
-    titleAccent: "конвертеры",
+    title: "Все необходимые инструменты для конвертации",
+    titleAccent: "конвертации",
     description:
-      "Конвертируйте единицы, цвета, форматы данных, даты и многое другое — прямо в браузере.",
+      "Единицы, цвета, форматы данных, даты — всё прямо в браузере.",
     tabAll: "Все",
     categoryUnit: "Единицы",
     categoryNumber: "Числа",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "Правовая информация",
     privacy: "Политика конфиденциальности",
     terms: "Условия использования",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. Все права защищены.",
     company: "Компания",
     about: "О нас",
     contact: "Контакты",

@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF nástroje", description: "Slučování, rozdělování, převod, úpravy a komprese — vše, co s PDF potřebujete.", cta: "Prozkoumat PDF nástroje", toolCount: "39 nástrojů" },
     image: { name: "Obrázkové nástroje", description: "Změna velikosti, ořez, převod, efekty, generování QR kódů — vše pro práci s obrázky.", cta: "Prozkoumat obrázkové nástroje", toolCount: "48 nástrojů" },
-    text: { name: "Textové nástroje", description: "Transformujte, analyzujte, vyčistěte, zakódujte a generujte text okamžitě.", cta: "Textové nástroje", toolCount: "44+ nástrojů" },
-    converter: { name: "Konverzní nástroje", description: "Převádějte jednotky, barvy, datové formáty, data a další.", cta: "Konvertory", toolCount: "45 nástrojů" },
+    text: { name: "Textové nástroje", description: "Transformujte, analyzujte, vyčistěte, zakódujte a generujte text okamžitě.", cta: "Prozkoumat textové nástroje", toolCount: "44+ nástrojů" },
+    converter: { name: "Konverzní nástroje", description: "Převádějte jednotky, barvy, datové formáty, data a další.", cta: "Prozkoumat konvertory", toolCount: "45 nástrojů" },
+    calculator: { name: "Kalkulačky", description: "Matematika, finance, zdraví a každodenní výpočty — rychle a zdarma.", cta: "Prozkoumat kalkulačky", toolCount: "30+ nástrojů" },
   },
   popularTools: { sectionTitle: "Oblíbené nástroje", sectionSubtitle: "Začněte rovnou s nejpoužívanějšími nástroji", viewAll: "Zobrazit vše" },
   stats: { tools: "176+", toolsLabel: "Bezplatných nástrojů", languages: "45", languagesLabel: "Jazyků", users: "100%", usersLabel: "V prohlížeči", price: "0 Kč", priceLabel: "Navždy zdarma" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Připraveni začít?", subtitle: "Bez instalace, bez registrace, bez poplatků — stačí jedno kliknutí.", button: "Prohlédnout všechny nástroje" },
   common: { shareTitle: "Sdílet", shareSubtitle: "Řekněte o ToolPop svým přátelům!", shareCopyLink: "Kopírovat odkaz", shareCopied: "Zkopírováno!" },
-  footer: { apps: "Nástroje", company: "Společnost", about: "O nás", contact: "Kontakt", faq: "Časté dotazy", blog: "Blog", legal: "Právní informace", privacy: "Ochrana soukromí", terms: "Podmínky užívání", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Bezplatné online nástroje pro PDF, obrázky a další. Bez registrace.", madeWith: "Vytvořeno s láskou pro všechny" },
+  footer: { apps: "Nástroje", company: "Společnost", about: "O nás", contact: "Kontakt", faq: "Časté dotazy", blog: "Blog", legal: "Právní informace", privacy: "Ochrana soukromí", terms: "Podmínky užívání", copyright: "© 2026 ToolPop. Všechna práva vyhrazena.", tagline: "Bezplatné online nástroje pro PDF, obrázky a další. Bez registrace.", madeWith: "Vytvořeno s láskou pro všechny" },
   search: { noResults: "Žádné výsledky" },
-  nav: { pdf: "PDF", image: "Obrázek", text: "Text", converter: "Konvertor" },
+  nav: { pdf: "PDF", image: "Obrázek", text: "Text", converter: "Konvertor", calculator: "Kalkulačka" },
 };
 export default dict;

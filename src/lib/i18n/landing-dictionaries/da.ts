@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF-værktøjer", description: "Flet, opdel, konverter, rediger og komprimer — alt hvad du kan gøre med en PDF.", cta: "Udforsk PDF-værktøjer", toolCount: "39 værktøjer" },
     image: { name: "Billedværktøjer", description: "Tilpas størrelse, beskær, konverter, tilføj effekter, generer QR-koder — alt til billeder.", cta: "Udforsk billedværktøjer", toolCount: "48 værktøjer" },
-    text: { name: "Tekstværktøjer", description: "Omform, analysér, rens, indkod og generer tekst med det samme.", cta: "Tekstværktøjer", toolCount: "44+ værktøjer" },
-    converter: { name: "Konverteringsværktøjer", description: "Konverter enheder, farver, dataformater, datoer og meget mere.", cta: "Konvertere", toolCount: "45 værktøjer" },
+    text: { name: "Tekstværktøjer", description: "Omform, analysér, rens, indkod og generer tekst med det samme.", cta: "Udforsk tekstværktøjer", toolCount: "44+ værktøjer" },
+    converter: { name: "Konverteringsværktøjer", description: "Konverter enheder, farver, dataformater, datoer og meget mere.", cta: "Udforsk konvertere", toolCount: "45 værktøjer" },
+    calculator: { name: "Beregnere", description: "Matematik, økonomi, sundhed og hverdagsberegninger — hurtigt og gratis.", cta: "Udforsk beregnere", toolCount: "30+ værktøjer" },
   },
   popularTools: { sectionTitle: "Populære værktøjer", sectionSubtitle: "Hop direkte til de mest brugte værktøjer", viewAll: "Vis alle" },
   stats: { tools: "176+", toolsLabel: "Gratis værktøjer", languages: "45", languagesLabel: "Sprog", users: "100%", usersLabel: "Browserbaseret", price: "0 kr", priceLabel: "Gratis for altid" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Klar til at komme i gang?", subtitle: "Ingen installation, ingen tilmelding, ingen betaling — kun ét klik væk.", button: "Se alle værktøjer" },
   common: { shareTitle: "Del", shareSubtitle: "Fortæl dine venner om ToolPop!", shareCopyLink: "Kopier link", shareCopied: "Kopieret!" },
-  footer: { apps: "Værktøjer", company: "Virksomhed", about: "Om os", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Juridisk", privacy: "Privatlivspolitik", terms: "Servicevilkår", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Gratis onlineværktøjer til PDF, billeder og mere. Ingen tilmelding nødvendig.", madeWith: "Lavet med kærlighed til alle" },
+  footer: { apps: "Værktøjer", company: "Virksomhed", about: "Om os", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Juridisk", privacy: "Privatlivspolitik", terms: "Servicevilkår", copyright: "© 2026 ToolPop. Alle rettigheder forbeholdes.", tagline: "Gratis onlineværktøjer til PDF, billeder og mere. Ingen tilmelding nødvendig.", madeWith: "Lavet med kærlighed til alle" },
   search: { noResults: "Ingen resultater fundet" },
-  nav: { pdf: "PDF", image: "Billede", text: "Tekst", converter: "Konverter" },
+  nav: { pdf: "PDF", image: "Billede", text: "Tekst", converter: "Konverter", calculator: "Beregner" },
 };
 export default dict;

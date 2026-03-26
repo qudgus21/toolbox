@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF verkfæri", description: "Sameining, skipting, umbreyting, breyting og þjöppun — allt sem þú getur gert við PDF.", cta: "Skoða PDF verkfæri", toolCount: "39 verkfæri" },
     image: { name: "Myndaverkfæri", description: "Stærðarbreyting, klipping, umbreyting, áhrif, QR kóðar — allt fyrir myndir.", cta: "Skoða myndaverkfæri", toolCount: "48 verkfæri" },
-    text: { name: "Textaverkfæri", description: "Umbreyttu, greindu, hreinsaðu, kóðaðu og búðu til texta samstundis.", cta: "Textaverkfæri", toolCount: "44+ verkfæri" },
-    converter: { name: "Umbreytingatól", description: "Umbreyttu einingum, litum, gagnasniðum, dagsetningum og fleira.", cta: "Umbreytir", toolCount: "45 verkfæri" },
+    text: { name: "Textaverkfæri", description: "Umbreyttu, greindu, hreinsaðu, kóðaðu og búðu til texta samstundis.", cta: "Skoða textaverkfæri", toolCount: "44+ verkfæri" },
+    converter: { name: "Umbreytingatól", description: "Umbreyttu einingum, litum, gagnasniðum, dagsetningum og fleira.", cta: "Skoða umbreytara", toolCount: "45 verkfæri" },
+    calculator: { name: "Reiknivélar", description: "Stærðfræði, fjármál, heilsa og daglegar útreikninga — hratt og ókeypis.", cta: "Skoða reiknivélar", toolCount: "30+ verkfæri" },
   },
   popularTools: { sectionTitle: "Vinsæl verkfæri", sectionSubtitle: "Farðu beint í mest notuðu verkfærin", viewAll: "Sjá öll" },
   stats: { tools: "176+", toolsLabel: "Ókeypis verkfæri", languages: "45", languagesLabel: "Tungumál", users: "100%", usersLabel: "Í vafranum", price: "0 kr", priceLabel: "Alltaf ókeypis" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Tilbúin/n að byrja?", subtitle: "Engin uppsetning, engin nýskráning, engar greiðslur — bara einn smellur.", button: "Skoða öll verkfæri" },
   common: { shareTitle: "Deila", shareSubtitle: "Segðu vinum þínum frá ToolPop!", shareCopyLink: "Afrita hlekk", shareCopied: "Afritað!" },
-  footer: { apps: "Verkfæri", company: "Fyrirtæki", about: "Um okkur", contact: "Hafa samband", faq: "Algengar spurningar", blog: "Blogg", legal: "Lagalegar upplýsingar", privacy: "Persónuverndarstefna", terms: "Þjónustuskilmálar", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Ókeypis netverkfæri fyrir PDF, myndir og fleira. Engin skráning nauðsynleg.", madeWith: "Gert af ástúð fyrir alla" },
+  footer: { apps: "Verkfæri", company: "Fyrirtæki", about: "Um okkur", contact: "Hafa samband", faq: "Algengar spurningar", blog: "Blogg", legal: "Lagalegar upplýsingar", privacy: "Persónuverndarstefna", terms: "Þjónustuskilmálar", copyright: "© 2026 ToolPop. Öll réttindi áskilin.", tagline: "Ókeypis netverkfæri fyrir PDF, myndir og fleira. Engin skráning nauðsynleg.", madeWith: "Gert af ástúð fyrir alla" },
   search: { noResults: "Engar niðurstöður fundust" },
-  nav: { pdf: "PDF", image: "Mynd", text: "Texti", converter: "Umbreytir" },
+  nav: { pdf: "PDF", image: "Mynd", text: "Texti", converter: "Umbreytir", calculator: "Reiknivél" },
 };
 export default dict;

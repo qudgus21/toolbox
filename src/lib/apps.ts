@@ -55,4 +55,15 @@ export const apps: AppDefinition[] = [
     href: "/converter",
     popularToolSlugs: ["length", "weight", "temperature", "color-converter", "json-yaml", "px-rem"],
   },
+  {
+    slug: "calculator",
+    emoji: "🧮",
+    accentFrom: "from-violet-500",
+    accentTo: "to-purple-400",
+    accentText: "text-violet-600 dark:text-violet-400",
+    accentBg: "bg-violet-50 dark:bg-violet-950/30",
+    accentBorder: "border-violet-200 dark:border-violet-800/40",
+    href: "/calculator",
+    popularToolSlugs: ["compound-interest", "bmi-calculator", "percentage-calculator", "tip-calculator", "loan-calculator", "scientific-calculator"],
+  },
 ];

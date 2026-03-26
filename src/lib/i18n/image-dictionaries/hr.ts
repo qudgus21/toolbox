@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const hr: ImageDictionary = {
   home: {
-    title: "Svi alati za slike na jednom mjestu",
+    title: "Svi alati za Slike na jednom mjestu",
     titleAccent: "Slike",
     description:
       "Promjena veličine, pretvorba, efekti i još mnogo toga. Sve se obrađuje izravno u pregledniku.",
@@ -386,10 +386,10 @@ const hr: ImageDictionary = {
       alignment: "Poravnanje",
       xPosition: "X pozicija",
       yPosition: "Y pozicija",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Dodaj",
+      noItems: "Kliknite + za dodavanje teksta",
+      bgColor: "Pozadina",
+      transparent: "Bez",
     },
     addBorder: {
       borderWidth: "Širina okvira",

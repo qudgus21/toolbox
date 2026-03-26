@@ -220,7 +220,7 @@ const pa: TextDictionary = {
     legal: "ਕਾਨੂੰਨੀ",
     privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ",
     terms: "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ",
-    copyright: "All rights reserved.",
+    copyright: "ਸਾਰੇ ਅਧਿਕਾਰ ਰਾਖਵੇਂ ਹਨ.",
     company: "ਕੰਪਨੀ",
     about: "ਸਾਡੇ ਬਾਰੇ",
     contact: "ਸੰਪਰਕ",

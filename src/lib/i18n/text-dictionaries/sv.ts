@@ -220,7 +220,7 @@ const sv: TextDictionary = {
     legal: "Juridiskt",
     privacy: "Integritetspolicy",
     terms: "Användarvillkor",
-    copyright: "All rights reserved.",
+    copyright: "Alla rättigheter förbehållna.",
     company: "Företag",
     about: "Om oss",
     contact: "Kontakt",

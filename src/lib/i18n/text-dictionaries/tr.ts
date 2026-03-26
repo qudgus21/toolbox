@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const tr: TextDictionary = {
   home: {
     title: "İhtiyacın olan tüm metin araçları",
-    titleAccent: "Metin",
+    titleAccent: "metin",
     description: "Kelime say, büyük/küçük harf dönüştür, kodla ve daha fazlası. Her şey tarayıcında işlenir.",
     tabAll: "Tümü",
     categoryCount: "Analiz",

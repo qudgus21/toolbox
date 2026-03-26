@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const bg: ImageDictionary = {
   home: {
-    title: "Всички инструменти за изображения на едно място",
+    title: "Всички инструменти за Изображения на едно място",
     titleAccent: "Изображения",
     description:
       "Преоразмеряване, конвертиране, ефекти и още. Всичко се обработва директно в браузъра ви.",
@@ -386,10 +386,10 @@ const bg: ImageDictionary = {
       alignment: "Подравняване",
       xPosition: "X позиция",
       yPosition: "Y позиция",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Добавяне",
+      noItems: "Натиснете + за добавяне на текст",
+      bgColor: "Фон",
+      transparent: "Без",
     },
     addBorder: {
       borderWidth: "Дебелина на рамката",

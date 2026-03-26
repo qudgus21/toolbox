@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const vi: TextDictionary = {
   home: {
     title: "Tất cả công cụ văn bản bạn cần",
-    titleAccent: "Văn bản",
+    titleAccent: "văn bản",
     description: "Đếm từ, chuyển đổi chữ hoa, mã hóa và nhiều hơn nữa. Tất cả xử lý ngay trên trình duyệt.",
     tabAll: "Tất cả",
     categoryCount: "Phân tích",

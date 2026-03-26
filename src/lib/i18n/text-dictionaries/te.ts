@@ -220,7 +220,7 @@ const te: TextDictionary = {
     legal: "చట్టపరమైన",
     privacy: "గోప్యతా విధానం",
     terms: "సేవా నిబంధనలు",
-    copyright: "All rights reserved.",
+    copyright: "అన్ని హక్కులు రిజర్వు చేయబడ్డాయి.",
     company: "కంపెనీ",
     about: "మా గురించి",
     contact: "సంప్రదించండి",

@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const ms: ImageDictionary = {
   home: {
-    title: "Semua alat imej yang anda perlukan",
+    title: "Semua alat Imej yang anda perlukan",
     titleAccent: "Imej",
     description:
       "Ubah saiz, tukar format, tambah kesan, dan banyak lagi. Semua diproses terus dalam pelayar anda.",
@@ -386,10 +386,10 @@ const ms: ImageDictionary = {
       alignment: "Penjajaran",
       xPosition: "Kedudukan X",
       yPosition: "Kedudukan Y",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Tambah",
+      noItems: "Klik + untuk menambah teks",
+      bgColor: "Latar belakang",
+      transparent: "Tiada",
     },
     addBorder: {
       borderWidth: "Lebar Sempadan",

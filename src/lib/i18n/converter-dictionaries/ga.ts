@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Gach Tiontaire atá uait",
-    titleAccent: "Tiontaire",
+    title: "Gach uirlis tiontaithe atá uait",
+    titleAccent: "tiontaithe",
     description:
-      "Tiontaigh aonaid, dathanna, formáidí sonraí, dátaí agus go leor eile — láithreach i do bhrabhsálaí.",
+      "Tiontaigh aonaid, dathanna, formáidí sonraí, dátaí agus tuilleadh. Próiseáilte go léir i do bhrabhsálaí.",
     tabAll: "Gach ceann",
     categoryUnit: "Aonaid",
     categoryNumber: "Uimhreacha",

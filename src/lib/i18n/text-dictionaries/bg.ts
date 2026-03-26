@@ -220,7 +220,7 @@ const bg: TextDictionary = {
     legal: "Правна информация",
     privacy: "Политика за поверителност",
     terms: "Условия за ползване",
-    copyright: "All rights reserved.",
+    copyright: "Всички права запазени.",
     company: "Компания",
     about: "За нас",
     contact: "Контакт",

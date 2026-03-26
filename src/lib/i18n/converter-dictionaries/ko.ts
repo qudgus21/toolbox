@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "필요한 모든 변환기를 한곳에서",
-    titleAccent: "변환기",
+    title: "변환 작업에 필요한 모든 도구",
+    titleAccent: "변환",
     description:
-      "단위, 색상, 데이터 형식, 날짜 등 다양한 변환을 브라우저에서 바로 처리하세요.",
+      "단위, 색상, 데이터 형식, 날짜 변환까지. 브라우저에서 바로 처리하세요.",
     tabAll: "전체",
     categoryUnit: "단위",
     categoryNumber: "숫자",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "법적 고지",
     privacy: "개인정보처리방침",
     terms: "이용약관",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. 모든 권리 보유.",
     company: "회사",
     about: "소개",
     contact: "문의",

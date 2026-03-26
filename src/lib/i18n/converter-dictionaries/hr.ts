@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Svi pretvarači na jednom mjestu",
-    titleAccent: "pretvarači",
+    title: "Svi alati za pretvorbu koje trebate",
+    titleAccent: "pretvorbu",
     description:
-      "Pretvarajte jedinice, boje, formate podataka, datume i više — izravno u pregledniku.",
+      "Pretvarajte jedinice, boje, formate podataka, datume i više. Sve u vašem pregledniku.",
     tabAll: "Sve",
     categoryUnit: "Jedinice",
     categoryNumber: "Brojevi",

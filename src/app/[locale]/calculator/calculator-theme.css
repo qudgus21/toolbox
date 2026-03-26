@@ -1,0 +1,23 @@
+/* Calculator App — Violet accent override */
+[data-app="calculator"] {
+  --color-accent: #7c3aed;
+  --color-accent-foreground: var(--primitive-white);
+  --color-accent-hover: #6d28d9;
+  --color-accent-muted: #f5f3ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) [data-app="calculator"] {
+    --color-accent: #a78bfa;
+    --color-accent-foreground: var(--primitive-zinc-950);
+    --color-accent-hover: #c4b5fd;
+    --color-accent-muted: rgba(167, 139, 250, 0.15);
+  }
+}
+
+[data-theme="dark"] [data-app="calculator"] {
+  --color-accent: #c4b5fd;
+  --color-accent-foreground: var(--primitive-zinc-950);
+  --color-accent-hover: #ddd6fe;
+  --color-accent-muted: rgba(196, 181, 253, 0.15);
+}

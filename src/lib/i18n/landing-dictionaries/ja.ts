@@ -40,8 +40,15 @@ const dict: LandingDictionary = {
       name: "変換ツール",
       description:
         "単位・色・データ形式・日付などを瞬時に変換。",
-      cta: "変換ツール",
+      cta: "変換ツールを見る",
       toolCount: "45種類",
+    },
+    calculator: {
+      name: "計算ツール",
+      description:
+        "数学、金融、健康、日常の計算をすばやく正確に。",
+      cta: "計算ツールを見る",
+      toolCount: "30以上のツール",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "法的情報",
     privacy: "プライバシーポリシー",
     terms: "利用規約",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. 全著作権所有。",
     tagline: "PDF・画像などの無料オンラインツール。登録不要ですぐ使えます。",
     madeWith: "すべての人のために",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "画像",
     text: "テキスト",
     converter: "変換",
+    calculator: "計算",
   },
 };
 

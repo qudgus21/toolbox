@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Visi pārveidotāji vienuviet",
-    titleAccent: "pārveidotāji",
+    title: "Visi konvertēšanas rīki, kas jums nepieciešami",
+    titleAccent: "konvertēšanas",
     description:
-      "Pārveidojiet vienības, krāsas, datu formātus, datumus un daudz ko citu — tieši pārlūkprogrammā.",
+      "Konvertējiet vienības, krāsas, datu formātus, datumus un vairāk. Viss tieši pārlūkā.",
     tabAll: "Visi",
     categoryUnit: "Vienības",
     categoryNumber: "Skaitļi",

@@ -220,7 +220,7 @@ const ms: TextDictionary = {
     legal: "Undang-undang",
     privacy: "Dasar privasi",
     terms: "Terma perkhidmatan",
-    copyright: "All rights reserved.",
+    copyright: "Hak cipta terpelihara.",
     company: "Syarikat",
     about: "Tentang kami",
     contact: "Hubungi",

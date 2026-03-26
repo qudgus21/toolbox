@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const sk: ImageDictionary = {
   home: {
-    title: "Všetky nástroje na úpravu obrázkov na jednom mieste",
+    title: "Všetky nástroje na úpravu Obrázky na jednom mieste",
     titleAccent: "Obrázky",
     description:
       "Zmena veľkosti, konverzia, efekty a oveľa viac. Všetko sa spracúva priamo vo vašom prehliadači.",
@@ -386,10 +386,10 @@ const sk: ImageDictionary = {
       alignment: "Zarovnanie",
       xPosition: "X pozícia",
       yPosition: "Y pozícia",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Pridať",
+      noItems: "Kliknite + pre pridanie textu",
+      bgColor: "Pozadie",
+      transparent: "Žiadne",
     },
     addBorder: {
       borderWidth: "Šírka rámika",

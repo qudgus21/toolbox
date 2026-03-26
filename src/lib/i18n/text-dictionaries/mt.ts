@@ -220,7 +220,7 @@ const mt: TextDictionary = {
     legal: "Legali",
     privacy: "Politika tal-privatezza",
     terms: "Termini tas-servizz",
-    copyright: "All rights reserved.",
+    copyright: "Id-drittijiet kollha riżervati.",
     company: "Kumpanija",
     about: "Dwar",
     contact: "Kuntatt",
