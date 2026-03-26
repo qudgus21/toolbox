@@ -2,7 +2,7 @@ import type { ImageDictionary } from "../image-config";
 
 const da: ImageDictionary = {
   home: {
-    title: "Alle billedværktøjer samlet ét sted",
+    title: "Alle Billede-værktøjer samlet ét sted",
     titleAccent: "Billede",
     description:
       "Tilpas størrelse, konvertér, tilføj effekter og meget mere. Alt behandles direkte i din browser.",
@@ -279,7 +279,7 @@ const da: ImageDictionary = {
     dropFiles: "Træk filer hertil, eller klik for at gennemse",
     acceptedFormats: "Understøttede formater",
     processing: "Behandler...",
-    download: "Download",
+    download: "Hent",
     startOver: "Start forfra",
     addMoreFiles: "Tilføj flere filer",
     process: "Behandl",
@@ -386,10 +386,10 @@ const da: ImageDictionary = {
       alignment: "Justering",
       xPosition: "X-position",
       yPosition: "Y-position",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Tilføj",
+      noItems: "Klik + for at tilføje tekst",
+      bgColor: "Baggrund",
+      transparent: "Ingen",
     },
     addBorder: {
       borderWidth: "Rammebredde",

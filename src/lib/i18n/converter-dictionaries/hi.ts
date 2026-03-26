@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "हर ज़रूरी कनवर्टर एक जगह",
-    titleAccent: "कनवर्टर",
+    title: "कनवर्ज़न के लिए हर ज़रूरी टूल",
+    titleAccent: "कनवर्ज़न",
     description:
-      "यूनिट, रंग, डेटा फ़ॉर्मेट, तारीख़ और बहुत कुछ — सब कुछ ब्राउज़र में तुरंत कनवर्ट करें।",
+      "इकाइयाँ, रंग, डेटा फ़ॉर्मेट, तारीख़ बदलें। सब कुछ ब्राउज़र में ही होता है।",
     tabAll: "सभी",
     categoryUnit: "यूनिट",
     categoryNumber: "संख्याएँ",
@@ -411,9 +411,9 @@ const dict: ConverterDictionary = {
     decimalToPercent: "दशमलव → प्रतिशत",
     percentToDecimal: "प्रतिशत → दशमलव",
     fractionToPercent: "भिन्न → प्रतिशत",
-    dd: "Decimal Degrees (DD)",
-    dms: "Degrees Minutes Seconds (DMS)",
-    ddm: "Degrees Decimal Minutes (DDM)",
+    dd: "दशमलव अंश (DD)",
+    dms: "अंश मिनट सेकंड (DMS)",
+    ddm: "अंश दशमलव मिनट (DDM)",
     iso: "ISO 8601",
     us: "US (MM/DD/YYYY)",
     eu: "EU (DD/MM/YYYY)",

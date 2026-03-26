@@ -84,12 +84,29 @@ export const ConverterAppIcon: FC<IconProps> = (props) => (
   </svg>
 );
 
+/** Calculator app icon — calculator with buttons and "CALC" badge */
+export const CalculatorAppIcon: FC<IconProps> = (props) => (
+  <svg viewBox="0 0 48 48" fill="none" {...props}>
+    <rect x="10" y="6" width="28" height="36" rx="4" fill="#EDE9FE" stroke="#7C3AED" strokeWidth="1.5" />
+    <rect x="14" y="10" width="20" height="8" rx="2" fill="#7C3AED" opacity="0.2" />
+    <text x="24" y="16" textAnchor="middle" fontSize="7" fontWeight="700" fill="#7C3AED">123</text>
+    <circle cx="17" cy="24" r="2" fill="#7C3AED" opacity="0.5" />
+    <circle cx="24" cy="24" r="2" fill="#7C3AED" opacity="0.5" />
+    <circle cx="31" cy="24" r="2" fill="#7C3AED" opacity="0.5" />
+    <circle cx="17" cy="31" r="2" fill="#7C3AED" opacity="0.5" />
+    <circle cx="24" cy="31" r="2" fill="#7C3AED" opacity="0.5" />
+    <circle cx="31" cy="31" r="2" fill="#7C3AED" opacity="0.5" />
+    <rect x="15" y="36" width="18" height="3" rx="1.5" fill="#7C3AED" opacity="0.3" />
+  </svg>
+);
+
 /** Map app slugs to icons */
 export const appIconMap: Record<string, FC<IconProps>> = {
   pdf: PdfAppIcon,
   image: ImageAppIcon,
   text: TextAppIcon,
   converter: ConverterAppIcon,
+  calculator: CalculatorAppIcon,
 };
 
 export function getAppIcon(slug: string): FC<IconProps> | undefined {

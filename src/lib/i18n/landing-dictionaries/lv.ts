@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF rīki", description: "Apvienošana, sadalīšana, konvertēšana, rediģēšana un saspiešana — viss, kas vajadzīgs darbam ar PDF.", cta: "Apskatīt PDF rīkus", toolCount: "39 rīki" },
     image: { name: "Attēlu rīki", description: "Izmēra maiņa, apgriešana, konvertēšana, efekti, QR kodi — viss attēliem.", cta: "Apskatīt attēlu rīkus", toolCount: "48 rīki" },
-    text: { name: "Teksta rīki", description: "Pārveidojiet, analizējiet, attīriet, kodējiet un ģenerējiet tekstu uzreiz.", cta: "Teksta rīki", toolCount: "44+ rīki" },
-    converter: { name: "Konvertēšanas rīki", description: "Konvertējiet vienības, krāsas, datu formātus, datumus un daudz ko citu.", cta: "Konvertētāji", toolCount: "45 rīki" },
+    text: { name: "Teksta rīki", description: "Pārveidojiet, analizējiet, attīriet, kodējiet un ģenerējiet tekstu uzreiz.", cta: "Apskatīt teksta rīkus", toolCount: "44+ rīki" },
+    converter: { name: "Konvertēšanas rīki", description: "Konvertējiet vienības, krāsas, datu formātus, datumus un daudz ko citu.", cta: "Apskatīt konvertētājus", toolCount: "45 rīki" },
+    calculator: { name: "Kalkulatori", description: "Matemātika, finanses, veselība un ikdienas aprēķini — ātri un bez maksas.", cta: "Apskatīt kalkulatorus", toolCount: "30+ rīki" },
   },
   popularTools: { sectionTitle: "Populāri rīki", sectionSubtitle: "Uzreiz pie visbiežāk izmantotajiem rīkiem", viewAll: "Skatīt visus" },
   stats: { tools: "176+", toolsLabel: "Bezmaksas rīku", languages: "45", languagesLabel: "Valodu", users: "100%", usersLabel: "Pārlūkā", price: "0 €", priceLabel: "Vienmēr bez maksas" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Gatavi sākt?", subtitle: "Bez instalēšanas, bez reģistrācijas, bez maksājumiem — tikai viens klikšķis.", button: "Apskatīt visus rīkus" },
   common: { shareTitle: "Dalīties", shareSubtitle: "Pastāstiet draugiem par ToolPop!", shareCopyLink: "Kopēt saiti", shareCopied: "Nokopēts!" },
-  footer: { apps: "Rīki", company: "Uzņēmums", about: "Par mums", contact: "Kontakti", faq: "BUJ", blog: "Emuārs", legal: "Juridiskā informācija", privacy: "Privātuma politika", terms: "Lietošanas noteikumi", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Bezmaksas tiešsaistes rīki PDF, attēliem un citiem. Bez reģistrācijas.", madeWith: "Veidots ar mīlestību visiem" },
+  footer: { apps: "Rīki", company: "Uzņēmums", about: "Par mums", contact: "Kontakti", faq: "BUJ", blog: "Emuārs", legal: "Juridiskā informācija", privacy: "Privātuma politika", terms: "Lietošanas noteikumi", copyright: "© 2026 ToolPop. Visas tiesības aizsargātas.", tagline: "Bezmaksas tiešsaistes rīki PDF, attēliem un citiem. Bez reģistrācijas.", madeWith: "Veidots ar mīlestību visiem" },
   search: { noResults: "Nav rezultātu" },
-  nav: { pdf: "PDF", image: "Attēls", text: "Teksts", converter: "Konvertētājs" },
+  nav: { pdf: "PDF", image: "Attēls", text: "Teksts", converter: "Konvertētājs", calculator: "Kalkulators" },
 };
 export default dict;

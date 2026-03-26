@@ -220,7 +220,7 @@ const uk: TextDictionary = {
     legal: "Правова інформація",
     privacy: "Політика конфіденційності",
     terms: "Умови використання",
-    copyright: "All rights reserved.",
+    copyright: "Усі права захищені.",
     company: "Компанія",
     about: "Про нас",
     contact: "Контакти",

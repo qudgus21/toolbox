@@ -7,7 +7,7 @@ const id: ImageDictionary = {
     description:
       "Ubah ukuran, konversi format, terapkan efek, dan lainnya. Semua diproses langsung di browser Anda.",
     tabAll: "Semua",
-    categoryEdit: "Edit",
+    categoryEdit: "Sunting",
     categoryConvert: "Konversi",
     categoryEffects: "Efek",
     categoryCompose: "Komposisi",
@@ -167,7 +167,7 @@ const id: ImageDictionary = {
       description: "Terapkan efek mosaik pada area tertentu",
     },
     blur: {
-      title: "Blur",
+      title: "Buram",
       description: "Terapkan efek blur pada semua atau sebagian gambar",
     },
     filters: {
@@ -203,7 +203,7 @@ const id: ImageDictionary = {
       description: "Perkecil ukuran file sambil mempertahankan kualitas",
     },
     watermark: {
-      title: "Watermark",
+      title: "Tanda Air",
       description: "Tambahkan watermark teks atau logo ke gambar",
     },
     "image-to-icon": {
@@ -268,7 +268,7 @@ const id: ImageDictionary = {
     legal: "Hukum",
     privacy: "Kebijakan Privasi",
     terms: "Ketentuan Layanan",
-    copyright: "All rights reserved.",
+    copyright: "Hak cipta dilindungi.",
     company: "Perusahaan",
     about: "Tentang",
     contact: "Kontak",
@@ -386,10 +386,10 @@ const id: ImageDictionary = {
       alignment: "Perataan",
       xPosition: "Posisi X",
       yPosition: "Posisi Y",
-      addText: "Add",
-      noItems: "Click + to add text",
-      bgColor: "Background",
-      transparent: "None",
+      addText: "Tambah",
+      noItems: "Klik + untuk menambah teks",
+      bgColor: "Latar belakang",
+      transparent: "Tidak ada",
     },
     addBorder: {
       borderWidth: "Ketebalan Bingkai",

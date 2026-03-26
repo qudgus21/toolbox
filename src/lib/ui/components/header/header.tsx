@@ -19,8 +19,8 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
       )}
     >
       <div className="flex h-18 items-center px-6 lg:px-10">
-        {/* Logo — 왼쪽 고정 */}
-        <div className="shrink-0">
+        {/* Logo — 왼쪽 고정 (너비 고정으로 Nav 중앙 흔들림 방지) */}
+        <div className="shrink-0 lg:w-[160px]">
           {logo ?? (
             <a href="/" className="text-lg font-bold text-foreground">
               ToolPop
@@ -35,12 +35,14 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
           </div>
         )}
 
-        {/* Actions — 오른쪽 고정 */}
-        {children && (
-          <nav className="shrink-0 flex items-center gap-3">
-            {children}
-          </nav>
-        )}
+        {/* Actions — 오른쪽 고정 (Logo와 동일 너비로 완전 중앙 정렬) */}
+        <div className="shrink-0 lg:w-[160px] flex justify-end">
+          {children && (
+            <nav className="flex items-center gap-3">
+              {children}
+            </nav>
+          )}
+        </div>
       </div>
     </header>
   );

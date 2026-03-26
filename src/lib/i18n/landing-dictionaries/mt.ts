@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Għodod PDF", description: "Għaqqad, aqsam, ikkonverti, editja u ikkompressja — kollox li tista' tagħmel b'PDF.", cta: "Esplora l-għodod PDF", toolCount: "39 għodda" },
     image: { name: "Għodod tal-Istampi", description: "Ibdel id-daqs, aqta', ikkonverti, effetti, kodiċi QR — kollox għall-istampi.", cta: "Esplora l-għodod tal-istampi", toolCount: "48 għodda" },
-    text: { name: "Għodod tat-Test", description: "Ibdel, analizza, naddaf, ikkodifika u iġġenera test minnufih.", cta: "Għodod tat-Test", toolCount: "44+ għodda" },
-    converter: { name: "Għodod ta' konverżjoni", description: "Ikkonverti unitajiet, kuluri, formati ta' data, dati u aktar.", cta: "Konvertituri", toolCount: "45 għodda" },
+    text: { name: "Għodod tat-Test", description: "Ibdel, analizza, naddaf, ikkodifika u iġġenera test minnufih.", cta: "Esplora l-għodod tat-test", toolCount: "44+ għodda" },
+    converter: { name: "Għodod ta' konverżjoni", description: "Ikkonverti unitajiet, kuluri, formati ta' data, dati u aktar.", cta: "Esplora l-konvertituri", toolCount: "45 għodda" },
+    calculator: { name: "Kalkulaturi", description: "Matematika, finanzi, saħħa u kalkoli ta' kuljum — malajr u b'xejn.", cta: "Esplora l-kalkulaturi", toolCount: "30+ għodda" },
   },
   popularTools: { sectionTitle: "Għodod Popolari", sectionSubtitle: "Mur direttament għall-għodod l-aktar użati", viewAll: "Ara kollox" },
   stats: { tools: "176+", toolsLabel: "Għodod B'Xejn", languages: "45", languagesLabel: "Lingwa", users: "100%", usersLabel: "Fil-Browser", price: "€0", priceLabel: "B'Xejn Għal Dejjem" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Lest li tibda?", subtitle: "Bla installazzjoni, bla reġistrazzjoni, bla ħlasijiet — klikk waħda biss.", button: "Ara l-Għodod Kollha" },
   common: { shareTitle: "Aqsam", shareSubtitle: "Għid lil-ħbieb tiegħek dwar ToolPop!", shareCopyLink: "Ikkopja l-link", shareCopied: "Ikkopjat!" },
-  footer: { apps: "Għodod", company: "Kumpanija", about: "Dwarna", contact: "Kuntatt", faq: "FAQ", blog: "Blog", legal: "Informazzjoni Legali", privacy: "Politika tal-Privatezza", terms: "Termini tas-Servizz", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Għodda online b'xejn għal PDF, stampi u aktar. Mingħajr reġistrazzjoni.", madeWith: "Magħmul bl-imħabba għal kulħadd" },
+  footer: { apps: "Għodod", company: "Kumpanija", about: "Dwarna", contact: "Kuntatt", faq: "FAQ", blog: "Blog", legal: "Informazzjoni Legali", privacy: "Politika tal-Privatezza", terms: "Termini tas-Servizz", copyright: "© 2026 ToolPop. Id-drittijiet kollha riżervati.", tagline: "Għodda online b'xejn għal PDF, stampi u aktar. Mingħajr reġistrazzjoni.", madeWith: "Magħmul bl-imħabba għal kulħadd" },
   search: { noResults: "L-ebda riżultati" },
-  nav: { pdf: "PDF", image: "Immaġni", text: "Test", converter: "Konvertitur" },
+  nav: { pdf: "PDF", image: "Immaġni", text: "Test", converter: "Konvertitur", calculator: "Kalkulatur" },
 };
 export default dict;

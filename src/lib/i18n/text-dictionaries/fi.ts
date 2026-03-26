@@ -220,7 +220,7 @@ const fi: TextDictionary = {
     legal: "Oikeudelliset tiedot",
     privacy: "Tietosuojakäytäntö",
     terms: "Käyttöehdot",
-    copyright: "All rights reserved.",
+    copyright: "Kaikki oikeudet pidätetään.",
     company: "Yritys",
     about: "Tietoa meistä",
     contact: "Yhteystiedot",

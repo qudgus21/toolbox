@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Alle Konverter, die Sie brauchen",
-    titleAccent: "Konverter",
+    title: "Alle Umrechnungs-Tools, die du brauchst",
+    titleAccent: "Umrechnungs",
     description:
-      "Einheiten, Farben, Datenformate, Daten und mehr — direkt im Browser umrechnen.",
+      "Einheiten, Farben, Datenformate und Daten umrechnen. Alles direkt im Browser.",
     tabAll: "Alle",
     categoryUnit: "Einheiten",
     categoryNumber: "Zahlen",
@@ -274,7 +274,7 @@ const dict: ConverterDictionary = {
     legal: "Rechtliches",
     privacy: "Datenschutzrichtlinie",
     terms: "Nutzungsbedingungen",
-    copyright: "ToolPop. All rights reserved.",
+    copyright: "ToolPop. Alle Rechte vorbehalten.",
     company: "Unternehmen",
     about: "Über uns",
     contact: "Kontakt",
@@ -411,9 +411,9 @@ const dict: ConverterDictionary = {
     decimalToPercent: "Dezimal → Prozent",
     percentToDecimal: "Prozent → Dezimal",
     fractionToPercent: "Bruch → Prozent",
-    dd: "Decimal Degrees (DD)",
-    dms: "Degrees Minutes Seconds (DMS)",
-    ddm: "Degrees Decimal Minutes (DDM)",
+    dd: "Dezimalgrad (DD)",
+    dms: "Grad Minuten Sekunden (DMS)",
+    ddm: "Grad Dezimalminuten (DDM)",
     iso: "ISO 8601",
     us: "US (MM/DD/YYYY)",
     eu: "EU (DD/MM/YYYY)",

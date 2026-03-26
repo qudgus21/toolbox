@@ -220,7 +220,7 @@ const mr: TextDictionary = {
     legal: "कायदेशीर",
     privacy: "गोपनीयता धोरण",
     terms: "सेवा अटी",
-    copyright: "All rights reserved.",
+    copyright: "सर्व हक्क राखीव.",
     company: "कंपनी",
     about: "आमच्याबद्दल",
     contact: "संपर्क",

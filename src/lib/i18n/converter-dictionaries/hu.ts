@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Minden átváltó egy helyen",
+    title: "Minden átváltó eszköz egy helyen",
     titleAccent: "átváltó",
     description:
-      "Váltson át mértékegységeket, színeket, adatformátumokat, dátumokat és még sok mást — közvetlenül a böngészőben.",
+      "Egységek, színek, adatformátumok, dátumok átváltása. Minden a böngészőben történik.",
     tabAll: "Összes",
     categoryUnit: "Mértékegységek",
     categoryNumber: "Számok",

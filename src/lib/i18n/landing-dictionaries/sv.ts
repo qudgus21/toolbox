@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "PDF-verktyg", description: "Slå ihop, dela upp, konvertera, redigera och komprimera — allt du kan göra med en PDF.", cta: "Utforska PDF-verktyg", toolCount: "39 verktyg" },
     image: { name: "Bildverktyg", description: "Ändra storlek, beskär, konvertera, lägg till effekter, skapa QR-koder — allt för bilder.", cta: "Utforska bildverktyg", toolCount: "48 verktyg" },
-    text: { name: "Textverktyg", description: "Omvandla, analysera, rensa, koda och generera text direkt.", cta: "Textverktyg", toolCount: "44+ verktyg" },
-    converter: { name: "Konverteringsverktyg", description: "Konvertera enheter, färger, dataformat, datum och mycket mer.", cta: "Konverterare", toolCount: "45 verktyg" },
+    text: { name: "Textverktyg", description: "Omvandla, analysera, rensa, koda och generera text direkt.", cta: "Utforska textverktyg", toolCount: "44+ verktyg" },
+    converter: { name: "Konverteringsverktyg", description: "Konvertera enheter, färger, dataformat, datum och mycket mer.", cta: "Utforska konverterare", toolCount: "45 verktyg" },
+    calculator: { name: "Kalkylatorer", description: "Matematik, ekonomi, hälsa och vardagsberäkningar — snabbt och gratis.", cta: "Utforska kalkylatorer", toolCount: "30+ verktyg" },
   },
   popularTools: { sectionTitle: "Populära verktyg", sectionSubtitle: "Hoppa direkt in i de mest använda verktygen", viewAll: "Visa alla" },
   stats: { tools: "176+", toolsLabel: "Gratisverktyg", languages: "45", languagesLabel: "Språk", users: "100%", usersLabel: "I webbläsaren", price: "0 kr", priceLabel: "Gratis för alltid" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Redo att börja?", subtitle: "Ingen installation, ingen registrering, ingen betalning — bara ett klick bort.", button: "Se alla verktyg" },
   common: { shareTitle: "Dela", shareSubtitle: "Tipsa dina vänner om ToolPop!", shareCopyLink: "Kopiera länk", shareCopied: "Kopierad!" },
-  footer: { apps: "Verktyg", company: "Företag", about: "Om oss", contact: "Kontakt", faq: "Vanliga frågor", blog: "Blogg", legal: "Juridiskt", privacy: "Integritetspolicy", terms: "Användarvillkor", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Gratis onlineverktyg för PDF, bilder och mer. Ingen registrering krävs.", madeWith: "Skapat med kärlek för alla" },
+  footer: { apps: "Verktyg", company: "Företag", about: "Om oss", contact: "Kontakt", faq: "Vanliga frågor", blog: "Blogg", legal: "Juridiskt", privacy: "Integritetspolicy", terms: "Användarvillkor", copyright: "© 2026 ToolPop. Alla rättigheter förbehållna.", tagline: "Gratis onlineverktyg för PDF, bilder och mer. Ingen registrering krävs.", madeWith: "Skapat med kärlek för alla" },
   search: { noResults: "Inga resultat hittades" },
-  nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Konverterare" },
+  nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Konverterare", calculator: "Kalkylator" },
 };
 export default dict;

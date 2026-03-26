@@ -33,15 +33,22 @@ const dict: LandingDictionary = {
       name: "Outils texte",
       description:
         "Transformez, analysez, nettoyez, encodez et générez du texte en un instant.",
-      cta: "Outils texte",
+      cta: "Découvrir les outils texte",
       toolCount: "44+ outils",
     },
     converter: {
       name: "Outils de conversion",
       description:
         "Convertissez unités, couleurs, formats de données, dates et plus encore.",
-      cta: "Convertisseurs",
+      cta: "Découvrir les convertisseurs",
       toolCount: "45 outils",
+    },
+    calculator: {
+      name: "Calculatrices",
+      description:
+        "Maths, finances, santé et calculs du quotidien — rapides et gratuits.",
+      cta: "Découvrir les calculatrices",
+      toolCount: "30+ outils",
     },
   },
   popularTools: {
@@ -92,7 +99,7 @@ const dict: LandingDictionary = {
     legal: "Mentions légales",
     privacy: "Politique de confidentialité",
     terms: "Conditions d'utilisation",
-    copyright: "© 2026 ToolPop. All rights reserved.",
+    copyright: "© 2026 ToolPop. Tous droits réservés.",
     tagline: "Outils en ligne gratuits pour PDF, images et plus. Sans inscription.",
     madeWith: "Fait avec amour pour tous",
   },
@@ -104,6 +111,7 @@ const dict: LandingDictionary = {
     image: "Image",
     text: "Texte",
     converter: "Convertisseur",
+    calculator: "Calculatrice",
   },
 };
 

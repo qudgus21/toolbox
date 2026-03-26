@@ -219,7 +219,7 @@ const ko: TextDictionary = {
     legal: "법적 고지",
     privacy: "개인정보 처리방침",
     terms: "이용약관",
-    copyright: "All rights reserved.",
+    copyright: "모든 권리 보유.",
     company: "회사",
     about: "소개",
     contact: "문의",

@@ -220,7 +220,7 @@ const no: TextDictionary = {
     legal: "Juridisk",
     privacy: "Personvernpolicy",
     terms: "Tjenestevilkår",
-    copyright: "All rights reserved.",
+    copyright: "Alle rettigheter forbeholdt.",
     company: "Selskap",
     about: "Om oss",
     contact: "Kontakt",

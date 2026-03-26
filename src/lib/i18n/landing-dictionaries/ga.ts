@@ -15,8 +15,9 @@ const dict: LandingDictionary = {
   apps: {
     pdf: { name: "Uirlisí PDF", description: "Cumaisc, roinn, tiontaigh, cuir in eagar agus comhbhrúigh — gach rud is féidir le PDF.", cta: "Féach ar uirlisí PDF", toolCount: "39 uirlis" },
     image: { name: "Uirlisí Íomhá", description: "Athraigh méid, bearr, tiontaigh, cuir éifeachtaí i bhfeidhm, cruthaigh cóid QR — gach rud d'íomhánna.", cta: "Féach ar uirlisí íomhá", toolCount: "48 uirlis" },
-    text: { name: "Uirlisí Téacs", description: "Athraigh, déan anailís, glan, ionchódaigh agus gin téacs láithreach.", cta: "Uirlisí Téacs", toolCount: "44+ uirlis" },
-    converter: { name: "Uirlisí tiontaithe", description: "Tiontaigh aonaid, dathanna, formáidí sonraí, dátaí agus go leor eile.", cta: "Tiontairí", toolCount: "45 uirlis" },
+    text: { name: "Uirlisí Téacs", description: "Athraigh, déan anailís, glan, ionchódaigh agus gin téacs láithreach.", cta: "Féach ar uirlisí téacs", toolCount: "44+ uirlis" },
+    converter: { name: "Uirlisí tiontaithe", description: "Tiontaigh aonaid, dathanna, formáidí sonraí, dátaí agus go leor eile.", cta: "Féach ar thiontairí", toolCount: "45 uirlis" },
+    calculator: { name: "Áireamháin", description: "Matamaitic, airgeadas, sláinte agus ríomhanna laethúla — go tapa agus saor in aisce.", cta: "Féach ar áireamháin", toolCount: "30+ uirlis" },
   },
   popularTools: { sectionTitle: "Uirlisí Coitianta", sectionSubtitle: "Téigh díreach chuig na huirlisí is mó úsáid", viewAll: "Féach ar fad" },
   stats: { tools: "176+", toolsLabel: "Uirlisí Saor in Aisce", languages: "45", languagesLabel: "Teanga", users: "100%", usersLabel: "Sa Bhrabhsálaí", price: "€0", priceLabel: "Saor in Aisce Go Deo" },
@@ -34,8 +35,8 @@ const dict: LandingDictionary = {
   },
   cta: { title: "Réidh le tosú?", subtitle: "Gan suiteáil, gan clárú, gan íocaíocht — cliceáil amháin uait.", button: "Brabhsáil Gach Uirlis" },
   common: { shareTitle: "Roinn", shareSubtitle: "Inis do do chairde faoi ToolPop!", shareCopyLink: "Cóipeáil nasc", shareCopied: "Cóipeáilte!" },
-  footer: { apps: "Uirlisí", company: "Cuideachta", about: "Fúinn", contact: "Teagmháil", faq: "Ceisteanna Coitianta", blog: "Blag", legal: "Eolas Dlíthiúil", privacy: "Polasaí Príobháideachais", terms: "Téarmaí Seirbhíse", copyright: "© 2026 ToolPop. All rights reserved.", tagline: "Uirlisí ar líne saor in aisce do PDF, íomhánna agus tuilleadh. Gan clárú.", madeWith: "Déanta le grá do chách" },
+  footer: { apps: "Uirlisí", company: "Cuideachta", about: "Fúinn", contact: "Teagmháil", faq: "Ceisteanna Coitianta", blog: "Blag", legal: "Eolas Dlíthiúil", privacy: "Polasaí Príobháideachais", terms: "Téarmaí Seirbhíse", copyright: "© 2026 ToolPop. Gach ceart ar cosaint.", tagline: "Uirlisí ar líne saor in aisce do PDF, íomhánna agus tuilleadh. Gan clárú.", madeWith: "Déanta le grá do chách" },
   search: { noResults: "Níor aimsíodh torthaí" },
-  nav: { pdf: "PDF", image: "Íomhá", text: "Téacs", converter: "Tiontaire" },
+  nav: { pdf: "PDF", image: "Íomhá", text: "Téacs", converter: "Tiontaire", calculator: "Áireamhán" },
 };
 export default dict;

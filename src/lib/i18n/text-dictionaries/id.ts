@@ -3,7 +3,7 @@ import type { TextDictionary } from "../text-config";
 const id: TextDictionary = {
   home: {
     title: "Semua alat teks yang kamu butuhkan",
-    titleAccent: "Teks",
+    titleAccent: "teks",
     description: "Hitung kata, ubah huruf besar/kecil, enkode, dan lainnya. Semua diproses langsung di browser.",
     tabAll: "Semua",
     categoryCount: "Analisis",

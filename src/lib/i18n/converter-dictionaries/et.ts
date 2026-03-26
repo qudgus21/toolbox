@@ -2,10 +2,10 @@ import type { ConverterDictionary } from "../converter-config";
 
 const dict: ConverterDictionary = {
   home: {
-    title: "Kõik vajalikud teisendajad ühes kohas",
-    titleAccent: "teisendajad",
+    title: "Kõik vajalikud teisendamistööriistad",
+    titleAccent: "teisendamis",
     description:
-      "Teisendage ühikuid, värve, andmevorminguid, kuupäevi ja muud — otse brauseris.",
+      "Teisenda ühikuid, värve, andmeformaate, kuupäevi ja muud. Kõik toimub otse brauseris.",
     tabAll: "Kõik",
     categoryUnit: "Ühikud",
     categoryNumber: "Arvud",

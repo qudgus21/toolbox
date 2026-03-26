@@ -108,7 +108,7 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="cursor-pointer flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
+        className="cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
       >
         <Globe className="h-3.5 w-3.5" />
         <span>{languageNames[locale] ?? locale}</span>
