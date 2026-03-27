@@ -41,6 +41,7 @@ export async function generateMetadata({
       url: `/${locale}/text`,
       type: "website",
       locale,
+      siteName: "ToolPop",
     },
     twitter: {
       card: "summary_large_image",

@@ -38,6 +38,7 @@ export async function generateMetadata({
       url: `/${locale}/pdf`,
       type: "website",
       locale,
+      siteName: "ToolPop",
     },
     twitter: {
       card: "summary_large_image",
