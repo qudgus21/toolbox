@@ -14,7 +14,7 @@ import { RelatedTools } from "./related-tools";
 import { ErrorMessage } from "./error-message";
 import { useImageDimensions } from "./use-image-dimensions";
 import { ImagePreview } from "./image-preview";
-import { sendEvent } from "@/lib/analytics";
+import { useTrack, useToolViewTracking, imageEvents } from "@/lib/analytics";
 import { GeneratePreview } from "./generate-preview";
 import { ResizeOptions, getDefaultResizeOptions } from "./resize-options";
 import type { ResizeOptionsValue } from "./resize-options";
@@ -239,6 +239,40 @@ export function ToolPageClient({
   const [patternOpts, setPatternOpts] = useState<PatternOptionsValue>(getDefaultPatternOptions());
   const [qrCodeOpts, setQrCodeOpts] = useState<QrCodeOptionsValue>(getDefaultQrCodeOptions());
 
+  // ── Analytics ──
+  const track = useTrack("image", imageEvents);
+  const maxStageRef = useRef<string>("view");
+  useToolViewTracking("image", slug, () => maxStageRef.current);
+
+  // 퍼널 단계 추적
+  const stageTrackRef = useRef(stage);
+  const processStartRef = useRef(0);
+  useEffect(() => {
+    const prev = stageTrackRef.current;
+    stageTrackRef.current = stage;
+
+    if (stage === "loaded" && prev === "idle") {
+      maxStageRef.current = "loaded";
+      const totalSizeKb = Math.round(files.reduce((s, f) => s + f.size, 0) / 1024);
+      track.fileUpload({ tool_slug: slug, file_count: files.length, total_size_kb: totalSizeKb });
+    }
+    if (stage === "processing") {
+      maxStageRef.current = "processing";
+      processStartRef.current = Date.now();
+    }
+    if (stage === "done" && prev === "processing" && result) {
+      maxStageRef.current = "done";
+      track.processComplete({
+        tool_slug: slug,
+        duration_ms: Date.now() - processStartRef.current,
+        output_size_kb: Math.round(result.size / 1024),
+      });
+    }
+    if (stage === "error" && prev === "processing") {
+      track.processError({ tool_slug: slug, error_message: error ?? "unknown" });
+    }
+  }, [stage]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Read HTML file content when uploaded for html-to-image tool
   useEffect(() => {
     if (slug !== "html-to-image" || !firstFile) return;
@@ -348,9 +382,9 @@ export function ToolPageClient({
   const previewOptions = useMemo(() => buildProcessOptions(), [buildProcessOptions]);
 
   const handleProcess = useCallback(() => {
-    sendEvent("process_click", { app: "image", tool_slug: slug, file_count: files.length });
+    track.processClick({ tool_slug: slug, file_count: files.length });
     processFiles(buildProcessOptions());
-  }, [processFiles, buildProcessOptions, slug, files.length]);
+  }, [processFiles, buildProcessOptions, slug, files.length, track]);
 
   // Auto-download when processing completes
   const prevStageRef = useRef(stage);

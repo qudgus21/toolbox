@@ -12,6 +12,8 @@ interface TextOutputAreaProps {
   copiedLabel: string;
   downloadLabel?: string;
   className?: string;
+  onCopy?: (length: number) => void;
+  onDownload?: (length: number) => void;
 }
 
 export function TextOutputArea({
@@ -21,6 +23,8 @@ export function TextOutputArea({
   copiedLabel,
   downloadLabel,
   className,
+  onCopy,
+  onDownload,
 }: TextOutputAreaProps) {
   const handleDownload = useCallback(() => {
     if (!value) return;
@@ -33,7 +37,8 @@ export function TextOutputArea({
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  }, [value]);
+    onDownload?.(value.length);
+  }, [value, onDownload]);
 
   return (
     <div
@@ -57,6 +62,7 @@ export function TextOutputArea({
                 text={value}
                 label={copyLabel}
                 copiedLabel={copiedLabel}
+                onCopied={() => onCopy?.(value.length)}
               />
               {downloadLabel && (
                 <button

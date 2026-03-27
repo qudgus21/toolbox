@@ -6,7 +6,7 @@ import { cn, formatSize } from "@/lib/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@/lib/ui";
 import { ShareToolButton } from "@/lib/ui/components/share-button";
-import { sendEvent } from "@/lib/analytics";
+import { useTrack, imageEvents } from "@/lib/analytics";
 import type { ImageProcessingResult } from "@/lib/image/types";
 import type { ImageDictionary } from "@/lib/i18n/image-config";
 
@@ -27,6 +27,7 @@ export function ResultCard({
   toolSlug,
   className,
 }: ResultCardProps) {
+  const track = useTrack("image", imageEvents);
   const [isEditing, setIsEditing] = useState(false);
   const [filename, setFilename] = useState(result.filename);
 
@@ -120,8 +121,7 @@ export function ResultCard({
           size="lg"
           onClick={() => {
             onDownload(filename);
-            sendEvent("download_click", {
-              app: "image",
+            track.downloadClick({
               tool_slug: toolSlug,
               file_size_kb: Math.round(result.size / 1024),
             });
@@ -134,7 +134,7 @@ export function ResultCard({
           variant="ghost"
           size="lg"
           onClick={() => {
-            sendEvent("reset_click", { app: "image", tool_slug: toolSlug });
+            track.resetClick({ tool_slug: toolSlug });
             onReset();
           }}
         >

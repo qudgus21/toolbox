@@ -174,48 +174,48 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
       {/* App Showcase Cards */}
       <AnimatedSection className="py-8 sm:py-12">
         <Container size="lg">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {apps.map((app) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+            {apps.map((app, index) => {
               const appDict = dict.apps[app.slug];
+              const isLastRow = index >= 3;
               return (
-                <div key={app.slug}>
-                  <Link
-                    href={`/${locale}/${app.slug}`}
-                    onClick={() => track.appCardClick({ app_slug: app.slug })}
-                    className={`group relative block overflow-hidden rounded-2xl border ${app.accentBorder} p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
-                  >
-                    {/* Gradient bg */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${app.accentFrom} ${app.accentTo} opacity-[0.04] dark:opacity-[0.08] group-hover:opacity-[0.08] dark:group-hover:opacity-[0.15] transition-opacity`} />
-                    {/* Decorative SVG */}
-                    <svg className="absolute -right-8 -bottom-8 w-40 h-40 opacity-[0.04] dark:opacity-[0.06]" viewBox="0 0 120 120" fill="none">
-                      <circle cx="60" cy="60" r="55" stroke="currentColor" strokeWidth="2" className={app.accentText} />
-                      <circle cx="60" cy="60" r="35" stroke="currentColor" strokeWidth="2" className={app.accentText} />
-                      <circle cx="60" cy="60" r="15" fill="currentColor" className={app.accentText} />
-                    </svg>
+                <Link
+                  key={app.slug}
+                  href={`/${locale}/${app.slug}`}
+                  onClick={() => track.appCardClick({ app_slug: app.slug })}
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl border ${app.accentBorder} p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 lg:col-span-2 ${isLastRow && index === 3 ? "lg:col-start-2" : ""}`}
+                >
+                  {/* Gradient bg */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${app.accentFrom} ${app.accentTo} opacity-[0.04] dark:opacity-[0.08] group-hover:opacity-[0.08] dark:group-hover:opacity-[0.15] transition-opacity`} />
+                  {/* Decorative SVG */}
+                  <svg className="absolute -right-8 -bottom-8 w-40 h-40 opacity-[0.04] dark:opacity-[0.06]" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="55" stroke="currentColor" strokeWidth="2" className={app.accentText} />
+                    <circle cx="60" cy="60" r="35" stroke="currentColor" strokeWidth="2" className={app.accentText} />
+                    <circle cx="60" cy="60" r="15" fill="currentColor" className={app.accentText} />
+                  </svg>
 
-                    <div className="relative">
-                      <div className="flex items-start justify-between mb-5">
-                        <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${app.accentFrom} ${app.accentTo} shadow-md p-2`}>
-                          {(() => { const AppIcon = appIconMap[app.slug]; return AppIcon ? <AppIcon className="h-full w-full drop-shadow-sm" /> : null; })()}
-                        </div>
-                        <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold ${app.accentText} ${app.accentBg}`}>
-                          <Sparkles className="h-3 w-3" />
-                          {appDict?.toolCount}
-                        </span>
+                  <div className="relative flex flex-col flex-1">
+                    <div className="flex items-start justify-between mb-5">
+                      <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${app.accentFrom} ${app.accentTo} shadow-md p-2`}>
+                        {(() => { const AppIcon = appIconMap[app.slug]; return AppIcon ? <AppIcon className="h-full w-full drop-shadow-sm" /> : null; })()}
                       </div>
-                      <h2 className="text-xl font-bold text-foreground mb-2">
-                        {appDict?.name ?? app.slug}
-                      </h2>
-                      <p className="text-sm text-foreground-muted mb-6 leading-relaxed">
-                        {appDict?.description}
-                      </p>
-                      <span className={`inline-flex items-center gap-2 text-sm font-semibold ${app.accentText} group-hover:gap-3 transition-all duration-300`}>
-                        {appDict?.cta}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold ${app.accentText} ${app.accentBg}`}>
+                        <Sparkles className="h-3 w-3" />
+                        {appDict?.toolCount}
                       </span>
                     </div>
-                  </Link>
-                </div>
+                    <h2 className="text-xl font-bold text-foreground mb-2">
+                      {appDict?.name ?? app.slug}
+                    </h2>
+                    <p className="text-sm text-foreground-muted mb-6 leading-relaxed flex-1">
+                      {appDict?.description}
+                    </p>
+                    <span className={`inline-flex items-center gap-2 text-sm font-semibold ${app.accentText} group-hover:gap-3 transition-all duration-300`}>
+                      {appDict?.cta}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </Link>
               );
             })}
           </div>
@@ -243,7 +243,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                     <Link
                       href={tool.href}
                       onClick={() => track.popularToolClick({ tool_slug: tool.slug, app_slug: tool.appSlug })}
-                      className="group flex flex-col gap-3 rounded-xl border border-border/60 bg-background-elevated p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:border-accent/40"
+                      className="group flex h-full flex-col gap-3 rounded-xl border border-border/60 bg-background-elevated p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:border-accent/40"
                     >
                       <div className="flex items-center gap-3">
                         {ToolIcon ? <ToolIcon className="h-7 w-7 shrink-0" /> : <span className="text-2xl">{tool.emoji}</span>}

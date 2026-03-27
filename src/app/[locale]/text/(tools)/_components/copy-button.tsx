@@ -10,9 +10,10 @@ interface CopyButtonProps {
   copiedLabel: string;
   className?: string;
   variant?: "default" | "icon";
+  onCopied?: () => void;
 }
 
-export function CopyButton({ text, label, copiedLabel, className, variant = "default" }: CopyButtonProps) {
+export function CopyButton({ text, label, copiedLabel, className, variant = "default", onCopied }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -20,6 +21,7 @@ export function CopyButton({ text, label, copiedLabel, className, variant = "def
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
+      onCopied?.();
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -33,10 +35,11 @@ export function CopyButton({ text, label, copiedLabel, className, variant = "def
       document.execCommand("copy");
       document.body.removeChild(textarea);
       setCopied(true);
+      onCopied?.();
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => setCopied(false), 2000);
     }
-  }, [text]);
+  }, [text, onCopied]);
 
   if (variant === "icon") {
     return (
