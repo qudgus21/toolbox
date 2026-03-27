@@ -25,7 +25,7 @@ export function process(
       if (keepSet.has("numbers") && /\d/.test(ch)) return true;
       if (keepSet.has("spaces") && ch === " ") return true;
       if (keepSet.has("newlines") && (ch === "\n" || ch === "\r")) return true;
-      if (keepSet.has("punctuation") && /[^\w\s]/.test(ch)) return true;
+      if (keepSet.has("punctuation") && /\p{P}/u.test(ch)) return true;
       removed++;
       return false;
     })

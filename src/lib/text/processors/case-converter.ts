@@ -16,7 +16,7 @@ export function process(
   input: string,
   options?: Record<string, unknown>
 ): TextResult {
-  const caseType = ((options?.caseType as string) || "lower") as CaseType;
+  const caseType = ((options?.caseType as string) || "upper") as CaseType;
 
   if (!input) return { output: "", stats: { caseType } };
 

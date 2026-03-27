@@ -110,7 +110,13 @@ export function process(
     const date = parseFlexibleDate(trimmed);
     if (!date) return { output: "" };
 
-    const outputFormat = (options?.outputFormat as OutputFormat) ?? "ISO";
+    const rawFormat = (options?.format as string) ?? (options?.outputFormat as string) ?? "iso";
+    // Normalize: UI sends lowercase, map accepts mixed case
+    const FORMAT_KEY_MAP: Record<string, OutputFormat> = {
+      iso: "ISO", us: "US", eu: "EU", long: "long", short: "short", relative: "relative",
+      ISO: "ISO", US: "US", EU: "EU",
+    };
+    const outputFormat = FORMAT_KEY_MAP[rawFormat] ?? "ISO";
     const formatter = FORMAT_MAP[outputFormat] ?? formatISO;
     const output = formatter(date);
 

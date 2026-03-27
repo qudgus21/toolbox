@@ -10,7 +10,6 @@ const COUNT_TOOLS = new Set([
   "character-counter",
   "text-statistics",
   "keyword-density",
-  "find-duplicates",
 ]);
 
 // Tools that don't require text input

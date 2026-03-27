@@ -2,6 +2,7 @@
 
 import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EllipsisTooltip } from "@/lib/ui";
 import type { ConverterResult, ConversionTableRow } from "@/lib/converter/types";
 import { CopyButton } from "./copy-button";
 
@@ -62,7 +63,7 @@ export function ConverterOutputArea({
       {/* Main result */}
       <div className="px-4 py-4">
         {output ? (
-          <p className="text-center text-2xl sm:text-3xl font-bold text-foreground tabular-nums tracking-tight break-all">
+          <p className="text-center text-base sm:text-lg font-bold text-foreground font-mono tracking-tight break-all">
             {output}
           </p>
         ) : (
@@ -91,22 +92,53 @@ export function ConverterOutputArea({
   );
 }
 
+// ── Helpers ──────────────────────────────────────────────────────────
+
+function extractColor(value: string): string | null {
+  const match = value.match(/#[0-9a-f]{3,8}/i);
+  return match ? match[0] : null;
+}
+
 // ── Preview Section ──────────────────────────────────────────────────
 
 function PreviewSection({ preview }: { preview: string }) {
   const isGradient = preview.includes("gradient(");
   const isColor = /^#[0-9a-f]{3,8}$/i.test(preview) || preview.startsWith("rgb") || preview.startsWith("hsl");
 
-  if (!isGradient && !isColor) return null;
+  // Palette: JSON array of hex colors, e.g. ["#ff0000","#00ffff"]
+  let palette: string[] | null = null;
+  if (preview.startsWith("[")) {
+    try {
+      const parsed = JSON.parse(preview);
+      if (Array.isArray(parsed) && parsed.every((c: unknown) => typeof c === "string")) {
+        palette = parsed;
+      }
+    } catch { /* not JSON */ }
+  }
+
+  if (!isGradient && !isColor && !palette) return null;
+
+  if (palette) {
+    return (
+      <div className="px-4 pb-3">
+        <div className="flex h-16 w-full overflow-hidden rounded-xl border border-border/40 shadow-inner">
+          {palette.map((color, i) => (
+            <div
+              key={i}
+              className="flex-1 transition-all duration-300"
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="px-4 pb-3">
       <div
         className="h-16 w-full rounded-xl border border-border/40 shadow-inner transition-all duration-300"
-        style={{
-          background: isGradient ? preview : undefined,
-          backgroundColor: isColor ? preview : undefined,
-        }}
+        style={{ background: isGradient ? preview : preview }}
       />
     </div>
   );
@@ -145,16 +177,27 @@ function ConversionTable({
               "hover:bg-emerald-500/[0.06]",
             )}
           >
-            <div className="flex flex-col min-w-0">
-              <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
-                {row.label}
-              </span>
-              <span className="font-mono text-sm font-semibold text-foreground truncate">
-                {row.value}
-                {row.unit && (
-                  <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
-                )}
-              </span>
+            <div className="flex items-center gap-2 min-w-0">
+              {extractColor(row.value) && (
+                <span
+                  className="h-5 w-5 shrink-0 rounded-md border border-border/40 shadow-inner"
+                  style={{ backgroundColor: extractColor(row.value)! }}
+                />
+              )}
+              <div className="flex flex-col min-w-0">
+                <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
+                  {row.label}
+                </span>
+                <EllipsisTooltip
+                  text={row.unit ? `${row.value} ${row.unit}` : row.value}
+                  className="font-mono text-sm font-semibold text-foreground truncate"
+                >
+                  {row.value}
+                  {row.unit && (
+                    <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
+                  )}
+                </EllipsisTooltip>
+              </div>
             </div>
             {!isPreview && (
               <div className="opacity-0 group-hover/row:opacity-100 transition-opacity duration-150 shrink-0">
@@ -172,3 +215,5 @@ function ConversionTable({
     </div>
   );
 }
+
+

@@ -3,6 +3,7 @@
 import { useCallback, useRef, Fragment } from "react";
 import { X, Calculator, FunctionSquare, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Dropdown } from "@/lib/ui";
 import type { CalculatorFieldDefinition, CalculatorInputType } from "@/lib/calculator/tools";
 
 interface CalculatorInputAreaProps {
@@ -230,21 +231,20 @@ function FieldRenderer({
   }
 
   if (field.type === "select") {
+    const selectOptions = (field.options ?? []).map((opt) => ({
+      value: opt.value,
+      label: fieldOptions[`${field.name}_${opt.value}`] ?? opt.label,
+    }));
     return (
-      <label className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-1.5">
         <span className="text-xs font-semibold text-foreground-muted px-0.5">{label}</span>
-        <select
+        <Dropdown
           value={String(value ?? field.default ?? field.options?.[0]?.value ?? "")}
-          onChange={(e) => onChange(field.name, e.target.value)}
-          className="h-11 w-full rounded-xl border border-border/60 bg-background-subtle/30 px-3 text-sm font-semibold text-foreground focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/10 transition-all cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%236b7280%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.168l3.71-3.938a.75.75%200%20111.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[position:right_0.5rem_center] bg-no-repeat pr-8"
-        >
-          {field.options?.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {fieldOptions[`${field.name}_${opt.value}`] ?? opt.label}
-            </option>
-          ))}
-        </select>
-      </label>
+          onChange={(v) => onChange(field.name, v)}
+          options={selectOptions}
+          accentColor="violet"
+        />
+      </div>
     );
   }
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Sparkles, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EllipsisTooltip } from "@/lib/ui";
 import type { CalculatorResult, CalculatorTableRow, CalculatorBreakdownRow } from "@/lib/calculator/types";
 import { CopyButton } from "./copy-button";
 
@@ -239,12 +240,15 @@ function ResultTable({
               <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
                 {row.label}
               </span>
-              <span className="font-mono text-sm font-semibold text-foreground truncate">
+              <EllipsisTooltip
+                text={row.unit ? `${row.value} ${row.unit}` : row.value}
+                className="font-mono text-sm font-semibold text-foreground truncate"
+              >
                 {row.value}
                 {row.unit && (
                   <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
                 )}
-              </span>
+              </EllipsisTooltip>
             </div>
             {!isPreview && (
               <div className="opacity-0 group-hover/row:opacity-100 transition-opacity duration-150 shrink-0">

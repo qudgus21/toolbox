@@ -7,7 +7,7 @@ export function process(
   const find = (options?.find as string) || "";
   const replace = (options?.replace as string) ?? "";
   const useRegex = (options?.useRegex as boolean) ?? false;
-  const caseSensitive = (options?.caseSensitive as boolean) ?? true;
+  const caseSensitive = (options?.caseSensitive as boolean) ?? false;
   const replaceAll = (options?.replaceAll as boolean) ?? true;
 
   if (!input || !find) {

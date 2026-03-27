@@ -35,7 +35,6 @@ const STATS_TOOLS = new Set([
   "character-counter",
   "text-statistics",
   "keyword-density",
-  "find-duplicates",
 ]);
 
 // Generate tools that use a "Generate" button to trigger (not real-time)
@@ -137,7 +136,7 @@ export function TextToolPageClient({
           <button
             type="button"
             onClick={handleGenerate}
-            className="group cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-r from-accent to-accent-hover px-10 py-3.5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            className="group cursor-pointer overflow-hidden rounded-2xl bg-accent hover:brightness-110 px-10 py-3.5 text-base font-bold text-accent-foreground shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
             <span className="flex items-center justify-center gap-2">
               {labels.process}
