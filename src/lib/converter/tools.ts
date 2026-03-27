@@ -63,6 +63,7 @@ export type ConverterCategory =
 export type ConverterInputType =
   | "unit"
   | "color"
+  | "dualColor"
   | "code"
   | "datetime"
   | "text";
@@ -76,6 +77,7 @@ export interface ConverterToolDefinition {
   category: ConverterCategory;
   inputType: ConverterInputType;
   dualInput?: boolean;
+  placeholder?: string;
 }
 
 export const tools: ConverterToolDefinition[] = [
@@ -216,6 +218,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "🔢",
     category: "number",
     inputType: "text",
+    placeholder: "255",
   },
   {
     slug: "roman-numeral",
@@ -225,6 +228,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "🏛️",
     category: "number",
     inputType: "text",
+    placeholder: "42 or XIV",
   },
   {
     slug: "scientific-notation",
@@ -234,6 +238,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "🔬",
     category: "number",
     inputType: "text",
+    placeholder: "1500000 or 1.5e6",
   },
   {
     slug: "fraction-decimal",
@@ -243,6 +248,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "➗",
     category: "number",
     inputType: "text",
+    placeholder: "3/4 or 0.75",
   },
   {
     slug: "percentage",
@@ -252,6 +258,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "%",
     category: "number",
     inputType: "text",
+    placeholder: "0.75 or 3/4",
   },
 
   // ── Color ────────────────────────────────────────────
@@ -280,7 +287,7 @@ export const tools: ConverterToolDefinition[] = [
     icon: Blend,
     emoji: "🌈",
     category: "color",
-    inputType: "color",
+    inputType: "dualColor",
   },
   {
     slug: "color-contrast-checker",
@@ -289,7 +296,7 @@ export const tools: ConverterToolDefinition[] = [
     icon: ScanEye,
     emoji: "👁️",
     category: "color",
-    inputType: "color",
+    inputType: "dualColor",
   },
   {
     slug: "color-blindness-simulator",
@@ -319,6 +326,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "🕐",
     category: "datetime",
     inputType: "text",
+    placeholder: "1705312200 or 2024-01-15",
   },
   {
     slug: "date-format",
@@ -328,6 +336,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "📅",
     category: "datetime",
     inputType: "text",
+    placeholder: "2024-01-15 or 01/15/2024",
   },
   {
     slug: "date-calculator",
@@ -496,6 +505,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "👨‍🍳",
     category: "cooking",
     inputType: "text",
+    placeholder: "2 cups flour\n1/2 tsp salt\n200g sugar",
   },
   {
     slug: "oven-temperature",
@@ -516,6 +526,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "📍",
     category: "geography",
     inputType: "text",
+    placeholder: "37.5665, 126.9780",
   },
   {
     slug: "distance-calculator",
@@ -525,6 +536,7 @@ export const tools: ConverterToolDefinition[] = [
     emoji: "🧭",
     category: "geography",
     inputType: "text",
+    placeholder: "37.5665, 126.9780\n35.6762, 139.6503",
   },
 ];
 

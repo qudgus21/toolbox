@@ -117,17 +117,24 @@ export function process(
   if (!trimmed) return { output: "" };
 
   try {
-    const operation = (options?.operation as string) ?? "difference";
-    const amount = parseInt(String(options?.amount ?? "0"), 10);
+    const rawMode = (options?.mode as string) ?? (options?.operation as string) ?? "diff";
+    const operation = rawMode === "diff" ? "difference" : rawMode;
+    const amount = parseInt(String(options?.amount ?? "1"), 10);
     const unit = (options?.unit as string) ?? "days";
 
     if (operation === "difference") {
-      const dates = parseTwoDates(trimmed);
+      // Check if endDate is provided via options
+      const endDateStr = (options?.endDate as string)?.trim();
+      const endDateFromOpts = endDateStr ? parseDate(endDateStr) : null;
+
+      const dates = endDateFromOpts
+        ? (() => { const d1 = parseDate(trimmed); return d1 ? [d1, endDateFromOpts] as [Date, Date] : null; })()
+        : parseTwoDates(trimmed);
       if (!dates) {
         // Try single date — diff from today
         const date = parseDate(trimmed);
         if (!date) return { output: "" };
-        const diff = diffDates(date, new Date());
+        const diff = diffDates(date, endDateFromOpts ?? new Date());
         return {
           output: `${diff.totalDays} days`,
           table: [

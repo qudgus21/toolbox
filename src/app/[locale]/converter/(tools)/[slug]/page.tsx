@@ -106,6 +106,7 @@ export default async function ToolPage({
         unitLabels={dict.unitLabels}
         inputType={tool.inputType}
         dualInput={tool.dualInput}
+        toolPlaceholder={tool.placeholder}
       />
     </>
   );
