@@ -25,6 +25,10 @@ export const imageEvents = {
   },
 
   // ── 도구 페이지 (퍼널) ──
+  toolView: {
+    name: "tool_view",
+    params: {} as { tool_slug: string },
+  },
   fileUpload: {
     name: "file_upload",
     params: {} as { tool_slug: string; file_count: number; total_size_kb: number },
@@ -48,5 +52,9 @@ export const imageEvents = {
   resetClick: {
     name: "reset_click",
     params: {} as { tool_slug: string },
+  },
+  toolDwell: {
+    name: "tool_dwell",
+    params: {} as { tool_slug: string; duration_sec: number; max_stage: string },
   },
 } as const satisfies EventMap;

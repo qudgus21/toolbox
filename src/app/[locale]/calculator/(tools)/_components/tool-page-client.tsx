@@ -4,8 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ToolPageLayout } from "@/lib/ui";
-import { sendEvent } from "@/lib/analytics";
-import { addRecentTool } from "@/lib/storage";
+import { useTrack, useToolViewTracking, calculatorEvents } from "@/lib/analytics";
 import type { CalculatorDictionary } from "@/lib/i18n/calculator-config";
 import type { CalculatorInputType, CalculatorFieldDefinition } from "@/lib/calculator/tools";
 import { useCalculatorResult } from "@/lib/calculator/use-calculator-processor";
@@ -131,33 +130,30 @@ export function CalculatorToolPageClient({
     fetchIp();
   }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Track tool usage
-  const trackedRef = useRef(false);
-  useEffect(() => {
-    if (!trackedRef.current) {
-      trackedRef.current = true;
-      addRecentTool(slug);
-      sendEvent("tool_view", { app: "calculator", tool_slug: slug });
-    }
-  }, [slug]);
+  // ── Analytics ──
+  const track = useTrack("calculator", calculatorEvents);
+  const maxStageRef = useRef<string>("view");
+  useToolViewTracking("calculator", slug, () => maxStageRef.current);
 
   // Track first input
   const inputTrackedRef = useRef(false);
   useEffect(() => {
     if (hasUserInput && !inputTrackedRef.current) {
       inputTrackedRef.current = true;
-      sendEvent("calculatorInput", { app: "calculator", tool_slug: slug });
+      maxStageRef.current = "input";
+      track.toolInput({ tool_slug: slug });
     }
-  }, [hasUserInput, slug]);
+  }, [hasUserInput, slug, track]);
 
-  // Track result
+  // Track first result
   const resultTrackedRef = useRef(false);
   useEffect(() => {
     if (result?.output && !resultTrackedRef.current) {
       resultTrackedRef.current = true;
-      sendEvent("calculatorResult", { app: "calculator", tool_slug: slug });
+      maxStageRef.current = "result";
+      track.toolResult({ tool_slug: slug });
     }
-  }, [result, slug]);
+  }, [result, slug, track]);
 
   const handleValuesChange = useCallback(
     (newValues: Record<string, unknown>) => {
@@ -165,6 +161,11 @@ export function CalculatorToolPageClient({
     },
     [],
   );
+
+  const handleCopy = useCallback(() => {
+    maxStageRef.current = "copy";
+    track.toolCopy({ tool_slug: slug, output_length: result?.output?.length ?? 0 });
+  }, [slug, result, track]);
 
   return (
     <ToolPageLayout
@@ -205,7 +206,7 @@ export function CalculatorToolPageClient({
             breakdownLabel={labels.breakdown}
             allResultsLabel={labels.allResults}
             statsLabels={statsLabels}
-            onCopy={() => sendEvent("calculatorCopy", { app: "calculator", tool_slug: slug, output_length: result?.output?.length ?? 0 })}
+            onCopy={handleCopy}
           />
         </div>
       </div>

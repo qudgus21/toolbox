@@ -24,17 +24,25 @@ export const textEvents = {
     params: {} as { tool_slug: string; action: "add" | "remove" },
   },
 
-  // ── 도구 페이지 (텍스트 전용) ──
-  textInput: {
-    name: "text_input",
+  // ── 도구 페이지 (퍼널) ──
+  toolView: {
+    name: "tool_view",
+    params: {} as { tool_slug: string },
+  },
+  toolInput: {
+    name: "tool_input",
     params: {} as { tool_slug: string; char_count: number },
   },
-  textCopy: {
-    name: "text_copy",
+  toolGenerate: {
+    name: "tool_generate",
+    params: {} as { tool_slug: string },
+  },
+  toolCopy: {
+    name: "tool_copy",
     params: {} as { tool_slug: string; output_length: number },
   },
-  textDownload: {
-    name: "text_download",
+  toolDownload: {
+    name: "tool_download",
     params: {} as { tool_slug: string; output_length: number },
   },
   processError: {
@@ -44,5 +52,9 @@ export const textEvents = {
   resetClick: {
     name: "reset_click",
     params: {} as { tool_slug: string },
+  },
+  toolDwell: {
+    name: "tool_dwell",
+    params: {} as { tool_slug: string; duration_sec: number; max_stage: string },
   },
 } as const satisfies EventMap;

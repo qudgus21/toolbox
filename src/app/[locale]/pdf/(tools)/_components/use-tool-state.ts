@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { hasProcessor } from "@/lib/pdf/processor-registry";
-import { addRecentTool, toggleFavorite, isFavorite } from "@/lib/storage";
+import { toggleFavorite, isFavorite } from "@/lib/storage";
 import { usePdfMetadata } from "./use-pdf-metadata";
 import { fileId } from "./file-list";
 import { MARGIN_VALUES } from "./resize-options";
@@ -410,7 +410,6 @@ export function useToolState({
     if (isSplit && splitValidateRef.current && !splitValidateRef.current()) {
       return null;
     }
-    addRecentTool(slug);
 
     if (isSplit) {
       return splitOptions;

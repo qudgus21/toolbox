@@ -4,8 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ToolPageLayout } from "@/lib/ui";
-import { sendEvent } from "@/lib/analytics";
-import { addRecentTool } from "@/lib/storage";
+import { useTrack, useToolViewTracking, textEvents } from "@/lib/analytics";
 import type { TextDictionary } from "@/lib/i18n/text-config";
 import { useTextResult, isCountTool, isNoInputTool } from "@/lib/text/use-text-processor";
 import { TextInputArea } from "./text-input-area";
@@ -76,29 +75,26 @@ export function TextToolPageClient({
 
   const result = useTextResult(slug, input, input2, effectiveOptions);
 
-  // Track tool usage
-  const trackedRef = useRef(false);
-  useEffect(() => {
-    if (!trackedRef.current) {
-      trackedRef.current = true;
-      addRecentTool(slug);
-      sendEvent("tool_view", { app: "text", tool_slug: slug });
-    }
-  }, [slug]);
+  // ── Analytics ──
+  const track = useTrack("text", textEvents);
+  const maxStageRef = useRef<string>("view");
+  useToolViewTracking("text", slug, () => maxStageRef.current);
 
   // Track first input
   const inputTrackedRef = useRef(false);
   useEffect(() => {
     if (input && !inputTrackedRef.current) {
       inputTrackedRef.current = true;
-      sendEvent("tool_input", { app: "text", tool_slug: slug });
+      maxStageRef.current = "input";
+      track.toolInput({ tool_slug: slug, char_count: input.length });
     }
-  }, [input, slug]);
+  }, [input, slug, track]);
 
   const handleGenerate = useCallback(() => {
     setGenerateTrigger((n) => n + 1);
-    sendEvent("tool_generate", { app: "text", tool_slug: slug });
-  }, [slug]);
+    maxStageRef.current = "generate";
+    track.toolGenerate({ tool_slug: slug });
+  }, [slug, track]);
 
   // Auto-generate once on mount for generate-button tools
   const autoGenRef = useRef(false);
@@ -108,6 +104,16 @@ export function TextToolPageClient({
       setGenerateTrigger(1);
     }
   }, [isGenerateButton]);
+
+  const handleCopy = useCallback((length: number) => {
+    maxStageRef.current = "copy";
+    track.toolCopy({ tool_slug: slug, output_length: length });
+  }, [slug, track]);
+
+  const handleDownload = useCallback((length: number) => {
+    maxStageRef.current = "download";
+    track.toolDownload({ tool_slug: slug, output_length: length });
+  }, [slug, track]);
 
   const inputLabels = {
     clear: labels.clear,
@@ -198,6 +204,8 @@ export function TextToolPageClient({
               copyLabel={labels.copyToClipboard}
               copiedLabel={labels.copied}
               downloadLabel={labels.downloadAsFile}
+              onCopy={handleCopy}
+              onDownload={handleDownload}
             />
           )}
         </div>
