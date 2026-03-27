@@ -20,7 +20,7 @@ import { PageSelectorModal } from "./page-selector-modal";
 import { fileId } from "./file-list";
 import { useToolState } from "./use-tool-state";
 import { ToolLoadedContent } from "./tool-loaded-content";
-import { sendEvent } from "@/lib/analytics";
+import { useTrack, useToolViewTracking, pdfEvents } from "@/lib/analytics";
 
 import type { ToolPageClientProps } from "./tool-page-types";
 
@@ -97,6 +97,40 @@ export function ToolPageClient({
   const { pageCounts, totalPages, encryptedFiles } = usePdfPageCounts(files);
   const [pageSelectorFile, setPageSelectorFile] = useState<File | null>(null);
   const favToastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // ── Analytics ──
+  const track = useTrack("pdf", pdfEvents);
+  const maxStageRef = useRef<string>("view");
+  useToolViewTracking("pdf", slug, () => maxStageRef.current);
+
+  // 퍼널 단계 추적
+  const prevStageRef = useRef(stage);
+  const processStartRef = useRef(0);
+  useEffect(() => {
+    const prev = prevStageRef.current;
+    prevStageRef.current = stage;
+
+    if (stage === "loaded" && prev === "idle") {
+      maxStageRef.current = "loaded";
+      const totalSizeKb = Math.round(files.reduce((s, f) => s + f.size, 0) / 1024);
+      track.fileUpload({ tool_slug: slug, file_count: files.length, total_size_kb: totalSizeKb });
+    }
+    if (stage === "processing") {
+      maxStageRef.current = "processing";
+      processStartRef.current = Date.now();
+    }
+    if (stage === "done" && prev === "processing" && result) {
+      maxStageRef.current = "done";
+      track.processComplete({
+        tool_slug: slug,
+        duration_ms: Date.now() - processStartRef.current,
+        output_size_kb: Math.round(result.size / 1024),
+      });
+    }
+    if (stage === "error" && prev === "processing") {
+      track.processError({ tool_slug: slug, error_message: error ?? "unknown" });
+    }
+  }, [stage]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     return () => {
@@ -329,7 +363,7 @@ export function ToolPageClient({
               onClick={() => {
                 const options = buildProcessOptions();
                 if (options !== null) {
-                  sendEvent("process_click", { app: "pdf", tool_slug: slug, file_count: files.length });
+                  track.processClick({ tool_slug: slug, file_count: files.length });
                   processFiles(options);
                 }
               }}

@@ -24,25 +24,33 @@ export const calculatorEvents = {
     params: {} as { tool_slug: string; action: "add" | "remove" },
   },
 
-  // ── 도구 페이지 (계산기 전용) ──
-  calculatorInput: {
-    name: "calculator_input",
+  // ── 도구 페이지 (퍼널) ──
+  toolView: {
+    name: "tool_view",
     params: {} as { tool_slug: string },
   },
-  calculatorResult: {
-    name: "calculator_result",
+  toolInput: {
+    name: "tool_input",
     params: {} as { tool_slug: string },
   },
-  calculatorCopy: {
-    name: "calculator_copy",
+  toolResult: {
+    name: "tool_result",
+    params: {} as { tool_slug: string },
+  },
+  toolCopy: {
+    name: "tool_copy",
     params: {} as { tool_slug: string; output_length: number },
   },
-  calculatorError: {
-    name: "calculator_error",
+  processError: {
+    name: "process_error",
     params: {} as { tool_slug: string; error_message: string },
   },
   resetClick: {
     name: "reset_click",
     params: {} as { tool_slug: string },
+  },
+  toolDwell: {
+    name: "tool_dwell",
+    params: {} as { tool_slug: string; duration_sec: number; max_stage: string },
   },
 } as const satisfies EventMap;

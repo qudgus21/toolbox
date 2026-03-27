@@ -6,7 +6,7 @@ import { cn, formatSize } from "@/lib/utils";
 import { CheckCircle, Download, RotateCcw, Pencil } from "lucide-react";
 import { Button } from "@/lib/ui";
 import { ShareToolButton } from "@/lib/ui/components/share-button";
-import { sendEvent } from "@/lib/analytics";
+import { useTrack, pdfEvents } from "@/lib/analytics";
 import type { ProcessingResult } from "@/lib/pdf/types";
 
 interface ResultCardProps {
@@ -40,6 +40,7 @@ export function ResultCard({
   className,
   toolSlug,
 }: ResultCardProps) {
+  const track = useTrack("pdf", pdfEvents);
   const [isEditing, setIsEditing] = useState(false);
   const [filename, setFilename] = useState(result.filename);
 
@@ -115,11 +116,11 @@ export function ResultCard({
       </p>
 
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <Button variant="accent" size="lg" onClick={() => { onDownload(filename); sendEvent("download_click", { app: "pdf", tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) }); }}>
+        <Button variant="accent" size="lg" onClick={() => { onDownload(filename); track.downloadClick({ tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) }); }}>
           <Download className="mr-2 h-4 w-4" />
           {downloadLabel}
         </Button>
-        <Button variant="ghost" size="lg" onClick={() => { sendEvent("reset_click", { app: "pdf", tool_slug: toolSlug }); onReset(); }}>
+        <Button variant="ghost" size="lg" onClick={() => { track.resetClick({ tool_slug: toolSlug }); onReset(); }}>
           <RotateCcw className="mr-2 h-4 w-4" />
           {resetLabel}
         </Button>

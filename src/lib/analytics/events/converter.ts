@@ -24,25 +24,37 @@ export const converterEvents = {
     params: {} as { tool_slug: string; action: "add" | "remove" },
   },
 
-  // ── 도구 페이지 (변환기 전용) ──
-  converterInput: {
-    name: "converter_input",
-    params: {} as { tool_slug: string; from_unit?: string; to_unit?: string },
-  },
-  converterResult: {
-    name: "converter_result",
+  // ── 도구 페이지 (퍼널) ──
+  toolView: {
+    name: "tool_view",
     params: {} as { tool_slug: string },
   },
-  converterCopy: {
-    name: "converter_copy",
+  toolInput: {
+    name: "tool_input",
+    params: {} as { tool_slug: string; from_unit?: string; to_unit?: string },
+  },
+  toolResult: {
+    name: "tool_result",
+    params: {} as { tool_slug: string },
+  },
+  toolCopy: {
+    name: "tool_copy",
     params: {} as { tool_slug: string; output_length: number },
   },
-  converterError: {
-    name: "converter_error",
+  toolSwap: {
+    name: "tool_swap",
+    params: {} as { tool_slug: string },
+  },
+  processError: {
+    name: "process_error",
     params: {} as { tool_slug: string; error_message: string },
   },
   resetClick: {
     name: "reset_click",
     params: {} as { tool_slug: string },
+  },
+  toolDwell: {
+    name: "tool_dwell",
+    params: {} as { tool_slug: string; duration_sec: number; max_stage: string },
   },
 } as const satisfies EventMap;
