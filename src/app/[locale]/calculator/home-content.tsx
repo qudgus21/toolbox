@@ -16,17 +16,6 @@ const FavoritesDnd = lazy(() => import("./favorites-dnd").then(m => ({ default: 
 
 type CategoryFilter = "all" | "math" | "statistics" | "trigonometry" | "financial" | "health" | "everyday" | "education" | "developer";
 
-const categoryTabColors: Record<Exclude<CategoryFilter, "all">, { icon: string }> = {
-  math:         { icon: "text-violet-500" },
-  statistics:   { icon: "text-purple-500" },
-  trigonometry: { icon: "text-fuchsia-500" },
-  financial:    { icon: "text-yellow-500" },
-  health:       { icon: "text-rose-500" },
-  everyday:     { icon: "text-orange-500" },
-  education:    { icon: "text-indigo-500" },
-  developer:    { icon: "text-slate-500" },
-};
-
 const categoryLabelKeys: Record<string, keyof CalculatorDictionary["home"]> = {
   math: "categoryMath",
   statistics: "categoryStatistics",
@@ -123,8 +112,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         );
       });
     }
-    // comingSoon tools go to the end
-    return [...result].sort((a, b) => ((a as any).comingSoon ? 1 : 0) - ((b as any).comingSoon ? 1 : 0));
+    return result;
   }, [activeTab, search, dict.tools]);
 
   const favTools = useMemo(
