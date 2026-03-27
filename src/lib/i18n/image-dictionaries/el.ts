@@ -139,6 +139,8 @@ const el: ImageDictionary = {
     shareCopied: "Αντιγράφηκε!",
     shareCopyLink: "Αντιγραφή συνδέσμου",
     unknownError: "Παρουσιάστηκε άγνωστο σφάλμα",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

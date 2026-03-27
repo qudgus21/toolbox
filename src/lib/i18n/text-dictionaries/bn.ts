@@ -349,6 +349,7 @@ const bn: TextDictionary = {
     suffixPlaceholder: "প্রত্যয়...",
   },
   statsLabels: {
+    emptyState: "পরিসংখ্যান দেখতে পাঠ্য লিখুন",
     characters: "অক্ষর",
     charactersWithoutSpaces: "স্পেস ছাড়া",
     words: "শব্দ",

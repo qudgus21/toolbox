@@ -349,6 +349,7 @@ const pa: TextDictionary = {
     suffixPlaceholder: "ਪਿਛੇਤਰ...",
   },
   statsLabels: {
+    emptyState: "ਅੰਕੜੇ ਵੇਖਣ ਲਈ ਟੈਕਸਟ ਦਾਖਲ ਕਰੋ",
     characters: "ਅੱਖਰ",
     charactersWithoutSpaces: "ਸਪੇਸ ਤੋਂ ਬਿਨਾਂ",
     words: "ਸ਼ਬਦ",

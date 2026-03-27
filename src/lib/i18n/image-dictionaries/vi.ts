@@ -307,6 +307,8 @@ const vi: ImageDictionary = {
     shareCopied: "Đã sao chép!",
     shareCopyLink: "Sao chép liên kết",
     unknownError: "Đã xảy ra lỗi không xác định",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

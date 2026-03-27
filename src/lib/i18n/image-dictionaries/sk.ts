@@ -307,6 +307,8 @@ const sk: ImageDictionary = {
     shareCopied: "Skopírované!",
     shareCopyLink: "Kopírovať odkaz",
     unknownError: "Vyskytla sa neznáma chyba",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

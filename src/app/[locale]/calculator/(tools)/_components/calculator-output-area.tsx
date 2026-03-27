@@ -16,6 +16,9 @@ interface CalculatorOutputAreaProps {
   breakdownLabel?: string;
   allResultsLabel?: string;
   statsLabels?: Record<string, string>;
+  processorLabels?: Record<string, string>;
+  booleanYes?: string;
+  booleanNo?: string;
   className?: string;
   onCopy?: () => void;
 }
@@ -29,6 +32,9 @@ export function CalculatorOutputArea({
   breakdownLabel,
   allResultsLabel,
   statsLabels,
+  processorLabels,
+  booleanYes,
+  booleanNo,
   className,
   onCopy,
 }: CalculatorOutputAreaProps) {
@@ -83,13 +89,14 @@ export function CalculatorOutputArea({
         <BreakdownSection
           rows={breakdown}
           title={breakdownLabel}
+          processorLabels={processorLabels}
           isPreview={isPreview}
         />
       )}
 
       {/* Stats section */}
       {stats && Object.keys(stats).length > 0 && (
-        <StatsSection stats={stats} labels={statsLabels} />
+        <StatsSection stats={stats} labels={statsLabels} booleanYes={booleanYes} booleanNo={booleanNo} />
       )}
 
       {/* Conversion table */}
@@ -97,6 +104,7 @@ export function CalculatorOutputArea({
         <ResultTable
           rows={table}
           title={allResultsLabel}
+          processorLabels={processorLabels}
           copyLabel={copyLabel}
           copiedLabel={copiedLabel}
           isPreview={isPreview}
@@ -111,10 +119,12 @@ export function CalculatorOutputArea({
 function BreakdownSection({
   rows,
   title,
+  processorLabels,
   isPreview,
 }: {
   rows: CalculatorBreakdownRow[];
   title?: string;
+  processorLabels?: Record<string, string>;
   isPreview?: boolean;
 }) {
   const [expanded, setExpanded] = useState(true);
@@ -126,7 +136,7 @@ function BreakdownSection({
         onClick={() => setExpanded(!expanded)}
         className="flex w-full items-center justify-between px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400 hover:bg-violet-500/5 transition-colors cursor-pointer"
       >
-        <span>{title ?? "Breakdown"}</span>
+        <span>{title}</span>
         {expanded ? (
           <ChevronUp className="h-3.5 w-3.5" />
         ) : (
@@ -151,7 +161,7 @@ function BreakdownSection({
                   row.highlight && "text-violet-700 dark:text-violet-300",
                 )}
               >
-                {row.label}
+                {processorLabels?.[row.label] ?? row.label}
               </span>
               <span
                 className={cn(
@@ -176,9 +186,13 @@ function BreakdownSection({
 function StatsSection({
   stats,
   labels,
+  booleanYes,
+  booleanNo,
 }: {
   stats: Record<string, string | number | boolean>;
   labels?: Record<string, string>;
+  booleanYes?: string;
+  booleanNo?: string;
 }) {
   const entries = Object.entries(stats).filter(
     ([, v]) => v !== undefined && v !== null && v !== "",
@@ -194,7 +208,7 @@ function StatsSection({
               {labels?.[key] ?? key}
             </span>
             <span className="font-mono text-sm font-semibold text-foreground tabular-nums">
-              {typeof value === "boolean" ? (value ? "Yes" : "No") : String(value)}
+              {typeof value === "boolean" ? (value ? (booleanYes ?? "Yes") : (booleanNo ?? "No")) : String(value)}
             </span>
           </div>
         ))}
@@ -208,12 +222,14 @@ function StatsSection({
 function ResultTable({
   rows,
   title,
+  processorLabels,
   copyLabel,
   copiedLabel,
   isPreview,
 }: {
   rows: CalculatorTableRow[];
   title?: string;
+  processorLabels?: Record<string, string>;
   copyLabel: string;
   copiedLabel: string;
   isPreview?: boolean;
@@ -238,7 +254,7 @@ function ResultTable({
           >
             <div className="flex flex-col min-w-0">
               <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
-                {row.label}
+                {processorLabels?.[row.label] ?? row.label}
               </span>
               <EllipsisTooltip
                 text={row.unit ? `${row.value} ${row.unit}` : row.value}

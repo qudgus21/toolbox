@@ -124,6 +124,8 @@ const lv: Dictionary = {
     encryptedFile: "Šifrēts fails",
     clickToSelectPages: "Noklikšķiniet, lai atlasītu lapas",
     dragToReorder: "Velciet, lai pārkārtotu",
+    removeFile: "Noņemt failu",
+    rotatePage: "Pagriezt lapu",
     favoriteAdded: "Pievienots izlasei",
     favoriteRemoved: "Noņemts no izlases",
     comingSoon: "Drīzumā",
@@ -576,6 +578,8 @@ const lv: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Izlīdzināt",
+    pageOf: "lapas",
+    changeFile: "Mainīt failu",
     formFieldsLabel: "Veidlapas lauki",
     formFieldsDesc: "Pārvērst ievades laukus, izvēles rūtiņas un nolaižamos sarakstus statiskā tekstā",
     annotationsLabel: "Anotācijas",

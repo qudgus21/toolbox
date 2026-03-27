@@ -124,6 +124,8 @@ const mt: Dictionary = {
     encryptedFile: "Fajl kriptat",
     clickToSelectPages: "Ikklikkja biex tagħżel il-paġni",
     dragToReorder: "Iġbed biex tibdel l-ordni",
+    removeFile: "Neħħi l-fajl",
+    rotatePage: "Dawwar il-paġna",
     favoriteAdded: "Miżjud mal-favoriti",
     favoriteRemoved: "Imneħħi mill-favoriti",
     comingSoon: "Dalwaqt",
@@ -576,6 +578,8 @@ const mt: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Iċċattja",
+    pageOf: "paġni",
+    changeFile: "Ibdel il-fajl",
     formFieldsLabel: "Oqsma tal-formola",
     formFieldsDesc: "Ibdel l-oqsma tad-dħul, il-kaxxi tat-tikka u l-menus li jinżlu f'test statiku",
     annotationsLabel: "Annotazzjonijiet",

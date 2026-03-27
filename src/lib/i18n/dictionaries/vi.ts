@@ -124,6 +124,8 @@ const vi: Dictionary = {
     encryptedFile: "Tệp được mã hóa",
     clickToSelectPages: "Nhấn để chọn trang",
     dragToReorder: "Kéo để sắp xếp lại",
+    removeFile: "Xóa tệp",
+    rotatePage: "Xoay trang",
     favoriteAdded: "Đã thêm vào yêu thích",
     favoriteRemoved: "Đã xóa khỏi yêu thích",
     comingSoon: "Sắp ra mắt",
@@ -576,6 +578,8 @@ const vi: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Làm phẳng",
+    pageOf: "trang",
+    changeFile: "Đổi tệp",
     formFieldsLabel: "Trường biểu mẫu",
     formFieldsDesc: "Chuyển ô nhập liệu, hộp kiểm và danh sách thả xuống thành văn bản tĩnh",
     annotationsLabel: "Chú thích",

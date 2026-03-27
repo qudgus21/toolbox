@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "日数を加算",
     subtractDays: "日数を減算",
     datetimeHint: "例: 2024-01-15, 1705312200, now",
+    endDate: "終了日",
+    today: "今日 (デフォルト)",
+    dateUnit: "単位",
   },
   statsLabels: {
     lines: "行数",

@@ -124,6 +124,8 @@ const bn: Dictionary = {
     encryptedFile: "এনক্রিপ্ট করা ফাইল",
     clickToSelectPages: "পৃষ্ঠা নির্বাচন করতে ক্লিক করুন",
     dragToReorder: "ক্রম পরিবর্তন করতে টেনে আনুন",
+    removeFile: "ফাইল মুছুন",
+    rotatePage: "পৃষ্ঠা ঘোরান",
     favoriteAdded: "পছন্দসইতে যোগ করা হয়েছে",
     favoriteRemoved: "পছন্দসই থেকে সরানো হয়েছে",
     comingSoon: "শীঘ্রই আসছে",
@@ -576,6 +578,8 @@ const bn: Dictionary = {
   },
   flattenTool: {
     flattenButton: "ফ্ল্যাটেন করুন",
+    pageOf: "পৃষ্ঠা",
+    changeFile: "ফাইল পরিবর্তন করুন",
     formFieldsLabel: "ফর্ম ফিল্ড",
     formFieldsDesc: "ইনপুট, চেকবক্স এবং ড্রপডাউনকে স্থির টেক্সটে রূপান্তর করুন",
     annotationsLabel: "টীকা",

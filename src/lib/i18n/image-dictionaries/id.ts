@@ -307,6 +307,8 @@ const id: ImageDictionary = {
     shareCopied: "Tersalin!",
     shareCopyLink: "Salin tautan",
     unknownError: "Terjadi kesalahan yang tidak diketahui",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

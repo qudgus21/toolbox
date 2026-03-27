@@ -166,6 +166,7 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
           preview={savedSignature}
           emptyText={labels.noSignatureYet}
           emptyAction={labels.clickToCreate}
+          addToDocumentLabel={labels.addToDocument}
           onEdit={() => dispatch({ type: "OPEN_CREATE_MODAL", target: "signature" })}
           onAdd={addSignature}
         />
@@ -186,6 +187,7 @@ export function SignOptionsPanel({ state, dispatch, labels }: SignOptionsPanelPr
           preview={savedInitials}
           emptyText={labels.noInitialsYet}
           emptyAction={labels.clickToCreate}
+          addToDocumentLabel={labels.addToDocument}
           onEdit={() => dispatch({ type: "OPEN_CREATE_MODAL", target: "initials" })}
           onAdd={addInitials}
         />
@@ -345,6 +347,7 @@ function FieldCard({
   preview,
   emptyText,
   emptyAction,
+  addToDocumentLabel,
   onEdit,
   onAdd,
 }: {
@@ -355,6 +358,7 @@ function FieldCard({
   preview: SignatureData | null;
   emptyText: string;
   emptyAction: string;
+  addToDocumentLabel: string;
   onEdit: () => void;
   onAdd: () => void;
 }) {
@@ -378,7 +382,7 @@ function FieldCard({
           <button
             onClick={onAdd}
             className="cursor-pointer rounded p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-600 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
-            aria-label="add to document"
+            aria-label={addToDocumentLabel}
           >
             <Plus className="h-4 w-4" />
           </button>

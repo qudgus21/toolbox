@@ -124,6 +124,8 @@ const ru: Dictionary = {
     encryptedFile: "Зашифрованный файл",
     clickToSelectPages: "Нажмите, чтобы выбрать страницы",
     dragToReorder: "Перетащите для изменения порядка",
+    removeFile: "Удалить файл",
+    rotatePage: "Повернуть страницу",
     favoriteAdded: "Добавлено в избранное",
     favoriteRemoved: "Удалено из избранного",
     comingSoon: "Скоро",
@@ -576,6 +578,8 @@ const ru: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Сведение",
+    pageOf: "страниц",
+    changeFile: "Изменить файл",
     formFieldsLabel: "Поля формы",
     formFieldsDesc: "Преобразовать поля ввода, флажки и выпадающие списки в статичный текст",
     annotationsLabel: "Аннотации",

@@ -348,6 +348,7 @@ const ja: TextDictionary = {
     suffixPlaceholder: "接尾辞...",
   },
   statsLabels: {
+    emptyState: "テキストを入力すると統計が表示されます",
     characters: "文字数",
     charactersWithoutSpaces: "空白除く",
     words: "単語数",

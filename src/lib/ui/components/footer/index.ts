@@ -1,1 +1,1 @@
-export { Footer, type FooterProps } from "./footer";
+export { Footer, type FooterProps, type FooterTranslations } from "./footer";

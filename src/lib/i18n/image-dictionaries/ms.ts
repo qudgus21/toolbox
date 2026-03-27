@@ -307,6 +307,8 @@ const ms: ImageDictionary = {
     shareCopied: "Disalin!",
     shareCopyLink: "Salin pautan",
     unknownError: "Ralat tidak diketahui berlaku",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

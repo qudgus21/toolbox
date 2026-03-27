@@ -181,6 +181,7 @@ const id: TextDictionary = {
     suffixPlaceholder: "Akhiran...",
   },
   statsLabels: {
+    emptyState: "Masukkan teks untuk melihat statistik",
     characters: "Karakter",
     charactersWithoutSpaces: "Tanpa spasi",
     words: "Kata",

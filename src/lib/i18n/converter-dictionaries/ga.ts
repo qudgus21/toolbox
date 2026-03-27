@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Cuir laethanta leis",
     subtractDays: "Bain laethanta",
     datetimeHint: "m.sh. 2024-01-15, 1705312200, now",
+    endDate: "Dáta deiridh",
+    today: "Inniu (réamhshocrú)",
+    dateUnit: "Aonad",
   },
   statsLabels: {
     lines: "Línte",

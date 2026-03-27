@@ -306,6 +306,8 @@ const ja: ImageDictionary = {
     shareCopied: "コピーしました!",
     shareCopyLink: "リンクをコピー",
     unknownError: "不明なエラーが発生しました",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

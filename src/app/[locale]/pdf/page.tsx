@@ -62,30 +62,26 @@ export default async function PdfHomePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            name: dict.metadata.siteTitle,
-            url: `https://toolpop.org/${locale}/pdf`,
-            applicationCategory: "UtilityApplication",
-            operatingSystem: "Any",
-            author: { "@type": "Organization", name: "ToolPop", url: "https://toolpop.org" },
-            inLanguage: locale,
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: dict.metadata.siteTitle,
+          url: `https://toolpop.org/${locale}/pdf`,
+          applicationCategory: "UtilityApplication",
+          operatingSystem: "Any",
+          author: { "@type": "Organization", name: "ToolPop", url: "https://toolpop.org" },
+          inLanguage: locale,
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
       {/* Hero — server-rendered for fast LCP */}
       <section className="pt-8 pb-0">
         <Container size="full" className="max-w-screen-2xl">

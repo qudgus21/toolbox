@@ -124,6 +124,8 @@ const cs: Dictionary = {
     encryptedFile: "Zašifrovaný soubor",
     clickToSelectPages: "Klikněte pro výběr stránek",
     dragToReorder: "Přetáhněte pro změnu pořadí",
+    removeFile: "Odebrat soubor",
+    rotatePage: "Otočit stránku",
     favoriteAdded: "Přidáno do oblíbených",
     favoriteRemoved: "Odebráno z oblíbených",
     comingSoon: "Brzy k dispozici",
@@ -576,6 +578,8 @@ const cs: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Sloučit",
+    pageOf: "stránek",
+    changeFile: "Změnit soubor",
     formFieldsLabel: "Pole formuláře",
     formFieldsDesc: "Převést vstupní pole, zaškrtávací políčka a rozbalovací nabídky na statický text",
     annotationsLabel: "Anotace",

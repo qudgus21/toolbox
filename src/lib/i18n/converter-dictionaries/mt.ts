@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Żid ġranet",
     subtractDays: "Naqqas ġranet",
     datetimeHint: "eż. 2024-01-15, 1705312200, now",
+    endDate: "Data tal-tmiem",
+    today: "Illum (awtomatiku)",
+    dateUnit: "Unità",
   },
   statsLabels: {
     lines: "Linji",

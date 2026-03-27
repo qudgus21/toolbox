@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Kein Konto, keine E-Mail. Einfach Tool öffnen und loslegen.",
   },
   cta: { title: "Bereit loszulegen?", subtitle: "Keine Installation, keine Anmeldung, keine Kosten — nur ein Klick entfernt.", button: "Alle Tools ansehen" },
-  common: { shareTitle: "Teilen", shareSubtitle: "Erzähl deinen Freunden von ToolPop!", shareCopyLink: "Link kopieren", shareCopied: "Kopiert!" },
+  common: { shareTitle: "Teilen", shareSubtitle: "Erzähl deinen Freunden von ToolPop!", shareCopyLink: "Link kopieren", shareCopied: "Kopiert!", ariaClose: "Schließen", ariaMenu: "Menü", ariaShare: "Teilen" },
   footer: { apps: "Werkzeuge", company: "Unternehmen", about: "Über uns", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Rechtliches", privacy: "Datenschutz", terms: "Nutzungsbedingungen", copyright: "© 2026 ToolPop. Alle Rechte vorbehalten.", tagline: "Kostenlose Online-Tools für PDF, Bilder und mehr. Ohne Anmeldung.", madeWith: "Mit Liebe für alle gemacht" },
   search: { noResults: "Keine Ergebnisse gefunden" },
   nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Umrechner", calculator: "Rechner" },

@@ -124,6 +124,8 @@ const hu: Dictionary = {
     encryptedFile: "Titkosított fájl",
     clickToSelectPages: "Kattintson az oldalak kiválasztásához",
     dragToReorder: "Húzza az átrendezéshez",
+    removeFile: "Fájl eltávolítása",
+    rotatePage: "Oldal forgatása",
     favoriteAdded: "Hozzáadva a kedvencekhez",
     favoriteRemoved: "Eltávolítva a kedvencekből",
     comingSoon: "Hamarosan",
@@ -576,6 +578,8 @@ const hu: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Simítás",
+    pageOf: "oldal",
+    changeFile: "Fájl cseréje",
     formFieldsLabel: "Űrlapmezők",
     formFieldsDesc: "Beviteli mezők, jelölőnégyzetek és legördülő listák átalakítása statikus szöveggé",
     annotationsLabel: "Jegyzetek",

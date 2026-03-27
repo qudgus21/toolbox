@@ -349,6 +349,7 @@ const et: TextDictionary = {
     suffixPlaceholder: "J\u00e4relliide...",
   },
   statsLabels: {
+    emptyState: "Sisestage tekst statistika vaatamiseks",
     characters: "Tähemärgid",
     charactersWithoutSpaces: "Ilma tühikuteta",
     words: "Sõnad",

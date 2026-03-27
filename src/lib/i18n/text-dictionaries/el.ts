@@ -349,6 +349,7 @@ const el: TextDictionary = {
     suffixPlaceholder: "\u0395\u03c0\u03af\u03b8\u03b5\u03bc\u03b1...",
   },
   statsLabels: {
+    emptyState: "Εισάγετε κείμενο για να δείτε στατιστικά",
     characters: "Χαρακτήρες",
     charactersWithoutSpaces: "Χωρίς κενά",
     words: "Λέξεις",

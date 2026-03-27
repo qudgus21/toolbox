@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Bæta við dögum",
     subtractDays: "Draga frá dögum",
     datetimeHint: "t.d. 2024-01-15, 1705312200, now",
+    endDate: "Lokadagsetning",
+    today: "Í dag (sjálfgefið)",
+    dateUnit: "Eining",
   },
   statsLabels: {
     lines: "Línur",

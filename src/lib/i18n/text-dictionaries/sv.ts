@@ -349,6 +349,7 @@ const sv: TextDictionary = {
     suffixPlaceholder: "Suffix...",
   },
   statsLabels: {
+    emptyState: "Ange text för att se statistik",
     characters: "Tecken",
     charactersWithoutSpaces: "Utan mellanslag",
     words: "Ord",

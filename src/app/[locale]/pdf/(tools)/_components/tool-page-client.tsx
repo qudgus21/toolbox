@@ -331,7 +331,7 @@ export function ToolPageClient({
         {stage === "error" && (
           <div>
             <ErrorMessage
-              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? "Unknown error"}
+              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? ""}
               onRetry={reset}
               retryLabel={labels.tryAgain}
             />

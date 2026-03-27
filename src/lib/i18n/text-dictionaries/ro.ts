@@ -349,6 +349,7 @@ const ro: TextDictionary = {
     suffixPlaceholder: "Sufix...",
   },
   statsLabels: {
+    emptyState: "Introduceți text pentru a vedea statisticile",
     characters: "Caractere",
     charactersWithoutSpaces: "Fără spații",
     words: "Cuvinte",

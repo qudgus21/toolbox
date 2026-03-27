@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "加天数",
     subtractDays: "减天数",
     datetimeHint: "如 2024-01-15、1705312200、now",
+    endDate: "结束日期",
+    today: "今天 (默认)",
+    dateUnit: "单位",
   },
   statsLabels: {
     lines: "行数",

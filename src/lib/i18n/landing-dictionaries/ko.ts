@@ -88,6 +88,9 @@ const dict: LandingDictionary = {
     shareSubtitle: "ToolPop을 친구에게 알려주세요!",
     shareCopyLink: "링크 복사",
     shareCopied: "복사됨!",
+    ariaClose: "닫기",
+    ariaMenu: "메뉴",
+    ariaShare: "공유",
   },
   footer: {
     apps: "도구",

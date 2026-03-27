@@ -349,6 +349,7 @@ const ga: TextDictionary = {
     suffixPlaceholder: "Iarmhír...",
   },
   statsLabels: {
+    emptyState: "Cuir isteach téacs chun staitisticí a fheiceáil",
     characters: "Carachtair",
     charactersWithoutSpaces: "Gan spásanna",
     words: "Focail",

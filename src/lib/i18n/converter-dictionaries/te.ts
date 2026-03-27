@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "రోజులు కలుపు",
     subtractDays: "రోజులు తీయి",
     datetimeHint: "ఉదా. 2024-01-15, 1705312200, now",
+    endDate: "ముగింపు తేదీ",
+    today: "ఈరోజు (డిఫాల్ట్)",
+    dateUnit: "యూనిట్",
   },
   statsLabels: {
     lines: "లైన్లు",

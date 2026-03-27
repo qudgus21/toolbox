@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Tambah hari",
     subtractDays: "Kurangi hari",
     datetimeHint: "misal 2024-01-15, 1705312200, now",
+    endDate: "Tanggal akhir",
+    today: "Hari ini (default)",
+    dateUnit: "Satuan",
   },
   statsLabels: {
     lines: "Baris",

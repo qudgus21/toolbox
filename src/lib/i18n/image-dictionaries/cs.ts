@@ -139,6 +139,8 @@ const cs: ImageDictionary = {
     shareCopied: "Zkopírováno!",
     shareCopyLink: "Kopírovat odkaz",
     unknownError: "Došlo k neznámé chybě",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

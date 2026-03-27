@@ -306,6 +306,8 @@ const he: ImageDictionary = {
     shareCopied: "הועתק!",
     shareCopyLink: "העתק קישור",
     unknownError: "אירעה שגיאה לא ידועה",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

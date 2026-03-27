@@ -307,6 +307,8 @@ const bg: ImageDictionary = {
     shareCopied: "Копирано!",
     shareCopyLink: "Копирай линк",
     unknownError: "Възникна неизвестна грешка",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

@@ -22,6 +22,8 @@ interface ShareButtonProps {
   shareSubtitle?: string;
   copyLabel?: string;
   copiedLabel?: string;
+  closeLabel?: string;
+  ariaLabel?: string;
 }
 
 export function ShareButton({
@@ -30,6 +32,8 @@ export function ShareButton({
   shareSubtitle = "Spread the word!",
   copyLabel = "Copy link",
   copiedLabel = "Copied!",
+  closeLabel = "Close",
+  ariaLabel = "Share",
 }: ShareButtonProps) {
   const pathname = usePathname();
   const resolvedApp = app ?? detectApp(pathname);
@@ -57,7 +61,7 @@ export function ShareButton({
       <button
         onClick={handleClick}
         className="cursor-pointer flex h-8 w-8 items-center justify-center rounded-md border border-border text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
-        aria-label="Share"
+        aria-label={ariaLabel}
       >
         <Share2 className="h-4 w-4" />
       </button>
@@ -69,6 +73,7 @@ export function ShareButton({
           subtitle={shareSubtitle}
           copyLabel={copyLabel}
           copiedLabel={copiedLabel}
+          closeLabel={closeLabel}
           onShare={(method) =>
             sendEvent("share_click", { app: resolvedApp, method })
           }

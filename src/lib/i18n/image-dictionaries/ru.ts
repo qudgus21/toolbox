@@ -307,6 +307,8 @@ const ru: ImageDictionary = {
     shareCopied: "Скопировано!",
     shareCopyLink: "Скопировать ссылку",
     unknownError: "Произошла неизвестная ошибка",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

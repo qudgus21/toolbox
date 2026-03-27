@@ -320,6 +320,8 @@ const ko: ImageDictionary = {
     shareCopied: "복사됨!",
     shareCopyLink: "링크 복사",
     unknownError: "알 수 없는 오류가 발생했습니다",
+    more: "개 더",
+    actionsLabel: "작업",
   },
   toolOptions: {
     resize: {

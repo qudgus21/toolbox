@@ -307,6 +307,8 @@ const tr: ImageDictionary = {
     shareCopied: "Kopyalandı!",
     shareCopyLink: "Bağlantıyı kopyala",
     unknownError: "Bilinmeyen bir hata oluştu",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

@@ -307,6 +307,8 @@ const te: ImageDictionary = {
     shareCopied: "కాపీ అయింది!",
     shareCopyLink: "లింక్ కాపీ చేయండి",
     unknownError: "తెలియని లోపం సంభవించింది",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

@@ -124,6 +124,8 @@ const lt: Dictionary = {
     encryptedFile: "Užšifruotas failas",
     clickToSelectPages: "Spustelėkite, kad pasirinktumėte puslapius",
     dragToReorder: "Vilkite, kad pakeistumėte tvarką",
+    removeFile: "Pašalinti failą",
+    rotatePage: "Pasukti puslapį",
     favoriteAdded: "Pridėta prie mėgstamų",
     favoriteRemoved: "Pašalinta iš mėgstamų",
     comingSoon: "Netrukus",
@@ -576,6 +578,8 @@ const lt: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Suglaudinti",
+    pageOf: "puslapių",
+    changeFile: "Keisti failą",
     formFieldsLabel: "Formos laukai",
     formFieldsDesc: "Paversti įvesties laukus, žymimuosius langelius ir išskleidžiamuosius sąrašus statiniu tekstu",
     annotationsLabel: "Anotacijos",

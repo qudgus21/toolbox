@@ -134,13 +134,13 @@ export function AddTextOptions({ value, onChange, labels }: AddTextOptionsProps)
             className="flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs font-medium text-foreground-muted hover:bg-background-subtle hover:text-foreground transition-colors cursor-pointer"
           >
             <Plus className="h-3 w-3" />
-            {labels.addText ?? "Add"}
+            {labels.addText}
           </button>
         </div>
 
         {items.length === 0 && (
           <p className="text-xs text-foreground-subtle text-center py-4">
-            {labels.noItems ?? "Click + to add text"}
+            {labels.noItems}
           </p>
         )}
 
@@ -258,7 +258,7 @@ export function AddTextOptions({ value, onChange, labels }: AddTextOptionsProps)
               />
             </label>
             {/* Background color */}
-            <label className="relative cursor-pointer" title={labels.bgColor ?? "Background"}>
+            <label className="relative cursor-pointer" title={labels.bgColor}>
               <span className="flex h-8 items-center gap-1 rounded-md border border-border px-1.5 hover:bg-background-subtle transition-colors">
                 <span className="text-[10px] font-bold text-foreground-muted">BG</span>
                 {selected.bgColor === "transparent" ? (
@@ -285,7 +285,7 @@ export function AddTextOptions({ value, onChange, labels }: AddTextOptionsProps)
                 type="button"
                 onClick={() => updateSelected({ bgColor: "transparent" })}
                 className="text-xs text-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
-                title={labels.transparent ?? "None"}
+                title={labels.transparent}
               >
                 ×
               </button>

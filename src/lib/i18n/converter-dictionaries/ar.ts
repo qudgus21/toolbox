@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "إضافة أيام",
     subtractDays: "طرح أيام",
     datetimeHint: "مثال: 2024-01-15، 1705312200، now",
+    endDate: "تاريخ الانتهاء",
+    today: "اليوم (افتراضي)",
+    dateUnit: "الوحدة",
   },
   statsLabels: {
     lines: "أسطر",

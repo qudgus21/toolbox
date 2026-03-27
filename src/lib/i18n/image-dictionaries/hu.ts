@@ -307,6 +307,8 @@ const hu: ImageDictionary = {
     shareCopied: "Másolva!",
     shareCopyLink: "Link másolása",
     unknownError: "Ismeretlen hiba történt",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

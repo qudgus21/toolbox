@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Nincs fiók, nincs e-mail. Csak nyisd meg az eszközt és kezdj el dolgozni.",
   },
   cta: { title: "Készen állsz?", subtitle: "Nincs telepítés, nincs regisztráció, nincs fizetés — egyetlen kattintás választ el.", button: "Összes eszköz böngészése" },
-  common: { shareTitle: "Megosztás", shareSubtitle: "Szólj a barátaidnak a ToolPop-ról!", shareCopyLink: "Link másolása", shareCopied: "Másolva!" },
+  common: { shareTitle: "Megosztás", shareSubtitle: "Szólj a barátaidnak a ToolPop-ról!", shareCopyLink: "Link másolása", shareCopied: "Másolva!", ariaClose: "Bezárás", ariaMenu: "Menü", ariaShare: "Megosztás" },
   footer: { apps: "Eszközök", company: "Cég", about: "Rólunk", contact: "Kapcsolat", faq: "GYIK", blog: "Blog", legal: "Jogi információk", privacy: "Adatvédelmi szabályzat", terms: "Felhasználási feltételek", copyright: "© 2026 ToolPop. Minden jog fenntartva.", tagline: "Ingyenes online eszközök PDF-ekhez, képekhez és sok máshoz. Regisztráció nélkül.", madeWith: "Szeretettel készítve mindenkinek" },
   search: { noResults: "Nincs találat" },
   nav: { pdf: "PDF", image: "Kép", text: "Szöveg", converter: "Konverter", calculator: "Számológép" },

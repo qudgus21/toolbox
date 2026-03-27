@@ -349,6 +349,7 @@ const is: TextDictionary = {
     suffixPlaceholder: "Viðskeyti...",
   },
   statsLabels: {
+    emptyState: "Sláðu inn texta til að sjá tölfræði",
     characters: "Stafir",
     charactersWithoutSpaces: "Án bila",
     words: "Orð",

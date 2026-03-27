@@ -307,6 +307,8 @@ const fi: ImageDictionary = {
     shareCopied: "Kopioitu!",
     shareCopyLink: "Kopioi linkki",
     unknownError: "Tuntematon virhe tapahtui",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

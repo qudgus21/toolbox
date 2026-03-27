@@ -140,34 +140,30 @@ export default async function BlogArticlePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: content.title,
-            description: content.description,
-            datePublished: article.publishedAt,
-            author: {
-              "@type": "Organization",
-              name: "ToolPop",
-              url: "https://toolpop.org",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "ToolPop",
-              url: "https://toolpop.org",
-            },
-            inLanguage: locale,
-            url: `https://toolpop.org/${locale}/blog/${slug}`,
-          }),
-        }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: content.title,
+          description: content.description,
+          datePublished: article.publishedAt,
+          author: {
+            "@type": "Organization",
+            name: "ToolPop",
+            url: "https://toolpop.org",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "ToolPop",
+            url: "https://toolpop.org",
+          },
+          inLanguage: locale,
+          url: `https://toolpop.org/${locale}/blog/${slug}`,
+        })}
+      </script>
       <main className="py-12">
         <Container size="md">
           <Link

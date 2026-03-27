@@ -349,6 +349,7 @@ const fi: TextDictionary = {
     suffixPlaceholder: "Loppuliite...",
   },
   statsLabels: {
+    emptyState: "Kirjoita tekstiä nähdäksesi tilastot",
     characters: "Merkit",
     charactersWithoutSpaces: "Ilman välilyöntejä",
     words: "Sanat",

@@ -349,6 +349,7 @@ const uk: TextDictionary = {
     suffixPlaceholder: "Суфікс...",
   },
   statsLabels: {
+    emptyState: "Введіть текст, щоб побачити статистику",
     characters: "Символи",
     charactersWithoutSpaces: "Без пробілів",
     words: "Слова",

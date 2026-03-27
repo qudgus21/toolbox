@@ -63,6 +63,7 @@ interface ShareModalProps {
   subtitle: string;
   copyLabel: string;
   copiedLabel: string;
+  closeLabel?: string;
   onShare?: (method: string) => void;
 }
 
@@ -73,6 +74,7 @@ export function ShareModal({
   subtitle,
   copyLabel,
   copiedLabel,
+  closeLabel = "Close",
   onShare,
 }: ShareModalProps) {
   const [copied, setCopied] = useState(false);
@@ -157,7 +159,7 @@ export function ShareModal({
                 type="button"
                 onClick={onClose}
                 className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-foreground-muted hover:text-foreground hover:bg-foreground/5 transition-colors cursor-pointer"
-                aria-label="Close"
+                aria-label={closeLabel}
               >
                 <X className="h-4 w-4" />
               </button>

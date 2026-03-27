@@ -206,6 +206,9 @@ export function CalculatorToolPageClient({
             breakdownLabel={labels.breakdown}
             allResultsLabel={labels.allResults}
             statsLabels={statsLabels}
+            processorLabels={processorMessages}
+            booleanYes={fieldOptions.yes}
+            booleanNo={fieldOptions.no}
             onCopy={handleCopy}
           />
         </div>

@@ -349,6 +349,7 @@ const hu: TextDictionary = {
     suffixPlaceholder: "Ut\u00f3tag...",
   },
   statsLabels: {
+    emptyState: "Írjon be szöveget a statisztikák megtekintéséhez",
     characters: "Karakter",
     charactersWithoutSpaces: "Szóközök nélkül",
     words: "Szavak",

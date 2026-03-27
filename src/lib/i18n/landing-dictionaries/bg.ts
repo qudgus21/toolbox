@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Без акаунт, без имейл. Просто отворете инструмент и започнете работа.",
   },
   cta: { title: "Готови ли сте да започнете?", subtitle: "Без инсталация, без регистрация, без плащане — само едно кликване.", button: "Разгледай всички инструменти" },
-  common: { shareTitle: "Споделяне", shareSubtitle: "Разкажете на приятелите си за ToolPop!", shareCopyLink: "Копирай линк", shareCopied: "Копирано!" },
+  common: { shareTitle: "Споделяне", shareSubtitle: "Разкажете на приятелите си за ToolPop!", shareCopyLink: "Копирай линк", shareCopied: "Копирано!", ariaClose: "Затвори", ariaMenu: "Меню", ariaShare: "Споделяне" },
   footer: { apps: "Инструменти", company: "Компания", about: "За нас", contact: "Контакт", faq: "Често задавани въпроси", blog: "Блог", legal: "Правна информация", privacy: "Политика за поверителност", terms: "Условия за ползване", copyright: "© 2026 ToolPop. Всички права запазени.", tagline: "Безплатни онлайн инструменти за PDF, изображения и още. Без регистрация.", madeWith: "Направено с любов за всички" },
   search: { noResults: "Няма намерени резултати" },
   nav: { pdf: "PDF", image: "Изображение", text: "Текст", converter: "Конвертор", calculator: "Калкулатор" },

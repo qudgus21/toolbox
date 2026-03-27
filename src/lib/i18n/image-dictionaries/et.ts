@@ -139,6 +139,8 @@ const et: ImageDictionary = {
     shareCopied: "Kopeeritud!",
     shareCopyLink: "Kopeeri link",
     unknownError: "Ilmnes tundmatu tõrge",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

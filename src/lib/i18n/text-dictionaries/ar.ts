@@ -181,6 +181,7 @@ const ar: TextDictionary = {
     suffixPlaceholder: "لاحقة...",
   },
   statsLabels: {
+    emptyState: "أدخل نصاً لعرض الإحصائيات",
     characters: "الأحرف",
     charactersWithoutSpaces: "بدون مسافات",
     words: "الكلمات",

@@ -181,6 +181,7 @@ const hi: TextDictionary = {
     suffixPlaceholder: "प्रत्यय...",
   },
   statsLabels: {
+    emptyState: "आँकड़े देखने के लिए टेक्स्ट दर्ज करें",
     characters: "अक्षर",
     charactersWithoutSpaces: "रिक्त स्थान के बिना",
     words: "शब्द",

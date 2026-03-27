@@ -182,6 +182,7 @@ const ru: TextDictionary = {
     suffixPlaceholder: "Суффикс...",
   },
   statsLabels: {
+    emptyState: "Введите текст, чтобы увидеть статистику",
     characters: "Символы",
     charactersWithoutSpaces: "Без пробелов",
     words: "Слова",

@@ -349,6 +349,7 @@ const mt: TextDictionary = {
     suffixPlaceholder: "Suffiss...",
   },
   statsLabels: {
+    emptyState: "Daħħal test biex tara l-istatistika",
     characters: "Karattri",
     charactersWithoutSpaces: "Mingħajr spazji",
     words: "Kliem",

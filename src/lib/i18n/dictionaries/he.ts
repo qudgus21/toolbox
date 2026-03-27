@@ -124,6 +124,8 @@ const he: Dictionary = {
     encryptedFile: "קובץ מוצפן",
     clickToSelectPages: "לחצו לבחירת עמודים",
     dragToReorder: "גררו לשינוי הסדר",
+    removeFile: "הסר קובץ",
+    rotatePage: "סובב עמוד",
     favoriteAdded: "נוסף למועדפים",
     favoriteRemoved: "הוסר מהמועדפים",
     comingSoon: "בקרוב",
@@ -576,6 +578,8 @@ const he: Dictionary = {
   },
   flattenTool: {
     flattenButton: "שטח",
+    pageOf: "עמודים",
+    changeFile: "החלף קובץ",
     formFieldsLabel: "שדות טופס",
     formFieldsDesc: "המרת שדות קלט, תיבות סימון ותפריטים נפתחים לטקסט קבוע",
     annotationsLabel: "הערות",

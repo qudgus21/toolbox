@@ -124,6 +124,8 @@ const da: Dictionary = {
     encryptedFile: "Krypteret fil",
     clickToSelectPages: "Klik for at vælge sider",
     dragToReorder: "Træk for at ændre rækkefølge",
+    removeFile: "Fjern fil",
+    rotatePage: "Roter side",
     favoriteAdded: "Tilføjet til favoritter",
     favoriteRemoved: "Fjernet fra favoritter",
     comingSoon: "Kommer snart",
@@ -576,6 +578,8 @@ const da: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Fladgør",
+    pageOf: "sider",
+    changeFile: "Skift fil",
     formFieldsLabel: "Formularfelter",
     formFieldsDesc: "Konverter indtastningsfelter, afkrydsningsfelter og rullelister til statisk tekst",
     annotationsLabel: "Annotationer",

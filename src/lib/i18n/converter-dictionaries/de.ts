@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Tage addieren",
     subtractDays: "Tage subtrahieren",
     datetimeHint: "z. B. 2024-01-15, 1705312200, now",
+    endDate: "Enddatum",
+    today: "Heute (Standard)",
+    dateUnit: "Einheit",
   },
   statsLabels: {
     lines: "Zeilen",

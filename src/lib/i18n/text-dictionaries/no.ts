@@ -349,6 +349,7 @@ const no: TextDictionary = {
     suffixPlaceholder: "Suffiks...",
   },
   statsLabels: {
+    emptyState: "Skriv inn tekst for å se statistikk",
     characters: "Tegn",
     charactersWithoutSpaces: "Uten mellomrom",
     words: "Ord",

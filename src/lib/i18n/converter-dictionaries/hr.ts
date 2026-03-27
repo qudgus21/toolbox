@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Dodaj dane",
     subtractDays: "Oduzmi dane",
     datetimeHint: "npr. 2024-01-15, 1705312200, now",
+    endDate: "Datum završetka",
+    today: "Danas (zadano)",
+    dateUnit: "Jedinica",
   },
   statsLabels: {
     lines: "Redaka",

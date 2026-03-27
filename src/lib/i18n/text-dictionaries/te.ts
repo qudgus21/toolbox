@@ -349,6 +349,7 @@ const te: TextDictionary = {
     suffixPlaceholder: "ప్రత్యయం...",
   },
   statsLabels: {
+    emptyState: "గణాంకాలు చూడటానికి వచనం నమోదు చేయండి",
     characters: "అక్షరాలు",
     charactersWithoutSpaces: "ఖాళీలు లేకుండా",
     words: "పదాలు",

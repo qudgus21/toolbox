@@ -124,6 +124,8 @@ const is: Dictionary = {
     encryptedFile: "Dulkóðuð skrá",
     clickToSelectPages: "Smelltu til að velja síður",
     dragToReorder: "Dragðu til að endurraða",
+    removeFile: "Fjarlægja skrá",
+    rotatePage: "Snúa síðu",
     favoriteAdded: "Bætt í eftirlæti",
     favoriteRemoved: "Fjarlægt úr eftirlætum",
     comingSoon: "Kemur fljótlega",
@@ -576,6 +578,8 @@ const is: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Fletja",
+    pageOf: "síður",
+    changeFile: "Skipta um skrá",
     formFieldsLabel: "Eyðublaðsreitir",
     formFieldsDesc: "Breyta innsláttarreitum, gátreitum og fellilistum í fastan texta",
     annotationsLabel: "Athugasemdir",

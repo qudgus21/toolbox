@@ -13,6 +13,8 @@ import type { FlattenAnalysis } from "@/lib/pdf/processors/flatten";
 
 export interface FlattenLabels {
   flattenButton: string;
+  pageOf?: string;
+  changeFile?: string;
   formFieldsLabel: string;
   formFieldsDesc: string;
   annotationsLabel: string;

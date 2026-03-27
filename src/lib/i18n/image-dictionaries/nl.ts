@@ -139,6 +139,8 @@ const nl: ImageDictionary = {
     shareCopied: "Gekopieerd!",
     shareCopyLink: "Link kopiëren",
     unknownError: "Er is een onbekende fout opgetreden",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: { original: "Origineel:", widthPx: "Breedte (px)", heightPx: "Hoogte (px)", lockAspect: "Beeldverhouding vergrendelen", unlockAspect: "Beeldverhouding ontgrendelen", resizeMode: "Schaalmodus", fit: "Inpassen", fitDesc: "Schaal om binnen de grenzen te passen", fill: "Vullen", fillDesc: "Vul het gebied, snij het overschot bij", stretch: "Uitrekken", stretchDesc: "Rek uit naar exact formaat" },

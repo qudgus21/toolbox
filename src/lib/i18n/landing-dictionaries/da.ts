@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Ingen konto, ingen e-mail. Bare åbn et værktøj og kom i gang.",
   },
   cta: { title: "Klar til at komme i gang?", subtitle: "Ingen installation, ingen tilmelding, ingen betaling — kun ét klik væk.", button: "Se alle værktøjer" },
-  common: { shareTitle: "Del", shareSubtitle: "Fortæl dine venner om ToolPop!", shareCopyLink: "Kopier link", shareCopied: "Kopieret!" },
+  common: { shareTitle: "Del", shareSubtitle: "Fortæl dine venner om ToolPop!", shareCopyLink: "Kopier link", shareCopied: "Kopieret!", ariaClose: "Luk", ariaMenu: "Menu", ariaShare: "Del" },
   footer: { apps: "Værktøjer", company: "Virksomhed", about: "Om os", contact: "Kontakt", faq: "FAQ", blog: "Blog", legal: "Juridisk", privacy: "Privatlivspolitik", terms: "Servicevilkår", copyright: "© 2026 ToolPop. Alle rettigheder forbeholdes.", tagline: "Gratis onlineværktøjer til PDF, billeder og mere. Ingen tilmelding nødvendig.", madeWith: "Lavet med kærlighed til alle" },
   search: { noResults: "Ingen resultater fundet" },
   nav: { pdf: "PDF", image: "Billede", text: "Tekst", converter: "Konverter", calculator: "Beregner" },

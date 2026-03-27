@@ -307,6 +307,8 @@ const mr: ImageDictionary = {
     shareCopied: "कॉपी झाले!",
     shareCopyLink: "लिंक कॉपी करा",
     unknownError: "अज्ञात त्रुटी आली",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

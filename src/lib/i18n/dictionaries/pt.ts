@@ -124,6 +124,8 @@ const pt: Dictionary = {
     encryptedFile: "Arquivo criptografado",
     clickToSelectPages: "Clique para selecionar páginas",
     dragToReorder: "Arraste para reordenar",
+    removeFile: "Remover arquivo",
+    rotatePage: "Girar página",
     favoriteAdded: "Adicionado aos favoritos",
     favoriteRemoved: "Removido dos favoritos",
     comingSoon: "Em breve",
@@ -576,6 +578,8 @@ const pt: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Achatar",
+    pageOf: "páginas",
+    changeFile: "Alterar arquivo",
     formFieldsLabel: "Campos de formulário",
     formFieldsDesc: "Converter campos de entrada, caixas de seleção e menus suspensos em texto estático",
     annotationsLabel: "Anotações",
