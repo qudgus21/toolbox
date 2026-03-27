@@ -164,7 +164,7 @@ export function Dropdown({
       {label && (
         <label
           htmlFor={id}
-          className="block text-[10px] font-bold uppercase tracking-wider text-foreground-muted/60 mb-1.5 px-1"
+          className="block text-[10px] font-bold uppercase tracking-wider text-foreground-subtle mb-1.5 px-1"
         >
           {label}
         </label>

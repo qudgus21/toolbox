@@ -473,7 +473,7 @@ export function ToolOptions({ slug, options, onChange, labels, t, unitLabels }: 
 
   return (
     <div className="rounded-2xl border border-border/50 bg-gradient-to-r from-background-subtle/60 to-background p-4 space-y-3 shadow-sm">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">{labels.options}</h3>
+      <p className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">{labels.options}</p>
       {content}
     </div>
   );

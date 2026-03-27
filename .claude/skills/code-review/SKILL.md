@@ -15,15 +15,19 @@ user-invocable: true
 
 ## 프로젝트 컨텍스트
 
-이 프로젝트는 **ToolBox Global Platform** — 도메인별 유틸리티 서비스 단일 Next.js 프로젝트다:
-- **구조**: 단일 Next.js 프로젝트
-- **프레임워크**: Next.js 15 (App Router)
-- **스타일링**: Tailwind CSS 4 + Framer Motion
-- **i18n**: next-intl (`[locale]` 동적 세그먼트)
-- **파일 처리**: 100% 클라이언트사이드 (FFmpeg.wasm, pdf-lib 등)
+이 프로젝트는 **ToolPop Global Platform** — 도메인별 유틸리티 서비스 단일 Next.js 프로젝트다:
+- **구조**: 단일 Next.js 프로젝트, 5개 앱 (pdf, image, text, converter, calculator) + 랜딩 페이지
+- **프레임워크**: Next.js 16 (App Router) + React 19
+- **스타일링**: Tailwind CSS 4 + Framer Motion 12
+- **i18n**: next-intl 없이 자체 구현 (`[locale]` 동적 세그먼트, 47개 로케일)
+- **파일 처리**: 100% 클라이언트사이드 (pdf-lib, pdfjs-dist, Konva, html2canvas 등)
+- **아키텍처**: 프로세서 기반 — 각 도구는 `processor-registry.ts`에서 동적 import
 - **수익 모델**: AdSense
-- **앱 라우트**: `src/app/pdf/`, `src/app/video/` 등
-- **공유 라이브러리**: `src/lib/ui/`, `src/lib/i18n/`, `src/lib/seo/`, `src/lib/analytics/`, `src/lib/storage.ts`, `src/lib/utils.ts`
+- **프로덕션**: https://toolpop.org (Vercel 배포)
+- **앱 라우트**: `src/app/[locale]/pdf/`, `src/app/[locale]/image/`, `src/app/[locale]/text/`, `src/app/[locale]/converter/`, `src/app/[locale]/calculator/`
+- **도구 페이지 라우트**: `src/app/[locale]/{app}/(tools)/[slug]/page.tsx`
+- **공유 라이브러리**: `src/lib/ui/`, `src/lib/i18n/`, `src/lib/seo/`, `src/lib/analytics/`, `src/lib/design-tokens/`, `src/lib/storage.ts`, `src/lib/utils.ts`, `src/lib/apps.ts`, `src/lib/blog/`
+- **앱별 전용 라이브러리**: `src/lib/pdf/`, `src/lib/image/`, `src/lib/text/`, `src/lib/converter/`, `src/lib/calculator/` (각각 `processors/`, `tools.ts`, `types.ts`, `processor-registry.ts` 포함)
 
 ---
 
@@ -38,8 +42,8 @@ user-invocable: true
 | 인자 없음 / `diff` | **Diff 모드** | `git diff` 변경사항만 리뷰 (기본값) |
 | `staged` | **Staged 모드** | `git diff --staged` 스테이징된 변경사항만 리뷰 |
 | `all` / `full` | **전체 모드** | 프로젝트 전체 코드 스캔 |
-| 파일경로 (예: `src/app/pdf/[locale]/(tools)/merge/page.tsx`) | **파일 모드** | 지정된 파일/폴더만 리뷰 |
-| 앱이름 (예: `pdf`, `video`) | **앱 모드** | 해당 앱 전체 리뷰 |
+| 파일경로 (예: `src/app/[locale]/pdf/(tools)/[slug]/page.tsx`) | **파일 모드** | 지정된 파일/폴더만 리뷰 |
+| 앱이름 (예: `pdf`, `image`, `text`, `converter`, `calculator`) | **앱 모드** | 해당 앱 전체 리뷰 |
 
 ### 실행 옵션 (추가 인자)
 
@@ -85,8 +89,8 @@ user-invocable: true
 `memory/skills/code-review-stack.md` 파일을 읽는다 (없으면 새로 생성).
 
 현재 프로젝트의 실제 스택을 스캔한다:
-1. 루트 `package.json`의 `devDependencies` 읽기
-2. `src/app/` 하위 앱 라우트 확인 (변경된 앱만)
+1. 루트 `package.json`의 `dependencies` + `devDependencies` 읽기
+2. `src/app/[locale]/` 하위 앱 라우트 확인 (변경된 앱만)
 3. `src/lib/` 하위의 공유 라이브러리 변경 확인
 4. `next.config.ts`, `tsconfig.json` 설정 확인
 
@@ -94,14 +98,17 @@ user-invocable: true
 
 | 카테고리 | 라이브러리/패키지 예시 | 영향 |
 |----------|------------|------|
-| WASM | `@ffmpeg/ffmpeg`, `pdf-lib`, `sharp-wasm` | 성능/메모리 체크리스트 |
-| i18n | `next-intl` | 번역 누락, hreflang 체크리스트 |
-| UI | `@radix-ui/*`, `framer-motion` | 접근성, 모션 체크리스트 |
-| 상태관리 | `zustand`, `@tanstack/react-query` | 상태 패턴 체크리스트 |
+| PDF 처리 | `pdf-lib`, `pdfjs-dist`, `Konva` | PDF 렌더링/편집 체크리스트 |
+| 이미지 처리 | `html2canvas`, `heic2any`, `utif2` | Canvas/변환 체크리스트 |
+| 파일 처리 | `jszip`, `file-saver`, `docx` | 다운로드/압축 체크리스트 |
+| i18n | 자체 구현 (`src/lib/i18n/`) | 번역 누락, hreflang 체크리스트 |
+| UI | `framer-motion`, `@dnd-kit/*`, `lucide-react` | 애니메이션, 드래그앤드롭, 아이콘 체크리스트 |
+| 가상화 | `@tanstack/react-virtual` | 대량 데이터 렌더링 체크리스트 |
 | 광고 | AdSense 관련 | 광고 배치 체크리스트 |
-| SEO | `next/metadata` | 메타데이터 체크리스트 |
-| PWA | Service Worker 관련 | 캐싱 전략 체크리스트 |
-| 스토리지 | `idb` (IndexedDB) | 데이터 영속성 체크리스트 |
+| SEO | `next/metadata`, `src/lib/seo/` | 메타데이터 체크리스트 |
+| PWA | Service Worker, manifest.json | 캐싱 전략 체크리스트 |
+| 스토리지 | `src/lib/storage.ts` | 데이터 영속성 체크리스트 |
+| 분석 | `src/lib/analytics/` | GA4 이벤트 체크리스트 |
 
 ---
 
@@ -126,14 +133,15 @@ git diff --staged
 - `/code-review staged` — 스테이징된 변경사항
 - `/code-review all` — 전체 프로젝트
 - `/code-review pdf` — PDF 앱 전체
-- `/code-review src/app/pdf/app/[locale]/merge/page.tsx` — 특정 파일
+- `/code-review src/app/[locale]/pdf/(tools)/[slug]/page.tsx` — 특정 파일
 ```
 
 ### 앱 모드
 
-해당 앱 디렉토리 내 모든 소스 파일을 수집:
+해당 앱의 라우트 + 전용 라이브러리 내 모든 소스 파일을 수집:
 ```
-Glob: src/app/{앱이름}/**/*.{ts,tsx}
+Glob: src/app/[locale]/{앱이름}/**/*.{ts,tsx}
+Glob: src/lib/{앱이름}/**/*.{ts,tsx}
 ```
 
 ### 전체 모드
@@ -152,29 +160,40 @@ Glob: src/app/{앱이름}/**/*.{ts,tsx}
 
 | 패턴 | 설명 |
 |------|------|
-| `src/app/*/[locale]/**/page.tsx` | 페이지 컴포넌트 |
-| `src/app/*/[locale]/**/layout.tsx` | 레이아웃 |
-| `src/app/*/[locale]/**/loading.tsx`, `error.tsx` | UI 바운더리 |
-| `src/app/*/_components/**/*` | 앱 전용 컴포넌트 |
-| `src/lib/pdf/**/*` | 앱 전용 로직 |
-| `src/lib/pdf/workers/**/*` | Web Worker 스크립트 |
+| `src/app/[locale]/*/page.tsx` | 앱 홈 페이지 |
+| `src/app/[locale]/*/(tools)/[slug]/page.tsx` | 도구 페이지 |
+| `src/app/[locale]/*/(tools)/layout.tsx` | 도구 레이아웃 |
+| `src/app/[locale]/*/(tools)/_components/**/*` | 앱 전용 UI 컴포넌트 (annotate, edit, redact, sign, watermark 등) |
+| `src/app/[locale]/*/layout.tsx` | 앱 레이아웃 |
+| `src/app/[locale]/(landing)/**/*` | 랜딩 페이지 |
+| `src/lib/pdf/processors/**/*` | PDF 프로세서 (46개) |
+| `src/lib/image/processors/**/*` | Image 프로세서 (33개) |
+| `src/lib/text/processors/**/*` | Text 프로세서 (46개) |
+| `src/lib/converter/processors/**/*` | Converter 프로세서 (50개+) |
+| `src/lib/calculator/processors/**/*` | Calculator 프로세서 (49개) |
+| `src/lib/{app}/tools.ts` | 앱별 도구 정의 |
+| `src/lib/{app}/types.ts` | 앱별 타입 |
+| `src/lib/{app}/processor-registry.ts` | 앱별 프로세서 레지스트리 |
+| `src/lib/{app}/tool-icons.tsx` | 앱별 도구 아이콘 |
 
 ### 공유 라이브러리 (src/lib)
 
 | 패턴 | 설명 |
 |------|------|
-| `src/lib/ui/**/*` | 공유 UI 컴포넌트 |
-| `src/lib/design-tokens/**/*` | 디자인 토큰 |
-| `src/lib/i18n/**/*` | 번역 파일 & 유틸리티 |
-| `src/lib/seo/**/*` | SEO 유틸리티 |
-| `src/lib/analytics/**/*` | 분석 래퍼 |
-| `src/lib/ads/**/*` | 광고 컴포넌트 |
-| `src/lib/storage/**/*` | 스토리지 유틸리티 |
-| `src/lib/wasm/**/*` | WASM 바이너리 |
-| `src/lib/hooks/**/*` | 공유 React Hooks |
-| `src/lib/utils/**/*` | 공유 유틸리티 |
-| `src/lib/types/**/*` | 공유 타입 |
-| `root config/**/*` | 공유 설정 |
+| `src/lib/ui/**/*` | 공유 UI 컴포넌트 (header, footer, button, card, file-upload-zone 등) |
+| `src/lib/design-tokens/**/*` | 디자인 토큰 (colors, typography, spacing, radius, shadows, motion) |
+| `src/lib/i18n/**/*` | i18n 설정 + 47개 언어 딕셔너리 (앱별 분리) |
+| `src/lib/seo/**/*` | SEO 유틸리티 (og-metadata, alternates, breadcrumb) |
+| `src/lib/analytics/**/*` | GA4 래퍼 (tracker, gtag, 앱별 이벤트, hooks) |
+| `src/lib/blog/**/*` | 블로그 아티클 데이터 |
+| `src/lib/storage.ts` | localStorage 유틸리티 (최근 도구, 즐겨찾기) |
+| `src/lib/utils.ts` | 공유 유틸리티 |
+| `src/lib/apps.ts` | 앱 정의 (이름, 이모지, 색상, 인기 도구) |
+| `src/lib/app-icons.tsx` | 앱 아이콘 컴포넌트 |
+| `src/lib/build-nav-apps.ts` | 네비게이션 앱 빌더 |
+| `src/styles/tokens.css` | CSS 커스텀 속성 (디자인 토큰) |
+| `src/middleware.ts` | 로케일 감지, URL 리다이렉션 |
+| `next.config.ts` | 보안 헤더, CSP, 캐시 설정 |
 
 ---
 
@@ -186,15 +205,18 @@ Glob: src/app/{앱이름}/**/*.{ts,tsx}
 
 다음 파일이 존재하면 읽어서 프론트엔드 에이전트에게 전달:
 - `src/styles/tokens.css` (디자인 토큰)
-- `src/lib/ui/` 내 파일 1개 (기존 패턴 파악)
-- `src/lib/i18n/` 설정 파일 (i18n 설정)
-- 해당 앱의 기존 페이지 1개 (기존 패턴 파악)
+- `src/lib/ui/components/` 내 파일 1개 (기존 패턴 파악)
+- `src/lib/i18n/config.ts` (i18n 설정)
+- 해당 앱의 `processor-registry.ts` (프로세서 아키텍처 파악)
+- 해당 앱의 기존 도구 페이지 1개 (기존 패턴 파악)
+- 해당 앱의 `tools.ts` (도구 정의 구조)
 
 ### 공유 라이브러리 컨텍스트
 
 변경된 공유 라이브러리의 기존 코드 패턴을 확인:
 - 해당 라이브러리의 `index.ts` (export 구조)
 - 같은 라이브러리의 기존 파일 1개 (패턴 파악)
+- 해당 라이브러리를 사용하는 앱 코드 1개 (소비자 패턴 파악)
 
 ---
 
@@ -248,7 +270,7 @@ Task(subagent_type="general-purpose", description="공유 라이브러리 코드
 
 > 리뷰 모드: {모드}
 > 대상: {변경 파일 수}개 파일 (앱 {n}개 + 라이브러리 {n}개)
-> 영향 앱: {pdf, video 등}
+> 영향 앱: {pdf, image, text, converter, calculator 등}
 
 ---
 
@@ -327,10 +349,10 @@ pnpm build
 
 | 심각도 | 기준 | 예시 |
 |--------|------|------|
-| **Critical** | 버그, 보안, 데이터 손실 | XSS, 무한루프, 메모리 누수 (WASM), 번역 키 누락으로 깨지는 UI |
-| **Warning** | 성능, 접근성, SEO, 유지보수 | 불필요한 리렌더링, aria 누락, 메타데이터 누락, 모듈 간 순환 의존 |
+| **Critical** | 버그, 보안, 데이터 손실 | XSS, 무한루프, 메모리 누수, 번역 키 누락으로 깨지는 UI, 프로세서 에러 미처리 |
+| **Warning** | 성능, 접근성, SEO, 유지보수 | 불필요한 리렌더링, aria 누락, 메타데이터 누락, 모듈 간 순환 의존, 번들 비대화 |
 | **Info** | 스타일, 컨벤션 | 네이밍, 중복 클래스, 일관성 |
-| **Good** | 잘된 코드 | 적절한 코드 분리, 올바른 패턴 |
+| **Good** | 잘된 코드 | 적절한 코드 분리, 올바른 패턴, 프로세서 아키텍처 활용 |
 
 ---
 
@@ -338,11 +360,14 @@ pnpm build
 
 ### 프로젝트 구조 체크
 
-1. **모듈 경계 존중**: 앱 라우트 간 직접 import하지 않는지
-2. **공유 라이브러리 활용**: 앱에 인라인으로 구현된 것이 `src/lib/`에 이미 있지 않은지
-3. **빌드 의존성**: `@/lib/` 경로 alias를 올바르게 사용하는지
-4. **i18n 일관성**: 번역 키가 누락되거나 중복되지 않는지
-5. **SEO 체크**: 각 도구 페이지에 메타데이터, JSON-LD, hreflang이 있는지
+1. **모듈 경계 존중**: 앱 라우트 간 직접 import하지 않는지 (앱별 전용 라이브러리 `src/lib/{app}/`끼리도 교차 import 금지)
+2. **공유 라이브러리 활용**: 앱에 인라인으로 구현된 것이 `src/lib/ui/`에 이미 있지 않은지
+3. **프로세서 아키텍처 준수**: 새 도구 추가 시 `processor-registry.ts`에 등록, `tools.ts`에 정의, `processors/` 내 구현 패턴을 따르는지
+4. **빌드 의존성**: `@/` 경로 alias를 올바르게 사용하는지
+5. **i18n 일관성**: 번역 키가 누락되거나 중복되지 않는지, 47개 로케일 모두 커버하는지
+6. **SEO 체크**: 각 도구 페이지에 메타데이터, JSON-LD, hreflang, OG 태그가 있는지
+7. **다크모드**: UI 변경 시 `dark:` 클래스 누락 없는지
+8. **모바일 반응형**: grid, padding, font-size 등 모바일 대응이 되어 있는지
 
 ### 한글 리뷰
 
