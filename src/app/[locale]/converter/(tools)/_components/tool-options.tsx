@@ -2,6 +2,7 @@
 
 import { useCallback } from "react";
 import { cn } from "@/lib/utils";
+import { Dropdown } from "@/lib/ui";
 import type { ConverterDictionary } from "@/lib/i18n/converter-config";
 
 interface ToolOptionsProps {
@@ -12,6 +13,41 @@ interface ToolOptionsProps {
   t: Record<string, string>;
   unitLabels?: Record<string, Record<string, string>>;
 }
+
+// ── Timezone options ─────────────────────────────────────────────────
+
+const TIMEZONE_OPTIONS = [
+  { value: "UTC", label: "UTC" },
+  { value: "Asia/Seoul", label: "Seoul (KST)" },
+  { value: "Asia/Tokyo", label: "Tokyo (JST)" },
+  { value: "Asia/Shanghai", label: "Shanghai (CST)" },
+  { value: "Asia/Hong_Kong", label: "Hong Kong (HKT)" },
+  { value: "Asia/Taipei", label: "Taipei (CST)" },
+  { value: "Asia/Singapore", label: "Singapore (SGT)" },
+  { value: "Asia/Bangkok", label: "Bangkok (ICT)" },
+  { value: "Asia/Kolkata", label: "Kolkata (IST)" },
+  { value: "Asia/Dubai", label: "Dubai (GST)" },
+  { value: "Europe/London", label: "London (GMT/BST)" },
+  { value: "Europe/Paris", label: "Paris (CET)" },
+  { value: "Europe/Berlin", label: "Berlin (CET)" },
+  { value: "Europe/Moscow", label: "Moscow (MSK)" },
+  { value: "Europe/Istanbul", label: "Istanbul (TRT)" },
+  { value: "America/New_York", label: "New York (EST/EDT)" },
+  { value: "America/Chicago", label: "Chicago (CST/CDT)" },
+  { value: "America/Denver", label: "Denver (MST/MDT)" },
+  { value: "America/Los_Angeles", label: "Los Angeles (PST/PDT)" },
+  { value: "America/Sao_Paulo", label: "São Paulo (BRT)" },
+  { value: "America/Mexico_City", label: "Mexico City (CST)" },
+  { value: "America/Toronto", label: "Toronto (EST/EDT)" },
+  { value: "America/Vancouver", label: "Vancouver (PST/PDT)" },
+  { value: "Australia/Sydney", label: "Sydney (AEST)" },
+  { value: "Australia/Melbourne", label: "Melbourne (AEST)" },
+  { value: "Australia/Perth", label: "Perth (AWST)" },
+  { value: "Pacific/Auckland", label: "Auckland (NZST)" },
+  { value: "Pacific/Honolulu", label: "Honolulu (HST)" },
+  { value: "Africa/Cairo", label: "Cairo (EET)" },
+  { value: "Africa/Lagos", label: "Lagos (WAT)" },
+];
 
 // ── TOOL_UNITS: unit options for every unit-type tool ─────────────────
 
@@ -301,6 +337,31 @@ function TextInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className="h-9 rounded-lg border border-border/60 bg-transparent px-3 text-sm text-foreground placeholder:text-foreground-subtle/50 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all"
+      />
+    </label>
+  );
+}
+
+function DateInput({
+  value,
+  onChange,
+  label,
+  placeholder,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  label: string;
+  placeholder?: string;
+}) {
+  return (
+    <label className="flex flex-col gap-1.5">
+      <span className="text-sm font-medium text-foreground-muted">{label}</span>
+      <input
+        type="date"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="h-9 rounded-lg border border-border/60 bg-transparent px-3 text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all [color-scheme:light] dark:[color-scheme:dark]"
       />
     </label>
   );
@@ -797,33 +858,46 @@ function renderOptions(
 
     case "timezone":
       return (
-        <>
-          <TextInput
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Dropdown
             label={t.fromTimezone ?? "From Timezone"}
-            value={o(options, "fromTimezone", "UTC")}
+            value={o(options, "fromTimezone", "Asia/Seoul")}
             onChange={(v) => set("fromTimezone", v)}
-            placeholder="UTC"
+            options={TIMEZONE_OPTIONS}
+            accentColor="emerald"
           />
-          <TextInput
+          <Dropdown
             label={t.toTimezone ?? "To Timezone"}
             value={o(options, "toTimezone", "America/New_York")}
             onChange={(v) => set("toTimezone", v)}
-            placeholder="America/New_York"
+            options={TIMEZONE_OPTIONS}
+            accentColor="emerald"
           />
-        </>
+        </div>
       );
 
     case "unix-timestamp":
       return (
-        <ButtonGroup
-          label={t.direction ?? "Direction"}
-          value={o(options, "direction", "toDate")}
-          onChange={(v) => set("direction", v)}
-          options={[
-            { value: "toDate", label: t.timestampToDate ?? "Timestamp \u2192 Date" },
-            { value: "toTimestamp", label: t.dateToTimestamp ?? "Date \u2192 Timestamp" },
-          ]}
-        />
+        <>
+          <ButtonGroup
+            label={t.direction ?? "Direction"}
+            value={o(options, "direction", "toDate")}
+            onChange={(v) => set("direction", v)}
+            options={[
+              { value: "toDate", label: t.timestampToDate ?? "Timestamp \u2192 Date" },
+              { value: "toTimestamp", label: t.dateToTimestamp ?? "Date \u2192 Timestamp" },
+            ]}
+          />
+          <ButtonGroup
+            label={t.unit ?? "Unit"}
+            value={o(options, "unit", "seconds")}
+            onChange={(v) => set("unit", v)}
+            options={[
+              { value: "seconds", label: t.seconds ?? "Seconds" },
+              { value: "milliseconds", label: t.milliseconds ?? "Milliseconds" },
+            ]}
+          />
+        </>
       );
 
     case "date-format":
@@ -842,28 +916,56 @@ function renderOptions(
         />
       );
 
-    case "date-calculator":
+    case "date-calculator": {
+      const mode = o(options, "mode", "diff");
       return (
-        <ButtonGroup
-          label={t.mode ?? "Mode"}
-          value={o(options, "mode", "diff")}
-          onChange={(v) => set("mode", v)}
-          options={[
-            { value: "diff", label: t.difference ?? "Difference" },
-            { value: "add", label: t.addDays ?? "Add days" },
-            { value: "subtract", label: t.subtractDays ?? "Subtract days" },
-          ]}
-        />
+        <>
+          <ButtonGroup
+            label={t.mode ?? "Mode"}
+            value={mode}
+            onChange={(v) => set("mode", v)}
+            options={[
+              { value: "diff", label: t.difference ?? "Difference" },
+              { value: "add", label: t.addDays ?? "Add" },
+              { value: "subtract", label: t.subtractDays ?? "Subtract" },
+            ]}
+          />
+          {mode === "diff" && (
+            <DateInput
+              label={t.endDate ?? "End Date"}
+              value={o(options, "endDate", "")}
+              onChange={(v) => set("endDate", v)}
+              placeholder={t.today ?? "Today (default)"}
+            />
+          )}
+          {mode !== "diff" && (
+            <>
+              <NumberInput
+                label={t.amount ?? "Amount"}
+                value={o(options, "amount", 1)}
+                onChange={(v) => set("amount", v)}
+                min={0}
+                max={99999}
+              />
+              <ButtonGroup
+                label={t.dateUnit ?? "Unit"}
+                value={o(options, "unit", "days")}
+                onChange={(v) => set("unit", v)}
+                options={[
+                  { value: "days", label: t.days ?? "Days" },
+                  { value: "weeks", label: t.weeks ?? "Weeks" },
+                  { value: "months", label: t.months ?? "Months" },
+                  { value: "years", label: t.years ?? "Years" },
+                ]}
+              />
+            </>
+          )}
+        </>
       );
+    }
 
     case "age-calculator":
-      return (
-        <ToggleSwitch
-          label={t.showDetails ?? "Show detailed breakdown"}
-          value={o(options, "showDetails", true)}
-          onChange={(v) => set("showDetails", v)}
-        />
-      );
+      return null;
 
     // ── Geography tools ──────────────────────────────────────
 

@@ -35,8 +35,12 @@ export function process(
 
   try {
     const unit = (options?.unit as string) ?? "seconds";
+    const direction = (options?.direction as string) ?? "toDate";
 
-    if (isTimestamp(trimmed)) {
+    const forceToDate = direction === "toDate" && isTimestamp(trimmed);
+    const forceToTimestamp = direction === "toTimestamp";
+
+    if (forceToDate || (!forceToTimestamp && isTimestamp(trimmed))) {
       // Timestamp to date
       let ms = parseInt(trimmed, 10);
       if (unit === "seconds" || trimmed.length <= 10) {

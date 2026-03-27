@@ -54,20 +54,6 @@ export function process(
   const avgSentenceLength =
     sentenceCount > 0 ? (wordCount / sentenceCount).toFixed(2) : "0";
 
-  // Flesch Reading Ease (English approximation)
-  let syllableCount = 0;
-  for (const w of words) {
-    syllableCount += countSyllables(w);
-  }
-  const fleschScore =
-    sentenceCount > 0 && wordCount > 0
-      ? (
-          206.835 -
-          1.015 * (wordCount / sentenceCount) -
-          84.6 * (syllableCount / wordCount)
-        ).toFixed(2)
-      : "N/A";
-
   // Build report (i18n)
   const lbl = {
     reportTitle: msg.statsReportTitle ?? "=== Text Statistics Report ===",
@@ -81,7 +67,6 @@ export function process(
     sentences: msg.statsSentences ?? "Sentences",
     avgSentenceLength: msg.statsAvgSentenceLength ?? "Average sentence length",
     wordsUnit: msg.statsWordsUnit ?? "words",
-    fleschReadingEase: msg.statsFleschReadingEase ?? "Flesch Reading Ease",
     topFrequentWords: msg.statsTopFrequentWords ?? "--- Top 10 Most Frequent Words ---",
     times: msg.statsTimes ?? "times",
   };
@@ -97,9 +82,6 @@ export function process(
     "",
     `${lbl.sentences}: ${sentenceCount}`,
     `${lbl.avgSentenceLength}: ${avgSentenceLength} ${lbl.wordsUnit}`,
-    "",
-    `${lbl.fleschReadingEase}: ${fleschScore}`,
-    fleschScore !== "N/A" ? `  ${getFleschLabel(Number(fleschScore), msg)}` : "",
     "",
     lbl.topFrequentWords,
     ...topWords.map(
@@ -118,33 +100,7 @@ export function process(
       shortestWord,
       sentences: sentenceCount,
       avgSentenceLength,
-      fleschReadingEase: fleschScore,
     },
   };
 }
 
-function countSyllables(word: string): number {
-  const w = word.toLowerCase().replace(/[^a-z]/g, "");
-  if (w.length <= 3) return 1;
-  let count = 0;
-  const vowels = "aeiouy";
-  let prevVowel = false;
-  for (const ch of w) {
-    const isVowel = vowels.includes(ch);
-    if (isVowel && !prevVowel) count++;
-    prevVowel = isVowel;
-  }
-  if (w.endsWith("e")) count--;
-  if (w.endsWith("le") && w.length > 2 && !vowels.includes(w[w.length - 3])) count++;
-  return Math.max(count, 1);
-}
-
-function getFleschLabel(score: number, msg: Record<string, string>): string {
-  if (score >= 90) return msg.fleschVeryEasy ?? "Very Easy (5th grade)";
-  if (score >= 80) return msg.fleschEasy ?? "Easy (6th grade)";
-  if (score >= 70) return msg.fleschFairlyEasy ?? "Fairly Easy (7th grade)";
-  if (score >= 60) return msg.fleschStandard ?? "Standard (8th-9th grade)";
-  if (score >= 50) return msg.fleschFairlyDifficult ?? "Fairly Difficult (10th-12th grade)";
-  if (score >= 30) return msg.fleschDifficult ?? "Difficult (College)";
-  return msg.fleschVeryDifficult ?? "Very Difficult (Professional)";
-}

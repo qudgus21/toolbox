@@ -3,6 +3,7 @@
 import { useCallback, useRef } from "react";
 import { X, ArrowLeftRight, Hash, Palette, Code, Calendar, Type } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Dropdown } from "@/lib/ui";
 import type { ConverterInputType } from "@/lib/converter/tools";
 
 interface ConverterInputAreaProps {
@@ -28,6 +29,7 @@ interface ConverterInputAreaProps {
 const INPUT_ICONS = {
   unit: Hash,
   color: Palette,
+  dualColor: Palette,
   code: Code,
   datetime: Calendar,
   text: Type,
@@ -117,6 +119,13 @@ export function ConverterInputArea({
           value={value}
           onChange={onChange}
           placeholder={placeholder ?? "#ff0000"}
+        />
+      )}
+
+      {inputType === "dualColor" && (
+        <DualColorInput
+          value={value}
+          onChange={onChange}
         />
       )}
 
@@ -218,24 +227,14 @@ const UnitInput = forwardRef<
         <div className="flex items-center gap-2 px-4 pb-4">
           {/* From unit */}
           <div className="flex-1 min-w-0">
-            {fromLabel && (
-              <label htmlFor="converter-from-unit" className="block text-[10px] font-bold uppercase tracking-wider text-foreground-muted/60 mb-1.5 px-1">
-                {fromLabel}
-              </label>
-            )}
-            <select
+            <Dropdown
               id="converter-from-unit"
               value={fromUnit}
-              aria-label={fromLabel}
-              onChange={(e) => onFromUnitChange?.(e.target.value)}
-              className="w-full h-11 rounded-xl border border-border/60 bg-background-subtle/50 px-3 text-sm font-semibold text-foreground focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%236b7280%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.168l3.71-3.938a.75.75%200%20111.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[position:right_0.5rem_center] bg-no-repeat pr-8"
-            >
-              {unitOptions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
+              label={fromLabel}
+              onChange={(v) => onFromUnitChange?.(v)}
+              options={unitOptions}
+              accentColor="emerald"
+            />
           </div>
 
           {/* Swap button */}
@@ -253,24 +252,14 @@ const UnitInput = forwardRef<
 
           {/* To unit */}
           <div className="flex-1 min-w-0">
-            {toLabel && (
-              <label htmlFor="converter-to-unit" className="block text-[10px] font-bold uppercase tracking-wider text-foreground-muted/60 mb-1.5 px-1">
-                {toLabel}
-              </label>
-            )}
-            <select
+            <Dropdown
               id="converter-to-unit"
               value={toUnit}
-              aria-label={toLabel}
-              onChange={(e) => onToUnitChange?.(e.target.value)}
-              className="w-full h-11 rounded-xl border border-border/60 bg-background-subtle/50 px-3 text-sm font-semibold text-foreground focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%236b7280%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.168l3.71-3.938a.75.75%200%20111.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[position:right_0.5rem_center] bg-no-repeat pr-8"
-            >
-              {unitOptions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
+              label={toLabel}
+              onChange={(v) => onToUnitChange?.(v)}
+              options={unitOptions}
+              accentColor="emerald"
+            />
           </div>
         </div>
       )}
@@ -333,20 +322,131 @@ const DatetimeInput = forwardRef<
   HTMLInputElement,
   { value: string; onChange: (v: string) => void; placeholder: string; hint?: string }
 >(function DatetimeInput({ value, onChange, placeholder, hint }, ref) {
+  // Use native date picker + optional time input
+  const isDateLike = !value || /^\d{4}-\d{2}-\d{2}/.test(value.trim());
+  const datePart = value?.trim().split(/[T\s]/)[0] || "";
+  const timePart = value?.trim().split(/[T\s]/)[1] || "";
+
+  const updateParts = (date: string, time: string) => {
+    if (!date) { onChange(""); return; }
+    onChange(time ? `${date} ${time}` : date);
+  };
+
   return (
-    <div className="flex flex-col px-4 py-5 gap-2">
-      <input
-        ref={ref}
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full text-xl font-mono font-semibold text-foreground bg-transparent focus:outline-none placeholder:text-foreground-subtle/40"
-        spellCheck={false}
-      />
-      <p className="text-xs text-foreground-muted/60">
-        {hint ?? "e.g. 2024-01-15, 1705312200, now"}
-      </p>
+    <div className="flex flex-col px-4 py-5 gap-3">
+      {/* Native date + time inputs */}
+      <div className="flex items-center gap-3">
+        <input
+          ref={ref}
+          type="date"
+          value={datePart}
+          onChange={(e) => updateParts(e.target.value, timePart)}
+          className="flex-1 h-12 rounded-xl border border-border/60 bg-transparent px-4 text-lg font-mono font-semibold text-foreground focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all [color-scheme:light] dark:[color-scheme:dark]"
+        />
+        <input
+          type="time"
+          value={timePart}
+          onChange={(e) => updateParts(datePart, e.target.value)}
+          className="w-36 h-12 rounded-xl border border-border/60 bg-transparent px-4 text-lg font-mono font-semibold text-foreground focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/10 transition-all [color-scheme:light] dark:[color-scheme:dark]"
+        />
+      </div>
+      {/* Fallback text input for free-form entry */}
+      {!isDateLike && (
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder={placeholder}
+          className="w-full text-base font-mono text-foreground bg-transparent focus:outline-none placeholder:text-foreground-subtle/40 border-b border-border/40 pb-1"
+          spellCheck={false}
+        />
+      )}
+      {hint && (
+        <p className="text-xs text-foreground-muted/60">{hint}</p>
+      )}
     </div>
   );
 });
+
+// ── Dual Color Input ────────────────────────────────────────────────
+
+function DualColorInput({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  // Parse "color1, color2" from value
+  const parts = value.split(",").map((s) => s.trim());
+  const color1 = parts[0] || "";
+  const color2 = parts[1] || "";
+
+  const update = (c1: string, c2: string) => {
+    onChange(c2 ? `${c1}, ${c2}` : c1);
+  };
+
+  const toPickerHex = (v: string) => {
+    const trimmed = v.trim();
+    if (/^#[0-9a-f]{6}$/i.test(trimmed)) return trimmed;
+    if (/^#[0-9a-f]{3}$/i.test(trimmed)) {
+      const [, r, g, b] = trimmed.match(/^#(.)(.)(.)$/) ?? [];
+      return r ? `#${r}${r}${g}${g}${b}${b}` : "#000000";
+    }
+    return "#000000";
+  };
+
+  return (
+    <div className="flex flex-col gap-3 px-4 py-5">
+      {/* Color 1 */}
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          <div
+            className="h-10 w-10 rounded-lg border-2 border-border/60 shadow-inner overflow-hidden cursor-pointer transition-transform hover:scale-105"
+            style={{ backgroundColor: toPickerHex(color1) }}
+          >
+            <input
+              type="color"
+              value={toPickerHex(color1)}
+              onChange={(e) => update(e.target.value, color2)}
+              className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+            />
+          </div>
+        </div>
+        <input
+          type="text"
+          value={color1}
+          onChange={(e) => update(e.target.value, color2)}
+          placeholder="#000000"
+          className="flex-1 text-lg font-mono font-bold text-foreground bg-transparent focus:outline-none placeholder:text-foreground-subtle/40"
+          spellCheck={false}
+        />
+      </div>
+
+      {/* Color 2 */}
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          <div
+            className="h-10 w-10 rounded-lg border-2 border-border/60 shadow-inner overflow-hidden cursor-pointer transition-transform hover:scale-105"
+            style={{ backgroundColor: toPickerHex(color2) }}
+          >
+            <input
+              type="color"
+              value={toPickerHex(color2)}
+              onChange={(e) => update(color1, e.target.value)}
+              className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+            />
+          </div>
+        </div>
+        <input
+          type="text"
+          value={color2}
+          onChange={(e) => update(color1, e.target.value)}
+          placeholder="#ffffff"
+          className="flex-1 text-lg font-mono font-bold text-foreground bg-transparent focus:outline-none placeholder:text-foreground-subtle/40"
+          spellCheck={false}
+        />
+      </div>
+    </div>
+  );
+}

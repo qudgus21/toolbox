@@ -26,7 +26,7 @@ export function process(
   const letters = (input.match(/\p{L}/gu) || []).length;
   const digits = (input.match(/\d/g) || []).length;
   const spaces = (input.match(/ /g) || []).length;
-  const punctuation = (input.match(/[^\w\s]/g) || []).length;
+  const punctuation = (input.match(/\p{P}/gu) || []).length;
   const lines = input.split(/\n/).length;
 
   return {

@@ -4,8 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ToolPageLayout } from "@/lib/ui";
-import { sendEvent } from "@/lib/analytics";
-import { addRecentTool } from "@/lib/storage";
+import { useTrack, useToolViewTracking, converterEvents } from "@/lib/analytics";
 import type { ConverterDictionary } from "@/lib/i18n/converter-config";
 import type { ConverterInputType } from "@/lib/converter/tools";
 import { useConverterResult } from "@/lib/converter/use-converter-processor";
@@ -28,6 +27,7 @@ interface ConverterToolPageClientProps {
   unitLabels?: Record<string, Record<string, string>>;
   inputType: ConverterInputType;
   dualInput?: boolean;
+  toolPlaceholder?: string;
 }
 
 export function ConverterToolPageClient({
@@ -44,6 +44,7 @@ export function ConverterToolPageClient({
   unitLabels,
   inputType,
   dualInput,
+  toolPlaceholder,
 }: ConverterToolPageClientProps) {
   const [input, setInput] = useState("");
   const [options, setOptions] = useState<Record<string, unknown>>(() => {
@@ -62,39 +63,37 @@ export function ConverterToolPageClient({
   const previewInput = !input
     ? inputType === "unit" ? "1"
     : inputType === "color" ? "#3b82f6"
+    : inputType === "dualColor" ? "#3b82f6, #ffffff"
     : ""
     : input;
   const isPreview = !input && !!previewInput;
 
   const result = useConverterResult(slug, previewInput, effectiveOptions);
 
-  // Track tool usage
-  const trackedRef = useRef(false);
-  useEffect(() => {
-    if (!trackedRef.current) {
-      trackedRef.current = true;
-      addRecentTool(slug);
-      sendEvent("tool_view", { app: "converter", tool_slug: slug });
-    }
-  }, [slug]);
+  // ── Analytics ──
+  const track = useTrack("converter", converterEvents);
+  const maxStageRef = useRef<string>("view");
+  useToolViewTracking("converter", slug, () => maxStageRef.current);
 
   // Track first input
   const inputTrackedRef = useRef(false);
   useEffect(() => {
     if (input && !inputTrackedRef.current) {
       inputTrackedRef.current = true;
-      sendEvent("converterInput", { app: "converter", tool_slug: slug });
+      maxStageRef.current = "input";
+      track.toolInput({ tool_slug: slug });
     }
-  }, [input, slug]);
+  }, [input, slug, track]);
 
-  // Track result
+  // Track first result
   const resultTrackedRef = useRef(false);
   useEffect(() => {
     if (result?.output && !resultTrackedRef.current) {
       resultTrackedRef.current = true;
-      sendEvent("converterResult", { app: "converter", tool_slug: slug });
+      maxStageRef.current = "result";
+      track.toolResult({ tool_slug: slug });
     }
-  }, [result, slug]);
+  }, [result, slug, track]);
 
   // Unit-specific handlers
   const unitOptions = getUnits(slug, unitLabels);
@@ -117,8 +116,13 @@ export function ConverterToolPageClient({
       fromUnit: prev.toUnit as string,
       toUnit: prev.fromUnit as string,
     }));
-    sendEvent("converterSwap", { app: "converter", tool_slug: slug });
-  }, [slug]);
+    track.toolSwap({ tool_slug: slug });
+  }, [slug, track]);
+
+  const handleCopy = useCallback(() => {
+    maxStageRef.current = "copy";
+    track.toolCopy({ tool_slug: slug, output_length: result?.output?.length ?? 0 });
+  }, [slug, result, track]);
 
   const isUnitType = inputType === "unit";
 
@@ -153,7 +157,7 @@ export function ConverterToolPageClient({
             onChange={setInput}
             inputType={inputType}
             label={labels.input}
-            placeholder={labels.inputPlaceholder}
+            placeholder={toolPlaceholder || labels.inputPlaceholder}
             clearLabel={labels.clear}
             fromLabel={isUnitType ? labels.from : undefined}
             toLabel={isUnitType ? labels.to : undefined}
@@ -177,7 +181,7 @@ export function ConverterToolPageClient({
             copyLabel={labels.copyToClipboard}
             copiedLabel={labels.copied}
             allConversionsLabel={labels.allConversions}
-            onCopy={() => sendEvent("converterCopy", { app: "converter", tool_slug: slug, output_length: result?.output?.length ?? 0 })}
+            onCopy={handleCopy}
           />
         </div>
       </div>
