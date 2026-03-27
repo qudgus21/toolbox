@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { appIconMap } from "@/lib/app-icons";
@@ -61,47 +60,39 @@ function MobileNav({ apps }: AppNavMenuProps) {
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <>
-            {/* backdrop */}
-            <motion.div
-              className="fixed inset-0 top-[72px] z-40 bg-black/20 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.15 }}
-              onClick={close}
-            />
-            {/* panel */}
-            <motion.div
-              className="fixed left-0 right-0 top-[72px] z-50 border-b border-border bg-background shadow-xl max-h-[70vh] overflow-y-auto"
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="px-4 py-3 space-y-1">
-                {apps.map((app) => {
-                  const AppIcon = appIconMap[app.slug];
-                  return (
-                    <Link
-                      key={app.slug}
-                      href={app.href}
-                      onClick={close}
-                      className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-semibold text-foreground hover:bg-background-muted transition-colors"
-                    >
-                      {AppIcon && <AppIcon className="h-6 w-auto shrink-0" />}
-                      <span>{app.label}</span>
-                      <ArrowRight className="h-4 w-4 ml-auto text-foreground-subtle" />
-                    </Link>
-                  );
-                })}
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      {/* backdrop */}
+      <div
+        className={`fixed inset-0 top-[72px] z-40 bg-black/20 backdrop-blur-sm transition-opacity duration-150 ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={close}
+      />
+      {/* panel */}
+      <div
+        className={`fixed left-0 right-0 top-[72px] z-50 border-b border-border bg-background shadow-xl max-h-[70vh] overflow-y-auto transition-all duration-200 ${
+          open
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        <div className="px-4 py-3 space-y-1">
+          {apps.map((app) => {
+            const AppIcon = appIconMap[app.slug];
+            return (
+              <Link
+                key={app.slug}
+                href={app.href}
+                onClick={close}
+                className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-semibold text-foreground hover:bg-background-muted transition-colors"
+              >
+                {AppIcon && <AppIcon className="h-6 w-auto shrink-0" />}
+                <span>{app.label}</span>
+                <ArrowRight className="h-4 w-4 ml-auto text-foreground-subtle" />
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

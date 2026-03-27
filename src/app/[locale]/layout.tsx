@@ -43,7 +43,7 @@ export default async function LocaleLayout({
     <>
       <GoogleAnalytics />
       <GoogleAdSense />
-      <LayoutScripts locale={locale} dir={dir} />
+      <LayoutScripts />
       <Header
         logo={<AppLogo />}
         nav={<AppNavMenu apps={navApps} />}

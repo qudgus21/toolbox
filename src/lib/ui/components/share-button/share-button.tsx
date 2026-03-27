@@ -4,7 +4,12 @@ import { useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { Share2 } from "lucide-react";
 import { sendEvent } from "@/lib/analytics";
-import { ShareModal } from "./share-modal";
+import dynamic from "next/dynamic";
+
+const ShareModal = dynamic(
+  () => import("./share-modal").then((m) => ({ default: m.ShareModal })),
+  { ssr: false },
+);
 
 function detectApp(pathname: string): string {
   if (pathname.match(/^\/[^/]+\/pdf(\/|$)/)) return "pdf";
@@ -57,17 +62,19 @@ export function ShareButton({
       >
         <Share2 className="h-4 w-4" />
       </button>
-      <ShareModal
-        open={open}
-        onClose={() => setOpen(false)}
-        title={shareTitle}
-        subtitle={shareSubtitle}
-        copyLabel={copyLabel}
-        copiedLabel={copiedLabel}
-        onShare={(method) =>
-          sendEvent("share_click", { app: resolvedApp, method })
-        }
-      />
+      {open && (
+        <ShareModal
+          open={open}
+          onClose={() => setOpen(false)}
+          title={shareTitle}
+          subtitle={shareSubtitle}
+          copyLabel={copyLabel}
+          copiedLabel={copiedLabel}
+          onShare={(method) =>
+            sendEvent("share_click", { app: resolvedApp, method })
+          }
+        />
+      )}
     </>
   );
 }
