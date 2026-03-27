@@ -66,7 +66,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const [activeTab, setActiveTab] = useState<CategoryFilter>("all");
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [favSlugs, setFavSlugs] = useState<string[] | null>(null);
+  const [favSlugs, setFavSlugs] = useState<string[]>(() => getAppFavorites("image"));
   const [toast, setToast] = useState<string | null>(null);
   const [disableFavTransition, setDisableFavTransition] = useState(false);
   const [favHintSlug, setFavHintSlug] = useState<string | null>(null);
@@ -138,7 +138,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   }, [search, track]);
 
   const isSearching = search.trim().length > 0;
-  const showFavSection = favSlugs !== null && !isSearching && activeTab === "all" && favTools.length > 0;
+  const showFavSection = !isSearching && activeTab === "all" && favTools.length > 0;
 
   const gridRef = useRef<HTMLDivElement>(null);
   const favGridRef = useRef<HTMLDivElement>(null);

@@ -518,6 +518,7 @@ function ExpressionInput({
                 key={bi}
                 type="button"
                 onClick={() => handleButton(btn)}
+                aria-label={btn.action === "backspace" ? "Backspace" : undefined}
                 className={cn(
                   "h-12 rounded-xl border border-border/30 text-sm transition-all duration-100 cursor-pointer select-none",
                   "active:scale-95 active:brightness-90",
@@ -526,7 +527,7 @@ function ExpressionInput({
                 )}
               >
                 {btn.action === "backspace" ? (
-                  <Delete className="h-4 w-4 mx-auto" />
+                  <Delete className="h-4 w-4 mx-auto" aria-hidden="true" />
                 ) : (
                   btn.label
                 )}

@@ -5,9 +5,9 @@ export function GoogleAdSense() {
 
   return (
     <script
-      async
-      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-      crossOrigin="anonymous"
+      dangerouslySetInnerHTML={{
+        __html: `window.addEventListener("load",function(){var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}";document.head.appendChild(s)})`,
+      }}
     />
   );
 }

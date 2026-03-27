@@ -163,9 +163,9 @@ function ConversionTable({
     <div className="border-t border-emerald-500/10">
       {title && (
         <div className="px-4 pt-2.5 pb-1">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+          <p className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
             {title}
-          </h3>
+          </p>
         </div>
       )}
       <div className="grid grid-cols-2 gap-px bg-border/10 p-1">
@@ -185,7 +185,7 @@ function ConversionTable({
                 />
               )}
               <div className="flex flex-col min-w-0">
-                <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
+                <span className="text-[10px] font-bold text-foreground-subtle uppercase tracking-wide leading-none mb-0.5">
                   {row.label}
                 </span>
                 <EllipsisTooltip
@@ -194,7 +194,7 @@ function ConversionTable({
                 >
                   {row.value}
                   {row.unit && (
-                    <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
+                    <span className="text-xs text-foreground-subtle ml-1">{row.unit}</span>
                   )}
                 </EllipsisTooltip>
               </div>
