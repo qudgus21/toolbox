@@ -16,15 +16,6 @@ const FavoritesDnd = lazy(() => import("./favorites-dnd").then(m => ({ default: 
 
 type CategoryFilter = "all" | "edit" | "convert" | "effects" | "compose" | "optimize" | "generate";
 
-const categoryTabColors: Record<Exclude<CategoryFilter, "all">, { icon: string }> = {
-  edit:     { icon: "text-amber-500" },
-  convert:  { icon: "text-blue-500" },
-  effects:  { icon: "text-purple-500" },
-  compose:  { icon: "text-teal-500" },
-  optimize: { icon: "text-green-500" },
-  generate: { icon: "text-rose-500" },
-};
-
 const categoryLabelKeys: Record<string, keyof ImageDictionary["home"]> = {
   edit: "categoryEdit",
   convert: "categoryConvert",

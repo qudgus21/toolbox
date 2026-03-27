@@ -53,17 +53,19 @@ export function ShareToolButton({
         <Share2 className="h-4 w-4" />
         {label}
       </button>
-      <ShareModal
-        open={open}
-        onClose={() => setOpen(false)}
-        title={shareTitle}
-        subtitle={shareSubtitle}
-        copyLabel={copyLabel}
-        copiedLabel={copiedLabel}
-        onShare={(method) =>
-          sendEvent("share_click", { app, method, tool_slug: toolSlug })
-        }
-      />
+      {open && (
+        <ShareModal
+          open={open}
+          onClose={() => setOpen(false)}
+          title={shareTitle}
+          subtitle={shareSubtitle}
+          copyLabel={copyLabel}
+          copiedLabel={copiedLabel}
+          onShare={(method) =>
+            sendEvent("share_click", { app, method, tool_slug: toolSlug })
+          }
+        />
+      )}
     </>
   );
 }

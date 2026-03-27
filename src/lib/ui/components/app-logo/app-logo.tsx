@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -58,6 +59,7 @@ function detectApp(pathname: string): AppType {
 }
 
 export function AppLogo() {
+  const gradientId = useId();
   const pathname = usePathname();
   const app = detectApp(pathname);
   const config = logoConfig[app];
@@ -77,12 +79,12 @@ export function AppLogo() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor={config.from} />
             <stop offset="100%" stopColor={config.to} />
           </linearGradient>
         </defs>
-        <rect width="32" height="32" rx="7" fill="url(#logo-bg)" />
+        <rect width="32" height="32" rx="7" fill={`url(#${gradientId})`} />
         <text x="16" y="21.5" fontFamily="system-ui,-apple-system,sans-serif" fontSize="15" fontWeight="800" fill="white" textAnchor="middle" letterSpacing="-0.5">T</text>
         <circle cx="25" cy="8" r="3.5" fill="#fbbf24" />
         <circle cx="25" cy="8" r="1.5" fill="white" />

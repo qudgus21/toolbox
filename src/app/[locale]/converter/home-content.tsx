@@ -16,17 +16,6 @@ const FavoritesDnd = lazy(() => import("./favorites-dnd").then(m => ({ default: 
 
 type CategoryFilter = "all" | "unit" | "number" | "color" | "datetime" | "data" | "css" | "cooking" | "geography";
 
-const categoryTabColors: Record<Exclude<CategoryFilter, "all">, { icon: string }> = {
-  unit:      { icon: "text-emerald-500" },
-  number:    { icon: "text-blue-500" },
-  color:     { icon: "text-violet-500" },
-  datetime:  { icon: "text-orange-500" },
-  data:      { icon: "text-cyan-500" },
-  css:       { icon: "text-pink-500" },
-  cooking:   { icon: "text-amber-500" },
-  geography: { icon: "text-teal-500" },
-};
-
 const categoryLabelKeys: Record<string, keyof ConverterDictionary["home"]> = {
   unit: "categoryUnit",
   number: "categoryNumber",
@@ -123,8 +112,7 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
         );
       });
     }
-    // comingSoon 도구를 맨 뒤로
-    return [...result].sort((a, b) => ((a as any).comingSoon ? 1 : 0) - ((b as any).comingSoon ? 1 : 0));
+    return result;
   }, [activeTab, search, dict.tools]);
 
   const favTools = useMemo(

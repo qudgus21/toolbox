@@ -9,8 +9,6 @@ export function buildNavApps({
   locale,
 }: {
   locale: string;
-  pdfDict?: unknown;
-  imageDict?: unknown;
 }): NavApp[] {
   const labelMap: Record<string, string> = { pdf: "PDF", image: "Image", text: "Text", converter: "Converter", calculator: "Calculator" };
   return apps.map((app) => ({
