@@ -106,6 +106,7 @@ export default async function ToolPage({
         processorMessages={dict.processorMessages}
         inputType={tool.inputType}
         fields={tool.fields}
+        previewData={tool.previewData}
       />
     </>
   );
