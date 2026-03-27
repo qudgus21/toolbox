@@ -12,9 +12,8 @@ const ShareModal = dynamic(
 );
 
 function detectApp(pathname: string): string {
-  if (pathname.match(/^\/[^/]+\/pdf(\/|$)/)) return "pdf";
-  if (pathname.match(/^\/[^/]+\/image(\/|$)/)) return "image";
-  return "landing";
+  const match = pathname.match(/^\/[^/]+\/(pdf|image|text|converter|calculator)(\/|$)/);
+  return match?.[1] ?? "landing";
 }
 
 interface ShareButtonProps {
