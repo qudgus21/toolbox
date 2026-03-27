@@ -59,7 +59,10 @@ export function middleware(request: NextRequest) {
   // Check if first segment is a valid locale
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length > 0 && locales.find((l) => l === segments[0])) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set("x-locale", segments[0]);
+    response.headers.set("x-dir", segments[0] === "ar" || segments[0] === "he" ? "rtl" : "ltr");
+    return response;
   }
 
   // No locale found — detect and redirect
