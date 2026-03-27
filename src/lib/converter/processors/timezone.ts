@@ -73,7 +73,7 @@ export function process(
   if (!trimmed) return { output: "" };
 
   try {
-    const fromTimezone = String(options?.fromTimezone ?? "UTC");
+    const fromTimezone = String(options?.fromTimezone ?? "Asia/Seoul");
     const toTimezone = String(options?.toTimezone ?? "America/New_York");
 
     // Parse input in the context of fromTimezone

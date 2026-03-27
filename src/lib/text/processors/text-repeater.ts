@@ -4,7 +4,7 @@ export function process(
   input: string,
   options?: Record<string, unknown>
 ): TextResult {
-  const count = Math.max(1, (options?.count as number) ?? 3);
+  const count = Math.max(1, (options?.count as number) ?? 2);
   const separator = options?.separator !== undefined ? String(options.separator) : "\n";
 
   if (!input) return { output: "", stats: { count, separator } };

@@ -28,6 +28,7 @@ interface ConverterToolPageClientProps {
   unitLabels?: Record<string, Record<string, string>>;
   inputType: ConverterInputType;
   dualInput?: boolean;
+  toolPlaceholder?: string;
 }
 
 export function ConverterToolPageClient({
@@ -44,6 +45,7 @@ export function ConverterToolPageClient({
   unitLabels,
   inputType,
   dualInput,
+  toolPlaceholder,
 }: ConverterToolPageClientProps) {
   const [input, setInput] = useState("");
   const [options, setOptions] = useState<Record<string, unknown>>(() => {
@@ -62,6 +64,7 @@ export function ConverterToolPageClient({
   const previewInput = !input
     ? inputType === "unit" ? "1"
     : inputType === "color" ? "#3b82f6"
+    : inputType === "dualColor" ? "#3b82f6, #ffffff"
     : ""
     : input;
   const isPreview = !input && !!previewInput;
@@ -153,7 +156,7 @@ export function ConverterToolPageClient({
             onChange={setInput}
             inputType={inputType}
             label={labels.input}
-            placeholder={labels.inputPlaceholder}
+            placeholder={toolPlaceholder || labels.inputPlaceholder}
             clearLabel={labels.clear}
             fromLabel={isUnitType ? labels.from : undefined}
             toLabel={isUnitType ? labels.to : undefined}

@@ -4,13 +4,13 @@ export function process(
   input: string,
   options?: Record<string, unknown>
 ): TextResult {
-  const mode = (options?.mode as string) || "escape";
+  const mode = (options?.mode as string) || "encode";
 
   if (!input) return { output: "", stats: { mode } };
 
   let output: string;
 
-  if (mode === "unescape") {
+  if (mode === "decode") {
     // Replace \uXXXX sequences with actual characters
     output = input.replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) =>
       String.fromCharCode(parseInt(hex, 16))

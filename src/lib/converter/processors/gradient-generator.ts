@@ -36,6 +36,10 @@ function rgbToHex(rgb: RGB): string {
   return `#${toHex(rgb.r)}${toHex(rgb.g)}${toHex(rgb.b)}`;
 }
 
+function complementary(rgb: RGB): RGB {
+  return { r: 255 - rgb.r, g: 255 - rgb.g, b: 255 - rgb.b };
+}
+
 function parseTwoColors(input: string): [RGB, RGB] | null {
   // Try comma-separated first
   let parts = input.split(",").map((s) => s.trim());
@@ -43,12 +47,18 @@ function parseTwoColors(input: string): [RGB, RGB] | null {
     // Try space-separated (two hex colors)
     parts = input.split(/\s+/).filter(Boolean);
   }
-  if (parts.length < 2) return null;
 
-  const color1 = parseColor(parts[0]);
-  const color2 = parseColor(parts[parts.length - 1]);
-  if (!color1 || !color2) return null;
-  return [color1, color2];
+  if (parts.length >= 2) {
+    const color1 = parseColor(parts[0]);
+    const color2 = parseColor(parts[parts.length - 1]);
+    if (color1 && color2) return [color1, color2];
+  }
+
+  // Single color: pair with its complementary
+  const single = parseColor(parts[0]);
+  if (single) return [single, complementary(single)];
+
+  return null;
 }
 
 export function process(
