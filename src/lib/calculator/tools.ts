@@ -60,6 +60,8 @@ export interface CalculatorFieldDefinition {
   type: "number" | "select" | "text" | "radio";
   required?: boolean;
   default?: unknown;
+  /** Preview value shown before user input (overrides auto-generated preview default) */
+  preview?: number;
   min?: number;
   max?: number;
   step?: number;
@@ -77,6 +79,8 @@ export interface CalculatorToolDefinition {
   category: CalculatorCategory;
   inputType: CalculatorInputType;
   fields: CalculatorFieldDefinition[];
+  /** Sample data for expression/dataset input types (shown as preview before user input) */
+  previewData?: string;
 }
 
 export const categories = [
@@ -179,6 +183,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "math",
     inputType: "expression",
     fields: [{ name: "expression", type: "text", required: true }],
+    previewData: "sqrt(2) * pi",
   },
   {
     slug: "ratio-calculator",
@@ -268,6 +273,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "math",
     inputType: "dataset",
     fields: [],
+    previewData: "1 2 3\n4 5 6\n7 8 9",
   },
 
   // ── Statistics (7) ─────────────────────────────────────
@@ -280,6 +286,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "statistics",
     inputType: "dataset",
     fields: [],
+    previewData: "10, 20, 30, 40, 50",
   },
   {
     slug: "standard-deviation",
@@ -289,6 +296,7 @@ export const tools: CalculatorToolDefinition[] = [
     emoji: "📈",
     category: "statistics",
     inputType: "dataset",
+    previewData: "10, 20, 30, 40, 50",
     fields: [
       {
         name: "type",
@@ -383,6 +391,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "statistics",
     inputType: "dataset",
     fields: [],
+    previewData: "1, 2\n2, 4\n3, 5\n4, 8\n5, 10",
   },
 
   // ── Trigonometry (3) ───────────────────────────────────
@@ -468,9 +477,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "principal", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "rate", type: "number", required: true, min: 0, suffix: "%" },
-      { name: "time", type: "number", required: true, min: 0, suffix: "years" },
+      { name: "principal", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
+      { name: "rate", type: "number", required: true, min: 0, suffix: "%", preview: 5 },
+      { name: "time", type: "number", required: true, min: 0, suffix: "years", preview: 10 },
       {
         name: "frequency",
         type: "select",
@@ -494,9 +503,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "amount", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "rate", type: "number", required: true, min: 0, suffix: "%" },
-      { name: "term", type: "number", required: true, min: 0, suffix: "years" },
+      { name: "amount", type: "number", required: true, min: 0, suffix: "$", preview: 50000 },
+      { name: "rate", type: "number", required: true, min: 0, suffix: "%", preview: 5 },
+      { name: "term", type: "number", required: true, min: 0, suffix: "years", preview: 5 },
       {
         name: "frequency",
         type: "select",
@@ -517,10 +526,10 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "homePrice", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "downPayment", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "rate", type: "number", required: true, min: 0, suffix: "%" },
-      { name: "term", type: "number", required: true, min: 0, suffix: "years" },
+      { name: "homePrice", type: "number", required: true, min: 0, suffix: "$", preview: 300000 },
+      { name: "downPayment", type: "number", required: true, min: 0, suffix: "$", preview: 60000 },
+      { name: "rate", type: "number", required: true, min: 0, suffix: "%", preview: 4 },
+      { name: "term", type: "number", required: true, min: 0, suffix: "years", preview: 30 },
       { name: "propertyTax", type: "number", min: 0, suffix: "$/yr" },
       { name: "insurance", type: "number", min: 0, suffix: "$/yr" },
     ],
@@ -534,7 +543,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "goalAmount", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "goalAmount", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
       { name: "currentSavings", type: "number", min: 0, default: 0, suffix: "$" },
       { name: "rate", type: "number", min: 0, default: 0, suffix: "%" },
       { name: "timeframe", type: "number", required: true, min: 1, suffix: "months" },
@@ -549,8 +558,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "initialInvestment", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "finalValue", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "initialInvestment", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
+      { name: "finalValue", type: "number", required: true, min: 0, suffix: "$", preview: 15000 },
       { name: "timePeriod", type: "number", min: 0, suffix: "years" },
     ],
   },
@@ -563,8 +572,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "revenue", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "cost", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "revenue", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
+      { name: "cost", type: "number", required: true, min: 0, suffix: "$", preview: 7000 },
     ],
   },
   {
@@ -576,8 +585,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "cost", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "markup", type: "number", required: true, min: 0, suffix: "%" },
+      { name: "cost", type: "number", required: true, min: 0, suffix: "$", preview: 100 },
+      { name: "markup", type: "number", required: true, min: 0, suffix: "%", preview: 50 },
     ],
   },
   {
@@ -589,9 +598,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "fixedCosts", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "variableCost", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "pricePerUnit", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "fixedCosts", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
+      { name: "variableCost", type: "number", required: true, min: 0, suffix: "$", preview: 5 },
+      { name: "pricePerUnit", type: "number", required: true, min: 0, suffix: "$", preview: 25 },
     ],
   },
   {
@@ -603,8 +612,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "financial",
     inputType: "fields",
     fields: [
-      { name: "assetCost", type: "number", required: true, min: 0, suffix: "$" },
-      { name: "salvageValue", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "assetCost", type: "number", required: true, min: 0, suffix: "$", preview: 10000 },
+      { name: "salvageValue", type: "number", required: true, min: 0, suffix: "$", preview: 1000 },
       { name: "usefulLife", type: "number", required: true, min: 1, suffix: "years" },
       {
         name: "method",
@@ -650,8 +659,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "weight", type: "number", required: true, min: 0, suffix: "kg" },
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
+      { name: "weight", type: "number", required: true, min: 0, suffix: "kg", preview: 70 },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 175 },
       {
         name: "unit",
         type: "select",
@@ -672,9 +681,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "weight", type: "number", required: true, min: 0, suffix: "kg" },
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
-      { name: "age", type: "number", required: true, min: 0 },
+      { name: "weight", type: "number", required: true, min: 0, suffix: "kg", preview: 70 },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 175 },
+      { name: "age", type: "number", required: true, min: 0, preview: 30 },
       {
         name: "gender",
         type: "select",
@@ -704,9 +713,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "weight", type: "number", required: true, min: 0, suffix: "kg" },
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
-      { name: "age", type: "number", required: true, min: 0 },
+      { name: "weight", type: "number", required: true, min: 0, suffix: "kg", preview: 70 },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 175 },
+      { name: "age", type: "number", required: true, min: 0, preview: 30 },
       {
         name: "gender",
         type: "select",
@@ -739,9 +748,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "weight", type: "number", required: true, min: 0, suffix: "kg" },
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
-      { name: "age", type: "number", required: true, min: 0 },
+      { name: "weight", type: "number", required: true, min: 0, suffix: "kg", preview: 70 },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 175 },
+      { name: "age", type: "number", required: true, min: 0, preview: 30 },
       {
         name: "gender",
         type: "select",
@@ -784,9 +793,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "waist", type: "number", required: true, min: 0, suffix: "cm" },
-      { name: "neck", type: "number", required: true, min: 0, suffix: "cm" },
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
+      { name: "waist", type: "number", required: true, min: 0, suffix: "cm", preview: 85 },
+      { name: "neck", type: "number", required: true, min: 0, suffix: "cm", preview: 38 },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 175 },
       { name: "hip", type: "number", min: 0, suffix: "cm" },
       {
         name: "gender",
@@ -808,7 +817,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "height", type: "number", required: true, min: 0, suffix: "cm" },
+      { name: "height", type: "number", required: true, min: 0, suffix: "cm", preview: 170 },
       {
         name: "gender",
         type: "select",
@@ -842,7 +851,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "health",
     inputType: "fields",
     fields: [
-      { name: "calories", type: "number", required: true, min: 0, suffix: "kcal" },
+      { name: "calories", type: "number", required: true, min: 0, suffix: "kcal", preview: 2000 },
       {
         name: "diet",
         type: "select",
@@ -867,7 +876,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "everyday",
     inputType: "fields",
     fields: [
-      { name: "billAmount", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "billAmount", type: "number", required: true, min: 0, suffix: "$", preview: 50 },
       { name: "tipPercent", type: "number", required: true, min: 0, default: 15, suffix: "%" },
       { name: "numPeople", type: "number", min: 1, default: 1 },
     ],
@@ -881,8 +890,8 @@ export const tools: CalculatorToolDefinition[] = [
     category: "everyday",
     inputType: "fields",
     fields: [
-      { name: "watts", type: "number", required: true, min: 0, suffix: "W" },
-      { name: "hoursPerDay", type: "number", required: true, min: 0 },
+      { name: "watts", type: "number", required: true, min: 0, suffix: "W", preview: 1000 },
+      { name: "hoursPerDay", type: "number", required: true, min: 0, preview: 8 },
       { name: "daysPerMonth", type: "number", min: 0, default: 30 },
       { name: "costPerKwh", type: "number", required: true, min: 0, suffix: "$" },
     ],
@@ -896,9 +905,9 @@ export const tools: CalculatorToolDefinition[] = [
     category: "everyday",
     inputType: "fields",
     fields: [
-      { name: "distance", type: "number", required: true, min: 0, suffix: "km" },
-      { name: "fuelEfficiency", type: "number", required: true, min: 0, suffix: "L/100km" },
-      { name: "fuelPrice", type: "number", required: true, min: 0, suffix: "$" },
+      { name: "distance", type: "number", required: true, min: 0, suffix: "km", preview: 100 },
+      { name: "fuelEfficiency", type: "number", required: true, min: 0, suffix: "L/100km", preview: 8 },
+      { name: "fuelPrice", type: "number", required: true, min: 0, suffix: "$", preview: 1.5 },
     ],
   },
   {
@@ -982,6 +991,7 @@ export const tools: CalculatorToolDefinition[] = [
     emoji: "🎓",
     category: "education",
     inputType: "dataset",
+    previewData: "A, 3\nB+, 4\nA-, 3",
     fields: [
       {
         name: "scale",
@@ -1004,6 +1014,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "education",
     inputType: "dataset",
     fields: [],
+    previewData: "85, 0.3\n92, 0.4\n78, 0.3",
   },
   {
     slug: "final-exam",
@@ -1028,6 +1039,7 @@ export const tools: CalculatorToolDefinition[] = [
     category: "education",
     inputType: "dataset",
     fields: [],
+    previewData: "80, 2\n90, 3\n85, 1",
   },
 
   // ── Developer (2) ──────────────────────────────────────
