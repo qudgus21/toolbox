@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Cộng ngày",
     subtractDays: "Trừ ngày",
     datetimeHint: "VD: 2024-01-15, 1705312200, now",
+    endDate: "Ngày kết thúc",
+    today: "Hôm nay (mặc định)",
+    dateUnit: "Đơn vị",
   },
   statsLabels: {
     lines: "Dòng",

@@ -124,6 +124,8 @@ const et: Dictionary = {
     encryptedFile: "Krüptitud fail",
     clickToSelectPages: "Klõpsake lehekülgede valimiseks",
     dragToReorder: "Lohistage järjestuse muutmiseks",
+    removeFile: "Eemalda fail",
+    rotatePage: "Pööra lehekülge",
     favoriteAdded: "Lisatud lemmikutesse",
     favoriteRemoved: "Eemaldatud lemmikutest",
     comingSoon: "Tulemas peagi",
@@ -576,6 +578,8 @@ const et: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Lamesta",
+    pageOf: "lehekülge",
+    changeFile: "Muuda faili",
     formFieldsLabel: "Vormiväljad",
     formFieldsDesc: "Teisenda sisestusväljad, märkeruudud ja rippmenüüd staatiliseks tekstiks",
     annotationsLabel: "Märkused",

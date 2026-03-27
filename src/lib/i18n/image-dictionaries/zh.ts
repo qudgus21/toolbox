@@ -306,6 +306,8 @@ const zh: ImageDictionary = {
     shareCopied: "已复制!",
     shareCopyLink: "复制链接",
     unknownError: "发生未知错误",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

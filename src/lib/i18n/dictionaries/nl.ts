@@ -124,6 +124,8 @@ const nl: Dictionary = {
     encryptedFile: "Versleuteld bestand",
     clickToSelectPages: "Klik om pagina's te selecteren",
     dragToReorder: "Sleep om te herordenen",
+    removeFile: "Verwijder bestand",
+    rotatePage: "Pagina draaien",
     favoriteAdded: "Toegevoegd aan favorieten",
     favoriteRemoved: "Verwijderd uit favorieten",
     comingSoon: "Binnenkort",
@@ -576,6 +578,8 @@ const nl: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Afvlakken",
+    pageOf: "pagina's",
+    changeFile: "Bestand wijzigen",
     formFieldsLabel: "Formuliervelden",
     formFieldsDesc: "Invoervelden, selectievakjes en vervolgkeuzelijsten omzetten naar statische tekst",
     annotationsLabel: "Annotaties",

@@ -124,6 +124,8 @@ const ar: Dictionary = {
     encryptedFile: "ملف مشفر",
     clickToSelectPages: "انقر لتحديد الصفحات",
     dragToReorder: "اسحب لإعادة الترتيب",
+    removeFile: "حذف الملف",
+    rotatePage: "تدوير الصفحة",
     favoriteAdded: "تمت الإضافة إلى المفضلة",
     favoriteRemoved: "تمت الإزالة من المفضلة",
     comingSoon: "قريبًا",
@@ -576,6 +578,8 @@ const ar: Dictionary = {
   },
   flattenTool: {
     flattenButton: "تسطيح",
+    pageOf: "صفحات",
+    changeFile: "تغيير الملف",
     formFieldsLabel: "حقول النموذج",
     formFieldsDesc: "تحويل حقول الإدخال ومربعات الاختيار والقوائم المنسدلة إلى نص ثابت",
     annotationsLabel: "التعليقات التوضيحية",

@@ -349,6 +349,7 @@ const km: TextDictionary = {
     suffixPlaceholder: "បច្ច័យ...",
   },
   statsLabels: {
+    emptyState: "បញ្ចូលអត្ថបទដើម្បីមើលស្ថិតិ",
     characters: "តួអក្សរ",
     charactersWithoutSpaces: "គ្មានដកឃ្លា",
     words: "ពាក្យ",

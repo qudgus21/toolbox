@@ -349,6 +349,7 @@ const es: TextDictionary = {
     suffixPlaceholder: "Sufijo...",
   },
   statsLabels: {
+    emptyState: "Ingresa texto para ver estadísticas",
     characters: "Caracteres",
     charactersWithoutSpaces: "Sin espacios",
     words: "Palabras",

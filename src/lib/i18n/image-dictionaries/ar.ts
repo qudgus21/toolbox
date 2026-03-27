@@ -307,6 +307,8 @@ const ar: ImageDictionary = {
     shareCopied: "تم النسخ!",
     shareCopyLink: "نسخ الرابط",
     unknownError: "حدث خطأ غير معروف",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

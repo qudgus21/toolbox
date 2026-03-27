@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "날짜 더하기",
     subtractDays: "날짜 빼기",
     datetimeHint: "예: 2024-01-15, 1705312200, now",
+    endDate: "종료일",
+    today: "오늘 (기본값)",
+    dateUnit: "단위",
   },
   statsLabels: {
     lines: "줄 수",

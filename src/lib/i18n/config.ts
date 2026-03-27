@@ -110,6 +110,8 @@ export interface Dictionary {
     deselectAll: string;
     page: string;
     confirm: string;
+    removeFile?: string;
+    rotatePage?: string;
   };
   metadata: {
     siteTitle: string;
@@ -508,6 +510,8 @@ export interface Dictionary {
   };
   flattenTool: {
     flattenButton: string;
+    pageOf?: string;
+    changeFile?: string;
     formFieldsLabel: string;
     formFieldsDesc: string;
     annotationsLabel: string;

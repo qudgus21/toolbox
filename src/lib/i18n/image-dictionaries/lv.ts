@@ -139,6 +139,8 @@ const lv: ImageDictionary = {
     shareCopied: "Nokopēts!",
     shareCopyLink: "Kopēt saiti",
     unknownError: "Radās nezināma kļūda",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

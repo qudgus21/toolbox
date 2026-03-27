@@ -124,6 +124,8 @@ const uk: Dictionary = {
     encryptedFile: "Зашифрований файл",
     clickToSelectPages: "Натисніть, щоб вибрати сторінки",
     dragToReorder: "Перетягніть, щоб змінити порядок",
+    removeFile: "Видалити файл",
+    rotatePage: "Повернути сторінку",
     favoriteAdded: "Додано до обраного",
     favoriteRemoved: "Видалено з обраного",
     comingSoon: "Незабаром",
@@ -576,6 +578,8 @@ const uk: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Зведення",
+    pageOf: "сторінок",
+    changeFile: "Змінити файл",
     formFieldsLabel: "Поля форми",
     formFieldsDesc: "Перетворити поля введення, прапорці та випадні списки на статичний текст",
     annotationsLabel: "Анотації",

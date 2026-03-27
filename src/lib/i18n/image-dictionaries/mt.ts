@@ -307,6 +307,8 @@ const mt: ImageDictionary = {
     shareCopied: "Ikkupjat!",
     shareCopyLink: "Ikkopja l-link",
     unknownError: "Seħħ żball mhux magħruf",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

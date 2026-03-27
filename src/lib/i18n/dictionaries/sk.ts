@@ -124,6 +124,8 @@ const sk: Dictionary = {
     encryptedFile: "Šifrovaný súbor",
     clickToSelectPages: "Kliknutím vyberte stránky",
     dragToReorder: "Potiahnutím zmeňte poradie",
+    removeFile: "Odstrániť súbor",
+    rotatePage: "Otočiť stránku",
     favoriteAdded: "Pridané do obľúbených",
     favoriteRemoved: "Odstránené z obľúbených",
     comingSoon: "Čoskoro",
@@ -576,6 +578,8 @@ const sk: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Zlúčiť",
+    pageOf: "stránok",
+    changeFile: "Zmeniť súbor",
     formFieldsLabel: "Polia formulára",
     formFieldsDesc: "Previesť vstupné polia, zaškrtávacie políčka a rozbaľovacie ponuky na statický text",
     annotationsLabel: "Anotácie",

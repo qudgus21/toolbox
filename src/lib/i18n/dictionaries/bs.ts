@@ -124,6 +124,8 @@ const bs: Dictionary = {
     encryptedFile: "Šifrirana datoteka",
     clickToSelectPages: "Kliknite za odabir stranica",
     dragToReorder: "Povucite za promjenu redoslijeda",
+    removeFile: "Ukloni datoteku",
+    rotatePage: "Rotiraj stranicu",
     favoriteAdded: "Dodano u omiljene",
     favoriteRemoved: "Uklonjeno iz omiljenih",
     comingSoon: "Uskoro dostupno",
@@ -576,6 +578,8 @@ const bs: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Izravnaj",
+    pageOf: "stranica",
+    changeFile: "Promijeni datoteku",
     formFieldsLabel: "Polja obrasca",
     formFieldsDesc: "Pretvori polja za unos, potvrdne okvire i padajuće menije u statički tekst",
     annotationsLabel: "Bilješke",

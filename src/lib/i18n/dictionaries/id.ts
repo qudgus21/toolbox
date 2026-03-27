@@ -124,6 +124,8 @@ const id: Dictionary = {
     encryptedFile: "File terenkripsi",
     clickToSelectPages: "Klik untuk memilih halaman",
     dragToReorder: "Seret untuk mengatur ulang",
+    removeFile: "Hapus file",
+    rotatePage: "Putar halaman",
     favoriteAdded: "Ditambahkan ke favorit",
     favoriteRemoved: "Dihapus dari favorit",
     comingSoon: "Segera hadir",
@@ -576,6 +578,8 @@ const id: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Ratakan",
+    pageOf: "halaman",
+    changeFile: "Ganti file",
     formFieldsLabel: "Bidang formulir",
     formFieldsDesc: "Ubah kolom input, kotak centang, dan dropdown menjadi teks statis",
     annotationsLabel: "Anotasi",

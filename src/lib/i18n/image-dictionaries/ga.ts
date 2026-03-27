@@ -139,6 +139,8 @@ const ga: ImageDictionary = {
     shareCopied: "Cóipeáilte!",
     shareCopyLink: "Cóipeáil nasc",
     unknownError: "Tharla earráid anaithnid",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

@@ -139,6 +139,8 @@ const uk: ImageDictionary = {
     shareCopied: "Скопійовано!",
     shareCopyLink: "Скопіювати посилання",
     unknownError: "Сталася невідома помилка",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

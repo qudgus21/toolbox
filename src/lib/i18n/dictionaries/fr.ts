@@ -124,6 +124,8 @@ const fr: Dictionary = {
     encryptedFile: "Fichier chiffré",
     clickToSelectPages: "Cliquez pour sélectionner des pages",
     dragToReorder: "Glissez pour réorganiser",
+    removeFile: "Supprimer le fichier",
+    rotatePage: "Faire pivoter la page",
     favoriteAdded: "Ajouté aux favoris",
     favoriteRemoved: "Retiré des favoris",
     comingSoon: "Bient^ot disponible",
@@ -576,6 +578,8 @@ const fr: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Aplatir",
+    pageOf: "pages",
+    changeFile: "Changer de fichier",
     formFieldsLabel: "Champs de formulaire",
     formFieldsDesc: "Convertir les champs de saisie, cases à cocher et listes déroulantes en texte statique",
     annotationsLabel: "Annotations",

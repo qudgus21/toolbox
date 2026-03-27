@@ -139,6 +139,8 @@ const bs: ImageDictionary = {
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj link",
     unknownError: "Došlo je do nepoznate greške",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

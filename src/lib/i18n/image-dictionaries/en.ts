@@ -321,6 +321,8 @@ const en: ImageDictionary = {
     shareCopied: "Copied!",
     shareCopyLink: "Copy link",
     unknownError: "An unknown error occurred",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

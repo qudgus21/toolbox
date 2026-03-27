@@ -124,6 +124,8 @@ const mr: Dictionary = {
     encryptedFile: "एनक्रिप्टेड फाइल",
     clickToSelectPages: "पेज निवडण्यासाठी क्लिक करा",
     dragToReorder: "क्रम बदलण्यासाठी ड्रॅग करा",
+    removeFile: "फाइल काढा",
+    rotatePage: "पृष्ठ फिरवा",
     favoriteAdded: "आवडींमध्ये जोडले",
     favoriteRemoved: "आवडींमधून काढले",
     comingSoon: "लवकरच येत आहे",
@@ -576,6 +578,8 @@ const mr: Dictionary = {
   },
   flattenTool: {
     flattenButton: "सपाट करा",
+    pageOf: "पृष्ठे",
+    changeFile: "फाइल बदला",
     formFieldsLabel: "फॉर्म फील्ड",
     formFieldsDesc: "इनपुट, चेकबॉक्स आणि ड्रॉपडाउन स्थिर मजकुरात रूपांतरित करा",
     annotationsLabel: "टिपणी",

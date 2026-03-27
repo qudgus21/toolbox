@@ -124,6 +124,8 @@ const ja: Dictionary = {
     encryptedFile: "暗号化されたファイル",
     clickToSelectPages: "クリックしてページを選択",
     dragToReorder: "ドラッグして並べ替え",
+    removeFile: "ファイルを削除",
+    rotatePage: "ページを回転",
     favoriteAdded: "お気に入りに追加しました",
     favoriteRemoved: "お気に入りから削除しました",
     comingSoon: "準備中",
@@ -576,6 +578,8 @@ const ja: Dictionary = {
   },
   flattenTool: {
     flattenButton: "フラット化",
+    pageOf: "ページ",
+    changeFile: "ファイルを変更",
     formFieldsLabel: "フォームフィールド",
     formFieldsDesc: "入力欄・チェックボックス・ドロップダウンを静的テキストに変換",
     annotationsLabel: "注釈",

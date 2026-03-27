@@ -56,6 +56,9 @@ export interface LandingDictionary {
     shareSubtitle: string;
     shareCopyLink: string;
     shareCopied: string;
+    ariaClose: string;
+    ariaMenu: string;
+    ariaShare: string;
   };
   footer: {
     apps: string;

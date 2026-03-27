@@ -45,6 +45,8 @@ export interface CommonLabels {
   tryOtherTools?: string;
   privacyBadge?: string;
   encryptedFile?: string;
+  removeFile?: string;
+  rotatePage?: string;
   clickToSelectPages?: string;
   dragToReorder?: string;
   favHint?: string;

@@ -307,6 +307,8 @@ const it: ImageDictionary = {
     shareCopied: "Copiato!",
     shareCopyLink: "Copia link",
     unknownError: "Si è verificato un errore sconosciuto",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

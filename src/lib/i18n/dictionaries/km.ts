@@ -124,6 +124,8 @@ const km: Dictionary = {
     encryptedFile: "ឯកសារដែលបានអ៊ិនគ្រីប",
     clickToSelectPages: "ចុចដើម្បីជ្រើសរើសទំព័រ",
     dragToReorder: "អូសដើម្បីរៀបចំលំដាប់",
+    removeFile: "លុបឯកសារ",
+    rotatePage: "បង្វិលទំព័រ",
     favoriteAdded: "បានបន្ថែមទៅសំណព្វ",
     favoriteRemoved: "បានដកចេញពីសំណព្វ",
     comingSoon: "មកដល់ឆាប់ៗ",
@@ -576,6 +578,8 @@ const km: Dictionary = {
   },
   flattenTool: {
     flattenButton: "ធ្វើឱ្យរាបស្មើ",
+    pageOf: "ទំព័រ",
+    changeFile: "ផ្លាស់ប្ដូរឯកសារ",
     formFieldsLabel: "វាលទម្រង់",
     formFieldsDesc: "បម្លែងវាលបញ្ចូល ប្រអប់ធីក និងម៉ឺនុយទម្លាក់ទៅជាអក្សរថេរ",
     annotationsLabel: "ចំណារពន្យល់",

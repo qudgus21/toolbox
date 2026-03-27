@@ -112,6 +112,8 @@ const ro: Dictionary = {
     encryptedFile: "Fișier criptat",
     clickToSelectPages: "Apasă pentru a selecta paginile",
     dragToReorder: "Trage pentru a reordona",
+    removeFile: "Eliminare fișier",
+    rotatePage: "Rotire pagină",
     favoriteAdded: "Adăugat la favorite",
     favoriteRemoved: "Eliminat din favorite",
     comingSoon: "În curând",
@@ -564,6 +566,8 @@ const ro: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Aplatizare",
+    pageOf: "pagini",
+    changeFile: "Schimbă fișier",
     formFieldsLabel: "Câmpuri formular",
     formFieldsDesc: "Transformă câmpurile de intrare, casetele de bifat și listele derulante în text static",
     annotationsLabel: "Adnotări",

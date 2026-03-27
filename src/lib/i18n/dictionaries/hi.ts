@@ -124,6 +124,8 @@ const hi: Dictionary = {
     encryptedFile: "एन्क्रिप्टेड फ़ाइल",
     clickToSelectPages: "पेज चुनने के लिए क्लिक करें",
     dragToReorder: "क्रम बदलने के लिए खींचें",
+    removeFile: "फ़ाइल हटाएं",
+    rotatePage: "पृष्ठ घुमाएं",
     favoriteAdded: "पसंदीदा में जोड़ा गया",
     favoriteRemoved: "पसंदीदा से हटाया गया",
     comingSoon: "जल्द आ रहा है",
@@ -576,6 +578,8 @@ const hi: Dictionary = {
   },
   flattenTool: {
     flattenButton: "फ़्लैटन करें",
+    pageOf: "पृष्ठ",
+    changeFile: "फ़ाइल बदलें",
     formFieldsLabel: "फ़ॉर्म फ़ील्ड",
     formFieldsDesc: "इनपुट, चेकबॉक्स और ड्रॉपडाउन को स्थिर टेक्स्ट में बदलें",
     annotationsLabel: "एनोटेशन",

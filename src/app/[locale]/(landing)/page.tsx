@@ -118,28 +118,24 @@ export default async function LandingPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "ToolPop",
+          url: "https://toolpop.org",
+          description: dict.meta.description,
+          inLanguage: locale,
+          author: {
+            "@type": "Organization",
             name: "ToolPop",
             url: "https://toolpop.org",
-            description: dict.meta.description,
-            inLanguage: locale,
-            author: {
-              "@type": "Organization",
-              name: "ToolPop",
-              url: "https://toolpop.org",
-            },
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+          },
+        })}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
 
       {/* Hero — server-rendered for fast LCP */}
       <section className="relative overflow-hidden pt-14 pb-16 sm:pt-20 sm:pb-20">

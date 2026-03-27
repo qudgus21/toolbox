@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "दिन जोड़ें",
     subtractDays: "दिन घटाएँ",
     datetimeHint: "जैसे 2024-01-15, 1705312200, now",
+    endDate: "समाप्ति तिथि",
+    today: "आज (डिफ़ॉल्ट)",
+    dateUnit: "इकाई",
   },
   statsLabels: {
     lines: "लाइनें",

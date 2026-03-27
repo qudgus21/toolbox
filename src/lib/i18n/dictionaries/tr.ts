@@ -124,6 +124,8 @@ const tr: Dictionary = {
     encryptedFile: "Şifrelenmiş dosya",
     clickToSelectPages: "Sayfa seçmek için tıklayın",
     dragToReorder: "Sıralamak için sürükleyin",
+    removeFile: "Dosyayı kaldır",
+    rotatePage: "Sayfayı döndür",
     favoriteAdded: "Favorilere eklendi",
     favoriteRemoved: "Favorilerden kaldırıldı",
     comingSoon: "Yakında",
@@ -576,6 +578,8 @@ const tr: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Düzleştir",
+    pageOf: "sayfa",
+    changeFile: "Dosyayı değiştir",
     formFieldsLabel: "Form alanları",
     formFieldsDesc: "Giriş alanlarını, onay kutularını ve açılır menüleri sabit metne dönüştür",
     annotationsLabel: "Açıklamalar",

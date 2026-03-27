@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "Napok hozzáadása",
     subtractDays: "Napok kivonása",
     datetimeHint: "pl. 2024-01-15, 1705312200, now",
+    endDate: "Befejezési dátum",
+    today: "Ma (alapértelmezett)",
+    dateUnit: "Egység",
   },
   statsLabels: {
     lines: "Sorok",

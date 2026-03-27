@@ -349,6 +349,7 @@ const lv: TextDictionary = {
     suffixPlaceholder: "Pied\u0113klis...",
   },
   statsLabels: {
+    emptyState: "Ievadiet tekstu, lai redzētu statistiku",
     characters: "Rakstzīmes",
     charactersWithoutSpaces: "Bez atstarpēm",
     words: "Vārdi",

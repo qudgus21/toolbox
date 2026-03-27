@@ -124,6 +124,8 @@ const ms: Dictionary = {
     encryptedFile: "Fail yang disulitkan",
     clickToSelectPages: "Klik untuk memilih halaman",
     dragToReorder: "Seret untuk susun semula",
+    removeFile: "Alih keluar fail",
+    rotatePage: "Putar halaman",
     favoriteAdded: "Ditambah ke kegemaran",
     favoriteRemoved: "Dialih keluar dari kegemaran",
     comingSoon: "Akan datang",
@@ -576,6 +578,8 @@ const ms: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Ratakan",
+    pageOf: "halaman",
+    changeFile: "Tukar fail",
     formFieldsLabel: "Medan borang",
     formFieldsDesc: "Tukar medan input, kotak semak dan senarai juntai kepada teks statik",
     annotationsLabel: "Anotasi",

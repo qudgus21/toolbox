@@ -124,6 +124,8 @@ const pa: Dictionary = {
     encryptedFile: "ਐਨਕ੍ਰਿਪਟਿਡ ਫ਼ਾਈਲ",
     clickToSelectPages: "ਪੰਨੇ ਚੁਣਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     dragToReorder: "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਘਸੀਟੋ",
+    removeFile: "ਫ਼ਾਈਲ ਹਟਾਓ",
+    rotatePage: "ਪੰਨਾ ਘੁਮਾਓ",
     favoriteAdded: "ਮਨਪਸੰਦ ਵਿੱਚ ਜੋੜਿਆ",
     favoriteRemoved: "ਮਨਪਸੰਦ ਤੋਂ ਹਟਾਇਆ",
     comingSoon: "ਜਲਦ ਆ ਰਿਹਾ ਹੈ",
@@ -576,6 +578,8 @@ const pa: Dictionary = {
   },
   flattenTool: {
     flattenButton: "ਫਲੈਟ ਕਰੋ",
+    pageOf: "ਪੰਨੇ",
+    changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
     formFieldsLabel: "ਫਾਰਮ ਫੀਲਡ",
     formFieldsDesc: "ਇਨਪੁਟ, ਚੈੱਕਬਾਕਸ ਅਤੇ ਡ੍ਰੌਪਡਾਊਨ ਨੂੰ ਸਥਿਰ ਟੈਕਸਟ ਵਿੱਚ ਬਦਲੋ",
     annotationsLabel: "ਐਨੋਟੇਸ਼ਨ",

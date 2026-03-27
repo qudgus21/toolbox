@@ -307,6 +307,8 @@ const pa: ImageDictionary = {
     shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!",
     shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
     unknownError: "ਇੱਕ ਅਣਜਾਣ ਗਲਤੀ ਆਈ",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

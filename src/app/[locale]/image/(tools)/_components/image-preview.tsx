@@ -627,7 +627,7 @@ export function ImagePreview({ file, files, slug, options }: ImagePreviewProps) 
         const mosaic = (options.mosaic as boolean) ?? false;
 
         if (mode === "text") {
-          const text = (options.text as string) ?? "Watermark";
+          const text = (options.text as string) ?? "";
           const fontFamily = (options.fontFamily as string) ?? "Arial";
           const wmFontSize = (options.fontSize as number) ?? 48;
           const color = (options.color as string) ?? "#ffffff";

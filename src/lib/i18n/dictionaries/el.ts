@@ -124,6 +124,8 @@ const el: Dictionary = {
     encryptedFile: "Κρυπτογραφημένο αρχείο",
     clickToSelectPages: "Κάντε κλικ για επιλογή σελίδων",
     dragToReorder: "Σύρετε για αναδιάταξη",
+    removeFile: "Αφαίρεση αρχείου",
+    rotatePage: "Περιστροφή σελίδας",
     favoriteAdded: "Προστέθηκε στα αγαπημένα",
     favoriteRemoved: "Αφαιρέθηκε από τα αγαπημένα",
     comingSoon: "Σύντομα",
@@ -576,6 +578,8 @@ const el: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Ισοπέδωση",
+    pageOf: "σελίδες",
+    changeFile: "Αλλαγή αρχείου",
     formFieldsLabel: "Πεδία φόρμας",
     formFieldsDesc: "Μετατροπή πεδίων εισόδου, πλαισίων ελέγχου και αναπτυσσόμενων λιστών σε στατικό κείμενο",
     annotationsLabel: "Σχολιασμοί",

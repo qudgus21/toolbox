@@ -139,6 +139,8 @@ const sv: ImageDictionary = {
     shareCopied: "Kopierat!",
     shareCopyLink: "Kopiera länk",
     unknownError: "Ett okänt fel inträffade",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

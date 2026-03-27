@@ -139,6 +139,8 @@ const lt: ImageDictionary = {
     shareCopied: "Nukopijuota!",
     shareCopyLink: "Kopijuoti nuorodą",
     unknownError: "Įvyko nežinoma klaida",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

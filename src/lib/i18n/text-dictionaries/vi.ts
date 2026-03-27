@@ -181,6 +181,7 @@ const vi: TextDictionary = {
     suffixPlaceholder: "Hậu tố...",
   },
   statsLabels: {
+    emptyState: "Nhập văn bản để xem thống kê",
     characters: "Ký tự",
     charactersWithoutSpaces: "Không tính dấu cách",
     words: "Từ",

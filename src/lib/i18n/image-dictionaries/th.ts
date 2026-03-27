@@ -307,6 +307,8 @@ const th: ImageDictionary = {
     shareCopied: "คัดลอกแล้ว!",
     shareCopyLink: "คัดลอกลิงก์",
     unknownError: "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

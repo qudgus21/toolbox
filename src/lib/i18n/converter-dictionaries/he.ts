@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "הוסף ימים",
     subtractDays: "הפחת ימים",
     datetimeHint: "למשל 2024-01-15, 1705312200, now",
+    endDate: "תאריך סיום",
+    today: "היום (ברירת מחדל)",
+    dateUnit: "יחידה",
   },
   statsLabels: {
     lines: "שורות",

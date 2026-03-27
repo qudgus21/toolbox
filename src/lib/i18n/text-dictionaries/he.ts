@@ -349,6 +349,7 @@ const he: TextDictionary = {
     suffixPlaceholder: "סיומת...",
   },
   statsLabels: {
+    emptyState: "הזן טקסט כדי לראות סטטיסטיקות",
     characters: "תווים",
     charactersWithoutSpaces: "ללא רווחים",
     words: "מילים",

@@ -88,6 +88,9 @@ const dict: LandingDictionary = {
     shareSubtitle: "Расскажите друзьям о ToolPop!",
     shareCopyLink: "Скопировать ссылку",
     shareCopied: "Скопировано!",
+    ariaClose: "Закрыть",
+    ariaMenu: "Меню",
+    ariaShare: "Поделиться",
   },
   footer: {
     apps: "Инструменты",

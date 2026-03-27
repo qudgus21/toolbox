@@ -307,6 +307,8 @@ const da: ImageDictionary = {
     shareCopied: "Kopieret!",
     shareCopyLink: "Kopiér link",
     unknownError: "Der opstod en ukendt fejl",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

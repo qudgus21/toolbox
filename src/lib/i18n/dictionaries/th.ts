@@ -124,6 +124,8 @@ const th: Dictionary = {
     encryptedFile: "ไฟล์ที่เข้ารหัส",
     clickToSelectPages: "คลิกเพื่อเลือกหน้า",
     dragToReorder: "ลากเพื่อจัดลำดับใหม่",
+    removeFile: "ลบไฟล์",
+    rotatePage: "หมุนหน้า",
     favoriteAdded: "เพิ่มในรายการโปรดแล้ว",
     favoriteRemoved: "ลบออกจากรายการโปรดแล้ว",
     comingSoon: "เร็วๆ นี้",
@@ -576,6 +578,8 @@ const th: Dictionary = {
   },
   flattenTool: {
     flattenButton: "แผ่ราบ",
+    pageOf: "หน้า",
+    changeFile: "เปลี่ยนไฟล์",
     formFieldsLabel: "ฟิลด์แบบฟอร์ม",
     formFieldsDesc: "แปลงช่องกรอกข้อมูล กล่องกาเครื่องหมาย และดรอปดาวน์เป็นข้อความคงที่",
     annotationsLabel: "คำอธิบายประกอบ",

@@ -124,6 +124,8 @@ const fi: Dictionary = {
     encryptedFile: "Salattu tiedosto",
     clickToSelectPages: "Valitse sivut napsauttamalla",
     dragToReorder: "Järjestä uudelleen vetämällä",
+    removeFile: "Poista tiedosto",
+    rotatePage: "Kierrä sivua",
     favoriteAdded: "Lisätty suosikkeihin",
     favoriteRemoved: "Poistettu suosikeista",
     comingSoon: "Tulossa pian",
@@ -576,6 +578,8 @@ const fi: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Litistä",
+    pageOf: "sivua",
+    changeFile: "Vaihda tiedosto",
     formFieldsLabel: "Lomakekentät",
     formFieldsDesc: "Muunna syöttökentät, valintaruudut ja pudotusvalikot staattiseksi tekstiksi",
     annotationsLabel: "Merkinnät",

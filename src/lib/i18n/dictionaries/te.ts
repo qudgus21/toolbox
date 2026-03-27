@@ -124,6 +124,8 @@ const te: Dictionary = {
     encryptedFile: "ఎన్‌క్రిప్టెడ్ ఫైల్",
     clickToSelectPages: "పేజీలను ఎంచుకోవడానికి క్లిక్ చేయండి",
     dragToReorder: "క్రమాన్ని మార్చడానికి డ్రాగ్ చేయండి",
+    removeFile: "ఫైల్ తొలగించు",
+    rotatePage: "పేజీని తిప్పు",
     favoriteAdded: "ఇష్టమైనవాటికి జోడించబడింది",
     favoriteRemoved: "ఇష్టమైనవాటి నుండి తీసివేయబడింది",
     comingSoon: "త్వరలో వస్తుంది",
@@ -576,6 +578,8 @@ const te: Dictionary = {
   },
   flattenTool: {
     flattenButton: "ఫ్లాటెన్ చేయండి",
+    pageOf: "పేజీలు",
+    changeFile: "ఫైల్ మార్చు",
     formFieldsLabel: "ఫారం ఫీల్డ్‌లు",
     formFieldsDesc: "ఇన్‌పుట్‌లు, చెక్‌బాక్స్‌లు మరియు డ్రాప్‌డౌన్‌లను స్థిర టెక్స్ట్‌గా మార్చండి",
     annotationsLabel: "ఆనోటేషన్‌లు",

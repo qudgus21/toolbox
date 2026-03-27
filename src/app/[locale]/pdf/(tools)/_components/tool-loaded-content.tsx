@@ -540,6 +540,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -590,6 +592,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -726,6 +730,7 @@ export function ToolLoadedContent({
                 pageMargin={0}
                 onRemove={removeFile}
                 onReorder={reorderFiles}
+                removeFileLabel={labels.removeFile}
               />
             </div>
 
@@ -877,6 +882,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -918,6 +925,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -955,6 +964,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -999,6 +1010,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -1043,6 +1056,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -1085,6 +1100,7 @@ export function ToolLoadedContent({
                 pageMargin={htmlToPdfMarginMm}
                 onRemove={removeFile}
                 onReorder={reorderFiles}
+                removeFileLabel={labels.removeFile}
               />
             </div>
 
@@ -1190,6 +1206,7 @@ export function ToolLoadedContent({
                 pageMargin={0}
                 onRemove={removeFile}
                 onReorder={reorderFiles}
+                removeFileLabel={labels.removeFile}
               />
             </div>
 
@@ -1233,6 +1250,8 @@ export function ToolLoadedContent({
                 onRemove={removeFile}
                 onReorder={reorderFiles}
                 onRotate={rotateFile}
+                removeFileLabel={labels.removeFile}
+                rotatePageLabel={labels.rotatePage}
               />
             </div>
 
@@ -1322,6 +1341,8 @@ export function ToolLoadedContent({
             onReorder={reorderFiles}
             onRotate={isCompress || isGrayscale || isProtect ? undefined : rotateFile}
             onCardClick={isCompress || isGrayscale || isProtect ? undefined : (file) => setPageSelectorFile(file)}
+            removeFileLabel={labels.removeFile}
+            rotatePageLabel={labels.rotatePage}
           />
         </>
       )}
@@ -1397,8 +1418,8 @@ function FlattenLoadedContent({
             flattenForms={(flattenOptions.formFields as boolean) ?? true}
             flattenAnnotations={(flattenOptions.annotations as boolean) ?? true}
             labels={{
-              pageOf: labels.process ?? "pages",
-              changeFile: labels.startOver ?? "Change file",
+              pageOf: flattenLabels?.pageOf ?? "",
+              changeFile: flattenLabels?.changeFile ?? "",
             }}
             onChangeFile={onChangeFile}
           />

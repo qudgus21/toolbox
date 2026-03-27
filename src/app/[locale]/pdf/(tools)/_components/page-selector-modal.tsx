@@ -404,7 +404,7 @@ export function PageSelectorModal({
                 {file.name}
               </h3>
               <p className="mt-0.5 text-xs text-foreground-muted">
-                {selected.size}/{totalPages} {labels?.pagesSelected ?? "pages selected"}
+                {selected.size}/{totalPages} {labels?.pagesSelected}
               </p>
             </div>
             <button
@@ -426,18 +426,18 @@ export function PageSelectorModal({
               {allSelected ? (
                 <>
                   <Square className="h-3.5 w-3.5" />
-                  {labels?.deselectAll ?? "Deselect all"}
+                  {labels?.deselectAll}
                 </>
               ) : (
                 <>
                   <CheckSquare className="h-3.5 w-3.5" />
-                  {labels?.selectAll ?? "Select all"}
+                  {labels?.selectAll}
                 </>
               )}
             </button>
             <span className="flex items-center gap-1 text-[11px] text-foreground-subtle">
               <GripVertical className="h-3 w-3" />
-              {labels?.dragToReorder ?? "Drag to reorder"}
+              {labels?.dragToReorder}
             </span>
           </div>
 
@@ -457,7 +457,7 @@ export function PageSelectorModal({
                       pageNum={pageNum}
                       isSelected={selected.has(pageNum)}
                       thumb={thumbnails[pageNum]}
-                      pageLabel={labels?.page ?? "Page"}
+                      pageLabel={labels?.page ?? ""}
                       onToggle={() => togglePage(pageNum)}
                       disableTransition={disableTransition}
                       didDragRef={didDragRef}
@@ -481,7 +481,7 @@ export function PageSelectorModal({
                 "disabled:opacity-40 disabled:pointer-events-none",
               )}
             >
-              {labels?.confirm ?? "Confirm"} ({selected.size})
+              {labels?.confirm} ({selected.size})
             </button>
           </div>
         </motion.div>

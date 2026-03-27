@@ -8,9 +8,7 @@ import { ShareButton } from "@/lib/ui/components/share-button";
 import { type Locale, locales } from "@/lib/i18n";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
-import { GoogleAnalytics } from "./google-analytics";
-import { GoogleAdSense } from "./google-adsense";
-import { LayoutScripts } from "./layout-scripts";
+import { HtmlAttrsSync } from "./html-attrs-sync";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -41,12 +39,10 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <GoogleAnalytics />
-      <GoogleAdSense />
-      <LayoutScripts />
+      <HtmlAttrsSync locale={locale} dir={dir} />
       <Header
         logo={<AppLogo />}
-        nav={<AppNavMenu apps={navApps} />}
+        nav={<AppNavMenu apps={navApps} menuLabel={landingDict.common.ariaMenu} />}
       >
         <ThemeToggle />
         <ShareButton
@@ -54,6 +50,8 @@ export default async function LocaleLayout({
           shareSubtitle={landingDict.common.shareSubtitle}
           copyLabel={landingDict.common.shareCopyLink}
           copiedLabel={landingDict.common.shareCopied}
+          closeLabel={landingDict.common.ariaClose}
+          ariaLabel={landingDict.common.ariaShare}
         />
         <LanguageSwitcher locale={locale} />
       </Header>

@@ -139,6 +139,8 @@ const is_: ImageDictionary = {
     shareCopied: "Afritað!",
     shareCopyLink: "Afrita hlekk",
     unknownError: "Óþekkt villa kom upp",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

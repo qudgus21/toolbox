@@ -307,6 +307,8 @@ const km: ImageDictionary = {
     shareCopied: "បានចម្លង!",
     shareCopyLink: "ចម្លងតំណ",
     unknownError: "មានកំហុសមិនស្គាល់បានកើតឡើង",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {

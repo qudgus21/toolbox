@@ -348,6 +348,7 @@ const zh: TextDictionary = {
     suffixPlaceholder: "后缀...",
   },
   statsLabels: {
+    emptyState: "输入文本后将显示统计信息",
     characters: "字符数",
     charactersWithoutSpaces: "不含空格",
     words: "词数",

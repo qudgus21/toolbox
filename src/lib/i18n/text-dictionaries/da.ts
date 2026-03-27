@@ -349,6 +349,7 @@ const da: TextDictionary = {
     suffixPlaceholder: "Suffiks...",
   },
   statsLabels: {
+    emptyState: "Indtast tekst for at se statistik",
     characters: "Tegn",
     charactersWithoutSpaces: "Uden mellemrum",
     words: "Ord",

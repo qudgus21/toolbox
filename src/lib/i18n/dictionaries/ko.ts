@@ -130,6 +130,8 @@ const ko: Dictionary = {
     deselectAll: "선택 해제",
     page: "페이지",
     confirm: "확인",
+    removeFile: "파일 제거",
+    rotatePage: "페이지 회전",
     favoriteAdded: "즐겨찾기에 추가했습니다",
     favoriteRemoved: "즐겨찾기에서 해제했습니다",
     comingSoon: "준비 중",
@@ -576,6 +578,8 @@ const ko: Dictionary = {
   },
   flattenTool: {
     flattenButton: "평탄화",
+    pageOf: "페이지",
+    changeFile: "파일 변경",
     formFieldsLabel: "양식 필드",
     formFieldsDesc: "입력란·체크박스·드롭다운을 고정 텍스트로 변환",
     annotationsLabel: "주석",

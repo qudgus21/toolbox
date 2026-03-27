@@ -78,6 +78,8 @@ export interface ImageDictionary {
     shareCopied: string;
     shareCopyLink: string;
     unknownError: string;
+    more: string;
+    actionsLabel: string;
   };
   toolOptions: {
     resize: {

@@ -124,6 +124,8 @@ const sv: Dictionary = {
     encryptedFile: "Krypterad fil",
     clickToSelectPages: "Klicka för att välja sidor",
     dragToReorder: "Dra för att ändra ordning",
+    removeFile: "Ta bort fil",
+    rotatePage: "Rotera sida",
     favoriteAdded: "Tillagd i favoriter",
     favoriteRemoved: "Borttagen från favoriter",
     comingSoon: "Kommer snart",
@@ -576,6 +578,8 @@ const sv: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Platta till",
+    pageOf: "sidor",
+    changeFile: "Byt fil",
     formFieldsLabel: "Formulärfält",
     formFieldsDesc: "Omvandla inmatningsfält, kryssrutor och rullgardinsmenyer till statisk text",
     annotationsLabel: "Anteckningar",

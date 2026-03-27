@@ -124,6 +124,8 @@ const ga: Dictionary = {
     encryptedFile: "Comhad criptithe",
     clickToSelectPages: "Cliceáil chun leathanaigh a roghnú",
     dragToReorder: "Tarraing chun athordú",
+    removeFile: "Bain an comhad",
+    rotatePage: "Rothlaigh leathanach",
     favoriteAdded: "Curtha leis na ceanáin",
     favoriteRemoved: "Bainte ó na ceanáin",
     comingSoon: "Ag teacht go luath",
@@ -576,6 +578,8 @@ const ga: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Cothromaigh",
+    pageOf: "leathanaigh",
+    changeFile: "Athraigh comhad",
     formFieldsLabel: "Réimsí foirme",
     formFieldsDesc: "Tiontaigh réimsí ionchuir, ticbhoscaí agus roghchláir anuas go téacs statach",
     annotationsLabel: "Nótaí",

@@ -431,6 +431,9 @@ const dict: ConverterDictionary = {
     addDays: "បន្ថែមថ្ងៃ",
     subtractDays: "ដកថ្ងៃ",
     datetimeHint: "ឧ. 2024-01-15, 1705312200, now",
+    endDate: "កាលបរិច្ឆេទបញ្ចប់",
+    today: "ថ្ងៃនេះ (លំនាំដើម)",
+    dateUnit: "ឯកតា",
   },
   statsLabels: {
     lines: "បន្ទាត់",

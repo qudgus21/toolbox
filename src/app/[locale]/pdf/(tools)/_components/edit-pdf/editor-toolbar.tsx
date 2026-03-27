@@ -111,21 +111,21 @@ export function EditorToolbar({
 
     // Validate file type
     if (!file.type.startsWith("image/")) {
-      alert(labels.imageUploadError ?? "Unsupported image format");
+      alert(labels.imageUploadError);
       e.target.value = "";
       return;
     }
 
     const reader = new FileReader();
     reader.onerror = () => {
-      alert(labels.imageUploadError ?? "Failed to read image");
+      alert(labels.imageUploadError);
       e.target.value = "";
     };
     reader.onload = () => {
       const dataUrl = reader.result as string;
       const img = new window.Image();
       img.onerror = () => {
-        alert(labels.imageUploadError ?? "Failed to load image");
+        alert(labels.imageUploadError);
       };
       img.onload = () => {
         let w = img.width;

@@ -349,6 +349,7 @@ const bs: TextDictionary = {
     suffixPlaceholder: "Sufiks...",
   },
   statsLabels: {
+    emptyState: "Unesite tekst za prikaz statistike",
     characters: "Znakovi",
     charactersWithoutSpaces: "Bez razmaka",
     words: "Riječi",

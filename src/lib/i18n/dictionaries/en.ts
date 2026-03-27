@@ -130,6 +130,8 @@ const en: Dictionary = {
     deselectAll: "Deselect all",
     page: "Page",
     confirm: "Confirm",
+    removeFile: "Remove file",
+    rotatePage: "Rotate page",
     favoriteAdded: "Added to favorites",
     favoriteRemoved: "Removed from favorites",
     comingSoon: "Coming Soon",
@@ -576,6 +578,8 @@ const en: Dictionary = {
   },
   flattenTool: {
     flattenButton: "Flatten",
+    pageOf: "pages",
+    changeFile: "Change file",
     formFieldsLabel: "Form fields",
     formFieldsDesc: "Convert inputs, checkboxes, and dropdowns to static text",
     annotationsLabel: "Annotations",

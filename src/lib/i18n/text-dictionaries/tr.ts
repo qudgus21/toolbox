@@ -181,6 +181,7 @@ const tr: TextDictionary = {
     suffixPlaceholder: "Sonek...",
   },
   statsLabels: {
+    emptyState: "İstatistikleri görmek için metin girin",
     characters: "Karakter",
     charactersWithoutSpaces: "Boşluksuz",
     words: "Kelime",
