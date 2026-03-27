@@ -21,7 +21,7 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
   image: {
     from: "#6366f1",
     to: "#4f46e5",
-    accent: "#6366f1",
+    accent: "#4f46e5",
     badge: "Image",
     badgeClasses: "bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-400",
   },
@@ -35,7 +35,7 @@ const logoConfig: Record<AppType, { from: string; to: string; accent: string; ba
   converter: {
     from: "#10b981",
     to: "#059669",
-    accent: "#059669",
+    accent: "#047857",
     badge: "CVT",
     badgeClasses: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400",
   },
