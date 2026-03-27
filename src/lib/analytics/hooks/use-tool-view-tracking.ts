@@ -24,9 +24,12 @@ export function useToolViewTracking(
 
     const mountTime = mountTimeRef.current;
 
+    let dwellSent = false;
     const sendDwell = () => {
+      if (dwellSent) return;
       const durationSec = Math.round((Date.now() - mountTime) / 1000);
       if (durationSec < 2) return; // 바운스는 제외
+      dwellSent = true;
       sendEvent("tool_dwell", {
         app,
         tool_slug: slug,
