@@ -44,7 +44,7 @@ export default async function LocaleLayout({
         logo={<AppLogo />}
         nav={<AppNavMenu apps={navApps} menuLabel={landingDict.common.ariaMenu} />}
       >
-        <ThemeToggle />
+        <ThemeToggle ariaLabel={landingDict.common.ariaToggleTheme} />
         <ShareButton
           shareTitle={landingDict.common.shareTitle}
           shareSubtitle={landingDict.common.shareSubtitle}

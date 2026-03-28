@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "בלי חשבון, בלי אימייל. פשוט פתח כלי ותתחיל לעבוד.",
   },
   cta: { title: "מוכנים להתחיל?", subtitle: "בלי התקנה, בלי הרשמה, בלי תשלום — רק לחיצה אחת.", button: "עיין בכל הכלים" },
-  common: { shareTitle: "שיתוף", shareSubtitle: "ספרו לחברים על ToolPop!", shareCopyLink: "העתק קישור", shareCopied: "הועתק!", ariaClose: "סגור", ariaMenu: "תפריט", ariaShare: "שתף" },
+  common: { shareTitle: "שיתוף", shareSubtitle: "ספרו לחברים על ToolPop!", shareCopyLink: "העתק קישור", shareCopied: "הועתק!", ariaClose: "סגור", ariaMenu: "תפריט", ariaShare: "שתף", ariaToggleTheme: "החלף ערכת נושא" },
   footer: { apps: "כלים", company: "החברה", about: "אודות", contact: "צור קשר", faq: "שאלות נפוצות", blog: "בלוג", legal: "משפטי", privacy: "מדיניות פרטיות", terms: "תנאי שימוש", copyright: "© 2026 ToolPop. כל הזכויות שמורות.", tagline: "כלים מקוונים חינמיים ל-PDF, תמונות ועוד. ללא הרשמה.", madeWith: "נוצר באהבה עבור כולם" },
   search: { noResults: "לא נמצאו תוצאות" },
   nav: { pdf: "PDF", image: "תמונה", text: "טקסט", converter: "ממיר", calculator: "מחשבון" },

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Üksikasjad",
     pageNotFound: "Teisendajat ei leitud",
     goHome: "Tagasi kõigi teisendajate juurde",
+    colorPickerLabel: "Värvi valik",
   },
   toolOptions: {
     fromUnit: "Alates",

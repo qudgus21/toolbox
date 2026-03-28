@@ -78,7 +78,7 @@ const et: Dictionary = {
     grayscale: { title: "Halltoonid", description: "Teisendage PDF-i värvid mustvalgeks." },
 
     // Optimeeri
-    compress: { title: "Tihenda PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Tihenda PDF", description: "Vähendage PDF-failide suurust märgatavalt. Valige vajaduste järgi sobiv tihendamismeetod." },
     repair: { title: "Paranda PDF", description: "Parandage kahjustatud või rikutud PDF-faile." },
     ocr: { title: "OCR PDF", description: "Muutke skaneeritud PDF-id otsitavaks tekstituvastuse abil." },
     "web-optimize": { title: "Veebioptimeerimine", description: "Lineariseerige PDF-id kiiremaks veebis laadimiseks." },
@@ -134,6 +134,7 @@ const et: Dictionary = {
     shareSubtitle: "Räägi teistele!",
     shareCopied: "Kopeeritud!",
     shareCopyLink: "Kopeeri link",
+    ariaActions: "Toimingud",
     unknownError: "Ilmnes tundmatu tõrge",
     pagesSelected: "lehekülge valitud",
     selectAll: "Vali kõik",
@@ -575,6 +576,7 @@ const et: Dictionary = {
     pageOf: "lehekülg",
     resetAll: "Lähtesta",
     noCropArea: "Valige eelvaates ala",
+    loadingPdf: "PDF laadimine...",
   },
   flattenTool: {
     flattenButton: "Lamesta",
@@ -742,6 +744,7 @@ const et: Dictionary = {
     addPageRedaction: "Lisa lehe mustand",
     pageRedaction: "Terve leht",
     toolsPanelTitle: "Tööriistad",
+    loadingPdf: "PDF laadimine...",
   },
   editPdfTool: {
     dropFile: "Valige PDF-fail",
@@ -814,6 +817,7 @@ const et: Dictionary = {
     changeFile: "Muuda faili",
     imageUploadError: "Pildi laadimine ebaõnnestus",
     confirmClearAll: "Kustuta kõik elemendid?",
+    loadingPdf: "PDF laadimine...",
   },
   annotateTool: {
     toolSelect: "Vali",
@@ -890,6 +894,7 @@ const et: Dictionary = {
     noAnnotations: "Märkusi pole veel",
     annotationsOnPage: "leheküljel {page}",
     addComment: "Lisa kommentaar",
+    loadingPdf: "PDF laadimine...",
   },
   signTool: {
     fieldSignature: "Allkiri",
@@ -944,6 +949,8 @@ const et: Dictionary = {
     rotation: "Pööramine",
     changeFile: "Vaheta fail",
     selectedElement: "Valitud element",
+    loadingPdf: "PDF laadimine...",
+    altSignature: "Allkiri",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -986,6 +993,7 @@ const et: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vesimärk",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Lehekülgi lehel",
@@ -1139,6 +1147,7 @@ const et: Dictionary = {
     prev: "Eelmine",
     next: "Järgmine",
     page: "Lehekülg",
+    paginationLabel: 'Lehtede navigeerimine',
   },
   toolContent: {
     merge: {

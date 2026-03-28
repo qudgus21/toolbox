@@ -164,6 +164,7 @@ const uk: ImageDictionary = {
       y: "Y",
       width: "Ширина",
       height: "Висота",
+      altCropPreview: "Попередній перегляд обрізання",
     },
     rotate: {
       quickRotate: "Швидкий поворот",
@@ -224,6 +225,7 @@ const uk: ImageDictionary = {
       noItems: "Натисніть + щоб додати текст",
       bgColor: "Фон",
       transparent: "Без",
+      altPreview: "Попередній перегляд",
     },
     addBorder: {
       borderWidth: "Товщина рамки",

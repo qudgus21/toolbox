@@ -332,6 +332,7 @@ const tr: ImageDictionary = {
       y: "Y",
       width: "Genişlik",
       height: "Yükseklik",
+      altCropPreview: "Kırpma önizlemesi",
     },
     rotate: {
       quickRotate: "Hızlı Döndür",
@@ -392,6 +393,7 @@ const tr: ImageDictionary = {
       noItems: "Metin eklemek için + tıklayın",
       bgColor: "Arka plan",
       transparent: "Yok",
+      altPreview: "Önizleme",
     },
     addBorder: {
       borderWidth: "Çerçeve Kalınlığı",

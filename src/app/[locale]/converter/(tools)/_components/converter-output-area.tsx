@@ -15,6 +15,7 @@ interface ConverterOutputAreaProps {
   allConversionsLabel?: string;
   detailsLabel?: string;
   className?: string;
+  unitLabels?: Record<string, string>;
   onCopy?: () => void;
 }
 
@@ -26,6 +27,7 @@ export function ConverterOutputArea({
   copiedLabel,
   allConversionsLabel,
   className,
+  unitLabels,
   onCopy,
 }: ConverterOutputAreaProps) {
   const output = result?.output ?? "";
@@ -86,6 +88,7 @@ export function ConverterOutputArea({
           copyLabel={copyLabel}
           copiedLabel={copiedLabel}
           isPreview={isPreview}
+          unitLabels={unitLabels}
         />
       )}
     </div>
@@ -152,12 +155,14 @@ function ConversionTable({
   copyLabel,
   copiedLabel,
   isPreview,
+  unitLabels,
 }: {
   rows: ConversionTableRow[];
   title?: string;
   copyLabel: string;
   copiedLabel: string;
   isPreview?: boolean;
+  unitLabels?: Record<string, string>;
 }) {
   return (
     <div className="border-t border-emerald-500/10">
@@ -186,7 +191,7 @@ function ConversionTable({
               )}
               <div className="flex flex-col min-w-0">
                 <span className="text-[10px] font-bold text-foreground-subtle uppercase tracking-wide leading-none mb-0.5">
-                  {row.label}
+                  {(row.unit && unitLabels?.[row.unit]) ?? row.label}
                 </span>
                 <EllipsisTooltip
                   text={row.unit ? `${row.value} ${row.unit}` : row.value}

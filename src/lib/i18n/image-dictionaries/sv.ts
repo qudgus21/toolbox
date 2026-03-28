@@ -164,6 +164,7 @@ const sv: ImageDictionary = {
       y: "Y",
       width: "Bredd",
       height: "Höjd",
+      altCropPreview: "Förhandsvisning av beskärning",
     },
     rotate: {
       quickRotate: "Snabbrotation",
@@ -224,6 +225,7 @@ const sv: ImageDictionary = {
       noItems: "Klicka + för att lägga till text",
       bgColor: "Bakgrund",
       transparent: "Ingen",
+      altPreview: "Förhandsvisning",
     },
     addBorder: {
       borderWidth: "Ramtjocklek",

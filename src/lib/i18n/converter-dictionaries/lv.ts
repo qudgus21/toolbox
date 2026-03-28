@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detaļas",
     pageNotFound: "Pārveidotājs nav atrasts",
     goHome: "Atpakaļ pie visiem pārveidotājiem",
+    colorPickerLabel: "Krāsu izvēlne",
   },
   toolOptions: {
     fromUnit: "No",

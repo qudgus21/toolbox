@@ -104,6 +104,7 @@ export default async function BlogPage({
           prevLabel={dict.blog.prev}
           nextLabel={dict.blog.next}
           pageLabel={dict.blog.page}
+          paginationLabel={dict.blog.paginationLabel}
         />
       </Container>
     </main>

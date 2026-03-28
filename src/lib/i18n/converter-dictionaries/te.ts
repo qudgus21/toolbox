@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "వివరాలు",
     pageNotFound: "కన్వర్టర్ కనుగొనబడలేదు",
     goHome: "అన్ని కన్వర్టర్లకు తిరిగి వెళ్ళండి",
+    colorPickerLabel: "రంగు ఎంపికదారు",
   },
   toolOptions: {
     fromUnit: "నుండి",

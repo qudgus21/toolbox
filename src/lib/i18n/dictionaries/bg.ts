@@ -78,7 +78,7 @@ const bg: Dictionary = {
     grayscale: { title: "Скала на Сивото", description: "Конвертирайте цветовете на PDF в черно и бяло." },
 
     // Оптимизиране
-    compress: { title: "Компресиране на PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Компресиране на PDF", description: "Намалете значително размера на PDF файловете. Изберете метода на компресия според нуждите си." },
     repair: { title: "Поправка на PDF", description: "Поправете повредени или корумпирани PDF файлове." },
     ocr: { title: "OCR PDF", description: "Направете сканираните PDF файлове търсими с разпознаване на текст." },
     "web-optimize": { title: "Уеб Оптимизация", description: "Линеаризирайте PDF файлове за по-бързо зареждане в уеб." },
@@ -134,6 +134,7 @@ const bg: Dictionary = {
     shareSubtitle: "Разкажете на другите!",
     shareCopied: "Копирано!",
     shareCopyLink: "Копирай линк",
+    ariaActions: "Действия",
     unknownError: "Възникна неизвестна грешка",
     pagesSelected: "страници избрани",
     selectAll: "Избери всички",
@@ -575,6 +576,7 @@ const bg: Dictionary = {
     pageOf: "страница",
     resetAll: "Нулиране",
     noCropArea: "Изберете област от прегледа",
+    loadingPdf: "Зареждане на PDF...",
   },
   flattenTool: {
     flattenButton: "Изравняване",
@@ -742,6 +744,7 @@ const bg: Dictionary = {
     addPageRedaction: "Добави затъмняване на страница",
     pageRedaction: "Цяла страница",
     toolsPanelTitle: "Инструменти",
+    loadingPdf: "Зареждане на PDF...",
   },
   editPdfTool: {
     dropFile: "Изберете PDF файл",
@@ -814,6 +817,7 @@ const bg: Dictionary = {
     changeFile: "Промяна на файл",
     imageUploadError: "Неуспешно зареждане на изображението",
     confirmClearAll: "Изтриване на всички елементи?",
+    loadingPdf: "Зареждане на PDF...",
   },
   annotateTool: {
     toolSelect: "Избиране",
@@ -890,6 +894,7 @@ const bg: Dictionary = {
     noAnnotations: "Все още няма анотации",
     annotationsOnPage: "на страница {page}",
     addComment: "Добави коментар",
+    loadingPdf: "Зареждане на PDF...",
   },
   signTool: {
     fieldSignature: "Подпис",
@@ -944,6 +949,8 @@ const bg: Dictionary = {
     rotation: "Завъртане",
     changeFile: "Смени файла",
     selectedElement: "Избран елемент",
+    loadingPdf: "Зареждане на PDF...",
+    altSignature: "Подпис",
   },
   watermarkTool: {
     tabText: "Текст",
@@ -986,6 +993,7 @@ const bg: Dictionary = {
     ptUnit: "pt",
     mmUnit: "мм",
     degUnit: "°",
+    altWatermark: "Воден знак",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Страници на лист",
@@ -1139,6 +1147,7 @@ const bg: Dictionary = {
     prev: "Предишна",
     next: "Следваща",
     page: "Страница",
+    paginationLabel: 'Навигация на страници',
   },
   toolContent: {
     merge: {

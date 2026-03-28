@@ -134,6 +134,7 @@ const de: Dictionary = {
     shareSubtitle: "Weitersagen!",
     shareCopied: "Kopiert!",
     shareCopyLink: "Link kopieren",
+    ariaActions: "Aktionen",
     unknownError: "Ein unbekannter Fehler ist aufgetreten",
     pagesSelected: "Seiten ausgewählt",
     selectAll: "Alle auswählen",
@@ -575,6 +576,7 @@ const de: Dictionary = {
     pageOf: "Seite",
     resetAll: "Zurücksetzen",
     noCropArea: "Wählen Sie einen Bereich in der Vorschau aus",
+    loadingPdf: "PDF wird geladen...",
   },
   flattenTool: {
     flattenButton: "Reduzieren",
@@ -742,6 +744,7 @@ const de: Dictionary = {
     addPageRedaction: "Seitenschwärzung hinzufügen",
     pageRedaction: "Ganze Seite",
     toolsPanelTitle: "Werkzeuge",
+    loadingPdf: "PDF wird geladen...",
   },
   editPdfTool: {
     dropFile: "PDF-Datei auswählen",
@@ -814,6 +817,7 @@ const de: Dictionary = {
     changeFile: "Datei ändern",
     imageUploadError: "Bild konnte nicht geladen werden",
     confirmClearAll: "Alle Elemente löschen?",
+    loadingPdf: "PDF wird geladen...",
   },
   annotateTool: {
     toolSelect: "Auswählen",
@@ -890,6 +894,7 @@ const de: Dictionary = {
     noAnnotations: "Noch keine Anmerkungen",
     annotationsOnPage: "auf Seite {page}",
     addComment: "Kommentar hinzufügen",
+    loadingPdf: "PDF wird geladen...",
   },
   signTool: {
     fieldSignature: "Unterschrift",
@@ -944,6 +949,8 @@ const de: Dictionary = {
     rotation: "Drehung",
     changeFile: "Datei wechseln",
     selectedElement: "Ausgewähltes Element",
+    loadingPdf: "PDF wird geladen...",
+    altSignature: "Unterschrift",
   },
   watermarkTool: {
     tabText: "Text",
@@ -986,6 +993,7 @@ const de: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Wasserzeichen",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Seiten pro Blatt",
@@ -1139,6 +1147,7 @@ const de: Dictionary = {
     prev: "Zurück",
     next: "Weiter",
     page: "Seite",
+    paginationLabel: 'Seitennavigation',
   },
   toolContent: {
     merge: {

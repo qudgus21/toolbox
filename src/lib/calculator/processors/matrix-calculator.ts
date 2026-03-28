@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const dataset = String(fields.dataset || '');
   if (!dataset.trim()) return { output: '' };
 
@@ -50,7 +52,7 @@ export function process(
       }
     }
     if (rows > 3) {
-      breakdown.push({ label: 'Note', value: 'Determinant only computed for 2×2 and 3×3 matrices' });
+      breakdown.push({ label: 'Note', value: msg['Determinant only computed for 2×2 and 3×3 matrices'] ?? 'Determinant only computed for 2×2 and 3×3 matrices' });
     }
   }
 

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Nánar",
     pageNotFound: "Umreikni fannst ekki",
     goHome: "Til baka á alla umreikna",
+    colorPickerLabel: "Litaval",
   },
   toolOptions: {
     fromUnit: "Frá",

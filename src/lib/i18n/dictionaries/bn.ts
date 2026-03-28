@@ -78,7 +78,7 @@ const bn: Dictionary = {
     grayscale: { title: "গ্রেস্কেল", description: "PDF রঙ কালো এবং সাদায় রূপান্তর করুন।" },
 
     // অপ্টিমাইজ
-    compress: { title: "PDF সংকুচিত করুন", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF সংকুচিত করুন", description: "PDF ফাইলের আকার উল্লেখযোগ্যভাবে কমান। আপনার প্রয়োজন অনুযায়ী কম্প্রেশন পদ্ধতি বেছে নিন।" },
     repair: { title: "PDF মেরামত করুন", description: "ক্ষতিগ্রস্ত বা দূষিত PDF ফাইল মেরামত করুন।" },
     ocr: { title: "OCR PDF", description: "টেক্সট রিকগনিশন দিয়ে স্ক্যান করা PDF অনুসন্ধানযোগ্য করুন।" },
     "web-optimize": { title: "ওয়েব অপ্টিমাইজ", description: "দ্রুত ওয়েব লোডিংয়ের জন্য PDF লিনিয়ারাইজ করুন।" },
@@ -134,6 +134,7 @@ const bn: Dictionary = {
     shareSubtitle: "অন্যদের জানান!",
     shareCopied: "কপি হয়েছে!",
     shareCopyLink: "লিংক কপি করুন",
+    ariaActions: "ক্রিয়া",
     unknownError: "একটি অজানা ত্রুটি ঘটেছে",
     pagesSelected: "পৃষ্ঠা নির্বাচিত",
     selectAll: "সব নির্বাচন করুন",
@@ -575,6 +576,7 @@ const bn: Dictionary = {
     pageOf: "পৃষ্ঠা",
     resetAll: "রিসেট",
     noCropArea: "প্রিভিউতে একটি এলাকা নির্বাচন করুন",
+    loadingPdf: "PDF লোড হচ্ছে...",
   },
   flattenTool: {
     flattenButton: "ফ্ল্যাটেন করুন",
@@ -742,6 +744,7 @@ const bn: Dictionary = {
     addPageRedaction: "পৃষ্ঠা রিড্যাকশন যোগ করুন",
     pageRedaction: "সম্পূর্ণ পৃষ্ঠা",
     toolsPanelTitle: "টুলস",
+    loadingPdf: "PDF লোড হচ্ছে...",
   },
   editPdfTool: {
     dropFile: "PDF ফাইল নির্বাচন করুন",
@@ -814,6 +817,7 @@ const bn: Dictionary = {
     changeFile: "ফাইল পরিবর্তন",
     imageUploadError: "ছবি লোড করা যায়নি",
     confirmClearAll: "সব উপাদান মুছে ফেলবেন?",
+    loadingPdf: "PDF লোড হচ্ছে...",
   },
   annotateTool: {
     toolSelect: "নির্বাচন",
@@ -890,6 +894,7 @@ const bn: Dictionary = {
     noAnnotations: "এখনো কোনো টীকা নেই",
     annotationsOnPage: "পৃষ্ঠা {page}-এ",
     addComment: "মন্তব্য যোগ করুন",
+    loadingPdf: "PDF লোড হচ্ছে...",
   },
   signTool: {
     fieldSignature: "স্বাক্ষর",
@@ -944,6 +949,8 @@ const bn: Dictionary = {
     rotation: "ঘূর্ণন",
     changeFile: "ফাইল পরিবর্তন",
     selectedElement: "নির্বাচিত উপাদান",
+    loadingPdf: "PDF লোড হচ্ছে...",
+    altSignature: "স্বাক্ষর",
   },
   watermarkTool: {
     tabText: "টেক্সট",
@@ -986,6 +993,7 @@ const bn: Dictionary = {
     ptUnit: "pt",
     mmUnit: "মিমি",
     degUnit: "°",
+    altWatermark: "ওয়াটারমার্ক",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "প্রতি শীটে পৃষ্ঠা",
@@ -1163,6 +1171,7 @@ const bn: Dictionary = {
     prev: "আগের",
     next: "পরের",
     page: "পৃষ্ঠা",
+    paginationLabel: 'পৃষ্ঠা নেভিগেশন',
   },
   toolContent: {
     merge: {

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detalii",
     pageNotFound: "Convertor negăsit",
     goHome: "Înapoi la toate convertoarele",
+    colorPickerLabel: "Selector de culori",
   },
   toolOptions: {
     fromUnit: "Din",

@@ -91,6 +91,8 @@ export function CalculatorOutputArea({
           title={breakdownLabel}
           processorLabels={processorLabels}
           isPreview={isPreview}
+          booleanYes={booleanYes}
+          booleanNo={booleanNo}
         />
       )}
 
@@ -108,6 +110,8 @@ export function CalculatorOutputArea({
           copyLabel={copyLabel}
           copiedLabel={copiedLabel}
           isPreview={isPreview}
+          booleanYes={booleanYes}
+          booleanNo={booleanNo}
         />
       )}
     </div>
@@ -121,11 +125,15 @@ function BreakdownSection({
   title,
   processorLabels,
   isPreview,
+  booleanYes,
+  booleanNo,
 }: {
   rows: CalculatorBreakdownRow[];
   title?: string;
   processorLabels?: Record<string, string>;
   isPreview?: boolean;
+  booleanYes?: string;
+  booleanNo?: string;
 }) {
   const [expanded, setExpanded] = useState(true);
 
@@ -145,36 +153,41 @@ function BreakdownSection({
       </button>
       {expanded && (
         <div className={cn("px-4 pb-3 space-y-1", isPreview && "pointer-events-none")}>
-          {rows.map((row, i) => (
-            <div
-              key={`${row.label}-${i}`}
-              className={cn(
-                "flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
-                row.highlight
-                  ? "bg-violet-500/8 font-semibold"
-                  : "hover:bg-violet-500/[0.04]",
-              )}
-            >
-              <span
+          {rows.map((row, i) => {
+            const displayValue = typeof row.value === "boolean"
+              ? (row.value ? (booleanYes ?? "Yes") : (booleanNo ?? "No"))
+              : row.value;
+            return (
+              <div
+                key={`${row.label}-${i}`}
                 className={cn(
-                  "text-foreground-muted",
-                  row.highlight && "text-violet-700 dark:text-violet-300",
-                )}
-              >
-                {processorLabels?.[row.label] ?? row.label}
-              </span>
-              <span
-                className={cn(
-                  "font-mono font-semibold tabular-nums",
+                  "flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
                   row.highlight
-                    ? "text-violet-700 dark:text-violet-300"
-                    : "text-foreground",
+                    ? "bg-violet-500/8 font-semibold"
+                    : "hover:bg-violet-500/[0.04]",
                 )}
               >
-                {row.value}
-              </span>
-            </div>
-          ))}
+                <span
+                  className={cn(
+                    "text-foreground-muted",
+                    row.highlight && "text-violet-700 dark:text-violet-300",
+                  )}
+                >
+                  {processorLabels?.[row.label] ?? row.label}
+                </span>
+                <span
+                  className={cn(
+                    "font-mono font-semibold tabular-nums",
+                    row.highlight
+                      ? "text-violet-700 dark:text-violet-300"
+                      : "text-foreground",
+                  )}
+                >
+                  {displayValue}
+                </span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
@@ -226,6 +239,8 @@ function ResultTable({
   copyLabel,
   copiedLabel,
   isPreview,
+  booleanYes,
+  booleanNo,
 }: {
   rows: CalculatorTableRow[];
   title?: string;
@@ -233,6 +248,8 @@ function ResultTable({
   copyLabel: string;
   copiedLabel: string;
   isPreview?: boolean;
+  booleanYes?: string;
+  booleanNo?: string;
 }) {
   return (
     <div className="border-t border-violet-500/10">
@@ -244,40 +261,45 @@ function ResultTable({
         </div>
       )}
       <div className="grid grid-cols-2 gap-px bg-border/10 p-1">
-        {rows.map((row, i) => (
-          <div
-            key={`${row.label}-${i}`}
-            className={cn(
-              "group/row flex items-center justify-between gap-1 rounded-lg px-3 py-2 transition-colors duration-150",
-              "hover:bg-violet-500/[0.06]",
-            )}
-          >
-            <div className="flex flex-col min-w-0">
-              <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
-                {processorLabels?.[row.label] ?? row.label}
-              </span>
-              <EllipsisTooltip
-                text={row.unit ? `${row.value} ${row.unit}` : row.value}
-                className="font-mono text-sm font-semibold text-foreground truncate"
-              >
-                {row.value}
-                {row.unit && (
-                  <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
-                )}
-              </EllipsisTooltip>
-            </div>
-            {!isPreview && (
-              <div className="opacity-0 group-hover/row:opacity-100 transition-opacity duration-150 shrink-0">
-                <CopyButton
-                  text={row.value}
-                  label={copyLabel}
-                  copiedLabel={copiedLabel}
-                  variant="icon"
-                />
+        {rows.map((row, i) => {
+          const displayValue = typeof row.value === "boolean"
+            ? (row.value ? (booleanYes ?? "Yes") : (booleanNo ?? "No"))
+            : row.value;
+          return (
+            <div
+              key={`${row.label}-${i}`}
+              className={cn(
+                "group/row flex items-center justify-between gap-1 rounded-lg px-3 py-2 transition-colors duration-150",
+                "hover:bg-violet-500/[0.06]",
+              )}
+            >
+              <div className="flex flex-col min-w-0">
+                <span className="text-[10px] font-bold text-foreground-muted/60 uppercase tracking-wide leading-none mb-0.5">
+                  {processorLabels?.[row.label] ?? row.label}
+                </span>
+                <EllipsisTooltip
+                  text={row.unit ? `${displayValue} ${row.unit}` : displayValue}
+                  className="font-mono text-sm font-semibold text-foreground truncate"
+                >
+                  {displayValue}
+                  {row.unit && (
+                    <span className="text-xs text-foreground-muted/60 ml-1">{row.unit}</span>
+                  )}
+                </EllipsisTooltip>
               </div>
-            )}
-          </div>
-        ))}
+              {!isPreview && (
+                <div className="opacity-0 group-hover/row:opacity-100 transition-opacity duration-150 shrink-0">
+                  <CopyButton
+                    text={displayValue}
+                    label={copyLabel}
+                    copiedLabel={copiedLabel}
+                    variant="icon"
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

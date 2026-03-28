@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Dettalji",
     pageNotFound: "Konvertitur mhux misjub",
     goHome: "Lura għall-konvertituri kollha",
+    colorPickerLabel: "Għażel il-kulur",
   },
   toolOptions: {
     fromUnit: "Minn",

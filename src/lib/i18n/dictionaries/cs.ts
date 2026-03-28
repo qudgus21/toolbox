@@ -78,7 +78,7 @@ const cs: Dictionary = {
     grayscale: { title: "Stupně šedi", description: "Převeďte barvy PDF na černobílé." },
 
     // Optimalizovat
-    compress: { title: "Komprimovat PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Komprimovat PDF", description: "Výrazně zmenšete velikost PDF souborů. Vyberte metodu komprese podle svých potřeb." },
     repair: { title: "Opravit PDF", description: "Opravte poškozené nebo chybné PDF soubory." },
     ocr: { title: "OCR PDF", description: "Umožněte vyhledávání v naskenovaných PDF pomocí rozpoznávání textu." },
     "web-optimize": { title: "Optimalizace pro web", description: "Linearizujte PDF pro rychlejší načítání na webu." },
@@ -134,6 +134,7 @@ const cs: Dictionary = {
     shareSubtitle: "Řekněte o tom dál!",
     shareCopied: "Zkopírováno!",
     shareCopyLink: "Kopírovat odkaz",
+    ariaActions: "Akce",
     unknownError: "Došlo k neznámé chybě",
     pagesSelected: "stránek vybráno",
     selectAll: "Vybrat vše",
@@ -575,6 +576,7 @@ const cs: Dictionary = {
     pageOf: "stránka",
     resetAll: "Obnovit",
     noCropArea: "Vyberte oblast v náhledu",
+    loadingPdf: "Načítání PDF...",
   },
   flattenTool: {
     flattenButton: "Sloučit",
@@ -742,6 +744,7 @@ const cs: Dictionary = {
     addPageRedaction: "Přidat začernění stránky",
     pageRedaction: "Celá stránka",
     toolsPanelTitle: "Nástroje",
+    loadingPdf: "Načítání PDF...",
   },
   editPdfTool: {
     dropFile: "Vyberte soubor PDF",
@@ -814,6 +817,7 @@ const cs: Dictionary = {
     changeFile: "Změnit soubor",
     imageUploadError: "Obrázek nelze načíst",
     confirmClearAll: "Smazat všechny prvky?",
+    loadingPdf: "Načítání PDF...",
   },
   annotateTool: {
     toolSelect: "Vybrat",
@@ -890,6 +894,7 @@ const cs: Dictionary = {
     noAnnotations: "Zatím žádné anotace",
     annotationsOnPage: "na stránce {page}",
     addComment: "Přidat komentář",
+    loadingPdf: "Načítání PDF...",
   },
   signTool: {
     fieldSignature: "Podpis",
@@ -944,6 +949,8 @@ const cs: Dictionary = {
     rotation: "Otočení",
     changeFile: "Změnit soubor",
     selectedElement: "Vybraný prvek",
+    loadingPdf: "Načítání PDF...",
+    altSignature: "Podpis",
   },
   watermarkTool: {
     tabText: "Text",
@@ -986,6 +993,7 @@ const cs: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vodoznak",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Stránek na list",
@@ -1139,6 +1147,7 @@ const cs: Dictionary = {
     prev: "Předchozí",
     next: "Další",
     page: "Stránka",
+    paginationLabel: 'Stránkování',
   },
   toolContent: {
     merge: {

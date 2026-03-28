@@ -63,6 +63,7 @@ export interface CommonLabels {
   deselectAll?: string;
   page?: string;
   confirm?: string;
+  ariaActions?: string;
 }
 
 export interface SplitLabels {

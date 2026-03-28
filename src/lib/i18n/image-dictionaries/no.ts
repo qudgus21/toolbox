@@ -332,6 +332,7 @@ const no: ImageDictionary = {
       y: "Y",
       width: "Bredde",
       height: "Høyde",
+      altCropPreview: "Forhåndsvisning av beskjæring",
     },
     rotate: {
       quickRotate: "Hurtigrotasjon",
@@ -392,6 +393,7 @@ const no: ImageDictionary = {
       noItems: "Klikk + for å legge til tekst",
       bgColor: "Bakgrunn",
       transparent: "Ingen",
+      altPreview: "Forhåndsvisning",
     },
     addBorder: {
       borderWidth: "Rammebredde",

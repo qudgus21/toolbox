@@ -78,7 +78,7 @@ const sl: Dictionary = {
     grayscale: { title: "Sivine", description: "Pretvorite barve PDF v črnobele." },
 
     // Optimiziraj
-    compress: { title: "Stisni PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Stisni PDF", description: "Znatno zmanjšajte velikost datotek PDF. Izberite metodo stiskanja glede na vaše potrebe." },
     repair: { title: "Popravi PDF", description: "Popravite poškodovane ali pokvarjene PDF datoteke." },
     ocr: { title: "OCR PDF", description: "Omogočite iskanje po skeniranih PDF z razpoznavanjem besedila." },
     "web-optimize": { title: "Optimizacija za splet", description: "Linearizirajte PDF za hitrejše nalaganje na spletu." },
@@ -134,6 +134,7 @@ const sl: Dictionary = {
     shareSubtitle: "Povej naprej!",
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj povezavo",
+    ariaActions: "Dejanja",
     unknownError: "Prišlo je do neznane napake",
     pagesSelected: "strani izbranih",
     selectAll: "Izberi vse",
@@ -575,6 +576,7 @@ const sl: Dictionary = {
     pageOf: "stran",
     resetAll: "Ponastavi",
     noCropArea: "Izberite območje na predogledu",
+    loadingPdf: "Nalaganje PDF...",
   },
   flattenTool: {
     flattenButton: "Splošči",
@@ -742,6 +744,7 @@ const sl: Dictionary = {
     addPageRedaction: "Dodaj zakritje strani",
     pageRedaction: "Celotna stran",
     toolsPanelTitle: "Orodja",
+    loadingPdf: "Nalaganje PDF...",
   },
   editPdfTool: {
     dropFile: "Izberite datoteko PDF",
@@ -814,6 +817,7 @@ const sl: Dictionary = {
     changeFile: "Spremeni datoteko",
     imageUploadError: "Slike ni mogoče naložiti",
     confirmClearAll: "Izbrisati vse elemente?",
+    loadingPdf: "Nalaganje PDF...",
   },
   annotateTool: {
     toolSelect: "Izbira",
@@ -890,6 +894,7 @@ const sl: Dictionary = {
     noAnnotations: "Še ni oznak",
     annotationsOnPage: "na strani {page}",
     addComment: "Dodaj komentar",
+    loadingPdf: "Nalaganje PDF...",
   },
   signTool: {
     fieldSignature: "Podpis",
@@ -944,6 +949,8 @@ const sl: Dictionary = {
     rotation: "Vrtenje",
     changeFile: "Zamenjaj datoteko",
     selectedElement: "Izbran element",
+    loadingPdf: "Nalaganje PDF...",
+    altSignature: "Podpis",
   },
   watermarkTool: {
     tabText: "Besedilo",
@@ -986,6 +993,7 @@ const sl: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vodni žig",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Strani na list",
@@ -1140,6 +1148,7 @@ const sl: Dictionary = {
     prev: "Prejšnja",
     next: "Naslednja",
     page: "Stran",
+    paginationLabel: 'Navigacija strani',
   },
   toolContent: {
     merge: {

@@ -332,6 +332,7 @@ const fi: ImageDictionary = {
       y: "Y",
       width: "Leveys",
       height: "Korkeus",
+      altCropPreview: "Rajauksen esikatselu",
     },
     rotate: {
       quickRotate: "Pikakierto",
@@ -392,6 +393,7 @@ const fi: ImageDictionary = {
       noItems: "Napsauta + lisätäksesi tekstiä",
       bgColor: "Tausta",
       transparent: "Ei mitään",
+      altPreview: "Esikatselu",
     },
     addBorder: {
       borderWidth: "Kehyksen leveys",

@@ -78,7 +78,7 @@ const km: Dictionary = {
     grayscale: { title: "ស្លេតប្រផេះ", description: "បំលែងពណ៌ PDF ទៅជាសខ្មៅ។" },
 
     // បង្កើនប្រសិទ្ធភាព
-    compress: { title: "បង្រួម PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "បង្រួម PDF", description: "បង្រួមទំហំឯកសារ PDF យ៉ាងច្រើន។ ជ្រើសរើសវិធីបង្រួមមនារដែលសមស្របនឹងតម្រូវការរបស់អ្នក។" },
     repair: { title: "ជួសជុល PDF", description: "ជួសជុលឯកសារ PDF ដែលខូច ឬពុកខូច។" },
     ocr: { title: "OCR PDF", description: "ធ្វើឱ្យ PDF ដែលស្កេនអាចស្វែងរកបានដោយការសម្គាល់អត្ថបទ។" },
     "web-optimize": { title: "បង្កើនប្រសិទ្ធភាពវេប", description: "បង្កើនប្រសិទ្ធភាព PDF សម្រាប់ការផ្ទុកវេបលឿនជាង។" },
@@ -134,6 +134,7 @@ const km: Dictionary = {
     shareSubtitle: "ប្រាប់មិត្តភក្តិ!",
     shareCopied: "បានចម្លង!",
     shareCopyLink: "ចម្លងតំណ",
+    ariaActions: "សកម្មភាព",
     unknownError: "មានកំហុសមិនស្គាល់បានកើតឡើង",
     pagesSelected: "ទំព័រដែលបានជ្រើស",
     selectAll: "ជ្រើសទាំងអស់",
@@ -575,6 +576,7 @@ const km: Dictionary = {
     pageOf: "ទំព័រ",
     resetAll: "កំណត់ឡើងវិញ",
     noCropArea: "ជ្រើសរើសតំបន់មួយលើការមើលជាមុន",
+    loadingPdf: "កំពុងផ្ទុក PDF...",
   },
   flattenTool: {
     flattenButton: "ធ្វើឱ្យរាបស្មើ",
@@ -742,6 +744,7 @@ const km: Dictionary = {
     addPageRedaction: "បន្ថែមការលាក់ទំព័រ",
     pageRedaction: "ទំព័រទាំងមូល",
     toolsPanelTitle: "ឧបករណ៍",
+    loadingPdf: "កំពុងផ្ទុក PDF...",
   },
   editPdfTool: {
     dropFile: "ជ្រើសរើសឯកសារ PDF",
@@ -814,6 +817,7 @@ const km: Dictionary = {
     changeFile: "ប្តូរឯកសារ",
     imageUploadError: "មិនអាចផ្ទុករូបភាពបានទេ",
     confirmClearAll: "លុបធាតុទាំងអស់?",
+    loadingPdf: "កំពុងផ្ទុក PDF...",
   },
   annotateTool: {
     toolSelect: "ជ្រើសរើស",
@@ -890,6 +894,7 @@ const km: Dictionary = {
     noAnnotations: "មិនមានចំណារនៅឡើយ",
     annotationsOnPage: "ទំព័រ {page}",
     addComment: "បន្ថែមមតិ",
+    loadingPdf: "កំពុងផ្ទុក PDF...",
   },
   signTool: {
     fieldSignature: "ហត្ថលេខា",
@@ -944,6 +949,8 @@ const km: Dictionary = {
     rotation: "ការបង្វិល",
     changeFile: "ប្តូរឯកសារ",
     selectedElement: "ធាតុដែលបានជ្រើសរើស",
+    loadingPdf: "កំពុងផ្ទុក PDF...",
+    altSignature: "ហត្ថលេខា",
   },
   watermarkTool: {
     tabText: "អត្ថបទ",
@@ -986,6 +993,7 @@ const km: Dictionary = {
     ptUnit: "pt",
     mmUnit: "មម",
     degUnit: "°",
+    altWatermark: "ស្លាកទឹក",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "ទំព័រក្នុងមួយសន្លឹក",
@@ -1205,6 +1213,7 @@ const km: Dictionary = {
     prev: "មុន",
     next: "បន្ទាប់",
     page: "ទំព័រ",
+    paginationLabel: 'ការរុករកទំព័រ',
   },
   toolContent: {
     merge: {

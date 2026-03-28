@@ -134,6 +134,7 @@ const ru: Dictionary = {
     shareSubtitle: "Расскажите другим!",
     shareCopied: "Скопировано!",
     shareCopyLink: "Скопировать ссылку",
+    ariaActions: "Действия",
     unknownError: "Произошла неизвестная ошибка",
     pagesSelected: "стр. выбрано",
     selectAll: "Выбрать все",
@@ -575,6 +576,7 @@ const ru: Dictionary = {
     pageOf: "страница",
     resetAll: "Сброс",
     noCropArea: "Выберите область на предпросмотре",
+    loadingPdf: "Загрузка PDF...",
   },
   flattenTool: {
     flattenButton: "Сведение",
@@ -742,6 +744,7 @@ const ru: Dictionary = {
     addPageRedaction: "Добавить скрытие страницы",
     pageRedaction: "Вся страница",
     toolsPanelTitle: "Инструменты",
+    loadingPdf: "Загрузка PDF...",
   },
   editPdfTool: {
     dropFile: "Выберите PDF-файл",
@@ -814,6 +817,7 @@ const ru: Dictionary = {
     changeFile: "Сменить файл",
     imageUploadError: "Не удалось загрузить изображение",
     confirmClearAll: "Удалить все элементы?",
+    loadingPdf: "Загрузка PDF...",
   },
   annotateTool: {
     toolSelect: "Выделение",
@@ -890,6 +894,7 @@ const ru: Dictionary = {
     noAnnotations: "Аннотаций пока нет",
     annotationsOnPage: "стр. {page}",
     addComment: "Добавить комментарий",
+    loadingPdf: "Загрузка PDF...",
   },
   signTool: {
     fieldSignature: "Подпись",
@@ -944,6 +949,8 @@ const ru: Dictionary = {
     rotation: "Поворот",
     changeFile: "Сменить файл",
     selectedElement: "Выбранный элемент",
+    loadingPdf: "Загрузка PDF...",
+    altSignature: "Подпись",
   },
   watermarkTool: {
     tabText: "Текст",
@@ -986,6 +993,7 @@ const ru: Dictionary = {
     ptUnit: "пт",
     mmUnit: "мм",
     degUnit: "°",
+    altWatermark: "Водяной знак",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Страниц на листе",
@@ -1140,6 +1148,7 @@ const ru: Dictionary = {
     prev: "Назад",
     next: "Далее",
     page: "Страница",
+    paginationLabel: 'Навигация по страницам',
   },
   toolContent: {
     merge: {

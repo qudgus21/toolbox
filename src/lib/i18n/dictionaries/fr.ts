@@ -134,6 +134,7 @@ const fr: Dictionary = {
     shareSubtitle: "Faites passer le mot !",
     shareCopied: "Copié !",
     shareCopyLink: "Copier le lien",
+    ariaActions: "Actions",
     unknownError: "Une erreur inconnue s'est produite",
     pagesSelected: "pages sélectionnées",
     selectAll: "Tout sélectionner",
@@ -575,6 +576,7 @@ const fr: Dictionary = {
     pageOf: "page",
     resetAll: "Réinitialiser",
     noCropArea: "Sélectionnez une zone sur l'aperçu",
+    loadingPdf: "Chargement du PDF...",
   },
   flattenTool: {
     flattenButton: "Aplatir",
@@ -742,6 +744,7 @@ const fr: Dictionary = {
     addPageRedaction: "Ajouter un caviardage de page",
     pageRedaction: "Page entière",
     toolsPanelTitle: "Outils",
+    loadingPdf: "Chargement du PDF...",
   },
   editPdfTool: {
     dropFile: "Sélectionnez un fichier PDF",
@@ -814,6 +817,7 @@ const fr: Dictionary = {
     changeFile: "Changer de fichier",
     imageUploadError: "Impossible de charger l'image",
     confirmClearAll: "Supprimer tous les éléments ?",
+    loadingPdf: "Chargement du PDF...",
   },
   annotateTool: {
     toolSelect: "Sélectionner",
@@ -890,6 +894,7 @@ const fr: Dictionary = {
     noAnnotations: "Aucune annotation",
     annotationsOnPage: "page {page}",
     addComment: "Ajouter un commentaire",
+    loadingPdf: "Chargement du PDF...",
   },
   signTool: {
     fieldSignature: "Signature",
@@ -944,6 +949,8 @@ const fr: Dictionary = {
     rotation: "Rotation",
     changeFile: "Changer de fichier",
     selectedElement: "Élément sélectionné",
+    loadingPdf: "Chargement du PDF...",
+    altSignature: "Signature",
   },
   watermarkTool: {
     tabText: "Texte",
@@ -986,6 +993,7 @@ const fr: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Filigrane",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Pages par feuille",
@@ -1163,6 +1171,7 @@ const fr: Dictionary = {
     prev: "Précédent",
     next: "Suivant",
     page: "Page",
+    paginationLabel: 'Navigation de pages',
   },
   toolContent: {
     merge: {

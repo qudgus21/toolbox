@@ -59,6 +59,7 @@ export interface LandingDictionary {
     ariaClose: string;
     ariaMenu: string;
     ariaShare: string;
+    ariaToggleTheme: string;
   };
   footer: {
     apps: string;

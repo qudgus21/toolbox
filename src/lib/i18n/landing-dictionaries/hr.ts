@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Bez računa, bez e-maila. Samo otvorite alat i počnite raditi.",
   },
   cta: { title: "Spremni za početak?", subtitle: "Bez instalacije, bez registracije, bez plaćanja — samo jedan klik.", button: "Pregledaj sve alate" },
-  common: { shareTitle: "Podijeli", shareSubtitle: "Recite prijateljima za ToolPop!", shareCopyLink: "Kopiraj poveznicu", shareCopied: "Kopirano!", ariaClose: "Zatvori", ariaMenu: "Izbornik", ariaShare: "Dijeli" },
+  common: { shareTitle: "Podijeli", shareSubtitle: "Recite prijateljima za ToolPop!", shareCopyLink: "Kopiraj poveznicu", shareCopied: "Kopirano!", ariaClose: "Zatvori", ariaMenu: "Izbornik", ariaShare: "Dijeli", ariaToggleTheme: "Promijeni temu" },
   footer: { apps: "Alati", company: "Tvrtka", about: "O nama", contact: "Kontakt", faq: "Česta pitanja", blog: "Blog", legal: "Pravne informacije", privacy: "Pravila privatnosti", terms: "Uvjeti korištenja", copyright: "© 2026 ToolPop. Sva prava pridržana.", tagline: "Besplatni online alati za PDF, slike i više. Bez registracije.", madeWith: "Napravljeno s ljubavlju za sve" },
   search: { noResults: "Nema rezultata" },
   nav: { pdf: "PDF", image: "Slika", text: "Tekst", converter: "Pretvarač", calculator: "Kalkulator" },

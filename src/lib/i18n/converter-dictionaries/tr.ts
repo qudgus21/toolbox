@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Ayrıntılar",
     pageNotFound: "Dönüştürücü bulunamadı",
     goHome: "Tüm dönüştürücülere dön",
+    colorPickerLabel: "Renk seçici",
   },
   toolOptions: {
     fromUnit: "Kaynak",

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "ਵੇਰਵੇ",
     pageNotFound: "ਕਨਵਰਟਰ ਨਹੀਂ ਮਿਲਿਆ",
     goHome: "ਸਾਰੇ ਕਨਵਰਟਰਾਂ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+    colorPickerLabel: "ਰੰਗ ਚੋਣਕਾਰ",
   },
   toolOptions: {
     fromUnit: "ਤੋਂ",

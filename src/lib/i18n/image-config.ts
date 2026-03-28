@@ -103,6 +103,7 @@ export interface ImageDictionary {
       y: string;
       width: string;
       height: string;
+      altCropPreview?: string;
     };
     rotate: {
       quickRotate: string;
@@ -163,6 +164,7 @@ export interface ImageDictionary {
       noItems: string;
       bgColor: string;
       transparent: string;
+      altPreview?: string;
     };
     addBorder: {
       borderWidth: string;

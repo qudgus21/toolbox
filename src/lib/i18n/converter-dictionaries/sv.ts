@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detaljer",
     pageNotFound: "Konverteraren hittades inte",
     goHome: "Tillbaka till alla konverterare",
+    colorPickerLabel: "Färgväljare",
   },
   toolOptions: {
     fromUnit: "Från",

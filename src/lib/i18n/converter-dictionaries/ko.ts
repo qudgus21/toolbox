@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "상세 정보",
     pageNotFound: "변환기를 찾을 수 없습니다",
     goHome: "전체 변환기로 돌아가기",
+    colorPickerLabel: "색상 선택기",
   },
   toolOptions: {
     fromUnit: "변환 전",

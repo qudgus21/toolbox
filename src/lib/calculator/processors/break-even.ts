@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const fixedCosts = Number(fields.fixedCosts);
   const variableCost = Number(fields.variableCost);
   const pricePerUnit = Number(fields.pricePerUnit);
@@ -15,9 +17,9 @@ export function process(
   const contributionMargin = pricePerUnit - variableCost;
   if (contributionMargin <= 0) {
     return {
-      output: 'Break-even not possible',
+      output: msg.breakEvenNotPossible ?? 'Break-even not possible',
       breakdown: [
-        { label: 'Issue', value: 'Variable cost per unit ≥ price per unit', highlight: true },
+        { label: 'Issue', value: msg['Variable cost per unit ≥ price per unit'] ?? 'Variable cost per unit ≥ price per unit', highlight: true },
         { label: 'Price Per Unit', value: `$${fmtMoney(pricePerUnit)}` },
         { label: 'Variable Cost', value: `$${fmtMoney(variableCost)}` },
         { label: 'Contribution Margin', value: `$${fmtMoney(contributionMargin)}` },

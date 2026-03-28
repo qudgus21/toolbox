@@ -78,7 +78,7 @@ const he: Dictionary = {
     grayscale: { title: "גווני אפור", description: "המר צבעי PDF לשחור-לבן." },
 
     // אופטימיזציה
-    compress: { title: "דחיסת PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "דחיסת PDF", description: "הקטן משמעותית את גודל קובצי ה-PDF. בחר את שיטת הדחיסה המתאימה לצרכיך." },
     repair: { title: "תיקון PDF", description: "תקן קובצי PDF פגומים או מושחתים." },
     ocr: { title: "OCR PDF", description: "הפוך קובצי PDF סרוקים לניתנים לחיפוש עם זיהוי טקסט." },
     "web-optimize": { title: "אופטימיזציה לאינטרנט", description: "לינאריזציה של PDF לטעינה מהירה יותר באינטרנט." },
@@ -134,6 +134,7 @@ const he: Dictionary = {
     shareSubtitle: "ספרו לחברים!",
     shareCopied: "הועתק!",
     shareCopyLink: "העתק קישור",
+    ariaActions: "פעולות",
     unknownError: "אירעה שגיאה לא ידועה",
     pagesSelected: "עמודים נבחרו",
     selectAll: "בחר הכל",
@@ -575,6 +576,7 @@ const he: Dictionary = {
     pageOf: "עמוד",
     resetAll: "איפוס",
     noCropArea: "בחר אזור בתצוגה המקדימה",
+    loadingPdf: "טוען PDF...",
   },
   flattenTool: {
     flattenButton: "שטח",
@@ -742,6 +744,7 @@ const he: Dictionary = {
     addPageRedaction: "הוסף השחרת עמוד",
     pageRedaction: "עמוד שלם",
     toolsPanelTitle: "כלים",
+    loadingPdf: "טוען PDF...",
   },
   editPdfTool: {
     dropFile: "בחר קובץ PDF",
@@ -814,6 +817,7 @@ const he: Dictionary = {
     changeFile: "שנה קובץ",
     imageUploadError: "לא ניתן לטעון את התמונה",
     confirmClearAll: "למחוק את כל הרכיבים?",
+    loadingPdf: "טוען PDF...",
   },
   annotateTool: {
     toolSelect: "בחירה",
@@ -890,6 +894,7 @@ const he: Dictionary = {
     noAnnotations: "אין הערות עדיין",
     annotationsOnPage: "עמוד {page}",
     addComment: "הוסף תגובה",
+    loadingPdf: "טוען PDF...",
   },
   signTool: {
     fieldSignature: "חתימה",
@@ -944,6 +949,8 @@ const he: Dictionary = {
     rotation: "סיבוב",
     changeFile: "החלף קובץ",
     selectedElement: "רכיב נבחר",
+    loadingPdf: "טוען PDF...",
+    altSignature: "חתימה",
   },
   watermarkTool: {
     tabText: "טקסט",
@@ -986,6 +993,7 @@ const he: Dictionary = {
     ptUnit: "pt",
     mmUnit: "מ\"מ",
     degUnit: "°",
+    altWatermark: "סימן מים",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "עמודים לגיליון",
@@ -1139,6 +1147,7 @@ const he: Dictionary = {
     prev: "הקודם",
     next: "הבא",
     page: "עמוד",
+    paginationLabel: 'ניווט עמודים',
   },
   toolContent: {
     merge: {

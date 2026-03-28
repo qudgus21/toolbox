@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detalji",
     pageNotFound: "Konverter nije pronađen",
     goHome: "Nazad na sve konvertere",
+    colorPickerLabel: "Birač boja",
   },
   toolOptions: {
     fromUnit: "Iz",

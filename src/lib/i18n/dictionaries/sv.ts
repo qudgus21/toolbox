@@ -78,7 +78,7 @@ const sv: Dictionary = {
     grayscale: { title: "Gråskala", description: "Konvertera PDF-färger till svartvitt." },
 
     // Optimera
-    compress: { title: "Komprimera PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Komprimera PDF", description: "Minska storleken på dina PDF-filer avsevärt. Välj den komprimeringsmetod som passar dina behov." },
     repair: { title: "Reparera PDF", description: "Reparera skadade eller korrupta PDF-filer." },
     ocr: { title: "OCR PDF", description: "Gör skannade PDF:er sökbara med textigenkänning." },
     "web-optimize": { title: "Webboptimera", description: "Linearisera PDF:er för snabbare webbladdning." },
@@ -134,6 +134,7 @@ const sv: Dictionary = {
     shareSubtitle: "Sprid ordet!",
     shareCopied: "Kopierat!",
     shareCopyLink: "Kopiera länk",
+    ariaActions: "Åtgärder",
     unknownError: "Ett okänt fel inträffade",
     pagesSelected: "sidor valda",
     selectAll: "Markera alla",
@@ -575,6 +576,7 @@ const sv: Dictionary = {
     pageOf: "sida",
     resetAll: "Återställ",
     noCropArea: "Välj ett område i förhandsgranskningen",
+    loadingPdf: "Läser in PDF...",
   },
   flattenTool: {
     flattenButton: "Platta till",
@@ -742,6 +744,7 @@ const sv: Dictionary = {
     addPageRedaction: "Lägg till sidmaskering",
     pageRedaction: "Hel sida",
     toolsPanelTitle: "Verktyg",
+    loadingPdf: "Läser in PDF...",
   },
   editPdfTool: {
     dropFile: "Välj en PDF-fil",
@@ -814,6 +817,7 @@ const sv: Dictionary = {
     changeFile: "Byt fil",
     imageUploadError: "Bilden kunde inte laddas",
     confirmClearAll: "Ta bort alla element?",
+    loadingPdf: "Läser in PDF...",
   },
   annotateTool: {
     toolSelect: "Markera",
@@ -890,6 +894,7 @@ const sv: Dictionary = {
     noAnnotations: "Inga anteckningar ännu",
     annotationsOnPage: "på sida {page}",
     addComment: "Lägg till kommentar",
+    loadingPdf: "Läser in PDF...",
   },
   signTool: {
     fieldSignature: "Signatur",
@@ -944,6 +949,8 @@ const sv: Dictionary = {
     rotation: "Rotation",
     changeFile: "Byt fil",
     selectedElement: "Valt element",
+    loadingPdf: "Läser in PDF...",
+    altSignature: "Underskrift",
   },
   watermarkTool: {
     tabText: "Text",
@@ -986,6 +993,7 @@ const sv: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vattenstämpel",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Sidor per ark",
@@ -1140,6 +1148,7 @@ const sv: Dictionary = {
     prev: "Föregående",
     next: "Nästa",
     page: "Sida",
+    paginationLabel: 'Sidnavigering',
   },
   toolContent: {
     merge: {

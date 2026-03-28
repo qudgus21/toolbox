@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "פרטים",
     pageNotFound: "הממיר לא נמצא",
     goHome: "חזרה לכל הממירים",
+    colorPickerLabel: "בוחר צבעים",
   },
   toolOptions: {
     fromUnit: "מ",

@@ -78,7 +78,7 @@ const th: Dictionary = {
     grayscale: { title: "โทนสีเทา", description: "แปลงสี PDF เป็นขาวดำ" },
 
     // เพิ่มประสิทธิภาพ
-    compress: { title: "บีบอัด PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "บีบอัด PDF", description: "ลดขนาดไฟล์ PDF ได้อย่างมีนัยสำคัญ เลือกวิธีการบีบอัดที่เหมาะกับความต้องการของคุณ" },
     repair: { title: "ซ่อมแซม PDF", description: "แก้ไขไฟล์ PDF ที่เสียหายหรือชำรุด" },
     ocr: { title: "OCR PDF", description: "ทำให้ PDF ที่สแกนค้นหาได้ด้วยการรู้จำข้อความ" },
     "web-optimize": { title: "เพิ่มประสิทธิภาพเว็บ", description: "ปรับ PDF ให้เป็นเชิงเส้นเพื่อโหลดบนเว็บได้เร็วขึ้น" },
@@ -134,6 +134,7 @@ const th: Dictionary = {
     shareSubtitle: "บอกต่อให้เพื่อนรู้!",
     shareCopied: "คัดลอกแล้ว!",
     shareCopyLink: "คัดลอกลิงก์",
+    ariaActions: "การกระทำ",
     unknownError: "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ",
     pagesSelected: "หน้าที่เลือก",
     selectAll: "เลือกทั้งหมด",
@@ -575,6 +576,7 @@ const th: Dictionary = {
     pageOf: "หน้า",
     resetAll: "รีเซ็ต",
     noCropArea: "เลือกพื้นที่บนตัวอย่าง",
+    loadingPdf: "กำลังโหลด PDF...",
   },
   flattenTool: {
     flattenButton: "แผ่ราบ",
@@ -742,6 +744,7 @@ const th: Dictionary = {
     addPageRedaction: "เพิ่มการปิดบังหน้า",
     pageRedaction: "ทั้งหน้า",
     toolsPanelTitle: "เครื่องมือ",
+    loadingPdf: "กำลังโหลด PDF...",
   },
   editPdfTool: {
     dropFile: "เลือกไฟล์ PDF",
@@ -814,6 +817,7 @@ const th: Dictionary = {
     changeFile: "เปลี่ยนไฟล์",
     imageUploadError: "ไม่สามารถโหลดรูปภาพได้",
     confirmClearAll: "ลบองค์ประกอบทั้งหมด?",
+    loadingPdf: "กำลังโหลด PDF...",
   },
   annotateTool: {
     toolSelect: "เลือก",
@@ -890,6 +894,7 @@ const th: Dictionary = {
     noAnnotations: "ยังไม่มีคำอธิบายประกอบ",
     annotationsOnPage: "หน้า {page}",
     addComment: "เพิ่มความคิดเห็น",
+    loadingPdf: "กำลังโหลด PDF...",
   },
   signTool: {
     fieldSignature: "ลายเซ็น",
@@ -944,6 +949,8 @@ const th: Dictionary = {
     rotation: "การหมุน",
     changeFile: "เปลี่ยนไฟล์",
     selectedElement: "องค์ประกอบที่เลือก",
+    loadingPdf: "กำลังโหลด PDF...",
+    altSignature: "ลายเซ็น",
   },
   watermarkTool: {
     tabText: "ข้อความ",
@@ -986,6 +993,7 @@ const th: Dictionary = {
     ptUnit: "pt",
     mmUnit: "มม.",
     degUnit: "°",
+    altWatermark: "ลายน้ำ",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "หน้าต่อแผ่น",
@@ -1140,6 +1148,7 @@ const th: Dictionary = {
     prev: "ก่อนหน้า",
     next: "ถัดไป",
     page: "หน้า",
+    paginationLabel: 'การนำทางหน้า',
   },
   toolContent: {
     merge: {

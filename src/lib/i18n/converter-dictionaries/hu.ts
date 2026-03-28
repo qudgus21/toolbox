@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Részletek",
     pageNotFound: "Az átváltó nem található",
     goHome: "Vissza az összes átváltóhoz",
+    colorPickerLabel: "Színválasztó",
   },
   toolOptions: {
     fromUnit: "Innen",

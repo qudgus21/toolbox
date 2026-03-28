@@ -134,6 +134,7 @@ const es: Dictionary = {
     shareSubtitle: "Corre la voz!",
     shareCopied: "¡Copiado!",
     shareCopyLink: "Copiar enlace",
+    ariaActions: "Acciones",
     unknownError: "Se produjo un error desconocido",
     pagesSelected: "páginas seleccionadas",
     selectAll: "Seleccionar todo",
@@ -575,6 +576,7 @@ const es: Dictionary = {
     pageOf: "página",
     resetAll: "Restablecer",
     noCropArea: "Selecciona un área en la vista previa",
+    loadingPdf: "Cargando el PDF...",
   },
   flattenTool: {
     flattenButton: "Aplanar",
@@ -742,6 +744,7 @@ const es: Dictionary = {
     addPageRedaction: "Añadir censura de página",
     pageRedaction: "Página completa",
     toolsPanelTitle: "Herramientas",
+    loadingPdf: "Cargando el PDF...",
   },
   editPdfTool: {
     dropFile: "Selecciona un archivo PDF",
@@ -814,6 +817,7 @@ const es: Dictionary = {
     changeFile: "Cambiar archivo",
     imageUploadError: "No se pudo cargar la imagen",
     confirmClearAll: "¿Eliminar todos los elementos?",
+    loadingPdf: "Cargando el PDF...",
   },
   annotateTool: {
     toolSelect: "Seleccionar",
@@ -890,6 +894,7 @@ const es: Dictionary = {
     noAnnotations: "Aún no hay anotaciones",
     annotationsOnPage: "en página {page}",
     addComment: "Añadir comentario",
+    loadingPdf: "Cargando el PDF...",
   },
   signTool: {
     fieldSignature: "Firma",
@@ -944,6 +949,8 @@ const es: Dictionary = {
     rotation: "Rotación",
     changeFile: "Cambiar archivo",
     selectedElement: "Elemento seleccionado",
+    loadingPdf: "Cargando el PDF...",
+    altSignature: "Firma",
   },
   watermarkTool: {
     tabText: "Texto",
@@ -986,6 +993,7 @@ const es: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Marca de agua",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Páginas por hoja",
@@ -1163,6 +1171,7 @@ const es: Dictionary = {
     prev: "Anterior",
     next: "Siguiente",
     page: "Página",
+    paginationLabel: 'Navegación de páginas',
   },
   toolContent: {
     merge: {

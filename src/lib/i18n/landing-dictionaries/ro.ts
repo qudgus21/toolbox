@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Fără cont, fără email. Deschide un instrument și începe imediat.",
   },
   cta: { title: "Gata să începi?", subtitle: "Fără instalare, fără înregistrare, fără plăți — la un singur clic distanță.", button: "Vezi toate instrumentele" },
-  common: { shareTitle: "Distribuie", shareSubtitle: "Spune-le prietenilor despre ToolPop!", shareCopyLink: "Copiază linkul", shareCopied: "Copiat!", ariaClose: "Închide", ariaMenu: "Meniu", ariaShare: "Distribuie" },
+  common: { shareTitle: "Distribuie", shareSubtitle: "Spune-le prietenilor despre ToolPop!", shareCopyLink: "Copiază linkul", shareCopied: "Copiat!", ariaClose: "Închide", ariaMenu: "Meniu", ariaShare: "Distribuie", ariaToggleTheme: "Schimbați tema" },
   footer: { apps: "Instrumente", company: "Companie", about: "Despre noi", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Legal", privacy: "Politica de confidențialitate", terms: "Termeni și condiții", copyright: "© 2026 ToolPop. Toate drepturile rezervate.", tagline: "Instrumente online gratuite pentru PDF, imagini și altele. Fără înregistrare.", madeWith: "Creat cu dragoste pentru toți" },
   search: { noResults: "Niciun rezultat găsit" },
   nav: { pdf: "PDF", image: "Imagine", text: "Text", converter: "Convertor", calculator: "Calculator" },

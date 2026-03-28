@@ -2,13 +2,15 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const expression = String(fields.expression || '').trim();
   if (!expression) return { output: '' };
 
   try {
     const result = evaluate(expression);
-    if (!isFinite(result)) return { output: 'Undefined (division by zero or overflow)' };
+    if (!isFinite(result)) return { output: msg.divisionByZero ?? 'Undefined (division by zero or overflow)' };
 
     return {
       output: formatNumber(result),

@@ -331,6 +331,7 @@ const ja: ImageDictionary = {
       y: "Y",
       width: "幅",
       height: "高さ",
+      altCropPreview: "切り抜きプレビュー",
     },
     rotate: {
       quickRotate: "クイック回転",
@@ -391,6 +392,7 @@ const ja: ImageDictionary = {
       noItems: "＋をクリックしてテキストを追加",
       bgColor: "背景",
       transparent: "なし",
+      altPreview: "プレビュー",
     },
     addBorder: {
       borderWidth: "枠線の太さ",

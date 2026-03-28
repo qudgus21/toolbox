@@ -332,6 +332,7 @@ const te: ImageDictionary = {
       y: "Y",
       width: "వెడల్పు",
       height: "ఎత్తు",
+      altCropPreview: "క్రాప్ ప్రివ్యూ",
     },
     rotate: {
       quickRotate: "త్వరిత భ్రమణం",
@@ -392,6 +393,7 @@ const te: ImageDictionary = {
       noItems: "టెక్స్ట్ జోడించడానికి + నొక్కండి",
       bgColor: "నేపథ్యం",
       transparent: "ఏమీ లేదు",
+      altPreview: "ప్రివ్యూ",
     },
     addBorder: {
       borderWidth: "బోర్డర్ వెడల్పు",

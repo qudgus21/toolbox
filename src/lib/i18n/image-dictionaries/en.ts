@@ -346,6 +346,7 @@ const en: ImageDictionary = {
       y: "Y",
       width: "Width",
       height: "Height",
+      altCropPreview: "Crop preview",
     },
     rotate: {
       quickRotate: "Quick Rotate",
@@ -406,6 +407,7 @@ const en: ImageDictionary = {
       noItems: "Click + to add text",
       bgColor: "Background",
       transparent: "None",
+      altPreview: "Preview",
     },
     addBorder: {
       borderWidth: "Border Width",

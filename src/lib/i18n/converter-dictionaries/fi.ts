@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Tiedot",
     pageNotFound: "Muunninta ei löytynyt",
     goHome: "Takaisin kaikkiin muuntimiin",
+    colorPickerLabel: "Värinvalitsin",
   },
   toolOptions: {
     fromUnit: "Mistä",

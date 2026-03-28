@@ -12,9 +12,10 @@ function detectApp(pathname: string): string {
 
 interface ThemeToggleProps {
   app?: string;
+  ariaLabel?: string;
 }
 
-export function ThemeToggle({ app }: ThemeToggleProps) {
+export function ThemeToggle({ app, ariaLabel = "Toggle theme" }: ThemeToggleProps) {
   const pathname = usePathname();
   const resolvedApp = app ?? detectApp(pathname);
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -43,7 +44,7 @@ export function ThemeToggle({ app }: ThemeToggleProps) {
     <button
       onClick={toggle}
       className="cursor-pointer flex h-8 w-8 items-center justify-center rounded-md border border-border text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
-      aria-label="Toggle theme"
+      aria-label={ariaLabel}
     >
       {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
     </button>

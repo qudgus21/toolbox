@@ -83,6 +83,7 @@ export interface ConverterDictionary {
     details: string;
     pageNotFound: string;
     goHome: string;
+    colorPickerLabel?: string;
   };
   toolOptions: Record<string, string>;
   statsLabels: Record<string, string>;

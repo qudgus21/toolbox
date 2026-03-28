@@ -332,6 +332,7 @@ const vi: ImageDictionary = {
       y: "Y",
       width: "Chiều rộng",
       height: "Chiều cao",
+      altCropPreview: "Xem trước cắt xén",
     },
     rotate: {
       quickRotate: "Xoay nhanh",
@@ -392,6 +393,7 @@ const vi: ImageDictionary = {
       noItems: "Nhấn + để thêm chữ",
       bgColor: "Nền",
       transparent: "Không",
+      altPreview: "Xem trước",
     },
     addBorder: {
       borderWidth: "Độ dày viền",
