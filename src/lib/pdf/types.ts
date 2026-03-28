@@ -21,5 +21,6 @@ export interface ToolState {
   pageSelections: Record<string, number[]>; // fileKey → selected page numbers (1-based)
   progress: number;
   result: ProcessingResult | null;
+  downloadUrl: string | null;
   error: string | null;
 }

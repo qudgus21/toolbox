@@ -12,6 +12,7 @@ const INITIAL_STATE: ToolState = {
   pageSelections: {},
   progress: 0,
   result: null,
+  downloadUrl: null,
   error: null,
 };
 
@@ -133,11 +134,18 @@ export function useToolProcessor(slug: string) {
           output_size_kb: Math.round(result.size / 1024),
         });
 
+        if (resultUrlRef.current) {
+          URL.revokeObjectURL(resultUrlRef.current);
+        }
+        const downloadUrl = URL.createObjectURL(result.blob);
+        resultUrlRef.current = downloadUrl;
+
         setState((prev) => ({
           ...prev,
           stage: "done",
           progress: 100,
           result,
+          downloadUrl,
         }));
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : "Processing failed";
@@ -155,12 +163,8 @@ export function useToolProcessor(slug: string) {
   const download = useCallback((customFilename?: string) => {
     if (!state.result) return;
 
-    if (resultUrlRef.current) {
-      URL.revokeObjectURL(resultUrlRef.current);
-    }
-
-    const url = URL.createObjectURL(state.result.blob);
-    resultUrlRef.current = url;
+    const url = resultUrlRef.current ?? URL.createObjectURL(state.result.blob);
+    if (!resultUrlRef.current) resultUrlRef.current = url;
 
     const a = document.createElement("a");
     a.href = url;

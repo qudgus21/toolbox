@@ -12,7 +12,7 @@ import type { ImageDictionary } from "@/lib/i18n/image-config";
 
 interface ResultCardProps {
   result: ImageProcessingResult;
-  onDownload: (filename?: string) => void;
+  downloadUrl: string;
   onReset: () => void;
   labels: ImageDictionary["common"];
   toolSlug: string;
@@ -21,7 +21,7 @@ interface ResultCardProps {
 
 export function ResultCard({
   result,
-  onDownload,
+  downloadUrl,
   onReset,
   labels,
   toolSlug,
@@ -116,20 +116,15 @@ export function ResultCard({
 
       {/* Actions */}
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <Button
-          variant="accent"
-          size="lg"
-          onClick={() => {
-            onDownload(filename);
-            track.downloadClick({
-              tool_slug: toolSlug,
-              file_size_kb: Math.round(result.size / 1024),
-            });
-          }}
+        <a
+          href={downloadUrl}
+          download={filename}
+          onClick={() => track.downloadClick({ tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) })}
+          className="inline-flex items-center justify-center font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer bg-accent text-accent-foreground hover:bg-accent-hover shadow-xs h-12 px-6 text-base rounded-lg gap-2.5"
         >
-          <Download className="mr-2 h-4 w-4" />
+          <Download className="h-4 w-4" />
           {labels.download}
-        </Button>
+        </a>
         <Button
           variant="ghost"
           size="lg"
