@@ -191,6 +191,7 @@ export function ToolPageClient({
     removeFile,
     process: processFiles,
     download,
+    downloadUrl,
     reset,
   } = useToolProcessor(slug);
 
@@ -851,7 +852,7 @@ export function ToolPageClient({
         <div>
           <ResultCard
             result={result}
-            onDownload={(filename) => download(filename)}
+            downloadUrl={downloadUrl ?? ""}
             onReset={reset}
             labels={labels}
             toolSlug={slug}
