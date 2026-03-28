@@ -39,22 +39,9 @@ export function ShareButton({
   const resolvedApp = app ?? detectApp(pathname);
   const [open, setOpen] = useState(false);
 
-  const handleClick = useCallback(async () => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile && navigator.share) {
-      try {
-        await navigator.share({
-          title: document.title,
-          url: window.location.href,
-        });
-        sendEvent("share_click", { app: resolvedApp, method: "native" });
-        return;
-      } catch {
-        // User cancelled — fall through to modal
-      }
-    }
+  const handleClick = useCallback(() => {
     setOpen(true);
-  }, [resolvedApp]);
+  }, []);
 
   return (
     <>
