@@ -181,6 +181,7 @@ const pl: TextDictionary = {
     suffixPlaceholder: "Sufiks...",
   },
   statsLabels: {
+    emptyState: "Wpisz tekst, aby zobaczyć statystyki",
     characters: "Znaki",
     charactersWithoutSpaces: "Bez spacji",
     words: "Słowa",

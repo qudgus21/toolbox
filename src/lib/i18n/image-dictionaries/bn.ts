@@ -307,6 +307,8 @@ const bn: ImageDictionary = {
     shareCopied: "কপি হয়েছে!",
     shareCopyLink: "লিংক কপি করুন",
     unknownError: "একটি অজানা ত্রুটি ঘটেছে",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const bn: ImageDictionary = {
       y: "Y",
       width: "প্রস্থ",
       height: "উচ্চতা",
+      altCropPreview: "ক্রপ প্রিভিউ",
     },
     rotate: {
       quickRotate: "দ্রুত ঘোরানো",
@@ -390,6 +393,7 @@ const bn: ImageDictionary = {
       noItems: "টেক্সট যোগ করতে + ক্লিক করুন",
       bgColor: "ব্যাকগ্রাউন্ড",
       transparent: "কোনোটি না",
+      altPreview: "প্রিভিউ",
     },
     addBorder: {
       borderWidth: "বর্ডারের প্রস্থ",

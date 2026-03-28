@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Details",
     pageNotFound: "Converter niet gevonden",
     goHome: "Terug naar alle converters",
+    colorPickerLabel: "Kleurenkiezer",
   },
   toolOptions: {
     fromUnit: "Van",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Dagen optellen",
     subtractDays: "Dagen aftrekken",
     datetimeHint: "bijv. 2024-01-15, 1705312200, now",
+    endDate: "Einddatum",
+    today: "Vandaag (standaard)",
+    dateUnit: "Eenheid",
   },
   statsLabels: {
     lines: "Regels",

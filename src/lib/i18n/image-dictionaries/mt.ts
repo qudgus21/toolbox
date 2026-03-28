@@ -307,6 +307,8 @@ const mt: ImageDictionary = {
     shareCopied: "Ikkupjat!",
     shareCopyLink: "Ikkopja l-link",
     unknownError: "Seħħ żball mhux magħruf",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const mt: ImageDictionary = {
       y: "Y",
       width: "Wisa'",
       height: "Għoli",
+      altCropPreview: "Anteprima tal-qtugħ",
     },
     rotate: {
       quickRotate: "Dawra Mgħaġġla",
@@ -390,6 +393,7 @@ const mt: ImageDictionary = {
       noItems: "Ikklikkja + biex iżżid test",
       bgColor: "Sfond",
       transparent: "Xejn",
+      altPreview: "Anteprima",
     },
     addBorder: {
       borderWidth: "Wisa' tal-Burdura",

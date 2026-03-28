@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Деталі",
     pageNotFound: "Конвертер не знайдено",
     goHome: "Повернутися до всіх конвертерів",
+    colorPickerLabel: "Вибір кольору",
   },
   toolOptions: {
     fromUnit: "З",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Додати дні",
     subtractDays: "Відняти дні",
     datetimeHint: "напр. 2024-01-15, 1705312200, now",
+    endDate: "Дата кінця",
+    today: "Сьогодні (за замовчуванням)",
+    dateUnit: "Одиниця",
   },
   statsLabels: {
     lines: "Рядки",

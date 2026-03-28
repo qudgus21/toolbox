@@ -78,7 +78,7 @@ const mt: Dictionary = {
     grayscale: { title: "Skala tal-griż", description: "Ikkonverti l-kuluri tal-PDF għal iswed u abjad." },
 
     // Ottimizza
-    compress: { title: "Ikkompressja PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Ikkompressja PDF", description: "Naqqas id-daqs tal-fajls PDF b'mod sinifikanti. Agħżel il-metodu ta' kompressjoni li jaqbel mal-ħtiġijiet tiegħek." },
     repair: { title: "Sewwi PDF", description: "Irranġa fajls PDF korrotti jew imħassra." },
     ocr: { title: "OCR PDF", description: "Agħmel PDFs skennjati rikerkabbli b'rikonoxximent tat-test." },
     "web-optimize": { title: "Ottimizzazzjoni għall-web", description: "Linearizza PDFs għal tagħbija aktar mgħaġġla fuq il-web." },
@@ -124,6 +124,8 @@ const mt: Dictionary = {
     encryptedFile: "Fajl kriptat",
     clickToSelectPages: "Ikklikkja biex tagħżel il-paġni",
     dragToReorder: "Iġbed biex tibdel l-ordni",
+    removeFile: "Neħħi l-fajl",
+    rotatePage: "Dawwar il-paġna",
     favoriteAdded: "Miżjud mal-favoriti",
     favoriteRemoved: "Imneħħi mill-favoriti",
     comingSoon: "Dalwaqt",
@@ -132,6 +134,7 @@ const mt: Dictionary = {
     shareSubtitle: "Għid lil-ħbieb!",
     shareCopied: "Ikkupjat!",
     shareCopyLink: "Ikkopja l-link",
+    ariaActions: "Azzjonijiet",
     unknownError: "Seħħ żball mhux magħruf",
     pagesSelected: "paġni magħżula",
     selectAll: "Agħżel kollox",
@@ -573,9 +576,12 @@ const mt: Dictionary = {
     pageOf: "paġna",
     resetAll: "Irrestawra",
     noCropArea: "Agħżel żona fuq il-preview",
+    loadingPdf: "Qed jgħabba l-PDF...",
   },
   flattenTool: {
     flattenButton: "Iċċattja",
+    pageOf: "paġni",
+    changeFile: "Ibdel il-fajl",
     formFieldsLabel: "Oqsma tal-formola",
     formFieldsDesc: "Ibdel l-oqsma tad-dħul, il-kaxxi tat-tikka u l-menus li jinżlu f'test statiku",
     annotationsLabel: "Annotazzjonijiet",
@@ -738,6 +744,7 @@ const mt: Dictionary = {
     addPageRedaction: "Żid ħabi tal-paġna",
     pageRedaction: "Paġna sħiħa",
     toolsPanelTitle: "Għodod",
+    loadingPdf: "Qed jgħabba l-PDF...",
   },
   editPdfTool: {
     dropFile: "Agħżel fajl PDF",
@@ -810,6 +817,7 @@ const mt: Dictionary = {
     changeFile: "Ibdel il-fajl",
     imageUploadError: "Ma setax jillowdja l-immaġni",
     confirmClearAll: "Ħassar l-elementi kollha?",
+    loadingPdf: "Qed jgħabba l-PDF...",
   },
   annotateTool: {
     toolSelect: "Agħżel",
@@ -886,6 +894,7 @@ const mt: Dictionary = {
     noAnnotations: "Għad m'hemmx annotazzjonijiet",
     annotationsOnPage: "paġna {page}",
     addComment: "Żid kumment",
+    loadingPdf: "Qed jgħabba l-PDF...",
   },
   signTool: {
     fieldSignature: "Firma",
@@ -940,6 +949,8 @@ const mt: Dictionary = {
     rotation: "Rotazzjoni",
     changeFile: "Ibdel il-fajl",
     selectedElement: "Element magħżul",
+    loadingPdf: "Qed jgħabba l-PDF...",
+    altSignature: "Firma",
   },
   watermarkTool: {
     tabText: "Test",
@@ -982,6 +993,7 @@ const mt: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Filigrana",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Paġni kull folja",
@@ -1135,6 +1147,7 @@ const mt: Dictionary = {
     prev: "Tas-Sapport",
     next: "Li jmiss",
     page: "Paġna",
+    paginationLabel: 'Navigazzjoni tal-paġni',
   },
   toolContent: {
     merge: {

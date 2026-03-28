@@ -44,7 +44,7 @@ export function StatsDisplay({ stats, labels, className }: StatsDisplayProps) {
         ))
       ) : (
         <div className="flex h-full min-h-[200px] items-center justify-center text-sm text-foreground-muted">
-          {labels?.["emptyState"] ?? "Enter text to see statistics"}
+          {labels?.["emptyState"]}
         </div>
       )}
     </div>

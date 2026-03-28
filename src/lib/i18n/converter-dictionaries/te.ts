@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "వివరాలు",
     pageNotFound: "కన్వర్టర్ కనుగొనబడలేదు",
     goHome: "అన్ని కన్వర్టర్లకు తిరిగి వెళ్ళండి",
+    colorPickerLabel: "రంగు ఎంపికదారు",
   },
   toolOptions: {
     fromUnit: "నుండి",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "రోజులు కలుపు",
     subtractDays: "రోజులు తీయి",
     datetimeHint: "ఉదా. 2024-01-15, 1705312200, now",
+    endDate: "ముగింపు తేదీ",
+    today: "ఈరోజు (డిఫాల్ట్)",
+    dateUnit: "యూనిట్",
   },
   statsLabels: {
     lines: "లైన్లు",

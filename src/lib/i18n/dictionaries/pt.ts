@@ -124,6 +124,8 @@ const pt: Dictionary = {
     encryptedFile: "Arquivo criptografado",
     clickToSelectPages: "Clique para selecionar páginas",
     dragToReorder: "Arraste para reordenar",
+    removeFile: "Remover arquivo",
+    rotatePage: "Girar página",
     favoriteAdded: "Adicionado aos favoritos",
     favoriteRemoved: "Removido dos favoritos",
     comingSoon: "Em breve",
@@ -132,6 +134,7 @@ const pt: Dictionary = {
     shareSubtitle: "Espalhe a palavra!",
     shareCopied: "Copiado!",
     shareCopyLink: "Copiar link",
+    ariaActions: "Ações",
     unknownError: "Ocorreu um erro desconhecido",
     pagesSelected: "páginas selecionadas",
     selectAll: "Selecionar tudo",
@@ -573,9 +576,12 @@ const pt: Dictionary = {
     pageOf: "página",
     resetAll: "Redefinir",
     noCropArea: "Selecione uma área na pré-visualização",
+    loadingPdf: "A carregar o PDF...",
   },
   flattenTool: {
     flattenButton: "Achatar",
+    pageOf: "páginas",
+    changeFile: "Alterar arquivo",
     formFieldsLabel: "Campos de formulário",
     formFieldsDesc: "Converter campos de entrada, caixas de seleção e menus suspensos em texto estático",
     annotationsLabel: "Anotações",
@@ -738,6 +744,7 @@ const pt: Dictionary = {
     addPageRedaction: "Adicionar tarja de página",
     pageRedaction: "Página inteira",
     toolsPanelTitle: "Ferramentas",
+    loadingPdf: "A carregar o PDF...",
   },
   editPdfTool: {
     dropFile: "Selecione um arquivo PDF",
@@ -810,6 +817,7 @@ const pt: Dictionary = {
     changeFile: "Alterar arquivo",
     imageUploadError: "Não foi possível carregar a imagem",
     confirmClearAll: "Excluir todos os elementos?",
+    loadingPdf: "A carregar o PDF...",
   },
   annotateTool: {
     toolSelect: "Selecionar",
@@ -886,6 +894,7 @@ const pt: Dictionary = {
     noAnnotations: "Nenhuma anotação ainda",
     annotationsOnPage: "na página {page}",
     addComment: "Adicionar comentário",
+    loadingPdf: "A carregar o PDF...",
   },
   signTool: {
     fieldSignature: "Assinatura",
@@ -940,6 +949,8 @@ const pt: Dictionary = {
     rotation: "Rotação",
     changeFile: "Trocar arquivo",
     selectedElement: "Elemento selecionado",
+    loadingPdf: "A carregar o PDF...",
+    altSignature: "Assinatura",
   },
   watermarkTool: {
     tabText: "Texto",
@@ -982,6 +993,7 @@ const pt: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Marca d'água",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Páginas por folha",
@@ -1136,6 +1148,7 @@ const pt: Dictionary = {
     prev: "Anterior",
     next: "Próximo",
     page: "Página",
+    paginationLabel: 'Navegação de páginas',
   },
   toolContent: {
     merge: {

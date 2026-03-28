@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "상세 정보",
     pageNotFound: "변환기를 찾을 수 없습니다",
     goHome: "전체 변환기로 돌아가기",
+    colorPickerLabel: "색상 선택기",
   },
   toolOptions: {
     fromUnit: "변환 전",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "날짜 더하기",
     subtractDays: "날짜 빼기",
     datetimeHint: "예: 2024-01-15, 1705312200, now",
+    endDate: "종료일",
+    today: "오늘 (기본값)",
+    dateUnit: "단위",
   },
   statsLabels: {
     lines: "줄 수",

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Podrobnosti",
     pageNotFound: "Pretvornik ni bil najden",
     goHome: "Nazaj na vse pretvornike",
+    colorPickerLabel: "Izbirnik barv",
   },
   toolOptions: {
     fromUnit: "Iz",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Dodaj dneve",
     subtractDays: "Odštej dneve",
     datetimeHint: "npr. 2024-01-15, 1705312200, now",
+    endDate: "Datum konca",
+    today: "Danes (privzeto)",
+    dateUnit: "Enota",
   },
   statsLabels: {
     lines: "Vrstice",

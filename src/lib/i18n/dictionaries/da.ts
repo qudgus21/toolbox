@@ -78,7 +78,7 @@ const da: Dictionary = {
     grayscale: { title: "Gråtoner", description: "Konverter PDF-farver til sort og hvid." },
 
     // Optimer
-    compress: { title: "Komprimer PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Komprimer PDF", description: "Formindsk dine PDF-filer markant. Vælg den komprimeringsmetode, der passer til dine behov." },
     repair: { title: "Reparer PDF", description: "Ret beskadigede eller ødelagte PDF-filer." },
     ocr: { title: "OCR PDF", description: "Gør scannede PDF-filer søgbare med tekstgenkendelse." },
     "web-optimize": { title: "Weboptimering", description: "Lineariser PDF-filer til hurtigere webindlæsning." },
@@ -124,6 +124,8 @@ const da: Dictionary = {
     encryptedFile: "Krypteret fil",
     clickToSelectPages: "Klik for at vælge sider",
     dragToReorder: "Træk for at ændre rækkefølge",
+    removeFile: "Fjern fil",
+    rotatePage: "Roter side",
     favoriteAdded: "Tilføjet til favoritter",
     favoriteRemoved: "Fjernet fra favoritter",
     comingSoon: "Kommer snart",
@@ -132,6 +134,7 @@ const da: Dictionary = {
     shareSubtitle: "Fortæl det videre!",
     shareCopied: "Kopieret!",
     shareCopyLink: "Kopiér link",
+    ariaActions: "Handlinger",
     unknownError: "Der opstod en ukendt fejl",
     pagesSelected: "sider valgt",
     selectAll: "Vælg alle",
@@ -573,9 +576,12 @@ const da: Dictionary = {
     pageOf: "side",
     resetAll: "Nulstil",
     noCropArea: "Vælg et område i forhåndsvisningen",
+    loadingPdf: "Indlæser PDF...",
   },
   flattenTool: {
     flattenButton: "Fladgør",
+    pageOf: "sider",
+    changeFile: "Skift fil",
     formFieldsLabel: "Formularfelter",
     formFieldsDesc: "Konverter indtastningsfelter, afkrydsningsfelter og rullelister til statisk tekst",
     annotationsLabel: "Annotationer",
@@ -738,6 +744,7 @@ const da: Dictionary = {
     addPageRedaction: "Tilføj sidesløring",
     pageRedaction: "Hel side",
     toolsPanelTitle: "Værktøjer",
+    loadingPdf: "Indlæser PDF...",
   },
   editPdfTool: {
     dropFile: "Vælg en PDF-fil",
@@ -810,6 +817,7 @@ const da: Dictionary = {
     changeFile: "Skift fil",
     imageUploadError: "Billedet kunne ikke indlæses",
     confirmClearAll: "Slet alle elementer?",
+    loadingPdf: "Indlæser PDF...",
   },
   annotateTool: {
     toolSelect: "Vælg",
@@ -886,6 +894,7 @@ const da: Dictionary = {
     noAnnotations: "Ingen annoteringer endnu",
     annotationsOnPage: "på side {page}",
     addComment: "Tilføj kommentar",
+    loadingPdf: "Indlæser PDF...",
   },
   signTool: {
     fieldSignature: "Underskrift",
@@ -940,6 +949,8 @@ const da: Dictionary = {
     rotation: "Rotation",
     changeFile: "Skift fil",
     selectedElement: "Valgt element",
+    loadingPdf: "Indlæser PDF...",
+    altSignature: "Underskrift",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -982,6 +993,7 @@ const da: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vandmærke",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Sider pr. ark",
@@ -1135,6 +1147,7 @@ const da: Dictionary = {
     prev: "Forrige",
     next: "Næste",
     page: "Side",
+    paginationLabel: 'Sidenavigation',
   },
   toolContent: {
     merge: {

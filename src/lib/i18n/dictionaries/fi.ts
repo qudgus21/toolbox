@@ -78,7 +78,7 @@ const fi: Dictionary = {
     grayscale: { title: "Harmaasävy", description: "Muunna PDF:n värit mustavalkoisiksi." },
 
     // Optimoi
-    compress: { title: "Pakkaa PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Pakkaa PDF", description: "Pienennä PDF-tiedostojen kokoa merkittävästi. Valitse tarpeisiisi sopiva pakkaustapa." },
     repair: { title: "Korjaa PDF", description: "Korjaa vaurioituneet tai vioittuneet PDF-tiedostot." },
     ocr: { title: "OCR PDF", description: "Tee skannatuista PDF:istä haettavia tekstintunnistuksella." },
     "web-optimize": { title: "Verkko-optimointi", description: "Linearisoi PDF:t nopeampaa verkkolataamista varten." },
@@ -124,6 +124,8 @@ const fi: Dictionary = {
     encryptedFile: "Salattu tiedosto",
     clickToSelectPages: "Valitse sivut napsauttamalla",
     dragToReorder: "Järjestä uudelleen vetämällä",
+    removeFile: "Poista tiedosto",
+    rotatePage: "Kierrä sivua",
     favoriteAdded: "Lisätty suosikkeihin",
     favoriteRemoved: "Poistettu suosikeista",
     comingSoon: "Tulossa pian",
@@ -132,6 +134,7 @@ const fi: Dictionary = {
     shareSubtitle: "Kerro muillekin!",
     shareCopied: "Kopioitu!",
     shareCopyLink: "Kopioi linkki",
+    ariaActions: "Toiminnot",
     unknownError: "Tuntematon virhe tapahtui",
     pagesSelected: "sivua valittu",
     selectAll: "Valitse kaikki",
@@ -573,9 +576,12 @@ const fi: Dictionary = {
     pageOf: "sivu",
     resetAll: "Palauta",
     noCropArea: "Valitse alue esikatselussa",
+    loadingPdf: "Ladataan PDF...",
   },
   flattenTool: {
     flattenButton: "Litistä",
+    pageOf: "sivua",
+    changeFile: "Vaihda tiedosto",
     formFieldsLabel: "Lomakekentät",
     formFieldsDesc: "Muunna syöttökentät, valintaruudut ja pudotusvalikot staattiseksi tekstiksi",
     annotationsLabel: "Merkinnät",
@@ -738,6 +744,7 @@ const fi: Dictionary = {
     addPageRedaction: "Lisää sivun peittäminen",
     pageRedaction: "Koko sivu",
     toolsPanelTitle: "Työkalut",
+    loadingPdf: "Ladataan PDF...",
   },
   editPdfTool: {
     dropFile: "Valitse PDF-tiedosto",
@@ -810,6 +817,7 @@ const fi: Dictionary = {
     changeFile: "Vaihda tiedosto",
     imageUploadError: "Kuvaa ei voitu ladata",
     confirmClearAll: "Poista kaikki elementit?",
+    loadingPdf: "Ladataan PDF...",
   },
   annotateTool: {
     toolSelect: "Valitse",
@@ -886,6 +894,7 @@ const fi: Dictionary = {
     noAnnotations: "Ei vielä merkintöjä",
     annotationsOnPage: "sivulla {page}",
     addComment: "Lisää kommentti",
+    loadingPdf: "Ladataan PDF...",
   },
   signTool: {
     fieldSignature: "Allekirjoitus",
@@ -940,6 +949,8 @@ const fi: Dictionary = {
     rotation: "Kierto",
     changeFile: "Vaihda tiedosto",
     selectedElement: "Valittu elementti",
+    loadingPdf: "Ladataan PDF...",
+    altSignature: "Allekirjoitus",
   },
   watermarkTool: {
     tabText: "Teksti",
@@ -982,6 +993,7 @@ const fi: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vesileima",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Sivua arkille",
@@ -1135,6 +1147,7 @@ const fi: Dictionary = {
     prev: "Edellinen",
     next: "Seuraava",
     page: "Sivu",
+    paginationLabel: 'Sivunavigaatio',
   },
   toolContent: {
     merge: {

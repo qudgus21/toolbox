@@ -307,6 +307,8 @@ const sk: ImageDictionary = {
     shareCopied: "Skopírované!",
     shareCopyLink: "Kopírovať odkaz",
     unknownError: "Vyskytla sa neznáma chyba",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const sk: ImageDictionary = {
       y: "Y",
       width: "Šírka",
       height: "Výška",
+      altCropPreview: "Náhľad orezania",
     },
     rotate: {
       quickRotate: "Rýchle otočenie",
@@ -390,6 +393,7 @@ const sk: ImageDictionary = {
       noItems: "Kliknite + pre pridanie textu",
       bgColor: "Pozadie",
       transparent: "Žiadne",
+      altPreview: "Náhľad",
     },
     addBorder: {
       borderWidth: "Šírka rámika",

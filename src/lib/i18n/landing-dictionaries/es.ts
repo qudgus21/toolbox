@@ -88,6 +88,10 @@ const dict: LandingDictionary = {
     shareSubtitle: "¡Recomienda ToolPop a tus amigos!",
     shareCopyLink: "Copiar enlace",
     shareCopied: "¡Copiado!",
+    ariaClose: "Cerrar",
+    ariaMenu: "Menú",
+    ariaShare: "Compartir",
+    ariaToggleTheme: "Cambiar tema",
   },
   footer: {
     apps: "Herramientas",

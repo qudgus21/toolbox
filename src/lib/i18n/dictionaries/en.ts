@@ -130,6 +130,8 @@ const en: Dictionary = {
     deselectAll: "Deselect all",
     page: "Page",
     confirm: "Confirm",
+    removeFile: "Remove file",
+    rotatePage: "Rotate page",
     favoriteAdded: "Added to favorites",
     favoriteRemoved: "Removed from favorites",
     comingSoon: "Coming Soon",
@@ -138,6 +140,7 @@ const en: Dictionary = {
     shareSubtitle: "Spread the word!",
     shareCopied: "Copied!",
     shareCopyLink: "Copy link",
+    ariaActions: "Actions",
   },
   metadata: {
     siteTitle: "ToolPop PDF - Free PDF Tools",
@@ -573,9 +576,12 @@ const en: Dictionary = {
     pageOf: "page",
     resetAll: "Reset",
     noCropArea: "Select an area on the preview",
+    loadingPdf: "Loading PDF...",
   },
   flattenTool: {
     flattenButton: "Flatten",
+    pageOf: "pages",
+    changeFile: "Change file",
     formFieldsLabel: "Form fields",
     formFieldsDesc: "Convert inputs, checkboxes, and dropdowns to static text",
     annotationsLabel: "Annotations",
@@ -738,6 +744,7 @@ const en: Dictionary = {
     addPageRedaction: "Add page redaction",
     pageRedaction: "Full page",
     toolsPanelTitle: "Tools",
+    loadingPdf: "Loading PDF...",
   },
   editPdfTool: {
     dropFile: "Select a PDF file",
@@ -810,6 +817,7 @@ const en: Dictionary = {
     changeFile: "Change file",
     imageUploadError: "Could not load image",
     confirmClearAll: "Delete all elements?",
+    loadingPdf: "Loading PDF...",
   },
   annotateTool: {
     toolSelect: "Select",
@@ -886,6 +894,7 @@ const en: Dictionary = {
     noAnnotations: "No annotations yet",
     annotationsOnPage: "on page {page}",
     addComment: "Add comment",
+    loadingPdf: "Loading PDF...",
   },
   signTool: {
     fieldSignature: "Signature",
@@ -940,6 +949,8 @@ const en: Dictionary = {
     rotation: "Rotation",
     changeFile: "Change file",
     selectedElement: "Selected element",
+    loadingPdf: "Loading PDF...",
+    altSignature: "Signature",
   },
   watermarkTool: {
     tabText: "Text",
@@ -982,6 +993,7 @@ const en: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "deg",
+    altWatermark: "watermark",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Pages per sheet",
@@ -1197,6 +1209,7 @@ const en: Dictionary = {
     prev: "Previous",
     next: "Next",
     page: "Page",
+    paginationLabel: "Pagination",
   },
   toolContent: {
     merge: {

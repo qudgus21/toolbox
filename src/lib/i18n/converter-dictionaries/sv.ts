@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detaljer",
     pageNotFound: "Konverteraren hittades inte",
     goHome: "Tillbaka till alla konverterare",
+    colorPickerLabel: "Färgväljare",
   },
   toolOptions: {
     fromUnit: "Från",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Lägg till dagar",
     subtractDays: "Dra ifrån dagar",
     datetimeHint: "t.ex. 2024-01-15, 1705312200, now",
+    endDate: "Slutdatum",
+    today: "Idag (standard)",
+    dateUnit: "Enhet",
   },
   statsLabels: {
     lines: "Rader",

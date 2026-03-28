@@ -349,6 +349,7 @@ const mr: TextDictionary = {
     suffixPlaceholder: "प्रत्यय...",
   },
   statsLabels: {
+    emptyState: "आकडेवारी पाहण्यासाठी मजकूर टाका",
     characters: "अक्षरे",
     charactersWithoutSpaces: "मोकळ्या जागेशिवाय",
     words: "शब्द",

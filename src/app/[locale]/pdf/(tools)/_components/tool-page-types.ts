@@ -45,6 +45,8 @@ export interface CommonLabels {
   tryOtherTools?: string;
   privacyBadge?: string;
   encryptedFile?: string;
+  removeFile?: string;
+  rotatePage?: string;
   clickToSelectPages?: string;
   dragToReorder?: string;
   favHint?: string;
@@ -61,6 +63,7 @@ export interface CommonLabels {
   deselectAll?: string;
   page?: string;
   confirm?: string;
+  ariaActions?: string;
 }
 
 export interface SplitLabels {

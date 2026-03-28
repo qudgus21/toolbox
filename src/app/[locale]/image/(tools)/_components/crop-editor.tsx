@@ -231,7 +231,7 @@ export function CropEditor({
             {imageUrl && (
               <img
                 src={imageUrl}
-                alt="Crop preview"
+                alt={labels.altCropPreview ?? "Crop preview"}
                 draggable={false}
                 className="pointer-events-none absolute inset-0 select-none opacity-40"
                 style={{ width: displayW, height: displayH }}

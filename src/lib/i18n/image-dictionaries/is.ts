@@ -139,6 +139,8 @@ const is_: ImageDictionary = {
     shareCopied: "Afritað!",
     shareCopyLink: "Afrita hlekk",
     unknownError: "Óþekkt villa kom upp",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const is_: ImageDictionary = {
       y: "Y",
       width: "Breidd",
       height: "Haed",
+      altCropPreview: "Forskoðun skurðar",
     },
     rotate: {
       quickRotate: "Fljotssnuningur",
@@ -222,6 +225,7 @@ const is_: ImageDictionary = {
       noItems: "Smelltu á + til að bæta við texta",
       bgColor: "Bakgrunnur",
       transparent: "Ekkert",
+      altPreview: "Forskoðun",
     },
     addBorder: {
       borderWidth: "Rammabreidd",

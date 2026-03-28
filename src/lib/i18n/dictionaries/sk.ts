@@ -78,7 +78,7 @@ const sk: Dictionary = {
     grayscale: { title: "Odtiene šedej", description: "Konvertujte farby PDF na čiernobiele." },
 
     // Optimalizovať
-    compress: { title: "Komprimovať PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Komprimovať PDF", description: "Výrazne zmenšite veľkosť PDF súborov. Vyberte metódu kompresie podľa svojich potrieb." },
     repair: { title: "Opraviť PDF", description: "Opravte poškodené alebo chybné PDF súbory." },
     ocr: { title: "OCR PDF", description: "Umožnite vyhľadávanie v naskenovaných PDF pomocou rozpoznávania textu." },
     "web-optimize": { title: "Optimalizácia pre web", description: "Linearizujte PDF pre rýchlejšie načítanie na webe." },
@@ -124,6 +124,8 @@ const sk: Dictionary = {
     encryptedFile: "Šifrovaný súbor",
     clickToSelectPages: "Kliknutím vyberte stránky",
     dragToReorder: "Potiahnutím zmeňte poradie",
+    removeFile: "Odstrániť súbor",
+    rotatePage: "Otočiť stránku",
     favoriteAdded: "Pridané do obľúbených",
     favoriteRemoved: "Odstránené z obľúbených",
     comingSoon: "Čoskoro",
@@ -132,6 +134,7 @@ const sk: Dictionary = {
     shareSubtitle: "Povedzte o tom ďalej!",
     shareCopied: "Skopírované!",
     shareCopyLink: "Kopírovať odkaz",
+    ariaActions: "Akcie",
     unknownError: "Vyskytla sa neznáma chyba",
     pagesSelected: "strán vybraných",
     selectAll: "Vybrať všetko",
@@ -573,9 +576,12 @@ const sk: Dictionary = {
     pageOf: "stránka",
     resetAll: "Obnoviť",
     noCropArea: "Vyberte oblasť v náhľade",
+    loadingPdf: "Načítanie PDF...",
   },
   flattenTool: {
     flattenButton: "Zlúčiť",
+    pageOf: "stránok",
+    changeFile: "Zmeniť súbor",
     formFieldsLabel: "Polia formulára",
     formFieldsDesc: "Previesť vstupné polia, zaškrtávacie políčka a rozbaľovacie ponuky na statický text",
     annotationsLabel: "Anotácie",
@@ -738,6 +744,7 @@ const sk: Dictionary = {
     addPageRedaction: "Pridať začiernenie stránky",
     pageRedaction: "Celá stránka",
     toolsPanelTitle: "Nástroje",
+    loadingPdf: "Načítanie PDF...",
   },
   editPdfTool: {
     dropFile: "Vyberte súbor PDF",
@@ -810,6 +817,7 @@ const sk: Dictionary = {
     changeFile: "Zmeniť súbor",
     imageUploadError: "Obrázok sa nepodarilo načítať",
     confirmClearAll: "Odstrániť všetky prvky?",
+    loadingPdf: "Načítanie PDF...",
   },
   annotateTool: {
     toolSelect: "Výber",
@@ -886,6 +894,7 @@ const sk: Dictionary = {
     noAnnotations: "Zatiaľ žiadne anotácie",
     annotationsOnPage: "na strane {page}",
     addComment: "Pridať komentár",
+    loadingPdf: "Načítanie PDF...",
   },
   signTool: {
     fieldSignature: "Podpis",
@@ -940,6 +949,8 @@ const sk: Dictionary = {
     rotation: "Otočenie",
     changeFile: "Zmeniť súbor",
     selectedElement: "Vybraný prvok",
+    loadingPdf: "Načítanie PDF...",
+    altSignature: "Podpis",
   },
   watermarkTool: {
     tabText: "Text",
@@ -982,6 +993,7 @@ const sk: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vodoznak",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Stránok na hárok",
@@ -1136,6 +1148,7 @@ const sk: Dictionary = {
     prev: "Predchádzajúca",
     next: "Ďalšia",
     page: "Strana",
+    paginationLabel: 'Navigácia stránok',
   },
   toolContent: {
     merge: {

@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "ਕੋਈ ਖਾਤਾ ਨਹੀਂ, ਕੋਈ ਈਮੇਲ ਨਹੀਂ। ਬੱਸ ਟੂਲ ਖੋਲ੍ਹੋ ਅਤੇ ਕੰਮ ਸ਼ੁਰੂ ਕਰੋ।",
   },
   cta: { title: "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?", subtitle: "ਕੋਈ ਇੰਸਟਾਲ ਨਹੀਂ, ਕੋਈ ਸਾਈਨ-ਅੱਪ ਨਹੀਂ, ਕੋਈ ਭੁਗਤਾਨ ਨਹੀਂ — ਬੱਸ ਇੱਕ ਕਲਿੱਕ।", button: "ਸਾਰੇ ਟੂਲ ਵੇਖੋ" },
-  common: { shareTitle: "ਸਾਂਝਾ ਕਰੋ", shareSubtitle: "ਆਪਣੇ ਦੋਸਤਾਂ ਨੂੰ ToolPop ਬਾਰੇ ਦੱਸੋ!", shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ", shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!" },
+  common: { shareTitle: "ਸਾਂਝਾ ਕਰੋ", shareSubtitle: "ਆਪਣੇ ਦੋਸਤਾਂ ਨੂੰ ToolPop ਬਾਰੇ ਦੱਸੋ!", shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ", shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!", ariaClose: "ਬੰਦ ਕਰੋ", ariaMenu: "ਮੀਨੂ", ariaShare: "ਸਾਂਝਾ ਕਰੋ", ariaToggleTheme: "ਥੀਮ ਬਦਲੋ" },
   footer: { apps: "ਟੂਲ", company: "ਕੰਪਨੀ", about: "ਸਾਡੇ ਬਾਰੇ", contact: "ਸੰਪਰਕ", faq: "ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ", blog: "ਬਲੌਗ", legal: "ਕਾਨੂੰਨੀ", privacy: "ਗੋਪਨੀਯਤਾ ਨੀਤੀ", terms: "ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ", copyright: "© 2026 ToolPop. ਸਾਰੇ ਅਧਿਕਾਰ ਸੁਰੱਖਿਅਤ ਹਨ।", tagline: "PDF, ਚਿੱਤਰਾਂ ਅਤੇ ਹੋਰ ਲਈ ਮੁਫ਼ਤ ਔਨਲਾਈਨ ਟੂਲ। ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ।", madeWith: "ਸਭ ਲਈ ਪਿਆਰ ਨਾਲ ਬਣਾਇਆ" },
   search: { noResults: "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ ਮਿਲੇ" },
   nav: { pdf: "PDF", image: "ਤਸਵੀਰ", text: "ਟੈਕਸਟ", converter: "ਕਨਵਰਟਰ", calculator: "ਕੈਲਕੁਲੇਟਰ" },

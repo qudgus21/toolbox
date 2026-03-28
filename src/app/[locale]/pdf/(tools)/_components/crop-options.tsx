@@ -27,6 +27,7 @@ export interface CropLabels {
   pageOf: string;
   resetAll: string;
   noCropArea: string;
+  loadingPdf?: string;
 }
 
 interface CropOptionsProps {

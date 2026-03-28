@@ -181,6 +181,7 @@ const nl: TextDictionary = {
     suffixPlaceholder: "Achtervoegsel...",
   },
   statsLabels: {
+    emptyState: "Voer tekst in om statistieken te zien",
     characters: "Tekens",
     charactersWithoutSpaces: "Zonder spaties",
     words: "Woorden",

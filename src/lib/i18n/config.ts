@@ -110,6 +110,9 @@ export interface Dictionary {
     deselectAll: string;
     page: string;
     confirm: string;
+    removeFile?: string;
+    rotatePage?: string;
+    ariaActions?: string;
   };
   metadata: {
     siteTitle: string;
@@ -505,9 +508,12 @@ export interface Dictionary {
     pageOf: string;
     resetAll: string;
     noCropArea: string;
+    loadingPdf?: string;
   };
   flattenTool: {
     flattenButton: string;
+    pageOf?: string;
+    changeFile?: string;
     formFieldsLabel: string;
     formFieldsDesc: string;
     annotationsLabel: string;
@@ -618,6 +624,7 @@ export interface Dictionary {
     addPageRedaction: string;
     pageRedaction: string;
     toolsPanelTitle: string;
+    loadingPdf?: string;
   };
   editPdfTool: {
     dropFile: string;
@@ -690,6 +697,7 @@ export interface Dictionary {
     changeFile: string;
     imageUploadError: string;
     confirmClearAll: string;
+    loadingPdf?: string;
   };
   annotateTool: {
     toolSelect: string;
@@ -766,6 +774,7 @@ export interface Dictionary {
     noAnnotations: string;
     annotationsOnPage: string;
     addComment: string;
+    loadingPdf?: string;
   };
   signTool: {
     fieldSignature: string;
@@ -820,6 +829,8 @@ export interface Dictionary {
     rotation: string;
     changeFile: string;
     selectedElement: string;
+    loadingPdf?: string;
+    altSignature?: string;
   };
   watermarkTool: {
     tabText: string;
@@ -862,6 +873,7 @@ export interface Dictionary {
     ptUnit: string;
     mmUnit: string;
     degUnit: string;
+    altWatermark?: string;
   };
   pagesPerSheetTool: {
     pagesPerSheet: string;
@@ -980,6 +992,7 @@ export interface Dictionary {
     prev: string;
     next: string;
     page: string;
+    paginationLabel: string;
   };
   toolContent: Record<string, {
     howTo: { title: string; steps: string[] };

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "รายละเอียด",
     pageNotFound: "ไม่พบตัวแปลง",
     goHome: "กลับไปตัวแปลงทั้งหมด",
+    colorPickerLabel: "ตัวเลือกสี",
   },
   toolOptions: {
     fromUnit: "จาก",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "เพิ่มวัน",
     subtractDays: "ลบวัน",
     datetimeHint: "เช่น 2024-01-15, 1705312200, now",
+    endDate: "วันที่สิ้นสุด",
+    today: "วันนี้ (ค่าเริ่มต้น)",
+    dateUnit: "หน่วย",
   },
   statsLabels: {
     lines: "บรรทัด",

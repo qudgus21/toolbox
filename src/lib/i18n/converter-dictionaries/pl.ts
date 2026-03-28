@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Szczegóły",
     pageNotFound: "Nie znaleziono konwertera",
     goHome: "Wróć do wszystkich konwerterów",
+    colorPickerLabel: "Selektor kolorów",
   },
   toolOptions: {
     fromUnit: "Z",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Dodaj dni",
     subtractDays: "Odejmij dni",
     datetimeHint: "np. 2024-01-15, 1705312200, now",
+    endDate: "Data końcowa",
+    today: "Dziś (domyślnie)",
+    dateUnit: "Jednostka",
   },
   statsLabels: {
     lines: "Linie",

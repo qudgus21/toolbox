@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Подробности",
     pageNotFound: "Конверторът не е намерен",
     goHome: "Обратно към всички конвертори",
+    colorPickerLabel: "Избор на цвят",
   },
   toolOptions: {
     fromUnit: "От",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Добави дни",
     subtractDays: "Извади дни",
     datetimeHint: "напр. 2024-01-15, 1705312200, now",
+    endDate: "Крайна дата",
+    today: "Днес (по подразбиране)",
+    dateUnit: "Единица",
   },
   statsLabels: {
     lines: "Редове",

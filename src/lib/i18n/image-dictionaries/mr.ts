@@ -307,6 +307,8 @@ const mr: ImageDictionary = {
     shareCopied: "कॉपी झाले!",
     shareCopyLink: "लिंक कॉपी करा",
     unknownError: "अज्ञात त्रुटी आली",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const mr: ImageDictionary = {
       y: "Y",
       width: "रुंदी",
       height: "उंची",
+      altCropPreview: "क्रॉप पूर्वावलोकन",
     },
     rotate: {
       quickRotate: "जलद फिरवा",
@@ -390,6 +393,7 @@ const mr: ImageDictionary = {
       noItems: "मजकूर जोडण्यासाठी + क्लिक करा",
       bgColor: "पार्श्वभूमी",
       transparent: "काहीही नाही",
+      altPreview: "पूर्वावलोकन",
     },
     addBorder: {
       borderWidth: "सीमा रुंदी",

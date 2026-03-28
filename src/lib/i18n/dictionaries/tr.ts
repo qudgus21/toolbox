@@ -78,7 +78,7 @@ const tr: Dictionary = {
     grayscale: { title: "Gri Tonlama", description: "PDF renklerini siyah beyaza dönüştürün." },
 
     // Optimize Etme
-    compress: { title: "PDF Sıkıştır", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF Sıkıştır", description: "PDF dosyalarınızı önemli ölçüde küçültün. İhtiyaçlarınıza uygun sıkıştırma yöntemini seçin." },
     repair: { title: "PDF Onar", description: "Hasarlı veya bozuk PDF dosyalarını onarın." },
     ocr: { title: "OCR PDF", description: "Taranan PDF'leri metin tanıma ile aranabilir hale getirin." },
     "web-optimize": { title: "Web Optimize", description: "PDF'leri daha hızlı web yüklemesi için optimize edin." },
@@ -124,6 +124,8 @@ const tr: Dictionary = {
     encryptedFile: "Şifrelenmiş dosya",
     clickToSelectPages: "Sayfa seçmek için tıklayın",
     dragToReorder: "Sıralamak için sürükleyin",
+    removeFile: "Dosyayı kaldır",
+    rotatePage: "Sayfayı döndür",
     favoriteAdded: "Favorilere eklendi",
     favoriteRemoved: "Favorilerden kaldırıldı",
     comingSoon: "Yakında",
@@ -132,6 +134,7 @@ const tr: Dictionary = {
     shareSubtitle: "Herkese duyurun!",
     shareCopied: "Kopyalandı!",
     shareCopyLink: "Bağlantıyı kopyala",
+    ariaActions: "İşlemler",
     unknownError: "Bilinmeyen bir hata oluştu",
     pagesSelected: "sayfa seçili",
     selectAll: "Tümünü seç",
@@ -573,9 +576,12 @@ const tr: Dictionary = {
     pageOf: "sayfa",
     resetAll: "Sıfırla",
     noCropArea: "Önizlemede bir alan seçin",
+    loadingPdf: "PDF yükleniyor...",
   },
   flattenTool: {
     flattenButton: "Düzleştir",
+    pageOf: "sayfa",
+    changeFile: "Dosyayı değiştir",
     formFieldsLabel: "Form alanları",
     formFieldsDesc: "Giriş alanlarını, onay kutularını ve açılır menüleri sabit metne dönüştür",
     annotationsLabel: "Açıklamalar",
@@ -738,6 +744,7 @@ const tr: Dictionary = {
     addPageRedaction: "Sayfa karalaması ekle",
     pageRedaction: "Tam sayfa",
     toolsPanelTitle: "Araçlar",
+    loadingPdf: "PDF yükleniyor...",
   },
   editPdfTool: {
     dropFile: "PDF dosyası seçin",
@@ -810,6 +817,7 @@ const tr: Dictionary = {
     changeFile: "Dosyayı değiştir",
     imageUploadError: "Görsel yüklenemedi",
     confirmClearAll: "Tüm öğeler silinsin mi?",
+    loadingPdf: "PDF yükleniyor...",
   },
   annotateTool: {
     toolSelect: "Seç",
@@ -886,6 +894,7 @@ const tr: Dictionary = {
     noAnnotations: "Henüz açıklama yok",
     annotationsOnPage: "sayfa {page}",
     addComment: "Yorum ekle",
+    loadingPdf: "PDF yükleniyor...",
   },
   signTool: {
     fieldSignature: "İmza",
@@ -940,6 +949,8 @@ const tr: Dictionary = {
     rotation: "Döndürme",
     changeFile: "Dosya değiştir",
     selectedElement: "Seçili öğe",
+    loadingPdf: "PDF yükleniyor...",
+    altSignature: "İmza",
   },
   watermarkTool: {
     tabText: "Metin",
@@ -982,6 +993,7 @@ const tr: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Filigran",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Yaprak başına sayfa",
@@ -1136,6 +1148,7 @@ const tr: Dictionary = {
     prev: "Önceki",
     next: "Sonraki",
     page: "Sayfa",
+    paginationLabel: 'Sayfa gezintisi',
   },
   toolContent: {
     merge: {

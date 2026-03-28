@@ -307,6 +307,8 @@ const ar: ImageDictionary = {
     shareCopied: "تم النسخ!",
     shareCopyLink: "نسخ الرابط",
     unknownError: "حدث خطأ غير معروف",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const ar: ImageDictionary = {
       y: "Y",
       width: "العرض",
       height: "الارتفاع",
+      altCropPreview: "معاينة الاقتصاص",
     },
     rotate: {
       quickRotate: "تدوير سريع",
@@ -390,6 +393,7 @@ const ar: ImageDictionary = {
       noItems: "اضغط + لإضافة نص",
       bgColor: "الخلفية",
       transparent: "بدون",
+      altPreview: "معاينة",
     },
     addBorder: {
       borderWidth: "سمك الإطار",

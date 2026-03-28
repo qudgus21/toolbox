@@ -349,6 +349,7 @@ const cs: TextDictionary = {
     suffixPlaceholder: "P\u0159\u00edpona...",
   },
   statsLabels: {
+    emptyState: "Zadejte text pro zobrazení statistik",
     characters: "Znaky",
     charactersWithoutSpaces: "Bez mezer",
     words: "Slova",

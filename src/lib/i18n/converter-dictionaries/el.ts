@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Λεπτομέρειες",
     pageNotFound: "Ο μετατροπέας δεν βρέθηκε",
     goHome: "Πίσω σε όλους τους μετατροπείς",
+    colorPickerLabel: "Επιλογή χρώματος",
   },
   toolOptions: {
     fromUnit: "Από",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Προσθήκη ημερών",
     subtractDays: "Αφαίρεση ημερών",
     datetimeHint: "π.χ. 2024-01-15, 1705312200, now",
+    endDate: "Ημερομηνία λήξης",
+    today: "Σήμερα (προεπιλογή)",
+    dateUnit: "Μονάδα",
   },
   statsLabels: {
     lines: "Γραμμές",

@@ -307,6 +307,8 @@ const hu: ImageDictionary = {
     shareCopied: "Másolva!",
     shareCopyLink: "Link másolása",
     unknownError: "Ismeretlen hiba történt",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const hu: ImageDictionary = {
       y: "Y",
       width: "Szélesség",
       height: "Magasság",
+      altCropPreview: "Vágás előnézete",
     },
     rotate: {
       quickRotate: "Gyors forgatás",
@@ -390,6 +393,7 @@ const hu: ImageDictionary = {
       noItems: "Kattintson a + gombra szöveg hozzáadásához",
       bgColor: "Háttér",
       transparent: "Nincs",
+      altPreview: "Előnézet",
     },
     addBorder: {
       borderWidth: "Keret vastagsága",

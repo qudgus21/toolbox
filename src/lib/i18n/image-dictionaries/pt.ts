@@ -307,6 +307,8 @@ const pt: ImageDictionary = {
     shareCopied: "Copiado!",
     shareCopyLink: "Copiar link",
     unknownError: "Ocorreu um erro desconhecido",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const pt: ImageDictionary = {
       y: "Y",
       width: "Largura",
       height: "Altura",
+      altCropPreview: "Pré-visualização do recorte",
     },
     rotate: {
       quickRotate: "Rotação rápida",
@@ -390,6 +393,7 @@ const pt: ImageDictionary = {
       noItems: "Clique em + para adicionar texto",
       bgColor: "Fundo",
       transparent: "Nenhum",
+      altPreview: "Pré-visualização",
     },
     addBorder: {
       borderWidth: "Espessura da borda",

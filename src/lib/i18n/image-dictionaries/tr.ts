@@ -307,6 +307,8 @@ const tr: ImageDictionary = {
     shareCopied: "Kopyalandı!",
     shareCopyLink: "Bağlantıyı kopyala",
     unknownError: "Bilinmeyen bir hata oluştu",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const tr: ImageDictionary = {
       y: "Y",
       width: "Genişlik",
       height: "Yükseklik",
+      altCropPreview: "Kırpma önizlemesi",
     },
     rotate: {
       quickRotate: "Hızlı Döndür",
@@ -390,6 +393,7 @@ const tr: ImageDictionary = {
       noItems: "Metin eklemek için + tıklayın",
       bgColor: "Arka plan",
       transparent: "Yok",
+      altPreview: "Önizleme",
     },
     addBorder: {
       borderWidth: "Çerçeve Kalınlığı",

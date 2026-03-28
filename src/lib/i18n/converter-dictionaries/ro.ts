@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detalii",
     pageNotFound: "Convertor negăsit",
     goHome: "Înapoi la toate convertoarele",
+    colorPickerLabel: "Selector de culori",
   },
   toolOptions: {
     fromUnit: "Din",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Adaugă zile",
     subtractDays: "Scade zile",
     datetimeHint: "ex. 2024-01-15, 1705312200, now",
+    endDate: "Dată de sfârșit",
+    today: "Azi (implicit)",
+    dateUnit: "Unitate",
   },
   statsLabels: {
     lines: "Linii",

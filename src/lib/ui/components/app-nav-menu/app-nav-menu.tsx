@@ -13,6 +13,7 @@ export interface NavApp {
 
 interface AppNavMenuProps {
   apps: NavApp[];
+  menuLabel?: string;
 }
 
 /* ── Desktop nav ── */
@@ -37,7 +38,7 @@ function DesktopNav({ apps }: AppNavMenuProps) {
 }
 
 /* ── Mobile slide-down nav ── */
-function MobileNav({ apps }: AppNavMenuProps) {
+function MobileNav({ apps, menuLabel = "Menu" }: AppNavMenuProps) {
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
@@ -55,7 +56,7 @@ function MobileNav({ apps }: AppNavMenuProps) {
       <button
         onClick={() => setOpen((v) => !v)}
         className="flex items-center justify-center w-9 h-9 rounded-lg text-foreground-muted hover:text-foreground hover:bg-background-muted transition-colors"
-        aria-label="Menu"
+        aria-label={menuLabel}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
@@ -98,11 +99,11 @@ function MobileNav({ apps }: AppNavMenuProps) {
 }
 
 /* ── Combined ── */
-export function AppNavMenu({ apps }: AppNavMenuProps) {
+export function AppNavMenu({ apps, menuLabel }: AppNavMenuProps) {
   return (
     <>
       <DesktopNav apps={apps} />
-      <MobileNav apps={apps} />
+      <MobileNav apps={apps} menuLabel={menuLabel} />
     </>
   );
 }

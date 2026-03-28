@@ -307,6 +307,8 @@ const vi: ImageDictionary = {
     shareCopied: "Đã sao chép!",
     shareCopyLink: "Sao chép liên kết",
     unknownError: "Đã xảy ra lỗi không xác định",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const vi: ImageDictionary = {
       y: "Y",
       width: "Chiều rộng",
       height: "Chiều cao",
+      altCropPreview: "Xem trước cắt xén",
     },
     rotate: {
       quickRotate: "Xoay nhanh",
@@ -390,6 +393,7 @@ const vi: ImageDictionary = {
       noItems: "Nhấn + để thêm chữ",
       bgColor: "Nền",
       transparent: "Không",
+      altPreview: "Xem trước",
     },
     addBorder: {
       borderWidth: "Độ dày viền",

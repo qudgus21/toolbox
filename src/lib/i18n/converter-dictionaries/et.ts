@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Üksikasjad",
     pageNotFound: "Teisendajat ei leitud",
     goHome: "Tagasi kõigi teisendajate juurde",
+    colorPickerLabel: "Värvi valik",
   },
   toolOptions: {
     fromUnit: "Alates",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Lisa päevi",
     subtractDays: "Lahuta päevi",
     datetimeHint: "nt 2024-01-15, 1705312200, now",
+    endDate: "Lõppkuupäev",
+    today: "Täna (vaikimisi)",
+    dateUnit: "Ühik",
   },
   statsLabels: {
     lines: "Read",

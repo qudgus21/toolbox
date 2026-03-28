@@ -78,7 +78,7 @@ const lv: Dictionary = {
     grayscale: { title: "Pelēktoņi", description: "Konvertējiet PDF krāsas uz melnbaltu." },
 
     // Optimizēt
-    compress: { title: "Saspiest PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Saspiest PDF", description: "Ievērojami samaziniet PDF failu izmēru. Izvēlieties kompresijas metodi atbilstoši jūsu vajadzībām." },
     repair: { title: "Labot PDF", description: "Salabojiet bojātus vai korumpētus PDF failus." },
     ocr: { title: "OCR PDF", description: "Padariet skenētus PDF meklējamus ar teksta atpazīšanu." },
     "web-optimize": { title: "Tīmekļa optimizācija", description: "Linearizējiet PDF failus ātrākai ielādei tīmeklī." },
@@ -124,6 +124,8 @@ const lv: Dictionary = {
     encryptedFile: "Šifrēts fails",
     clickToSelectPages: "Noklikšķiniet, lai atlasītu lapas",
     dragToReorder: "Velciet, lai pārkārtotu",
+    removeFile: "Noņemt failu",
+    rotatePage: "Pagriezt lapu",
     favoriteAdded: "Pievienots izlasei",
     favoriteRemoved: "Noņemts no izlases",
     comingSoon: "Drīzumā",
@@ -132,6 +134,7 @@ const lv: Dictionary = {
     shareSubtitle: "Pastāstiet citiem!",
     shareCopied: "Nokopēts!",
     shareCopyLink: "Kopēt saiti",
+    ariaActions: "Darbības",
     unknownError: "Radās nezināma kļūda",
     pagesSelected: "lapas atlasītas",
     selectAll: "Atlasīt visu",
@@ -573,9 +576,12 @@ const lv: Dictionary = {
     pageOf: "lapa",
     resetAll: "Atiestatīt",
     noCropArea: "Atlasiet apgabalu priekšskatījumā",
+    loadingPdf: "Ielādē PDF...",
   },
   flattenTool: {
     flattenButton: "Izlīdzināt",
+    pageOf: "lapas",
+    changeFile: "Mainīt failu",
     formFieldsLabel: "Veidlapas lauki",
     formFieldsDesc: "Pārvērst ievades laukus, izvēles rūtiņas un nolaižamos sarakstus statiskā tekstā",
     annotationsLabel: "Anotācijas",
@@ -738,6 +744,7 @@ const lv: Dictionary = {
     addPageRedaction: "Pievienot lapas aizklāšanu",
     pageRedaction: "Visa lapa",
     toolsPanelTitle: "Rīki",
+    loadingPdf: "Ielādē PDF...",
   },
   editPdfTool: {
     dropFile: "Izvēlieties PDF failu",
@@ -810,6 +817,7 @@ const lv: Dictionary = {
     changeFile: "Mainīt failu",
     imageUploadError: "Neizdevās ielādēt attēlu",
     confirmClearAll: "Dzēst visus elementus?",
+    loadingPdf: "Ielādē PDF...",
   },
   annotateTool: {
     toolSelect: "Atlasīt",
@@ -886,6 +894,7 @@ const lv: Dictionary = {
     noAnnotations: "Pagaidām nav anotāciju",
     annotationsOnPage: "{page}. lapā",
     addComment: "Pievienot komentāru",
+    loadingPdf: "Ielādē PDF...",
   },
   signTool: {
     fieldSignature: "Paraksts",
@@ -940,6 +949,8 @@ const lv: Dictionary = {
     rotation: "Rotācija",
     changeFile: "Mainīt failu",
     selectedElement: "Atlasītais elements",
+    loadingPdf: "Ielādē PDF...",
+    altSignature: "Paraksts",
   },
   watermarkTool: {
     tabText: "Teksts",
@@ -982,6 +993,7 @@ const lv: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Ūdenszīme",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Lappuses uz lapas",
@@ -1135,6 +1147,7 @@ const lv: Dictionary = {
     prev: "Iepriekšējā",
     next: "Nākamā",
     page: "Lapa",
+    paginationLabel: 'Lapošana',
   },
   toolContent: {
     merge: {

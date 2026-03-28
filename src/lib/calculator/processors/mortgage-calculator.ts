@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const homePrice = Number(fields.homePrice);
   const downPayment = Number(fields.downPayment ?? 0);
   const annualRate = Number(fields.rate);
@@ -18,7 +20,7 @@ export function process(
   }
 
   const loanAmount = homePrice - downPayment;
-  if (loanAmount <= 0) return { output: 'Down payment exceeds home price' };
+  if (loanAmount <= 0) return { output: msg.downPaymentExceedsPrice ?? 'Down payment exceeds home price' };
 
   const monthlyRate = annualRate / 100 / 12;
   const totalMonths = Math.round(termYears * 12);

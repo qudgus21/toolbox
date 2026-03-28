@@ -187,6 +187,8 @@ export interface SignPdfLabels {
   changeFile: string;
   // Selected element
   selectedElement: string;
+  loadingPdf?: string;
+  altSignature?: string;
 }
 
 // ─── Helpers ────────────────────────────────────────────────

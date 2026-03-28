@@ -320,6 +320,8 @@ const ko: ImageDictionary = {
     shareCopied: "복사됨!",
     shareCopyLink: "링크 복사",
     unknownError: "알 수 없는 오류가 발생했습니다",
+    more: "개 더",
+    actionsLabel: "작업",
   },
   toolOptions: {
     resize: {
@@ -343,6 +345,7 @@ const ko: ImageDictionary = {
       y: "Y",
       width: "너비",
       height: "높이",
+      altCropPreview: "자르기 미리보기",
     },
     rotate: {
       quickRotate: "빠른 회전",
@@ -403,6 +406,7 @@ const ko: ImageDictionary = {
       noItems: "텍스트를 추가하세요",
       bgColor: "배경",
       transparent: "없음",
+      altPreview: "미리보기",
     },
     addBorder: {
       borderWidth: "테두리 두께",

@@ -78,7 +78,7 @@ const mr: Dictionary = {
     grayscale: { title: "ग्रेस्केल", description: "PDF रंग काळ्या आणि पांढऱ्यात रूपांतरित करा." },
 
     // ऑप्टिमाइझ करा
-    compress: { title: "PDF संकुचित करा", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF संकुचित करा", description: "तुमच्या PDF फाइल्सचा आकार लक्षणीयरित्या कमी करा। तुमच्या गरजेनुसार कम्प्रेशन पद्धत निवडा." },
     repair: { title: "PDF दुरुस्त करा", description: "खराब झालेल्या किंवा दूषित PDF फाइल्स दुरुस्त करा." },
     ocr: { title: "OCR PDF", description: "मजकूर ओळखीसह स्कॅन केलेले PDF शोधण्यायोग्य बनवा." },
     "web-optimize": { title: "वेब ऑप्टिमाइझ", description: "जलद वेब लोडिंगसाठी PDF लिनियराइझ करा." },
@@ -124,6 +124,8 @@ const mr: Dictionary = {
     encryptedFile: "एनक्रिप्टेड फाइल",
     clickToSelectPages: "पेज निवडण्यासाठी क्लिक करा",
     dragToReorder: "क्रम बदलण्यासाठी ड्रॅग करा",
+    removeFile: "फाइल काढा",
+    rotatePage: "पृष्ठ फिरवा",
     favoriteAdded: "आवडींमध्ये जोडले",
     favoriteRemoved: "आवडींमधून काढले",
     comingSoon: "लवकरच येत आहे",
@@ -132,6 +134,7 @@ const mr: Dictionary = {
     shareSubtitle: "इतरांना सांगा!",
     shareCopied: "कॉपी झाले!",
     shareCopyLink: "लिंक कॉपी करा",
+    ariaActions: "क्रिया",
     unknownError: "अज्ञात त्रुटी आली",
     pagesSelected: "पृष्ठे निवडली",
     selectAll: "सर्व निवडा",
@@ -573,9 +576,12 @@ const mr: Dictionary = {
     pageOf: "पृष्ठ",
     resetAll: "रीसेट",
     noCropArea: "प्रीव्यूवर एक क्षेत्र निवडा",
+    loadingPdf: "PDF लोड होत आहे...",
   },
   flattenTool: {
     flattenButton: "सपाट करा",
+    pageOf: "पृष्ठे",
+    changeFile: "फाइल बदला",
     formFieldsLabel: "फॉर्म फील्ड",
     formFieldsDesc: "इनपुट, चेकबॉक्स आणि ड्रॉपडाउन स्थिर मजकुरात रूपांतरित करा",
     annotationsLabel: "टिपणी",
@@ -738,6 +744,7 @@ const mr: Dictionary = {
     addPageRedaction: "पृष्ठ रिडॅक्शन जोडा",
     pageRedaction: "संपूर्ण पृष्ठ",
     toolsPanelTitle: "साधने",
+    loadingPdf: "PDF लोड होत आहे...",
   },
   editPdfTool: {
     dropFile: "PDF फाइल निवडा",
@@ -810,6 +817,7 @@ const mr: Dictionary = {
     changeFile: "फाइल बदला",
     imageUploadError: "प्रतिमा लोड होऊ शकली नाही",
     confirmClearAll: "सर्व घटक हटवायचे?",
+    loadingPdf: "PDF लोड होत आहे...",
   },
   annotateTool: {
     toolSelect: "निवडा",
@@ -886,6 +894,7 @@ const mr: Dictionary = {
     noAnnotations: "अजून भाष्ये नाहीत",
     annotationsOnPage: "पान {page} वर",
     addComment: "टिप्पणी जोडा",
+    loadingPdf: "PDF लोड होत आहे...",
   },
   signTool: {
     fieldSignature: "स्वाक्षरी",
@@ -940,6 +949,8 @@ const mr: Dictionary = {
     rotation: "फिरवणे",
     changeFile: "फाइल बदला",
     selectedElement: "निवडलेला घटक",
+    loadingPdf: "PDF लोड होत आहे...",
+    altSignature: "स्वाक्षरी",
   },
   watermarkTool: {
     tabText: "मजकूर",
@@ -982,6 +993,7 @@ const mr: Dictionary = {
     ptUnit: "pt",
     mmUnit: "मिमी",
     degUnit: "°",
+    altWatermark: "वॉटरमार्क",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "प्रति शीट पृष्ठे",
@@ -1135,6 +1147,7 @@ const mr: Dictionary = {
     prev: "मागील",
     next: "पुढील",
     page: "पृष्ठ",
+    paginationLabel: 'पृष्ठ नेव्हिगेशन',
   },
   toolContent: {
     merge: {

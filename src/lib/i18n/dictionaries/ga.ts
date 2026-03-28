@@ -78,7 +78,7 @@ const ga: Dictionary = {
     grayscale: { title: "Liathscála", description: "Tiontaigh dathanna PDF go dubh agus bán." },
 
     // Optamaigh
-    compress: { title: "Comhbhrúigh PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Comhbhrúigh PDF", description: "Laghdaigh méid do chomhad PDF go mór. Roghnaigh an modh comhbhrúite a oireann do do riachtanais." },
     repair: { title: "Deisigh PDF", description: "Deisigh comhaid PDF damáistithe nó truaillithe." },
     ocr: { title: "OCR PDF", description: "Déan comhaid PDF scanáilte inchuardaithe le haithint téacs." },
     "web-optimize": { title: "Optamú gréasáin", description: "Líneáraigh comhaid PDF le haghaidh lódáil ghréasáin níos tapúla." },
@@ -124,6 +124,8 @@ const ga: Dictionary = {
     encryptedFile: "Comhad criptithe",
     clickToSelectPages: "Cliceáil chun leathanaigh a roghnú",
     dragToReorder: "Tarraing chun athordú",
+    removeFile: "Bain an comhad",
+    rotatePage: "Rothlaigh leathanach",
     favoriteAdded: "Curtha leis na ceanáin",
     favoriteRemoved: "Bainte ó na ceanáin",
     comingSoon: "Ag teacht go luath",
@@ -132,6 +134,7 @@ const ga: Dictionary = {
     shareSubtitle: "Inis do do chairde!",
     shareCopied: "Cóipeáilte!",
     shareCopyLink: "Cóipeáil nasc",
+    ariaActions: "Gníomhartha",
     unknownError: "Tharla earráid anaithnid",
     pagesSelected: "leathanaigh roghnaithe",
     selectAll: "Roghnaigh gach",
@@ -573,9 +576,12 @@ const ga: Dictionary = {
     pageOf: "leathanach",
     resetAll: "Athshocraigh",
     noCropArea: "Roghnaigh réimse ar an réamhamharc",
+    loadingPdf: "PDF á lódáil...",
   },
   flattenTool: {
     flattenButton: "Cothromaigh",
+    pageOf: "leathanaigh",
+    changeFile: "Athraigh comhad",
     formFieldsLabel: "Réimsí foirme",
     formFieldsDesc: "Tiontaigh réimsí ionchuir, ticbhoscaí agus roghchláir anuas go téacs statach",
     annotationsLabel: "Nótaí",
@@ -738,6 +744,7 @@ const ga: Dictionary = {
     addPageRedaction: "Cuir ceilt leathanaigh leis",
     pageRedaction: "Leathanach iomlán",
     toolsPanelTitle: "Uirlisí",
+    loadingPdf: "PDF á lódáil...",
   },
   editPdfTool: {
     dropFile: "Roghnaigh comhad PDF",
@@ -810,6 +817,7 @@ const ga: Dictionary = {
     changeFile: "Athraigh comhad",
     imageUploadError: "Níorbh fhéidir an íomhá a lódáil",
     confirmClearAll: "Scrios gach eilimint?",
+    loadingPdf: "PDF á lódáil...",
   },
   annotateTool: {
     toolSelect: "Roghnaigh",
@@ -886,6 +894,7 @@ const ga: Dictionary = {
     noAnnotations: "Níl aon nótaí ann fós",
     annotationsOnPage: "ar leathanach {page}",
     addComment: "Cuir nóta leis",
+    loadingPdf: "PDF á lódáil...",
   },
   signTool: {
     fieldSignature: "Síniú",
@@ -940,6 +949,8 @@ const ga: Dictionary = {
     rotation: "Rothlú",
     changeFile: "Athraigh comhad",
     selectedElement: "Eilimint roghnaithe",
+    loadingPdf: "PDF á lódáil...",
+    altSignature: "Síniú",
   },
   watermarkTool: {
     tabText: "Téacs",
@@ -982,6 +993,7 @@ const ga: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Uiscemharc",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Leathanaigh in aghaidh an bhileog",
@@ -1135,6 +1147,7 @@ const ga: Dictionary = {
     prev: "Roimhe",
     next: "Ar aghaidh",
     page: "Leathanach",
+    paginationLabel: 'Nascleanúint leathanaigh',
   },
   toolContent: {
     merge: {

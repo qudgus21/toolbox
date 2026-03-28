@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "विवरण",
     pageNotFound: "कनवर्टर नहीं मिला",
     goHome: "सभी कनवर्टर पर वापस जाएँ",
+    colorPickerLabel: "रंग चुनने वाला",
   },
   toolOptions: {
     fromUnit: "से",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "दिन जोड़ें",
     subtractDays: "दिन घटाएँ",
     datetimeHint: "जैसे 2024-01-15, 1705312200, now",
+    endDate: "समाप्ति तिथि",
+    today: "आज (डिफ़ॉल्ट)",
+    dateUnit: "इकाई",
   },
   statsLabels: {
     lines: "लाइनें",

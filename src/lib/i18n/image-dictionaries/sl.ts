@@ -139,6 +139,8 @@ const sl: ImageDictionary = {
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj povezavo",
     unknownError: "Prišlo je do neznane napake",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const sl: ImageDictionary = {
       y: "Y",
       width: "Širina",
       height: "Višina",
+      altCropPreview: "Predogled obrezovanja",
     },
     rotate: {
       quickRotate: "Hitro vrtenje",
@@ -222,6 +225,7 @@ const sl: ImageDictionary = {
       noItems: "Kliknite + za dodajanje besedila",
       bgColor: "Ozadje",
       transparent: "Brez",
+      altPreview: "Predogled",
     },
     addBorder: {
       borderWidth: "Širina obrobe",

@@ -71,7 +71,7 @@ const ro: Dictionary = {
     resize: { title: "Redimensionare PDF", description: "Schimbă dimensiunea paginii PDF (A4, Letter, personalizat)." },
     "edit-metadata": { title: "Editare metadate", description: "Schimbă titlul, autorul, cuvintele cheie și alte metadate PDF." },
     grayscale: { title: "Tonuri de gri", description: "Convertește culorile PDF în alb-negru." },
-    compress: { title: "Comprimare PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Comprimare PDF", description: "Reduceți semnificativ dimensiunea fișierelor PDF. Alegeți metoda de compresie potrivită nevoilor dvs." },
     repair: { title: "Reparare PDF", description: "Repară fișierele PDF deteriorate sau corupte." },
     ocr: { title: "OCR PDF", description: "Fă PDF-urile scanate căutabile cu recunoașterea textului." },
     "web-optimize": { title: "Optimizare web", description: "Linearizează PDF-urile pentru încărcare mai rapidă pe web." },
@@ -112,6 +112,8 @@ const ro: Dictionary = {
     encryptedFile: "Fișier criptat",
     clickToSelectPages: "Apasă pentru a selecta paginile",
     dragToReorder: "Trage pentru a reordona",
+    removeFile: "Eliminare fișier",
+    rotatePage: "Rotire pagină",
     favoriteAdded: "Adăugat la favorite",
     favoriteRemoved: "Eliminat din favorite",
     comingSoon: "În curând",
@@ -120,6 +122,7 @@ const ro: Dictionary = {
     shareSubtitle: "Dă de veste!",
     shareCopied: "Copiat!",
     shareCopyLink: "Copiază linkul",
+    ariaActions: "Acțiuni",
     unknownError: "A apărut o eroare necunoscută",
     pagesSelected: "pagini selectate",
     selectAll: "Selectează tot",
@@ -561,9 +564,12 @@ const ro: Dictionary = {
     pageOf: "pagină",
     resetAll: "Resetează",
     noCropArea: "Selectați o zonă în previzualizare",
+    loadingPdf: "Se încarcă PDF...",
   },
   flattenTool: {
     flattenButton: "Aplatizare",
+    pageOf: "pagini",
+    changeFile: "Schimbă fișier",
     formFieldsLabel: "Câmpuri formular",
     formFieldsDesc: "Transformă câmpurile de intrare, casetele de bifat și listele derulante în text static",
     annotationsLabel: "Adnotări",
@@ -726,6 +732,7 @@ const ro: Dictionary = {
     addPageRedaction: "Adaugă cenzură pagină",
     pageRedaction: "Pagină completă",
     toolsPanelTitle: "Instrumente",
+    loadingPdf: "Se încarcă PDF...",
   },
   editPdfTool: {
     dropFile: "Selectează un fișier PDF",
@@ -798,6 +805,7 @@ const ro: Dictionary = {
     changeFile: "Schimbă fișierul",
     imageUploadError: "Imaginea nu a putut fi încărcată",
     confirmClearAll: "Ștergeți toate elementele?",
+    loadingPdf: "Se încarcă PDF...",
   },
   annotateTool: {
     toolSelect: "Selectare",
@@ -874,6 +882,7 @@ const ro: Dictionary = {
     noAnnotations: "Nicio adnotare încă",
     annotationsOnPage: "pe pagina {page}",
     addComment: "Adaugă comentariu",
+    loadingPdf: "Se încarcă PDF...",
   },
   signTool: {
     fieldSignature: "Semnătură",
@@ -928,6 +937,8 @@ const ro: Dictionary = {
     rotation: "Rotație",
     changeFile: "Schimbă fișierul",
     selectedElement: "Element selectat",
+    loadingPdf: "Se încarcă PDF...",
+    altSignature: "Semnătură",
   },
   watermarkTool: {
     tabText: "Text",
@@ -970,6 +981,7 @@ const ro: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Filigran",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Pagini pe coală",
@@ -1124,6 +1136,7 @@ const ro: Dictionary = {
     prev: "Precedent",
     next: "Următor",
     page: "Pagina",
+    paginationLabel: 'Navigare pagini',
   },
   toolContent: {
     merge: {

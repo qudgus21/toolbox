@@ -78,7 +78,7 @@ const el: Dictionary = {
     grayscale: { title: "Κλίμακα του Γκρι", description: "Μετατρέψτε τα χρώματα PDF σε ασπρόμαυρο." },
 
     // Βελτιστοποίηση
-    compress: { title: "Συμπίεση PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Συμπίεση PDF", description: "Μειώστε σημαντικά το μέγεθος των PDF. Επιλέξτε τη μέθοδο συμπίεσης που ταιριάζει στις ανάγκες σας." },
     repair: { title: "Επισκευή PDF", description: "Διορθώστε κατεστραμμένα ή αλλοιωμένα αρχεία PDF." },
     ocr: { title: "OCR PDF", description: "Κάντε τα σαρωμένα PDF αναζητήσιμα με αναγνώριση κειμένου." },
     "web-optimize": { title: "Βελτιστοποίηση για Web", description: "Γραμμικοποιήστε PDF για ταχύτερη φόρτωση στο web." },
@@ -124,6 +124,8 @@ const el: Dictionary = {
     encryptedFile: "Κρυπτογραφημένο αρχείο",
     clickToSelectPages: "Κάντε κλικ για επιλογή σελίδων",
     dragToReorder: "Σύρετε για αναδιάταξη",
+    removeFile: "Αφαίρεση αρχείου",
+    rotatePage: "Περιστροφή σελίδας",
     favoriteAdded: "Προστέθηκε στα αγαπημένα",
     favoriteRemoved: "Αφαιρέθηκε από τα αγαπημένα",
     comingSoon: "Σύντομα",
@@ -132,6 +134,7 @@ const el: Dictionary = {
     shareSubtitle: "Πείτε το και στους άλλους!",
     shareCopied: "Αντιγράφηκε!",
     shareCopyLink: "Αντιγραφή συνδέσμου",
+    ariaActions: "Ενέργειες",
     unknownError: "Παρουσιάστηκε άγνωστο σφάλμα",
     pagesSelected: "σελίδες επιλεγμένες",
     selectAll: "Επιλογή όλων",
@@ -573,9 +576,12 @@ const el: Dictionary = {
     pageOf: "σελίδα",
     resetAll: "Επαναφορά",
     noCropArea: "Επιλέξτε μια περιοχή στην προεπισκόπηση",
+    loadingPdf: "Φόρτωση PDF...",
   },
   flattenTool: {
     flattenButton: "Ισοπέδωση",
+    pageOf: "σελίδες",
+    changeFile: "Αλλαγή αρχείου",
     formFieldsLabel: "Πεδία φόρμας",
     formFieldsDesc: "Μετατροπή πεδίων εισόδου, πλαισίων ελέγχου και αναπτυσσόμενων λιστών σε στατικό κείμενο",
     annotationsLabel: "Σχολιασμοί",
@@ -738,6 +744,7 @@ const el: Dictionary = {
     addPageRedaction: "Προσθήκη απόκρυψης σελίδας",
     pageRedaction: "Ολόκληρη σελίδα",
     toolsPanelTitle: "Εργαλεία",
+    loadingPdf: "Φόρτωση PDF...",
   },
   editPdfTool: {
     dropFile: "Επιλέξτε αρχείο PDF",
@@ -810,6 +817,7 @@ const el: Dictionary = {
     changeFile: "Αλλαγή αρχείου",
     imageUploadError: "Αδυναμία φόρτωσης εικόνας",
     confirmClearAll: "Διαγραφή όλων των στοιχείων;",
+    loadingPdf: "Φόρτωση PDF...",
   },
   annotateTool: {
     toolSelect: "Επιλογή",
@@ -886,6 +894,7 @@ const el: Dictionary = {
     noAnnotations: "Δεν υπάρχουν σχολιασμοί ακόμα",
     annotationsOnPage: "στη σελίδα {page}",
     addComment: "Πρόσθεσε σχόλιο",
+    loadingPdf: "Φόρτωση PDF...",
   },
   signTool: {
     fieldSignature: "Υπογραφή",
@@ -940,6 +949,8 @@ const el: Dictionary = {
     rotation: "Περιστροφή",
     changeFile: "Αλλαγή αρχείου",
     selectedElement: "Επιλεγμένο στοιχείο",
+    loadingPdf: "Φόρτωση PDF...",
+    altSignature: "Υπογραφή",
   },
   watermarkTool: {
     tabText: "Κείμενο",
@@ -982,6 +993,7 @@ const el: Dictionary = {
     ptUnit: "pt",
     mmUnit: "χιλ.",
     degUnit: "°",
+    altWatermark: "Υδατογράφημα",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Σελίδες ανά φύλλο",
@@ -1135,6 +1147,7 @@ const el: Dictionary = {
     prev: "Προηγούμενο",
     next: "Επόμενο",
     page: "Σελίδα",
+    paginationLabel: 'Πλοήγηση σελίδων',
   },
   toolContent: {
     merge: {

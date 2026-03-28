@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Tiedot",
     pageNotFound: "Muunninta ei löytynyt",
     goHome: "Takaisin kaikkiin muuntimiin",
+    colorPickerLabel: "Värinvalitsin",
   },
   toolOptions: {
     fromUnit: "Mistä",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Lisää päiviä",
     subtractDays: "Vähennä päiviä",
     datetimeHint: "esim. 2024-01-15, 1705312200, now",
+    endDate: "Päättymispäivä",
+    today: "Tänään (oletus)",
+    dateUnit: "Yksikkö",
   },
   statsLabels: {
     lines: "Rivit",

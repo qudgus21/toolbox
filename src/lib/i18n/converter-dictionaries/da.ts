@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detaljer",
     pageNotFound: "Konverter ikke fundet",
     goHome: "Tilbage til alle konvertere",
+    colorPickerLabel: "Farvevælger",
   },
   toolOptions: {
     fromUnit: "Fra",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Tilføj dage",
     subtractDays: "Fratræk dage",
     datetimeHint: "f.eks. 2024-01-15, 1705312200, now",
+    endDate: "Slutdato",
+    today: "I dag (standard)",
+    dateUnit: "Enhed",
   },
   statsLabels: {
     lines: "Linjer",

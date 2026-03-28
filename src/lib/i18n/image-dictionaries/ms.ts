@@ -307,6 +307,8 @@ const ms: ImageDictionary = {
     shareCopied: "Disalin!",
     shareCopyLink: "Salin pautan",
     unknownError: "Ralat tidak diketahui berlaku",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const ms: ImageDictionary = {
       y: "Y",
       width: "Lebar",
       height: "Tinggi",
+      altCropPreview: "Pratonton pemotongan",
     },
     rotate: {
       quickRotate: "Putaran Pantas",
@@ -390,6 +393,7 @@ const ms: ImageDictionary = {
       noItems: "Klik + untuk menambah teks",
       bgColor: "Latar belakang",
       transparent: "Tiada",
+      altPreview: "Pratonton",
     },
     addBorder: {
       borderWidth: "Lebar Sempadan",

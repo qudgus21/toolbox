@@ -139,6 +139,8 @@ const cs: ImageDictionary = {
     shareCopied: "Zkopírováno!",
     shareCopyLink: "Kopírovat odkaz",
     unknownError: "Došlo k neznámé chybě",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const cs: ImageDictionary = {
       y: "Y",
       width: "Šířka",
       height: "Výška",
+      altCropPreview: "Náhled ořezu",
     },
     rotate: {
       quickRotate: "Rychlé otočení",
@@ -222,6 +225,7 @@ const cs: ImageDictionary = {
       noItems: "Klikněte + pro přidání textu",
       bgColor: "Pozadí",
       transparent: "Žádné",
+      altPreview: "Náhled",
     },
     addBorder: {
       borderWidth: "Tloušťka rámečku",

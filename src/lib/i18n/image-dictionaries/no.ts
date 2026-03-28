@@ -307,6 +307,8 @@ const no: ImageDictionary = {
     shareCopied: "Kopiert!",
     shareCopyLink: "Kopier lenke",
     unknownError: "En ukjent feil oppstod",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const no: ImageDictionary = {
       y: "Y",
       width: "Bredde",
       height: "Høyde",
+      altCropPreview: "Forhåndsvisning av beskjæring",
     },
     rotate: {
       quickRotate: "Hurtigrotasjon",
@@ -390,6 +393,7 @@ const no: ImageDictionary = {
       noItems: "Klikk + for å legge til tekst",
       bgColor: "Bakgrunn",
       transparent: "Ingen",
+      altPreview: "Forhåndsvisning",
     },
     addBorder: {
       borderWidth: "Rammebredde",

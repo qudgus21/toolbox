@@ -78,7 +78,7 @@ const is: Dictionary = {
     grayscale: { title: "Gráskali", description: "Umbreyta PDF litum í svarthvítt." },
 
     // Fínstilla
-    compress: { title: "Þjappa PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Þjappa PDF", description: "Minnkaðu PDF-skrár þínar verulega. Veldu þjöppunarlíkanið sem hentar þínum þörfum." },
     repair: { title: "Gera við PDF", description: "Laga skemmdar eða spilltar PDF skrár." },
     ocr: { title: "OCR PDF", description: "Gera skannaðar PDF skrár leitanlegar með textaþekkingu." },
     "web-optimize": { title: "Vefínstilling", description: "Línugerðu PDF fyrir hraðari vefhleðslu." },
@@ -124,6 +124,8 @@ const is: Dictionary = {
     encryptedFile: "Dulkóðuð skrá",
     clickToSelectPages: "Smelltu til að velja síður",
     dragToReorder: "Dragðu til að endurraða",
+    removeFile: "Fjarlægja skrá",
+    rotatePage: "Snúa síðu",
     favoriteAdded: "Bætt í eftirlæti",
     favoriteRemoved: "Fjarlægt úr eftirlætum",
     comingSoon: "Kemur fljótlega",
@@ -132,6 +134,7 @@ const is: Dictionary = {
     shareSubtitle: "Segðu öðrum frá!",
     shareCopied: "Afritað!",
     shareCopyLink: "Afrita hlekk",
+    ariaActions: "Aðgerðir",
     unknownError: "Óþekkt villa kom upp",
     pagesSelected: "síður valdar",
     selectAll: "Velja allt",
@@ -573,9 +576,12 @@ const is: Dictionary = {
     pageOf: "síða",
     resetAll: "Endurstilla",
     noCropArea: "Veldu svæði á forskoðuninni",
+    loadingPdf: "Hleð inn PDF...",
   },
   flattenTool: {
     flattenButton: "Fletja",
+    pageOf: "síður",
+    changeFile: "Skipta um skrá",
     formFieldsLabel: "Eyðublaðsreitir",
     formFieldsDesc: "Breyta innsláttarreitum, gátreitum og fellilistum í fastan texta",
     annotationsLabel: "Athugasemdir",
@@ -738,6 +744,7 @@ const is: Dictionary = {
     addPageRedaction: "Bæta við síðuhylingu",
     pageRedaction: "Heil síða",
     toolsPanelTitle: "Verkfæri",
+    loadingPdf: "Hleð inn PDF...",
   },
   editPdfTool: {
     dropFile: "Veldu PDF-skrá",
@@ -810,6 +817,7 @@ const is: Dictionary = {
     changeFile: "Breyta skrá",
     imageUploadError: "Ekki tókst að hlaða mynd",
     confirmClearAll: "Eyða öllum einingum?",
+    loadingPdf: "Hleð inn PDF...",
   },
   annotateTool: {
     toolSelect: "Velja",
@@ -886,6 +894,7 @@ const is: Dictionary = {
     noAnnotations: "Engar skýringar enn",
     annotationsOnPage: "síða {page}",
     addComment: "Bæta við athugasemd",
+    loadingPdf: "Hleð inn PDF...",
   },
   signTool: {
     fieldSignature: "Undirskrift",
@@ -940,6 +949,8 @@ const is: Dictionary = {
     rotation: "Snúningur",
     changeFile: "Skipta um skrá",
     selectedElement: "Valin eining",
+    loadingPdf: "Hleð inn PDF...",
+    altSignature: "Undirskrift",
   },
   watermarkTool: {
     tabText: "Texti",
@@ -982,6 +993,7 @@ const is: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vatnsmerki",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Síður á blað",
@@ -1135,6 +1147,7 @@ const is: Dictionary = {
     prev: "Fyrri",
     next: "Næsta",
     page: "Síða",
+    paginationLabel: 'Síðuflakk',
   },
   toolContent: {
     merge: {

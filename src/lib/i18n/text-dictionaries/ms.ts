@@ -349,6 +349,7 @@ const ms: TextDictionary = {
     suffixPlaceholder: "Akhiran...",
   },
   statsLabels: {
+    emptyState: "Masukkan teks untuk melihat statistik",
     characters: "Aksara",
     charactersWithoutSpaces: "Tanpa ruang",
     words: "Perkataan",

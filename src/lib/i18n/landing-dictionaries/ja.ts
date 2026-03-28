@@ -88,6 +88,10 @@ const dict: LandingDictionary = {
     shareSubtitle: "ToolPopを友達に教えてあげましょう！",
     shareCopyLink: "リンクをコピー",
     shareCopied: "コピーしました！",
+    ariaClose: "閉じる",
+    ariaMenu: "メニュー",
+    ariaShare: "シェア",
+    ariaToggleTheme: "テーマを切り替える",
   },
   footer: {
     apps: "ツール",

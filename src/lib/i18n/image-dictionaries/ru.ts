@@ -307,6 +307,8 @@ const ru: ImageDictionary = {
     shareCopied: "Скопировано!",
     shareCopyLink: "Скопировать ссылку",
     unknownError: "Произошла неизвестная ошибка",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const ru: ImageDictionary = {
       y: "Y",
       width: "Ширина",
       height: "Высота",
+      altCropPreview: "Предпросмотр обрезки",
     },
     rotate: {
       quickRotate: "Быстрый поворот",
@@ -390,6 +393,7 @@ const ru: ImageDictionary = {
       noItems: "Нажмите + чтобы добавить текст",
       bgColor: "Фон",
       transparent: "Нет",
+      altPreview: "Предпросмотр",
     },
     addBorder: {
       borderWidth: "Толщина рамки",

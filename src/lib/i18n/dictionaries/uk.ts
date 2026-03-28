@@ -78,7 +78,7 @@ const uk: Dictionary = {
     grayscale: { title: "Відтінки Сірого", description: "Конвертуйте кольори PDF у чорно-біле." },
 
     // Оптимізація
-    compress: { title: "Стиснути PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Стиснути PDF", description: "Значно зменшіть розмір PDF-файлів. Оберіть метод стиснення, що відповідає вашим потребам." },
     repair: { title: "Відновити PDF", description: "Виправте пошкоджені або зіпсовані PDF-файли." },
     ocr: { title: "OCR PDF", description: "Зробіть скановані PDF доступними для пошуку за допомогою розпізнавання тексту." },
     "web-optimize": { title: "Веб-оптимізація", description: "Лінеаризуйте PDF для швидшого завантаження у вебі." },
@@ -124,6 +124,8 @@ const uk: Dictionary = {
     encryptedFile: "Зашифрований файл",
     clickToSelectPages: "Натисніть, щоб вибрати сторінки",
     dragToReorder: "Перетягніть, щоб змінити порядок",
+    removeFile: "Видалити файл",
+    rotatePage: "Повернути сторінку",
     favoriteAdded: "Додано до обраного",
     favoriteRemoved: "Видалено з обраного",
     comingSoon: "Незабаром",
@@ -132,6 +134,7 @@ const uk: Dictionary = {
     shareSubtitle: "Розкажіть іншим!",
     shareCopied: "Скопійовано!",
     shareCopyLink: "Скопіювати посилання",
+    ariaActions: "Дії",
     unknownError: "Сталася невідома помилка",
     pagesSelected: "сторінок вибрано",
     selectAll: "Вибрати все",
@@ -573,9 +576,12 @@ const uk: Dictionary = {
     pageOf: "сторінка",
     resetAll: "Скинути",
     noCropArea: "Виберіть область на попередньому перегляді",
+    loadingPdf: "Завантаження PDF...",
   },
   flattenTool: {
     flattenButton: "Зведення",
+    pageOf: "сторінок",
+    changeFile: "Змінити файл",
     formFieldsLabel: "Поля форми",
     formFieldsDesc: "Перетворити поля введення, прапорці та випадні списки на статичний текст",
     annotationsLabel: "Анотації",
@@ -738,6 +744,7 @@ const uk: Dictionary = {
     addPageRedaction: "Додати приховування сторінки",
     pageRedaction: "Вся сторінка",
     toolsPanelTitle: "Інструменти",
+    loadingPdf: "Завантаження PDF...",
   },
   editPdfTool: {
     dropFile: "Оберіть PDF-файл",
@@ -810,6 +817,7 @@ const uk: Dictionary = {
     changeFile: "Змінити файл",
     imageUploadError: "Не вдалося завантажити зображення",
     confirmClearAll: "Видалити всі елементи?",
+    loadingPdf: "Завантаження PDF...",
   },
   annotateTool: {
     toolSelect: "Виділення",
@@ -886,6 +894,7 @@ const uk: Dictionary = {
     noAnnotations: "Анотацій поки немає",
     annotationsOnPage: "стор. {page}",
     addComment: "Додати коментар",
+    loadingPdf: "Завантаження PDF...",
   },
   signTool: {
     fieldSignature: "Підпис",
@@ -940,6 +949,8 @@ const uk: Dictionary = {
     rotation: "Обертання",
     changeFile: "Змінити файл",
     selectedElement: "Обраний елемент",
+    loadingPdf: "Завантаження PDF...",
+    altSignature: "Підпис",
   },
   watermarkTool: {
     tabText: "Текст",
@@ -982,6 +993,7 @@ const uk: Dictionary = {
     ptUnit: "пт",
     mmUnit: "мм",
     degUnit: "°",
+    altWatermark: "Водяний знак",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Сторінок на аркуші",
@@ -1136,6 +1148,7 @@ const uk: Dictionary = {
     prev: "Попередня",
     next: "Наступна",
     page: "Сторінка",
+    paginationLabel: 'Навігація сторінками',
   },
   toolContent: {
     merge: {

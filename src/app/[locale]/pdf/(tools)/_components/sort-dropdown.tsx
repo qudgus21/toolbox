@@ -35,7 +35,7 @@ export function SortDropdown({ open, onOpenChange, onSort, sortLabel }: SortDrop
         className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background-elevated px-3 py-1.5 text-sm font-bold text-foreground-muted hover:border-foreground-subtle hover:text-foreground transition-colors cursor-pointer"
       >
         <ArrowDownAZ className="h-3.5 w-3.5" />
-        {sortLabel ?? "Sort"}
+        {sortLabel}
         <ChevronDown
           className={cn(
             "h-3 w-3 transition-transform duration-200",

@@ -349,6 +349,7 @@ const bg: TextDictionary = {
     suffixPlaceholder: "\u0421\u0443\u0444\u0438\u043a\u0441...",
   },
   statsLabels: {
+    emptyState: "Въведете текст, за да видите статистиката",
     characters: "Символи",
     charactersWithoutSpaces: "Без интервали",
     words: "Думи",

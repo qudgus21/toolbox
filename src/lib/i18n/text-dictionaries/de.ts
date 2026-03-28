@@ -349,6 +349,7 @@ const de: TextDictionary = {
     suffixPlaceholder: "Suffix...",
   },
   statsLabels: {
+    emptyState: "Text eingeben, um Statistiken anzuzeigen",
     characters: "Zeichen",
     charactersWithoutSpaces: "Ohne Leerzeichen",
     words: "Wörter",

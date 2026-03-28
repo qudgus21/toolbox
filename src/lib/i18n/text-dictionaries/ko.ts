@@ -348,6 +348,7 @@ const ko: TextDictionary = {
     suffixPlaceholder: "접미사...",
   },
   statsLabels: {
+    emptyState: "텍스트를 입력하면 통계가 표시됩니다",
     // word-counter
     characters: "글자 수",
     charactersWithoutSpaces: "공백 제외",

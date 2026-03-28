@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Χωρίς λογαριασμό, χωρίς email. Απλά άνοιξε ένα εργαλείο και ξεκίνα.",
   },
   cta: { title: "Έτοιμος να ξεκινήσεις;", subtitle: "Χωρίς εγκατάσταση, χωρίς εγγραφή, χωρίς χρέωση — μόνο ένα κλικ μακριά.", button: "Δες Όλα τα Εργαλεία" },
-  common: { shareTitle: "Κοινοποίηση", shareSubtitle: "Πες στους φίλους σου για το ToolPop!", shareCopyLink: "Αντιγραφή συνδέσμου", shareCopied: "Αντιγράφηκε!" },
+  common: { shareTitle: "Κοινοποίηση", shareSubtitle: "Πες στους φίλους σου για το ToolPop!", shareCopyLink: "Αντιγραφή συνδέσμου", shareCopied: "Αντιγράφηκε!", ariaClose: "Κλείσιμο", ariaMenu: "Μενού", ariaShare: "Κοινοποίηση", ariaToggleTheme: "Εναλλαγή θέματος" },
   footer: { apps: "Εργαλεία", company: "Εταιρεία", about: "Σχετικά", contact: "Επικοινωνία", faq: "Συχνές Ερωτήσεις", blog: "Blog", legal: "Νομικά", privacy: "Πολιτική Απορρήτου", terms: "Όροι Χρήσης", copyright: "© 2026 ToolPop. Με επιφύλαξη παντός δικαιώματος.", tagline: "Δωρεάν online εργαλεία για PDF, εικόνες και άλλα. Χωρίς εγγραφή.", madeWith: "Φτιαγμένο με αγάπη για όλους" },
   search: { noResults: "Δεν βρέθηκαν αποτελέσματα" },
   nav: { pdf: "PDF", image: "Εικόνα", text: "Κείμενο", converter: "Μετατροπέας", calculator: "Αριθμομηχανή" },

@@ -78,7 +78,7 @@ const id: Dictionary = {
     grayscale: { title: "Skala Abu-abu", description: "Konversi warna PDF menjadi hitam putih." },
 
     // Optimasi
-    compress: { title: "Kompres PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Kompres PDF", description: "Perkecil ukuran file PDF secara signifikan. Pilih metode kompresi yang sesuai kebutuhan Anda." },
     repair: { title: "Perbaiki PDF", description: "Perbaiki file PDF yang rusak atau korup." },
     ocr: { title: "OCR PDF", description: "Buat PDF hasil pindai dapat dicari dengan pengenalan teks." },
     "web-optimize": { title: "Optimasi Web", description: "Linearisasi PDF untuk pemuatan web yang lebih cepat." },
@@ -124,6 +124,8 @@ const id: Dictionary = {
     encryptedFile: "File terenkripsi",
     clickToSelectPages: "Klik untuk memilih halaman",
     dragToReorder: "Seret untuk mengatur ulang",
+    removeFile: "Hapus file",
+    rotatePage: "Putar halaman",
     favoriteAdded: "Ditambahkan ke favorit",
     favoriteRemoved: "Dihapus dari favorit",
     comingSoon: "Segera hadir",
@@ -132,6 +134,7 @@ const id: Dictionary = {
     shareSubtitle: "Beritahu teman-teman!",
     shareCopied: "Tersalin!",
     shareCopyLink: "Salin tautan",
+    ariaActions: "Tindakan",
     unknownError: "Terjadi kesalahan yang tidak diketahui",
     pagesSelected: "halaman dipilih",
     selectAll: "Pilih semua",
@@ -573,9 +576,12 @@ const id: Dictionary = {
     pageOf: "halaman",
     resetAll: "Atur ulang",
     noCropArea: "Pilih area pada pratinjau",
+    loadingPdf: "Memuat PDF...",
   },
   flattenTool: {
     flattenButton: "Ratakan",
+    pageOf: "halaman",
+    changeFile: "Ganti file",
     formFieldsLabel: "Bidang formulir",
     formFieldsDesc: "Ubah kolom input, kotak centang, dan dropdown menjadi teks statis",
     annotationsLabel: "Anotasi",
@@ -738,6 +744,7 @@ const id: Dictionary = {
     addPageRedaction: "Tambah sensor halaman",
     pageRedaction: "Seluruh halaman",
     toolsPanelTitle: "Alat",
+    loadingPdf: "Memuat PDF...",
   },
   editPdfTool: {
     dropFile: "Pilih file PDF",
@@ -810,6 +817,7 @@ const id: Dictionary = {
     changeFile: "Ganti file",
     imageUploadError: "Gambar tidak dapat dimuat",
     confirmClearAll: "Hapus semua elemen?",
+    loadingPdf: "Memuat PDF...",
   },
   annotateTool: {
     toolSelect: "Pilih",
@@ -886,6 +894,7 @@ const id: Dictionary = {
     noAnnotations: "Belum ada anotasi",
     annotationsOnPage: "halaman {page}",
     addComment: "Tambah komentar",
+    loadingPdf: "Memuat PDF...",
   },
   signTool: {
     fieldSignature: "Tanda tangan",
@@ -940,6 +949,8 @@ const id: Dictionary = {
     rotation: "Rotasi",
     changeFile: "Ganti file",
     selectedElement: "Elemen terpilih",
+    loadingPdf: "Memuat PDF...",
+    altSignature: "Tanda tangan",
   },
   watermarkTool: {
     tabText: "Teks",
@@ -982,6 +993,7 @@ const id: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Tanda air",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Halaman per lembar",
@@ -1135,6 +1147,7 @@ const id: Dictionary = {
     prev: "Sebelumnya",
     next: "Berikutnya",
     page: "Halaman",
+    paginationLabel: 'Navigasi halaman',
   },
   toolContent: {
     merge: {

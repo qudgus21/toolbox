@@ -49,10 +49,9 @@ export default async function ContactPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
       <main className="py-12">
       <Container size="md">
         <h1 className="text-3xl font-bold text-foreground mb-4">

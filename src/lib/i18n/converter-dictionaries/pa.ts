@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "ਵੇਰਵੇ",
     pageNotFound: "ਕਨਵਰਟਰ ਨਹੀਂ ਮਿਲਿਆ",
     goHome: "ਸਾਰੇ ਕਨਵਰਟਰਾਂ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+    colorPickerLabel: "ਰੰਗ ਚੋਣਕਾਰ",
   },
   toolOptions: {
     fromUnit: "ਤੋਂ",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "ਦਿਨ ਜੋੜੋ",
     subtractDays: "ਦਿਨ ਘਟਾਓ",
     datetimeHint: "ਜਿਵੇਂ 2024-01-15, 1705312200, now",
+    endDate: "ਸਮਾਪਤੀ ਮਿਤੀ",
+    today: "ਅੱਜ (ਡਿਫੌਲਟ)",
+    dateUnit: "ਇਕਾਈ",
   },
   statsLabels: {
     lines: "ਲਾਈਨਾਂ",

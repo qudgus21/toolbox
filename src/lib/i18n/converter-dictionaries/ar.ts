@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "التفاصيل",
     pageNotFound: "المحوّل غير موجود",
     goHome: "العودة لجميع أدوات التحويل",
+    colorPickerLabel: "منتقي الألوان",
   },
   toolOptions: {
     fromUnit: "من",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "إضافة أيام",
     subtractDays: "طرح أيام",
     datetimeHint: "مثال: 2024-01-15، 1705312200، now",
+    endDate: "تاريخ الانتهاء",
+    today: "اليوم (افتراضي)",
+    dateUnit: "الوحدة",
   },
   statsLabels: {
     lines: "أسطر",

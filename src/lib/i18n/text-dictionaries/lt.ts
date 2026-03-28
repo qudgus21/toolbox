@@ -349,6 +349,7 @@ const lt: TextDictionary = {
     suffixPlaceholder: "Priesaga...",
   },
   statsLabels: {
+    emptyState: "Įveskite tekstą statistikai peržiūrėti",
     characters: "Simboliai",
     charactersWithoutSpaces: "Be tarpų",
     words: "Žodžiai",

@@ -78,7 +78,7 @@ const hu: Dictionary = {
     grayscale: { title: "Szürkeárnyalatos", description: "PDF színek konvertálása fekete-fehérre." },
 
     // Optimalizálás
-    compress: { title: "PDF tömörítése", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF tömörítése", description: "Csökkentse jelentősen PDF-fájljai méretét. Válassza az igényeinek megfelelő tömörítési módszert." },
     repair: { title: "PDF javítása", description: "Sérült vagy hibás PDF fájlok javítása." },
     ocr: { title: "OCR PDF", description: "Szkennelt PDF-ek kereshetővé tétele szövegfelismeréssel." },
     "web-optimize": { title: "Webes optimalizálás", description: "PDF-ek linearizálása a gyorsabb webes betöltéshez." },
@@ -124,6 +124,8 @@ const hu: Dictionary = {
     encryptedFile: "Titkosított fájl",
     clickToSelectPages: "Kattintson az oldalak kiválasztásához",
     dragToReorder: "Húzza az átrendezéshez",
+    removeFile: "Fájl eltávolítása",
+    rotatePage: "Oldal forgatása",
     favoriteAdded: "Hozzáadva a kedvencekhez",
     favoriteRemoved: "Eltávolítva a kedvencekből",
     comingSoon: "Hamarosan",
@@ -132,6 +134,7 @@ const hu: Dictionary = {
     shareSubtitle: "Mondd el másoknak is!",
     shareCopied: "Másolva!",
     shareCopyLink: "Link másolása",
+    ariaActions: "Műveletek",
     unknownError: "Ismeretlen hiba történt",
     pagesSelected: "oldal kiválasztva",
     selectAll: "Összes kijelölése",
@@ -573,9 +576,12 @@ const hu: Dictionary = {
     pageOf: "oldal",
     resetAll: "Visszaállítás",
     noCropArea: "Jelöljön ki egy területet az előnézetben",
+    loadingPdf: "PDF betöltése...",
   },
   flattenTool: {
     flattenButton: "Simítás",
+    pageOf: "oldal",
+    changeFile: "Fájl cseréje",
     formFieldsLabel: "Űrlapmezők",
     formFieldsDesc: "Beviteli mezők, jelölőnégyzetek és legördülő listák átalakítása statikus szöveggé",
     annotationsLabel: "Jegyzetek",
@@ -738,6 +744,7 @@ const hu: Dictionary = {
     addPageRedaction: "Oldal kitakarás hozzáadása",
     pageRedaction: "Teljes oldal",
     toolsPanelTitle: "Eszközök",
+    loadingPdf: "PDF betöltése...",
   },
   editPdfTool: {
     dropFile: "Válasszon PDF-fájlt",
@@ -810,6 +817,7 @@ const hu: Dictionary = {
     changeFile: "Fájl módosítása",
     imageUploadError: "A kép nem tölthető be",
     confirmClearAll: "Minden elem törlése?",
+    loadingPdf: "PDF betöltése...",
   },
   annotateTool: {
     toolSelect: "Kijelölés",
@@ -886,6 +894,7 @@ const hu: Dictionary = {
     noAnnotations: "Még nincsenek megjegyzések",
     annotationsOnPage: "{page}. oldalon",
     addComment: "Megjegyzés hozzáadása",
+    loadingPdf: "PDF betöltése...",
   },
   signTool: {
     fieldSignature: "Aláírás",
@@ -940,6 +949,8 @@ const hu: Dictionary = {
     rotation: "Forgatás",
     changeFile: "Fájl cseréje",
     selectedElement: "Kiválasztott elem",
+    loadingPdf: "PDF betöltése...",
+    altSignature: "Aláírás",
   },
   watermarkTool: {
     tabText: "Szöveg",
@@ -982,6 +993,7 @@ const hu: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vízjel",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Oldalak laponként",
@@ -1135,6 +1147,7 @@ const hu: Dictionary = {
     prev: "Előző",
     next: "Következő",
     page: "Oldal",
+    paginationLabel: 'Oldalnavigáció',
   },
   toolContent: {
     merge: {

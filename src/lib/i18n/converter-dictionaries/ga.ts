@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Sonraí",
     pageNotFound: "Tiontaire gan aimsiú",
     goHome: "Ar ais go gach tiontaire",
+    colorPickerLabel: "Roghnóir dathanna",
   },
   toolOptions: {
     fromUnit: "Ó",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Cuir laethanta leis",
     subtractDays: "Bain laethanta",
     datetimeHint: "m.sh. 2024-01-15, 1705312200, now",
+    endDate: "Dáta deiridh",
+    today: "Inniu (réamhshocrú)",
+    dateUnit: "Aonad",
   },
   statsLabels: {
     lines: "Línte",

@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const a = Math.abs(Math.floor(Number(fields.numberA)));
   const b = Math.abs(Math.floor(Number(fields.numberB)));
 
@@ -30,7 +32,7 @@ export function process(
       { label: 'LCM', value: fmt(lcmVal) },
     ],
     breakdown: [
-      { label: 'Method', value: 'Euclidean Algorithm' },
+      { label: 'Method', value: msg['Euclidean Algorithm'] ?? 'Euclidean Algorithm' },
       ...steps.map((s, i) => ({ label: `Step ${i + 1}`, value: s })),
       { label: 'GCD', value: fmt(gcdVal), highlight: true },
       { label: 'LCM = a × b / GCD', value: `${fmt(a)} × ${fmt(b)} / ${fmt(gcdVal)} = ${fmt(lcmVal)}`, highlight: true },

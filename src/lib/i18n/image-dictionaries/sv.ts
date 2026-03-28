@@ -139,6 +139,8 @@ const sv: ImageDictionary = {
     shareCopied: "Kopierat!",
     shareCopyLink: "Kopiera länk",
     unknownError: "Ett okänt fel inträffade",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const sv: ImageDictionary = {
       y: "Y",
       width: "Bredd",
       height: "Höjd",
+      altCropPreview: "Förhandsvisning av beskärning",
     },
     rotate: {
       quickRotate: "Snabbrotation",
@@ -222,6 +225,7 @@ const sv: ImageDictionary = {
       noItems: "Klicka + för att lägga till text",
       bgColor: "Bakgrund",
       transparent: "Ingen",
+      altPreview: "Förhandsvisning",
     },
     addBorder: {
       borderWidth: "Ramtjocklek",

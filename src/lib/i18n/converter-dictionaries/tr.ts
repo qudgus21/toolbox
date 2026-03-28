@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Ayrıntılar",
     pageNotFound: "Dönüştürücü bulunamadı",
     goHome: "Tüm dönüştürücülere dön",
+    colorPickerLabel: "Renk seçici",
   },
   toolOptions: {
     fromUnit: "Kaynak",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Gün ekle",
     subtractDays: "Gün çıkar",
     datetimeHint: "ör. 2024-01-15, 1705312200, now",
+    endDate: "Bitiş tarihi",
+    today: "Bugün (varsayılan)",
+    dateUnit: "Birim",
   },
   statsLabels: {
     lines: "Satır",

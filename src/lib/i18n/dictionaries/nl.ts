@@ -78,7 +78,7 @@ const nl: Dictionary = {
     grayscale: { title: "Grijstinten", description: "Converteer PDF-kleuren naar zwart-wit." },
 
     // Optimaliseren
-    compress: { title: "PDF comprimeren", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF comprimeren", description: "Verklein uw PDF-bestanden aanzienlijk. Kies de compressiemethode die bij uw behoeften past." },
     repair: { title: "PDF repareren", description: "Repareer beschadigde of corrupte PDF-bestanden." },
     ocr: { title: "OCR PDF", description: "Maak gescande PDF's doorzoekbaar met tekstherkenning." },
     "web-optimize": { title: "Weboptimalisatie", description: "Optimaliseer PDF's voor sneller laden op het web." },
@@ -124,6 +124,8 @@ const nl: Dictionary = {
     encryptedFile: "Versleuteld bestand",
     clickToSelectPages: "Klik om pagina's te selecteren",
     dragToReorder: "Sleep om te herordenen",
+    removeFile: "Verwijder bestand",
+    rotatePage: "Pagina draaien",
     favoriteAdded: "Toegevoegd aan favorieten",
     favoriteRemoved: "Verwijderd uit favorieten",
     comingSoon: "Binnenkort",
@@ -132,6 +134,7 @@ const nl: Dictionary = {
     shareSubtitle: "Vertel het verder!",
     shareCopied: "Gekopieerd!",
     shareCopyLink: "Link kopiëren",
+    ariaActions: "Acties",
     unknownError: "Er is een onbekende fout opgetreden",
     pagesSelected: "pagina's geselecteerd",
     selectAll: "Alles selecteren",
@@ -573,9 +576,12 @@ const nl: Dictionary = {
     pageOf: "pagina",
     resetAll: "Herstellen",
     noCropArea: "Selecteer een gebied in de voorbeeldweergave",
+    loadingPdf: "PDF laden...",
   },
   flattenTool: {
     flattenButton: "Afvlakken",
+    pageOf: "pagina's",
+    changeFile: "Bestand wijzigen",
     formFieldsLabel: "Formuliervelden",
     formFieldsDesc: "Invoervelden, selectievakjes en vervolgkeuzelijsten omzetten naar statische tekst",
     annotationsLabel: "Annotaties",
@@ -738,6 +744,7 @@ const nl: Dictionary = {
     addPageRedaction: "Paginalakking toevoegen",
     pageRedaction: "Volledige pagina",
     toolsPanelTitle: "Gereedschap",
+    loadingPdf: "PDF laden...",
   },
   editPdfTool: {
     dropFile: "Selecteer een PDF-bestand",
@@ -810,6 +817,7 @@ const nl: Dictionary = {
     changeFile: "Bestand wijzigen",
     imageUploadError: "Afbeelding kan niet worden geladen",
     confirmClearAll: "Alle elementen verwijderen?",
+    loadingPdf: "PDF laden...",
   },
   annotateTool: {
     toolSelect: "Selecteren",
@@ -886,6 +894,7 @@ const nl: Dictionary = {
     noAnnotations: "Nog geen annotaties",
     annotationsOnPage: "op pagina {page}",
     addComment: "Opmerking toevoegen",
+    loadingPdf: "PDF laden...",
   },
   signTool: {
     fieldSignature: "Handtekening",
@@ -940,6 +949,8 @@ const nl: Dictionary = {
     rotation: "Rotatie",
     changeFile: "Bestand wijzigen",
     selectedElement: "Geselecteerd element",
+    loadingPdf: "PDF laden...",
+    altSignature: "Handtekening",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -982,6 +993,7 @@ const nl: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Watermerk",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Pagina's per vel",
@@ -1135,6 +1147,7 @@ const nl: Dictionary = {
     prev: "Vorige",
     next: "Volgende",
     page: "Pagina",
+    paginationLabel: 'Paginanavigatie',
   },
   toolContent: {
     merge: {

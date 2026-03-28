@@ -1,6 +1,8 @@
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "./[locale]/google-analytics";
+import { GoogleAdSense } from "./[locale]/google-adsense";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -16,6 +18,13 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={dir} className={inter.variable} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased font-sans">
+        <GoogleAnalytics />
+        <GoogleAdSense />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.setAttribute("data-theme","dark")}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

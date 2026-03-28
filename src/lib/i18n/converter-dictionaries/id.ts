@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detail",
     pageNotFound: "Konverter tidak ditemukan",
     goHome: "Kembali ke semua konverter",
+    colorPickerLabel: "Pemilih warna",
   },
   toolOptions: {
     fromUnit: "Dari",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Tambah hari",
     subtractDays: "Kurangi hari",
     datetimeHint: "misal 2024-01-15, 1705312200, now",
+    endDate: "Tanggal akhir",
+    today: "Hari ini (default)",
+    dateUnit: "Satuan",
   },
   statsLabels: {
     lines: "Baris",

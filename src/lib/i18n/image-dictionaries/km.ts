@@ -307,6 +307,8 @@ const km: ImageDictionary = {
     shareCopied: "បានចម្លង!",
     shareCopyLink: "ចម្លងតំណ",
     unknownError: "មានកំហុសមិនស្គាល់បានកើតឡើង",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const km: ImageDictionary = {
       y: "Y",
       width: "ទទឹង",
       height: "កម្ពស់",
+      altCropPreview: "មើលជាមុននៃការច្រាស់",
     },
     rotate: {
       quickRotate: "បង្វិលរហ័ស",
@@ -390,6 +393,7 @@ const km: ImageDictionary = {
       noItems: "ចុច + ដើម្បីបន្ថែមអក្សរ",
       bgColor: "ផ្ទៃខាងក្រោយ",
       transparent: "គ្មាន",
+      altPreview: "មើលជាមុន",
     },
     addBorder: {
       borderWidth: "ទទឹងស៊ុម",

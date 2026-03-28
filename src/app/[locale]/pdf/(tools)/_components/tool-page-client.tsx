@@ -331,7 +331,7 @@ export function ToolPageClient({
         {stage === "error" && (
           <div>
             <ErrorMessage
-              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? "Unknown error"}
+              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? ""}
               onRetry={reset}
               retryLabel={labels.tryAgain}
             />
@@ -340,7 +340,7 @@ export function ToolPageClient({
 
       {/* 하단 고정 실행 버튼 — AnimatePresence 밖에서 CLS 방지 */}
       {stage === "loaded" && (
-        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3" role="toolbar" aria-label="Actions">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3" role="toolbar" aria-label={labels.ariaActions ?? "Actions"}>
           <div className="mx-auto max-w-md">
             <button
               type="button"

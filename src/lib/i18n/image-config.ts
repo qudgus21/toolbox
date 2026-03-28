@@ -78,6 +78,8 @@ export interface ImageDictionary {
     shareCopied: string;
     shareCopyLink: string;
     unknownError: string;
+    more: string;
+    actionsLabel: string;
   };
   toolOptions: {
     resize: {
@@ -101,6 +103,7 @@ export interface ImageDictionary {
       y: string;
       width: string;
       height: string;
+      altCropPreview?: string;
     };
     rotate: {
       quickRotate: string;
@@ -161,6 +164,7 @@ export interface ImageDictionary {
       noItems: string;
       bgColor: string;
       transparent: string;
+      altPreview?: string;
     };
     addBorder: {
       borderWidth: string;

@@ -181,6 +181,7 @@ const th: TextDictionary = {
     suffixPlaceholder: "คำต่อท้าย...",
   },
   statsLabels: {
+    emptyState: "ป้อนข้อความเพื่อดูสถิติ",
     characters: "อักขระ",
     charactersWithoutSpaces: "ไม่รวมช่องว่าง",
     words: "คำ",

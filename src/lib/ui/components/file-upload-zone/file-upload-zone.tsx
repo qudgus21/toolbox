@@ -25,7 +25,7 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
       onReject,
       className,
       title = "Drop files here",
-      description = "or click to browse",
+      description,
     },
     ref,
   ) => {
@@ -115,7 +115,7 @@ export const FileUploadZone = forwardRef<HTMLDivElement, FileUploadZoneProps>(
         </div>
         <div className="text-center">
           <p className="text-lg font-semibold text-foreground">{title}</p>
-          <p className="mt-1 text-sm text-foreground-muted">{description}</p>
+          {description && <p className="mt-1 text-sm text-foreground-muted">{description}</p>}
         </div>
         <input
           ref={inputRef}

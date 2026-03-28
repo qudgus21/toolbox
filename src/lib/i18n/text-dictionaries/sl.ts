@@ -349,6 +349,7 @@ const sl: TextDictionary = {
     suffixPlaceholder: "Pripona...",
   },
   statsLabels: {
+    emptyState: "Vnesite besedilo za prikaz statistike",
     characters: "Znaki",
     charactersWithoutSpaces: "Brez presledkov",
     words: "Besede",

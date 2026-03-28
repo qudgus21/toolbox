@@ -304,12 +304,12 @@ export function EditorHistoryPanel({
           <button
             type="button"
             onClick={() => {
-              if (!window.confirm(labels.confirmClearAll ?? "Delete all elements?")) return;
+              if (!window.confirm(labels.confirmClearAll)) return;
               for (const el of [...annotations]) {
                 dispatch({ type: "DELETE_ELEMENT", id: el.id });
               }
             }}
-            title={labels.confirmClearAll ?? "Clear all"}
+            title={labels.confirmClearAll}
             className="absolute right-3 flex h-7 items-center gap-1 rounded-md px-2 text-xs text-red-500 transition-colors hover:bg-red-50 dark:hover:bg-red-950"
           >
             <Trash2 size={12} />

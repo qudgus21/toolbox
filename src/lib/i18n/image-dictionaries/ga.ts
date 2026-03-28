@@ -139,6 +139,8 @@ const ga: ImageDictionary = {
     shareCopied: "Cóipeáilte!",
     shareCopyLink: "Cóipeáil nasc",
     unknownError: "Tharla earráid anaithnid",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const ga: ImageDictionary = {
       y: "Y",
       width: "Leithead",
       height: "Airde",
+      altCropPreview: "Réamhamharc barr",
     },
     rotate: {
       quickRotate: "Rothlu tapa",
@@ -222,6 +225,7 @@ const ga: ImageDictionary = {
       noItems: "Cliceáil + chun téacs a chur leis",
       bgColor: "Cúlra",
       transparent: "Gan cheann",
+      altPreview: "Réamhamharc",
     },
     addBorder: {
       borderWidth: "Leithead imill",

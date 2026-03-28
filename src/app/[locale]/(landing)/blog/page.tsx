@@ -80,10 +80,9 @@ export default async function BlogPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbJsonLd)}
+      </script>
       <main className="py-12">
       <Container size="lg">
         <h1 className="text-3xl font-bold text-foreground mb-2">
@@ -105,6 +104,7 @@ export default async function BlogPage({
           prevLabel={dict.blog.prev}
           nextLabel={dict.blog.next}
           pageLabel={dict.blog.page}
+          paginationLabel={dict.blog.paginationLabel}
         />
       </Container>
     </main>

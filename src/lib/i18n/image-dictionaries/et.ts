@@ -139,6 +139,8 @@ const et: ImageDictionary = {
     shareCopied: "Kopeeritud!",
     shareCopyLink: "Kopeeri link",
     unknownError: "Ilmnes tundmatu tõrge",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const et: ImageDictionary = {
       y: "Y",
       width: "Laius",
       height: "Korgus",
+      altCropPreview: "Kärpimise eelvaade",
     },
     rotate: {
       quickRotate: "Kiire pooramine",
@@ -222,6 +225,7 @@ const et: ImageDictionary = {
       noItems: "Vajuta + teksti lisamiseks",
       bgColor: "Taust",
       transparent: "Puudub",
+      altPreview: "Eelvaade",
     },
     addBorder: {
       borderWidth: "Aare laius",

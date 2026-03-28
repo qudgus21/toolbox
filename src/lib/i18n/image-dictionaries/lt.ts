@@ -139,6 +139,8 @@ const lt: ImageDictionary = {
     shareCopied: "Nukopijuota!",
     shareCopyLink: "Kopijuoti nuorodą",
     unknownError: "Įvyko nežinoma klaida",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const lt: ImageDictionary = {
       y: "Y",
       width: "Plotis",
       height: "Aukstis",
+      altCropPreview: "Apkarpymo peržiūra",
     },
     rotate: {
       quickRotate: "Greitas pasukimas",
@@ -222,6 +225,7 @@ const lt: ImageDictionary = {
       noItems: "Spauskite + teksto pridėjimui",
       bgColor: "Fonas",
       transparent: "Nėra",
+      altPreview: "Peržiūra",
     },
     addBorder: {
       borderWidth: "Remelio plotis",

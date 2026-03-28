@@ -130,6 +130,8 @@ const ko: Dictionary = {
     deselectAll: "선택 해제",
     page: "페이지",
     confirm: "확인",
+    removeFile: "파일 제거",
+    rotatePage: "페이지 회전",
     favoriteAdded: "즐겨찾기에 추가했습니다",
     favoriteRemoved: "즐겨찾기에서 해제했습니다",
     comingSoon: "준비 중",
@@ -138,6 +140,7 @@ const ko: Dictionary = {
     shareSubtitle: "친구에게 알려주세요!",
     shareCopied: "복사됨!",
     shareCopyLink: "링크 복사",
+    ariaActions: "작업",
   },
   metadata: {
     siteTitle: "ToolPop PDF - 무료 PDF 도구",
@@ -573,9 +576,12 @@ const ko: Dictionary = {
     pageOf: "페이지",
     resetAll: "초기화",
     noCropArea: "미리보기에서 영역을 선택하세요",
+    loadingPdf: "PDF 불러오는 중...",
   },
   flattenTool: {
     flattenButton: "평탄화",
+    pageOf: "페이지",
+    changeFile: "파일 변경",
     formFieldsLabel: "양식 필드",
     formFieldsDesc: "입력란·체크박스·드롭다운을 고정 텍스트로 변환",
     annotationsLabel: "주석",
@@ -738,6 +744,7 @@ const ko: Dictionary = {
     addPageRedaction: "선택 페이지 검열",
     pageRedaction: "페이지 검열",
     toolsPanelTitle: "검열 도구",
+    loadingPdf: "PDF 불러오는 중...",
   },
   editPdfTool: {
     dropFile: "PDF 파일을 선택하세요",
@@ -810,6 +817,7 @@ const ko: Dictionary = {
     changeFile: "파일 변경",
     imageUploadError: "이미지를 불러올 수 없습니다",
     confirmClearAll: "모든 요소를 삭제할까요?",
+    loadingPdf: "PDF 불러오는 중...",
   },
   annotateTool: {
     toolSelect: "선택",
@@ -886,6 +894,7 @@ const ko: Dictionary = {
     noAnnotations: "주석이 없습니다",
     annotationsOnPage: "{page}페이지",
     addComment: "코멘트 추가",
+    loadingPdf: "PDF 불러오는 중...",
   },
   signTool: {
     fieldSignature: "서명",
@@ -940,6 +949,8 @@ const ko: Dictionary = {
     rotation: "회전",
     changeFile: "파일 변경",
     selectedElement: "선택된 요소",
+    loadingPdf: "PDF 불러오는 중...",
+    altSignature: "서명",
   },
   watermarkTool: {
     tabText: "텍스트",
@@ -982,6 +993,7 @@ const ko: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "도",
+    altWatermark: "워터마크",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "장당 페이지 수",
@@ -1197,6 +1209,7 @@ const ko: Dictionary = {
     prev: "이전",
     next: "다음",
     page: "페이지",
+    paginationLabel: "페이지 탐색",
   },
   toolContent: {
     merge: {

@@ -139,6 +139,8 @@ const el: ImageDictionary = {
     shareCopied: "Αντιγράφηκε!",
     shareCopyLink: "Αντιγραφή συνδέσμου",
     unknownError: "Παρουσιάστηκε άγνωστο σφάλμα",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -162,6 +164,7 @@ const el: ImageDictionary = {
       y: "Y",
       width: "Πλάτος",
       height: "Ύψος",
+      altCropPreview: "Προεπισκόπηση περικοπής",
     },
     rotate: {
       quickRotate: "Γρήγορη περιστροφή",
@@ -222,6 +225,7 @@ const el: ImageDictionary = {
       noItems: "Πατήστε + για προσθήκη κειμένου",
       bgColor: "Φόντο",
       transparent: "Κανένα",
+      altPreview: "Προεπισκόπηση",
     },
     addBorder: {
       borderWidth: "Πάχος πλαισίου",

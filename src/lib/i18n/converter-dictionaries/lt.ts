@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detalės",
     pageNotFound: "Konverteris nerastas",
     goHome: "Grįžti prie visų konverterių",
+    colorPickerLabel: "Spalvų parinkiklis",
   },
   toolOptions: {
     fromUnit: "Iš",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Pridėti dienų",
     subtractDays: "Atimti dienų",
     datetimeHint: "pvz. 2024-01-15, 1705312200, now",
+    endDate: "Pabaigos data",
+    today: "Šiandien (numatyta)",
+    dateUnit: "Vienetas",
   },
   statsLabels: {
     lines: "Eilutės",

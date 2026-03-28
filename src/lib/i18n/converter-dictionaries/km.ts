@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "ព័ត៌មានលម្អិត",
     pageNotFound: "រកមិនឃើញឧបករណ៍បម្លែង",
     goHome: "ត្រឡប់ទៅឧបករណ៍បម្លែងទាំងអស់",
+    colorPickerLabel: "ឧបករណ៍ជ្រើសរើសពណ៌",
   },
   toolOptions: {
     fromUnit: "ពី",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "បន្ថែមថ្ងៃ",
     subtractDays: "ដកថ្ងៃ",
     datetimeHint: "ឧ. 2024-01-15, 1705312200, now",
+    endDate: "កាលបរិច្ឆេទបញ្ចប់",
+    today: "ថ្ងៃនេះ (លំនាំដើម)",
+    dateUnit: "ឯកតា",
   },
   statsLabels: {
     lines: "បន្ទាត់",

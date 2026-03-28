@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Dettalji",
     pageNotFound: "Konvertitur mhux misjub",
     goHome: "Lura għall-konvertituri kollha",
+    colorPickerLabel: "Għażel il-kulur",
   },
   toolOptions: {
     fromUnit: "Minn",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Żid ġranet",
     subtractDays: "Naqqas ġranet",
     datetimeHint: "eż. 2024-01-15, 1705312200, now",
+    endDate: "Data tal-tmiem",
+    today: "Illum (awtomatiku)",
+    dateUnit: "Unità",
   },
   statsLabels: {
     lines: "Linji",

@@ -169,6 +169,7 @@ export function ConverterToolPageClient({
             onSwap={isUnitType ? handleSwap : undefined}
             unitOptions={isUnitType ? unitOptions : undefined}
             datetimeHint={inputType === "datetime" ? toolOptions.datetimeHint : undefined}
+            colorPickerLabel={labels.colorPickerLabel}
           />
         </div>
 
@@ -181,6 +182,7 @@ export function ConverterToolPageClient({
             copyLabel={labels.copyToClipboard}
             copiedLabel={labels.copied}
             allConversionsLabel={labels.allConversions}
+            unitLabels={unitLabels?.[slug]}
             onCopy={handleCopy}
           />
         </div>

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detaļas",
     pageNotFound: "Pārveidotājs nav atrasts",
     goHome: "Atpakaļ pie visiem pārveidotājiem",
+    colorPickerLabel: "Krāsu izvēlne",
   },
   toolOptions: {
     fromUnit: "No",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Pievienot dienas",
     subtractDays: "Atņemt dienas",
     datetimeHint: "piem. 2024-01-15, 1705312200, now",
+    endDate: "Beigu datums",
+    today: "Šodien (noklusējums)",
+    dateUnit: "Vienība",
   },
   statsLabels: {
     lines: "Rindas",

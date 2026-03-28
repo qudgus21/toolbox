@@ -2,14 +2,16 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const min = Math.floor(Number(fields.min ?? 1));
   const max = Math.floor(Number(fields.max ?? 100));
   const count = Math.max(1, Math.min(1000, Math.floor(Number(fields.count) || 1)));
   const allowDuplicates = fields.allowDuplicates !== false && fields.allowDuplicates !== 'false';
 
   if (!isFinite(min) || !isFinite(max)) return { output: '' };
-  if (min > max) return { output: 'Min must be less than or equal to Max' };
+  if (min > max) return { output: msg.minMaxError ?? 'Min must be less than or equal to Max' };
 
   const range = max - min + 1;
   if (!allowDuplicates && count > range) {
@@ -69,7 +71,7 @@ export function process(
     breakdown: [
       { label: 'Range', value: `${min} – ${max}` },
       { label: 'Count', value: count.toString() },
-      { label: 'Duplicates', value: allowDuplicates ? 'Allowed' : 'Not allowed' },
+      { label: 'Duplicates', value: allowDuplicates ? (msg['Allowed'] ?? 'Allowed') : (msg['Not allowed'] ?? 'Not allowed') },
       { label: 'Min Generated', value: sorted[0].toLocaleString('en-US') },
       { label: 'Max Generated', value: sorted[sorted.length - 1].toLocaleString('en-US') },
       { label: 'Sum', value: sum.toLocaleString('en-US') },

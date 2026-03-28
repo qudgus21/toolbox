@@ -306,6 +306,8 @@ const he: ImageDictionary = {
     shareCopied: "הועתק!",
     shareCopyLink: "העתק קישור",
     unknownError: "אירעה שגיאה לא ידועה",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -329,6 +331,7 @@ const he: ImageDictionary = {
       y: "Y",
       width: "רוחב",
       height: "גובה",
+      altCropPreview: "תצוגה מקדימה של חיתוך",
     },
     rotate: {
       quickRotate: "סיבוב מהיר",
@@ -389,6 +392,7 @@ const he: ImageDictionary = {
       noItems: "לחצו + כדי להוסיף טקסט",
       bgColor: "רקע",
       transparent: "ללא",
+      altPreview: "תצוגה מקדימה",
     },
     addBorder: {
       borderWidth: "עובי מסגרת",

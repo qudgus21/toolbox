@@ -483,7 +483,7 @@ export function ToolPageClient({
           <div className="flex items-center justify-between rounded-lg border border-border bg-background px-4 py-2">
             <span className="text-sm text-foreground truncate">
               {firstFile?.name}
-              {files.length > 1 && ` (+${files.length - 1} more)`}
+              {files.length > 1 && ` (+${files.length - 1} ${labels.more})`}
             </span>
             <button
               onClick={reset}
@@ -880,7 +880,7 @@ export function ToolPageClient({
         <div
           className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-muted bg-background/90 backdrop-blur-sm px-4 py-3"
           role="toolbar"
-          aria-label="Actions"
+          aria-label={labels.actionsLabel}
         >
           <div className="mx-auto max-w-md">
             <button

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "详情",
     pageNotFound: "未找到该转换工具",
     goHome: "返回所有转换工具",
+    colorPickerLabel: "颜色选择器",
   },
   toolOptions: {
     fromUnit: "从",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "加天数",
     subtractDays: "减天数",
     datetimeHint: "如 2024-01-15、1705312200、now",
+    endDate: "结束日期",
+    today: "今天 (默认)",
+    dateUnit: "单位",
   },
   statsLabels: {
     lines: "行数",

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Podrobnosti",
     pageNotFound: "Konvertor nebol nájdený",
     goHome: "Späť na všetky konvertory",
+    colorPickerLabel: "Výber farieb",
   },
   toolOptions: {
     fromUnit: "Z",
@@ -431,6 +432,9 @@ const dict: ConverterDictionary = {
     addDays: "Pridať dni",
     subtractDays: "Odobrať dni",
     datetimeHint: "napr. 2024-01-15, 1705312200, now",
+    endDate: "Dátum konca",
+    today: "Dnes (predvolené)",
+    dateUnit: "Jednotka",
   },
   statsLabels: {
     lines: "Riadky",

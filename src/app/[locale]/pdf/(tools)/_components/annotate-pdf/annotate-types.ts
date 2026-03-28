@@ -213,6 +213,7 @@ export interface AnnotatePdfLabels {
   noAnnotations: string;
   annotationsOnPage: string;
   addComment: string;
+  loadingPdf?: string;
 }
 
 // ─── Helpers ─────────────────────────────────────────────────

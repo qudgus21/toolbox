@@ -307,6 +307,8 @@ const it: ImageDictionary = {
     shareCopied: "Copiato!",
     shareCopyLink: "Copia link",
     unknownError: "Si è verificato un errore sconosciuto",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const it: ImageDictionary = {
       y: "Y",
       width: "Larghezza",
       height: "Altezza",
+      altCropPreview: "Anteprima ritaglio",
     },
     rotate: {
       quickRotate: "Rotazione rapida",
@@ -390,6 +393,7 @@ const it: ImageDictionary = {
       noItems: "Clicca + per aggiungere testo",
       bgColor: "Sfondo",
       transparent: "Nessuno",
+      altPreview: "Anteprima",
     },
     addBorder: {
       borderWidth: "Spessore del bordo",

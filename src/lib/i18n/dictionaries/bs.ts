@@ -78,7 +78,7 @@ const bs: Dictionary = {
     grayscale: { title: "Sivi tonovi", description: "Konvertujte PDF boje u crno-bijelo." },
 
     // Optimizuj
-    compress: { title: "Kompresuj PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Kompresuj PDF", description: "Značajno smanjite veličinu PDF datoteka. Odaberite metodu kompresije prema vašim potrebama." },
     repair: { title: "Popravi PDF", description: "Popravite oštećene ili korumpirane PDF datoteke." },
     ocr: { title: "OCR PDF", description: "Učinite skenirane PDF-ove pretražljivim pomoću prepoznavanja teksta." },
     "web-optimize": { title: "Web optimizacija", description: "Linearizirajte PDF-ove za brže učitavanje na webu." },
@@ -124,6 +124,8 @@ const bs: Dictionary = {
     encryptedFile: "Šifrirana datoteka",
     clickToSelectPages: "Kliknite za odabir stranica",
     dragToReorder: "Povucite za promjenu redoslijeda",
+    removeFile: "Ukloni datoteku",
+    rotatePage: "Rotiraj stranicu",
     favoriteAdded: "Dodano u omiljene",
     favoriteRemoved: "Uklonjeno iz omiljenih",
     comingSoon: "Uskoro dostupno",
@@ -132,6 +134,7 @@ const bs: Dictionary = {
     shareSubtitle: "Reci i drugima!",
     shareCopied: "Kopirano!",
     shareCopyLink: "Kopiraj link",
+    ariaActions: "Radnje",
     unknownError: "Došlo je do nepoznate greške",
     pagesSelected: "stranica odabrano",
     selectAll: "Odaberi sve",
@@ -573,9 +576,12 @@ const bs: Dictionary = {
     pageOf: "stranica",
     resetAll: "Poništi",
     noCropArea: "Odaberite područje na pregledu",
+    loadingPdf: "Učitavanje PDF-a...",
   },
   flattenTool: {
     flattenButton: "Izravnaj",
+    pageOf: "stranica",
+    changeFile: "Promijeni datoteku",
     formFieldsLabel: "Polja obrasca",
     formFieldsDesc: "Pretvori polja za unos, potvrdne okvire i padajuće menije u statički tekst",
     annotationsLabel: "Bilješke",
@@ -738,6 +744,7 @@ const bs: Dictionary = {
     addPageRedaction: "Dodaj cenzuru stranice",
     pageRedaction: "Cijela stranica",
     toolsPanelTitle: "Alati",
+    loadingPdf: "Učitavanje PDF-a...",
   },
   editPdfTool: {
     dropFile: "Odaberite PDF datoteku",
@@ -810,6 +817,7 @@ const bs: Dictionary = {
     changeFile: "Promijeni datoteku",
     imageUploadError: "Nije moguće učitati sliku",
     confirmClearAll: "Obrisati sve elemente?",
+    loadingPdf: "Učitavanje PDF-a...",
   },
   annotateTool: {
     toolSelect: "Odabir",
@@ -886,6 +894,7 @@ const bs: Dictionary = {
     noAnnotations: "Još nema bilješki",
     annotationsOnPage: "na stranici {page}",
     addComment: "Dodaj komentar",
+    loadingPdf: "Učitavanje PDF-a...",
   },
   signTool: {
     fieldSignature: "Potpis",
@@ -940,6 +949,8 @@ const bs: Dictionary = {
     rotation: "Rotacija",
     changeFile: "Promijeni fajl",
     selectedElement: "Odabrani element",
+    loadingPdf: "Učitavanje PDF-a...",
+    altSignature: "Potpis",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -982,6 +993,7 @@ const bs: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vodeni žig",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Stranica po listu",
@@ -1135,6 +1147,7 @@ const bs: Dictionary = {
     prev: "Prethodna",
     next: "Sljedeća",
     page: "Stranica",
+    paginationLabel: 'Navigacija stranica',
   },
   toolContent: {
     merge: {

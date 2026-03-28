@@ -78,7 +78,7 @@ const te: Dictionary = {
     grayscale: { title: "గ్రేస్కేల్", description: "PDF రంగులను నలుపు మరియు తెలుపుగా మార్చండి." },
 
     // ఆప్టిమైజ్ చేయి
-    compress: { title: "PDF కుదించు", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF కుదించు", description: "మీ PDF ఫైల్‌లను గణనీయంగా తగ్గించండి. మీ అవసరాలకు తగిన కంప్రెషన్ పద్ధతిని ఎంచుకోండి." },
     repair: { title: "PDF రిపేర్ చేయి", description: "దెబ్బతిన్న లేదా పాడైన PDF ఫైల్‌లను రిపేర్ చేయండి." },
     ocr: { title: "OCR PDF", description: "టెక్స్ట్ రికగ్నిషన్‌తో స్కాన్ చేసిన PDF లను శోధించగలిగేలా చేయండి." },
     "web-optimize": { title: "వెబ్ ఆప్టిమైజ్", description: "వేగవంతమైన వెబ్ లోడింగ్ కోసం PDF లను లినియరైజ్ చేయండి." },
@@ -124,6 +124,8 @@ const te: Dictionary = {
     encryptedFile: "ఎన్‌క్రిప్టెడ్ ఫైల్",
     clickToSelectPages: "పేజీలను ఎంచుకోవడానికి క్లిక్ చేయండి",
     dragToReorder: "క్రమాన్ని మార్చడానికి డ్రాగ్ చేయండి",
+    removeFile: "ఫైల్ తొలగించు",
+    rotatePage: "పేజీని తిప్పు",
     favoriteAdded: "ఇష్టమైనవాటికి జోడించబడింది",
     favoriteRemoved: "ఇష్టమైనవాటి నుండి తీసివేయబడింది",
     comingSoon: "త్వరలో వస్తుంది",
@@ -132,6 +134,7 @@ const te: Dictionary = {
     shareSubtitle: "ఇతరులకు చెప్పండి!",
     shareCopied: "కాపీ అయింది!",
     shareCopyLink: "లింక్ కాపీ చేయండి",
+    ariaActions: "చర్యలు",
     unknownError: "తెలియని లోపం సంభవించింది",
     pagesSelected: "పేజీలు ఎంపిక చేయబడ్డాయి",
     selectAll: "అన్నీ ఎంచుకోండి",
@@ -573,9 +576,12 @@ const te: Dictionary = {
     pageOf: "పేజీ",
     resetAll: "రీసెట్",
     noCropArea: "ప్రివ్యూలో ఒక ప్రాంతాన్ని ఎంపిక చేయండి",
+    loadingPdf: "PDF లోడ్ అవుతోంది...",
   },
   flattenTool: {
     flattenButton: "ఫ్లాటెన్ చేయండి",
+    pageOf: "పేజీలు",
+    changeFile: "ఫైల్ మార్చు",
     formFieldsLabel: "ఫారం ఫీల్డ్‌లు",
     formFieldsDesc: "ఇన్‌పుట్‌లు, చెక్‌బాక్స్‌లు మరియు డ్రాప్‌డౌన్‌లను స్థిర టెక్స్ట్‌గా మార్చండి",
     annotationsLabel: "ఆనోటేషన్‌లు",
@@ -738,6 +744,7 @@ const te: Dictionary = {
     addPageRedaction: "పేజీ రిడాక్షన్ జోడించండి",
     pageRedaction: "పూర్తి పేజీ",
     toolsPanelTitle: "టూల్స్",
+    loadingPdf: "PDF లోడ్ అవుతోంది...",
   },
   editPdfTool: {
     dropFile: "PDF ఫైల్‌ను ఎంచుకోండి",
@@ -810,6 +817,7 @@ const te: Dictionary = {
     changeFile: "ఫైల్ మార్చు",
     imageUploadError: "చిత్రం లోడ్ చేయడం సాధ్యం కాలేదు",
     confirmClearAll: "అన్ని అంశాలను తొలగించాలా?",
+    loadingPdf: "PDF లోడ్ అవుతోంది...",
   },
   annotateTool: {
     toolSelect: "ఎంచుకోండి",
@@ -886,6 +894,7 @@ const te: Dictionary = {
     noAnnotations: "ఇంకా ఆనొటేషన్లు లేవు",
     annotationsOnPage: "పేజీ {page}లో",
     addComment: "వ్యాఖ్య జోడించు",
+    loadingPdf: "PDF లోడ్ అవుతోంది...",
   },
   signTool: {
     fieldSignature: "సంతకం",
@@ -940,6 +949,8 @@ const te: Dictionary = {
     rotation: "తిప్పడం",
     changeFile: "ఫైల్ మార్చండి",
     selectedElement: "ఎంపిక చేసిన ఎలిమెంట్",
+    loadingPdf: "PDF లోడ్ అవుతోంది...",
+    altSignature: "సంతకం",
   },
   watermarkTool: {
     tabText: "టెక్స్ట్",
@@ -982,6 +993,7 @@ const te: Dictionary = {
     ptUnit: "pt",
     mmUnit: "మిమీ",
     degUnit: "°",
+    altWatermark: "వాటర్‌మార్క్",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "షీట్‌కు పేజీలు",
@@ -1136,6 +1148,7 @@ const te: Dictionary = {
     prev: "మునుపటి",
     next: "తదుపరి",
     page: "పేజీ",
+    paginationLabel: 'పేజీ నావిగేషన్',
   },
   toolContent: {
     merge: {

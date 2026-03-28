@@ -78,7 +78,7 @@ const vi: Dictionary = {
     grayscale: { title: "Chuyển xám", description: "Chuyển đổi màu sắc PDF sang đen trắng." },
 
     // Tối ưu
-    compress: { title: "Nén PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Nén PDF", description: "Giảm đáng kể kích thước file PDF. Chọn phương pháp nén phù hợp với nhu cầu của bạn." },
     repair: { title: "Sửa chữa PDF", description: "Sửa các tệp PDF bị hỏng hoặc lỗi." },
     ocr: { title: "OCR PDF", description: "Làm cho PDF quét có thể tìm kiếm bằng nhận dạng văn bản." },
     "web-optimize": { title: "Tối ưu web", description: "Tuyến tính hóa PDF để tải nhanh hơn trên web." },
@@ -124,6 +124,8 @@ const vi: Dictionary = {
     encryptedFile: "Tệp được mã hóa",
     clickToSelectPages: "Nhấn để chọn trang",
     dragToReorder: "Kéo để sắp xếp lại",
+    removeFile: "Xóa tệp",
+    rotatePage: "Xoay trang",
     favoriteAdded: "Đã thêm vào yêu thích",
     favoriteRemoved: "Đã xóa khỏi yêu thích",
     comingSoon: "Sắp ra mắt",
@@ -132,6 +134,7 @@ const vi: Dictionary = {
     shareSubtitle: "Giới thiệu cho bạn bè!",
     shareCopied: "Đã sao chép!",
     shareCopyLink: "Sao chép liên kết",
+    ariaActions: "Hành động",
     unknownError: "Đã xảy ra lỗi không xác định",
     pagesSelected: "trang đã chọn",
     selectAll: "Chọn tất cả",
@@ -573,9 +576,12 @@ const vi: Dictionary = {
     pageOf: "trang",
     resetAll: "Đặt lại",
     noCropArea: "Chọn một vùng trên bản xem trước",
+    loadingPdf: "Đang tải PDF...",
   },
   flattenTool: {
     flattenButton: "Làm phẳng",
+    pageOf: "trang",
+    changeFile: "Đổi tệp",
     formFieldsLabel: "Trường biểu mẫu",
     formFieldsDesc: "Chuyển ô nhập liệu, hộp kiểm và danh sách thả xuống thành văn bản tĩnh",
     annotationsLabel: "Chú thích",
@@ -738,6 +744,7 @@ const vi: Dictionary = {
     addPageRedaction: "Thêm che trang",
     pageRedaction: "Toàn trang",
     toolsPanelTitle: "Công cụ",
+    loadingPdf: "Đang tải PDF...",
   },
   editPdfTool: {
     dropFile: "Chọn tệp PDF",
@@ -810,6 +817,7 @@ const vi: Dictionary = {
     changeFile: "Đổi tệp",
     imageUploadError: "Không thể tải ảnh",
     confirmClearAll: "Xóa tất cả phần tử?",
+    loadingPdf: "Đang tải PDF...",
   },
   annotateTool: {
     toolSelect: "Chọn",
@@ -886,6 +894,7 @@ const vi: Dictionary = {
     noAnnotations: "Chưa có chú thích nào",
     annotationsOnPage: "trang {page}",
     addComment: "Thêm bình luận",
+    loadingPdf: "Đang tải PDF...",
   },
   signTool: {
     fieldSignature: "Chữ ký",
@@ -940,6 +949,8 @@ const vi: Dictionary = {
     rotation: "Xoay",
     changeFile: "Đổi tệp",
     selectedElement: "Phần tử đã chọn",
+    loadingPdf: "Đang tải PDF...",
+    altSignature: "Chữ ký",
   },
   watermarkTool: {
     tabText: "Văn bản",
@@ -982,6 +993,7 @@ const vi: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Hình mờ",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Trang trên mỗi tờ",
@@ -1136,6 +1148,7 @@ const vi: Dictionary = {
     prev: "Trước",
     next: "Tiếp",
     page: "Trang",
+    paginationLabel: 'Điều hướng trang',
   },
   toolContent: {
     merge: {

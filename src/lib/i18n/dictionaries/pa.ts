@@ -78,7 +78,7 @@ const pa: Dictionary = {
     grayscale: { title: "ਗ੍ਰੇਸਕੇਲ", description: "PDF ਰੰਗਾਂ ਨੂੰ ਕਾਲੇ ਅਤੇ ਚਿੱਟੇ ਵਿੱਚ ਬਦਲੋ।" },
 
     // ਅਨੁਕੂਲ ਬਣਾਓ
-    compress: { title: "PDF ਸੰਕੁਚਿਤ ਕਰੋ", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF ਸੰਕੁਚਿਤ ਕਰੋ", description: "ਆਪਣੀਆਂ PDF ਫ਼ਾਈਲਾਂ ਦਾ ਆਕਾਰ ਕਾਫ਼ੀ ਘੱਟ ਕਰੋ। ਆਪਣੀਆਂ ਲੋੜਾਂ ਅਨੁਸਾਰ ਕੰਪ੍ਰੈਸ਼ਨ ਵਿਧੀ ਚੁਣੋ।" },
     repair: { title: "PDF ਮੁਰੰਮਤ ਕਰੋ", description: "ਖਰਾਬ ਜਾਂ ਭ੍ਰਿਸ਼ਟ PDF ਫਾਈਲਾਂ ਦੀ ਮੁਰੰਮਤ ਕਰੋ।" },
     ocr: { title: "OCR PDF", description: "ਟੈਕਸਟ ਪਛਾਣ ਨਾਲ ਸਕੈਨ ਕੀਤੇ PDF ਨੂੰ ਖੋਜਣਯੋਗ ਬਣਾਓ।" },
     "web-optimize": { title: "ਵੈੱਬ ਅਨੁਕੂਲ", description: "ਤੇਜ਼ ਵੈੱਬ ਲੋਡਿੰਗ ਲਈ PDF ਲਿਨੀਅਰਾਈਜ਼ ਕਰੋ।" },
@@ -124,6 +124,8 @@ const pa: Dictionary = {
     encryptedFile: "ਐਨਕ੍ਰਿਪਟਿਡ ਫ਼ਾਈਲ",
     clickToSelectPages: "ਪੰਨੇ ਚੁਣਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
     dragToReorder: "ਕ੍ਰਮ ਬਦਲਣ ਲਈ ਘਸੀਟੋ",
+    removeFile: "ਫ਼ਾਈਲ ਹਟਾਓ",
+    rotatePage: "ਪੰਨਾ ਘੁਮਾਓ",
     favoriteAdded: "ਮਨਪਸੰਦ ਵਿੱਚ ਜੋੜਿਆ",
     favoriteRemoved: "ਮਨਪਸੰਦ ਤੋਂ ਹਟਾਇਆ",
     comingSoon: "ਜਲਦ ਆ ਰਿਹਾ ਹੈ",
@@ -132,6 +134,7 @@ const pa: Dictionary = {
     shareSubtitle: "ਦੋਸਤਾਂ ਨੂੰ ਦੱਸੋ!",
     shareCopied: "ਕਾਪੀ ਹੋ ਗਿਆ!",
     shareCopyLink: "ਲਿੰਕ ਕਾਪੀ ਕਰੋ",
+    ariaActions: "ਕਾਰਵਾਈਆਂ",
     unknownError: "ਇੱਕ ਅਣਜਾਣ ਗਲਤੀ ਆਈ",
     pagesSelected: "ਸਫ਼ੇ ਚੁਣੇ ਗਏ",
     selectAll: "ਸਭ ਚੁਣੋ",
@@ -573,9 +576,12 @@ const pa: Dictionary = {
     pageOf: "ਪੰਨਾ",
     resetAll: "ਰੀਸੈੱਟ",
     noCropArea: "ਪ੍ਰੀਵਿਊ 'ਤੇ ਇੱਕ ਖੇਤਰ ਚੁਣੋ",
+    loadingPdf: "PDF ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
   },
   flattenTool: {
     flattenButton: "ਫਲੈਟ ਕਰੋ",
+    pageOf: "ਪੰਨੇ",
+    changeFile: "ਫ਼ਾਈਲ ਬਦਲੋ",
     formFieldsLabel: "ਫਾਰਮ ਫੀਲਡ",
     formFieldsDesc: "ਇਨਪੁਟ, ਚੈੱਕਬਾਕਸ ਅਤੇ ਡ੍ਰੌਪਡਾਊਨ ਨੂੰ ਸਥਿਰ ਟੈਕਸਟ ਵਿੱਚ ਬਦਲੋ",
     annotationsLabel: "ਐਨੋਟੇਸ਼ਨ",
@@ -738,6 +744,7 @@ const pa: Dictionary = {
     addPageRedaction: "ਪੰਨਾ ਰਿਡੈਕਸ਼ਨ ਜੋੜੋ",
     pageRedaction: "ਪੂਰਾ ਪੰਨਾ",
     toolsPanelTitle: "ਟੂਲ",
+    loadingPdf: "PDF ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
   },
   editPdfTool: {
     dropFile: "PDF ਫਾਈਲ ਚੁਣੋ",
@@ -810,6 +817,7 @@ const pa: Dictionary = {
     changeFile: "ਫਾਈਲ ਬਦਲੋ",
     imageUploadError: "ਚਿੱਤਰ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕੀ",
     confirmClearAll: "ਸਾਰੇ ਤੱਤ ਮਿਟਾਉਣੇ ਹਨ?",
+    loadingPdf: "PDF ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
   },
   annotateTool: {
     toolSelect: "ਚੁਣੋ",
@@ -886,6 +894,7 @@ const pa: Dictionary = {
     noAnnotations: "ਅਜੇ ਕੋਈ ਐਨੋਟੇਸ਼ਨ ਨਹੀਂ",
     annotationsOnPage: "ਪੰਨਾ {page} 'ਤੇ",
     addComment: "ਟਿੱਪਣੀ ਜੋੜੋ",
+    loadingPdf: "PDF ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
   },
   signTool: {
     fieldSignature: "ਦਸਤਖ਼ਤ",
@@ -940,6 +949,8 @@ const pa: Dictionary = {
     rotation: "ਘੁੰਮਾਉਣਾ",
     changeFile: "ਫਾਈਲ ਬਦਲੋ",
     selectedElement: "ਚੁਣਿਆ ਤੱਤ",
+    loadingPdf: "PDF ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    altSignature: "ਦਸਤਖਤ",
   },
   watermarkTool: {
     tabText: "ਟੈਕਸਟ",
@@ -982,6 +993,7 @@ const pa: Dictionary = {
     ptUnit: "pt",
     mmUnit: "ਮਿਮੀ",
     degUnit: "°",
+    altWatermark: "ਵਾਟਰਮਾਰਕ",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "ਪ੍ਰਤੀ ਸ਼ੀਟ ਪੰਨੇ",
@@ -1135,6 +1147,7 @@ const pa: Dictionary = {
     prev: "ਪਿਛਲਾ",
     next: "ਅਗਲਾ",
     page: "ਸਫ਼ਾ",
+    paginationLabel: 'ਪੰਨਾ ਨੇਵੀਗੇਸ਼ਨ',
   },
   toolContent: {
     merge: {

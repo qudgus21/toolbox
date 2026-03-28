@@ -78,7 +78,7 @@ const ms: Dictionary = {
     grayscale: { title: "Skala Kelabu", description: "Tukar warna PDF kepada hitam putih." },
 
     // Optimum
-    compress: { title: "Mampat PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Mampat PDF", description: "Kecilkan saiz fail PDF anda dengan ketara. Pilih kaedah mampatan yang sesuai dengan keperluan anda." },
     repair: { title: "Baiki PDF", description: "Baiki fail PDF yang rosak atau korup." },
     ocr: { title: "OCR PDF", description: "Jadikan PDF yang diimbas boleh dicari dengan pengecaman teks." },
     "web-optimize": { title: "Optimum Web", description: "Optimumkan PDF untuk pemuatan web yang lebih pantas." },
@@ -124,6 +124,8 @@ const ms: Dictionary = {
     encryptedFile: "Fail yang disulitkan",
     clickToSelectPages: "Klik untuk memilih halaman",
     dragToReorder: "Seret untuk susun semula",
+    removeFile: "Alih keluar fail",
+    rotatePage: "Putar halaman",
     favoriteAdded: "Ditambah ke kegemaran",
     favoriteRemoved: "Dialih keluar dari kegemaran",
     comingSoon: "Akan datang",
@@ -132,6 +134,7 @@ const ms: Dictionary = {
     shareSubtitle: "Beritahu rakan-rakan!",
     shareCopied: "Disalin!",
     shareCopyLink: "Salin pautan",
+    ariaActions: "Tindakan",
     unknownError: "Ralat tidak diketahui berlaku",
     pagesSelected: "halaman dipilih",
     selectAll: "Pilih semua",
@@ -573,9 +576,12 @@ const ms: Dictionary = {
     pageOf: "halaman",
     resetAll: "Set semula",
     noCropArea: "Pilih kawasan pada pratonton",
+    loadingPdf: "Memuatkan PDF...",
   },
   flattenTool: {
     flattenButton: "Ratakan",
+    pageOf: "halaman",
+    changeFile: "Tukar fail",
     formFieldsLabel: "Medan borang",
     formFieldsDesc: "Tukar medan input, kotak semak dan senarai juntai kepada teks statik",
     annotationsLabel: "Anotasi",
@@ -738,6 +744,7 @@ const ms: Dictionary = {
     addPageRedaction: "Tambah sensor halaman",
     pageRedaction: "Seluruh halaman",
     toolsPanelTitle: "Alat",
+    loadingPdf: "Memuatkan PDF...",
   },
   editPdfTool: {
     dropFile: "Pilih fail PDF",
@@ -810,6 +817,7 @@ const ms: Dictionary = {
     changeFile: "Tukar fail",
     imageUploadError: "Imej tidak dapat dimuatkan",
     confirmClearAll: "Padam semua elemen?",
+    loadingPdf: "Memuatkan PDF...",
   },
   annotateTool: {
     toolSelect: "Pilih",
@@ -886,6 +894,7 @@ const ms: Dictionary = {
     noAnnotations: "Tiada anotasi lagi",
     annotationsOnPage: "halaman {page}",
     addComment: "Tambah ulasan",
+    loadingPdf: "Memuatkan PDF...",
   },
   signTool: {
     fieldSignature: "Tandatangan",
@@ -940,6 +949,8 @@ const ms: Dictionary = {
     rotation: "Putaran",
     changeFile: "Tukar fail",
     selectedElement: "Elemen dipilih",
+    loadingPdf: "Memuatkan PDF...",
+    altSignature: "Tandatangan",
   },
   watermarkTool: {
     tabText: "Teks",
@@ -982,6 +993,7 @@ const ms: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Tera air",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Halaman setiap helaian",
@@ -1135,6 +1147,7 @@ const ms: Dictionary = {
     prev: "Sebelum",
     next: "Seterusnya",
     page: "Halaman",
+    paginationLabel: 'Navigasi halaman',
   },
   toolContent: {
     merge: {

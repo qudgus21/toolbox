@@ -307,6 +307,8 @@ const bg: ImageDictionary = {
     shareCopied: "Копирано!",
     shareCopyLink: "Копирай линк",
     unknownError: "Възникна неизвестна грешка",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const bg: ImageDictionary = {
       y: "Y",
       width: "Ширина",
       height: "Височина",
+      altCropPreview: "Преглед на изрязването",
     },
     rotate: {
       quickRotate: "Бързо завъртане",
@@ -390,6 +393,7 @@ const bg: ImageDictionary = {
       noItems: "Натиснете + за добавяне на текст",
       bgColor: "Фон",
       transparent: "Без",
+      altPreview: "Преглед",
     },
     addBorder: {
       borderWidth: "Дебелина на рамката",

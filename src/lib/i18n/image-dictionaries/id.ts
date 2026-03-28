@@ -307,6 +307,8 @@ const id: ImageDictionary = {
     shareCopied: "Tersalin!",
     shareCopyLink: "Salin tautan",
     unknownError: "Terjadi kesalahan yang tidak diketahui",
+    more: "more",
+    actionsLabel: "Actions",
   },
   toolOptions: {
     resize: {
@@ -330,6 +332,7 @@ const id: ImageDictionary = {
       y: "Y",
       width: "Lebar",
       height: "Tinggi",
+      altCropPreview: "Pratinjau pemangkasan",
     },
     rotate: {
       quickRotate: "Putar Cepat",
@@ -390,6 +393,7 @@ const id: ImageDictionary = {
       noItems: "Klik + untuk menambah teks",
       bgColor: "Latar belakang",
       transparent: "Tidak ada",
+      altPreview: "Pratinjau",
     },
     addBorder: {
       borderWidth: "Ketebalan Bingkai",
