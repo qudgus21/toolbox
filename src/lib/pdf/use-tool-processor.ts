@@ -155,6 +155,24 @@ export function useToolProcessor(slug: string) {
   const download = useCallback((customFilename?: string) => {
     if (!state.result) return;
 
+    const filename = customFilename ?? state.result.filename;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // iOS Safari: blob URL은 <a download>에서 동작 안 함 → data URL로 변환
+      const reader = new FileReader();
+      reader.onload = () => {
+        const a = document.createElement("a");
+        a.href = reader.result as string;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      };
+      reader.readAsDataURL(state.result.blob);
+      return;
+    }
+
     // 이전 URL 해제
     if (resultUrlRef.current) {
       URL.revokeObjectURL(resultUrlRef.current);
@@ -165,8 +183,10 @@ export function useToolProcessor(slug: string) {
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = customFilename ?? state.result.filename;
+    a.download = filename;
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
   }, [state.result]);
 
   const reset = useCallback(() => {

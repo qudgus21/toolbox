@@ -14,11 +14,11 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
     <header
       className={cn(
         "sticky top-0 z-50 w-full",
-        "bg-glass backdrop-blur-xl border-b border-glass-border",
+        "bg-background border-b border-border",
         className,
       )}
     >
-      <div className="flex h-18 items-center px-6 lg:px-10">
+      <div className="flex h-18 items-center px-4 lg:px-10">
         {/* Logo — 왼쪽 고정 (너비 고정으로 Nav 중앙 흔들림 방지) */}
         <div className="shrink-0 lg:w-[160px]">
           {logo ?? (
@@ -30,7 +30,7 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
 
         {/* Nav — 가운데 */}
         {nav && (
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 min-w-4 flex justify-center">
             {nav}
           </div>
         )}
