@@ -11,7 +11,7 @@ import type { ProcessingResult } from "@/lib/pdf/types";
 
 interface ResultCardProps {
   result: ProcessingResult;
-  onDownload: (filename?: string) => void;
+  downloadUrl: string;
   onReset: () => void;
   downloadLabel?: string;
   resetLabel?: string;
@@ -27,7 +27,7 @@ interface ResultCardProps {
 
 export function ResultCard({
   result,
-  onDownload,
+  downloadUrl,
   onReset,
   downloadLabel = "Download",
   resetLabel = "Start over",
@@ -116,10 +116,15 @@ export function ResultCard({
       </p>
 
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <Button variant="accent" size="lg" onClick={() => { onDownload(filename); track.downloadClick({ tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) }); }}>
-          <Download className="mr-2 h-4 w-4" />
+        <a
+          href={downloadUrl}
+          download={filename}
+          onClick={() => track.downloadClick({ tool_slug: toolSlug, file_size_kb: Math.round(result.size / 1024) })}
+          className="inline-flex items-center justify-center font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border-focus focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer bg-accent text-accent-foreground hover:bg-accent-hover shadow-xs h-12 px-6 text-base rounded-lg gap-2.5"
+        >
+          <Download className="h-4 w-4" />
           {downloadLabel}
-        </Button>
+        </a>
         <Button variant="ghost" size="lg" onClick={() => { track.resetClick({ tool_slug: toolSlug }); onReset(); }}>
           <RotateCcw className="mr-2 h-4 w-4" />
           {resetLabel}

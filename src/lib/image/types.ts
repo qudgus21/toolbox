@@ -20,5 +20,6 @@ export interface ImageToolState {
   files: File[];
   progress: number;
   result: ImageProcessingResult | null;
+  downloadUrl: string | null;
   error: string | null;
 }
