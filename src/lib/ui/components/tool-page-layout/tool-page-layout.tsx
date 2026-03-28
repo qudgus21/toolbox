@@ -32,7 +32,7 @@ export function ToolPageLayout({
   linkComponent: LinkEl = "a",
 }: ToolPageLayoutProps) {
   return (
-    <main className={cn("min-h-[calc(100vh-4rem)]", hideHeader ? "py-2 sm:py-3" : "py-6 sm:py-8", className)}>
+    <main className={cn("min-h-[calc(100vh-4rem)] overflow-x-hidden", hideHeader ? "py-2 sm:py-3" : "py-6 sm:py-8", className)}>
       <Container size={size}>
         <div className={cn("flex items-center justify-between", hideHeader ? "mb-2" : "mb-4")}>
           <LinkEl

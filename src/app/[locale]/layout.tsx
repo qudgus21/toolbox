@@ -5,6 +5,7 @@ import { AppLogo } from "@/lib/ui/components/app-logo/app-logo";
 import { ThemeToggle } from "@/lib/ui/components/theme-toggle/theme-toggle";
 import { LanguageSwitcher } from "@/lib/ui/components/language-switcher/language-switcher";
 import { ShareButton } from "@/lib/ui/components/share-button";
+import { MobileTabBar } from "@/lib/ui/components/mobile-tab-bar/mobile-tab-bar";
 import { type Locale, locales } from "@/lib/i18n";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
         />
         <LanguageSwitcher locale={locale} />
       </Header>
+      <MobileTabBar apps={navApps} />
       <div className="flex min-h-screen flex-col">
         <div className="flex-1">{children}</div>
       </div>
