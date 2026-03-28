@@ -83,6 +83,7 @@ export function ToolPageClient({
     sortFiles,
     process: processFiles,
     download,
+    downloadUrl,
     reset,
   } = useToolProcessor(slug);
 
@@ -308,7 +309,7 @@ export function ToolPageClient({
           <div>
             <ResultCard
               result={result}
-              onDownload={download}
+              downloadUrl={downloadUrl ?? ""}
               onReset={reset}
               downloadLabel={labels.download}
               resetLabel={labels.startOver}
