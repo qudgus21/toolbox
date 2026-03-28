@@ -65,7 +65,8 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
   const [activeTab, setActiveTab] = useState<CategoryFilter>("all");
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [favSlugs, setFavSlugs] = useState<string[]>(() => getFavorites());
+  const [favSlugs, setFavSlugs] = useState<string[]>([]);
+  useEffect(() => { setFavSlugs(getFavorites()); }, []);
   const [toast, setToast] = useState<string | null>(null);
   const [disableFavTransition, setDisableFavTransition] = useState(false);
   const [favHintSlug, setFavHintSlug] = useState<string | null>(null);
