@@ -26,22 +26,9 @@ export function ShareToolButton({
 }: ShareToolButtonProps) {
   const [open, setOpen] = useState(false);
 
-  const handleClick = useCallback(async () => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile && navigator.share) {
-      try {
-        await navigator.share({
-          title: document.title,
-          url: window.location.href,
-        });
-        sendEvent("share_click", { app, method: "native", tool_slug: toolSlug });
-        return;
-      } catch {
-        // User cancelled
-      }
-    }
+  const handleClick = useCallback(() => {
     setOpen(true);
-  }, [app, toolSlug]);
+  }, []);
 
   return (
     <>

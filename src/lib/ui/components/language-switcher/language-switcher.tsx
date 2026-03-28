@@ -106,9 +106,18 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
 
   return (
     <div ref={ref} className="relative">
+      {/* 모바일: 아이콘 전용 버튼 */}
       <button
         onClick={() => setOpen(!open)}
-        className="cursor-pointer flex items-center gap-1.5 whitespace-nowrap rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
+        className="lg:hidden cursor-pointer flex h-8 w-8 items-center justify-center rounded-md border border-border text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
+      >
+        <Globe className="h-4 w-4" />
+      </button>
+
+      {/* 데스크탑: 텍스트 + 화살표 */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="hidden lg:flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
       >
         <Globe className="h-3.5 w-3.5" />
         <span>{languageNames[locale] ?? locale}</span>
