@@ -9,6 +9,9 @@ import { type Locale, locales } from "@/lib/i18n";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
 import { HtmlAttrsSync } from "./html-attrs-sync";
+import { GoogleAnalytics } from "./google-analytics";
+import { GoogleAdSense } from "./google-adsense";
+import { LayoutScripts } from "./layout-scripts";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -40,6 +43,9 @@ export default async function LocaleLayout({
   return (
     <>
       <HtmlAttrsSync locale={locale} dir={dir} />
+      <GoogleAnalytics />
+      <GoogleAdSense />
+      <LayoutScripts />
       <Header
         logo={<AppLogo />}
         nav={<AppNavMenu apps={navApps} menuLabel={landingDict.common.ariaMenu} />}
