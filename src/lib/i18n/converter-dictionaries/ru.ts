@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Подробности",
     pageNotFound: "Конвертер не найден",
     goHome: "Ко всем конвертерам",
+    colorPickerLabel: "Выбор цвета",
   },
   toolOptions: {
     fromUnit: "Из",

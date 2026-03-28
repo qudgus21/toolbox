@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Không tài khoản, không email. Mở công cụ lên và bắt đầu ngay.",
   },
   cta: { title: "Sẵn sàng bắt đầu?", subtitle: "Không cài đặt, không đăng ký, không trả phí — chỉ một cú nhấp.", button: "Xem tất cả công cụ" },
-  common: { shareTitle: "Chia sẻ", shareSubtitle: "Giới thiệu ToolPop cho bạn bè!", shareCopyLink: "Sao chép liên kết", shareCopied: "Đã sao chép!", ariaClose: "Đóng", ariaMenu: "Menu", ariaShare: "Chia sẻ" },
+  common: { shareTitle: "Chia sẻ", shareSubtitle: "Giới thiệu ToolPop cho bạn bè!", shareCopyLink: "Sao chép liên kết", shareCopied: "Đã sao chép!", ariaClose: "Đóng", ariaMenu: "Menu", ariaShare: "Chia sẻ", ariaToggleTheme: "Đổi giao diện" },
   footer: { apps: "Công cụ", company: "Công ty", about: "Giới thiệu", contact: "Liên hệ", faq: "FAQ", blog: "Blog", legal: "Pháp lý", privacy: "Chính sách bảo mật", terms: "Điều khoản sử dụng", copyright: "© 2026 ToolPop. Đã đăng ký bản quyền.", tagline: "Công cụ trực tuyến miễn phí cho PDF, hình ảnh và nhiều hơn nữa. Không cần đăng ký.", madeWith: "Tạo bằng tình yêu cho mọi người" },
   search: { noResults: "Không tìm thấy kết quả" },
   nav: { pdf: "PDF", image: "Hình ảnh", text: "Văn bản", converter: "Chuyển đổi", calculator: "Máy tính" },

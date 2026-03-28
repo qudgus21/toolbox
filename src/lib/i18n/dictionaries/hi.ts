@@ -78,7 +78,7 @@ const hi: Dictionary = {
     grayscale: { title: "ग्रेस्केल", description: "PDF के रंगों को काले और सफ़ेद में बदलें।" },
 
     // अनुकूलित करें
-    compress: { title: "PDF संपीड़ित करें", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "PDF संपीड़ित करें", description: "अपनी PDF फ़ाइलों का आकार काफ़ी हद तक कम करें। अपनी ज़रूरत के अनुसार कंप्रेशन तरीका चुनें।" },
     repair: { title: "PDF सुधारें", description: "क्षतिग्रस्त या दूषित PDF फ़ाइलों को ठीक करें।" },
     ocr: { title: "OCR PDF", description: "पाठ पहचान के साथ स्कैन किए गए PDF को खोजने योग्य बनाएं।" },
     "web-optimize": { title: "वेब अनुकूलन", description: "तेज़ वेब लोडिंग के लिए PDF को रैखिक बनाएं।" },
@@ -134,6 +134,7 @@ const hi: Dictionary = {
     shareSubtitle: "दूसरों को बताएं!",
     shareCopied: "कॉपी हो गया!",
     shareCopyLink: "लिंक कॉपी करें",
+    ariaActions: "क्रियाएँ",
     unknownError: "एक अज्ञात त्रुटि हुई",
     pagesSelected: "पृष्ठ चयनित",
     selectAll: "सभी चुनें",
@@ -575,6 +576,7 @@ const hi: Dictionary = {
     pageOf: "पेज",
     resetAll: "रीसेट",
     noCropArea: "प्रीव्यू पर एक क्षेत्र चुनें",
+    loadingPdf: "PDF लोड हो रहा है...",
   },
   flattenTool: {
     flattenButton: "फ़्लैटन करें",
@@ -742,6 +744,7 @@ const hi: Dictionary = {
     addPageRedaction: "पेज रिडैक्शन जोड़ें",
     pageRedaction: "पूरा पेज",
     toolsPanelTitle: "उपकरण",
+    loadingPdf: "PDF लोड हो रहा है...",
   },
   editPdfTool: {
     dropFile: "PDF फ़ाइल चुनें",
@@ -814,6 +817,7 @@ const hi: Dictionary = {
     changeFile: "फ़ाइल बदलें",
     imageUploadError: "छवि लोड नहीं हो सकी",
     confirmClearAll: "सभी तत्व हटाएँ?",
+    loadingPdf: "PDF लोड हो रहा है...",
   },
   annotateTool: {
     toolSelect: "चुनें",
@@ -890,6 +894,7 @@ const hi: Dictionary = {
     noAnnotations: "अभी कोई एनोटेशन नहीं",
     annotationsOnPage: "पेज {page} पर",
     addComment: "टिप्पणी जोड़ें",
+    loadingPdf: "PDF लोड हो रहा है...",
   },
   signTool: {
     fieldSignature: "हस्ताक्षर",
@@ -944,6 +949,8 @@ const hi: Dictionary = {
     rotation: "घुमाव",
     changeFile: "फ़ाइल बदलें",
     selectedElement: "चयनित तत्व",
+    loadingPdf: "PDF लोड हो रहा है...",
+    altSignature: "हस्ताक्षर",
   },
   watermarkTool: {
     tabText: "टेक्स्ट",
@@ -986,6 +993,7 @@ const hi: Dictionary = {
     ptUnit: "pt",
     mmUnit: "मिमी",
     degUnit: "°",
+    altWatermark: "वॉटरमार्क",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "प्रति शीट पेज",
@@ -1163,6 +1171,7 @@ const hi: Dictionary = {
     prev: "पिछला",
     next: "अगला",
     page: "पेज",
+    paginationLabel: 'पृष्ठ नेविगेशन',
   },
   toolContent: {
     merge: {

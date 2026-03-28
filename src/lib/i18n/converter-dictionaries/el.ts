@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Λεπτομέρειες",
     pageNotFound: "Ο μετατροπέας δεν βρέθηκε",
     goHome: "Πίσω σε όλους τους μετατροπείς",
+    colorPickerLabel: "Επιλογή χρώματος",
   },
   toolOptions: {
     fromUnit: "Από",

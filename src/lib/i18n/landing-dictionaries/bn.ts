@@ -91,6 +91,7 @@ const dict: LandingDictionary = {
     ariaClose: "বন্ধ করুন",
     ariaMenu: "মেনু",
     ariaShare: "শেয়ার",
+    ariaToggleTheme: "থিম পরিবর্তন করুন",
   },
   footer: {
     apps: "টুলস",

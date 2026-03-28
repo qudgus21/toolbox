@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Detalės",
     pageNotFound: "Konverteris nerastas",
     goHome: "Grįžti prie visų konverterių",
+    colorPickerLabel: "Spalvų parinkiklis",
   },
   toolOptions: {
     fromUnit: "Iš",

@@ -164,6 +164,7 @@ const lv: ImageDictionary = {
       y: "Y",
       width: "Platums",
       height: "Augstums",
+      altCropPreview: "Apgriešanas priekšskatījums",
     },
     rotate: {
       quickRotate: "Atra pagriasana",
@@ -224,6 +225,7 @@ const lv: ImageDictionary = {
       noItems: "Nospiediet + lai pievienotu tekstu",
       bgColor: "Fons",
       transparent: "Nav",
+      altPreview: "Priekšskatījums",
     },
     addBorder: {
       borderWidth: "Apmales platums",

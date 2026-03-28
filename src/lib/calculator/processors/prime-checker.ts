@@ -16,7 +16,7 @@ export function process(
     output: prime ? `${fmt(n)} is prime` : `${fmt(n)} is not prime`,
     table: [
       { label: 'Number', value: fmt(n) },
-      { label: 'Is Prime', value: prime ? 'Yes' : 'No' },
+      { label: 'Is Prime', value: prime },
       { label: 'Prime Factors', value: factors.join(' × ') || 'N/A' },
       { label: 'Unique Factors', value: Array.from(new Set(factors)).join(', ') || 'N/A' },
       { label: 'Previous Prime', value: prev > 0 ? fmt(prev) : 'N/A' },

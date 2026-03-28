@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Chi tiết",
     pageNotFound: "Không tìm thấy công cụ",
     goHome: "Về trang chủ",
+    colorPickerLabel: "Bộ chọn màu",
   },
   toolOptions: {
     fromUnit: "Từ",

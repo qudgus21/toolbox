@@ -164,6 +164,7 @@ const sl: ImageDictionary = {
       y: "Y",
       width: "Širina",
       height: "Višina",
+      altCropPreview: "Predogled obrezovanja",
     },
     rotate: {
       quickRotate: "Hitro vrtenje",
@@ -224,6 +225,7 @@ const sl: ImageDictionary = {
       noItems: "Kliknite + za dodajanje besedila",
       bgColor: "Ozadje",
       transparent: "Brez",
+      altPreview: "Predogled",
     },
     addBorder: {
       borderWidth: "Širina obrobe",

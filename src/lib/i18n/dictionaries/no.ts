@@ -71,7 +71,7 @@ const no: Dictionary = {
     resize: { title: "Endre størrelse på PDF", description: "Endre PDF-sidestørrelse (A4, Letter, egendefinert)." },
     "edit-metadata": { title: "Rediger metadata", description: "Endre PDF-tittel, forfatter, nøkkelord og andre metadata." },
     grayscale: { title: "Gråtoner", description: "Konverter PDF-farger til svart-hvitt." },
-    compress: { title: "Komprimer PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Komprimer PDF", description: "Forminsk PDF-filene dine betraktelig. Velg komprimeringsmetoden som passer dine behov." },
     repair: { title: "Reparer PDF", description: "Fiks skadede eller korrupte PDF-filer." },
     ocr: { title: "OCR PDF", description: "Gjør skannede PDF-er søkbare med tekstgjenkjenning." },
     "web-optimize": { title: "Weboptimalisering", description: "Lineariser PDF-er for raskere nettlasting." },
@@ -122,6 +122,7 @@ const no: Dictionary = {
     shareSubtitle: "Fortell det videre!",
     shareCopied: "Kopiert!",
     shareCopyLink: "Kopier lenke",
+    ariaActions: "Handlinger",
     unknownError: "En ukjent feil oppstod",
     pagesSelected: "sider valgt",
     selectAll: "Velg alle",
@@ -563,6 +564,7 @@ const no: Dictionary = {
     pageOf: "side",
     resetAll: "Tilbakestill",
     noCropArea: "Velg et område i forhåndsvisningen",
+    loadingPdf: "Laster inn PDF...",
   },
   flattenTool: {
     flattenButton: "Flat ut",
@@ -730,6 +732,7 @@ const no: Dictionary = {
     addPageRedaction: "Legg til sidesladding",
     pageRedaction: "Hel side",
     toolsPanelTitle: "Verktøy",
+    loadingPdf: "Laster inn PDF...",
   },
   editPdfTool: {
     dropFile: "Velg en PDF-fil",
@@ -802,6 +805,7 @@ const no: Dictionary = {
     changeFile: "Bytt fil",
     imageUploadError: "Kunne ikke laste bildet",
     confirmClearAll: "Slette alle elementer?",
+    loadingPdf: "Laster inn PDF...",
   },
   annotateTool: {
     toolSelect: "Velg",
@@ -878,6 +882,7 @@ const no: Dictionary = {
     noAnnotations: "Ingen merknader ennå",
     annotationsOnPage: "på side {page}",
     addComment: "Legg til kommentar",
+    loadingPdf: "Laster inn PDF...",
   },
   signTool: {
     fieldSignature: "Signatur",
@@ -932,6 +937,8 @@ const no: Dictionary = {
     rotation: "Rotasjon",
     changeFile: "Bytt fil",
     selectedElement: "Valgt element",
+    loadingPdf: "Laster inn PDF...",
+    altSignature: "Signatur",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -974,6 +981,7 @@ const no: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vannmerke",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Sider per ark",
@@ -1127,6 +1135,7 @@ const no: Dictionary = {
     prev: "Forrige",
     next: "Neste",
     page: "Side",
+    paginationLabel: 'Sidenavigasjon',
   },
   toolContent: {
     merge: {

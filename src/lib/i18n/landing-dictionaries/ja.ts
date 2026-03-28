@@ -91,6 +91,7 @@ const dict: LandingDictionary = {
     ariaClose: "閉じる",
     ariaMenu: "メニュー",
     ariaShare: "シェア",
+    ariaToggleTheme: "テーマを切り替える",
   },
   footer: {
     apps: "ツール",

@@ -164,6 +164,7 @@ const lt: ImageDictionary = {
       y: "Y",
       width: "Plotis",
       height: "Aukstis",
+      altCropPreview: "Apkarpymo peržiūra",
     },
     rotate: {
       quickRotate: "Greitas pasukimas",
@@ -224,6 +225,7 @@ const lt: ImageDictionary = {
       noItems: "Spauskite + teksto pridėjimui",
       bgColor: "Fonas",
       transparent: "Nėra",
+      altPreview: "Peržiūra",
     },
     addBorder: {
       borderWidth: "Remelio plotis",

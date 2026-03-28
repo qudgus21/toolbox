@@ -1,12 +1,12 @@
 export interface CalculatorTableRow {
   label: string;
-  value: string;
+  value: string | boolean;
   unit?: string;
 }
 
 export interface CalculatorBreakdownRow {
   label: string;
-  value: string;
+  value: string | boolean;
   highlight?: boolean;
 }
 

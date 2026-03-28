@@ -78,7 +78,7 @@ const ar: Dictionary = {
     grayscale: { title: "تدرج الرمادي", description: "تحويل ألوان PDF إلى الأبيض والأسود." },
 
     // تحسين
-    compress: { title: "ضغط PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "ضغط PDF", description: "صغّر ملفات PDF بشكل ملحوظ. اختر أسلوب الضغط المناسب لاحتياجاتك." },
     repair: { title: "إصلاح PDF", description: "إصلاح ملفات PDF التالفة أو المعطوبة." },
     ocr: { title: "OCR PDF", description: "جعل ملفات PDF الممسوحة ضوئياً قابلة للبحث بالتعرف على النص." },
     "web-optimize": { title: "تحسين للويب", description: "تحسين ملفات PDF للتحميل الأسرع على الويب." },
@@ -134,6 +134,7 @@ const ar: Dictionary = {
     shareSubtitle: "أخبر الآخرين!",
     shareCopied: "تم النسخ!",
     shareCopyLink: "نسخ الرابط",
+    ariaActions: "إجراءات",
     unknownError: "حدث خطأ غير معروف",
     pagesSelected: "صفحات محددة",
     selectAll: "تحديد الكل",
@@ -575,6 +576,7 @@ const ar: Dictionary = {
     pageOf: "صفحة",
     resetAll: "إعادة ضبط",
     noCropArea: "حدد منطقة على المعاينة",
+    loadingPdf: "جارٍ تحميل PDF...",
   },
   flattenTool: {
     flattenButton: "تسطيح",
@@ -742,6 +744,7 @@ const ar: Dictionary = {
     addPageRedaction: "إضافة تحرير صفحة",
     pageRedaction: "صفحة كاملة",
     toolsPanelTitle: "الأدوات",
+    loadingPdf: "جارٍ تحميل PDF...",
   },
   editPdfTool: {
     dropFile: "اختر ملف PDF",
@@ -814,6 +817,7 @@ const ar: Dictionary = {
     changeFile: "تغيير الملف",
     imageUploadError: "تعذّر تحميل الصورة",
     confirmClearAll: "حذف جميع العناصر؟",
+    loadingPdf: "جارٍ تحميل PDF...",
   },
   annotateTool: {
     toolSelect: "تحديد",
@@ -890,6 +894,7 @@ const ar: Dictionary = {
     noAnnotations: "لا توجد تعليقات بعد",
     annotationsOnPage: "صفحة {page}",
     addComment: "إضافة تعليق",
+    loadingPdf: "جارٍ تحميل PDF...",
   },
   signTool: {
     fieldSignature: "التوقيع",
@@ -944,6 +949,8 @@ const ar: Dictionary = {
     rotation: "التدوير",
     changeFile: "تغيير الملف",
     selectedElement: "العنصر المحدد",
+    loadingPdf: "جارٍ تحميل PDF...",
+    altSignature: "توقيع",
   },
   watermarkTool: {
     tabText: "نص",
@@ -986,6 +993,7 @@ const ar: Dictionary = {
     ptUnit: "نقطة",
     mmUnit: "مم",
     degUnit: "درجة",
+    altWatermark: "علامة مائية",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "صفحات لكل ورقة",
@@ -1163,6 +1171,7 @@ const ar: Dictionary = {
     prev: "السابق",
     next: "التالي",
     page: "صفحة",
+    paginationLabel: 'تصفح الصفحات',
   },
   toolContent: {
     merge: {

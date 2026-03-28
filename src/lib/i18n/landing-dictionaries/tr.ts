@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Hesap yok, e-posta yok. Aracı aç ve hemen başla.",
   },
   cta: { title: "Başlamaya hazır mısın?", subtitle: "Kurulum yok, kayıt yok, ödeme yok — tek tık uzağında.", button: "Tüm Araçlara Göz At" },
-  common: { shareTitle: "Paylaş", shareSubtitle: "Arkadaşlarına ToolPop'u anlat!", shareCopyLink: "Linki kopyala", shareCopied: "Kopyalandı!", ariaClose: "Kapat", ariaMenu: "Menü", ariaShare: "Paylaş" },
+  common: { shareTitle: "Paylaş", shareSubtitle: "Arkadaşlarına ToolPop'u anlat!", shareCopyLink: "Linki kopyala", shareCopied: "Kopyalandı!", ariaClose: "Kapat", ariaMenu: "Menü", ariaShare: "Paylaş", ariaToggleTheme: "Tema değiştir" },
   footer: { apps: "Araçlar", company: "Şirket", about: "Hakkımızda", contact: "İletişim", faq: "SSS", blog: "Blog", legal: "Yasal", privacy: "Gizlilik Politikası", terms: "Kullanım Koşulları", copyright: "© 2026 ToolPop. Tüm hakları saklıdır.", tagline: "PDF, görsel ve daha fazlası için ücretsiz çevrimiçi araçlar. Kayıt gerektirmez.", madeWith: "Herkes için sevgiyle yapıldı" },
   search: { noResults: "Sonuç bulunamadı" },
   nav: { pdf: "PDF", image: "Görsel", text: "Metin", converter: "Dönüştür", calculator: "Hesaplama" },

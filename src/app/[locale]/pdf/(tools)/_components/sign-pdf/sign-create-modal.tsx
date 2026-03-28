@@ -481,7 +481,7 @@ export function SignCreateModal({ open, target, labels, onSave, onClose }: SignC
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={uploadedImage}
-                          alt="Signature"
+                          alt={labels.altSignature ?? "Signature"}
                           className="max-h-[160px] max-w-full object-contain"
                         />
                       </div>

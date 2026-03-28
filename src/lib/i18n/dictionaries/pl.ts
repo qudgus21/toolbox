@@ -78,7 +78,7 @@ const pl: Dictionary = {
     grayscale: { title: "Skala szarości", description: "Konwertuj kolory PDF na czarno-białe." },
 
     // Optymalizacja
-    compress: { title: "Kompresuj PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Kompresuj PDF", description: "Znacznie zmniejsz rozmiar plików PDF. Wybierz metodę kompresji dopasowaną do swoich potrzeb." },
     repair: { title: "Napraw PDF", description: "Napraw uszkodzone pliki PDF." },
     ocr: { title: "OCR PDF", description: "Spraw, aby zeskanowane pliki PDF były przeszukiwalne dzięki rozpoznawaniu tekstu." },
     "web-optimize": { title: "Optymalizacja WWW", description: "Zoptymalizuj pliki PDF do szybszego ładowania w sieci." },
@@ -134,6 +134,7 @@ const pl: Dictionary = {
     shareSubtitle: "Podziel się ze znajomymi!",
     shareCopied: "Skopiowano!",
     shareCopyLink: "Kopiuj link",
+    ariaActions: "Akcje",
     unknownError: "Wystąpił nieznany błąd",
     pagesSelected: "stron zaznaczonych",
     selectAll: "Zaznacz wszystko",
@@ -575,6 +576,7 @@ const pl: Dictionary = {
     pageOf: "strona",
     resetAll: "Przywróć",
     noCropArea: "Zaznacz obszar w podglądzie",
+    loadingPdf: "Ładowanie PDF...",
   },
   flattenTool: {
     flattenButton: "Spłaszcz",
@@ -742,6 +744,7 @@ const pl: Dictionary = {
     addPageRedaction: "Dodaj zakreślenie strony",
     pageRedaction: "Cała strona",
     toolsPanelTitle: "Narzędzia",
+    loadingPdf: "Ładowanie PDF...",
   },
   editPdfTool: {
     dropFile: "Wybierz plik PDF",
@@ -814,6 +817,7 @@ const pl: Dictionary = {
     changeFile: "Zmień plik",
     imageUploadError: "Nie udało się wczytać obrazu",
     confirmClearAll: "Usunąć wszystkie elementy?",
+    loadingPdf: "Ładowanie PDF...",
   },
   annotateTool: {
     toolSelect: "Zaznacz",
@@ -890,6 +894,7 @@ const pl: Dictionary = {
     noAnnotations: "Brak adnotacji",
     annotationsOnPage: "na stronie {page}",
     addComment: "Dodaj komentarz",
+    loadingPdf: "Ładowanie PDF...",
   },
   signTool: {
     fieldSignature: "Podpis",
@@ -944,6 +949,8 @@ const pl: Dictionary = {
     rotation: "Obrót",
     changeFile: "Zmień plik",
     selectedElement: "Wybrany element",
+    loadingPdf: "Ładowanie PDF...",
+    altSignature: "Podpis",
   },
   watermarkTool: {
     tabText: "Tekst",
@@ -986,6 +993,7 @@ const pl: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Znak wodny",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Stron na arkuszu",
@@ -1139,6 +1147,7 @@ const pl: Dictionary = {
     prev: "Poprzednia",
     next: "Następna",
     page: "Strona",
+    paginationLabel: 'Nawigacja stron',
   },
   toolContent: {
     merge: {

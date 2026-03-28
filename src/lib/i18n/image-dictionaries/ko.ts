@@ -345,6 +345,7 @@ const ko: ImageDictionary = {
       y: "Y",
       width: "너비",
       height: "높이",
+      altCropPreview: "자르기 미리보기",
     },
     rotate: {
       quickRotate: "빠른 회전",
@@ -405,6 +406,7 @@ const ko: ImageDictionary = {
       noItems: "텍스트를 추가하세요",
       bgColor: "배경",
       transparent: "없음",
+      altPreview: "미리보기",
     },
     addBorder: {
       borderWidth: "테두리 두께",

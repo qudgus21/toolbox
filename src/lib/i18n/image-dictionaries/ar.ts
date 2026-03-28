@@ -332,6 +332,7 @@ const ar: ImageDictionary = {
       y: "Y",
       width: "العرض",
       height: "الارتفاع",
+      altCropPreview: "معاينة الاقتصاص",
     },
     rotate: {
       quickRotate: "تدوير سريع",
@@ -392,6 +393,7 @@ const ar: ImageDictionary = {
       noItems: "اضغط + لإضافة نص",
       bgColor: "الخلفية",
       transparent: "بدون",
+      altPreview: "معاينة",
     },
     addBorder: {
       borderWidth: "سمك الإطار",

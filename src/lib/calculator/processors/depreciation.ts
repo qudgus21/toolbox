@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const assetCost = Number(fields.assetCost);
   const salvageValue = Number(fields.salvageValue || 0);
   const usefulLife = Math.floor(Number(fields.usefulLife));
@@ -40,7 +42,7 @@ export function process(
         ...table,
       ],
       breakdown: [
-        { label: 'Method', value: 'Straight-Line' },
+        { label: 'Method', value: msg['Straight-Line'] ?? 'Straight-Line' },
         { label: 'Formula', value: '(Cost - Salvage) / Useful Life' },
         { label: 'Calculation', value: `($${fmtMoney(assetCost)} - $${fmtMoney(salvageValue)}) / ${usefulLife}` },
         { label: 'Annual Depreciation', value: `$${fmtMoney(annualDep)}`, highlight: true },
@@ -75,7 +77,7 @@ export function process(
       ...table,
     ],
     breakdown: [
-      { label: 'Method', value: 'Double Declining Balance' },
+      { label: 'Method', value: msg['Double Declining Balance'] ?? 'Double Declining Balance' },
       { label: 'Rate', value: `2 / ${usefulLife} = ${fmt(rate * 100)}%` },
       { label: 'Year 1 Depreciation', value: `$${fmtMoney(firstYearDep)}`, highlight: true },
     ],

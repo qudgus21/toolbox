@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "विवरण",
     pageNotFound: "कनवर्टर नहीं मिला",
     goHome: "सभी कनवर्टर पर वापस जाएँ",
+    colorPickerLabel: "रंग चुनने वाला",
   },
   toolOptions: {
     fromUnit: "से",

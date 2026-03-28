@@ -134,6 +134,7 @@ const zh: Dictionary = {
     shareSubtitle: "让更多人知道!",
     shareCopied: "已复制!",
     shareCopyLink: "复制链接",
+    ariaActions: "操作",
     unknownError: "发生未知错误",
     pagesSelected: "页已选择",
     selectAll: "全选",
@@ -575,6 +576,7 @@ const zh: Dictionary = {
     pageOf: "页",
     resetAll: "重置",
     noCropArea: "请在预览中选择区域",
+    loadingPdf: "正在加载 PDF...",
   },
   flattenTool: {
     flattenButton: "扁平化",
@@ -742,6 +744,7 @@ const zh: Dictionary = {
     addPageRedaction: "添加页面涂黑",
     pageRedaction: "整页",
     toolsPanelTitle: "工具",
+    loadingPdf: "正在加载 PDF...",
   },
   editPdfTool: {
     dropFile: "选择PDF文件",
@@ -814,6 +817,7 @@ const zh: Dictionary = {
     changeFile: "更换文件",
     imageUploadError: "无法加载图片",
     confirmClearAll: "删除所有元素？",
+    loadingPdf: "正在加载 PDF...",
   },
   annotateTool: {
     toolSelect: "选择",
@@ -890,6 +894,7 @@ const zh: Dictionary = {
     noAnnotations: "暂无标注",
     annotationsOnPage: "第{page}页",
     addComment: "添加评论",
+    loadingPdf: "正在加载 PDF...",
   },
   signTool: {
     fieldSignature: "签名",
@@ -944,6 +949,8 @@ const zh: Dictionary = {
     rotation: "旋转",
     changeFile: "更换文件",
     selectedElement: "选中的元素",
+    loadingPdf: "正在加载 PDF...",
+    altSignature: "签名",
   },
   watermarkTool: {
     tabText: "文字",
@@ -986,6 +993,7 @@ const zh: Dictionary = {
     ptUnit: "pt",
     mmUnit: "毫米",
     degUnit: "°",
+    altWatermark: "水印",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "每页页数",
@@ -1164,6 +1172,7 @@ const zh: Dictionary = {
     prev: "上一页",
     next: "下一页",
     page: "页",
+    paginationLabel: '页面导航',
   },
   toolContent: {
     merge: {

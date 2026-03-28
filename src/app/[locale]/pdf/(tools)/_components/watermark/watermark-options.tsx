@@ -59,6 +59,7 @@ export interface WatermarkLabels {
   ptUnit: string;
   mmUnit: string;
   degUnit: string;
+  altWatermark?: string;
 }
 
 interface WatermarkOptionsProps {
@@ -314,7 +315,7 @@ export function WatermarkOptions({
               <div className="flex items-center justify-center rounded-lg border border-border bg-background-muted p-3">
                 <img
                   src={options.image.imageDataUrl}
-                  alt="watermark"
+                  alt={labels.altWatermark ?? "watermark"}
                   className="max-h-24 max-w-full object-contain"
                 />
               </div>

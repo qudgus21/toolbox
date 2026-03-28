@@ -332,6 +332,7 @@ const id: ImageDictionary = {
       y: "Y",
       width: "Lebar",
       height: "Tinggi",
+      altCropPreview: "Pratinjau pemangkasan",
     },
     rotate: {
       quickRotate: "Putar Cepat",
@@ -392,6 +393,7 @@ const id: ImageDictionary = {
       noItems: "Klik + untuk menambah teks",
       bgColor: "Latar belakang",
       transparent: "Tidak ada",
+      altPreview: "Pratinjau",
     },
     addBorder: {
       borderWidth: "Ketebalan Bingkai",

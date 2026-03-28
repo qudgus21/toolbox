@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const unit = String(fields.unit || 'metric');
   let weightKg: number;
   let heightM: number;
@@ -25,7 +27,7 @@ export function process(
   }
 
   const bmi = weightKg / (heightM * heightM);
-  const category = getCategory(bmi);
+  const category = getCategory(bmi, msg);
 
   // Healthy weight range (BMI 18.5–24.9)
   const healthyMin = 18.5 * heightM * heightM;
@@ -60,9 +62,9 @@ export function process(
   };
 }
 
-function getCategory(bmi: number): string {
-  if (bmi < 18.5) return 'Underweight';
-  if (bmi < 25) return 'Normal';
-  if (bmi < 30) return 'Overweight';
-  return 'Obese';
+function getCategory(bmi: number, msg: Record<string, string>): string {
+  if (bmi < 18.5) return msg['Underweight'] ?? 'Underweight';
+  if (bmi < 25) return msg['Normal'] ?? 'Normal';
+  if (bmi < 30) return msg['Overweight'] ?? 'Overweight';
+  return msg['Obese'] ?? 'Obese';
 }

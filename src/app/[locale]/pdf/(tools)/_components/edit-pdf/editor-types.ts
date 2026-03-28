@@ -260,6 +260,7 @@ export interface EditPdfLabels {
   changeFile: string;
   imageUploadError: string;
   confirmClearAll: string;
+  loadingPdf?: string;
 }
 
 // ─── Helpers ──────────────────────────────────────────────────

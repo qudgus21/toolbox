@@ -91,6 +91,7 @@ const dict: LandingDictionary = {
     ariaClose: "إغلاق",
     ariaMenu: "القائمة",
     ariaShare: "مشاركة",
+    ariaToggleTheme: "تبديل المظهر",
   },
   footer: {
     apps: "الأدوات",

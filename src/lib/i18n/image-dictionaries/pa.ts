@@ -332,6 +332,7 @@ const pa: ImageDictionary = {
       y: "Y",
       width: "ਚੌੜਾਈ",
       height: "ਉਚਾਈ",
+      altCropPreview: "ਕ੍ਰੌਪ ਪ੍ਰੀਵਿਊ",
     },
     rotate: {
       quickRotate: "ਤੇਜ਼ ਘੁਮਾਓ",
@@ -392,6 +393,7 @@ const pa: ImageDictionary = {
       noItems: "ਟੈਕਸਟ ਸ਼ਾਮਲ ਕਰਨ ਲਈ + ਦਬਾਓ",
       bgColor: "ਬੈਕਗ੍ਰਾਊਂਡ",
       transparent: "ਕੋਈ ਨਹੀਂ",
+      altPreview: "ਪ੍ਰੀਵਿਊ",
     },
     addBorder: {
       borderWidth: "ਬਾਰਡਰ ਚੌੜਾਈ",

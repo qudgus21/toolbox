@@ -332,6 +332,7 @@ const th: ImageDictionary = {
       y: "Y",
       width: "ความกว้าง",
       height: "ความสูง",
+      altCropPreview: "ตัวอย่างการครอบตัด",
     },
     rotate: {
       quickRotate: "หมุนเร็ว",
@@ -392,6 +393,7 @@ const th: ImageDictionary = {
       noItems: "คลิก + เพื่อเพิ่มข้อความ",
       bgColor: "พื้นหลัง",
       transparent: "ไม่มี",
+      altPreview: "ตัวอย่าง",
     },
     addBorder: {
       borderWidth: "ความหนากรอบ",

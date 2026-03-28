@@ -91,6 +91,7 @@ const dict: LandingDictionary = {
     ariaClose: "닫기",
     ariaMenu: "메뉴",
     ariaShare: "공유",
+    ariaToggleTheme: "테마 전환",
   },
   footer: {
     apps: "도구",

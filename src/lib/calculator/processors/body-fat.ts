@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const waist = Number(fields.waist); // cm
   const neck = Number(fields.neck); // cm
   const height = Number(fields.height); // cm
@@ -30,7 +32,7 @@ export function process(
 
   if (!isFinite(bodyFat) || bodyFat < 0 || bodyFat > 70) return { output: '' };
 
-  const category = getCategory(bodyFat, isMale);
+  const category = getCategory(bodyFat, isMale, msg);
   const leanMass = fields.weight ? Number(fields.weight) * (1 - bodyFat / 100) : null;
   const fatMass = fields.weight ? Number(fields.weight) * (bodyFat / 100) : null;
 
@@ -52,27 +54,32 @@ export function process(
     output: `${fmt(bodyFat)}%`,
     table,
     breakdown: [
-      { label: 'Method', value: 'U.S. Navy Method' },
-      { label: 'Gender', value: isMale ? 'Male' : 'Female' },
+      { label: 'Method', value: msg['U.S. Navy Method'] ?? 'U.S. Navy Method' },
+      { label: 'Gender', value: isMale ? (msg['Male'] ?? 'Male') : (msg['Female'] ?? 'Female') },
       { label: 'Body Fat Percentage', value: `${fmt(bodyFat)}%`, highlight: true },
       { label: 'Category', value: category, highlight: true },
     ],
   };
 }
 
-function getCategory(bf: number, isMale: boolean): string {
+function getCategory(bf: number, isMale: boolean, msg: Record<string, string>): string {
+  const essential = msg['Essential Fat'] ?? 'Essential Fat';
+  const athletes = msg['Athletes'] ?? 'Athletes';
+  const fitness = msg['Fitness'] ?? 'Fitness';
+  const average = msg['Average'] ?? 'Average';
+  const obese = msg['Obese'] ?? 'Obese';
   if (isMale) {
-    if (bf < 6) return 'Essential Fat';
-    if (bf < 14) return 'Athletes';
-    if (bf < 18) return 'Fitness';
-    if (bf < 25) return 'Average';
-    return 'Obese';
+    if (bf < 6) return essential;
+    if (bf < 14) return athletes;
+    if (bf < 18) return fitness;
+    if (bf < 25) return average;
+    return obese;
   }
-  if (bf < 14) return 'Essential Fat';
-  if (bf < 21) return 'Athletes';
-  if (bf < 25) return 'Fitness';
-  if (bf < 32) return 'Average';
-  return 'Obese';
+  if (bf < 14) return essential;
+  if (bf < 21) return athletes;
+  if (bf < 25) return fitness;
+  if (bf < 32) return average;
+  return obese;
 }
 
 function fmt(n: number): string {

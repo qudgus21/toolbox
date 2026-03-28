@@ -331,6 +331,7 @@ const zh: ImageDictionary = {
       y: "Y",
       width: "宽度",
       height: "高度",
+      altCropPreview: "裁剪预览",
     },
     rotate: {
       quickRotate: "快速旋转",
@@ -391,6 +392,7 @@ const zh: ImageDictionary = {
       noItems: "点击 + 添加文字",
       bgColor: "背景",
       transparent: "无",
+      altPreview: "预览",
     },
     addBorder: {
       borderWidth: "边框宽度",

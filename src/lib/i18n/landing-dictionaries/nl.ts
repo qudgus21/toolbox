@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Geen account, geen e-mail. Open een tool en ga direct aan de slag.",
   },
   cta: { title: "Klaar om te beginnen?", subtitle: "Geen installatie, geen registratie, geen kosten — slechts één klik verwijderd.", button: "Bekijk alle tools" },
-  common: { shareTitle: "Delen", shareSubtitle: "Vertel je vrienden over ToolPop!", shareCopyLink: "Link kopiëren", shareCopied: "Gekopieerd!", ariaClose: "Sluiten", ariaMenu: "Menu", ariaShare: "Delen" },
+  common: { shareTitle: "Delen", shareSubtitle: "Vertel je vrienden over ToolPop!", shareCopyLink: "Link kopiëren", shareCopied: "Gekopieerd!", ariaClose: "Sluiten", ariaMenu: "Menu", ariaShare: "Delen", ariaToggleTheme: "Thema wisselen" },
   footer: { apps: "Tools", company: "Bedrijf", about: "Over ons", contact: "Contact", faq: "FAQ", blog: "Blog", legal: "Juridisch", privacy: "Privacybeleid", terms: "Gebruiksvoorwaarden", copyright: "© 2026 ToolPop. Alle rechten voorbehouden.", tagline: "Gratis online tools voor PDF, afbeeldingen en meer. Zonder registratie.", madeWith: "Met liefde gemaakt voor iedereen" },
   search: { noResults: "Geen resultaten gevonden" },
   nav: { pdf: "PDF", image: "Afbeelding", text: "Tekst", converter: "Converter", calculator: "Rekenmachine" },

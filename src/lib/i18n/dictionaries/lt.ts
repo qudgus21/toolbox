@@ -78,7 +78,7 @@ const lt: Dictionary = {
     grayscale: { title: "Pilki tonai", description: "Konvertuokite PDF spalvas į juodą ir baltą." },
 
     // Optimizuoti
-    compress: { title: "Suspausti PDF", description: "Shrink your PDF files significantly. Choose the compression method that fits your needs." },
+    compress: { title: "Suspausti PDF", description: "Gerokai sumažinkite PDF failų dydį. Pasirinkite jūsų poreikiams tinkamą glaudinimo metodą." },
     repair: { title: "Taisyti PDF", description: "Pataisykite pažeistus arba sugadintus PDF failus." },
     ocr: { title: "OCR PDF", description: "Padarykite nuskaitytus PDF ieškotinus naudojant teksto atpažinimą." },
     "web-optimize": { title: "Žiniatinklio optimizavimas", description: "Optimizuokite PDF greitesniam įkėlimui internete." },
@@ -134,6 +134,7 @@ const lt: Dictionary = {
     shareSubtitle: "Papasakokite kitiems!",
     shareCopied: "Nukopijuota!",
     shareCopyLink: "Kopijuoti nuorodą",
+    ariaActions: "Veiksmai",
     unknownError: "Įvyko nežinoma klaida",
     pagesSelected: "puslapių pasirinkta",
     selectAll: "Pasirinkti viską",
@@ -575,6 +576,7 @@ const lt: Dictionary = {
     pageOf: "puslapis",
     resetAll: "Atstatyti",
     noCropArea: "Pasirinkite sritį peržiūroje",
+    loadingPdf: "Kraunamas PDF...",
   },
   flattenTool: {
     flattenButton: "Suglaudinti",
@@ -742,6 +744,7 @@ const lt: Dictionary = {
     addPageRedaction: "Pridėti puslapio redagavimą",
     pageRedaction: "Visas puslapis",
     toolsPanelTitle: "Įrankiai",
+    loadingPdf: "Kraunamas PDF...",
   },
   editPdfTool: {
     dropFile: "Pasirinkite PDF failą",
@@ -814,6 +817,7 @@ const lt: Dictionary = {
     changeFile: "Keisti failą",
     imageUploadError: "Nepavyko įkelti vaizdo",
     confirmClearAll: "Ištrinti visus elementus?",
+    loadingPdf: "Kraunamas PDF...",
   },
   annotateTool: {
     toolSelect: "Pasirinkti",
@@ -890,6 +894,7 @@ const lt: Dictionary = {
     noAnnotations: "Kol kas anotacijų nėra",
     annotationsOnPage: "{page} puslapyje",
     addComment: "Pridėti komentarą",
+    loadingPdf: "Kraunamas PDF...",
   },
   signTool: {
     fieldSignature: "Parašas",
@@ -944,6 +949,8 @@ const lt: Dictionary = {
     rotation: "Pasukimas",
     changeFile: "Keisti failą",
     selectedElement: "Pasirinktas elementas",
+    loadingPdf: "Kraunamas PDF...",
+    altSignature: "Parašas",
   },
   watermarkTool: {
     tabText: "Tekstas",
@@ -986,6 +993,7 @@ const lt: Dictionary = {
     ptUnit: "tšk.",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Vandens ženklas",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Puslapiai lape",
@@ -1139,6 +1147,7 @@ const lt: Dictionary = {
     prev: "Ankstesnis",
     next: "Kitas",
     page: "Puslapis",
+    paginationLabel: 'Puslapių naršymas',
   },
   toolContent: {
     merge: {

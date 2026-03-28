@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Tanpa akaun, tanpa e-mel. Buka sahaja alat dan mula bekerja.",
   },
   cta: { title: "Bersedia untuk mula?", subtitle: "Tanpa pemasangan, tanpa pendaftaran, tanpa bayaran — hanya satu klik sahaja.", button: "Lihat Semua Alat" },
-  common: { shareTitle: "Kongsi", shareSubtitle: "Beritahu rakan anda tentang ToolPop!", shareCopyLink: "Salin pautan", shareCopied: "Disalin!", ariaClose: "Tutup", ariaMenu: "Menu", ariaShare: "Kongsi" },
+  common: { shareTitle: "Kongsi", shareSubtitle: "Beritahu rakan anda tentang ToolPop!", shareCopyLink: "Salin pautan", shareCopied: "Disalin!", ariaClose: "Tutup", ariaMenu: "Menu", ariaShare: "Kongsi", ariaToggleTheme: "Tukar tema" },
   footer: { apps: "Alat", company: "Syarikat", about: "Tentang Kami", contact: "Hubungi", faq: "Soalan Lazim", blog: "Blog", legal: "Undang-undang", privacy: "Dasar Privasi", terms: "Terma Perkhidmatan", copyright: "© 2026 ToolPop. Hak cipta terpelihara.", tagline: "Alat dalam talian percuma untuk PDF, imej dan lain-lain. Tanpa pendaftaran.", madeWith: "Dibuat dengan kasih untuk semua" },
   search: { noResults: "Tiada hasil ditemui" },
   nav: { pdf: "PDF", image: "Imej", text: "Teks", converter: "Penukar", calculator: "Kalkulator" },

@@ -332,6 +332,7 @@ const hi: ImageDictionary = {
       y: "Y",
       width: "चौड़ाई",
       height: "ऊंचाई",
+      altCropPreview: "क्रॉप पूर्वावलोकन",
     },
     rotate: {
       quickRotate: "तुरंत घुमाएं",
@@ -392,6 +393,7 @@ const hi: ImageDictionary = {
       noItems: "टेक्स्ट जोड़ने के लिए + क्लिक करें",
       bgColor: "पृष्ठभूमि",
       transparent: "कोई नहीं",
+      altPreview: "पूर्वावलोकन",
     },
     addBorder: {
       borderWidth: "बॉर्डर मोटाई",

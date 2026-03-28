@@ -2,7 +2,9 @@ import type { CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const age = Number(fields.age);
   const restingHR = Number(fields.restingHR || 0);
 
@@ -49,11 +51,11 @@ export function process(
       { label: 'Max HR Formula', value: `220 - ${age} = ${maxHR} bpm`, highlight: true },
       ...(useKarvonen
         ? [
-            { label: 'Method', value: 'Karvonen (uses resting HR)' },
+            { label: 'Method', value: msg['Karvonen (uses resting HR)'] ?? 'Karvonen (uses resting HR)' },
             { label: 'HR Reserve', value: `${maxHR} - ${restingHR} = ${hrReserve} bpm` },
             { label: 'Target HR', value: '(HR Reserve × %intensity) + Resting HR' },
           ]
-        : [{ label: 'Method', value: 'Standard (% of Max HR)' }]),
+        : [{ label: 'Method', value: msg['Standard (% of Max HR)'] ?? 'Standard (% of Max HR)' }]),
     ],
   };
 }

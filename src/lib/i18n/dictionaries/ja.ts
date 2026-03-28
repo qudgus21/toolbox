@@ -134,6 +134,7 @@ const ja: Dictionary = {
     shareSubtitle: "みんなに教えよう!",
     shareCopied: "コピーしました!",
     shareCopyLink: "リンクをコピー",
+    ariaActions: "操作",
     unknownError: "不明なエラーが発生しました",
     pagesSelected: "ページ選択中",
     selectAll: "すべて選択",
@@ -575,6 +576,7 @@ const ja: Dictionary = {
     pageOf: "ページ",
     resetAll: "リセット",
     noCropArea: "プレビューで領域を選択してください",
+    loadingPdf: "PDFを読み込み中...",
   },
   flattenTool: {
     flattenButton: "フラット化",
@@ -742,6 +744,7 @@ const ja: Dictionary = {
     addPageRedaction: "ページ墨消しを追加",
     pageRedaction: "ページ全体",
     toolsPanelTitle: "ツール",
+    loadingPdf: "PDFを読み込み中...",
   },
   editPdfTool: {
     dropFile: "PDFファイルを選択",
@@ -814,6 +817,7 @@ const ja: Dictionary = {
     changeFile: "ファイルを変更",
     imageUploadError: "画像を読み込めません",
     confirmClearAll: "すべての要素を削除しますか？",
+    loadingPdf: "PDFを読み込み中...",
   },
   annotateTool: {
     toolSelect: "選択",
@@ -890,6 +894,7 @@ const ja: Dictionary = {
     noAnnotations: "注釈はまだありません",
     annotationsOnPage: "{page}ページ目",
     addComment: "コメントを追加",
+    loadingPdf: "PDFを読み込み中...",
   },
   signTool: {
     fieldSignature: "署名",
@@ -944,6 +949,8 @@ const ja: Dictionary = {
     rotation: "回転",
     changeFile: "ファイルを変更",
     selectedElement: "選択中の要素",
+    loadingPdf: "PDFを読み込み中...",
+    altSignature: "署名",
   },
   watermarkTool: {
     tabText: "テキスト",
@@ -986,6 +993,7 @@ const ja: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "透かし",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "1枚あたりのページ数",
@@ -1139,6 +1147,7 @@ const ja: Dictionary = {
     prev: "前へ",
     next: "次へ",
     page: "ページ",
+    paginationLabel: 'ページナビゲーション',
   },
   toolContent: {
     merge: {

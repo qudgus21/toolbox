@@ -134,6 +134,7 @@ const it: Dictionary = {
     shareSubtitle: "Spargi la voce!",
     shareCopied: "Copiato!",
     shareCopyLink: "Copia link",
+    ariaActions: "Azioni",
     unknownError: "Si è verificato un errore sconosciuto",
     pagesSelected: "pagine selezionate",
     selectAll: "Seleziona tutto",
@@ -575,6 +576,7 @@ const it: Dictionary = {
     pageOf: "pagina",
     resetAll: "Ripristina",
     noCropArea: "Seleziona un'area nell'anteprima",
+    loadingPdf: "Caricamento del PDF...",
   },
   flattenTool: {
     flattenButton: "Appiattisci",
@@ -742,6 +744,7 @@ const it: Dictionary = {
     addPageRedaction: "Aggiungi oscuramento pagina",
     pageRedaction: "Pagina intera",
     toolsPanelTitle: "Strumenti",
+    loadingPdf: "Caricamento del PDF...",
   },
   editPdfTool: {
     dropFile: "Seleziona un file PDF",
@@ -814,6 +817,7 @@ const it: Dictionary = {
     changeFile: "Cambia file",
     imageUploadError: "Impossibile caricare l'immagine",
     confirmClearAll: "Eliminare tutti gli elementi?",
+    loadingPdf: "Caricamento del PDF...",
   },
   annotateTool: {
     toolSelect: "Seleziona",
@@ -890,6 +894,7 @@ const it: Dictionary = {
     noAnnotations: "Nessuna annotazione",
     annotationsOnPage: "a pagina {page}",
     addComment: "Aggiungi commento",
+    loadingPdf: "Caricamento del PDF...",
   },
   signTool: {
     fieldSignature: "Firma",
@@ -944,6 +949,8 @@ const it: Dictionary = {
     rotation: "Rotazione",
     changeFile: "Cambia file",
     selectedElement: "Elemento selezionato",
+    loadingPdf: "Caricamento del PDF...",
+    altSignature: "Firma",
   },
   watermarkTool: {
     tabText: "Testo",
@@ -986,6 +993,7 @@ const it: Dictionary = {
     ptUnit: "pt",
     mmUnit: "mm",
     degUnit: "°",
+    altWatermark: "Filigrana",
   },
   pagesPerSheetTool: {
     pagesPerSheet: "Pagine per foglio",
@@ -1139,6 +1147,7 @@ const it: Dictionary = {
     prev: "Precedente",
     next: "Successivo",
     page: "Pagina",
+    paginationLabel: 'Navigazione pagine',
   },
   toolContent: {
     merge: {

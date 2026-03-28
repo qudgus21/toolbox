@@ -35,7 +35,7 @@ export function process(
       { label: 'Exam Weight', value: `${fmt(examWeight)}%` },
       { label: 'Target Grade', value: `${fmt(targetGrade)}%` },
       { label: 'Score Needed', value: `${fmt(needed)}%` },
-      { label: 'Achievable', value: isPossible ? 'Yes' : 'No' },
+      { label: 'Achievable', value: isPossible },
     ],
     breakdown: [
       { label: 'Formula', value: 'Needed = (Target - Current × (1 - ExamWeight/100)) / (ExamWeight/100)' },

@@ -27,6 +27,7 @@ interface BlogListProps {
   prevLabel: string;
   nextLabel: string;
   pageLabel: string;
+  paginationLabel: string;
 }
 
 export function BlogList({
@@ -37,6 +38,7 @@ export function BlogList({
   prevLabel,
   nextLabel,
   pageLabel,
+  paginationLabel,
 }: BlogListProps) {
   const [page, setPage] = useState(1);
   const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
@@ -75,7 +77,7 @@ export function BlogList({
       </div>
 
       {totalPages > 1 && (
-        <nav className="mt-10 flex items-center justify-center gap-2" aria-label="Pagination">
+        <nav className="mt-10 flex items-center justify-center gap-2" aria-label={paginationLabel}>
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}

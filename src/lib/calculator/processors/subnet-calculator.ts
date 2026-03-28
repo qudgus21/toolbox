@@ -54,7 +54,7 @@ export function process(
       { label: 'Last Host', value: lastHost },
       { label: 'Total Hosts', value: totalHosts.toLocaleString('en-US') },
       { label: 'IP Class', value: ipClass },
-      { label: 'Private', value: isPrivate ? 'Yes' : 'No' },
+      { label: 'Private', value: isPrivate },
     ],
     breakdown: [
       { label: 'IP (binary)', value: toBinary(ipInt) },

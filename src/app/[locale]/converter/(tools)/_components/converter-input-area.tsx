@@ -24,6 +24,7 @@ interface ConverterInputAreaProps {
   unitOptions?: { value: string; label: string }[];
   datetimeHint?: string;
   className?: string;
+  colorPickerLabel?: string;
 }
 
 const INPUT_ICONS = {
@@ -53,6 +54,7 @@ export function ConverterInputArea({
   unitOptions,
   datetimeHint,
   className,
+  colorPickerLabel,
 }: ConverterInputAreaProps) {
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
@@ -119,6 +121,7 @@ export function ConverterInputArea({
           value={value}
           onChange={onChange}
           placeholder={placeholder ?? "#ff0000"}
+          colorPickerLabel={colorPickerLabel}
         />
       )}
 
@@ -271,8 +274,8 @@ const UnitInput = forwardRef<
 
 const ColorInput = forwardRef<
   HTMLInputElement,
-  { value: string; onChange: (v: string) => void; placeholder: string }
->(function ColorInput({ value, onChange, placeholder }, ref) {
+  { value: string; onChange: (v: string) => void; placeholder: string; colorPickerLabel?: string }
+>(function ColorInput({ value, onChange, placeholder, colorPickerLabel }, ref) {
   // Parse value to get a valid color for the picker
   const pickerValue = (() => {
     const trimmed = value.trim();
@@ -296,7 +299,7 @@ const ColorInput = forwardRef<
             type="color"
             value={pickerValue}
             onChange={(e) => onChange(e.target.value)}
-            aria-label="Color picker"
+            aria-label={colorPickerLabel ?? "Color picker"}
             className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
           />
         </div>

@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Sonraí",
     pageNotFound: "Tiontaire gan aimsiú",
     goHome: "Ar ais go gach tiontaire",
+    colorPickerLabel: "Roghnóir dathanna",
   },
   toolOptions: {
     fromUnit: "Ó",

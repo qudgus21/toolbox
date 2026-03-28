@@ -2,7 +2,9 @@ import type { CalculatorBreakdownRow, CalculatorResult } from '../types';
 
 export function process(
   fields: Record<string, unknown>,
+  options?: Record<string, unknown>,
 ): CalculatorResult {
+  const msg = (options?._messages as Record<string, string>) ?? {};
   const a = Number(fields.a);
   const b = Number(fields.b);
   const c = Number(fields.c);
@@ -59,7 +61,7 @@ export function process(
     breakdown.push(
       { label: 'Root 1 (complex)', value: x1, highlight: true },
       { label: 'Root 2 (complex)', value: x2, highlight: true },
-      { label: 'Note', value: 'No real roots' },
+      { label: 'Note', value: msg['No real roots'] ?? 'No real roots' },
     );
   }
 

@@ -164,6 +164,7 @@ const et: ImageDictionary = {
       y: "Y",
       width: "Laius",
       height: "Korgus",
+      altCropPreview: "Kärpimise eelvaade",
     },
     rotate: {
       quickRotate: "Kiire pooramine",
@@ -224,6 +225,7 @@ const et: ImageDictionary = {
       noItems: "Vajuta + teksti lisamiseks",
       bgColor: "Taust",
       transparent: "Puudub",
+      altPreview: "Eelvaade",
     },
     addBorder: {
       borderWidth: "Aare laius",

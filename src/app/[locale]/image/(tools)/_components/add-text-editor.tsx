@@ -224,7 +224,7 @@ export function AddTextEditor({
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={imageUrl}
-                alt="Preview"
+                alt={labels.altPreview ?? "Preview"}
                 draggable={false}
                 className="pointer-events-none absolute inset-0"
                 style={{ width: displayW, height: displayH }}

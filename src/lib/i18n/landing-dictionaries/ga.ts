@@ -34,7 +34,7 @@ const dict: LandingDictionary = {
     noSignupDesc: "Gan cuntas, gan ríomhphost. Oscail uirlis agus tosaigh ag obair.",
   },
   cta: { title: "Réidh le tosú?", subtitle: "Gan suiteáil, gan clárú, gan íocaíocht — cliceáil amháin uait.", button: "Brabhsáil Gach Uirlis" },
-  common: { shareTitle: "Roinn", shareSubtitle: "Inis do do chairde faoi ToolPop!", shareCopyLink: "Cóipeáil nasc", shareCopied: "Cóipeáilte!", ariaClose: "Dún", ariaMenu: "Roghchlár", ariaShare: "Roinn" },
+  common: { shareTitle: "Roinn", shareSubtitle: "Inis do do chairde faoi ToolPop!", shareCopyLink: "Cóipeáil nasc", shareCopied: "Cóipeáilte!", ariaClose: "Dún", ariaMenu: "Roghchlár", ariaShare: "Roinn", ariaToggleTheme: "Athraigh téama" },
   footer: { apps: "Uirlisí", company: "Cuideachta", about: "Fúinn", contact: "Teagmháil", faq: "Ceisteanna Coitianta", blog: "Blag", legal: "Eolas Dlíthiúil", privacy: "Polasaí Príobháideachais", terms: "Téarmaí Seirbhíse", copyright: "© 2026 ToolPop. Gach ceart ar cosaint.", tagline: "Uirlisí ar líne saor in aisce do PDF, íomhánna agus tuilleadh. Gan clárú.", madeWith: "Déanta le grá do chách" },
   search: { noResults: "Níor aimsíodh torthaí" },
   nav: { pdf: "PDF", image: "Íomhá", text: "Téacs", converter: "Tiontaire", calculator: "Áireamhán" },

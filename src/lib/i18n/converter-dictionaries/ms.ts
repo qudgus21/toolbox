@@ -316,6 +316,7 @@ const dict: ConverterDictionary = {
     details: "Butiran",
     pageNotFound: "Penukar tidak ditemui",
     goHome: "Kembali ke semua penukar",
+    colorPickerLabel: "Pemilih warna",
   },
   toolOptions: {
     fromUnit: "Dari",
