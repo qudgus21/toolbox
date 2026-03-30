@@ -10,7 +10,11 @@ import type { CalculatorInputType, CalculatorFieldDefinition } from "@/lib/calcu
 import { useCalculatorResult } from "@/lib/calculator/use-calculator-processor";
 import { CalculatorInputArea } from "./calculator-input-area";
 import { CalculatorOutputArea } from "./calculator-output-area";
-import { RelatedTools } from "./related-tools";
+import dynamic from "next/dynamic";
+
+const RelatedTools = dynamic(() =>
+  import("./related-tools").then((m) => ({ default: m.RelatedTools }))
+);
 
 interface CalculatorToolPageClientProps {
   slug: string;
