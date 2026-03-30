@@ -141,12 +141,12 @@ export default async function LandingPage({
       <section className="relative overflow-hidden pt-14 pb-16 sm:pt-20 sm:pb-20">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          {/* Gradient orbs */}
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-purple-400/15 dark:bg-purple-500/10 blur-3xl" />
-          <div className="absolute -top-12 -right-32 w-80 h-80 rounded-full bg-blue-400/10 dark:bg-blue-500/8 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-300/5 dark:bg-purple-400/5 blur-3xl" />
-          {/* Grid pattern */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.03] dark:opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
+          {/* Gradient orbs — hidden on mobile for performance (blur-3xl is GPU-heavy) */}
+          <div className="hidden sm:block absolute -top-24 -left-24 w-96 h-96 rounded-full bg-purple-400/15 dark:bg-purple-500/10 blur-3xl" />
+          <div className="hidden sm:block absolute -top-12 -right-32 w-80 h-80 rounded-full bg-blue-400/10 dark:bg-blue-500/8 blur-3xl" />
+          <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-300/5 dark:bg-purple-400/5 blur-3xl" />
+          {/* Grid pattern — hidden on mobile for performance */}
+          <svg className="hidden sm:block absolute inset-0 w-full h-full opacity-[0.03] dark:opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="hero-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -186,7 +186,7 @@ export default async function LandingPage({
                   <Link
                     key={app.slug}
                     href={`/${locale}/${app.slug}`}
-                    className={`inline-flex items-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-semibold shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${
+                    className={`inline-flex items-center gap-2.5 rounded-xl px-6 py-3.5 text-sm font-semibold shadow-md sm:transition-all sm:duration-200 sm:hover:-translate-y-0.5 sm:hover:shadow-lg ${
                       i === 0
                         ? "bg-primary text-primary-foreground hover:bg-primary-hover"
                         : "bg-background-elevated border border-border text-foreground hover:border-foreground-subtle"

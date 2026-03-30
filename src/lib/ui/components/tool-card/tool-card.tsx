@@ -18,7 +18,7 @@ export const ToolCard = forwardRef<HTMLDivElement, ToolCardProps>(
   ({ href, icon: _Icon, title, description, emoji, toolIcon, iconColorClasses: _colors, className, linkComponent: LinkEl = "a", ...props }, ref) => (
     <div
       ref={ref}
-      className="h-full transition-transform duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02]"
+      className="h-full sm:transition-transform sm:duration-200 sm:ease-out sm:hover:-translate-y-1 sm:hover:scale-[1.02]"
       {...props}
     >
       <LinkEl
