@@ -14,7 +14,11 @@ import { usePdfPageCounts } from "./use-pdf-page-counts";
 import { ProcessingOverlay } from "./processing-overlay";
 import { ResultCard } from "./result-card";
 import { ErrorMessage } from "./error-message";
-import { RelatedTools } from "./related-tools";
+import dynamic from "next/dynamic";
+
+const RelatedTools = dynamic(() =>
+  import("./related-tools").then((m) => ({ default: m.RelatedTools }))
+);
 import { PageSelectorModal } from "./page-selector-modal";
 import { fileId } from "./file-list";
 import { useToolState } from "./use-tool-state";

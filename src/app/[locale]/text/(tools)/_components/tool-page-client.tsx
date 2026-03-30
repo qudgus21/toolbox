@@ -11,7 +11,11 @@ import { TextInputArea } from "./text-input-area";
 import { TextOutputArea } from "./text-output-area";
 import { StatsDisplay } from "./stats-display";
 import { ToolOptions } from "./tool-options";
-import { RelatedTools } from "./related-tools";
+import dynamic from "next/dynamic";
+
+const RelatedTools = dynamic(() =>
+  import("./related-tools").then((m) => ({ default: m.RelatedTools }))
+);
 
 interface TextToolPageClientProps {
   slug: string;

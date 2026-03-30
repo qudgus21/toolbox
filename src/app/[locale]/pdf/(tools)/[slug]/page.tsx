@@ -4,7 +4,7 @@ import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, getToolBySlug } from "@/lib/pdf/tools";
 import { ToolPageClient } from "../_components/tool-page-client";
-import { RelatedTools } from "../_components/related-tools";
+
 
 // Only pre-generate key locales to stay within Vercel's 80MB body limit.
 // Other locales are generated on-demand (ISR).

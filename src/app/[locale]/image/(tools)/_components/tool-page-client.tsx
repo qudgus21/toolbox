@@ -9,7 +9,11 @@ import { hasProcessor } from "@/lib/image/processor-registry";
 import type { ImageDictionary } from "@/lib/i18n/image-config";
 import { ProcessingOverlay } from "./processing-overlay";
 import { ResultCard } from "./result-card";
-import { RelatedTools } from "./related-tools";
+import dynamic from "next/dynamic";
+
+const RelatedTools = dynamic(() =>
+  import("./related-tools").then((m) => ({ default: m.RelatedTools }))
+);
 import { ErrorMessage } from "./error-message";
 import { useImageDimensions } from "./use-image-dimensions";
 import { ImagePreview } from "./image-preview";
