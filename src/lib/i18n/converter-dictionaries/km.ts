@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "ត្រជាក់ខ្លាំង", cool: "ត្រជាក់", moderatelyCool: "ត្រជាក់មធ្យម",
     moderate: "មធ្យម", moderatelyHot: "ក្ដៅមធ្យម",
     hot: "ក្ដៅ", veryHot: "ក្ដៅខ្លាំង", extremelyHot: "ក្ដៅខ្លាំងបំផុត",
+    gasMark: "Gas Mark",
     original: "ដើម",
     from: "ពី", to: "ទៅ",
     totalDays: "ថ្ងៃសរុប", weeksDays: "សប្តាហ៍ + ថ្ងៃ",

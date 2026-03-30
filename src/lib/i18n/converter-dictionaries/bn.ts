@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "খুব ঠান্ডা", cool: "ঠান্ডা", moderatelyCool: "মাঝারি ঠান্ডা",
     moderate: "মাঝারি", moderatelyHot: "মাঝারি গরম",
     hot: "গরম", veryHot: "খুব গরম", extremelyHot: "অত্যন্ত গরম",
+    gasMark: "গ্যাস মার্ক",
     original: "মূল",
     from: "থেকে", to: "তে",
     totalDays: "মোট দিন", weeksDays: "সপ্তাহ + দিন",

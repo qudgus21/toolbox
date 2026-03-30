@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Ļoti vēss", cool: "Vēss", moderatelyCool: "Mēreni vēss",
     moderate: "Mērens", moderatelyHot: "Mēreni karsts",
     hot: "Karsts", veryHot: "Ļoti karsts", extremelyHot: "Ārkārtīgi karsts",
+    gasMark: "Gas Mark",
     original: "Oriģināls",
     from: "No", to: "Līdz",
     totalDays: "Kopā dienas", weeksDays: "Nedēļas + Dienas",

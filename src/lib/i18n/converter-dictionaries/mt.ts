@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Kiesaħ ħafna", cool: "Kiesaħ", moderatelyCool: "Kiesaħ moderatament",
     moderate: "Moderat", moderatelyHot: "Sħun moderatament",
     hot: "Sħun", veryHot: "Sħun ħafna", extremelyHot: "Estremament sħun",
+    gasMark: "Gas Mark",
     original: "Oriġinali",
     from: "Minn", to: "Għal",
     totalDays: "Total Ġranet", weeksDays: "Ġimgħat + Ġranet",

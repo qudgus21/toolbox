@@ -67,6 +67,18 @@ export function process(
   const value = parseFloat(input);
   if (isNaN(value)) return { output: "" };
 
+  const msg = (options?._messages ?? {}) as Record<string, string>;
+  const descMap: Record<string, string> = {
+    "Very Cool": msg.veryCool ?? "Very Cool",
+    "Cool": msg.cool ?? "Cool",
+    "Moderately Cool": msg.moderatelyCool ?? "Moderately Cool",
+    "Moderate": msg.moderate ?? "Moderate",
+    "Moderately Hot": msg.moderatelyHot ?? "Moderately Hot",
+    "Hot": msg.hot ?? "Hot",
+    "Very Hot": msg.veryHot ?? "Very Hot",
+    "Extremely Hot": msg.extremelyHot ?? "Extremely Hot",
+  };
+
   const fromUnit = (options?.fromUnit as string) || "C";
 
   let celsius: number;
@@ -87,12 +99,14 @@ export function process(
   const fahrenheit = celsiusToFahrenheit(celsius);
   const gasMark = celsiusToGasMark(celsius);
   const description = findClosestDescription(celsius);
+  const localDesc = descMap[description] ?? description;
 
-  const output = `${formatNumber(celsius)}°C = ${formatNumber(fahrenheit)}°F = Gas Mark ${formatNumber(gasMark)} (${description})`;
+  const gasMarkLabel = msg.gasMark ?? "Gas Mark";
+  const output = `${formatNumber(celsius)}°C = ${formatNumber(fahrenheit)}°F = ${gasMarkLabel} ${formatNumber(gasMark)} (${localDesc})`;
 
   const table = COMMON_TEMPS.map((entry) => ({
-    label: `${entry.celsius}°C — ${entry.description}`,
-    value: `${entry.fahrenheit}°F / Gas Mark ${entry.gasmark}`,
+    label: `${entry.celsius}°C — ${descMap[entry.description] ?? entry.description}`,
+    value: `${entry.fahrenheit}°F / ${gasMarkLabel} ${entry.gasmark}`,
   }));
 
   return { output, table };

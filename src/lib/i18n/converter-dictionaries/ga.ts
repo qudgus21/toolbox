@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "An-fhionnuar", cool: "Fionnuar", moderatelyCool: "Measartha fionnuar",
     moderate: "Measartha", moderatelyHot: "Measartha te",
     hot: "Te", veryHot: "An-te", extremelyHot: "Thar a bheith te",
+    gasMark: "Gas Mark",
     original: "Bunaidh",
     from: "Ó", to: "Go",
     totalDays: "Laethanta iomlána", weeksDays: "Seachtainí + Laethanta",

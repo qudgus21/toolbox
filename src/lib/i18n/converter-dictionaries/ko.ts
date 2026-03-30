@@ -493,6 +493,7 @@ const dict: ConverterDictionary = {
     hot: "높음",
     veryHot: "매우 높음",
     extremelyHot: "극고온",
+    gasMark: "가스 마크",
     original: "원본",
     from: "시작",
     to: "종료",

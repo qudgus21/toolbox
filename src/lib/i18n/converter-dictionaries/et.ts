@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Väga jahe", cool: "Jahe", moderatelyCool: "Mõõdukalt jahe",
     moderate: "Mõõdukas", moderatelyHot: "Mõõdukalt kuum",
     hot: "Kuum", veryHot: "Väga kuum", extremelyHot: "Äärmiselt kuum",
+    gasMark: "Gas Mark",
     original: "Originaal",
     from: "Alates", to: "Kuni",
     totalDays: "Päevi kokku", weeksDays: "Nädalad + Päevad",
