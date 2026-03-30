@@ -11,7 +11,11 @@ import { useConverterResult } from "@/lib/converter/use-converter-processor";
 import { ConverterInputArea } from "./converter-input-area";
 import { ConverterOutputArea } from "./converter-output-area";
 import { ToolOptions, DEFAULT_UNITS, getUnits } from "./tool-options";
-import { RelatedTools } from "./related-tools";
+import dynamic from "next/dynamic";
+
+const RelatedTools = dynamic(() =>
+  import("./related-tools").then((m) => ({ default: m.RelatedTools }))
+);
 
 interface ConverterToolPageClientProps {
   slug: string;
