@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown, Globe } from "lucide-react";
@@ -87,6 +87,8 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
   // Extract path after locale: /ko/pdf/merge → /pdf/merge
   const pathAfterLocale = pathname.replace(/^\/[^/]+/, "") || "";
 
+  const sortedLocales = useMemo(() => getSortedLocales(locale), [locale]);
+
   // Auto-detect app from path if not provided
   const detectedApp = app ?? (
     pathname.includes("/pdf") ? "pdf" :
@@ -126,7 +128,7 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
 
       {open && (
         <div className="absolute right-0 top-full mt-1 z-50 max-h-80 w-52 overflow-y-auto rounded-lg border border-border bg-background shadow-lg">
-          {getSortedLocales(locale).map(([code, name]) => (
+          {sortedLocales.map(([code, name]) => (
             <Link
               key={code}
               href={`/${code}${pathAfterLocale}`}
