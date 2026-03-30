@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Πολύ χαμηλή", cool: "Χαμηλή", moderatelyCool: "Μέτρια χαμηλή",
     moderate: "Μέτρια", moderatelyHot: "Μέτρια υψηλή",
     hot: "Υψηλή", veryHot: "Πολύ υψηλή", extremelyHot: "Εξαιρετικά υψηλή",
+    gasMark: "Gas Mark",
     original: "Αρχικό",
     from: "Από", to: "Σε",
     totalDays: "Σύνολο ημερών", weeksDays: "Εβδομάδες + Ημέρες",

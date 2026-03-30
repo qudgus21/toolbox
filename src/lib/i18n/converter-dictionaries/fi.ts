@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Hyvin viileä", cool: "Viileä", moderatelyCool: "Kohtalaisen viileä",
     moderate: "Kohtalainen", moderatelyHot: "Kohtalaisen kuuma",
     hot: "Kuuma", veryHot: "Hyvin kuuma", extremelyHot: "Erittäin kuuma",
+    gasMark: "Gas Mark",
     original: "Alkuperäinen",
     from: "Mistä", to: "Mihin",
     totalDays: "Päiviä yhteensä", weeksDays: "Viikot + Päivät",

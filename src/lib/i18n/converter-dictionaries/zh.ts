@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "非常低温", cool: "低温", moderatelyCool: "较低温",
     moderate: "中温", moderatelyHot: "较高温",
     hot: "高温", veryHot: "非常高温", extremelyHot: "极高温",
+    gasMark: "煤气标号",
     original: "原始值",
     from: "从", to: "到",
     totalDays: "总天数", weeksDays: "周 + 天",

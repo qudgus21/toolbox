@@ -21,8 +21,31 @@ import { useToolState } from "./use-tool-state";
 import { ToolLoadedContent } from "./tool-loaded-content";
 import { useTrack, useToolViewTracking, pdfEvents } from "@/lib/analytics";
 
-import type { ToolPageClientProps } from "./tool-page-types";
+import type { ToolPageClientProps, CommonLabels } from "./tool-page-types";
 
+const PDF_ERROR_MAP: Record<string, string> = {
+  "No file provided": "errorNoFile",
+  "No pages selected for deletion": "errorNoPages",
+  "No pages selected for extraction": "errorNoPages",
+  "No valid pages selected for deletion": "errorNoValidPages",
+  "No valid pages selected for extraction": "errorNoValidPages",
+  "Cannot delete all pages from PDF": "errorCannotDeleteAll",
+  "Cannot extract all pages — use download instead": "errorCannotExtractAll",
+  "Two PDF files are required": "errorTwoFilesRequired",
+  "No redactions specified": "errorNoRedactions",
+  "Cannot remove all pages": "errorCannotRemoveAll",
+};
+
+function translatePdfError(
+  error: string | null | undefined,
+  labels: CommonLabels,
+): string | null {
+  if (!error) return null;
+  const key = PDF_ERROR_MAP[error] as keyof CommonLabels | undefined;
+  if (!key) return error;
+  const translated = labels[key];
+  return typeof translated === "string" ? translated : error;
+}
 
 export type { ToolPageClientProps };
 
@@ -332,7 +355,7 @@ export function ToolPageClient({
         {stage === "error" && (
           <div>
             <ErrorMessage
-              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : error ?? labels.unknownError ?? ""}
+              message={error === "NO_IMAGES_FOUND" && extractImagesLabels ? extractImagesLabels.noImagesFound : translatePdfError(error, labels) ?? labels.unknownError ?? ""}
               onRetry={reset}
               retryLabel={labels.tryAgain}
             />

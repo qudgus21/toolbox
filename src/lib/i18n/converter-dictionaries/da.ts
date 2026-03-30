@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Meget kølig", cool: "Kølig", moderatelyCool: "Moderat kølig",
     moderate: "Moderat", moderatelyHot: "Moderat varm",
     hot: "Varm", veryHot: "Meget varm", extremelyHot: "Ekstremt varm",
+    gasMark: "Gas Mark",
     original: "Original",
     from: "Fra", to: "Til",
     totalDays: "Dage i alt", weeksDays: "Uger + Dage",

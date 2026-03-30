@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "เย็นมาก", cool: "เย็น", moderatelyCool: "ค่อนข้างเย็น",
     moderate: "ปานกลาง", moderatelyHot: "ค่อนข้างร้อน",
     hot: "ร้อน", veryHot: "ร้อนมาก", extremelyHot: "ร้อนจัด",
+    gasMark: "แก๊สมาร์ก",
     original: "ต้นฉบับ",
     from: "จาก", to: "เป็น",
     totalDays: "จำนวนวันทั้งหมด", weeksDays: "สัปดาห์ + วัน",

@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Jako hladno", cool: "Hladno", moderatelyCool: "Umjereno hladno",
     moderate: "Umjereno", moderatelyHot: "Umjereno vruće",
     hot: "Vruće", veryHot: "Jako vruće", extremelyHot: "Iznimno vruće",
+    gasMark: "Gas Mark",
     original: "Izvorno",
     from: "Od", to: "Do",
     totalDays: "Ukupno dana", weeksDays: "Tjedni + Dani",
