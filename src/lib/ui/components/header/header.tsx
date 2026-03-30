@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 
 export interface HeaderProps {
@@ -30,7 +28,7 @@ export function Header({ logo, nav, children, className }: HeaderProps) {
 
         {/* Nav — 가운데 */}
         {nav && (
-          <div className="flex-1 min-w-4 flex justify-center">
+          <div className="flex-1 min-w-0 flex justify-center overflow-hidden">
             {nav}
           </div>
         )}

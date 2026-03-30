@@ -6,10 +6,10 @@ import { ThemeToggle } from "@/lib/ui/components/theme-toggle/theme-toggle";
 import { LanguageSwitcher } from "@/lib/ui/components/language-switcher/language-switcher";
 import { ShareButton } from "@/lib/ui/components/share-button";
 import { MobileTabBar } from "@/lib/ui/components/mobile-tab-bar/mobile-tab-bar";
+import { HtmlAttrsSync } from "./html-attrs-sync";
 import { type Locale, locales } from "@/lib/i18n";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
-import { HtmlAttrsSync } from "./html-attrs-sync";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
