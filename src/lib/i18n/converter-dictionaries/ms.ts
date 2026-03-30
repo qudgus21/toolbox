@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Sangat sejuk", cool: "Sejuk", moderatelyCool: "Sederhana sejuk",
     moderate: "Sederhana", moderatelyHot: "Sederhana panas",
     hot: "Panas", veryHot: "Sangat panas", extremelyHot: "Amat panas",
+    gasMark: "Gas Mark",
     original: "Asal",
     from: "Dari", to: "Ke",
     totalDays: "Jumlah Hari", weeksDays: "Minggu + Hari",

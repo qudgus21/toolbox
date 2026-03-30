@@ -64,6 +64,14 @@ export interface CommonLabels {
   page?: string;
   confirm?: string;
   ariaActions?: string;
+  errorNoFile?: string;
+  errorNoPages?: string;
+  errorNoValidPages?: string;
+  errorCannotDeleteAll?: string;
+  errorCannotExtractAll?: string;
+  errorTwoFilesRequired?: string;
+  errorNoRedactions?: string;
+  errorCannotRemoveAll?: string;
 }
 
 export interface SplitLabels {

@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "بارد جدًا", cool: "بارد", moderatelyCool: "بارد نسبيًا",
     moderate: "معتدل", moderatelyHot: "حار نسبيًا",
     hot: "حار", veryHot: "حار جدًا", extremelyHot: "شديد الحرارة",
+    gasMark: "علامة الغاز",
     original: "الأصلي",
     from: "من", to: "إلى",
     totalDays: "إجمالي الأيام", weeksDays: "أسابيع + أيام",

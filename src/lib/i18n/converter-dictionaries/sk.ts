@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Veľmi studené", cool: "Studené", moderatelyCool: "Mierne studené",
     moderate: "Stredné", moderatelyHot: "Mierne horúce",
     hot: "Horúce", veryHot: "Veľmi horúce", extremelyHot: "Extrémne horúce",
+    gasMark: "Gas Mark",
     original: "Originál",
     from: "Od", to: "Do",
     totalDays: "Celkový počet dní", weeksDays: "Týždne + Dni",

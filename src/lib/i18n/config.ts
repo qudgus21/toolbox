@@ -113,6 +113,14 @@ export interface Dictionary {
     removeFile?: string;
     rotatePage?: string;
     ariaActions?: string;
+    errorNoFile?: string;
+    errorNoPages?: string;
+    errorNoValidPages?: string;
+    errorCannotDeleteAll?: string;
+    errorCannotExtractAll?: string;
+    errorTwoFilesRequired?: string;
+    errorNoRedactions?: string;
+    errorCannotRemoveAll?: string;
   };
   metadata: {
     siteTitle: string;

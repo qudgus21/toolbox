@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Rất mát", cool: "Mát", moderatelyCool: "Hơi mát",
     moderate: "Vừa phải", moderatelyHot: "Hơi nóng",
     hot: "Nóng", veryHot: "Rất nóng", extremelyHot: "Cực nóng",
+    gasMark: "Gas Mark",
     original: "Gốc",
     from: "Từ", to: "Sang",
     totalDays: "Tổng số ngày", weeksDays: "Tuần + Ngày",
