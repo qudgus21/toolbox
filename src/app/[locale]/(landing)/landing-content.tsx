@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useMemo, useEffect } from "react";
+import { useRef, useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { ArrowRight, Monitor, Gift, ShieldCheck, UserX, Search, Sparkles } from "lucide-react";
 import { Container } from "@/lib/ui";
@@ -25,7 +25,27 @@ interface LandingContentProps {
   allTools: PopularToolInfo[];
 }
 
-/* FIX-W1: CSS-based intersection animation instead of framer-motion useInView */
+/* Shared IntersectionObserver for all AnimatedSections — single observer instead of 5 */
+const sharedObserverCallbacks = new WeakMap<Element, () => void>();
+let sharedObserver: IntersectionObserver | null = null;
+function getSharedObserver() {
+  if (sharedObserver) return sharedObserver;
+  if (typeof window === "undefined") return null;
+  sharedObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          sharedObserverCallbacks.get(entry.target)?.();
+          sharedObserver?.unobserve(entry.target);
+          sharedObserverCallbacks.delete(entry.target);
+        }
+      }
+    },
+    { rootMargin: "-80px" },
+  );
+  return sharedObserver;
+}
+
 function AnimatedSection({
   children,
   className,
@@ -38,13 +58,11 @@ function AnimatedSection({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); io.disconnect(); } },
-      { rootMargin: "-80px" },
-    );
+    const io = getSharedObserver();
+    if (!el || !io) return;
+    sharedObserverCallbacks.set(el, () => setVisible(true));
     io.observe(el);
-    return () => io.disconnect();
+    return () => { io.unobserve(el); sharedObserverCallbacks.delete(el); };
   }, []);
 
   return (
@@ -62,10 +80,13 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
   const [search, setSearch] = useState("");
   const searchTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  /* FIX-C3: Lazy-load icon maps — only needed for search results (user-triggered) */
+  /* Lazy-load icon maps — only when user starts searching */
   type IconMap = Record<string, React.ComponentType<{ className?: string }>>;
   const [iconMaps, setIconMaps] = useState<{ pdf: IconMap; image: IconMap } | null>(null);
-  useEffect(() => {
+  const iconMapsLoadedRef = useRef(false);
+  const loadIconMaps = useCallback(() => {
+    if (iconMapsLoadedRef.current) return;
+    iconMapsLoadedRef.current = true;
     Promise.all([
       import("@/lib/pdf/tool-icons").then((m) => m.toolIconMap),
       import("@/lib/image/tool-icons").then((m) => m.toolIconMap),
@@ -103,6 +124,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+              onFocus={loadIconMaps}
               placeholder={dict.hero.searchPlaceholder}
               className="w-full rounded-2xl border border-border bg-background-elevated pl-12 pr-5 py-4 text-base text-foreground placeholder:text-foreground-subtle focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 shadow-lg transition-all"
             />
@@ -157,7 +179,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
               { value: dict.stats.price, label: dict.stats.priceLabel, gradient: "from-amber-500 to-orange-500" },
             ].map((stat) => (
               <div key={stat.label} className="relative group">
-                <div className="rounded-2xl border border-border/60 bg-background-elevated p-5 text-center transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+                <div className="rounded-2xl border border-border/60 bg-background-elevated p-5 text-center sm:transition-all sm:duration-300 sm:hover:shadow-md sm:hover:-translate-y-0.5">
                   <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent sm:text-4xl`}>
                     {stat.value}
                   </div>
@@ -183,7 +205,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                   key={app.slug}
                   href={`/${locale}/${app.slug}`}
                   onClick={() => track.appCardClick({ app_slug: app.slug })}
-                  className={`group relative flex flex-col overflow-hidden rounded-2xl border ${app.accentBorder} p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 lg:col-span-2 ${isLastRow && index === 3 ? "lg:col-start-2" : ""}`}
+                  className={`group relative flex flex-col overflow-hidden rounded-2xl border ${app.accentBorder} p-8 sm:transition-all sm:duration-300 sm:hover:shadow-xl sm:hover:-translate-y-1 lg:col-span-2 ${isLastRow && index === 3 ? "lg:col-start-2" : ""}`}
                 >
                   {/* Gradient bg */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${app.accentFrom} ${app.accentTo} opacity-[0.04] dark:opacity-[0.08] group-hover:opacity-[0.08] dark:group-hover:opacity-[0.15] transition-opacity`} />
@@ -243,7 +265,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                     <Link
                       href={tool.href}
                       onClick={() => track.popularToolClick({ tool_slug: tool.slug, app_slug: tool.appSlug })}
-                      className="group flex h-full flex-col gap-3 rounded-xl border border-border/60 bg-background-elevated p-5 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1 hover:border-accent/40"
+                      className="group flex h-full flex-col gap-3 rounded-xl border border-border/60 bg-background-elevated p-5 shadow-sm sm:transition-all sm:duration-200 sm:hover:shadow-md sm:hover:-translate-y-1 hover:border-accent/40"
                     >
                       <div className="flex items-center gap-3">
                         {ToolIcon ? <ToolIcon className="h-7 w-7 shrink-0" /> : <span className="text-2xl">{tool.emoji}</span>}
