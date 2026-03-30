@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Nagyon hűvös", cool: "Hűvös", moderatelyCool: "Mérsékelten hűvös",
     moderate: "Mérsékelt", moderatelyHot: "Mérsékelten forró",
     hot: "Forró", veryHot: "Nagyon forró", extremelyHot: "Rendkívül forró",
+    gasMark: "Gas Mark",
     original: "Eredeti",
     from: "Innen", to: "Ide",
     totalDays: "Összes nap", weeksDays: "Hetek + Napok",

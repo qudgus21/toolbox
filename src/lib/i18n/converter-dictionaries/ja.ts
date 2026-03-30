@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "とても低温", cool: "低温", moderatelyCool: "やや低温",
     moderate: "中温", moderatelyHot: "やや高温",
     hot: "高温", veryHot: "とても高温", extremelyHot: "超高温",
+    gasMark: "ガスマーク",
     original: "元の値",
     from: "変換元", to: "変換先",
     totalDays: "合計日数", weeksDays: "週 + 日",

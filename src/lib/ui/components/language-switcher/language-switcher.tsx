@@ -112,8 +112,9 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
       <button
         onClick={() => setOpen(!open)}
         className="lg:hidden cursor-pointer flex h-8 w-8 items-center justify-center rounded-md border border-border text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
+        aria-label={languageNames[locale] ?? "Change language"}
       >
-        <Globe className="h-4 w-4" />
+        <Globe className="h-4 w-4" aria-hidden="true" />
       </button>
 
       {/* 데스크탑: 텍스트 + 화살표 */}
@@ -121,9 +122,9 @@ export function LanguageSwitcher({ locale, app }: LanguageSwitcherProps) {
         onClick={() => setOpen(!open)}
         className="hidden lg:flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-md border border-border px-3 py-1.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:border-foreground-subtle transition-colors"
       >
-        <Globe className="h-3.5 w-3.5" />
+        <Globe className="h-3.5 w-3.5" aria-hidden="true" />
         <span>{languageNames[locale] ?? locale}</span>
-        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
 
       {open && (

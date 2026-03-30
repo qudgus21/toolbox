@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "చాలా చల్లగా", cool: "చల్లగా", moderatelyCool: "మధ్యస్థంగా చల్లగా",
     moderate: "మధ్యస్థం", moderatelyHot: "మధ్యస్థంగా వేడిగా",
     hot: "వేడిగా", veryHot: "చాలా వేడిగా", extremelyHot: "అత్యంత వేడిగా",
+    gasMark: "గ్యాస్ మార్క్",
     original: "అసలు",
     from: "నుండి", to: "కు",
     totalDays: "మొత్తం రోజులు", weeksDays: "వారాలు + రోజులు",

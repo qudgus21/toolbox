@@ -493,6 +493,7 @@ const dict: ConverterDictionary = {
     hot: "Hot",
     veryHot: "Very Hot",
     extremelyHot: "Extremely Hot",
+    gasMark: "Gas Mark",
     original: "Original",
     from: "From",
     to: "To",

@@ -183,6 +183,7 @@ export function ConverterToolPageClient({
             copiedLabel={labels.copied}
             allConversionsLabel={labels.allConversions}
             unitLabels={unitLabels?.[slug]}
+            processorLabels={processorMessages}
             onCopy={handleCopy}
           />
         </div>

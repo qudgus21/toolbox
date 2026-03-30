@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Çok Serin", cool: "Serin", moderatelyCool: "Orta Serin",
     moderate: "Orta", moderatelyHot: "Orta Sıcak",
     hot: "Sıcak", veryHot: "Çok Sıcak", extremelyHot: "Aşırı Sıcak",
+    gasMark: "Gaz İşareti",
     original: "Orijinal",
     from: "Kaynak", to: "Hedef",
     totalDays: "Toplam Gün", weeksDays: "Hafta + Gün",

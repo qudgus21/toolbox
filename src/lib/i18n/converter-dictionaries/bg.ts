@@ -477,6 +477,7 @@ const dict: ConverterDictionary = {
     veryCool: "Много хладно", cool: "Хладно", moderatelyCool: "Умерено хладно",
     moderate: "Умерено", moderatelyHot: "Умерено горещо",
     hot: "Горещо", veryHot: "Много горещо", extremelyHot: "Изключително горещо",
+    gasMark: "Газов номер",
     original: "Оригинал",
     from: "От", to: "До",
     totalDays: "Общо дни", weeksDays: "Седмици + Дни",
