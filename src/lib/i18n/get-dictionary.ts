@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Locale, Dictionary } from "./config";
 
 const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
@@ -48,6 +49,6 @@ const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   km: () => import("./dictionaries/km").then((m) => m.default),
 };
 
-export async function getDictionary(locale: Locale): Promise<Dictionary> {
+export const getDictionary = cache(async (locale: Locale): Promise<Dictionary> => {
   return dictionaries[locale]();
-}
+});
