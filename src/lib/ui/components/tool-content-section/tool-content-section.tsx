@@ -1,7 +1,7 @@
-import type { Dictionary } from "@/lib/i18n";
+import type { ToolContentData } from "@/lib/seo/tool-content-types";
 
 interface ToolContentSectionProps {
-  content?: Dictionary["toolContent"][string];
+  content?: ToolContentData;
 }
 
 export function ToolContentSection({ content }: ToolContentSectionProps) {
@@ -63,6 +63,26 @@ export function ToolContentSection({ content }: ToolContentSectionProps) {
           </ul>
         </div>
 
+        {/* FAQ */}
+        {content.faq && content.faq.length > 0 && (
+          <div>
+            <h2 className="text-lg font-semibold text-foreground mb-4">
+              Frequently Asked Questions
+            </h2>
+            <dl className="space-y-4">
+              {content.faq.map((item, i) => (
+                <div key={i}>
+                  <dt className="text-sm font-medium text-foreground mb-1">
+                    {item.question}
+                  </dt>
+                  <dd className="text-sm text-foreground-muted leading-relaxed">
+                    {item.answer}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
       </div>
     </section>
   );
