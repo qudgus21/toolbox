@@ -31,6 +31,7 @@ interface CalculatorToolPageClientProps {
   inputType: CalculatorInputType;
   fields: CalculatorFieldDefinition[];
   previewData?: string;
+  children?: React.ReactNode;
 }
 
 export function CalculatorToolPageClient({
@@ -48,6 +49,7 @@ export function CalculatorToolPageClient({
   inputType,
   fields,
   previewData,
+  children,
 }: CalculatorToolPageClientProps) {
   // Generate preview defaults for required fields without explicit defaults
   const previewDefaults = useState<Record<string, unknown>>(() => {
@@ -225,6 +227,7 @@ export function CalculatorToolPageClient({
         title={labels.tryOtherTools}
         toolNames={toolNames}
       />
+      {children}
     </ToolPageLayout>
   );
 }

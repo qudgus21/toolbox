@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/pdf/tools";
-import { Container } from "@/lib/ui";
+import { Container, LandingContentSection } from "@/lib/ui";
+import { landingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -96,6 +97,7 @@ export default async function PdfHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
+      <LandingContentSection content={landingContent.pdf} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );

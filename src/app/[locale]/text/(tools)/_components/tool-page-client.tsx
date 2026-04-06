@@ -30,6 +30,7 @@ interface TextToolPageClientProps {
   processorMessages: Record<string, string>;
   dualInput?: boolean;
   noInput?: boolean;
+  children?: React.ReactNode;
 }
 
 // Tools whose output should be displayed with the stats component
@@ -60,6 +61,7 @@ export function TextToolPageClient({
   processorMessages,
   dualInput,
   noInput,
+  children,
 }: TextToolPageClientProps) {
   const [input, setInput] = useState("");
   const [input2, setInput2] = useState("");
@@ -222,6 +224,7 @@ export function TextToolPageClient({
         title={labels.tryOtherTools}
         toolNames={toolNames}
       />
+      {children}
     </ToolPageLayout>
   );
 }

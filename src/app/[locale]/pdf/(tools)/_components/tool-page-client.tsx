@@ -319,7 +319,6 @@ export function ToolPageClient({
               toolState={toolState}
               setPageSelectorFile={setPageSelectorFile}
             >
-              {children}
             </ToolLoadedContent>
           </div>
         )}
@@ -439,6 +438,7 @@ export function ToolPageClient({
           }}
         />
       )}
+      <div className={stage !== "idle" ? "hidden" : undefined}>{children}</div>
     </ToolPageLayout>
 
       {/* Favorite toast */}

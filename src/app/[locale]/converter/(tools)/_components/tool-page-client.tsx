@@ -32,6 +32,7 @@ interface ConverterToolPageClientProps {
   inputType: ConverterInputType;
   dualInput?: boolean;
   toolPlaceholder?: string;
+  children?: React.ReactNode;
 }
 
 export function ConverterToolPageClient({
@@ -49,6 +50,7 @@ export function ConverterToolPageClient({
   inputType,
   dualInput,
   toolPlaceholder,
+  children,
 }: ConverterToolPageClientProps) {
   const [input, setInput] = useState("");
   const [options, setOptions] = useState<Record<string, unknown>>(() => {
@@ -200,6 +202,7 @@ export function ConverterToolPageClient({
         title={labels.tryOtherTools}
         toolNames={toolNames}
       />
+      {children}
     </ToolPageLayout>
   );
 }

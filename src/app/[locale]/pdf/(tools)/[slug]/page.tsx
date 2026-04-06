@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { type Locale, locales, getDictionary } from "@/lib/i18n";
-import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateAlternates, generateBreadcrumbJsonLd, generateHowToJsonLd, generateFAQPageJsonLd, getToolContent } from "@/lib/seo";
+import { ToolContentSection } from "@/lib/ui";
 import { tools, getToolBySlug } from "@/lib/pdf/tools";
 import { ToolPageClient } from "../_components/tool-page-client";
 
@@ -66,6 +67,10 @@ export default async function ToolPage({
     { name: t.title, url: `https://toolpop.org/${locale}/pdf/${slug}` },
   ]);
 
+  const toolContent = getToolContent("pdf", slug);
+  const howToJsonLd = toolContent ? generateHowToJsonLd(toolContent, t.title, `https://toolpop.org/${locale}/pdf/${slug}`) : null;
+  const faqJsonLd = toolContent ? generateFAQPageJsonLd(toolContent, t.title) : null;
+
   return (
     <>
       <script type="application/ld+json">
@@ -89,6 +94,16 @@ export default async function ToolPage({
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbJsonLd)}
       </script>
+      {howToJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(howToJsonLd)}
+        </script>
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqJsonLd)}
+        </script>
+      )}
       <ToolPageClient
         slug={slug}
         locale={locale}
@@ -128,7 +143,9 @@ export default async function ToolPage({
         headerFooterLabels={slug === "header-footer" ? dict.headerFooterTool : undefined}
         overlayLabels={slug === "overlay" ? dict.overlayTool : undefined}
         bookletLabels={slug === "booklet" ? dict.bookletTool : undefined}
-      />
+      >
+        <ToolContentSection content={toolContent} />
+      </ToolPageClient>
     </>
   );
 }

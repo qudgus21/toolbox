@@ -3,7 +3,8 @@ import { type Locale, locales } from "@/lib/i18n";
 import { getCalculatorDictionary } from "@/lib/i18n/get-calculator-dictionary";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/calculator/tools";
-import { Container } from "@/lib/ui";
+import { Container, LandingContentSection } from "@/lib/ui";
+import { landingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -97,6 +98,7 @@ export default async function CalculatorHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
+      <LandingContentSection content={landingContent.calculator} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );
