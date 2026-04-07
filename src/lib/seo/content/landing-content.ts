@@ -1,7 +1,29 @@
+import { landingContentKo } from "./landing-content-ko";
+
 export interface LandingContentData {
   title: string;
   description: string;
   sections: { heading: string; text: string }[];
+}
+
+// Localized landing content — populated as translation files are added
+// Structure: { locale: { app: LandingContentData } }
+const localizedLandingContent: Record<
+  string,
+  Record<string, LandingContentData>
+> = {
+  ko: landingContentKo,
+};
+
+export function getLandingContent(
+  app: string,
+  locale: string = "en",
+): LandingContentData | undefined {
+  if (locale !== "en") {
+    const localized = localizedLandingContent[locale]?.[app];
+    if (localized) return localized;
+  }
+  return landingContent[app];
 }
 
 export const landingContent: Record<string, LandingContentData> = {

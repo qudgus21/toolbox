@@ -3,7 +3,7 @@ import { type Locale, locales, getDictionary } from "@/lib/i18n";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/pdf/tools";
 import { Container, LandingContentSection } from "@/lib/ui";
-import { landingContent } from "@/lib/seo/content/landing-content";
+import { getLandingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -97,7 +97,7 @@ export default async function PdfHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
-      <LandingContentSection content={landingContent.pdf} />
+      <LandingContentSection content={getLandingContent("pdf", locale) ?? { title: "", description: "", sections: [] }} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );
