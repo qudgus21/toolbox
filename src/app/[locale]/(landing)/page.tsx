@@ -208,6 +208,29 @@ export default async function LandingPage({
         popularTools={popularTools}
         allTools={allTools}
       />
+      {/* SEO content — subtle, below the fold */}
+      <section className="mx-auto max-w-4xl px-4 pt-12 pb-8">
+        <div className="border-t border-border-muted pt-8">
+          <h2 className="text-sm font-medium text-foreground-subtle mb-2">About ToolPop</h2>
+          <p className="text-xs text-foreground-subtle/70 leading-relaxed mb-4">
+            ToolPop is a free, privacy-first online toolkit with 250+ tools for PDFs, images, text, unit conversions, and calculations. Every tool runs entirely in your browser — your files never leave your device. No sign-up required, no file size limits, no watermarks.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div>
+              <h3 className="text-xs font-medium text-foreground-subtle mb-1">100% Browser-Based</h3>
+              <p className="text-xs text-foreground-subtle/60 leading-relaxed">All processing happens locally using WebAssembly and JavaScript. Your documents, images, and data stay on your device at all times.</p>
+            </div>
+            <div>
+              <h3 className="text-xs font-medium text-foreground-subtle mb-1">Professional Quality</h3>
+              <p className="text-xs text-foreground-subtle/60 leading-relaxed">From PDF editing and image manipulation to developer utilities and financial calculators — every tool is built to deliver accurate, reliable results.</p>
+            </div>
+            <div>
+              <h3 className="text-xs font-medium text-foreground-subtle mb-1">Always Free</h3>
+              <p className="text-xs text-foreground-subtle/60 leading-relaxed">No premium tiers, no usage caps. ToolPop is free for everyone — students, professionals, and businesses alike. Available in 45 languages worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <LandingFooter dict={dict} locale={locale} />
     </>
   );

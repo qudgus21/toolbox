@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { type Locale, locales } from "@/lib/i18n";
 import { getConverterDictionary } from "@/lib/i18n/get-converter-dictionary";
-import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateAlternates, generateBreadcrumbJsonLd, generateHowToJsonLd, generateFAQPageJsonLd, getToolContent } from "@/lib/seo";
+import { ToolContentSection } from "@/lib/ui";
 import { tools, getToolBySlug } from "@/lib/converter/tools";
 import { ConverterToolPageClient } from "../_components/tool-page-client";
 
@@ -66,6 +67,10 @@ export default async function ToolPage({
     { name: t.title, url: `https://toolpop.org/${locale}/converter/${slug}` },
   ]);
 
+  const toolContent = getToolContent("converter", slug);
+  const howToJsonLd = toolContent ? generateHowToJsonLd(toolContent, t.title, `https://toolpop.org/${locale}/converter/${slug}`) : null;
+  const faqJsonLd = toolContent ? generateFAQPageJsonLd(toolContent, t.title) : null;
+
   return (
     <>
       <script type="application/ld+json">
@@ -89,6 +94,16 @@ export default async function ToolPage({
       <script type="application/ld+json">
         {JSON.stringify(breadcrumbJsonLd)}
       </script>
+      {howToJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(howToJsonLd)}
+        </script>
+      )}
+      {faqJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(faqJsonLd)}
+        </script>
+      )}
       <ConverterToolPageClient
         slug={slug}
         locale={locale}
@@ -104,7 +119,9 @@ export default async function ToolPage({
         inputType={tool.inputType}
         dualInput={tool.dualInput}
         toolPlaceholder={tool.placeholder}
-      />
+      >
+        <ToolContentSection content={toolContent} />
+      </ConverterToolPageClient>
     </>
   );
 }

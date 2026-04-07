@@ -95,6 +95,7 @@ interface ToolPageClientProps {
   backHref: string;
   labels: ImageDictionary["common"];
   toolLabels: ImageDictionary["toolOptions"];
+  children?: React.ReactNode;
 }
 
 type ToolOptionsMap = {
@@ -184,6 +185,7 @@ export function ToolPageClient({
   backHref,
   labels,
   toolLabels,
+  children,
 }: ToolPageClientProps) {
   const {
     stage,
@@ -905,6 +907,7 @@ export function ToolPageClient({
         </div>
       )}
 
+      <div className={stage !== "idle" ? "hidden" : undefined}>{children}</div>
     </ToolPageLayout>
   );
 }

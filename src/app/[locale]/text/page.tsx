@@ -4,7 +4,8 @@ import { getTextDictionary } from "@/lib/i18n/get-text-dictionary";
 import type { TextDictionary } from "@/lib/i18n/text-config";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/text/tools";
-import { Container } from "@/lib/ui";
+import { Container, LandingContentSection } from "@/lib/ui";
+import { landingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -99,6 +100,7 @@ export default async function TextHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
+      <LandingContentSection content={landingContent.text} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );
