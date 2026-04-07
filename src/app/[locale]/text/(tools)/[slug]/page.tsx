@@ -67,7 +67,7 @@ export default async function ToolPage({
     { name: t.title, url: `https://toolpop.org/${locale}/text/${slug}` },
   ]);
 
-  const toolContent = getToolContent("text", slug);
+  const toolContent = getToolContent("text", slug, locale);
   const howToJsonLd = toolContent ? generateHowToJsonLd(toolContent, t.title, `https://toolpop.org/${locale}/text/${slug}`) : null;
   const faqJsonLd = toolContent ? generateFAQPageJsonLd(toolContent, t.title) : null;
 

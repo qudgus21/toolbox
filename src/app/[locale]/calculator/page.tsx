@@ -4,7 +4,7 @@ import { getCalculatorDictionary } from "@/lib/i18n/get-calculator-dictionary";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/calculator/tools";
 import { Container, LandingContentSection } from "@/lib/ui";
-import { landingContent } from "@/lib/seo/content/landing-content";
+import { getLandingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -98,7 +98,7 @@ export default async function CalculatorHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
-      <LandingContentSection content={landingContent.calculator} />
+      <LandingContentSection content={getLandingContent("calculator", locale) ?? { title: "", description: "", sections: [] }} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );

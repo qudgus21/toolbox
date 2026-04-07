@@ -1,7 +1,51 @@
+import { landingContentKo } from "./landing-content-ko";
+import { landingContentJa } from "./landing-content-ja";
+import { landingContentZh } from "./landing-content-zh";
+import { landingContentEs } from "./landing-content-es";
+import { landingContentRu } from "./landing-content-ru";
+import { landingContentFr } from "./landing-content-fr";
+import { landingContentDe } from "./landing-content-de";
+import { landingContentPt } from "./landing-content-pt";
+import { landingContentAr } from "./landing-content-ar";
+import { landingContentHi } from "./landing-content-hi";
+import { landingContentIt } from "./landing-content-it";
+import { landingContentTr } from "./landing-content-tr";
+
 export interface LandingContentData {
   title: string;
   description: string;
   sections: { heading: string; text: string }[];
+}
+
+// Localized landing content — populated as translation files are added
+// Structure: { locale: { app: LandingContentData } }
+const localizedLandingContent: Record<
+  string,
+  Record<string, LandingContentData>
+> = {
+  ko: landingContentKo,
+  ja: landingContentJa,
+  zh: landingContentZh,
+  es: landingContentEs,
+  ru: landingContentRu,
+  fr: landingContentFr,
+  de: landingContentDe,
+  pt: landingContentPt,
+  ar: landingContentAr,
+  hi: landingContentHi,
+  it: landingContentIt,
+  tr: landingContentTr,
+};
+
+export function getLandingContent(
+  app: string,
+  locale: string = "en",
+): LandingContentData | undefined {
+  if (locale !== "en") {
+    const localized = localizedLandingContent[locale]?.[app];
+    if (localized) return localized;
+  }
+  return landingContent[app];
 }
 
 export const landingContent: Record<string, LandingContentData> = {

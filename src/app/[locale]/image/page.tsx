@@ -5,7 +5,7 @@ import type { ImageDictionary } from "@/lib/i18n/image-config";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { tools, categories } from "@/lib/image/tools";
 import { Container, LandingContentSection } from "@/lib/ui";
-import { landingContent } from "@/lib/seo/content/landing-content";
+import { getLandingContent } from "@/lib/seo/content/landing-content";
 import { HomeContent } from "./home-content";
 import { SiteFooter } from "./site-footer";
 
@@ -100,7 +100,7 @@ export default async function ImageHomePage({
         </Container>
       </section>
       <HomeContent dict={dict} locale={locale} />
-      <LandingContentSection content={landingContent.image} />
+      <LandingContentSection content={getLandingContent("image", locale) ?? { title: "", description: "", sections: [] }} />
       <SiteFooter locale={locale} dict={dict} categories={categories} tools={tools} />
     </>
   );
