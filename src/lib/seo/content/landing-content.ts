@@ -1,15 +1,4 @@
 import { landingContentKo } from "./landing-content-ko";
-import { landingContentJa } from "./landing-content-ja";
-import { landingContentZh } from "./landing-content-zh";
-import { landingContentEs } from "./landing-content-es";
-import { landingContentRu } from "./landing-content-ru";
-import { landingContentFr } from "./landing-content-fr";
-import { landingContentDe } from "./landing-content-de";
-import { landingContentPt } from "./landing-content-pt";
-import { landingContentAr } from "./landing-content-ar";
-import { landingContentHi } from "./landing-content-hi";
-import { landingContentIt } from "./landing-content-it";
-import { landingContentTr } from "./landing-content-tr";
 
 export interface LandingContentData {
   title: string;
@@ -24,17 +13,6 @@ const localizedLandingContent: Record<
   Record<string, LandingContentData>
 > = {
   ko: landingContentKo,
-  ja: landingContentJa,
-  zh: landingContentZh,
-  es: landingContentEs,
-  ru: landingContentRu,
-  fr: landingContentFr,
-  de: landingContentDe,
-  pt: landingContentPt,
-  ar: landingContentAr,
-  hi: landingContentHi,
-  it: landingContentIt,
-  tr: landingContentTr,
 };
 
 export function getLandingContent(
