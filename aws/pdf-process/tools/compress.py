@@ -39,5 +39,12 @@ def handle(input_path: str, options: dict) -> tuple[str, str]:
     if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
         raise RuntimeError("Compression produced empty output")
 
+    # 압축 결과가 원본보다 크면 원본을 그대로 반환
+    original_size = os.path.getsize(input_path)
+    compressed_size = os.path.getsize(output_path)
+    if compressed_size >= original_size:
+        import shutil
+        shutil.copy2(input_path, output_path)
+
     basename = os.path.splitext(os.path.basename(input_path))[0]
     return output_path, f"{basename}-compressed.pdf"
