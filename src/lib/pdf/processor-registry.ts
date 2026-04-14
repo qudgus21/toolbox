@@ -49,8 +49,7 @@ registry.set("word-to-pdf", () => import("./processors/server-word-to-pdf"));
 registry.set("excel-to-pdf", () => import("./processors/server-excel-to-pdf"));
 registry.set("ppt-to-pdf", () => import("./processors/server-ppt-to-pdf"));
 registry.set("pdf-to-word", () => import("./processors/server-pdf-to-word"));
-registry.set("pdf-to-excel", () => import("./processors/server-pdf-to-excel"));
-registry.set("pdf-to-ppt", () => import("./processors/server-pdf-to-ppt"));
+// pdf-to-excel, pdf-to-ppt: LibreOffice 미지원으로 비활성화
 
 export async function getProcessor(slug: string): Promise<ProcessorFn | null> {
   const loader = registry.get(slug);

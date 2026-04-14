@@ -8,7 +8,6 @@ import {
   FileDown,
   FileImage,
   ImageDown,
-  FileSpreadsheet,
   Presentation,
   Image,
   FileText,
@@ -415,24 +414,7 @@ export const tools: ToolDefinition[] = [
     category: "convert",
     acceptedTypes: ".pdf",
   },
-  {
-    slug: "pdf-to-excel",
-    title: "PDF to Excel",
-    description: "Extract tables and data from PDFs into Excel spreadsheets.",
-    icon: FileSpreadsheet,
-    emoji: "📊",
-    category: "convert",
-    acceptedTypes: ".pdf",
-  },
-  {
-    slug: "pdf-to-ppt",
-    title: "PDF to PPT",
-    description: "Convert PDF files to editable PowerPoint slides.",
-    icon: Presentation,
-    emoji: "📽️",
-    category: "convert",
-    acceptedTypes: ".pdf",
-  },
+  // pdf-to-excel, pdf-to-ppt: LibreOffice 미지원으로 비활성화 (별도 솔루션 필요)
   {
     slug: "word-to-pdf",
     title: "Word to PDF",
