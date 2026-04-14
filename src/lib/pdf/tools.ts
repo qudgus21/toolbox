@@ -396,7 +396,6 @@ export const tools: ToolDefinition[] = [
     emoji: "🗃️",
     category: "convert",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "compress",
@@ -406,7 +405,6 @@ export const tools: ToolDefinition[] = [
     emoji: "📦",
     category: "optimize",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "pdf-to-word",
@@ -416,7 +414,6 @@ export const tools: ToolDefinition[] = [
     emoji: "📝",
     category: "convert",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "pdf-to-excel",
@@ -426,7 +423,6 @@ export const tools: ToolDefinition[] = [
     emoji: "📊",
     category: "convert",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "pdf-to-ppt",
@@ -436,7 +432,6 @@ export const tools: ToolDefinition[] = [
     emoji: "📽️",
     category: "convert",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "word-to-pdf",
@@ -446,7 +441,6 @@ export const tools: ToolDefinition[] = [
     emoji: "✍️",
     category: "convert",
     acceptedTypes: ".doc,.docx",
-    comingSoon: true,
   },
   {
     slug: "excel-to-pdf",
@@ -456,7 +450,6 @@ export const tools: ToolDefinition[] = [
     emoji: "📈",
     category: "convert",
     acceptedTypes: ".xls,.xlsx",
-    comingSoon: true,
   },
   {
     slug: "ppt-to-pdf",
@@ -466,7 +459,6 @@ export const tools: ToolDefinition[] = [
     emoji: "🎞️",
     category: "convert",
     acceptedTypes: ".ppt,.pptx",
-    comingSoon: true,
   },
   {
     slug: "repair",
@@ -476,7 +468,6 @@ export const tools: ToolDefinition[] = [
     emoji: "🔧",
     category: "optimize",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "ocr",
@@ -486,7 +477,6 @@ export const tools: ToolDefinition[] = [
     emoji: "👁️",
     category: "optimize",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "unlock",
@@ -496,7 +486,6 @@ export const tools: ToolDefinition[] = [
     emoji: "🔓",
     category: "security",
     acceptedTypes: ".pdf",
-    comingSoon: true,
   },
   {
     slug: "translate",
