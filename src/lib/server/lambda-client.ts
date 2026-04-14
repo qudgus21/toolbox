@@ -37,18 +37,33 @@ export async function processViaLambda(
   onProgress(20);
 
   // Step 2: API Route 호출 (20-85%)
+  // Lambda 실행 중 실제 진행률을 받을 수 없으므로,
+  // 시간 기반 fake progress로 UX 개선
   onProgress(25);
-  const res = await fetch("/api/process", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      tool,
-      file: base64,
-      filename: file.name,
-      options,
-      group,
-    }),
-  });
+  let fakeProgress = 25;
+  const fakeTimer = setInterval(() => {
+    // 80%까지 점점 느려지며 접근 (절대 도달하지 않음)
+    const remaining = 78 - fakeProgress;
+    fakeProgress += remaining * 0.08;
+    onProgress(Math.round(fakeProgress));
+  }, 500);
+
+  let res: Response;
+  try {
+    res = await fetch("/api/process", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        tool,
+        file: base64,
+        filename: file.name,
+        options,
+        group,
+      }),
+    });
+  } finally {
+    clearInterval(fakeTimer);
+  }
   onProgress(80);
 
   if (!res.ok) {
