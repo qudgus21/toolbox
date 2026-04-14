@@ -87,12 +87,7 @@ jobs:
             aws lambda create-function-url-config \
               --function-name ${{ matrix.name }} \
               --auth-type NONE \
-              --cors '{
-                "AllowOrigins": ["https://toolpop.org", "http://localhost:3000"],
-                "AllowMethods": ["POST", "OPTIONS"],
-                "AllowHeaders": ["Content-Type"],
-                "MaxAge": 3600
-              }'
+              --cors '{"AllowOrigins":["https://toolpop.org","http://localhost:3000"],"AllowMethods":["POST"],"AllowHeaders":["content-type"],"MaxAge":3600}'
 
             # 퍼블릭 액세스 허용
             aws lambda add-permission \
