@@ -1,0 +1,113 @@
+name: Deploy Lambda Functions
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'aws/**'
+  workflow_dispatch: # 수동 실행 가능
+
+env:
+  AWS_REGION: ap-northeast-2
+  ACCOUNT_ID: "350225416578"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: toolpop-pdf-process
+            dir: pdf-process
+            memory: 2048
+            timeout: 300
+          - name: toolpop-libreoffice
+            dir: libreoffice
+            memory: 3008
+            timeout: 300
+          - name: toolpop-image-process
+            dir: image-process
+            memory: 3008
+            timeout: 300
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build & Push Docker image
+        working-directory: aws
+        run: |
+          IMAGE_URI="${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ matrix.name }}:latest"
+          docker build -t ${{ matrix.name }} -f ${{ matrix.dir }}/Dockerfile .
+          docker tag ${{ matrix.name }}:latest $IMAGE_URI
+          docker push $IMAGE_URI
+
+      - name: Deploy Lambda
+        run: |
+          IMAGE_URI="${{ env.ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/${{ matrix.name }}:latest"
+          ROLE_ARN="arn:aws:iam::${{ env.ACCOUNT_ID }}:role/toolpop-lambda-role"
+
+          # Lambda 존재 여부 확인
+          if aws lambda get-function --function-name ${{ matrix.name }} 2>/dev/null; then
+            echo "Updating ${{ matrix.name }}..."
+            aws lambda update-function-code \
+              --function-name ${{ matrix.name }} \
+              --image-uri $IMAGE_URI
+
+            aws lambda wait function-updated --function-name ${{ matrix.name }}
+
+            aws lambda update-function-configuration \
+              --function-name ${{ matrix.name }} \
+              --timeout ${{ matrix.timeout }} \
+              --memory-size ${{ matrix.memory }}
+          else
+            echo "Creating ${{ matrix.name }}..."
+            aws lambda create-function \
+              --function-name ${{ matrix.name }} \
+              --package-type Image \
+              --code ImageUri=$IMAGE_URI \
+              --role $ROLE_ARN \
+              --timeout ${{ matrix.timeout }} \
+              --memory-size ${{ matrix.memory }} \
+              --architectures x86_64
+
+            aws lambda wait function-active-v2 --function-name ${{ matrix.name }}
+
+            # Function URL 생성 (CORS 포함)
+            aws lambda create-function-url-config \
+              --function-name ${{ matrix.name }} \
+              --auth-type NONE \
+              --cors '{
+                "AllowOrigins": ["https://toolpop.org", "http://localhost:3000"],
+                "AllowMethods": ["POST", "OPTIONS"],
+                "AllowHeaders": ["Content-Type"],
+                "MaxAge": 3600
+              }'
+
+            # 퍼블릭 액세스 허용
+            aws lambda add-permission \
+              --function-name ${{ matrix.name }} \
+              --statement-id public-access \
+              --action lambda:InvokeFunctionUrl \
+              --principal "*" \
+              --function-url-auth-type NONE
+
+            # 동시성 제한 10
+            aws lambda put-function-concurrency \
+              --function-name ${{ matrix.name }} \
+              --reserved-concurrent-executions 10
+          fi
+
+      - name: Print Function URL
+        run: |
+          URL=$(aws lambda get-function-url-config --function-name ${{ matrix.name }} --query 'FunctionUrl' --output text 2>/dev/null || echo "N/A")
+          echo "✅ ${{ matrix.name }} deployed: $URL"
