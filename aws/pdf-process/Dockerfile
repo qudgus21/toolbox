@@ -1,16 +1,21 @@
-FROM public.ecr.aws/lambda/python:3.12
+FROM amazonlinux:2023
 
-# Ghostscript + qpdf 설치 (기본 repos에서 사용 가능)
-RUN dnf install -y ghostscript qpdf && dnf clean all
+# Python 3.12 + 시스템 패키지 설치
+RUN dnf install -y python3.12 python3.12-pip ghostscript qpdf && dnf clean all
 
-# Tesseract: EPEL 9 저장소에서 설치 (Amazon Linux 2023 = RHEL 9 기반)
+# Tesseract: EPEL 9에서 설치
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
     dnf install -y tesseract tesseract-langpack-eng tesseract-langpack-kor \
     tesseract-langpack-jpn tesseract-langpack-chi_sim && \
     dnf clean all
 
-COPY shared/ ${LAMBDA_TASK_ROOT}/shared/
-COPY pdf-process/handler.py ${LAMBDA_TASK_ROOT}/
-COPY pdf-process/tools/ ${LAMBDA_TASK_ROOT}/tools/
+# Lambda Runtime Interface Client
+RUN pip3.12 install --no-cache-dir awslambdaric
 
+WORKDIR /var/task
+COPY shared/ /var/task/shared/
+COPY pdf-process/handler.py /var/task/
+COPY pdf-process/tools/ /var/task/tools/
+
+ENTRYPOINT ["python3.12", "-m", "awslambdaric"]
 CMD ["handler.handler"]

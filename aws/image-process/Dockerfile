@@ -1,22 +1,27 @@
-FROM public.ecr.aws/lambda/python:3.12
+FROM amazonlinux:2023
 
-# ImageMagick + Ghostscript (EPS 변환용) + potrace
-RUN dnf install -y ImageMagick ghostscript potrace && dnf clean all
+# Python 3.12 + 기본 이미지 도구 설치
+RUN dnf install -y python3.12 python3.12-pip ImageMagick ghostscript tar xz && dnf clean all
 
-# Tesseract: EPEL 9에서 설치
+# EPEL 활성화 후 Tesseract + potrace 설치
 RUN dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm && \
-    dnf install -y tesseract tesseract-langpack-eng tesseract-langpack-kor && \
+    dnf install -y tesseract tesseract-langpack-eng tesseract-langpack-kor potrace && \
     dnf clean all
 
-# HEIC 지원: libheif-tools
+# HEIC 지원
 RUN dnf install -y libheif-tools 2>/dev/null || true && dnf clean all
 
 # FFmpeg (static binary)
 RUN curl -sL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
     | tar xJ --strip-components=1 -C /usr/local/bin/ --wildcards '*/ffmpeg' '*/ffprobe'
 
-COPY shared/ ${LAMBDA_TASK_ROOT}/shared/
-COPY image-process/handler.py ${LAMBDA_TASK_ROOT}/
-COPY image-process/tools/ ${LAMBDA_TASK_ROOT}/tools/
+# Lambda Runtime Interface Client
+RUN pip3.12 install --no-cache-dir awslambdaric
 
+WORKDIR /var/task
+COPY shared/ /var/task/shared/
+COPY image-process/handler.py /var/task/
+COPY image-process/tools/ /var/task/tools/
+
+ENTRYPOINT ["python3.12", "-m", "awslambdaric"]
 CMD ["handler.handler"]
