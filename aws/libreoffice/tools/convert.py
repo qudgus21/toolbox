@@ -7,19 +7,18 @@ TOOL_FORMAT_MAP = {
     "word-to-pdf": "pdf",
     "excel-to-pdf": "pdf",
     "ppt-to-pdf": "pdf",
-    # PDF → Office
+    # PDF → Word (Writer infilter 필요)
     "pdf-to-word": "docx",
-    "pdf-to-excel": "xlsx",
-    "pdf-to-ppt": "pptx",
 }
+
+# PDF → Word: Writer로 강제 열어야 docx 내보내기 가능 (기본 Draw에는 docx 필터 없음)
+WRITER_PDF_IMPORT_TOOLS = {"pdf-to-word"}
 
 TOOL_EXT_MAP = {
     "word-to-pdf": ".pdf",
     "excel-to-pdf": ".pdf",
     "ppt-to-pdf": ".pdf",
     "pdf-to-word": ".docx",
-    "pdf-to-excel": ".xlsx",
-    "pdf-to-ppt": ".pptx",
 }
 
 
@@ -65,6 +64,13 @@ def handle(tool: str, input_path: str, options: dict) -> tuple[str, str]:
         f"-env:UserInstallation=file://{user_profile}",
         "--headless",
         "--norestore",
+    ]
+
+    # PDF → Word: Writer의 PDF import 필터로 열어야 docx 내보내기 가능
+    if tool in WRITER_PDF_IMPORT_TOOLS:
+        cmd += ["--infilter=writer_pdf_import"]
+
+    cmd += [
         "--convert-to", output_format,
         "--outdir", output_dir,
         input_path,
