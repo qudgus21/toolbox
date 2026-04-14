@@ -1,5 +1,10 @@
 import os
 import subprocess
+import shutil
+
+
+def _magick() -> str:
+    return "magick" if shutil.which("magick") else "convert"
 
 
 def handle(tool: str, input_path: str, options: dict) -> tuple[str, str]:
@@ -10,7 +15,7 @@ def handle(tool: str, input_path: str, options: dict) -> tuple[str, str]:
     # potrace는 BMP 입력만 받으므로 먼저 변환
     bmp_path = f"/tmp/{basename}-temp.bmp"
 
-    cmd_bmp = ["convert", input_path, bmp_path]
+    cmd_bmp = [_magick(), input_path, bmp_path]
     result = subprocess.run(cmd_bmp, capture_output=True, text=True, timeout=60)
     if result.returncode != 0:
         raise RuntimeError(f"Image to BMP failed: {result.stderr}")

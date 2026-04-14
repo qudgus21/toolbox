@@ -2,6 +2,84 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+function formatFileSize(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+const NEEDS_DECODE = new Set(["heic", "heif", "tif", "tiff", "psd", "eps"]);
+
+function getExtension(name: string): string {
+  return name.split(".").pop()?.toLowerCase() ?? "";
+}
+
+function needsLibraryDecode(file: File): boolean {
+  return NEEDS_DECODE.has(getExtension(file.name));
+}
+
+/**
+ * Decode formats that browsers can't render natively.
+ * Returns a blob URL for the decoded image.
+ */
+async function decodeToObjectUrl(file: File): Promise<string> {
+  const ext = getExtension(file.name);
+
+  // HEIC / HEIF
+  if (ext === "heic" || ext === "heif") {
+    const heic2any = (await import("heic2any")).default;
+    const result = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.7 });
+    const blob = Array.isArray(result) ? result[0] : result;
+    return URL.createObjectURL(blob);
+  }
+
+  // TIFF
+  if (ext === "tif" || ext === "tiff") {
+    const UTIF = await import("utif2");
+    const buf = await file.arrayBuffer();
+    const ifds = UTIF.decode(buf);
+    UTIF.decodeImage(buf, ifds[0]);
+    const rgba = UTIF.toRGBA8(ifds[0]);
+    const w = ifds[0].width;
+    const h = ifds[0].height;
+    const canvas = document.createElement("canvas");
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext("2d")!;
+    const imgData = ctx.createImageData(w, h);
+    imgData.data.set(new Uint8Array(rgba.buffer));
+    ctx.putImageData(imgData, 0, 0);
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        canvas.width = 0;
+        canvas.height = 0;
+        if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
+        resolve(URL.createObjectURL(blob));
+      }, "image/png");
+    });
+  }
+
+  // PSD — composite image (flattened)
+  if (ext === "psd") {
+    const { readPsd } = await import("ag-psd");
+    const buf = await file.arrayBuffer();
+    const psd = readPsd(buf);
+    const canvas = psd.canvas;
+    if (!canvas) throw new Error("PSD has no composite image");
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        canvas.width = 0;
+        canvas.height = 0;
+        if (!blob) { reject(new Error("Canvas toBlob failed")); return; }
+        resolve(URL.createObjectURL(blob));
+      }, "image/png");
+    });
+  }
+
+  // EPS — cannot decode client-side, will fall through to error
+  throw new Error(`Unsupported format: ${ext}`);
+}
+
 interface ImagePreviewProps {
   file: File;
   files?: File[];
@@ -14,10 +92,36 @@ export function ImagePreview({ file, files, slug, options }: ImagePreviewProps) 
   const containerRef = useRef<HTMLDivElement>(null);
   const [imageUrl, setImageUrl] = useState<string>("");
   const [allImageUrls, setAllImageUrls] = useState<string[]>([]);
+  const [loadError, setLoadError] = useState(false);
+  const [decoding, setDecoding] = useState(false);
   const rafRef = useRef<number>(0);
 
-  // Create object URL
+  // Create object URL — for unsupported formats, decode first
   useEffect(() => {
+    setLoadError(false);
+    setImageUrl("");
+
+    if (needsLibraryDecode(file)) {
+      setDecoding(true);
+      let revoked = false;
+      let createdUrl: string | null = null;
+      decodeToObjectUrl(file)
+        .then((url) => {
+          if (!revoked) {
+            createdUrl = url;
+            setImageUrl(url);
+            setDecoding(false);
+          } else {
+            URL.revokeObjectURL(url);
+          }
+        })
+        .catch(() => { setLoadError(true); setDecoding(false); });
+      return () => {
+        revoked = true;
+        if (createdUrl) URL.revokeObjectURL(createdUrl);
+      };
+    }
+
     const url = URL.createObjectURL(file);
     setImageUrl(url);
     return () => URL.revokeObjectURL(url);
@@ -846,6 +950,7 @@ export function ImagePreview({ file, files, slug, options }: ImagePreviewProps) 
         ctx.setLineDash([]);
       }
     };
+    img.onerror = () => setLoadError(true);
     img.src = imageUrl;
   }, [imageUrl, allImageUrls, slug, options]);
 
@@ -855,6 +960,53 @@ export function ImagePreview({ file, files, slug, options }: ImagePreviewProps) 
     rafRef.current = requestAnimationFrame(render);
     return () => cancelAnimationFrame(rafRef.current);
   }, [render]);
+
+  if (decoding) {
+    return (
+      <div
+        ref={containerRef}
+        className="flex items-center justify-center rounded-lg border border-border bg-[#f5f5f5] dark:bg-[#1a1a1a] p-2 min-h-[200px]"
+      >
+        <div className="h-6 w-6 animate-spin rounded-full border-2 border-muted-foreground border-t-transparent" />
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div
+        ref={containerRef}
+        className="flex flex-col items-center justify-center gap-3 rounded-lg border border-border bg-[#f5f5f5] dark:bg-[#1a1a1a] p-8 min-h-[200px]"
+      >
+        <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-muted">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-muted-foreground"
+          >
+            <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+            <circle cx="9" cy="9" r="2" />
+            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+          </svg>
+        </div>
+        <div className="text-center">
+          <p className="text-sm font-medium text-foreground truncate max-w-[280px]">
+            {file.name}
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">
+            {getExtension(file.name).toUpperCase()} · {formatFileSize(file.size)}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
