@@ -15,15 +15,24 @@ TOOL_CONFIG = {
 }
 
 
-def _heif_convert(input_path: str, output_ext: str, quality: int) -> str:
-    """heif-convert (libheif-tools)로 HEIC → JPG/PNG 변환"""
+def _heic_convert(input_path: str, output_ext: str, quality: int) -> str:
+    """pillow-heif로 HEIC -> JPG/PNG 변환 (HEVC 코덱 내장)"""
+    from pillow_heif import register_heif_opener
+    from PIL import Image
+
+    register_heif_opener()
+
     basename = os.path.splitext(os.path.basename(input_path))[0]
-    # heif-convert는 확장자로 출력 포맷 결정
     output_path = f"/tmp/{basename}{output_ext}"
-    cmd = ["heif-convert", "-q", str(quality), input_path, output_path]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
-    if result.returncode != 0:
-        raise RuntimeError(f"heif-convert failed: {result.stderr}")
+
+    img = Image.open(input_path)
+    # HEIC는 RGBA일 수 있으므로 JPG 저장 시 RGB 변환
+    if output_ext == ".jpg" and img.mode in ("RGBA", "P"):
+        img = img.convert("RGB")
+    save_kwargs = {"quality": quality} if output_ext == ".jpg" else {}
+    img.save(output_path, **save_kwargs)
+    img.close()
+
     return output_path
 
 
@@ -44,10 +53,10 @@ def handle(tool: str, input_path: str, options: dict) -> tuple[str, str]:
     basename = os.path.splitext(os.path.basename(input_path))[0]
     output_path = f"/tmp/{basename}{output_ext}"
 
-    # HEIC/HEIF: heif-convert 사용 (ImageMagick HEIC 코덱 불안정)
+    # HEIC/HEIF: pillow-heif 사용 (시스템 libheif에 HEVC 코덱 없음)
     if tool.startswith("heic-"):
         quality = 95 if output_ext == ".jpg" else 100
-        output_path = _heif_convert(input_path, output_ext, quality)
+        output_path = _heic_convert(input_path, output_ext, quality)
         if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
             raise RuntimeError("HEIC conversion produced empty output")
         return output_path, f"{basename}{output_ext}"

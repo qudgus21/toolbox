@@ -12,8 +12,10 @@ RUN dnf install -y --setopt=install_weak_deps=False \
 RUN curl -sL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
     | tar xJ --strip-components=1 -C /usr/local/bin/ --wildcards '*/ffmpeg' '*/ffprobe'
 
-# Lambda Runtime Interface Client
+# Lambda Runtime Interface Client + Python dependencies
 RUN pip3 install --no-cache-dir awslambdaric
+COPY image-process/requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 WORKDIR /var/task
 COPY shared/ /var/task/shared/
