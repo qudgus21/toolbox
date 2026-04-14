@@ -39,10 +39,18 @@ registry.set("pages-per-sheet", () => import("./processors/pages-per-sheet"));
 registry.set("header-footer", () => import("./processors/header-footer"));
 registry.set("overlay", () => import("./processors/overlay"));
 registry.set("booklet", () => import("./processors/booklet"));
-// compress, pdf-to-word: 서버 기반 처리 필요 → comingSoon
-// registry.set("compress", () => import("./processors/compress"));
-// registry.set("pdf-to-word", () => import("./processors/pdf-to-word"));
-// ... 도구 추가 시 여기에 등록
+// ── Server-backed processors (Lambda) ──
+registry.set("compress", () => import("./processors/server-compress"));
+registry.set("pdf-to-pdfa", () => import("./processors/server-pdf-to-pdfa"));
+registry.set("repair", () => import("./processors/server-repair"));
+registry.set("unlock", () => import("./processors/server-unlock"));
+registry.set("ocr", () => import("./processors/server-ocr"));
+registry.set("word-to-pdf", () => import("./processors/server-word-to-pdf"));
+registry.set("excel-to-pdf", () => import("./processors/server-excel-to-pdf"));
+registry.set("ppt-to-pdf", () => import("./processors/server-ppt-to-pdf"));
+registry.set("pdf-to-word", () => import("./processors/server-pdf-to-word"));
+registry.set("pdf-to-excel", () => import("./processors/server-pdf-to-excel"));
+registry.set("pdf-to-ppt", () => import("./processors/server-pdf-to-ppt"));
 
 export async function getProcessor(slug: string): Promise<ProcessorFn | null> {
   const loader = registry.get(slug);

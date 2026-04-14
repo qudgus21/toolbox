@@ -454,7 +454,7 @@ export const tools: ImageToolDefinition[] = [
     acceptedTypes: IMG_RASTER,
   },
 
-  // ── Server-required format conversions (comingSoon) ──
+  // ── Server-backed format conversions (Lambda) ──
   {
     slug: "heic-to-jpg",
     title: "HEIC to JPG",
@@ -463,7 +463,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "📱",
     category: "convert",
     acceptedTypes: ".heic,.heif",
-    comingSoon: true,
   },
   {
     slug: "heic-to-png",
@@ -473,7 +472,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "📱",
     category: "convert",
     acceptedTypes: ".heic,.heif",
-    comingSoon: true,
   },
   {
     slug: "tiff-to-jpg",
@@ -483,7 +481,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "🖨️",
     category: "convert",
     acceptedTypes: ".tif,.tiff",
-    comingSoon: true,
   },
   {
     slug: "tiff-to-png",
@@ -493,7 +490,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "🖨️",
     category: "convert",
     acceptedTypes: ".tif,.tiff",
-    comingSoon: true,
   },
   {
     slug: "psd-to-jpg",
@@ -503,7 +499,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "🎨",
     category: "convert",
     acceptedTypes: ".psd",
-    comingSoon: true,
   },
   {
     slug: "psd-to-png",
@@ -513,7 +508,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "🎨",
     category: "convert",
     acceptedTypes: ".psd",
-    comingSoon: true,
   },
   {
     slug: "eps-to-jpg",
@@ -523,7 +517,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "📐",
     category: "convert",
     acceptedTypes: ".eps",
-    comingSoon: true,
   },
   {
     slug: "eps-to-png",
@@ -533,7 +526,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "📐",
     category: "convert",
     acceptedTypes: ".eps",
-    comingSoon: true,
   },
   {
     slug: "eps-to-svg",
@@ -543,7 +535,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "📐",
     category: "convert",
     acceptedTypes: ".eps",
-    comingSoon: true,
   },
   {
     slug: "png-to-svg",
@@ -553,7 +544,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "✨",
     category: "convert",
     acceptedTypes: ".png",
-    comingSoon: true,
   },
   {
     slug: "jpg-to-svg",
@@ -563,7 +553,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "✨",
     category: "convert",
     acceptedTypes: ".jpg,.jpeg",
-    comingSoon: true,
   },
   {
     slug: "gif-to-mp4",
@@ -573,7 +562,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "🎬",
     category: "convert",
     acceptedTypes: ".gif",
-    comingSoon: true,
   },
   {
     slug: "image-to-text",
@@ -583,7 +571,6 @@ export const tools: ImageToolDefinition[] = [
     emoji: "👁️",
     category: "convert",
     acceptedTypes: IMG_RASTER,
-    comingSoon: true,
   },
 
   // ── AI (서버 필요 — 서버 추가 시 comingSoon 해제 후 활성화) ──

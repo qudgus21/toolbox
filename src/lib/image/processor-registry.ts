@@ -58,7 +58,20 @@ registry.set("qr-code", () => import("./processors/qr-code"));
 registry.set("compress", () => import("./processors/compress"));
 registry.set("watermark", () => import("./processors/watermark"));
 
-// Server-required tools are comingSoon — no processors registered
+// ── Server-backed processors (Lambda) ──
+registry.set("heic-to-jpg", () => import("./processors/server-heic-to-jpg"));
+registry.set("heic-to-png", () => import("./processors/server-heic-to-png"));
+registry.set("tiff-to-jpg", () => import("./processors/server-tiff-to-jpg"));
+registry.set("tiff-to-png", () => import("./processors/server-tiff-to-png"));
+registry.set("psd-to-jpg", () => import("./processors/server-psd-to-jpg"));
+registry.set("psd-to-png", () => import("./processors/server-psd-to-png"));
+registry.set("eps-to-jpg", () => import("./processors/server-eps-to-jpg"));
+registry.set("eps-to-png", () => import("./processors/server-eps-to-png"));
+registry.set("eps-to-svg", () => import("./processors/server-eps-to-svg"));
+registry.set("png-to-svg", () => import("./processors/server-png-to-svg"));
+registry.set("jpg-to-svg", () => import("./processors/server-jpg-to-svg"));
+registry.set("gif-to-mp4", () => import("./processors/server-gif-to-mp4"));
+registry.set("image-to-text", () => import("./processors/server-image-to-text"));
 
 export async function getProcessor(slug: string): Promise<ImageProcessorFn | null> {
   const loader = registry.get(slug);
