@@ -5,7 +5,6 @@ import {
   FileOutput,
   GripVertical,
   ScanLine,
-  FileDown,
   FileImage,
   ImageDown,
   Presentation,
@@ -405,16 +404,7 @@ export const tools: ToolDefinition[] = [
     category: "optimize",
     acceptedTypes: ".pdf",
   },
-  {
-    slug: "pdf-to-word",
-    title: "PDF to Word",
-    description: "Convert PDF documents to editable Word files.",
-    icon: FileDown,
-    emoji: "📝",
-    category: "convert",
-    acceptedTypes: ".pdf",
-  },
-  // pdf-to-excel, pdf-to-ppt: LibreOffice 미지원으로 비활성화 (별도 솔루션 필요)
+  // pdf-to-word, pdf-to-excel, pdf-to-ppt: LibreOffice 변환 품질 미달로 비활성화 (별도 솔루션 필요)
   {
     slug: "word-to-pdf",
     title: "Word to PDF",
