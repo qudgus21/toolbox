@@ -37,8 +37,6 @@ export interface LandingDictionary {
   trust: {
     sectionTitle: string;
     sectionSubtitle: string;
-    browserBased: string;
-    browserBasedDesc: string;
     free: string;
     freeDesc: string;
     private: string;

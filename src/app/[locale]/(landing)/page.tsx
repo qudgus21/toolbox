@@ -213,12 +213,12 @@ export default async function LandingPage({
         <div className="border-t border-border-muted pt-8">
           <h2 className="text-sm font-medium text-foreground-subtle mb-2">About ToolPop</h2>
           <p className="text-xs text-foreground-subtle/70 leading-relaxed mb-4">
-            ToolPop is a free, privacy-first online toolkit with 250+ tools for PDFs, images, text, unit conversions, and calculations. Every tool runs entirely in your browser — your files never leave your device. No sign-up required, no file size limits, no watermarks.
+            ToolPop is a free, privacy-first online toolkit with 250+ tools for PDFs, images, text, unit conversions, and calculations. No sign-up required, no file size limits, no watermarks. Your files are deleted immediately after processing.
           </p>
           <div className="grid gap-4 sm:grid-cols-3">
             <div>
-              <h3 className="text-xs font-medium text-foreground-subtle mb-1">100% Browser-Based</h3>
-              <p className="text-xs text-foreground-subtle/60 leading-relaxed">All processing happens locally using WebAssembly and JavaScript. Your documents, images, and data stay on your device at all times.</p>
+              <h3 className="text-xs font-medium text-foreground-subtle mb-1">Privacy First</h3>
+              <p className="text-xs text-foreground-subtle/60 leading-relaxed">Your files are never stored or collected. Once processing is complete, everything is deleted — your data stays yours.</p>
             </div>
             <div>
               <h3 className="text-xs font-medium text-foreground-subtle mb-1">Professional Quality</h3>
