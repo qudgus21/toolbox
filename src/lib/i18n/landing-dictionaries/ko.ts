@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "PDF 편집, 이미지 변환, 단위 변환까지 — 설치 없이 브라우저에서 바로 사용하세요.",
   },
   hero: {
-    badge: "176개 이상의 무료 온라인 도구",
+    badge: "250개 이상의 무료 온라인 도구",
     title: "필요한 모든 도구, ToolPop 하나로",
     titleAccent: "ToolPop",
     subtitle:
@@ -20,35 +20,35 @@ const dict: LandingDictionary = {
       description:
         "병합, 분할, 변환, 편집, 압축까지 — PDF로 할 수 있는 모든 것.",
       cta: "PDF 도구 보기",
-      toolCount: "39개 도구",
+      toolCount: "44개 도구",
     },
     image: {
       name: "이미지 도구",
       description:
         "리사이즈, 자르기, 변환, 효과, QR코드 생성까지 — 이미지의 모든 것.",
       cta: "이미지 도구 보기",
-      toolCount: "48개 도구",
+      toolCount: "69개 도구",
     },
     text: {
       name: "텍스트 도구",
       description:
         "변환, 분석, 정리, 인코딩, 생성까지 — 텍스트 작업을 한 번에.",
       cta: "텍스트 도구 보기",
-      toolCount: "44개 이상 도구",
+      toolCount: "44개 도구",
     },
     converter: {
       name: "변환 도구",
       description:
         "단위, 색상, 데이터 형식, 날짜 등을 즉시 변환하세요.",
       cta: "변환 도구 보기",
-      toolCount: "45개 도구",
+      toolCount: "48개 도구",
     },
     calculator: {
       name: "계산기 도구",
       description:
         "수학, 금융, 건강, 일상 계산까지 — 빠르고 정확하게.",
       cta: "계산기 도구 보기",
-      toolCount: "30개 이상 도구",
+      toolCount: "50개 도구",
     },
   },
   popularTools: {
@@ -57,26 +57,24 @@ const dict: LandingDictionary = {
     viewAll: "모두 보기",
   },
   stats: {
-    tools: "176+",
+    tools: "250+",
     toolsLabel: "무료 도구",
     languages: "45",
     languagesLabel: "지원 언어",
-    users: "100%",
-    usersLabel: "브라우저 처리",
+    users: "5",
+    usersLabel: "카테고리",
     price: "₩0",
     priceLabel: "영원히 무료",
   },
   trust: {
     sectionTitle: "왜 ToolPop인가요?",
     sectionSubtitle: "파일 보안과 사용 편의를 모두 잡았습니다",
-    browserBased: "브라우저에서 처리",
-    browserBasedDesc: "파일이 서버로 전송되지 않습니다. 모든 작업이 브라우저에서 이루어져 빠르고 안전합니다.",
     free: "완전 무료",
-    freeDesc: "모든 도구를 횟수 제한 없이 무료로 사용할 수 있습니다. 숨겨진 요금도 없습니다.",
+    freeDesc: "모든 도구를 횟수 제한 없이 무료로 사용하세요. 숨겨진 요금 같은 건 없습니다.",
     private: "개인정보 보호",
-    privateDesc: "파일은 기기를 떠나지 않습니다. 서버 업로드가 없어 개인정보가 안전합니다.",
+    privateDesc: "작업이 끝나면 파일은 즉시 삭제됩니다. 수집하거나 저장하지 않습니다.",
     noSignup: "가입 불필요",
-    noSignupDesc: "계정이나 이메일 없이도 모든 기능을 바로 사용할 수 있습니다.",
+    noSignupDesc: "계정도, 이메일도 필요 없습니다. 열고 바로 쓰세요.",
   },
   cta: {
     title: "지금 바로 시작하세요",

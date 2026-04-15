@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "Edita PDFs, transforma imágenes, convierte unidades y mucho más. Todo gratis, desde tu navegador.",
   },
   hero: {
-    badge: "176+ herramientas online gratuitas",
+    badge: "250+ herramientas online gratuitas",
     title: "Todas las herramientas que necesitas, en un solo ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -20,35 +20,35 @@ const dict: LandingDictionary = {
       description:
         "Combina, divide, convierte, edita y comprime — todo lo que puedes hacer con un PDF.",
       cta: "Ver herramientas PDF",
-      toolCount: "39 herramientas",
+      toolCount: "44 herramientas",
     },
     image: {
       name: "Herramientas de imagen",
       description:
         "Redimensiona, recorta, convierte, aplica efectos, genera códigos QR — todo para tus imágenes.",
       cta: "Ver herramientas de imagen",
-      toolCount: "48 herramientas",
+      toolCount: "69 herramientas",
     },
     text: {
       name: "Herramientas de texto",
       description:
         "Transforma, analiza, limpia, codifica y genera texto al instante.",
       cta: "Ver herramientas de texto",
-      toolCount: "44+ herramientas",
+      toolCount: "44 herramientas",
     },
     converter: {
       name: "Herramientas de conversión",
       description:
         "Convierte unidades, colores, formatos de datos, fechas y más al instante.",
       cta: "Ver conversores",
-      toolCount: "45 herramientas",
+      toolCount: "48 herramientas",
     },
     calculator: {
       name: "Calculadoras",
       description:
         "Matemáticas, finanzas, salud y calculadoras del día a día — rápidas y gratuitas.",
       cta: "Ver calculadoras",
-      toolCount: "30+ herramientas",
+      toolCount: "50 herramientas",
     },
   },
   popularTools: {
@@ -57,26 +57,24 @@ const dict: LandingDictionary = {
     viewAll: "Ver todo",
   },
   stats: {
-    tools: "176+",
+    tools: "250+",
     toolsLabel: "Herramientas gratuitas",
     languages: "45",
     languagesLabel: "Idiomas",
-    users: "100%",
-    usersLabel: "En el navegador",
+    users: "5",
+    usersLabel: "Categorías",
     price: "€0",
     priceLabel: "Gratis para siempre",
   },
   trust: {
     sectionTitle: "¿Por qué ToolPop?",
     sectionSubtitle: "Seguridad y comodidad, sin concesiones",
-    browserBased: "Procesamiento en el navegador",
-    browserBasedDesc: "Tus archivos nunca salen de tu dispositivo. Todo se ejecuta en tu navegador, de forma rápida y segura.",
-    free: "Totalmente gratuito",
-    freeDesc: "Usa cualquier herramienta todas las veces que quieras, sin límites ni costes ocultos.",
-    private: "Privacidad ante todo",
-    privateDesc: "Tus archivos se quedan en tu dispositivo. Sin subidas a servidores, tus datos son solo tuyos.",
+    free: "Totalmente gratis",
+    freeDesc: "Usa todas las herramientas sin límites ni restricciones. Sin costes ocultos, ni ahora ni nunca.",
+    private: "Tu privacidad, primero",
+    privateDesc: "Tus archivos se eliminan en cuanto termina el procesamiento. No recopilamos ni almacenamos nada.",
     noSignup: "Sin registro",
-    noSignupDesc: "Sin cuenta, sin correo. Solo abre una herramienta y empieza a trabajar.",
+    noSignupDesc: "Sin cuenta, sin correo electrónico. Abre la herramienta y ponte a trabajar.",
   },
   cta: {
     title: "¿Listo para empezar?",

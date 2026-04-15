@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "Edit PDFs, transform images, convert units and more — all free, right in your browser.",
   },
   hero: {
-    badge: "176+ Free Online Tools",
+    badge: "250+ Free Online Tools",
     title: "Every tool you need, in one ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -20,35 +20,35 @@ const dict: LandingDictionary = {
       description:
         "Merge, split, convert, edit, and compress — everything you can do with a PDF.",
       cta: "Explore PDF Tools",
-      toolCount: "39 tools",
+      toolCount: "44 tools",
     },
     image: {
       name: "Image Tools",
       description:
         "Resize, crop, convert, apply effects, generate QR codes — everything for images.",
       cta: "Explore Image Tools",
-      toolCount: "48 tools",
+      toolCount: "69 tools",
     },
     text: {
       name: "Text Tools",
       description:
         "Transform, analyze, clean, encode, and generate text instantly.",
       cta: "Explore Text Tools",
-      toolCount: "44+ tools",
+      toolCount: "44 tools",
     },
     converter: {
       name: "Converter Tools",
       description:
         "Convert units, colors, data formats, dates, and more — instantly.",
       cta: "Explore Converter Tools",
-      toolCount: "45 tools",
+      toolCount: "48 tools",
     },
     calculator: {
       name: "Calculator Tools",
       description:
         "Math, finance, health, and everyday calculators — fast and free.",
       cta: "Explore Calculator Tools",
-      toolCount: "30+ tools",
+      toolCount: "50 tools",
     },
   },
   popularTools: {
@@ -57,26 +57,24 @@ const dict: LandingDictionary = {
     viewAll: "View all",
   },
   stats: {
-    tools: "176+",
+    tools: "250+",
     toolsLabel: "Free Tools",
     languages: "45",
     languagesLabel: "Languages",
-    users: "100%",
-    usersLabel: "Browser-Based",
+    users: "5",
+    usersLabel: "Categories",
     price: "$0",
     priceLabel: "Free Forever",
   },
   trust: {
     sectionTitle: "Why ToolPop?",
     sectionSubtitle: "Security and convenience, without compromise",
-    browserBased: "Browser-Based Processing",
-    browserBasedDesc: "Your files never leave your device. Everything runs in your browser — fast and secure.",
     free: "Completely Free",
-    freeDesc: "Use every tool as many times as you want, with no limits. No hidden fees.",
+    freeDesc: "Use every tool as many times as you want, with no limits. No hidden fees, ever.",
     private: "Privacy First",
-    privateDesc: "Files stay on your device. No server uploads means your data stays yours.",
+    privateDesc: "Your files are deleted as soon as processing is done. We never collect or store them.",
     noSignup: "No Sign-Up Required",
-    noSignupDesc: "No account, no email. Just open a tool and start working.",
+    noSignupDesc: "No account, no email needed. Just open a tool and get to work.",
   },
   cta: {
     title: "Ready to get started?",
