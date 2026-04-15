@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "عدّل ملفات PDF، عالج الصور، حوّل الوحدات والمزيد. كل شيء مجاني، مباشرة من المتصفح.",
   },
   hero: {
-    badge: "أكثر من 176 أداة مجانية",
+    badge: "أكثر من 250 أداة مجانية",
     title: "كل الأدوات التي تحتاجها، في مكان واحد — ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -20,14 +20,14 @@ const dict: LandingDictionary = {
       description:
         "دمج، تقسيم، تحويل، تعديل، وضغط — كل ما يمكنك فعله بملف PDF.",
       cta: "استكشف أدوات PDF",
-      toolCount: "39 أداة",
+      toolCount: "44 أداة",
     },
     image: {
       name: "أدوات الصور",
       description:
         "تغيير الحجم، قص، تحويل، تأثيرات، رموز QR — كل ما تحتاجه للصور.",
       cta: "استكشف أدوات الصور",
-      toolCount: "48 أداة",
+      toolCount: "69 أداة",
     },
     text: {
       name: "أدوات النصوص",
@@ -41,14 +41,14 @@ const dict: LandingDictionary = {
       description:
         "حوّل الوحدات والألوان وصيغ البيانات والتواريخ والمزيد فوراً.",
       cta: "استكشف أدوات التحويل",
-      toolCount: "45 أداة",
+      toolCount: "48 أداة",
     },
     calculator: {
       name: "الآلات الحاسبة",
       description:
         "رياضيات، مالية، صحة وحسابات يومية — سريعة ومجانية.",
       cta: "استكشف الآلات الحاسبة",
-      toolCount: "أكثر من 30 أداة",
+      toolCount: "أكثر من 50 أداة",
     },
   },
   popularTools: {
@@ -57,26 +57,24 @@ const dict: LandingDictionary = {
     viewAll: "عرض الكل",
   },
   stats: {
-    tools: "176+",
+    tools: "250+",
     toolsLabel: "أداة مجانية",
     languages: "45",
     languagesLabel: "لغة",
-    users: "100%",
-    usersLabel: "يعمل في المتصفح",
+    users: "5",
+    usersLabel: "فئات",
     price: "$0",
     priceLabel: "مجاني للأبد",
   },
   trust: {
     sectionTitle: "لماذا ToolPop؟",
     sectionSubtitle: "أمان وسهولة، بدون تنازلات",
-    browserBased: "معالجة داخل المتصفح",
-    browserBasedDesc: "ملفاتك لا تغادر جهازك أبداً. كل شيء يتم في المتصفح — بسرعة وأمان.",
     free: "مجاني بالكامل",
-    freeDesc: "استخدم أي أداة بلا حدود، وبدون أي رسوم خفية.",
-    private: "خصوصيتك أولاً",
-    privateDesc: "ملفاتك تبقى على جهازك. لا رفع على أي سيرفر، بياناتك ملكك وحدك.",
+    freeDesc: "استخدم كل الأدوات بلا حدود وبلا عدد. مجاناً اليوم وغداً ودائماً.",
+    private: "خصوصيتك محمية",
+    privateDesc: "نحذف ملفاتك فور انتهاء المعالجة. لا نجمعها ولا نخزّنها أبداً.",
     noSignup: "بدون تسجيل حساب",
-    noSignupDesc: "لا حساب، لا بريد إلكتروني. فقط افتح الأداة وابدأ العمل.",
+    noSignupDesc: "لا حساب ولا بريد إلكتروني. فقط افتح الأداة وابدأ العمل فوراً.",
   },
   cta: {
     title: "مستعد للبدء؟",

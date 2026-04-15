@@ -20,7 +20,7 @@ export const apps: AppDefinition[] = [
     accentBg: "bg-red-50 dark:bg-red-950/30",
     accentBorder: "border-red-200 dark:border-red-800/40",
     href: "/pdf",
-    popularToolSlugs: ["merge", "split", "pdf-to-jpg", "edit-pdf", "compress", "rotate"],
+    popularToolSlugs: ["merge", "compress", "pdf-to-jpg", "split", "edit-pdf", "word-to-pdf"],
   },
   {
     slug: "image",
@@ -31,7 +31,7 @@ export const apps: AppDefinition[] = [
     accentBg: "bg-blue-50 dark:bg-blue-950/30",
     accentBorder: "border-blue-200 dark:border-blue-800/40",
     href: "/image",
-    popularToolSlugs: ["resize", "crop", "compress", "convert", "remove-bg", "qr-code"],
+    popularToolSlugs: ["resize", "compress", "heic-to-jpg", "crop", "jpg-to-png", "qr-code"],
   },
   {
     slug: "text",
@@ -42,7 +42,7 @@ export const apps: AppDefinition[] = [
     accentBg: "bg-amber-50 dark:bg-amber-950/30",
     accentBorder: "border-amber-200 dark:border-amber-800/40",
     href: "/text",
-    popularToolSlugs: ["word-counter", "case-converter", "find-and-replace", "base64", "json-formatter", "text-diff"],
+    popularToolSlugs: ["word-counter", "json-formatter", "case-converter", "password-generator", "base64", "lorem-ipsum"],
   },
   {
     slug: "converter",
@@ -53,7 +53,7 @@ export const apps: AppDefinition[] = [
     accentBg: "bg-emerald-50 dark:bg-emerald-950/30",
     accentBorder: "border-emerald-200 dark:border-emerald-800/40",
     href: "/converter",
-    popularToolSlugs: ["length", "weight", "temperature", "color-converter", "json-yaml", "px-rem"],
+    popularToolSlugs: ["length", "temperature", "weight", "color-converter", "json-yaml", "unix-timestamp"],
   },
   {
     slug: "calculator",
@@ -64,6 +64,6 @@ export const apps: AppDefinition[] = [
     accentBg: "bg-violet-50 dark:bg-violet-950/30",
     accentBorder: "border-violet-200 dark:border-violet-800/40",
     href: "/calculator",
-    popularToolSlugs: ["compound-interest", "bmi-calculator", "percentage-calculator", "tip-calculator", "loan-calculator", "scientific-calculator"],
+    popularToolSlugs: ["percentage-calculator", "bmi-calculator", "loan-calculator", "compound-interest", "tip-calculator", "scientific-calculator"],
   },
 ];
