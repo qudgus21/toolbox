@@ -7,7 +7,7 @@ const dict: LandingDictionary = {
       "PDF編集、画像加工、単位変換など — すべて無料、ブラウザだけで完結。",
   },
   hero: {
-    badge: "176以上の無料オンラインツール",
+    badge: "250以上の無料オンラインツール",
     title: "必要なツールがすべて揃う、ToolPop",
     titleAccent: "ToolPop",
     subtitle:
@@ -20,14 +20,14 @@ const dict: LandingDictionary = {
       description:
         "結合、分割、変換、編集、圧縮 — PDFでできること、すべて揃っています。",
       cta: "PDFツールを見る",
-      toolCount: "39ツール",
+      toolCount: "44ツール",
     },
     image: {
       name: "画像ツール",
       description:
         "リサイズ、切り抜き、変換、エフェクト、QRコード生成 — 画像に関するすべてをカバー。",
       cta: "画像ツールを見る",
-      toolCount: "48ツール",
+      toolCount: "69ツール",
     },
     text: {
       name: "テキストツール",
@@ -41,14 +41,14 @@ const dict: LandingDictionary = {
       description:
         "単位・色・データ形式・日付などを瞬時に変換。",
       cta: "変換ツールを見る",
-      toolCount: "45種類",
+      toolCount: "48種類",
     },
     calculator: {
       name: "計算ツール",
       description:
         "数学、金融、健康、日常の計算をすばやく正確に。",
       cta: "計算ツールを見る",
-      toolCount: "30以上のツール",
+      toolCount: "50以上のツール",
     },
   },
   popularTools: {
@@ -57,26 +57,24 @@ const dict: LandingDictionary = {
     viewAll: "すべて見る",
   },
   stats: {
-    tools: "176+",
+    tools: "250+",
     toolsLabel: "無料ツール",
     languages: "45",
     languagesLabel: "対応言語",
-    users: "100%",
-    usersLabel: "ブラウザ完結",
+    users: "5",
+    usersLabel: "カテゴリ",
     price: "¥0",
     priceLabel: "ずっと無料",
   },
   trust: {
     sectionTitle: "ToolPopが選ばれる理由",
     sectionSubtitle: "安全性と使いやすさ、妥協なし",
-    browserBased: "ブラウザ内で処理",
-    browserBasedDesc: "ファイルがデバイスの外に出ることはありません。すべてブラウザ内で完結 — 高速で安全。",
     free: "完全無料",
-    freeDesc: "すべてのツールを回数無制限で利用可能。隠れた料金は一切ありません。",
+    freeDesc: "すべてのツールを何度でも制限なく利用できます。追加料金は一切ありません。",
     private: "プライバシー最優先",
-    privateDesc: "ファイルはお使いのデバイス上にとどまります。サーバーへのアップロードなし、データはあなただけのもの。",
+    privateDesc: "処理が完了した時点でファイルは削除されます。収集も保存も行いません。",
     noSignup: "会員登録不要",
-    noSignupDesc: "アカウントもメールアドレスも不要。ツールを開いて、すぐに使い始められます。",
+    noSignupDesc: "アカウントもメールも必要ありません。ツールを開いたら、すぐ使えます。",
   },
   cta: {
     title: "さっそく使ってみましょう",

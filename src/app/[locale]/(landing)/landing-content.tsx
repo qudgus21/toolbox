@@ -2,7 +2,7 @@
 
 import { useRef, useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { ArrowRight, Monitor, Gift, ShieldCheck, UserX, Search, Sparkles } from "lucide-react";
+import { ArrowRight, Gift, ShieldCheck, UserX, Search, Sparkles } from "lucide-react";
 import { Container } from "@/lib/ui";
 import { apps } from "@/lib/apps";
 import { appIconMap } from "@/lib/app-icons";
@@ -23,6 +23,66 @@ interface LandingContentProps {
   locale: string;
   popularTools: PopularToolInfo[];
   allTools: PopularToolInfo[];
+}
+
+/* Count-up animation hook for stats */
+function useCountUp(target: number, duration = 1000) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "-40px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!started) return;
+    const start = performance.now();
+    let raf: number;
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - (1 - progress) ** 3;
+      setCount(Math.round(eased * target));
+      if (progress < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [started, target, duration]);
+
+  return { ref, count };
+}
+
+function CountUpStat({ value, label, gradient }: { value: string; label: string; gradient: string }) {
+  const match = value.match(/^([^\d]*?)(\d+)(.*)$/);
+  const prefix = match?.[1] ?? "";
+  const num = match ? parseInt(match[2], 10) : 0;
+  const suffix = match?.[3] ?? "";
+  const { ref, count } = useCountUp(num);
+
+  return (
+    <div className="relative group">
+      <div className="rounded-2xl border border-border/60 bg-background-elevated p-5 text-center sm:transition-all sm:duration-300 sm:hover:shadow-md sm:hover:-translate-y-0.5">
+        <div ref={ref} className={`text-3xl font-extrabold bg-gradient-to-r ${gradient} bg-clip-text text-transparent sm:text-4xl`}>
+          {prefix}{count}{suffix}
+        </div>
+        <div className="mt-1 text-xs font-medium text-foreground-muted sm:text-sm">
+          {label}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /* Shared IntersectionObserver for all AnimatedSections — single observer instead of 5 */
@@ -80,9 +140,9 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
   const [search, setSearch] = useState("");
   const searchTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  /* Lazy-load icon maps — only when user starts searching */
+  /* Lazy-load icon maps for all 5 apps */
   type IconMap = Record<string, React.ComponentType<{ className?: string }>>;
-  const [iconMaps, setIconMaps] = useState<{ pdf: IconMap; image: IconMap } | null>(null);
+  const [iconMaps, setIconMaps] = useState<Record<string, IconMap> | null>(null);
   const iconMapsLoadedRef = useRef(false);
   const loadIconMaps = useCallback(() => {
     if (iconMapsLoadedRef.current) return;
@@ -90,8 +150,16 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
     Promise.all([
       import("@/lib/pdf/tool-icons").then((m) => m.toolIconMap),
       import("@/lib/image/tool-icons").then((m) => m.toolIconMap),
-    ]).then(([pdf, image]) => setIconMaps({ pdf, image }));
+      import("@/lib/text/tool-icons").then((m) => m.toolIconMap),
+      import("@/lib/converter/tool-icons").then((m) => m.converterToolIconMap),
+      import("@/lib/calculator/tool-icons").then((m) => m.calculatorToolIconMap),
+    ]).then(([pdf, image, text, converter, calculator]) =>
+      setIconMaps({ pdf, image, text, converter, calculator }),
+    );
   }, []);
+
+  // 마운트 시 아이콘 로드 (인기도구 섹션에서 바로 필요)
+  useEffect(() => { loadIconMaps(); }, [loadIconMaps]);
 
   // 검색어 디바운스 추적
   useEffect(() => {
@@ -138,7 +206,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                 ) : (
                   searchResults.map((tool) => {
                     const app = apps.find((a) => a.slug === tool.appSlug);
-                    const ToolIcon = iconMaps?.[tool.appSlug as "pdf" | "image"]?.[tool.slug];
+                    const ToolIcon = iconMaps?.[tool.appSlug]?.[tool.slug];
                     return (
                       <Link
                         key={`${tool.appSlug}-${tool.slug}`}
@@ -151,11 +219,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                           <span className="block text-sm font-semibold text-foreground">{tool.title}</span>
                           <span className="block text-xs text-foreground-muted truncate">{tool.description}</span>
                         </div>
-                        <span className={`shrink-0 text-[10px] font-bold rounded px-1.5 py-0.5 ${
-                          app?.slug === "pdf"
-                            ? "bg-red-50 text-red-600 dark:bg-red-950/50 dark:text-red-400"
-                            : "bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
-                        }`}>
+                        <span className={`shrink-0 text-[10px] font-bold rounded px-1.5 py-0.5 ${app?.accentBg ?? ""} ${app?.accentText ?? ""}`}>
                           {app?.slug.toUpperCase()}
                         </span>
                       </Link>
@@ -169,29 +233,19 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
       </section>
 
       {/* Stats Bar */}
-      <AnimatedSection className="py-8 sm:py-10">
+      <section className="py-8 sm:py-10">
         <Container size="lg">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {[
               { value: dict.stats.tools, label: dict.stats.toolsLabel, gradient: "from-purple-500 to-indigo-500" },
               { value: dict.stats.languages, label: dict.stats.languagesLabel, gradient: "from-blue-500 to-cyan-500" },
-              { value: dict.stats.users, label: dict.stats.usersLabel, gradient: "from-green-500 to-emerald-500" },
               { value: dict.stats.price, label: dict.stats.priceLabel, gradient: "from-amber-500 to-orange-500" },
             ].map((stat) => (
-              <div key={stat.label} className="relative group">
-                <div className="rounded-2xl border border-border/60 bg-background-elevated p-5 text-center sm:transition-all sm:duration-300 sm:hover:shadow-md sm:hover:-translate-y-0.5">
-                  <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent sm:text-4xl`}>
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-foreground-muted sm:text-sm">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
+              <CountUpStat key={stat.label} value={stat.value} label={stat.label} gradient={stat.gradient} />
             ))}
           </div>
         </Container>
-      </AnimatedSection>
+      </section>
 
       {/* App Showcase Cards */}
       <AnimatedSection className="py-8 sm:py-12">
@@ -259,7 +313,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {popularTools.map((tool) => {
                 const app = apps.find((a) => a.slug === tool.appSlug);
-                const ToolIcon = iconMaps?.[tool.appSlug as "pdf" | "image"]?.[tool.slug];
+                const ToolIcon = iconMaps?.[tool.appSlug]?.[tool.slug];
                 return (
                   <div key={`${tool.appSlug}-${tool.slug}`}>
                     <Link
@@ -271,11 +325,7 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                         {ToolIcon ? <ToolIcon className="h-7 w-7 shrink-0" /> : <span className="text-2xl">{tool.emoji}</span>}
                         <div className="min-w-0 flex-1">
                           <span className="block text-sm font-semibold text-foreground">{tool.title}</span>
-                          <span className={`text-[10px] font-bold ${
-                            app?.slug === "pdf"
-                              ? "text-red-500 dark:text-red-400"
-                              : "text-blue-500 dark:text-blue-400"
-                          }`}>
+                          <span className={`text-[10px] font-bold ${app?.accentText ?? ""}`}>
                             {app?.slug.toUpperCase()}
                           </span>
                         </div>
@@ -311,9 +361,8 @@ export function LandingContent({ dict, locale, popularTools, allTools }: Landing
                 {dict.trust.sectionSubtitle}
               </p>
             </div>
-            <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-6">
               {([
-                { icon: Monitor, title: dict.trust.browserBased, desc: dict.trust.browserBasedDesc, color: "from-purple-500 to-indigo-500" },
                 { icon: Gift, title: dict.trust.free, desc: dict.trust.freeDesc, color: "from-amber-500 to-orange-500" },
                 { icon: ShieldCheck, title: dict.trust.private, desc: dict.trust.privateDesc, color: "from-green-500 to-emerald-500" },
                 { icon: UserX, title: dict.trust.noSignup, desc: dict.trust.noSignupDesc, color: "from-blue-500 to-cyan-500" },
