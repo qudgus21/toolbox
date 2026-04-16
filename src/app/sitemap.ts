@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
-import { locales } from "@/lib/i18n";
+import { indexedLocales } from "@/lib/i18n";
 import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
 import { tools as textTools } from "@/lib/text/tools";
 import { tools as converterTools } from "@/lib/converter/tools";
 import { tools as calculatorTools } from "@/lib/calculator/tools";
 import { articles } from "@/lib/blog/articles";
+import { formats } from "@/lib/formats/format-data";
+import { comparisons } from "@/lib/formats/comparison-data";
 
 const BASE_URL = "https://toolpop.org";
 
@@ -13,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   // Landing pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}`,
       lastModified: new Date("2026-03-23"),
@@ -23,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // PDF home pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/pdf`,
       lastModified: new Date("2026-03-23"),
@@ -33,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Image home pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/image`,
       lastModified: new Date("2026-03-23"),
@@ -43,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Text home pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/text`,
       lastModified: new Date("2026-03-24"),
@@ -54,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // PDF tool pages for each locale x tool combination
   const pdfSlugs = pdfTools.map((t) => t.slug);
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const slug of pdfSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/pdf/${slug}`,
@@ -67,7 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Image tool pages for each locale x tool combination
   const imageSlugs = imageTools.map((t) => t.slug);
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const slug of imageSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/image/${slug}`,
@@ -80,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Text tool pages for each locale x tool combination
   const textSlugs = textTools.map((t) => t.slug);
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const slug of textSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/text/${slug}`,
@@ -92,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Converter home pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/converter`,
       lastModified: new Date("2026-03-25"),
@@ -103,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Converter tool pages for each locale x tool combination
   const converterSlugs = converterTools.map((t) => t.slug);
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const slug of converterSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/converter/${slug}`,
@@ -115,7 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Calculator home pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/calculator`,
       lastModified: new Date("2026-03-26"),
@@ -126,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Calculator tool pages for each locale x tool combination
   const calculatorSlugs = calculatorTools.map((t) => t.slug);
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const slug of calculatorSlugs) {
       entries.push({
         url: `${BASE_URL}/${locale}/calculator/${slug}`,
@@ -138,7 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Blog listing page for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/blog`,
       lastModified: new Date("2026-03-23"),
@@ -148,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Blog article pages for each locale x article combination
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const article of articles) {
       if (article.content[locale]) {
         entries.push({
@@ -162,7 +164,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Info pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     for (const page of ["about", "contact", "faq"] as const) {
       entries.push({
         url: `${BASE_URL}/${locale}/${page}`,
@@ -174,7 +176,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Legal pages for each locale
-  for (const locale of locales) {
+  for (const locale of indexedLocales) {
     entries.push({
       url: `${BASE_URL}/${locale}/privacy`,
       lastModified: new Date("2026-03-23"),
@@ -187,6 +189,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     });
+  }
+
+  // Format guide listing page
+  for (const locale of indexedLocales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/formats`,
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  // Format guide detail pages
+  for (const locale of indexedLocales) {
+    for (const format of formats) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/formats/${format.slug}`,
+        lastModified: new Date("2026-04-16"),
+        changeFrequency: "monthly",
+        priority: 0.5,
+      });
+    }
+  }
+
+  // Comparison listing page
+  for (const locale of indexedLocales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/compare`,
+      lastModified: new Date("2026-04-16"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+
+  // Comparison detail pages
+  for (const locale of indexedLocales) {
+    for (const comparison of comparisons) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/compare/${comparison.slug}`,
+        lastModified: new Date("2026-04-16"),
+        changeFrequency: "monthly",
+        priority: 0.5,
+      });
+    }
   }
 
   return entries;

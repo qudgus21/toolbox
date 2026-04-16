@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "Herramientas online gratuitas para PDF, imágenes y más. Sin registro.",
     madeWith: "Hecho con amor para todos",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "No se encontraron resultados",
   },

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { type Locale, locales, getDictionary } from "@/lib/i18n";
+import { type Locale, locales, indexedLocales, getDictionary } from "@/lib/i18n";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { Container } from "@/lib/ui";
 import { notFound } from "next/navigation";
@@ -31,7 +31,7 @@ export async function generateMetadata({
     description: content.description,
     alternates: {
       languages: {
-        ...Object.fromEntries(locales.map((l) => [l, `/${l}/blog/${slug}`])),
+        ...Object.fromEntries(indexedLocales.map((l) => [l, `/${l}/blog/${slug}`])),
         "x-default": `/en/blog/${slug}`,
       },
     },
@@ -63,6 +63,25 @@ const categoryLabelKeys = {
   tips: "categoryTips",
   knowledge: "categoryKnowledge",
 } as const;
+
+function renderInlineContent(text: string): React.ReactNode[] {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <Link
+          key={i}
+          href={linkMatch[2]}
+          className="text-accent hover:underline"
+        >
+          {linkMatch[1]}
+        </Link>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
 
 function renderBody(body: string) {
   const blocks = body.split("\n\n");
@@ -98,7 +117,7 @@ function renderBody(body: string) {
               className="flex items-start gap-2 text-sm text-foreground-muted leading-relaxed"
             >
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              {item}
+              <span>{renderInlineContent(item)}</span>
             </li>
           ))}
         </ul>
@@ -106,7 +125,7 @@ function renderBody(body: string) {
     }
     return (
       <p key={i} className="text-sm text-foreground-muted leading-relaxed mb-4">
-        {trimmed}
+        {renderInlineContent(trimmed)}
       </p>
     );
   });
@@ -188,6 +207,26 @@ export default async function BlogArticlePage({
           </h1>
 
           <article className="prose-custom">{renderBody(content.body)}</article>
+
+          {/* Related Tools */}
+          {article.relatedTools && article.relatedTools.length > 0 && (
+            <section className="mt-10 pt-8 border-t border-border">
+              <h2 className="text-lg font-semibold text-foreground mb-4">
+                Related Tools
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {article.relatedTools.map(({ app, slug: toolSlug, title }) => (
+                  <Link
+                    key={`${app}-${toolSlug}`}
+                    href={`/${locale}/${app}/${toolSlug}`}
+                    className="rounded-lg border border-border p-3 text-sm text-foreground-muted hover:border-accent hover:text-accent transition-colors"
+                  >
+                    {title ?? `${app}/${toolSlug}`}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </Container>
       </main>
     </>

@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { calculatorContentAdditions } from "./calculator-content-additions";
 
-export const calculatorContent: ToolContentMap = {
+const _calculatorContent: ToolContentMap = {
   "percentage-calculator": {
     howTo: {
       title: "How to Calculate Percentages",
@@ -1657,3 +1658,7 @@ export const calculatorContent: ToolContentMap = {
     ],
   },
 };
+
+export const calculatorContent: ToolContentMap = Object.fromEntries(
+  Object.entries(_calculatorContent).map(([k, v]) => [k, { ...calculatorContentAdditions[k], ...v }]),
+);

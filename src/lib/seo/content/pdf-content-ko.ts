@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { pdfContentKoAdditions } from "./pdf-content-ko-additions";
 
-export const pdfContentKo: ToolContentMap = {
+const _pdfContentKo: ToolContentMap = {
   "pdf-to-jpg": {
     howTo: {
       title: "PDF를 JPG로 변환하는 방법",
@@ -1606,3 +1607,7 @@ export const pdfContentKo: ToolContentMap = {
     ],
   },
 };
+
+export const pdfContentKo: ToolContentMap = Object.fromEntries(
+  Object.entries(_pdfContentKo).map(([k, v]) => [k, { ...pdfContentKoAdditions[k], ...v }]),
+);

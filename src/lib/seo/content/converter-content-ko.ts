@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { converterContentKoAdditions } from "./converter-content-ko-additions";
 
-export const converterContentKo: ToolContentMap = {
+const _converterContentKo: ToolContentMap = {
   // Unit Converters
   "length": {
     howTo: {
@@ -1601,3 +1602,7 @@ export const converterContentKo: ToolContentMap = {
     ],
   },
 };
+
+export const converterContentKo: ToolContentMap = Object.fromEntries(
+  Object.entries(_converterContentKo).map(([k, v]) => [k, { ...converterContentKoAdditions[k], ...v }]),
+);

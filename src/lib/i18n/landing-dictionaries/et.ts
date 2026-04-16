@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Valmis alustama?", subtitle: "Ilma installimise, registreerimise ja makseteta — vaid üks klikk.", button: "Sirvi kõiki tööriistu" },
   common: { shareTitle: "Jaga", shareSubtitle: "Räägi sõpradele ToolPop-ist!", shareCopyLink: "Kopeeri link", shareCopied: "Kopeeritud!", ariaClose: "Sulge", ariaMenu: "Menüü", ariaShare: "Jaga", ariaToggleTheme: "Vaheta teemat" },
   footer: { apps: "Tööriistad", company: "Ettevõte", about: "Meist", contact: "Kontakt", faq: "KKK", blog: "Blogi", legal: "Õiguslik teave", privacy: "Privaatsuspoliitika", terms: "Kasutustingimused", copyright: "© 2026 ToolPop. Kõik õigused kaitstud.", tagline: "Tasuta veebitööriistad PDF-ide, piltide ja muu jaoks. Ilma registreerimata.", madeWith: "Loodud armastusega kõigile" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Tulemusi ei leitud" },
   nav: { pdf: "PDF", image: "Pilt", text: "Tekst", converter: "Teisendaja", calculator: "Kalkulaator" },
 };

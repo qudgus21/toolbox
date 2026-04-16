@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { calculatorContentKoAdditions } from "./calculator-content-ko-additions";
 
-export const calculatorContentKo: ToolContentMap = {
+const _calculatorContentKo: ToolContentMap = {
   "percentage-calculator": {
     howTo: {
       title: "백분율 계산하는 방법",
@@ -1657,3 +1658,7 @@ export const calculatorContentKo: ToolContentMap = {
     ],
   },
 };
+
+export const calculatorContentKo: ToolContentMap = Object.fromEntries(
+  Object.entries(_calculatorContentKo).map(([k, v]) => [k, { ...calculatorContentKoAdditions[k], ...v }]),
+);

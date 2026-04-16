@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Valmis aloittamaan?", subtitle: "Ei asennuksia, ei rekisteröitymistä, ei maksuja — vain yksi klikkaus.", button: "Selaa kaikkia työkaluja" },
   common: { shareTitle: "Jaa", shareSubtitle: "Kerro kavereillesi ToolPopista!", shareCopyLink: "Kopioi linkki", shareCopied: "Kopioitu!", ariaClose: "Sulje", ariaMenu: "Valikko", ariaShare: "Jaa", ariaToggleTheme: "Vaihda teemaa" },
   footer: { apps: "Työkalut", company: "Yritys", about: "Tietoa meistä", contact: "Yhteystiedot", faq: "UKK", blog: "Blogi", legal: "Oikeudelliset tiedot", privacy: "Tietosuojakäytäntö", terms: "Käyttöehdot", copyright: "© 2026 ToolPop. Kaikki oikeudet pidätetään.", tagline: "Ilmaiset verkkotyökalut PDF-tiedostoille, kuville ja muulle. Ei rekisteröitymistä.", madeWith: "Tehty rakkaudella kaikille" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Tuloksia ei löytynyt" },
   nav: { pdf: "PDF", image: "Kuva", text: "Teksti", converter: "Muunnin", calculator: "Laskuri" },
 };

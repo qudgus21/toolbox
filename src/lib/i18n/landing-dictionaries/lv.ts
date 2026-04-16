@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Gatavi sākt?", subtitle: "Bez instalēšanas, bez reģistrācijas, bez maksājumiem — tikai viens klikšķis.", button: "Apskatīt visus rīkus" },
   common: { shareTitle: "Dalīties", shareSubtitle: "Pastāstiet draugiem par ToolPop!", shareCopyLink: "Kopēt saiti", shareCopied: "Nokopēts!", ariaClose: "Aizvērt", ariaMenu: "Izvēlne", ariaShare: "Kopīgot", ariaToggleTheme: "Mainīt tēmu" },
   footer: { apps: "Rīki", company: "Uzņēmums", about: "Par mums", contact: "Kontakti", faq: "BUJ", blog: "Emuārs", legal: "Juridiskā informācija", privacy: "Privātuma politika", terms: "Lietošanas noteikumi", copyright: "© 2026 ToolPop. Visas tiesības aizsargātas.", tagline: "Bezmaksas tiešsaistes rīki PDF, attēliem un citiem. Bez reģistrācijas.", madeWith: "Veidots ar mīlestību visiem" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Nav rezultātu" },
   nav: { pdf: "PDF", image: "Attēls", text: "Teksts", converter: "Konvertētājs", calculator: "Kalkulators" },
 };
