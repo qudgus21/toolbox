@@ -1,7 +1,6 @@
 import { ImageResponse } from "@vercel/og";
 import { ogConverterMetadata, ogBottomBar } from "@/lib/seo";
 
-export const runtime = "edge";
 export const alt = "ToolPop Converter";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
