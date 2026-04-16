@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "أدوات مجانية عبر الإنترنت لملفات PDF والصور والمزيد. بدون تسجيل.",
     madeWith: "صُنع بحب للجميع",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "لم يتم العثور على نتائج",
   },

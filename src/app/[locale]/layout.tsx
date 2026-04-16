@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header, AppNavMenu } from "@/lib/ui";
 import { AppLogo } from "@/lib/ui/components/app-logo/app-logo";
@@ -7,7 +8,7 @@ import { LanguageSwitcher } from "@/lib/ui/components/language-switcher/language
 import { ShareButton } from "@/lib/ui/components/share-button";
 import { MobileTabBar } from "@/lib/ui/components/mobile-tab-bar/mobile-tab-bar";
 import { HtmlAttrsSync } from "./html-attrs-sync";
-import { type Locale, locales } from "@/lib/i18n";
+import { type Locale, locales, isIndexedLocale } from "@/lib/i18n";
 import { getLandingDictionary } from "@/lib/i18n/get-landing-dictionary";
 import { buildNavApps } from "@/lib/build-nav-apps";
 
@@ -15,9 +16,17 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   return {
     metadataBase: new URL("https://toolpop.org"),
+    ...(!isIndexedLocale(locale) && {
+      robots: { index: false, follow: true },
+    }),
   };
 }
 
@@ -45,6 +54,12 @@ export default async function LocaleLayout({
         logo={<AppLogo />}
         nav={<AppNavMenu apps={navApps} menuLabel={landingDict.common.ariaMenu} />}
       >
+        <Link
+          href={`/${locale}/blog`}
+          className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors hidden sm:block"
+        >
+          {landingDict.footer.blog}
+        </Link>
         <ThemeToggle ariaLabel={landingDict.common.ariaToggleTheme} />
         <ShareButton
           shareTitle={landingDict.common.shareTitle}

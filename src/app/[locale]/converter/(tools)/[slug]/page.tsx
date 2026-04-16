@@ -120,7 +120,7 @@ export default async function ToolPage({
         dualInput={tool.dualInput}
         toolPlaceholder={tool.placeholder}
       >
-        <ToolContentSection content={toolContent} />
+        <ToolContentSection content={toolContent} locale={locale} />
       </ConverterToolPageClient>
     </>
   );

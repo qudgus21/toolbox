@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Lest li tibda?", subtitle: "Bla installazzjoni, bla reġistrazzjoni, bla ħlasijiet — klikk waħda biss.", button: "Ara l-Għodod Kollha" },
   common: { shareTitle: "Aqsam", shareSubtitle: "Għid lil-ħbieb tiegħek dwar ToolPop!", shareCopyLink: "Ikkopja l-link", shareCopied: "Ikkopjat!", ariaClose: "Agħlaq", ariaMenu: "Menu", ariaShare: "Aqsam", ariaToggleTheme: "Ibdel it-tema" },
   footer: { apps: "Għodod", company: "Kumpanija", about: "Dwarna", contact: "Kuntatt", faq: "FAQ", blog: "Blog", legal: "Informazzjoni Legali", privacy: "Politika tal-Privatezza", terms: "Termini tas-Servizz", copyright: "© 2026 ToolPop. Id-drittijiet kollha riżervati.", tagline: "Għodda online b'xejn għal PDF, stampi u aktar. Mingħajr reġistrazzjoni.", madeWith: "Magħmul bl-imħabba għal kulħadd" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "L-ebda riżultati" },
   nav: { pdf: "PDF", image: "Immaġni", text: "Test", converter: "Konvertitur", calculator: "Kalkulatur" },
 };

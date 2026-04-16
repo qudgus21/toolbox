@@ -108,6 +108,11 @@ const dict: LandingDictionary = {
   search: {
     noResults: "검색 결과가 없습니다",
   },
+  blogSection: {
+    sectionTitle: "최신 아티클",
+    sectionSubtitle: "파일 형식과 디지털 도구에 대한 팁, 가이드, 심층 분석",
+    viewAll: "전체 보기",
+  },
   nav: {
     pdf: "PDF",
     image: "이미지",

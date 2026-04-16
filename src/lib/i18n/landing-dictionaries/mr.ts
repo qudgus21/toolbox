@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "सुरू करायला तयार आहात?", subtitle: "इन्स्टॉल नाही, साइन-अप नाही, पेमेंट नाही — फक्त एक क्लिक.", button: "सर्व साधने पहा" },
   common: { shareTitle: "शेअर करा", shareSubtitle: "तुमच्या मित्रांना ToolPop बद्दल सांगा!", shareCopyLink: "लिंक कॉपी करा", shareCopied: "कॉपी झाले!", ariaClose: "बंद करा", ariaMenu: "मेनू", ariaShare: "शेअर करा", ariaToggleTheme: "थीम बदला" },
   footer: { apps: "साधने", company: "कंपनी", about: "आमच्याबद्दल", contact: "संपर्क", faq: "वारंवार विचारले जाणारे प्रश्न", blog: "ब्लॉग", legal: "कायदेशीर", privacy: "गोपनीयता धोरण", terms: "सेवा अटी", copyright: "© 2026 ToolPop. सर्व हक्क राखीव.", tagline: "PDF, इमेज आणि अधिकसाठी मोफत ऑनलाइन साधने. साइन-अप नाही.", madeWith: "सर्वांसाठी प्रेमाने बनवलेले" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "कोणतेही परिणाम सापडले नाहीत" },
   nav: { pdf: "PDF", image: "चित्र", text: "मजकूर", converter: "कन्व्हर्टर", calculator: "कॅल्क्युलेटर" },
 };
