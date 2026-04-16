@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "免费在线PDF、图片等工具，无需注册即可使用。",
     madeWith: "用心为每个人打造",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "未找到结果",
   },

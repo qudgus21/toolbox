@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "PDF・画像などの無料オンラインツール。登録不要ですぐ使えます。",
     madeWith: "すべての人のために",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "結果が見つかりません",
   },

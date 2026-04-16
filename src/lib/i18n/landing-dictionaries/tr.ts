@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Başlamaya hazır mısın?", subtitle: "Kurulum yok, kayıt yok, ödeme yok — tek tık uzağında.", button: "Tüm Araçlara Göz At" },
   common: { shareTitle: "Paylaş", shareSubtitle: "Arkadaşlarına ToolPop'u anlat!", shareCopyLink: "Linki kopyala", shareCopied: "Kopyalandı!", ariaClose: "Kapat", ariaMenu: "Menü", ariaShare: "Paylaş", ariaToggleTheme: "Tema değiştir" },
   footer: { apps: "Araçlar", company: "Şirket", about: "Hakkımızda", contact: "İletişim", faq: "SSS", blog: "Blog", legal: "Yasal", privacy: "Gizlilik Politikası", terms: "Kullanım Koşulları", copyright: "© 2026 ToolPop. Tüm hakları saklıdır.", tagline: "PDF, görsel ve daha fazlası için ücretsiz çevrimiçi araçlar. Kayıt gerektirmez.", madeWith: "Herkes için sevgiyle yapıldı" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Sonuç bulunamadı" },
   nav: { pdf: "PDF", image: "Görsel", text: "Metin", converter: "Dönüştür", calculator: "Hesaplama" },
 };

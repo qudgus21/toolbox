@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Pronto per iniziare?", subtitle: "Nessuna installazione, nessuna registrazione, nessun pagamento — a un solo clic di distanza.", button: "Esplora tutti gli strumenti" },
   common: { shareTitle: "Condividi", shareSubtitle: "Fai conoscere ToolPop ai tuoi amici!", shareCopyLink: "Copia link", shareCopied: "Copiato!", ariaClose: "Chiudi", ariaMenu: "Menu", ariaShare: "Condividi", ariaToggleTheme: "Cambia tema" },
   footer: { apps: "Strumenti", company: "Azienda", about: "Chi siamo", contact: "Contatti", faq: "FAQ", blog: "Blog", legal: "Note legali", privacy: "Informativa sulla privacy", terms: "Termini di servizio", copyright: "© 2026 ToolPop. Tutti i diritti riservati.", tagline: "Strumenti online gratuiti per PDF, immagini e altro. Senza registrazione.", madeWith: "Fatto con amore per tutti" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Nessun risultato trovato" },
   nav: { pdf: "PDF", image: "Immagine", text: "Testo", converter: "Convertitore", calculator: "Calcolatrice" },
 };

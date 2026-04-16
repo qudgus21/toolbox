@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Redo att börja?", subtitle: "Ingen installation, ingen registrering, ingen betalning — bara ett klick bort.", button: "Se alla verktyg" },
   common: { shareTitle: "Dela", shareSubtitle: "Tipsa dina vänner om ToolPop!", shareCopyLink: "Kopiera länk", shareCopied: "Kopierad!", ariaClose: "Stäng", ariaMenu: "Meny", ariaShare: "Dela", ariaToggleTheme: "Byt tema" },
   footer: { apps: "Verktyg", company: "Företag", about: "Om oss", contact: "Kontakt", faq: "Vanliga frågor", blog: "Blogg", legal: "Juridiskt", privacy: "Integritetspolicy", terms: "Användarvillkor", copyright: "© 2026 ToolPop. Alla rättigheter förbehållna.", tagline: "Gratis onlineverktyg för PDF, bilder och mer. Ingen registrering krävs.", madeWith: "Skapat med kärlek för alla" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Inga resultat hittades" },
   nav: { pdf: "PDF", image: "Bild", text: "Text", converter: "Konverterare", calculator: "Kalkylator" },
 };

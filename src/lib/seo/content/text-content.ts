@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { textContentAdditions } from "./text-content-additions";
 
-export const textContent: ToolContentMap = {
+const _textContent: ToolContentMap = {
   "word-counter": {
     howTo: {
       title: "How to Count Words",
@@ -1454,3 +1455,7 @@ export const textContent: ToolContentMap = {
     ],
   },
 };
+
+export const textContent: ToolContentMap = Object.fromEntries(
+  Object.entries(_textContent).map(([k, v]) => [k, { ...textContentAdditions[k], ...v }]),
+);

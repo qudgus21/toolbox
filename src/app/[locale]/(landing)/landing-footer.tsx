@@ -70,6 +70,8 @@ export function LandingFooter({ dict, locale }: LandingFooterProps) {
                 { label: dict.footer.contact, href: `/${locale}/contact` },
                 { label: dict.footer.faq, href: `/${locale}/faq` },
                 { label: dict.footer.blog, href: `/${locale}/blog` },
+                { label: "Formats", href: `/${locale}/formats` },
+                { label: "Compare", href: `/${locale}/compare` },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

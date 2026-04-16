@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Siap mulai?", subtitle: "Tanpa instal, tanpa daftar, tanpa bayar — cukup satu klik.", button: "Jelajahi Semua Alat" },
   common: { shareTitle: "Bagikan", shareSubtitle: "Beritahu temanmu tentang ToolPop!", shareCopyLink: "Salin tautan", shareCopied: "Tersalin!", ariaClose: "Tutup", ariaMenu: "Menu", ariaShare: "Bagikan", ariaToggleTheme: "Ganti tema" },
   footer: { apps: "Alat", company: "Perusahaan", about: "Tentang", contact: "Kontak", faq: "FAQ", blog: "Blog", legal: "Hukum", privacy: "Kebijakan Privasi", terms: "Syarat Layanan", copyright: "© 2026 ToolPop. Semua hak dilindungi.", tagline: "Alat online gratis untuk PDF, gambar, dan lainnya. Tanpa registrasi.", madeWith: "Dibuat dengan cinta untuk semua" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Tidak ada hasil" },
   nav: { pdf: "PDF", image: "Gambar", text: "Teks", converter: "Konverter", calculator: "Kalkulator" },
 };

@@ -8,8 +8,15 @@ export const locales = [
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "ko";
 
+/** Locales included in sitemap and search engine indexing (others get noindex) */
+export const indexedLocales: readonly Locale[] = ["en", "ko"] as const;
+
 export function isValidLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
+}
+
+export function isIndexedLocale(locale: string): boolean {
+  return indexedLocales.includes(locale as Locale);
 }
 
 export interface Dictionary {

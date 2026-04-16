@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "Бесплатные онлайн-инструменты для PDF, изображений и не только. Без регистрации.",
     madeWith: "Сделано с любовью для каждого",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "Ничего не найдено",
   },

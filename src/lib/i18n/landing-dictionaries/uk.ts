@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Готові почати?", subtitle: "Без встановлення, без реєстрації, без оплати — лише один клік.", button: "Переглянути всі інструменти" },
   common: { shareTitle: "Поділитися", shareSubtitle: "Розкажіть друзям про ToolPop!", shareCopyLink: "Копіювати посилання", shareCopied: "Скопійовано!", ariaClose: "Закрити", ariaMenu: "Меню", ariaShare: "Поділитися", ariaToggleTheme: "Змінити тему" },
   footer: { apps: "Інструменти", company: "Компанія", about: "Про нас", contact: "Контакти", faq: "FAQ", blog: "Блог", legal: "Правова інформація", privacy: "Політика конфіденційності", terms: "Умови використання", copyright: "© 2026 ToolPop. Усі права захищені.", tagline: "Безкоштовні онлайн-інструменти для PDF, зображень та іншого. Без реєстрації.", madeWith: "Зроблено з любов'ю для кожного" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Нічого не знайдено" },
   nav: { pdf: "PDF", image: "Зображення", text: "Текст", converter: "Конвертер", calculator: "Калькулятор" },
 };

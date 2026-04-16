@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "ప్రారంభించడానికి సిద్ధంగా ఉన్నారా?", subtitle: "ఇన్‌స్టాల్ లేదు, సైన్-అప్ లేదు, చెల్లింపులు లేవు — ఒక్క క్లిక్ మాత్రమే.", button: "అన్ని టూల్స్ చూడండి" },
   common: { shareTitle: "షేర్ చేయండి", shareSubtitle: "మీ స్నేహితులకు ToolPop గురించి చెప్పండి!", shareCopyLink: "లింక్ కాపీ చేయండి", shareCopied: "కాపీ అయింది!", ariaClose: "మూసివేయి", ariaMenu: "మెనూ", ariaShare: "షేర్", ariaToggleTheme: "థీమ్ మార్చు" },
   footer: { apps: "టూల్స్", company: "కంపెనీ", about: "మా గురించి", contact: "సంప్రదించండి", faq: "తరచుగా అడిగే ప్రశ్నలు", blog: "బ్లాగ్", legal: "చట్టపరమైన", privacy: "గోప్యతా విధానం", terms: "సేవా నిబంధనలు", copyright: "© 2026 ToolPop. అన్ని హక్కులు రిజర్వ్ చేయబడ్డాయి.", tagline: "PDF, చిత్రాలు మరియు మరిన్నింటికి ఉచిత ఆన్‌లైన్ సాధనాలు. సైన్-అప్ అవసరం లేదు.", madeWith: "అందరికోసం ప్రేమతో తయారు చేయబడింది" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "ఫలితాలు కనుగొనబడలేదు" },
   nav: { pdf: "PDF", image: "చిత్రం", text: "టెక్స్ట్", converter: "కన్వర్టర్", calculator: "కాల్క్యులేటర్" },
 };

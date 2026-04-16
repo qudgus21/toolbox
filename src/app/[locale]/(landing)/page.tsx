@@ -6,6 +6,7 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getImageDictionary } from "@/lib/i18n/get-image-dictionary";
 import { generateAlternates, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { apps } from "@/lib/apps";
+import { articles } from "@/lib/blog/articles";
 import { tools as pdfTools } from "@/lib/pdf/tools";
 import { tools as imageTools } from "@/lib/image/tools";
 import { tools as textTools } from "@/lib/text/tools";
@@ -208,6 +209,65 @@ export default async function LandingPage({
         popularTools={popularTools}
         allTools={allTools}
       />
+
+      {/* Blog preview section */}
+      {(() => {
+        const recentArticles = articles
+          .filter((a) => a.content[locale] || a.content["en"])
+          .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+          .slice(0, 4);
+        if (recentArticles.length === 0) return null;
+
+        const categoryLabels: Record<string, string> = { guide: "Guide", tips: "Tips", knowledge: "Knowledge" };
+
+        return (
+          <section className="py-12 sm:py-16">
+            <Container size="lg">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                  {dict.blogSection.sectionTitle}
+                </h2>
+                <p className="mt-2 text-base text-foreground-muted max-w-2xl mx-auto">
+                  {dict.blogSection.sectionSubtitle}
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {recentArticles.map((article) => {
+                  const content = article.content[locale] ?? article.content["en"];
+                  if (!content) return null;
+                  return (
+                    <Link
+                      key={article.slug}
+                      href={`/${locale}/blog/${article.slug}`}
+                      className="group rounded-xl border border-border bg-background-elevated p-5 transition-all hover:border-accent/40 hover:shadow-md"
+                    >
+                      <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent mb-3">
+                        {categoryLabels[article.category] ?? article.category}
+                      </span>
+                      <h3 className="text-sm font-semibold text-foreground line-clamp-2 mb-2 group-hover:text-accent transition-colors">
+                        {content.title}
+                      </h3>
+                      <p className="text-xs text-foreground-muted line-clamp-2">
+                        {content.description}
+                      </p>
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="text-center mt-6">
+                <Link
+                  href={`/${locale}/blog`}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+                >
+                  {dict.blogSection.viewAll}
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </div>
+            </Container>
+          </section>
+        );
+      })()}
+
       {/* SEO content — subtle, below the fold */}
       <section className="mx-auto max-w-4xl px-4 pt-12 pb-8">
         <div className="border-t border-border-muted pt-8">
