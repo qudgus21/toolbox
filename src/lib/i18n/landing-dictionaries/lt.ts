@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Pasiruošę pradėti?", subtitle: "Be diegimo, be registracijos, be mokėjimų — tik vienas paspaudimas.", button: "Naršyti visus įrankius" },
   common: { shareTitle: "Dalintis", shareSubtitle: "Papasakokite draugams apie ToolPop!", shareCopyLink: "Kopijuoti nuorodą", shareCopied: "Nukopijuota!", ariaClose: "Uždaryti", ariaMenu: "Meniu", ariaShare: "Dalytis", ariaToggleTheme: "Pakeisti temą" },
   footer: { apps: "Įrankiai", company: "Įmonė", about: "Apie mus", contact: "Kontaktai", faq: "DUK", blog: "Tinklaraštis", legal: "Teisinė informacija", privacy: "Privatumo politika", terms: "Naudojimo sąlygos", copyright: "© 2026 ToolPop. Visos teisės saugomos.", tagline: "Nemokamos internetinės priemonės PDF, vaizdams ir daugiau. Be registracijos.", madeWith: "Sukurta su meile visiems" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Rezultatų nerasta" },
   nav: { pdf: "PDF", image: "Vaizdas", text: "Tekstas", converter: "Konverteris", calculator: "Skaičiuotuvas" },
 };

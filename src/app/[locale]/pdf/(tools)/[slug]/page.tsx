@@ -144,7 +144,7 @@ export default async function ToolPage({
         overlayLabels={slug === "overlay" ? dict.overlayTool : undefined}
         bookletLabels={slug === "booklet" ? dict.bookletTool : undefined}
       >
-        <ToolContentSection content={toolContent} />
+        <ToolContentSection content={toolContent} locale={locale} />
       </ToolPageClient>
     </>
   );

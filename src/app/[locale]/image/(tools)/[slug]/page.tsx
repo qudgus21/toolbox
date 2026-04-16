@@ -115,7 +115,7 @@ export default async function ToolPage({
         labels={dict.common}
         toolLabels={dict.toolOptions}
       >
-        <ToolContentSection content={toolContent} />
+        <ToolContentSection content={toolContent} locale={locale} />
       </ToolPageClient>
     </>
   );

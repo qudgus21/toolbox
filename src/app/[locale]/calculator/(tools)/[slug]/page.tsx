@@ -120,7 +120,7 @@ export default async function ToolPage({
         fields={tool.fields}
         previewData={tool.previewData}
       >
-        <ToolContentSection content={toolContent} />
+        <ToolContentSection content={toolContent} locale={locale} />
       </CalculatorToolPageClient>
     </>
   );

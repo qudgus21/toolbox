@@ -118,7 +118,7 @@ export default async function ToolPage({
         dualInput={tool.dualInput}
         noInput={tool.noInput}
       >
-        <ToolContentSection content={toolContent} />
+        <ToolContentSection content={toolContent} locale={locale} />
       </TextToolPageClient>
     </>
   );

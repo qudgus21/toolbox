@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { imageContentAdditions } from "./image-content-additions";
 
-export const imageContent: ToolContentMap = {
+const _imageContent: ToolContentMap = {
   resize: {
     howTo: {
       title: "How to Resize an Image",
@@ -2354,3 +2355,7 @@ export const imageContent: ToolContentMap = {
     ],
   },
 };
+
+export const imageContent: ToolContentMap = Object.fromEntries(
+  Object.entries(_imageContent).map(([k, v]) => [k, { ...imageContentAdditions[k], ...v }]),
+);

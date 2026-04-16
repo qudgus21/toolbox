@@ -76,5 +76,10 @@ export interface LandingDictionary {
   search: {
     noResults: string;
   };
+  blogSection: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    viewAll: string;
+  };
   nav: Record<string, string>;
 }

@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "พร้อมเริ่มต้นหรือยัง?", subtitle: "ไม่ต้องติดตั้ง ไม่ต้องสมัคร ไม่ต้องจ่าย — แค่คลิกเดียว", button: "ดูเครื่องมือทั้งหมด" },
   common: { shareTitle: "แชร์", shareSubtitle: "บอกเพื่อนๆ เกี่ยวกับ ToolPop!", shareCopyLink: "คัดลอกลิงก์", shareCopied: "คัดลอกแล้ว!", ariaClose: "ปิด", ariaMenu: "เมนู", ariaShare: "แชร์", ariaToggleTheme: "สลับธีม" },
   footer: { apps: "เครื่องมือ", company: "บริษัท", about: "เกี่ยวกับเรา", contact: "ติดต่อ", faq: "FAQ", blog: "บล็อก", legal: "ข้อกฎหมาย", privacy: "นโยบายความเป็นส่วนตัว", terms: "ข้อกำหนดการใช้งาน", copyright: "© 2026 ToolPop. สงวนลิขสิทธิ์ทั้งหมด.", tagline: "เครื่องมือออนไลน์ฟรีสำหรับ PDF รูปภาพ และอื่นๆ ไม่ต้องสมัครสมาชิก", madeWith: "สร้างด้วยใจเพื่อทุกคน" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "ไม่พบผลลัพธ์" },
   nav: { pdf: "PDF", image: "รูปภาพ", text: "ข้อความ", converter: "แปลง", calculator: "คำนวณ" },
 };

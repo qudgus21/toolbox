@@ -108,6 +108,11 @@ const dict: LandingDictionary = {
   search: {
     noResults: "No results found",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   nav: {
     pdf: "PDF",
     image: "Image",

@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Klar til å starte?", subtitle: "Ingen installasjon, ingen registrering, ingen betaling — bare ett klikk unna.", button: "Se alle verktøy" },
   common: { shareTitle: "Del", shareSubtitle: "Fortell vennene dine om ToolPop!", shareCopyLink: "Kopier lenke", shareCopied: "Kopiert!", ariaClose: "Lukk", ariaMenu: "Meny", ariaShare: "Del", ariaToggleTheme: "Bytt tema" },
   footer: { apps: "Verktøy", company: "Selskap", about: "Om oss", contact: "Kontakt", faq: "FAQ", blog: "Blogg", legal: "Juridisk", privacy: "Personvernregler", terms: "Vilkår for bruk", copyright: "© 2026 ToolPop. Alle rettigheter forbeholdt.", tagline: "Gratis nettverktøy for PDF, bilder og mer. Ingen registrering nødvendig.", madeWith: "Laget med kjærlighet for alle" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Ingen resultater funnet" },
   nav: { pdf: "PDF", image: "Bilde", text: "Tekst", converter: "Konverter", calculator: "Kalkulator" },
 };

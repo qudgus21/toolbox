@@ -39,9 +39,13 @@ export function getToolContent(
   slug: string,
   locale: string = "en",
 ): ToolContentData | undefined {
-  if (locale !== "en") {
-    const localized = localizedContentByApp[locale]?.[app]?.[slug];
-    if (localized) return localized;
-  }
-  return contentByApp[app]?.[slug];
+  const base = contentByApp[app]?.[slug];
+  if (locale === "en") return base;
+
+  const localized = localizedContentByApp[locale]?.[app]?.[slug];
+  if (!localized) return base;
+  if (!base) return localized;
+
+  // Merge: localized fields take precedence, fall back to base (English) for missing fields
+  return { ...base, ...localized };
 }

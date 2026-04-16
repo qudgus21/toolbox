@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "រួចរាល់ក្នុងការចាប់ផ្ដើម?", subtitle: "មិនចាំបាច់ដំឡើង មិនចាំបាច់ចុះឈ្មោះ មិនចាំបាច់បង់ប្រាក់ — គ្រាន់តែចុចមួយដង។", button: "មើលឧបករណ៍ទាំងអស់" },
   common: { shareTitle: "ចែករំលែក", shareSubtitle: "ប្រាប់មិត្តភក្ដិរបស់អ្នកអំពី ToolPop!", shareCopyLink: "ចម្លងតំណ", shareCopied: "បានចម្លង!", ariaClose: "បិទ", ariaMenu: "ម៉ឺនុយ", ariaShare: "ចែករំលែក", ariaToggleTheme: "ប្ដូរ​ស្បែក" },
   footer: { apps: "ឧបករណ៍", company: "ក្រុមហ៊ុន", about: "អំពីយើង", contact: "ទំនាក់ទំនង", faq: "សំណួរញឹកញាប់", blog: "ប្លក់", legal: "ផ្នែកច្បាប់", privacy: "គោលនយោបាយឯកជនភាព", terms: "លក្ខខណ្ឌសេវាកម្ម", copyright: "© 2026 ToolPop. រក្សាសិទ្ធិគ្រប់យ៉ាង។", tagline: "ឧបករណ៍អនឡាញឥតគិតថ្លៃសម្រាប់ PDF រូបភាព និងច្រើនទៀត។ មិនចាំបាច់ចុះឈ្មោះ។", madeWith: "បង្កើតដោយស្រលាញ់សម្រាប់គ្រប់គ្នា" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "រកមិនឃើញលទ្ធផល" },
   nav: { pdf: "PDF", image: "រូបភាព", text: "អត្ថបទ", converter: "កម្មវិធីបម្លែង", calculator: "ម៉ាស៊ីនគិតលេខ" },
 };

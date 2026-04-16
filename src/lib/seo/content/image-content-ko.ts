@@ -1,6 +1,7 @@
 import type { ToolContentMap } from "../tool-content-types";
+import { imageContentKoAdditions } from "./image-content-ko-additions";
 
-export const imageContentKo: ToolContentMap = {
+const _imageContentKo: ToolContentMap = {
   resize: {
     howTo: {
       title: "이미지 크기를 조정하는 방법",
@@ -2354,3 +2355,7 @@ export const imageContentKo: ToolContentMap = {
     ],
   },
 };
+
+export const imageContentKo: ToolContentMap = Object.fromEntries(
+  Object.entries(_imageContentKo).map(([k, v]) => [k, { ...imageContentKoAdditions[k], ...v }]),
+);

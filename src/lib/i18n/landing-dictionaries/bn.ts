@@ -105,6 +105,11 @@ const dict: LandingDictionary = {
     tagline: "PDF, ইমেজ এবং আরও অনেক কিছুর জন্য বিনামূল্যে অনলাইন টুল। সাইন-আপ ছাড়াই।",
     madeWith: "সবার জন্য ভালোবাসা দিয়ে তৈরি",
   },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: {
     noResults: "কোনো ফলাফল পাওয়া যায়নি",
   },

@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Pripravení začať?", subtitle: "Bez inštalácie, bez registrácie, bez platenia — stačí jedno kliknutie.", button: "Prehľadávať všetky nástroje" },
   common: { shareTitle: "Zdieľať", shareSubtitle: "Povedzte o ToolPop svojim priateľom!", shareCopyLink: "Kopírovať odkaz", shareCopied: "Skopírované!", ariaClose: "Zavrieť", ariaMenu: "Menu", ariaShare: "Zdieľať", ariaToggleTheme: "Prepnúť tému" },
   footer: { apps: "Nástroje", company: "Spoločnosť", about: "O nás", contact: "Kontakt", faq: "Časté otázky", blog: "Blog", legal: "Právne informácie", privacy: "Ochrana súkromia", terms: "Podmienky používania", copyright: "© 2026 ToolPop. Všetky práva vyhradené.", tagline: "Bezplatné online nástroje pre PDF, obrázky a viac. Bez registrácie.", madeWith: "Vytvorené s láskou pre všetkých" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Žiadne výsledky" },
   nav: { pdf: "PDF", image: "Obrázok", text: "Text", converter: "Konvertor", calculator: "Kalkulačka" },
 };

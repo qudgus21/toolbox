@@ -34,6 +34,11 @@ const dict: LandingDictionary = {
   cta: { title: "Tilbúin/n að byrja?", subtitle: "Engin uppsetning, engin nýskráning, engar greiðslur — bara einn smellur.", button: "Skoða öll verkfæri" },
   common: { shareTitle: "Deila", shareSubtitle: "Segðu vinum þínum frá ToolPop!", shareCopyLink: "Afrita hlekk", shareCopied: "Afritað!", ariaClose: "Loka", ariaMenu: "Valmynd", ariaShare: "Deila", ariaToggleTheme: "Skipta um þema" },
   footer: { apps: "Verkfæri", company: "Fyrirtæki", about: "Um okkur", contact: "Hafa samband", faq: "Algengar spurningar", blog: "Blogg", legal: "Lagalegar upplýsingar", privacy: "Persónuverndarstefna", terms: "Þjónustuskilmálar", copyright: "© 2026 ToolPop. Öll réttindi áskilin.", tagline: "Ókeypis netverkfæri fyrir PDF, myndir og fleira. Engin skráning nauðsynleg.", madeWith: "Gert af ástúð fyrir alla" },
+  blogSection: {
+    sectionTitle: "Latest Articles",
+    sectionSubtitle: "Tips, guides, and deep dives into file formats and digital tools",
+    viewAll: "View all articles",
+  },
   search: { noResults: "Engar niðurstöður fundust" },
   nav: { pdf: "PDF", image: "Mynd", text: "Texti", converter: "Umbreytir", calculator: "Reiknivél" },
 };
