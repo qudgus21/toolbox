@@ -1,10 +1,10 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import { type Locale } from "@/lib/i18n";
 import { getConverterDictionary } from "@/lib/i18n/get-converter-dictionary";
-import { ogBottomBar } from "@/lib/seo";
+import { ogBottomBar, resolveOgLocale } from "@/lib/seo/og-metadata";
 import { getToolBySlug } from "@/lib/converter/tools";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const alt = "ToolPop Converter Tool";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -14,7 +14,8 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  const locale = resolveOgLocale(rawLocale);
   const tool = getToolBySlug(slug);
   const dict = await getConverterDictionary(locale as Locale);
   const t = dict.tools[slug];

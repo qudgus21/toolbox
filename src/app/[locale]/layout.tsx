@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header, AppNavMenu } from "@/lib/ui";
 import { AppLogo } from "@/lib/ui/components/app-logo/app-logo";
@@ -54,12 +53,6 @@ export default async function LocaleLayout({
         logo={<AppLogo />}
         nav={<AppNavMenu apps={navApps} menuLabel={landingDict.common.ariaMenu} />}
       >
-        <Link
-          href={`/${locale}/blog`}
-          className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors hidden sm:block"
-        >
-          {landingDict.footer.blog}
-        </Link>
         <ThemeToggle ariaLabel={landingDict.common.ariaToggleTheme} />
         <ShareButton
           shareTitle={landingDict.common.shareTitle}
