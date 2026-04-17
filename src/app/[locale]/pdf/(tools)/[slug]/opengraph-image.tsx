@@ -1,9 +1,9 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import { type Locale, getDictionary } from "@/lib/i18n";
-import { ogBottomBar } from "@/lib/seo";
+import { ogBottomBar, resolveOgLocale } from "@/lib/seo/og-metadata";
 import { getToolBySlug } from "@/lib/pdf/tools";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const alt = "ToolPop PDF Tool";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -13,7 +13,8 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale, slug } = await params;
+  const { locale: rawLocale, slug } = await params;
+  const locale = resolveOgLocale(rawLocale);
   const tool = getToolBySlug(slug);
   const dict = await getDictionary(locale as Locale);
   const t = dict.tools[slug];
