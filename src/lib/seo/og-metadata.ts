@@ -3,6 +3,14 @@
  * Edge Runtime에서 getDictionary(dynamic import)를 사용할 수 없으므로
  * 정적으로 모든 로케일의 메타데이터를 포함한다.
  */
+
+// Satori(next/og) 기본 폰트는 Arabic(RTL) 렌더링에서 크래시.
+// 해당 스크립트 로케일은 OG 이미지에서만 영어로 강제 fallback.
+const OG_UNSUPPORTED_LOCALES = new Set(["ar"]);
+
+export function resolveOgLocale(locale: string): string {
+  return OG_UNSUPPORTED_LOCALES.has(locale) ? "en" : locale;
+}
 export const ogMetadata: Record<string, { siteTitle: string; siteDescription: string; altText: string }> = {
   ko: {
     siteTitle: "ToolPop PDF - 무료 PDF 도구",
