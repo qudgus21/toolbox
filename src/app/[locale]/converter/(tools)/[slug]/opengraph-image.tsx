@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import { type Locale } from "@/lib/i18n";
-import { getConverterDictionary } from "@/lib/i18n/get-converter-dictionary";
 import { ogBottomBar, resolveOgLocale } from "@/lib/seo/og-metadata";
 import { getToolBySlug } from "@/lib/converter/tools";
 
@@ -17,12 +15,10 @@ export default async function Image({
   const { locale: rawLocale, slug } = await params;
   const locale = resolveOgLocale(rawLocale);
   const tool = getToolBySlug(slug);
-  const dict = await getConverterDictionary(locale as Locale);
-  const t = dict.tools[slug];
   const bottom = ogBottomBar[locale] ?? ogBottomBar.en;
 
-  const title = t?.title ?? slug;
-  const description = t?.description ?? "";
+  const title = tool?.title ?? slug;
+  const description = tool?.description ?? "";
   const emoji = tool?.emoji ?? "🔄";
 
   return new ImageResponse(
