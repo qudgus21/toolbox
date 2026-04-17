@@ -1,12 +1,14 @@
-import { ImageResponse } from "@vercel/og";
-import { ogTextMetadata, ogBottomBar } from "@/lib/seo";
+import { ImageResponse } from "next/og";
+import { ogTextMetadata, ogBottomBar, resolveOgLocale } from "@/lib/seo/og-metadata";
 
+export const runtime = "edge";
 export const alt = "ToolPop Text";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveOgLocale(rawLocale);
   const meta = ogTextMetadata[locale] ?? ogTextMetadata.en;
   const bottom = ogBottomBar[locale] ?? ogBottomBar.en;
 

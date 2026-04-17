@@ -1,6 +1,7 @@
-import { ImageResponse } from "@vercel/og";
-import { ogBottomBar } from "@/lib/seo";
+import { ImageResponse } from "next/og";
+import { ogBottomBar, resolveOgLocale } from "@/lib/seo/og-metadata";
 
+export const runtime = "edge";
 export const alt = "ToolPop";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -8,28 +9,49 @@ export const contentType = "image/png";
 const ogLandingMetadata: Record<string, { siteTitle: string; siteDescription: string }> = {
   ko: {
     siteTitle: "ToolPop - 무료 온라인 도구 모음",
-    siteDescription: "PDF, 이미지 변환·편집을 브라우저에서 바로. 업로드 없이 안전하게.",
+    siteDescription: "PDF·이미지·텍스트·단위 변환·계산까지, 브라우저에서 바로.",
   },
   en: {
     siteTitle: "ToolPop - Free Online Tools",
-    siteDescription: "PDF & image tools right in your browser. No upload, no signup.",
+    siteDescription: "PDF, image, text, converters, and calculators — right in your browser.",
   },
   ja: {
     siteTitle: "ToolPop - 無料オンラインツール",
-    siteDescription: "PDF・画像の変換・編集をブラウザで。アップロード不要。",
+    siteDescription: "PDF・画像・テキスト・変換・計算まで、ブラウザですぐに。",
   },
   zh: {
     siteTitle: "ToolPop - 免费在线工具",
-    siteDescription: "浏览器中直接处理PDF和图片，无需上传。",
+    siteDescription: "PDF、图片、文字、单位换算、计算工具，浏览器里直接使用。",
   },
   es: {
     siteTitle: "ToolPop - Herramientas en línea gratuitas",
-    siteDescription: "Herramientas PDF e imagen directamente en tu navegador. Sin subir archivos.",
+    siteDescription: "PDF, imágenes, texto, conversiones y cálculos — directo en tu navegador.",
+  },
+  fr: {
+    siteTitle: "ToolPop - Outils en ligne gratuits",
+    siteDescription: "Outils PDF, image, texte, conversion et calcul — directement dans votre navigateur.",
+  },
+  de: {
+    siteTitle: "ToolPop - Kostenlose Online-Tools",
+    siteDescription: "PDF-, Bild-, Text-, Konverter- und Rechner-Tools – direkt im Browser.",
+  },
+  pt: {
+    siteTitle: "ToolPop - Ferramentas online grátis",
+    siteDescription: "Ferramentas de PDF, imagem, texto, conversão e cálculo — direto no navegador.",
+  },
+  ru: {
+    siteTitle: "ToolPop - Бесплатные онлайн-инструменты",
+    siteDescription: "Инструменты для PDF, изображений, текста, конвертации и расчётов — прямо в браузере.",
+  },
+  hi: {
+    siteTitle: "ToolPop - मुफ़्त ऑनलाइन टूल्स",
+    siteDescription: "PDF, छवि, टेक्स्ट, कनवर्टर और कैलकुलेटर टूल्स — सीधे आपके ब्राउज़र में।",
   },
 };
 
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = resolveOgLocale(rawLocale);
   const meta = ogLandingMetadata[locale] ?? ogLandingMetadata.en;
   const bottom = ogBottomBar[locale] ?? ogBottomBar.en;
 
@@ -102,46 +124,6 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
           }}
         >
           {meta.siteDescription}
-        </div>
-
-        {/* App badges */}
-        <div
-          style={{
-            display: "flex",
-            gap: "16px",
-            marginTop: "36px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "rgba(239,68,68,0.15)",
-              padding: "8px 20px",
-              borderRadius: "8px",
-              color: "#ef4444",
-              fontSize: "18px",
-              fontWeight: 600,
-            }}
-          >
-            PDF Tools
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "rgba(99,102,241,0.15)",
-              padding: "8px 20px",
-              borderRadius: "8px",
-              color: "#818cf8",
-              fontSize: "18px",
-              fontWeight: 600,
-            }}
-          >
-            Image Tools
-          </div>
         </div>
 
         {/* Bottom bar */}
